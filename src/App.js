@@ -5,6 +5,7 @@ import NavigationBar from './component/framework/navigationBar';
 import Scrollbanner  from './component/framework/scrollbanner';
 import ScrollText  from './component/framework/scrolltext';
 import GameChooser  from './component/framework/gamechooser';
+import Linkbar  from './component/framework/linkbar';
 export default function App() {
     return (
         <Box sx={{ flexGrow: 1 }}>
@@ -27,7 +28,7 @@ export default function App() {
                   <GameChooser/>
                 </Grid>
                 <Grid item xs={11} margin="1vh">
-                   
+                   <Linkbar/>
                 </Grid>
                 <Grid item xs={11} margin="1vh">
                 
