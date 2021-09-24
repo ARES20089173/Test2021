@@ -36,7 +36,6 @@ export default function BasicGrid() {
                     <InviteImage />
                 </Grid>
                 <Grid item xs={11} margin="1vh">
-                    <LinkBar/>
                 </Grid>
                 <Grid item xs={12}  >
                     <EndBar />

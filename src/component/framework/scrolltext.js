@@ -8,10 +8,10 @@ export default function FooComponent() {
         width: '100%',
         whiteSpace: 'nowrap',
         border: '1px solid red',
-        alignItems: "center"
+        alignItems: "center",
       }}
     >
-      <Marquee>
+      <Marquee direction="left">
         2021 new puzzle web game just coming soon!!!!!!
       </Marquee>
     </div>

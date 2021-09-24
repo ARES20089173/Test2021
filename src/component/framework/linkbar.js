@@ -1,12 +1,13 @@
 import * as React from 'react'
-import Grid from '@mui/material/Grid';
-import IconButton from '@mui/material/IconButton';
-import { styled } from '@mui/material/styles';
-import Badge from '@mui/material/Badge';
+import Grid from '@mui/material/Grid'
+import IconButton from '@mui/material/IconButton'
+import { styled } from '@mui/material/styles'
+import Badge from '@mui/material/Badge'
 import linkicon from '../../graphsixBig.svg'
 import linkiconBig from '../../graphsixBigger.svg'
-import Box from '@mui/material/Box';
-import { Typography } from '@mui/material';
+import Box from '@mui/material/Box'
+import { Typography } from '@mui/material'
+
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
         right: -3,
@@ -94,10 +95,10 @@ export default function Linkbar() {
                 <Grid item xs={2}>
                 </Grid>
                 <Grid item xs={2}>
-                    <Typography align='center'variant="body2">Player@Earn</Typography>
+                    <Typography align='center'variant="caption">Player@Earn</Typography>
                 </Grid>
                 <Grid item xs={2}>
-                    <Typography align='center'variant="body2">Shop</Typography>
+                    <Typography align='center'variant="caption">Shop</Typography>
                 </Grid>
                 <Grid item xs={2}>
                     <Typography align='center'variant="body2">Wallet</Typography>

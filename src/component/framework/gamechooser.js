@@ -1,8 +1,11 @@
 import square from './img/square.jpeg'
 import square1 from './img/square1.jpeg'
 import square2 from './img/square2.jpeg'
+import { styled } from '@mui/material/styles';
 import React from "react";
+import Fab from '@mui/material/Fab';
 import "./css/cssFGamechooser.css"
+import Go from '../../Go.svg';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -13,30 +16,51 @@ import 'swiper/components/pagination/pagination.min.css'
 import 'swiper/components/navigation/navigation.min.css'
 // import Swiper core and required modules
 import SwiperCore, {
-  Pagination,Navigation
+  Pagination, Navigation
 } from 'swiper';
 
 // install Swiper modules
-SwiperCore.use([Pagination,Navigation]);
-
+SwiperCore.use([Pagination, Navigation]);
+const StyledFab = styled(Fab)({
+  position: 'absolute',
+  zIndex: 0,
+ 
+  bottom:"1.5vh",
+  right: 0,
+});
 export default () => {
   return (
-    <Swiper 
-    
-    pagination={{
-      "type": "custom"
-    }} 
-    navigation={false }
-    centeredSlides
-    slidesPerView={2}
-    spaceBetween={30}
-    style={{marginTop:10}}
-    className="mySwiper">
-      <SwiperSlide ><img src={square} alt="img1"  /></SwiperSlide>
-      <SwiperSlide ><img src={square1} alt="img1"  /></SwiperSlide>
-      <SwiperSlide ><img src={square2} alt="img1"  /></SwiperSlide>
+    <Swiper
+
+      pagination={{
+        "type": "custom"
+      }}
+      navigation={false}
+      centeredSlides
+      slidesPerView={2}
+      spaceBetween={30}
+      style={{ marginTop: 10 }}
+      className="mySwiper">
+      <SwiperSlide >
+        <img src={square} alt="img1" />
+        <StyledFab size="small" color="secondary" aria-label="add">
+          <img src={Go} alt="img1" />
+        </StyledFab>
+      </SwiperSlide>
+      <SwiperSlide >
+        <img src={square1} alt="img1" />
+        <StyledFab size="small" color="secondary" aria-label="add">
+          <img src={Go} alt="img1" />
+        </StyledFab>
+      </SwiperSlide>
+      <SwiperSlide >
+        <img src={square2} alt="img1" />
+        <StyledFab size="small" color="secondary" aria-label="add">
+          <img src={Go} alt="img1" />
+        </StyledFab>
+      </SwiperSlide>
     </Swiper>
-    )
+  )
 }
 
 
