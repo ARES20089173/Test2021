@@ -6,7 +6,6 @@ import Scrollbanner from '../../framework/scrollbanner';
 import NavigationBar from '../../framework/navigationBar';
 import Scrolltext from '../../framework/scrolltext';
 import InviteImage from '../../framework/inviteimage';
-import LinkBar from '../../framework/linkbar';
 import EndBar from '../../framework/endbar';
 export default function BasicGrid() {
     return (

@@ -28,7 +28,7 @@ const StyledFab = styled(Fab)({
   bottom:"1.5vh",
   right: 0,
 });
-export default () => {
+export default function Gamechooser() {
   return (
     <Swiper
 
