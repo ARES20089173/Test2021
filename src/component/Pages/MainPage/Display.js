@@ -7,6 +7,16 @@ import NavigationBar from '../../framework/navigationBar';
 import Scrolltext from '../../framework/scrolltext';
 import InviteImage from '../../framework/inviteimage';
 import EndBar from '../../framework/endbar';
+import { styled } from '@mui/material/styles';
+import Fab from '@mui/material/Fab';
+import Go from '../../../Go.svg';
+import ReadMoreIcon from '@mui/icons-material/ReadMore';
+const StyledFab2 = styled(Fab)({
+    position: 'absolute',
+    zIndex: 1,
+    bottom: "38vh",
+    left: 0,
+});
 export default function BasicGrid() {
     return (
         <Box sx={{ flexGrow: 1 }}>
@@ -23,13 +33,16 @@ export default function BasicGrid() {
                     <Scrollbanner />
                 </Grid>
                 <Grid item xs={11} margin="1vh">
-                <Scrolltext />
+                    <Scrolltext />
                     {/* <Grid xs={1}></Grid>
                     <Grid xs={10}><Scrolltext /></Grid>
                     <Grid xs={1}></Grid> */}
                 </Grid>
                 <Grid item xs={12} >
                     <GameChooser />
+                    <StyledFab2 size="small" color="secondary" aria-label="add">
+                        <ReadMoreIcon />
+                    </StyledFab2>
                 </Grid>
                 <Grid item xs={11} margin="1vh">
                     <InviteImage />
