@@ -9,15 +9,16 @@ import InviteImage from '../../framework/inviteimage';
 import EndBar from '../../framework/endbar';
 import { styled } from '@mui/material/styles';
 import Fab from '@mui/material/Fab';
-import Go from '../../../Go.svg';
 import ReadMoreIcon from '@mui/icons-material/ReadMore';
+import {Link} from "react-router-dom"
+  
 const StyledFab2 = styled(Fab)({
     position: 'absolute',
     zIndex: 1,
     bottom: "38vh",
     left: 0,
 });
-export default function BasicGrid() {
+export default function MainPage() {
     return (
         <Box sx={{ flexGrow: 1 }}>
             <Grid
@@ -40,9 +41,11 @@ export default function BasicGrid() {
                 </Grid>
                 <Grid item xs={12} >
                     <GameChooser />
+                    <Link to='/multigameChooser'>
                     <StyledFab2 size="small" color="secondary" aria-label="add">
                         <ReadMoreIcon />
                     </StyledFab2>
+                   </Link>
                 </Grid>
                 <Grid item xs={11} margin="1vh">
                     <InviteImage />

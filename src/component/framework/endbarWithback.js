@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 import puzzle from '../../puzzle.svg';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import AddIcon from '@mui/icons-material/Add';
-import LinkBar from './linkbar';
+import LinkBarWithback from './linkbarwithback';
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
         right: 0,
@@ -32,10 +32,13 @@ const StyledFab = styled(Fab)({
 export default function BottomAppBar() {
     return (
         <React.Fragment>
+       
             <Box sx={{ flexGrow: 1 }}>
                 <CssBaseline />
                 <AppBar color="transparent" position="fixed" align='center' sx={{ top: 'auto', bottom: 0 }}>
-                    <LinkBar />
+
+                    <LinkBarWithback />
+
                     <div style={{ backgroundColor: "yellow" }}>
                         <Toolbar>
                             <IconButton color="inherit" aria-label="open drawer">
