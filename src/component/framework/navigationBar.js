@@ -8,7 +8,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import logo from '../../graphsix.svg';
 import CssBaseline from '@mui/material/CssBaseline';
 
-export default function ButtonAppBar(props) {
+export default function NavigationBar(props) {
 
   const [count, setcount] = React.useState('Lv1');
 
