@@ -8,10 +8,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 import logo from '../../graphsix.svg';
 import CssBaseline from '@mui/material/CssBaseline';
 
-export default function NavigationBar(props) {
+const userdata = [
+  { id: 0, level: 'Lv1', name: "2048", number: 52, entryFee: 88 },
+]
 
-  const [count, setcount] = React.useState('Lv1');
-
+export default function NavigationBar() {
   return (
     <React.Fragment>
       <Box sx={{ flexGrow: 1 }}>
@@ -28,7 +29,7 @@ export default function NavigationBar(props) {
                 <img src={logo} className="App-logo" alt="logo" />
               </IconButton>
               <Typography variant="h6" component="div" sx={{}}>
-                {count}
+                {userdata[0].level}
               </Typography>
               <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
                 News

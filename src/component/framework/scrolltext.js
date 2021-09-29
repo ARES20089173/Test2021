@@ -1,6 +1,7 @@
 import React from 'react';
 import Marquee from 'react-double-marquee';
 import "./css/cssFScrollText.css"
+import Typography from '@mui/material/Typography';
 export default function FooComponent() {
   return (
     <div
@@ -9,10 +10,13 @@ export default function FooComponent() {
         whiteSpace: 'nowrap',
         border: '1px solid red',
         alignItems: "center",
+        color:"white"
+      
       }}
+    
     >
-      <Marquee direction="left">
-        2021 new puzzle web game just coming soon!!!!!!
+      <Marquee direction="left"  color='primary' >
+      2021 new puzzle web game just coming soon!!!!!!
       </Marquee>
     </div>
   );

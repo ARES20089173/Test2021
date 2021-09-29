@@ -1,65 +1,84 @@
-import square from './img/square.jpeg'
-import square1 from './img/square1.jpeg'
-import square2 from './img/square2.jpeg'
 import { styled } from '@mui/material/styles';
-import React from "react";
 import Fab from '@mui/material/Fab';
+import React,{ useState } from 'react';
 import "./css/cssFGamechooser.css"
-import Go from '../../Go.svg';
+import Grid from '@mui/material/Grid';
+import { Link } from "react-router-dom"
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import 'swiper/swiper-bundle.min.css'
 // swiper core styles
 import 'swiper/swiper.min.css'
+import "swiper/components/effect-coverflow/effect-coverflow.less"
 import 'swiper/components/pagination/pagination.min.css'
 import 'swiper/components/navigation/navigation.min.css'
+
 // import Swiper core and required modules
 import SwiperCore, {
-  Pagination, Navigation
+  Pagination, Navigation, EffectCoverflow
 } from 'swiper';
 
 // install Swiper modules
-SwiperCore.use([Pagination, Navigation]);
+SwiperCore.use([Pagination, Navigation, EffectCoverflow]);
 const StyledFab = styled(Fab)({
   position: 'absolute',
-  zIndex: 0,
- 
-  bottom:"1.5vh",
-  right: 0,
-});
-export default function Gamechooser(){
-  return (
-    <Swiper
+  zIndex: 2,
 
-      pagination={{
-        "type": "custom"
-      }}
-      navigation={false}
-      centeredSlides
-      slidesPerView={2}
-      spaceBetween={30}
-      style={{ marginTop: 10 }}
-      className="mySwiper">
-      <SwiperSlide >
-        <img src={square} alt="img1" />
-        <StyledFab size="small" color="secondary" aria-label="add">
-          <img src={Go} alt="img1" />
-        </StyledFab>
-      </SwiperSlide>
-      <SwiperSlide >
-        <img src={square1} alt="img1" />
-        <StyledFab size="small" color="secondary" aria-label="add">
-          <img src={Go} alt="img1" />
-        </StyledFab>
-      </SwiperSlide>
-      <SwiperSlide >
-        <img src={square2} alt="img1" />
-        <StyledFab size="small" color="secondary" aria-label="add">
-          <img src={Go} alt="img1" />
-        </StyledFab>
-      </SwiperSlide>
-    </Swiper>
+  bottom: "3.5%",
+  right: "25%",
+});
+const data = [
+  { id: 0, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 },
+  { id: 1, src: '/img/square1.jpeg', name: "原神", number: 56, entryFee: 848 },
+  { id: 2, src: '/img/square2.jpeg', name: "LoL", number: 55, entryFee: 828 },
+]
+export default function Gamechooser() {
+  const [count, setCount] = useState(0);
+  return (
+    <Grid container xs={12} alignItems="center" style={{ marginBottom: "1.5vh" }}>
+      <Swiper
+        pagination={{
+          "type": "custom",
+          el: '.swiper-pagination'
+        }}
+        onSlideChange={(index) => {
+          console.log(index.realIndex)
+          setCount(index.realIndex);
+        }}
+        loop={true}
+        navigation={false}
+        centeredSlides
+        slidesPerView={1.5}
+        spaceBetween={30}
+        style={{ marginTop: 10 }}
+        effect={"coverflow"}
+        grabCursor={true}
+        coverflowEffect={{
+          rotate: 0,
+          stretch: -10,
+          depth: 400,
+          modifier: 1,
+          slideShadows: false
+        }}
+        className="mySwiper">
+
+        {data.map((pic) => (
+          <SwiperSlide >
+            <img key={pic.id}src={pic.src} alt="img1" width="50%" />
+          </SwiperSlide>
+        ))}
+        <Link to={`multigameChooser/tournamentLobby/${count}`}>
+          <StyledFab size="small" color="secondary" aria-label="add">
+            <KeyboardArrowRightIcon />
+          </StyledFab>
+        </Link>
+      </Swiper>
+
+
+
+    </Grid>
   )
 }
 

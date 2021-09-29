@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles'
 import Fab from '@mui/material/Fab';
+import backgroundEnd from "../../../reed_bg.svg"
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom"
 import NavigationBar from '../../framework/navigationBar';
@@ -10,8 +11,8 @@ import EndBar from '../../framework/endbar';
 import { Typography } from '@mui/material';
 const StyledFab2 = styled(Fab)({
   position: 'fixed',
-  zIndex: 1,
-  bottom: "24%",
+  zIndex: 3,
+  bottom: "27%",
   left: "0%",
 
 });
@@ -37,7 +38,7 @@ export default class MultigameChoose extends Component {
       { id: 15, src: 'img/square.jpeg', name: "2048", number: 54 },
       { id: 16, src: 'img/square1.jpeg', name: "原神", number: 53 },
       { id: 17, src: 'img/square2.jpeg', name: "LoL", number: 52 },
-      { id: 18, src: 'img/square2.jpeg', name: "LoL", number: 51 },
+      { id: 18, src: 'img/square.jpeg', name: "2048", number: 51 },
     ];
     return (
 
@@ -45,11 +46,9 @@ export default class MultigameChoose extends Component {
         <Grid
           container
           direction="row"
-          alignItems="center"
-
+          style={{ backgroundImage: `url(${backgroundEnd})`,backgroundSize: '100% ',backgroundAttachment:'fixed'}}
         >
-
-          <Grid item xs={12} style={{ marginBottom: "1.5vh" }}>
+          <Grid item xs={12} >
             <Link to='/'>
               <StyledFab2 size="small" color="secondary" aria-label="add">
                 <ArrowBackIcon />
@@ -57,17 +56,20 @@ export default class MultigameChoose extends Component {
             </Link>
             <NavigationBar />
           </Grid>
-          {data.map((pic) => (
-            <Grid item xs={4} style={{ height: "23vh" }} key={pic.id} alignItems="center">
-              <Link to={`multigameChooser/tournamentLobby/${pic.id}`}>
-                <div style={{ textAlign: 'center' }}><img src={pic.src} alt="img" width="80%" />
-                </div>
-              </Link>
-              <Typography variant="body2" style={{textAlign:'center'}}>{pic.name}</Typography><Typography variant="body2" style={{textAlign:'center'}}>{pic.number} PLAYING NOW</Typography>
+
+          <Grid container item xs={12}    justifyContent='left' style={{ paddingTop:'2vh' ,backgroundAttachment:'fixed' }} >
+            {data.map((pic) => (
+              <Grid item xs={4} style={{ height: "23vh" }} key={pic.id} alignItems="center">
+                <Link to={`multigameChooser/tournamentLobby/${pic.id}`}>
+                  <div style={{ textAlign: 'center' }}><img src={pic.src} alt="img" width="80%" />
+                  </div>
+                </Link>
+                <Typography variant="body2" style={{ textAlign: 'center' }}color='primary'>{pic.name}</Typography><Typography variant="body2" style={{ textAlign: 'center' }}color='primary'>{pic.number} PLAYING NOW</Typography>
+              </Grid>
+            ))}
+            <Grid item xs={12} style={{ marginTop: "9vh" }}>
+              <EndBar />
             </Grid>
-          ))}
-          <Grid item xs={12} style={{ marginTop: "9vh" }}>
-            <EndBar />
           </Grid>
         </Grid>
       </Box>
