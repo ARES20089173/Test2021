@@ -22,43 +22,44 @@ const StyledFab2 = styled(Fab)({
 export default function MainPage() {
     return (
         <Box sx={{ flexGrow: 1 }}>
-                <Grid item xs={12}  >
+            <Grid item xs={12}  >
                     <NavigationBar />
                 </Grid>
-                <Grid container
-                    direction="row"
-                    justifyContent="center"
-                    alignItems="center"
-                    item xs={12} style={{ backgroundImage: `url(${backgroundEnd})`,backgroundSize: 'auto auto',backgroundAttachment:'fixed'}}>
-                    <Grid item xs={11}  marginTop={100} style={{marginTop:2}}>
-                    <div  style={{textAlign:'center'}}>
+            <Grid container
+                direction="row"
+                justifyContent="center"
+                alignItems="center"
+                style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: '100% 100%', backgroundAttachment: 'fixed' }}>
+                
+                <Grid item xs={11} style={{ marginTop: 3}} >
+                    <div style={{ textAlign: 'center' }}>
                         <Scrollbanner />
                     </div>
-                    </Grid>
-                    <Grid item xs={11} height="3vh">
-                        <Scrolltext />
-                        {/* <Grid xs={1}></Grid>
+                </Grid>
+                <Grid item xs={11} height="3vh">
+                    <Scrolltext />
+                    {/* <Grid xs={1}></Grid>
                     <Grid xs={10}><Scrolltext /></Grid>
                     <Grid xs={1}></Grid> */}
-                    </Grid>
-                    <Grid item xs={12} height="28vh">
-                        <GameChooser />
-                        <Link to='/multigameChooser'>
-                            <StyledFab2 size="small" color="secondary" aria-label="add">
-                                <ReadMoreIcon />
-                            </StyledFab2>
-                        </Link>
-                    </Grid>
-                    <Grid item xs={11} >
-                        <div  style={{textAlign:'center'}}>
-                        <InviteImage />
-                        </div >
-                    </Grid>
-
-                    <Grid item xs={12}  height="25vh">
-                        <EndBar />
-                    </Grid>
                 </Grid>
+                <Grid item xs={12} height="28vh">
+                    <GameChooser />
+                    <Link to='/multigameChooser'>
+                        <StyledFab2 size="small" color="secondary" aria-label="add">
+                            <ReadMoreIcon />
+                        </StyledFab2>
+                    </Link>
+                </Grid>
+                <Grid item xs={11} >
+                    <div style={{ textAlign: 'center' }}>
+                        <InviteImage />
+                    </div >
+                </Grid>
+
+                <Grid item xs={12} height="35vh">
+                    <EndBar />
+                </Grid>
+            </Grid>
         </Box>
     );
 }
