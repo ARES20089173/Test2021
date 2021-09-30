@@ -8,7 +8,7 @@ import linkiconBig from '../../graphsixBigger.svg'
 import Box from '@mui/material/Box'
 import Fab from '@mui/material/Fab';
 import { Typography } from '@mui/material'
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import HomeIcon from '@mui/icons-material/Home';
 import { Link } from "react-router-dom"
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
@@ -22,7 +22,7 @@ const StyledFab2 = styled(Fab)({
     position: 'absolute',
     zIndex: 1,
     top: "-3vh",
-    left: "-1vh",
+    left: "0vh",
 });
 export default function Linkbar() {
     const [linkiconcheck0, setlinkiconcheck0] = React.useState(true);
@@ -60,7 +60,7 @@ export default function Linkbar() {
         <Box sx={{ flexGrow: 1 }}>
             <Link to='/'>
                 <StyledFab2 size="small" color="secondary" aria-label="add">
-                    <ArrowBackIcon />
+                    <HomeIcon />
                 </StyledFab2>
             </Link>
             <Grid

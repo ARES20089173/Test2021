@@ -2,26 +2,70 @@ import React, { Component } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import backgroundEnd from "../../../reed_bg.svg"
-import { styled } from '@mui/material/styles';
-import EndBar from '../../framework/endbar';
+import { Link } from "react-router-dom"
+import EndBar from '../../framework/endbarWithback';
+import 'reactjs-popup/dist/index.css';
+import "./styles.css"
+import Popup from 'reactjs-popup';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import Fab from '@mui/material/Fab';
+// import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Typography from '@mui/material/Typography';
 import ImgTournamentLobby from '../../framework/imgtournamentlobby';
+import LobbyPopup from '../../framework/lobbypopup';
 import MenuIcon from '@mui/icons-material/Menu';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom"
 import puzzle from "../../../puzzle.svg"
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports'
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import Button from '@mui/material/Button';
-export default class TournamentLobby extends Component {
+import Slide from '@mui/material/Slide';
+import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
 
+export default class TournamentLobby extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { isToggleOn: true };
+        this.Mode = 1;
+
+        // This binding is necessary to make `this` work in the callback
+        this.handleClick = this.handleClick.bind(this);
+        this.oneVoneModehandleClick = this.oneVoneModehandleClick.bind(this);
+        this.challengerModehandleClick = this.challengerModehandleClick.bind(this);
+        this.BattleModehandleClick = this.BattleModehandleClick.bind(this);
+    }
+    handleClick() {
+        this.setState(prevState => ({
+            isToggleOn: !prevState.isToggleOn
+        }));
+    }
+    oneVoneModehandleClick() {
+        this.Mode = 0;
+        this.setState(prevState => ({
+            isToggleOn: !prevState.isToggleOn
+        }));
+    }
+    challengerModehandleClick() {
+        this.Mode = 1;
+        this.setState(prevState => ({
+            isToggleOn: !prevState.isToggleOn
+        }));
+    }
+    BattleModehandleClick() {
+        this.Mode = 2;
+        this.setState(prevState => ({
+            isToggleOn: !prevState.isToggleOn
+        }));
+    }
     render() {
+        const Mode = [
+            { id: 0, Modechoose: "oneVoneMode", embedId: "rokGy0huYEA",detail: "Chanllenger MODE is ......."  },
+            { id: 1, Modechoose: "challengerMode", embedId: "7HP8X7dadmM",detail: "1 ON 1 MODE is ......." },
+            { id: 2, Modechoose: "BattleMode",  embedId: "dWOm9KXJQLo", detail: "Battle MODE is ......." },
+        ]
         const oneVoneMode = [
             { id: 1, entryFee: 88, MaxPrize: 120 },
             { id: 2, entryFee: 848, MaxPrize: 1200 },
@@ -75,22 +119,23 @@ export default class TournamentLobby extends Component {
         //         { id: 3, entryFee: 828, MaxPrize: 3550 },
         //     ]
         // }
-        const StyledFab2 = styled(Fab)({
-            position: 'fixed',
-            bottom: "28%",
-            left: "0%",
 
-        });
+
+
+        // const StyledFab2 = styled(Fab)({
+        //     position: 'fixed',
+        //     bottom: "28%",
+        //     left: "0%",
+
+        // });
         return (
             <Box sx={{ flexGrow: 1 }}>
 
                 <Grid xs={12}  >
                     <React.Fragment>
-                        <Box sx={{ flexGrow: 1 }}>
+                        <Box sx={{ flexGrow: 1, }}>
                             <CssBaseline />
-                            <Toolbar />
-                            <Toolbar />
-                            <AppBar position="fixed" align='center' sx={{ top: 0, bottom: 'auto' }}>
+                            <AppBar position={this.state.isToggleOn ? 'fixed' : 'static'} align='center' sx={{ top: 0, bottom: 'auto' }}>
                                 <Toolbar>
                                     <Typography variant="h6" component="div" color='primary'>
                                     </Typography>
@@ -141,19 +186,25 @@ export default class TournamentLobby extends Component {
                                             </Typography>
                                         </Grid>
                                         <Grid item xs={2} >
-                                            <IconButton
-                                                size="large"
-                                                color="inherit"
-                                                aria-label="menu"
-                                                sx={{}}
-                                            ><SportsEsportsIcon />
-                                            </IconButton>
+                                            <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/gametutorial`}>
+                                                <IconButton
+                                                    size="large"
+                                                    color="inherit"
+                                                    aria-label="menu"
+                                                    sx={{}}
+                                                ><SportsEsportsIcon />
+                                                </IconButton>
+                                            </Link>
+
+
                                             <Typography variant="caption" component="div" sx={{ textAlign: 'center' }}>
                                                 Game
                                             </Typography>
                                             <Typography variant="caption" component="div" sx={{ textAlign: 'center' }}>
                                                 Tutorial
                                             </Typography>
+
+
                                         </Grid>
                                     </Toolbar>
                                 </div>
@@ -166,8 +217,47 @@ export default class TournamentLobby extends Component {
                     justifyContent='center'
                     style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: 'auto auto', backgroundAttachment: 'fixed' }}
                 >
-                    <Grid item xs={12} marginLeft="2vh" marginTop="7vh">
-                        <Typography variant="body2" component="div" color='primary'>1 ON 1 MODE(?)</Typography>
+                    <Grid item xs={12} marginLeft="2vh" marginTop="23vh">
+                        <Popup
+                            trigger={<div className="button"> <div onClick={this.oneVoneModehandleClick}><Typography color="primary"> 1 ON 1 Mode(?) </Typography></div></div>}
+                            modal
+                            closeOnDocumentClick={false}
+                            lockScroll
+                            nested
+                        >
+                            {close => (
+                                <div className="modal">
+                                    <button className="close" onClick={close}>
+                                        <div className="close" onClick={this.handleClick}>
+                                            &times;
+                                        </div>
+                                    </button>
+                                    <Grid xs={12} >
+                                        <Typography variant="h4" component="div" color='primary' textAlign='center'>
+                                            How to play
+                                        </Typography>
+                                        <Typography variant="h" component="div" color='primary' textAlign='center'>
+                                            {Mode[this.Mode].Modechoose}
+                                        </Typography>
+                                        <Grid item xs={12} height="45vh">
+                                            <div className="video-responsive">
+
+                                                <iframe
+                                                    src={`https://www.youtube.com/embed/${Mode[this.Mode].embedId}`}
+                                                    frameBorder="0"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                    allowFullScreen
+                                                    title="Embedded youtube"
+                                                />
+                                            </div>
+                                        </Grid>
+                                        <Typography variant="h4" component="div" color='primary' textAlign='center'>
+                                            POWERED BY R<KeyboardArrowDown/>
+                                        </Typography>
+                                    </Grid>
+                                </div>
+                            )}
+                        </Popup>
                     </Grid>
 
                     {oneVoneMode.map((content) => (
@@ -179,10 +269,10 @@ export default class TournamentLobby extends Component {
                                 justifyContent='center' xs={12} height='19vh'>
                                 <Grid item xs={3} style={{ border: "1px solid grey", textAlign: 'center' }}>
                                     <img src={puzzle} alt="gameicon" width="50%" />
-                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}color='primary'>
+                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
                                         {content.MaxPrize}
                                     </Typography>
-                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}color='primary'>
+                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
                                         GRAND GRADE PRIZE
                                     </Typography>
                                 </Grid><Grid item xs={8} height='19vh' style={{ border: "1px solid grey", backgroundImage: `url(${backgroundImage[0].src})`, backgroundSize: '100% 100%' }}>
@@ -192,7 +282,7 @@ export default class TournamentLobby extends Component {
                                     right: 60,
                                     fontSize: 20,
                                     marginTop: 100
-                                }}color='primary'>
+                                }} color='primary'>
                                     Entry fee:{content.entryFee}<img src={puzzle} alt="puzzleicon" />
                                 </Typography>
                                 <Button style={{
@@ -212,7 +302,46 @@ export default class TournamentLobby extends Component {
                     </Grid>
 
                     <Grid item xs={12} marginLeft="2vh">
-                        <Typography variant="body2" component="div" color='primary'>CHALLENGER MODE(?)</Typography>
+                        <Popup
+                            trigger={<div className="button"> <div onClick={this.challengerModehandleClick}> <Typography color="primary"> challengerMode(?)</Typography>  </div></div>}
+                            modal
+                            closeOnDocumentClick={false}
+                            lockScroll
+                            nested
+                        >
+                            {close => (
+                                <div className="modal">
+                                    <button className="close" onClick={close}>
+                                        <div className="close" onClick={this.handleClick}>
+                                            &times;
+                                        </div>
+                                    </button>
+                                    <Grid xs={12} >
+                                        <Typography variant="h4" component="div" color='primary' textAlign='center'>
+                                            How to play
+                                        </Typography>
+                                        <Typography variant="h" component="div" color='primary' textAlign='center'>
+                                            {Mode[this.Mode].Modechoose}
+                                        </Typography>
+                                        <Grid item xs={12} height="45vh">
+                                            <div className="video-responsive">
+
+                                                <iframe
+                                                    src={`https://www.youtube.com/embed/${Mode[this.Mode].embedId}`}
+                                                    frameBorder="0"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                    allowFullScreen
+                                                    title="Embedded youtube"
+                                                />
+                                            </div>
+                                        </Grid>
+                                        <Typography variant="h4" component="div" color='primary' textAlign='center'>
+                                            POWERED BY R<KeyboardArrowDown/>
+                                        </Typography>
+                                    </Grid>
+                                </div>
+                            )}
+                        </Popup>
                     </Grid>
                     {challengerMode.map((content) => (
                         <>
@@ -223,10 +352,10 @@ export default class TournamentLobby extends Component {
                                 justifyContent='center' xs={12} height='19vh'>
                                 <Grid item xs={3} style={{ border: "1px solid grey", textAlign: 'center' }} >
                                     <img src={puzzle} alt="gameicon" width="65%" style={{ marginTop: '2vh' }} />
-                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}color='primary'>
+                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
                                         {content.MaxPrize}
                                     </Typography>
-                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}color='primary'>
+                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
                                         GRAND GRADE PRIZE
                                     </Typography>
                                 </Grid>
@@ -237,7 +366,7 @@ export default class TournamentLobby extends Component {
                                         right: 50,
                                         fontSize: 20,
                                         marginTop: 100
-                                    }}color='primary'>
+                                    }} color='primary'>
                                         Entry fee:{content.entryFee}<img src={puzzle} alt="puzzleicon" />
                                     </Typography>
                                     <Button style={{
@@ -259,7 +388,48 @@ export default class TournamentLobby extends Component {
                     </Grid>
 
                     <Grid item xs={12} marginLeft="2vh">
-                        <Typography variant="body2" component="div" color='primary'>BATTLE MODE(?)</Typography>
+                        <Popup
+                            trigger={<div className="button"> <div onClick={this.BattleModehandleClick}><Typography color="primary"> Battle Mode(?) </Typography></div></div>}
+                            modal
+                            closeOnDocumentClick={false}
+                            lockScroll
+                            nested
+                        >
+                            {close => (
+                                <div className="modal">
+                                    <button className="close" onClick={close}>
+                                        <div className="close" onClick={this.handleClick}>
+                                            &times;
+                                        </div>
+                                    </button>
+                                    <Grid xs={12} >
+                                        <Typography variant="h4" component="div" color='primary' textAlign='center'>
+                                            How to play
+                                        </Typography>
+                                        <Typography variant="h" component="div" color='primary' textAlign='center'>
+                                            {Mode[this.Mode].Modechoose}
+                                        </Typography>
+                                        <Grid item xs={12} height="45vh">
+                                            <div className="video-responsive">
+
+                                                <iframe
+                                                    src={`https://www.youtube.com/embed/${Mode[this.Mode].embedId}`}
+                                                    frameBorder="0"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                    allowFullScreen
+                                                    title="Embedded youtube"
+                                                />
+                                            </div>
+                                        </Grid>
+                                        <Grid xs={12} positon='fixed'>
+                                        <Typography variant="h4" component="div" color='primary' textAlign='center'>
+                                            POWERED BY R<KeyboardArrowDown/>
+                                        </Typography>
+                                        </Grid>
+                                    </Grid>
+                                </div>
+                            )}
+                        </Popup>
                     </Grid>
                     {BattleMode.map((content) => (
                         <>
@@ -272,10 +442,10 @@ export default class TournamentLobby extends Component {
 
                                 <Grid item xs={3} style={{ border: "1px solid grey", textAlign: 'center' }} >
                                     <img src={puzzle} alt="gameicon" width="65%" style={{ marginTop: '2vh' }} />
-                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}color='primary'>
+                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
                                         {content.MaxPrize}
                                     </Typography>
-                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}color='primary'>
+                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
                                         GRAND GRADE PRIZE
                                     </Typography>
                                 </Grid>
@@ -285,7 +455,7 @@ export default class TournamentLobby extends Component {
                                         right: 50,
                                         fontSize: 20,
                                         marginTop: 100
-                                    }}color='primary'>
+                                    }} color='primary'>
                                         Entry fee:{content.entryFee}<img src={puzzle} alt="puzzleicon" />
                                     </Typography>
                                     <Button style={{
@@ -300,7 +470,8 @@ export default class TournamentLobby extends Component {
                             </Grid>
                         </>
                     ))}
-                    <Grid item xs={12} marginTop="0vh" >
+
+                    <Grid item xs={12} marginTop="0vh" display={this.state.isToggleOn ? 'block' : 'none'}>
                         <EndBar />
                     </Grid>
 
@@ -320,11 +491,12 @@ export default class TournamentLobby extends Component {
                         players
                     </Typography>
                 </Box>
-                <Link to='/multigamechooser'>
+                {/* <Link to='/multigamechooser'>
                     <StyledFab2 size="small" color="secondary" aria-label="add">
                         <ArrowBackIcon />
                     </StyledFab2>
-                </Link>
+                </Link> */}
+                <div id="popup-root" />
             </Box>
 
         );

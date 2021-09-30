@@ -1,4 +1,5 @@
 import { matchPath } from "react-router-dom"
+import GameTutorial from "./component/Pages/MainPage/GameTutorial";
 import MainPage from './component/Pages/MainPage/MainPage'
 import MultigameChooser from './component/Pages/MainPage/MultigameChooser';
 import TournamentLobby from './component/Pages/MainPage/TournamentLobby';
@@ -29,6 +30,13 @@ export const RouterConfig = [
       render: props => <TournamentLobby {...props} />,
       meta: {
         index: 2
+      }
+    },
+    {
+      path: '/multigameChooser/tournamentLobby/:id/gametutorial',
+      render: props => <GameTutorial {...props} />,
+      meta: {
+        index: 3
       }
     }
     

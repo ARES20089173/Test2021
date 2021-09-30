@@ -2,6 +2,7 @@ import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid'
 import CssBaseline from '@mui/material/CssBaseline';
 import Badge from '@mui/material/Badge'
 import Toolbar from '@mui/material/Toolbar';
@@ -9,6 +10,7 @@ import IconButton from '@mui/material/IconButton';
 import Fab from '@mui/material/Fab';
 import Typography from '@mui/material/Typography';
 import puzzle from '../../puzzle.svg';
+import backgroundEnd from "../../rees_bg2.svg"
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import AddIcon from '@mui/icons-material/Add';
 import LinkBarWithback from './linkbarwithback';
@@ -32,47 +34,57 @@ const StyledFab = styled(Fab)({
 export default function BottomAppBar() {
     return (
         <React.Fragment>
-       
+
             <Box sx={{ flexGrow: 1 }}>
                 <CssBaseline />
-                <AppBar color="transparent" position="fixed" align='center' sx={{ top: 'auto', bottom: 0 }}>
+                <AppBar color="transparent" position="fixed" align='center' sx={{ top: 'auto', bottom: 0 }} style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: "fixed", backgroundRepeat: 'no-repeat', backgroundAttachment: 'cover', heigth: "15vh" }}>
+                    <Grid
+                        container
+                        direction="row"
+                        justifyContent="center"
+                        alignItems="center"
 
-                    <LinkBarWithback />
+                    >
 
-                    <div style={{ backgroundColor: "yellow" }}>
-                        <Toolbar>
-                            <IconButton color="inherit" aria-label="open drawer">
-                                R
-                            </IconButton>
-                            <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
-                                <img src={puzzle} className="App-logo" alt="logo" />
-                                18.6k
-                                <Fab size="small" color="secondary" aria-label="add">
-                                    <AddIcon />
-                                </Fab>
-                            </Typography>
-                            <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
-                                <img src={puzzle} className="App-logo" alt="logo" />
-                                11.2k
-                                <Fab size="small" color="secondary" aria-label="add" >
-                                    <AddIcon />
-                                </Fab>
-                            </Typography>
-                            <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
-                                <img src={puzzle} className="App-logo" alt="logo" />
-                                13.9k
-                                <Fab size="small" color="secondary" aria-label="add">
-                                    <AddIcon />
-                                </Fab>
-                            </Typography>
-                            <Typography></Typography>
-                            <StyledFab size="small" color="secondary" aria-label="add">
-                                <StyledBadge badgeContent={200} color="secondary">
-                                    <NotificationsNoneIcon />
-                                </StyledBadge>
-                            </StyledFab>
-                        </Toolbar>
-                    </div>
+                        <Grid item xs={12} align='center' >
+                            <Toolbar>
+                                <LinkBarWithback />
+                            </Toolbar>
+                            <div style={{ backgroundColor: "white" }}>
+                                <Toolbar>
+                                    <IconButton color="inherit" aria-label="open drawer">
+                                        R
+                                    </IconButton>
+                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} >
+                                        <div style={{ border: '1px solid black', }}>
+                                            <img src={puzzle} className="App-logo" alt="logo" width="30%" />
+                                            18.6k<AddIcon style={{ width: 15, height: 15, }} />
+                                        </div>
+                                    </Typography>
+                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
+                                        <div style={{ border: '1px solid black', }}>
+                                            <img src={puzzle} className="App-logo" alt="logo" width="30%" />
+                                            11.2k<AddIcon style={{ width: 15, height: 15, }} />
+                                        </div>
+                                    </Typography>
+                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
+                                        <div style={{ border: '1px solid black', }}>
+                                            <img src={puzzle} className="App-logo" alt="logo" width="30%" />
+                                            13.9k<AddIcon style={{ width: 15, height: 15, }} />
+                                        </div>
+                                    </Typography>
+
+                                    <StyledFab size="small" color="secondary" aria-label="add">
+                                        <StyledBadge badgeContent={200} color="secondary">
+                                            <NotificationsNoneIcon />
+                                        </StyledBadge>
+                                    </StyledFab>
+                                </Toolbar>
+
+                            </div>
+                        </Grid>
+                    </Grid>
+
                 </AppBar>
                 <Toolbar sx={{
                     height: "25vh",

@@ -2,12 +2,12 @@ import React from 'react';
 import MainPage from './component/Pages/MainPage/MainPage'
 import MultigameChooser from './component/Pages/MainPage/MultigameChooser';
 import TournamentLobby from './component/Pages/MainPage/TournamentLobby';
+import GameTutorial from './component/Pages/MainPage/GameTutorial';
 import { RouterConfig, getMatchRouter }from './routerConfig';  
 import './App.css'
 import {
   BrowserRouter,
   Switch,
-  withRouter,
   Route,
 } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
@@ -62,6 +62,7 @@ let oldLocation = {}
             <Route exact path="/" component={MainPage}><MainPage /></Route>
             <Route exact path="/multigameChooser" component={MultigameChooser}><MultigameChooser /></Route>
             <Route exact path="/multigameChooser/tournamentLobby/:id" component={TournamentLobby} render={(props) => <TournamentLobby {...props} />} />
+            <Route exact path="/multigameChooser/tournamentLobby/:id/gametutorial" component={GameTutorial} render={(props) => <GameTutorial {...props} />} />
 
             ...
           </Switch>

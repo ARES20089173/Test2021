@@ -21,7 +21,7 @@ const StyledFab2 = styled(Fab)({
 });
 export default function MainPage() {
     return (
-        <Box sx={{ flexGrow: 1 }}>
+        <Box sx={{ flexGrow: 1 }}   style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: '100% 100%', backgroundAttachment: 'fixed' }}>
             <Grid item xs={12}  >
                     <NavigationBar />
                 </Grid>
@@ -29,7 +29,7 @@ export default function MainPage() {
                 direction="row"
                 justifyContent="center"
                 alignItems="center"
-                style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: '100% 100%', backgroundAttachment: 'fixed' }}>
+              >
                 
                 <Grid item xs={11} style={{ marginTop: 3}} >
                     <div style={{ textAlign: 'center' }}>

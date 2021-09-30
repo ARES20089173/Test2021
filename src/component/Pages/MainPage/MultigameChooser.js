@@ -1,21 +1,18 @@
 import React, { Component } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import { styled } from '@mui/material/styles'
-import Fab from '@mui/material/Fab';
 import backgroundEnd from "../../../reed_bg.svg"
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom"
 import NavigationBar from '../../framework/navigationBar';
-import EndBar from '../../framework/endbar';
+import EndBar from '../../framework/endbarWithback';
 import { Typography } from '@mui/material';
-const StyledFab2 = styled(Fab)({
-  position: 'fixed',
-  zIndex: 3,
-  bottom: "27%",
-  left: "0%",
+// const StyledFab2 = styled(Fab)({
+//   position: 'fixed',
+//   zIndex: 3,
+//   bottom: "27%",
+//   left: "0%",
 
-});
+// });
 export default class MultigameChoose extends Component {
   render() {
 
@@ -49,15 +46,15 @@ export default class MultigameChoose extends Component {
           style={{ backgroundImage: `url(${backgroundEnd})`,backgroundSize: '100% ',backgroundAttachment:'fixed'}}
         >
           <Grid item xs={12} >
-            <Link to='/'>
+            {/* <Link to='/'>
               <StyledFab2 size="small" color="secondary" aria-label="add">
                 <ArrowBackIcon />
               </StyledFab2>
-            </Link>
+            </Link> */}
             <NavigationBar />
           </Grid>
 
-          <Grid container item xs={12}    justifyContent='left' style={{ paddingTop:'2vh' ,backgroundAttachment:'fixed' }} >
+          <Grid container item xs={12}    justifyContent='center'style={{ paddingTop:'2vh' ,backgroundAttachment:'fixed' }} >
             {data.map((pic) => (
               <Grid item xs={4} style={{ height: "23vh" }} key={pic.id} alignItems="center">
                 <Link to={`multigameChooser/tournamentLobby/${pic.id}`}>
