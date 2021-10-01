@@ -2,6 +2,7 @@ import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
+import { Link } from 'react-router-dom';
 import Grid from '@mui/material/Grid'
 import Badge from '@mui/material/Badge'
 import backgroundEnd from "../../rees_bg2.svg"
@@ -72,12 +73,13 @@ export default function BottomAppBar() {
                                         13.9k<AddIcon style={{ width: 15, height: 15, }} />
                                         </div>
                                     </Typography>
-                                    
+                                    <Link to="/MessageCenter">
                                     <StyledFab size="small" color="secondary" aria-label="add">
                                         <StyledBadge badgeContent={200} color="secondary">
                                             <NotificationsNoneIcon />
                                         </StyledBadge>
                                     </StyledFab>
+                                    </Link>
                                 </Toolbar>
 
                             </div>

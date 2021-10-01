@@ -13,6 +13,7 @@ import puzzle from '../../puzzle.svg';
 import backgroundEnd from "../../rees_bg2.svg"
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import AddIcon from '@mui/icons-material/Add';
+import { Link } from 'react-router-dom';
 import LinkBarWithback from './linkbarwithback';
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
@@ -73,12 +74,13 @@ export default function BottomAppBar() {
                                             13.9k<AddIcon style={{ width: 15, height: 15, }} />
                                         </div>
                                     </Typography>
-
+                                    <Link to="/MessageCenter">
                                     <StyledFab size="small" color="secondary" aria-label="add">
                                         <StyledBadge badgeContent={200} color="secondary">
                                             <NotificationsNoneIcon />
                                         </StyledBadge>
                                     </StyledFab>
+                                    </Link>
                                 </Toolbar>
 
                             </div>

@@ -1,6 +1,7 @@
 import { matchPath } from "react-router-dom"
 import GameTutorial from "./component/Pages/MainPage/GameTutorial";
 import MainPage from './component/Pages/MainPage/MainPage'
+import MessageCenter from "./component/Pages/MainPage/MessageCenter";
 import MultigameChooser from './component/Pages/MainPage/MultigameChooser';
 import TournamentLobby from './component/Pages/MainPage/TournamentLobby';
 export const getMatchRouter = (pathname, configs) =>
@@ -19,6 +20,13 @@ export const RouterConfig = [
       }
     },
     {
+      path: '/MessageCenter',
+      render: props => <MessageCenter {...props} />,
+      meta: {
+        index: 1
+      }
+    },
+    {
       path: '/MultigameChooser',
       render: props => <MultigameChooser {...props} />,
       meta: {
@@ -33,7 +41,7 @@ export const RouterConfig = [
       }
     },
     {
-      path: '/multigameChooser/tournamentLobby/:id/gametutorial',
+      path: '/gametutorial',
       render: props => <GameTutorial {...props} />,
       meta: {
         index: 3

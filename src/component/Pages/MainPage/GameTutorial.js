@@ -4,17 +4,23 @@ import Toolbar from '@mui/material/Toolbar'
 import AppBar from '@mui/material/AppBar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-import PropTypes from "prop-types";
 import MenuIcon from '@mui/icons-material/Menu';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
-import EndBar from '../../framework/endbarWithback';
 import Grid from '@mui/material/Grid';
 import Fab from '@mui/material/Fab';
 import { styled } from '@mui/material/styles'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom"
+import HomeIcon from '@mui/icons-material/Home'
 import "./styles.css"
+const StyledFab = styled(Fab)({
+    position: 'fixed',
+    zIndex: 3,
+    top: "75vh",
+    left: 0,
+
+});
 const StyledFab2 = styled(Fab)({
     position: 'relative',
     zIndex: 3,
@@ -29,12 +35,18 @@ export default class GameTutorial extends Component {
     render() {
 
         const data = [
-            { id: 0, embedId: "rokGy0huYEA", name: "PAID TO PLAY&EARN/CHALLENGER MODE", detail:"CHALLENGER MODE is ......." },
+            { id: 0, embedId: "rokGy0huYEA", name: "PAID TO PLAY&EARN/CHALLENGER MODE", detail: "CHALLENGER MODE is ......." },
             { id: 1, embedId: "dWOm9KXJQLo", name: "PAID TO PLAY&EARN/Battle MODE", detail: "Battle MODE is ......." },
-            { id: 2, embedId: "7HP8X7dadmM", name: "PAID TO PLAY&EARN/1 ON 1 MODE", detail:"1 ON 1 MODE is ......."  },
+            { id: 2, embedId: "7HP8X7dadmM", name: "PAID TO PLAY&EARN/1 ON 1 MODE", detail: "1 ON 1 MODE is ......." },
         ];
         return (
+
             <Box sx={{ flexGrow: 1 }}>
+                <Link to='/'>
+                    <StyledFab size="small" color="secondary" aria-label="add">
+                        <HomeIcon />
+                    </StyledFab>
+                </Link>
                 <Grid item xs={12}  >
                 </Grid>
                 <Grid container
@@ -51,7 +63,7 @@ export default class GameTutorial extends Component {
                                 <AppBar position="fixed" align='center' sx={{ top: 0 }}>
                                     <Toolbar>
                                         <Typography variant="h6" component="div" sx={{}}>
-                                            <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}`}>
+                                            <Link to={`/`}>
                                                 <StyledFab2 size="small" color="secondary" aria-label="add">
                                                     <ArrowBackIcon />
                                                 </StyledFab2>
@@ -76,7 +88,7 @@ export default class GameTutorial extends Component {
                         <Toolbar />
                     </Grid>
                     <Grid container item xs={12} justifyContent='center' style={{ paddingTop: '2vh', backgroundAttachment: 'fixed' }} >
-                    <Grid item xs={11}><Typography color="primary" variant="h6" >Puzzle chase</Typography></Grid>
+                        <Grid item xs={11}><Typography color="primary" variant="h6" >Puzzle chase</Typography></Grid>
                         {data.map((video) => (
 
                             <Grid item xs={11} key={video.id} height="45vh">
@@ -95,9 +107,6 @@ export default class GameTutorial extends Component {
                                 <Typography color="primary"> detail</Typography>
                             </Grid>
                         ))}
-                        <Grid item xs={12} style={{ marginTop: "9vh" }}>
-                            <EndBar />
-                        </Grid>
                     </Grid>
                 </Grid>
             </Box >

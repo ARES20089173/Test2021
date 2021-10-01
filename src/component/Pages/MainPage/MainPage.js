@@ -31,7 +31,7 @@ export default function MainPage() {
                 alignItems="center"
               >
                 
-                <Grid item xs={11} style={{ marginTop: 3}} >
+                <Grid item xs={11} style={{ marginTop: -38}} >
                     <div style={{ textAlign: 'center' }}>
                         <Scrollbanner />
                     </div>
@@ -56,7 +56,7 @@ export default function MainPage() {
                     </div >
                 </Grid>
 
-                <Grid item xs={12} height="35vh">
+                <Grid item xs={12} height="30vh">
                     <EndBar />
                 </Grid>
             </Grid>

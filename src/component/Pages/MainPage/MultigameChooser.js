@@ -54,7 +54,7 @@ export default class MultigameChoose extends Component {
             <NavigationBar />
           </Grid>
 
-          <Grid container item xs={12}    justifyContent='center'style={{ paddingTop:'2vh' ,backgroundAttachment:'fixed' }} >
+          <Grid container item xs={12}    justifyContent='left'style={{ paddingTop:'2vh' ,backgroundAttachment:'fixed' }} >
             {data.map((pic) => (
               <Grid item xs={4} style={{ height: "23vh" }} key={pic.id} alignItems="center">
                 <Link to={`multigameChooser/tournamentLobby/${pic.id}`}>

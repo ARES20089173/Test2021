@@ -11,6 +11,7 @@ import {
   Route,
 } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
+import MessageCenter from './component/Pages/MainPage/MessageCenter';
 const ANIMATION_MAP = {
   PUSH: 'forward',
   POP: 'back',
@@ -60,9 +61,10 @@ let oldLocation = {}
         <div>
           <Switch location={location}>
             <Route exact path="/" component={MainPage}><MainPage /></Route>
+            <Route exact path="/MessageCenter" component={MessageCenter}><MessageCenter/></Route>
             <Route exact path="/multigameChooser" component={MultigameChooser}><MultigameChooser /></Route>
             <Route exact path="/multigameChooser/tournamentLobby/:id" component={TournamentLobby} render={(props) => <TournamentLobby {...props} />} />
-            <Route exact path="/multigameChooser/tournamentLobby/:id/gametutorial" component={GameTutorial} render={(props) => <GameTutorial {...props} />} />
+            <Route exact path="/gametutorial" component={GameTutorial} render={(props) => <GameTutorial {...props} />} />
 
             ...
           </Switch>

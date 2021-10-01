@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import backgroundEnd from "../../../reed_bg.svg"
-import { Link } from "react-router-dom"
 import EndBar from '../../framework/endbarWithback';
 import 'reactjs-popup/dist/index.css';
 import "./styles.css"
+import "../../framework/css/cssModFLooby.css"
 import Popup from 'reactjs-popup';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
@@ -171,7 +171,7 @@ export default class TournamentLobby extends Component {
                                             </Typography>
                                         </Grid>
                                         <Grid item xs={2} >
-                                            <IconButton
+                                            {/* <IconButton
                                                 size="large"
                                                 color="inherit"
                                                 aria-label="menu"
@@ -183,10 +183,10 @@ export default class TournamentLobby extends Component {
                                             </Typography>
                                             <Typography variant="caption" component="div" sx={{ textAlign: 'center' }}>
                                                 practice
-                                            </Typography>
+                                            </Typography> */}
                                         </Grid>
                                         <Grid item xs={2} >
-                                            <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/gametutorial`}>
+                                            {/* <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/gametutorial`}>
                                                 <IconButton
                                                     size="large"
                                                     color="inherit"
@@ -202,10 +202,9 @@ export default class TournamentLobby extends Component {
                                             </Typography>
                                             <Typography variant="caption" component="div" sx={{ textAlign: 'center' }}>
                                                 Tutorial
-                                            </Typography>
-
-
+                                            </Typography> */}
                                         </Grid>
+
                                     </Toolbar>
                                 </div>
                             </AppBar>
@@ -217,7 +216,7 @@ export default class TournamentLobby extends Component {
                     justifyContent='center'
                     style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: 'auto auto', backgroundAttachment: 'fixed' }}
                 >
-                    <Grid item xs={12} marginLeft="2vh" marginTop="23vh">
+                    <Grid item xs={12} marginLeft="2vh" marginTop="20vh">
                         <Popup
                             trigger={<div className="button"> <div onClick={this.oneVoneModehandleClick}><Typography color="primary"> 1 ON 1 Mode(?) </Typography></div></div>}
                             modal
