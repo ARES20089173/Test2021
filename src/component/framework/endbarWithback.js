@@ -56,24 +56,26 @@ export default function BottomAppBar() {
                                     <IconButton color="inherit" aria-label="open drawer">
                                         R
                                     </IconButton>
-                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} >
+                                    <Grid xs={12} container>
+                                    <Grid  xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} >
                                         <div style={{ border: '1px solid black', }}>
                                             <img src={puzzle} className="App-logo" alt="logo" width="30%" />
                                             18.6k<AddIcon style={{ width: 15, height: 15, }} />
                                         </div>
-                                    </Typography>
-                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
+                                    </Grid>
+                                    <Grid xs={4}  variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
                                         <div style={{ border: '1px solid black', }}>
                                             <img src={puzzle} className="App-logo" alt="logo" width="30%" />
                                             11.2k<AddIcon style={{ width: 15, height: 15, }} />
                                         </div>
-                                    </Typography>
-                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
-                                        <div style={{ border: '1px solid black', }}>
-                                            <img src={puzzle} className="App-logo" alt="logo" width="30%" />
-                                            13.9k<AddIcon style={{ width: 15, height: 15, }} />
+                                    </Grid>
+                                    <Grid xs={4}  variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center'}}>
+                                        <div style={{ border: '1px solid black',height:'100%' }}>
+                                            <img src={puzzle} className="App-logo" alt="logo" width="30%"  />
+                                            13.9k
                                         </div>
-                                    </Typography>
+                                    </Grid>
+                                    </Grid>
                                     <Link to="/MessageCenter">
                                     <StyledFab size="small" color="secondary" aria-label="add">
                                         <StyledBadge badgeContent={200} color="secondary">

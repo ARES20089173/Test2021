@@ -27,6 +27,13 @@ export const RouterConfig = [
       }
     },
     {
+      path: '/MessageCenter/CenterSetting',
+      render: props => <MessageCenter {...props} />,
+      meta: {
+        index: 2
+      }
+    },
+    {
       path: '/MultigameChooser',
       render: props => <MultigameChooser {...props} />,
       meta: {

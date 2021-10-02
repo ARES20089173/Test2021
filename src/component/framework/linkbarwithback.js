@@ -108,21 +108,22 @@ export default function Linkbar() {
                 </Grid>
                 <Grid item xs={2}>
                 </Grid>
-                <Grid item xs={2}>
-                    <Typography align='center' variant="caption">Player@Earn</Typography>
+                <Grid item xs={2} >
+                    <Typography align='left' variant="caption" color='primary' fontSize="1">
+                        Player@Earn
+                        </Typography>
                 </Grid>
                 <Grid item xs={2}>
-                    <Typography align='center' variant="caption">Shop</Typography>
+                    <Typography align='center' variant="caption" color='primary'>Shop</Typography>
                 </Grid>
                 <Grid item xs={2}>
-                    <Typography align='center' variant="body2">Wallet</Typography>
+                    <Typography align='center' variant="caption" color='primary'>Wallet</Typography>
                 </Grid>
                 <Grid item xs={2}>
-                    <Typography align='center' variant="body2">History</Typography>
+                    <Typography align='center' variant="caption"color='primary'>History</Typography>
                 </Grid>
-
                 <Grid item xs={2}>
-                    <Typography align='center' variant="body2">Mission</Typography>
+                    <Typography align='center' variant="caption"color='primary'>Mission</Typography>
                 </Grid>
                 <Grid item xs={2}>
                 </Grid>

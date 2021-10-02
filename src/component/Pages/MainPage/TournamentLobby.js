@@ -60,11 +60,12 @@ export default class TournamentLobby extends Component {
             isToggleOn: !prevState.isToggleOn
         }));
     }
+
     render() {
         const Mode = [
-            { id: 0, Modechoose: "oneVoneMode", embedId: "rokGy0huYEA",detail: "Chanllenger MODE is ......."  },
-            { id: 1, Modechoose: "challengerMode", embedId: "7HP8X7dadmM",detail: "1 ON 1 MODE is ......." },
-            { id: 2, Modechoose: "BattleMode",  embedId: "dWOm9KXJQLo", detail: "Battle MODE is ......." },
+            { id: 0, Modechoose: "oneVoneMode", embedId: "rokGy0huYEA", detail: "Chanllenger MODE is ......." },
+            { id: 1, Modechoose: "challengerMode", embedId: "7HP8X7dadmM", detail: "1 ON 1 MODE is ......." },
+            { id: 2, Modechoose: "BattleMode", embedId: "dWOm9KXJQLo", detail: "Battle MODE is ......." },
         ]
         const oneVoneMode = [
             { id: 1, entryFee: 88, MaxPrize: 120 },
@@ -82,6 +83,11 @@ export default class TournamentLobby extends Component {
             { id: 3, entryFee: 828, MaxPrize: 3550 },
         ]
 
+        const BattleModeItem = BattleMode.map((number) =>{
+            if(number.entryFee==50){
+               return <div>{number.entryFee}</div>
+            }
+        });
         const data = [
             { id: 0, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 },
             { id: 1, src: '/img/square1.jpeg', name: "原神", number: 56, entryFee: 848 },
@@ -141,6 +147,7 @@ export default class TournamentLobby extends Component {
                                     </Typography>
                                     <Typography variant="body1" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
                                         CHOOSE YOUR FAVORITE MODE
+                                        {BattleModeItem}
                                     </Typography>
                                     <IconButton
                                         size="large"
@@ -251,7 +258,7 @@ export default class TournamentLobby extends Component {
                                             </div>
                                         </Grid>
                                         <Typography variant="h4" component="div" color='primary' textAlign='center'>
-                                            POWERED BY R<KeyboardArrowDown/>
+                                            POWERED BY R<KeyboardArrowDown />
                                         </Typography>
                                     </Grid>
                                 </div>
@@ -335,7 +342,7 @@ export default class TournamentLobby extends Component {
                                             </div>
                                         </Grid>
                                         <Typography variant="h4" component="div" color='primary' textAlign='center'>
-                                            POWERED BY R<KeyboardArrowDown/>
+                                            POWERED BY R<KeyboardArrowDown />
                                         </Typography>
                                     </Grid>
                                 </div>
@@ -421,9 +428,9 @@ export default class TournamentLobby extends Component {
                                             </div>
                                         </Grid>
                                         <Grid xs={12} positon='fixed'>
-                                        <Typography variant="h4" component="div" color='primary' textAlign='center'>
-                                            POWERED BY R<KeyboardArrowDown/>
-                                        </Typography>
+                                            <Typography variant="h4" component="div" color='primary' textAlign='center'>
+                                                POWERED BY R<KeyboardArrowDown />
+                                            </Typography>
                                         </Grid>
                                     </Grid>
                                 </div>
