@@ -49,14 +49,14 @@ const StyledFab2 = styled(Fab)({
 export default class MessageCenter extends Component {
     render() {
         const data = [
-            { id: 0, icon: puzzle, setname: "Assetchange",time:null },
-            { id: 1, icon: m, setname: "System Message",time:"sunday" },
-            { id: 2, icon: gamepad, setname: "Game Results & Rewards",time:"sunday"},
-            { id: 3, icon: heart, setname: "Engagement Notify",time:"sunday" },
-            { id: 4, icon: money, setname: "Transaction Notify",time:null },
-            { id: 5, icon: game, setname: "New Battle Challengers",time:null },
-            { id: 6, icon: event, setname: "Events & Discounts Reminder",time:null },
-            { id: 7, icon: r, setname: "REES Teams Announcement",time:null },
+            { id: 0, icon: puzzle, setname: "(puzzle icon)  assets related notification",time:null },
+            { id: 1, icon: m, setname: "(m icon) mission related notification",time:"sunday" },
+            { id: 2, icon: gamepad, setname: "(gamepad  icon) 1ON1 mode related notification",time:"sunday"},
+            { id: 3, icon: heart, setname: "(heart icon) players related, engagement notification",time:"sunday" },
+            { id: 4, icon: money, setname: "(money icon)finance related notification",time:null },
+            { id: 5, icon: game, setname: "(gamepad  icon) Battle mode NEW challenger related notification",time:null },
+            { id: 6, icon: event, setname: "(event icon)events & discount  related notification",time:null },
+            { id: 7, icon: r, setname: "(R icon) game news, rees team  related notification",time:null },
             { id: 8, icon: switched, setname: "Swith Off All Tutorials Button",time:null },
 
         ];
@@ -78,18 +78,10 @@ export default class MessageCenter extends Component {
                     height="11vh"
                     style={{ backgroundColor: '#707070' }}>
 
-                    <Grid item xs={9} style={{ textAlign: 'left', paddingLeft: '6vh' }} >
+                    <Grid item xs={12} style={{ textAlign: 'left', paddingLeft: '6vh' }} >
                         <img src={data.icon} width="9%" />
                         <Typography variant="caption" color="#ffffff" style={{ overflowWrap: 'break-word' }} display="inline"> {data.setname}
                         </Typography>
-                    </Grid>
-                    <Grid item xs={1} ></Grid>
-                    <Grid item xs={2}>
-                        <Switch
-                            defaultChecked
-                            onChange={handleChange}
-                            inputProps={{ 'aria-label': 'controlled' }}
-                        />
                     </Grid>
                 </Grid>
             }
@@ -103,18 +95,10 @@ export default class MessageCenter extends Component {
 
                     style={{ backgroundColor: "black" }}>
 
-                    <Grid item xs={9} style={{ textAlign: 'left', paddingLeft: '6vh' }} >
+                    <Grid item xs={12} style={{ textAlign: 'left', paddingLeft: '6vh' }} >
                         <img src={data.icon} width="9%" />
                         <Typography variant="caption" color="#ffffff" style={{ overflowWrap: 'break-word' }} display="inline"> {data.setname}
                         </Typography>
-                    </Grid>
-                    <Grid item xs={1} ></Grid>
-                    <Grid item xs={2}>
-                        <Switch
-                            defaultChecked
-                            onChange={handleChange}
-                            inputProps={{ 'aria-label': 'controlled' }}
-                        />
                     </Grid>
                 </Grid>
             }
