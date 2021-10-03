@@ -145,7 +145,7 @@ export default class TournamentLobby extends Component {
                                 <Toolbar>
                                     <Typography variant="h6" component="div" color='primary'>
                                     </Typography>
-                                    <Typography variant="body1" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
+                                    <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
                                         CHOOSE YOUR FAVORITE MODE
                                         {BattleModeItem}
                                     </Typography>

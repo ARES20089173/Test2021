@@ -1,5 +1,8 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
+import Popup from 'reactjs-popup';
+import SwieprConent from './swiperContentsmall';
+import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid'
@@ -31,7 +34,13 @@ const StyledFab = styled(Fab)({
     right: 0,
     margin: '0 86%',
 });
-
+const contentStyle = {
+    marginTop: '45%',
+    background: '#cfcece',
+    width: "99%",
+    height: "48%",
+    borderRadius: "5%",
+};
 export default function BottomAppBar() {
     return (
         <React.Fragment>
@@ -59,14 +68,50 @@ export default function BottomAppBar() {
                                     <Grid xs={12} container>
                                     <Grid  xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} >
                                         <div style={{ border: '1px solid black', }}>
-                                            <img src={puzzle} className="App-logo" alt="logo" width="30%" />
-                                            18.6k<AddIcon style={{ width: 15, height: 15, }} />
-                                        </div>
-                                    </Grid>
-                                    <Grid xs={4}  variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
-                                        <div style={{ border: '1px solid black', }}>
-                                            <img src={puzzle} className="App-logo" alt="logo" width="30%" />
-                                            11.2k<AddIcon style={{ width: 15, height: 15, }} />
+                                        <Popup
+                                                    trigger={<div className="button">  <img src={puzzle} className="App-logo" alt="logo" width="30%" />18.6k<AddIcon style={{ width: 15, height: 15, }} /></div>}
+                                                    modal
+                                                    closeOnDocumentClick={false}
+                                                    lockScroll
+                                                    nested
+                                                    {...{ contentStyle }}
+                                                >
+                                                    {close => (
+                                                        <div className="modal">
+                                                            <button className="close" onClick={close}>
+                                                                <div className="close" >
+                                                                    &times;
+                                                                </div>
+                                                            </button>
+                                                         <SwieprConent/>
+                                                        </div>
+
+                                                    )}
+                                                </Popup>
+                                            </div>
+                                        </Grid>
+                                        <Grid xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
+                                            <div style={{ border: '1px solid black', }}>
+                                                <Popup
+                                                    trigger={<div className="button">  <img src={puzzle} className="App-logo" alt="logo" width="30%" />11.2k<AddIcon style={{ width: 15, height: 15, }} /></div>}
+                                                    modal
+                                                    closeOnDocumentClick={false}
+                                                    lockScroll
+                                                    nested
+                                                    {...{ contentStyle }}
+                                                >
+                                                    {close => (
+                                                        <div className="modal">
+                                                            <button className="close" onClick={close}>
+                                                                <div className="close" >
+                                                                    &times;
+                                                                </div>
+                                                            </button>
+                                                         <SwieprConent/>
+                                                        </div>
+
+                                                    )}
+                                                </Popup>
                                         </div>
                                     </Grid>
                                     <Grid xs={4}  variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center'}}>
