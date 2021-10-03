@@ -45,13 +45,13 @@ const StyledFab2 = styled(Fab)({
 export default class MessageCenter extends Component {
     render() {
         const data = [
-            { id: 0, icon: NotificationsActiveIcon, title: "Notification", detail: "layers, Assets, Finance, Function, Mission,Game News, Game Mode, Related Notice" },
-            { id: 1, icon: WhatsAppIcon, title: "Live Chat", detail: "Players, Assets, Finance, Function, Mission,Game News, Game Mode, Related Notice" },
-            { id: 2, icon: MoodIcon, title: "REES Community Notify", detail: "Players, Assets, Finance, Function, Mission,Game News, Game Mode, Related Notice" },
+            { id: 0, icon: NotificationsActiveIcon, title: "Notification", detail: "layers, Assets, Finance, Function, Mission,Game News, Game Mode, Related Notice",link:"/MessageCenter/Notification" },
+            { id: 1, icon: WhatsAppIcon, title: "Live Chat", detail: "Players, Assets, Finance, Function, Mission,Game News, Game Mode, Related Notice",link:"/"},
+            { id: 2, icon: MoodIcon, title: "REES Community Notify", detail: "Players, Assets, Finance, Function, Mission,Game News, Game Mode, Related Notice",link:"/" },
         ];
         const data2 = data.map((message) => {
             if (message.id % 2 == 0) {
-                return  <Link to="" style={{ textDecoration: 'none', color: '#FFF' }}>
+                return  <Link to={message.link} style={{ textDecoration: 'none', color: '#FFF' }}>
                     <Grid container
                         direction="row"
                         justifyContent="center"
@@ -67,7 +67,7 @@ export default class MessageCenter extends Component {
                     </Grid>
                 </Link>
             } else {
-                return <Link to="" style={{ textDecoration: 'none', color: '#FFF' }}>
+                return <Link to={message.link} style={{ textDecoration: 'none', color: '#FFF' }}>
                 <Grid container
                     direction="row"
                     justifyContent="center"

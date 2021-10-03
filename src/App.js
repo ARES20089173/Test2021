@@ -4,6 +4,7 @@ import CenterSetting from './component/Pages/MainPage/CenterSetting'
 import MultigameChooser from './component/Pages/MainPage/MultigameChooser';
 import TournamentLobby from './component/Pages/MainPage/TournamentLobby';
 import GameTutorial from './component/Pages/MainPage/GameTutorial';
+import Notification from './component/Pages/MainPage/Notification'
 import { RouterConfig, getMatchRouter }from './routerConfig';  
 import './App.css'
 import {
@@ -63,6 +64,7 @@ let oldLocation = {}
           <Switch location={location}>
             <Route exact path="/" component={MainPage}><MainPage /></Route>
             <Route exact path="/MessageCenter" component={MessageCenter}><MessageCenter/></Route>
+            <Route exact path="/MessageCenter/Notification" component={Notification}><Notification/></Route>
             <Route exact path="/MessageCenter/CenterSetting" component={CenterSetting}><CenterSetting/></Route>
             <Route exact path="/multigameChooser" component={MultigameChooser}><MultigameChooser /></Route>
             <Route exact path="/multigameChooser/tournamentLobby/:id" component={TournamentLobby} render={(props) => <TournamentLobby {...props} />} />
