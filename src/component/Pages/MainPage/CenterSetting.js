@@ -133,7 +133,7 @@ export default class MessageCenter extends Component {
                             <CssBaseline />
                             <AppBar position="fixed" align='center' sx={{ top: 0 }}>
                                 <Toolbar>
-                                    <Link to='/'>
+                                    <Link to='/MessageCenter'>
                                         <StyledFab2 size="small" color="secondary" aria-label="add">
                                             <ArrowBackIcon />
                                         </StyledFab2>

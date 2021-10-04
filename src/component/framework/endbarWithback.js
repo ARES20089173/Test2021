@@ -35,10 +35,10 @@ const StyledFab = styled(Fab)({
     margin: '0 86%',
 });
 const contentStyle = {
-    marginTop: '45%',
+    marginTop: '40%',
     background: '#cfcece',
     width: "99%",
-    height: "48%",
+    height: "51%",
     borderRadius: "5%",
 };
 export default function BottomAppBar() {
@@ -71,7 +71,6 @@ export default function BottomAppBar() {
                                         <Popup
                                                     trigger={<div className="button">  <img src={puzzle} className="App-logo" alt="logo" width="30%" />18.6k<AddIcon style={{ width: 15, height: 15, }} /></div>}
                                                     modal
-                                                    closeOnDocumentClick={false}
                                                     lockScroll
                                                     nested
                                                     {...{ contentStyle }}
@@ -95,7 +94,6 @@ export default function BottomAppBar() {
                                                 <Popup
                                                     trigger={<div className="button">  <img src={puzzle} className="App-logo" alt="logo" width="30%" />11.2k<AddIcon style={{ width: 15, height: 15, }} /></div>}
                                                     modal
-                                                    closeOnDocumentClick={false}
                                                     lockScroll
                                                     nested
                                                     {...{ contentStyle }}

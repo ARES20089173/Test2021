@@ -2,6 +2,8 @@ import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import SwieprConent from './swiperContent';
 import AppBar from '@mui/material/AppBar';
+import "./css/cssModFLooby.css"
+import "./css/cssFGamechooser.css"
 import Popup from 'reactjs-popup';
 import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
 import Box from '@mui/material/Box';
@@ -21,7 +23,7 @@ const contentStyle = {
     marginTop: '20%',
     background: '#cfcece',
     width: "99%",
-    height: "65%",
+    height: "70%",
     borderRadius: "5%",
 };
 const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -71,7 +73,6 @@ export default function BottomAppBar() {
                                             <Popup
                                                     trigger={<div className="button">  <img src={puzzle} className="App-logo" alt="logo" width="30%" />18.6k<AddIcon style={{ width: 15, height: 15, }} /></div>}
                                                     modal
-                                                    closeOnDocumentClick={false}
                                                     lockScroll
                                                     nested
                                                     {...{ contentStyle }}
@@ -95,7 +96,6 @@ export default function BottomAppBar() {
                                                 <Popup
                                                     trigger={<div className="button">  <img src={puzzle} className="App-logo" alt="logo" width="30%" />11.2k<AddIcon style={{ width: 15, height: 15, }} /></div>}
                                                     modal
-                                                    closeOnDocumentClick={false}
                                                     lockScroll
                                                     nested
                                                     {...{ contentStyle }}
@@ -107,7 +107,9 @@ export default function BottomAppBar() {
                                                                     &times;
                                                                 </div>
                                                             </button>
+                                                        <div>
                                                          <SwieprConent/>
+                                                         </div  >
                                                         </div>
 
                                                     )}

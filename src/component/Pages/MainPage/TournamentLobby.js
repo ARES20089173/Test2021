@@ -24,42 +24,48 @@ import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import Button from '@mui/material/Button';
 import Slide from '@mui/material/Slide';
 import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
-
+const contentStyle = {
+    marginTop: '37%',
+    background: '#cfcece',
+    width: "99%",
+    height: "50%",
+    borderRadius: "5%",
+};
 export default class TournamentLobby extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { isToggleOn: true };
-        this.Mode = 1;
+    // constructor(props) {
+    //     super(props);
+    //     this.state = { isToggleOn: true };
+    //     this.Mode = 1;
 
-        // This binding is necessary to make `this` work in the callback
-        this.handleClick = this.handleClick.bind(this);
-        this.oneVoneModehandleClick = this.oneVoneModehandleClick.bind(this);
-        this.challengerModehandleClick = this.challengerModehandleClick.bind(this);
-        this.BattleModehandleClick = this.BattleModehandleClick.bind(this);
-    }
-    handleClick() {
-        this.setState(prevState => ({
-            isToggleOn: !prevState.isToggleOn
-        }));
-    }
-    oneVoneModehandleClick() {
-        this.Mode = 0;
-        this.setState(prevState => ({
-            isToggleOn: !prevState.isToggleOn
-        }));
-    }
-    challengerModehandleClick() {
-        this.Mode = 1;
-        this.setState(prevState => ({
-            isToggleOn: !prevState.isToggleOn
-        }));
-    }
-    BattleModehandleClick() {
-        this.Mode = 2;
-        this.setState(prevState => ({
-            isToggleOn: !prevState.isToggleOn
-        }));
-    }
+    //     // This binding is necessary to make `this` work in the callback
+    //     this.handleClick = this.handleClick.bind(this);
+    //     this.oneVoneModehandleClick = this.oneVoneModehandleClick.bind(this);
+    //     this.challengerModehandleClick = this.challengerModehandleClick.bind(this);
+    //     this.BattleModehandleClick = this.BattleModehandleClick.bind(this);
+    // }
+    // handleClick() {
+    //     this.setState(prevState => ({
+    //         isToggleOn: !prevState.isToggleOn
+    //     }));
+    // }
+    // oneVoneModehandleClick() {
+    //     this.Mode = 0;
+    //     this.setState(prevState => ({
+    //         isToggleOn: !prevState.isToggleOn
+    //     }));
+    // }
+    // challengerModehandleClick() {
+    //     this.Mode = 1;
+    //     this.setState(prevState => ({
+    //         isToggleOn: !prevState.isToggleOn
+    //     }));
+    // }
+    // BattleModehandleClick() {
+    //     this.Mode = 2;
+    //     this.setState(prevState => ({
+    //         isToggleOn: !prevState.isToggleOn
+    //     }));
+    // }
 
     render() {
         const Mode = [
@@ -141,7 +147,7 @@ export default class TournamentLobby extends Component {
                     <React.Fragment>
                         <Box sx={{ flexGrow: 1, }}>
                             <CssBaseline />
-                            <AppBar position={this.state.isToggleOn ? 'fixed' : 'static'} align='center' sx={{ top: 0, bottom: 'auto' }}>
+                            <AppBar position='fixed' align='center' sx={{ top: 0, bottom: 'auto' }}>
                                 <Toolbar>
                                     <Typography variant="h6" component="div" color='primary'>
                                     </Typography>
@@ -227,9 +233,9 @@ export default class TournamentLobby extends Component {
                         <Popup
                             trigger={<div className="button"> <div onClick={this.oneVoneModehandleClick}><Typography color="primary"> 1 ON 1 Mode(?) </Typography></div></div>}
                             modal
-                            closeOnDocumentClick={false}
                             lockScroll
                             nested
+                            {...{ contentStyle }}
                         >
                             {close => (
                                 <div className="modal">
@@ -239,17 +245,17 @@ export default class TournamentLobby extends Component {
                                         </div>
                                     </button>
                                     <Grid xs={12} >
-                                        <Typography variant="h4" component="div" color='primary' textAlign='center'>
+                                        <Typography variant="h6" component="div" color='primary' textAlign='center'>
                                             How to play
                                         </Typography>
-                                        <Typography variant="h" component="div" color='primary' textAlign='center'>
-                                            {Mode[this.Mode].Modechoose}
+                                        <Typography variant="caption" component="div" color='primary' textAlign='center'>
+                                            {Mode[0].Modechoose}
                                         </Typography>
-                                        <Grid item xs={12} height="45vh">
+                                        <Grid item xs={12} height="30vh">
                                             <div className="video-responsive">
 
                                                 <iframe
-                                                    src={`https://www.youtube.com/embed/${Mode[this.Mode].embedId}`}
+                                                    src={`https://www.youtube.com/embed/${Mode[0].embedId}`}
                                                     frameBorder="0"
                                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                                     allowFullScreen
@@ -311,9 +317,9 @@ export default class TournamentLobby extends Component {
                         <Popup
                             trigger={<div className="button"> <div onClick={this.challengerModehandleClick}> <Typography color="primary"> challengerMode(?)</Typography>  </div></div>}
                             modal
-                            closeOnDocumentClick={false}
                             lockScroll
                             nested
+                            {...{ contentStyle }}
                         >
                             {close => (
                                 <div className="modal">
@@ -323,17 +329,17 @@ export default class TournamentLobby extends Component {
                                         </div>
                                     </button>
                                     <Grid xs={12} >
-                                        <Typography variant="h4" component="div" color='primary' textAlign='center'>
+                                        <Typography variant="h6" component="div" color='primary' textAlign='center'>
                                             How to play
                                         </Typography>
-                                        <Typography variant="h" component="div" color='primary' textAlign='center'>
-                                            {Mode[this.Mode].Modechoose}
+                                        <Typography variant="caption" component="div" color='primary' textAlign='center'>
+                                            {Mode[1].Modechoose}
                                         </Typography>
-                                        <Grid item xs={12} height="45vh">
+                                        <Grid item xs={12} height="30vh">
                                             <div className="video-responsive">
 
                                                 <iframe
-                                                    src={`https://www.youtube.com/embed/${Mode[this.Mode].embedId}`}
+                                                    src={`https://www.youtube.com/embed/${Mode[1].embedId}`}
                                                     frameBorder="0"
                                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                                     allowFullScreen
@@ -397,9 +403,9 @@ export default class TournamentLobby extends Component {
                         <Popup
                             trigger={<div className="button"> <div onClick={this.BattleModehandleClick}><Typography color="primary"> Battle Mode(?) </Typography></div></div>}
                             modal
-                            closeOnDocumentClick={false}
                             lockScroll
                             nested
+                            {...{ contentStyle }}
                         >
                             {close => (
                                 <div className="modal">
@@ -409,17 +415,17 @@ export default class TournamentLobby extends Component {
                                         </div>
                                     </button>
                                     <Grid xs={12} >
-                                        <Typography variant="h4" component="div" color='primary' textAlign='center'>
+                                        <Typography variant="h6" component="div" color='primary' textAlign='center'>
                                             How to play
                                         </Typography>
-                                        <Typography variant="h" component="div" color='primary' textAlign='center'>
-                                            {Mode[this.Mode].Modechoose}
+                                        <Typography variant="caption" component="div" color='primary' textAlign='center'>
+                                            {Mode[2].Modechoose}
                                         </Typography>
-                                        <Grid item xs={12} height="45vh">
+                                        <Grid item xs={12} height="30vh">
                                             <div className="video-responsive">
 
                                                 <iframe
-                                                    src={`https://www.youtube.com/embed/${Mode[this.Mode].embedId}`}
+                                                    src={`https://www.youtube.com/embed/${Mode[2].embedId}`}
                                                     frameBorder="0"
                                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                                     allowFullScreen
@@ -477,7 +483,7 @@ export default class TournamentLobby extends Component {
                         </>
                     ))}
 
-                    <Grid item xs={12} marginTop="0vh" display={this.state.isToggleOn ? 'block' : 'none'}>
+                    <Grid item xs={12} marginTop="0vh" >
                         <EndBar />
                     </Grid>
 

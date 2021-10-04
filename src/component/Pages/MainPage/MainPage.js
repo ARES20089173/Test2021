@@ -27,9 +27,9 @@ const StyledFab2 = styled(Fab)({
     left: 0,
 });
 const contentStyle = {
-    marginTop: '20%',
+    marginTop: '17%',
     background: '#cfcece',
-    width: "95%",
+    width: "90%",
     height: "60%",
     borderRadius: "5%",
 };
@@ -70,8 +70,6 @@ export default function MainPage() {
                         <Popup
                             trigger={<div className="button"> <div ><a href><img src={pic1} width="100%" height="65vh" alt="inviteimage" /></a></div></div>}
                             modal
-                            closeOnDocumentClick={false}
-                            lockScroll
                             nested
                             {...{ contentStyle }}
                         >
@@ -91,10 +89,19 @@ export default function MainPage() {
                                             10 friends who becomes a paying
                                             PUZZLECHASE member.
                                             Offer ends Dec31,2021. T&Cs apply
-
                                         </Typography>
-                                        <Grid item xs={12} height="35vh">
+
+                                        <Grid item xs={12} height="33vh">
                                             <div className="video-responsive">
+                                        <Grid xs={12} >
+                                        <div style={{ border: '1px solid black', height: '100%' }}>   
+                                        <Typography variant="body2" component="div" color='primary' textAlign='center'>
+                                        ILOVEREESPUZZLES
+                                        </Typography>
+                                        <Typography variant="caption" component="div" color='primary' textAlign='center'>
+                                        referral code
+                                        </Typography>
+                                        </div></Grid>
                                             <img src={pic1} width="100%"  alt="inviteimage" />
                                             </div>
                                         </Grid>
