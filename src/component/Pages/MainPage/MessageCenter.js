@@ -119,7 +119,6 @@ export default class MessageCenter extends Component {
                                         trigger={<div className="button" style={{ marginTop: '1vh', color: 'blue' }}> <div onClick={this.BattleModehandleClick}>
                                             <LayersClearIcon /></div></div>}
                                         modal
-                                        closeOnDocumentClick={false}
                                         lockScroll
                                         nested
                                         {...{ contentStyle}}
