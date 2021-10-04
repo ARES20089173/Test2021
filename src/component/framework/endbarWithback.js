@@ -35,7 +35,7 @@ const StyledFab = styled(Fab)({
     margin: '0 86%',
 });
 const contentStyle = {
-    marginTop: '40%',
+    marginTop: '38%',
     background: '#cfcece',
     width: "99%",
     height: "51%",

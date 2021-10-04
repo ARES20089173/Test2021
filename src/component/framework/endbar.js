@@ -23,7 +23,7 @@ const contentStyle = {
     marginTop: '20%',
     background: '#cfcece',
     width: "99%",
-    height: "70%",
+    height: "62%",
     borderRadius: "5%",
 };
 const StyledBadge = styled(Badge)(({ theme }) => ({
