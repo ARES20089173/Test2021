@@ -5,9 +5,11 @@ import backgroundEnd from "../../../reed_bg.svg"
 import EndBar from '../../framework/endbarWithback';
 import 'reactjs-popup/dist/index.css';
 import "./styles.css"
+import { Link } from 'react-router-dom';
 import "../../framework/css/cssModFLooby.css"
 import Popup from 'reactjs-popup';
 import IconButton from '@mui/material/IconButton';
+import pic1 from "../../framework/img/300x100.jpeg"
 import Toolbar from '@mui/material/Toolbar';
 // import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Typography from '@mui/material/Typography';
@@ -153,7 +155,7 @@ export default class TournamentLobby extends Component {
                                     </Typography>
                                     <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
                                         CHOOSE YOUR FAVORITE MODE
-                                        {BattleModeItem}
+                                        {/* {BattleModeItem} */}
                                     </Typography>
                                     <IconButton
                                         size="large"
@@ -287,8 +289,11 @@ export default class TournamentLobby extends Component {
                                     <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
                                         GRAND GRADE PRIZE
                                     </Typography>
-                                </Grid><Grid item xs={8} height='19vh' style={{ border: "1px solid grey", backgroundImage: `url(${backgroundImage[0].src})`, backgroundSize: '100% 100%' }}>
                                 </Grid>
+                                <Grid item xs={8} height='19vh' style={{ border: "1px solid grey", backgroundImage: `url(${backgroundImage[0].src})`, backgroundSize: '100% 100%' }}>
+                                
+                                <Link to="/"><img src={pic1} width="100%" height='100%'/></Link>
+                                 </Grid>
                                 <Typography style={{
                                     position: 'absolute',
                                     right: 60,
@@ -297,6 +302,7 @@ export default class TournamentLobby extends Component {
                                 }} color='primary'>
                                     Entry fee:{content.entryFee}<img src={puzzle} alt="puzzleicon" />
                                 </Typography>
+                              
                                 <Button style={{
                                     position: 'absolute',
                                     right: 0,
