@@ -5,6 +5,7 @@ import MultigameChooser from './component/Pages/MainPage/MultigameChooser';
 import TournamentLobby from './component/Pages/MainPage/TournamentLobby';
 import GameTutorial from './component/Pages/MainPage/GameTutorial';
 import Notification from './component/Pages/MainPage/Notification'
+import BattleModeJoin from './component/Pages/ThreeGameMode/BattleModeJoin'
 import { RouterConfig, getMatchRouter }from './routerConfig';  
 import './App.css'
 import {
@@ -68,6 +69,7 @@ let oldLocation = {}
             <Route exact path="/MessageCenter/CenterSetting" component={CenterSetting}><CenterSetting/></Route>
             <Route exact path="/multigameChooser" component={MultigameChooser}><MultigameChooser /></Route>
             <Route exact path="/multigameChooser/tournamentLobby/:id" component={TournamentLobby} render={(props) => <TournamentLobby {...props} />} />
+            <Route exact path="/multigameChooser/tournamentLobby/:id/:entryfee/BattleModeJoin" component={BattleModeJoin} render={(props) => <BattleModeJoin {...props} />} />
             <Route exact path="/gametutorial" component={GameTutorial} render={(props) => <GameTutorial {...props} />} />
 
             ...

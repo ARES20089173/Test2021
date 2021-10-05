@@ -3,6 +3,7 @@ import GameTutorial from "./component/Pages/MainPage/GameTutorial";
 import MainPage from './component/Pages/MainPage/MainPage'
 import MessageCenter from "./component/Pages/MainPage/MessageCenter";
 import CenterSetting from "./component/Pages/MainPage/CenterSetting"
+import BattleModeJoin from './component/Pages/ThreeGameMode/BattleModeJoin'
 import Notification from "./component/Pages/MainPage/Notification"
 import MultigameChooser from './component/Pages/MainPage/MultigameChooser';
 import TournamentLobby from './component/Pages/MainPage/TournamentLobby';
@@ -50,7 +51,7 @@ export const RouterConfig = [
       }
     },
     {
-      path: '/multigameChooser/tournamentLobby/:id/BattleModeJoin',
+      path: '/multigameChooser/tournamentLobby/:id/:entryfee/BattleModeJoin',
       render: props => <TournamentLobby {...props} />,
       meta: {
         index: 2

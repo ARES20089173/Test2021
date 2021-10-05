@@ -292,7 +292,7 @@ export default class TournamentLobby extends Component {
                                 </Grid>
                                 <Grid item xs={8} height='19vh' style={{ border: "1px solid grey", backgroundImage: `url(${backgroundImage[0].src})`, backgroundSize: '100% 100%' }}>
                                 
-                                <Link to="/"><img src={pic1} width="100%" height='100%'/></Link>
+                                <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${content.entryFee}/BattleModeJoin`}><img src={pic1} width="100%" height='100%'/></Link>
                                  </Grid>
                                 <Typography style={{
                                     position: 'absolute',
