@@ -57,11 +57,11 @@ export default function BottomAppBar() {
                     >
 
                         <Grid item xs={12} align='center' >
-                            <Toolbar>
+                            <Toolbar variant="dense">
                                 <LinkBarWithback />
                             </Toolbar>
                             <div style={{ backgroundColor: "white" }}>
-                                <Toolbar>
+                                <Toolbar variant="dense">
                                     <IconButton color="inherit" aria-label="open drawer">
                                         R
                                     </IconButton>
@@ -69,7 +69,7 @@ export default function BottomAppBar() {
                                     <Grid  xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} >
                                         <div style={{ border: '1px solid black', }}>
                                         <Popup
-                                                    trigger={<div className="button">  <img src={puzzle} className="App-logo" alt="logo" width="30%" />18.6k<AddIcon style={{ width: 15, height: 15, }} /></div>}
+                                                    trigger={<div className="button">  <img src={puzzle} className="App-logo" alt="logo" width="25%" />18.6k<AddIcon style={{ width: 15, height: 15, }} /></div>}
                                                     modal
                                                     lockScroll
                                                     nested
@@ -92,7 +92,7 @@ export default function BottomAppBar() {
                                         <Grid xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
                                             <div style={{ border: '1px solid black', }}>
                                                 <Popup
-                                                    trigger={<div className="button">  <img src={puzzle} className="App-logo" alt="logo" width="30%" />11.2k<AddIcon style={{ width: 15, height: 15, }} /></div>}
+                                                    trigger={<div className="button">  <img src={puzzle} className="App-logo" alt="logo" width="25%" />11.2k<AddIcon style={{ width: 15, height: 15, }} /></div>}
                                                     modal
                                                     lockScroll
                                                     nested
@@ -114,7 +114,7 @@ export default function BottomAppBar() {
                                     </Grid>
                                     <Grid xs={4}  variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center'}}>
                                         <div style={{ border: '1px solid black',height:'100%' }}>
-                                            <img src={puzzle} className="App-logo" alt="logo" width="30%"  />
+                                            <img src={puzzle} className="App-logo" alt="logo" width="25%"  />
                                             13.9k
                                         </div>
                                     </Grid>
@@ -134,7 +134,7 @@ export default function BottomAppBar() {
 
                 </AppBar>
                 <Toolbar sx={{
-                    height: "25vh",
+                    height: "20vh",
                 }} />
             </Box>
         </React.Fragment>

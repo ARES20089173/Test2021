@@ -36,7 +36,7 @@ const contentStyle = {
 export default function MainPage() {
 
     return (
-        <Box sx={{ flexGrow: 1 }} style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: '100% 100%', backgroundAttachment: 'fixed' }}>
+        <Box sx={{ flexGrow: 1 }}  height="100vh" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: '100% 100%', backgroundAttachment: 'fixed' }}>
             <Grid item xs={12}  >
                 <NavigationBar />
             </Grid>

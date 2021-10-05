@@ -70,10 +70,10 @@ export default function Linkbar() {
                 alignItems="center"
             >
 
-                <Grid item xs={2} align='center'>
+                <Grid item xs={2.5} align='center'>
                     <IconButton aria-label="cart" onClick={() => { setlinkiconcheck0(true); setlinkiconcheck1(false); setlinkiconcheck2(false); setlinkiconcheck3(false); setlinkiconcheck4(false); }}>
                         <StyledBadge badgeContent={200} color="secondary">
-                            <img src={pic} className="App-logo" alt="logo" width="200%" />
+                            <img src={pic} className="App-logo" alt="logo" width="100%" />
                         </StyledBadge>
                     </IconButton>
 
@@ -81,34 +81,34 @@ export default function Linkbar() {
                 <Grid item xs={2} align='center'>
                     <IconButton aria-label="cart" onClick={() => { setlinkiconcheck0(false); setlinkiconcheck1(true); setlinkiconcheck2(false); setlinkiconcheck3(false); setlinkiconcheck4(false); }}>
                         <StyledBadge badgeContent={200} color="secondary">
-                            <img src={pic1} className="App-logo" alt="logo" width="200%" />
+                            <img src={pic1} className="App-logo" alt="logo" width="100%" />
                         </StyledBadge>
                     </IconButton>
                 </Grid>
                 <Grid item xs={2} align='center'>
                     <IconButton aria-label="cart" onClick={() => { setlinkiconcheck0(false); setlinkiconcheck1(false); setlinkiconcheck2(true); setlinkiconcheck3(false); setlinkiconcheck4(false); }}>
                         <StyledBadge badgeContent={200} color="secondary">
-                            <img src={pic2} className="App-logo" alt="logo" width="200%" />
+                            <img src={pic2} className="App-logo" alt="logo" width="100%" />
                         </StyledBadge>
                     </IconButton>
                 </Grid>
                 <Grid item xs={2} align='center' >
                     <IconButton aria-label="cart" onClick={() => { setlinkiconcheck0(false); setlinkiconcheck1(false); setlinkiconcheck2(false); setlinkiconcheck3(true); setlinkiconcheck4(false); }}>
                         <StyledBadge badgeContent={200} color="secondary">
-                            <img src={pic3} className="App-logo" alt="logo" width="200%" />
+                            <img src={pic3} className="App-logo" alt="logo" width="100%" />
                         </StyledBadge>
                     </IconButton>
                 </Grid>
                 <Grid item xs={2} align='center' >
                     <IconButton aria-label="cart" onClick={() => { setlinkiconcheck0(false); setlinkiconcheck1(false); setlinkiconcheck2(false); setlinkiconcheck3(false); setlinkiconcheck4(true); }}>
                         <StyledBadge badgeContent={200} color="secondary">
-                            <img src={pic4} className="App-logo" alt="logo" width="200%" />
+                            <img src={pic4} className="App-logo" alt="logo" width="100%" />
                         </StyledBadge>
                     </IconButton>
                 </Grid>
-                <Grid item xs={2}>
+                <Grid item xs={1.5}>
                 </Grid>
-                <Grid item xs={2} >
+                <Grid item xs={2.5 } >
                     <Typography align='left' variant="caption" color='primary' fontSize="1">
                         Player@Earn
                         </Typography>
@@ -125,7 +125,7 @@ export default function Linkbar() {
                 <Grid item xs={2}>
                     <Typography align='center' variant="caption"color='primary'>Mission</Typography>
                 </Grid>
-                <Grid item xs={2}>
+                <Grid item xs={1.5}>
                 </Grid>
             </Grid>
         </Box>

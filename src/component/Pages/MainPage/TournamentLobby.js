@@ -18,7 +18,6 @@ import LobbyPopup from '../../framework/lobbypopup';
 import MenuIcon from '@mui/icons-material/Menu';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 // import { Link } from "react-router-dom"
 import puzzle from "../../../puzzle.svg"
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports'
@@ -76,19 +75,19 @@ export default class TournamentLobby extends Component {
             { id: 2, Modechoose: "BattleMode", embedId: "dWOm9KXJQLo", detail: "Battle MODE is ......." },
         ]
         const oneVoneMode = [
-            { id: 1, entryFee: 88, MaxPrize: 120 },
-            { id: 2, entryFee: 848, MaxPrize: 1200 },
-            { id: 3, entryFee: 828, MaxPrize: 1200 },
+            { id: 0, entryFee: 88, MaxPrize: 120 },
+            { id: 1, entryFee: 848, MaxPrize: 1200 },
+            { id: 2, entryFee: 828, MaxPrize: 1200 },
         ]
         const challengerMode = [
-            { id: 1, entryFee: 188, MaxPrize: 120 },
-            { id: 2, entryFee: 1848, MaxPrize: 2500 },
-            { id: 3, entryFee: 1828, MaxPrize: 3500 },
+            { id: 0, entryFee: 188, MaxPrize: 120 },
+            { id: 1, entryFee: 1848, MaxPrize: 2500 },
+            { id: 2, entryFee: 1828, MaxPrize: 3500 },
         ]
         const BattleMode = [
-            { id: 1, entryFee: 88, MaxPrize: 3500 },
-            { id: 2, entryFee: 848, MaxPrize: 2500 },
-            { id: 3, entryFee: 828, MaxPrize: 3550 },
+            { id: 0, entryFee: 88, MaxPrize: 3500 },
+            { id: 1, entryFee: 848, MaxPrize: 2500 },
+            { id: 2, entryFee: 828, MaxPrize: 3550 },
         ]
 
         const BattleModeItem = BattleMode.map((number) =>{
@@ -169,23 +168,20 @@ export default class TournamentLobby extends Component {
                                 </Toolbar>
 
                                 <div style={{ backgroundColor: "gray" }}>
-                                    <Toolbar>
+                                    <Toolbar variant="dense">
                                         <Grid item xs={2} sx={{ marginTop: '1vh' }}>
                                             <img src={data[this.props.match.params.id].src} alt="gameicon" width="100%" />
 
                                         </Grid>
-                                        <Grid item xs={6} sx={{ marginTop: '1vh' }}>
-                                            <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'left', marginLeft: '2vh' }}>
+                                        <Grid item xs={8} sx={{ marginTop: '1vh' }}>
+                                            <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'left', margin:0,marginLeft: '2vh' }}>
                                                 {data[this.props.match.params.id].name}
                                                 <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'left' }}>
-                                                    CHOOSE TOURNAMENT
-                                                </Typography>
-                                                <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'left' }}>
-                                                    AND PAID TO PLAY
+                                                    CHOOSE TOURNAMENT AND PAID TO PLAY
                                                 </Typography>
                                             </Typography>
                                         </Grid>
-                                        <Grid item xs={2} >
+                                        <Grid item xs={0} >
                                             {/* <IconButton
                                                 size="large"
                                                 color="inherit"
@@ -200,7 +196,7 @@ export default class TournamentLobby extends Component {
                                                 practice
                                             </Typography> */}
                                         </Grid>
-                                        <Grid item xs={2} >
+                                        <Grid item xs={0} >
                                             {/* <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/gametutorial`}>
                                                 <IconButton
                                                     size="large"
@@ -231,7 +227,7 @@ export default class TournamentLobby extends Component {
                     justifyContent='center'
                     style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: 'auto auto', backgroundAttachment: 'fixed' }}
                 >
-                    <Grid item xs={12} marginLeft="2vh" marginTop="20vh">
+                    <Grid item xs={12} marginLeft="2vh" marginTop="22vh">
                         <Popup
                             trigger={<div className="button"> <div onClick={this.oneVoneModehandleClick}><Typography color="primary"> 1 ON 1 Mode(?) </Typography></div></div>}
                             modal
@@ -290,10 +286,7 @@ export default class TournamentLobby extends Component {
                                         GRAND GRADE PRIZE
                                     </Typography>
                                 </Grid>
-                                <Grid item xs={8} height='19vh' style={{ border: "1px solid grey", backgroundImage: `url(${backgroundImage[0].src})`, backgroundSize: '100% 100%' }}>
-                                
-                                <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${content.entryFee}/BattleModeJoin`}><img src={pic1} width="100%" height='100%'/></Link>
-                                 </Grid>
+                                <Grid item xs={8} height='19vh' style={{ border: "1px solid grey" }}>
                                 <Typography style={{
                                     position: 'absolute',
                                     right: 60,
@@ -311,12 +304,15 @@ export default class TournamentLobby extends Component {
                                 }}>
                                     <ImgTournamentLobby />
                                 </Button>
+                                <Link to={`/`}><img src={pic1} width="100%" height='100%'/></Link>
+                                 </Grid>
+                               
                             </Grid></>
                     ))}
 
 
                     <Grid item xs={12} marginLeft="2vh" style={{ textAlign: 'center' }}>
-                        <KeyboardArrowDownIcon color="success" sx={{ fontSize: 50 }} />
+                        <KeyboardArrowDown color="success" sx={{ fontSize: 50 }} />
                     </Grid>
 
                     <Grid item xs={12} marginLeft="2vh">
@@ -402,7 +398,7 @@ export default class TournamentLobby extends Component {
 
 
                     <Grid item xs={12} marginLeft="2vh" style={{ textAlign: 'center' }}>
-                        <KeyboardArrowDownIcon color="success" sx={{ fontSize: 50 }} />
+                        <KeyboardArrowDown color="success" sx={{ fontSize: 50 }} />
                     </Grid>
 
                     <Grid item xs={12} marginLeft="2vh">
@@ -484,6 +480,8 @@ export default class TournamentLobby extends Component {
                                     }}>
                                         <ImgTournamentLobby />
                                     </Button>
+                                    <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${content.id}/BattleModeJoin`}><img src={pic1} width="100%" height='100%'/></Link>
+                                
                                 </Grid>
                             </Grid>
                         </>

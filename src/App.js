@@ -69,7 +69,7 @@ let oldLocation = {}
             <Route exact path="/MessageCenter/CenterSetting" component={CenterSetting}><CenterSetting/></Route>
             <Route exact path="/multigameChooser" component={MultigameChooser}><MultigameChooser /></Route>
             <Route exact path="/multigameChooser/tournamentLobby/:id" component={TournamentLobby} render={(props) => <TournamentLobby {...props} />} />
-            <Route exact path="/multigameChooser/tournamentLobby/:id/:entryfee/BattleModeJoin" component={BattleModeJoin} render={(props) => <BattleModeJoin {...props} />} />
+            <Route exact path="/multigameChooser/tournamentLobby/:id/:entryid/BattleModeJoin" component={BattleModeJoin} render={(props) => <BattleModeJoin {...props} />} />
             <Route exact path="/gametutorial" component={GameTutorial} render={(props) => <GameTutorial {...props} />} />
 
             ...

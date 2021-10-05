@@ -18,7 +18,7 @@ export default function NavigationBar() {
       <Box sx={{ flexGrow: 1 }}>
         <CssBaseline />
           <AppBar position="fixed" align='center' sx={{  top: 0 }}>
-            <Toolbar>
+            <Toolbar variant="dense">
               <IconButton
                 size="large"
                 edge="start"
