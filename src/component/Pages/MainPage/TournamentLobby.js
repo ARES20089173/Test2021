@@ -5,6 +5,8 @@ import backgroundEnd from "../../../reed_bg.svg"
 import EndBar from '../../framework/endbarWithback';
 import 'reactjs-popup/dist/index.css';
 import "./styles.css"
+import { styled } from "@mui/material/styles";
+import Collapse from "@mui/material/Collapse";
 import { Link } from 'react-router-dom';
 import "../../framework/css/cssModFLooby.css"
 import Popup from 'reactjs-popup';
@@ -23,6 +25,7 @@ import puzzle from "../../../puzzle.svg"
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports'
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import Button from '@mui/material/Button';
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Slide from '@mui/material/Slide';
 import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
 const contentStyle = {
@@ -32,12 +35,29 @@ const contentStyle = {
     height: "50%",
     borderRadius: "5%",
 };
+const ExpandMore = styled((props) => {
+    const { expand, ...other } = props;
+    return <IconButton {...other} />;
+})(({ theme, expand }) => ({
+    transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
+    marginLeft: "auto",
+    transition: theme.transitions.create("transform", {
+        duration: theme.transitions.duration.shortest
+    })
+}));
 export default class TournamentLobby extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.state = { isToggleOn: true };
-    //     this.Mode = 1;
-
+    constructor(props) {
+        super(props);
+        this.state = { expanded: false};
+        this.handleExpandClick = this.handleExpandClick.bind(this);
+        //     this.state = { isToggleOn: true };
+        //     this.Mode = 1;
+    }
+    handleExpandClick = () => {
+        this.setState(prevState => ({
+            expanded: !prevState.expanded
+        }))
+    };
     //     // This binding is necessary to make `this` work in the callback
     //     this.handleClick = this.handleClick.bind(this);
     //     this.oneVoneModehandleClick = this.oneVoneModehandleClick.bind(this);
@@ -90,9 +110,9 @@ export default class TournamentLobby extends Component {
             { id: 2, entryFee: 828, MaxPrize: 3550 },
         ]
 
-        const BattleModeItem = BattleMode.map((number) =>{
-            if(number.entryFee==50){
-               return <div>{number.entryFee}</div>
+        const BattleModeItem = BattleMode.map((number) => {
+            if (number.entryFee == 50) {
+                return <div>{number.entryFee}</div>
             }
         });
         const data = [
@@ -174,7 +194,7 @@ export default class TournamentLobby extends Component {
 
                                         </Grid>
                                         <Grid item xs={8} sx={{ marginTop: '1vh' }}>
-                                            <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'left', margin:0,marginLeft: '2vh' }}>
+                                            <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'left', margin: 0, marginLeft: '2vh' }}>
                                                 {data[this.props.match.params.id].name}
                                                 <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'left' }}>
                                                     CHOOSE TOURNAMENT AND PAID TO PLAY
@@ -269,7 +289,7 @@ export default class TournamentLobby extends Component {
                             )}
                         </Popup>
                     </Grid>
-
+                    <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
                     {oneVoneMode.map((content) => (
                         <>
                             <Grid item xs={12} marginTop="3vh">
@@ -287,32 +307,40 @@ export default class TournamentLobby extends Component {
                                     </Typography>
                                 </Grid>
                                 <Grid item xs={8} height='19vh' style={{ border: "1px solid grey" }}>
-                                <Typography style={{
-                                    position: 'absolute',
-                                    right: 60,
-                                    fontSize: 20,
-                                    marginTop: 100
-                                }} color='primary'>
-                                    Entry fee:{content.entryFee}<img src={puzzle} alt="puzzleicon" />
-                                </Typography>
-                              
-                                <Button style={{
-                                    position: 'absolute',
-                                    right: 0,
-                                    marginTop: 110
+                                    <Typography style={{
+                                        position: 'absolute',
+                                        right: 60,
+                                        fontSize: 20,
+                                        marginTop: 100
+                                    }} color='primary'>
+                                        Entry fee:{content.entryFee}<img src={puzzle} alt="puzzleicon" />
+                                    </Typography>
 
-                                }}>
-                                    <ImgTournamentLobby />
-                                </Button>
-                                <Link to={`/`}><img src={pic1} width="100%" height='100%'/></Link>
-                                 </Grid>
-                               
+                                    <Button style={{
+                                        position: 'absolute',
+                                        right: 0,
+                                        marginTop: 110
+
+                                    }}>
+                                        <ImgTournamentLobby />
+                                    </Button>
+                                    <Link to={`/`}><img src={pic1} width="100%" height='100%' /></Link>
+                                </Grid>
+
                             </Grid></>
                     ))}
-
+                      </Collapse>
 
                     <Grid item xs={12} marginLeft="2vh" style={{ textAlign: 'center' }}>
-                        <KeyboardArrowDown color="success" sx={{ fontSize: 50 }} />
+                    <ExpandMore
+                        expand={this.state.expanded}
+                        onClick={this.handleExpandClick}
+                        aria-expanded={this.state.expanded}
+                        aria-label="show more"
+                        color="success"
+                    >
+                        <ExpandMoreIcon />
+                    </ExpandMore>
                     </Grid>
 
                     <Grid item xs={12} marginLeft="2vh">
@@ -480,8 +508,8 @@ export default class TournamentLobby extends Component {
                                     }}>
                                         <ImgTournamentLobby />
                                     </Button>
-                                    <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${content.id}/BattleModeJoin`}><img src={pic1} width="100%" height='100%'/></Link>
-                                
+                                    <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${content.id}/BattleModeJoin`}><img src={pic1} width="100%" height='100%' /></Link>
+
                                 </Grid>
                             </Grid>
                         </>
