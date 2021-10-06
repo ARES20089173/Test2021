@@ -50,6 +50,8 @@ export default class TournamentLobby extends Component {
         super(props);
         this.state = { expanded: false};
         this.handleExpandClick = this.handleExpandClick.bind(this);
+        this.handleExpandClick2 = this.handleExpandClick2.bind(this);
+        this.handleExpandClick3 = this.handleExpandClick3.bind(this);
         //     this.state = { isToggleOn: true };
         //     this.Mode = 1;
     }
@@ -58,6 +60,17 @@ export default class TournamentLobby extends Component {
             expanded: !prevState.expanded
         }))
     };
+    handleExpandClick2 = () => {
+        this.setState(prevState => ({
+            expanded2: !prevState.expanded2
+        }))
+    };
+    handleExpandClick3 = () => {
+        this.setState(prevState => ({
+            expanded3: !prevState.expanded3
+        }))
+    };
+
     //     // This binding is necessary to make `this` work in the callback
     //     this.handleClick = this.handleClick.bind(this);
     //     this.oneVoneModehandleClick = this.oneVoneModehandleClick.bind(this);
@@ -245,6 +258,7 @@ export default class TournamentLobby extends Component {
                 <Grid container
                     direction="row"
                     justifyContent='center'
+                    height="100%"
                     style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: 'auto auto', backgroundAttachment: 'fixed' }}
                 >
                     <Grid item xs={12} marginLeft="2vh" marginTop="22vh">
@@ -289,16 +303,52 @@ export default class TournamentLobby extends Component {
                             )}
                         </Popup>
                     </Grid>
+                    <Grid item xs={12} marginTop="3vh">
+                            </Grid>
+                            <Grid item container
+                                direction="row"
+                                justifyContent='center' xs={12} height='15vh'>
+                                <Grid item xs={3} style={{ border: "1px solid grey", textAlign: 'center' }}>
+                                    <img src={puzzle} alt="gameicon" width="30%" />
+                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
+                                        {oneVoneMode[0].MaxPrize}
+                                    </Typography>
+                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
+                                        GRAND GRADE PRIZE
+                                    </Typography>
+                                </Grid>
+                                <Grid item xs={8} height='15vh' style={{ border: "1px solid grey" }}>
+                                    <Typography style={{
+                                        position: 'absolute',
+                                        right: 60,
+                                        fontSize: 20,
+                                        marginTop: 55
+                                    }} color='primary'>
+                                        Entry fee:{oneVoneMode[0].entryFee}<img src={puzzle} alt="puzzleicon" />
+                                    </Typography>
+
+                                    <Button style={{
+                                        position: 'absolute',
+                                        right: 0,
+                                        marginTop: 65
+
+                                    }}>
+                                        <ImgTournamentLobby />
+                                    </Button>
+                                    <Link to={`/`}><img src={pic1} width="100%" height='100%' /></Link>
+                                </Grid>
+
+                            </Grid>
                     <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
-                    {oneVoneMode.map((content) => (
+                    {oneVoneMode.filter(content=> content.id>0).map((content) => (
                         <>
                             <Grid item xs={12} marginTop="3vh">
                             </Grid>
                             <Grid item container
                                 direction="row"
-                                justifyContent='center' xs={12} height='19vh'>
+                                justifyContent='center' xs={12} height='15vh'>
                                 <Grid item xs={3} style={{ border: "1px solid grey", textAlign: 'center' }}>
-                                    <img src={puzzle} alt="gameicon" width="50%" />
+                                    <img src={puzzle} alt="gameicon" width="30%" />
                                     <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
                                         {content.MaxPrize}
                                     </Typography>
@@ -306,12 +356,12 @@ export default class TournamentLobby extends Component {
                                         GRAND GRADE PRIZE
                                     </Typography>
                                 </Grid>
-                                <Grid item xs={8} height='19vh' style={{ border: "1px solid grey" }}>
+                                <Grid item xs={8} height='15vh' style={{ border: "1px solid grey" }}>
                                     <Typography style={{
                                         position: 'absolute',
                                         right: 60,
                                         fontSize: 20,
-                                        marginTop: 100
+                                        marginTop: 55
                                     }} color='primary'>
                                         Entry fee:{content.entryFee}<img src={puzzle} alt="puzzleicon" />
                                     </Typography>
@@ -319,7 +369,7 @@ export default class TournamentLobby extends Component {
                                     <Button style={{
                                         position: 'absolute',
                                         right: 0,
-                                        marginTop: 110
+                                        marginTop: 65
 
                                     }}>
                                         <ImgTournamentLobby />
@@ -385,15 +435,52 @@ export default class TournamentLobby extends Component {
                             )}
                         </Popup>
                     </Grid>
-                    {challengerMode.map((content) => (
+
+                    <Grid item xs={12} marginTop="3vh">
+                            </Grid>
+                            <Grid item container
+                                direction="row"
+                                justifyContent='center' xs={12} height='19vh'>
+                                <Grid item xs={3} style={{ border: "1px solid grey", textAlign: 'center' }}>
+                                    <img src={puzzle} alt="gameicon" width="50%" />
+                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
+                                        {challengerMode[0].MaxPrize}
+                                    </Typography>
+                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
+                                        GRAND GRADE PRIZE
+                                    </Typography>
+                                </Grid>
+                                <Grid item xs={8} height='19vh' style={{ border: "1px solid grey" }}>
+                                    <Typography style={{
+                                        position: 'absolute',
+                                        right: 60,
+                                        fontSize: 20,
+                                        marginTop: 80
+                                    }} color='primary'>
+                                        Entry fee:{challengerMode[0].entryFee}<img src={puzzle} alt="puzzleicon" />
+                                    </Typography>
+
+                                    <Button style={{
+                                        position: 'absolute',
+                                        right: 0,
+                                        marginTop: 90
+
+                                    }}>
+                                        <ImgTournamentLobby />
+                                    </Button>
+                                    <Link to={`/`}><img src={pic1} width="100%" height='100%' /></Link>
+                                </Grid>
+                            </Grid>
+                    <Collapse in={this.state.expanded2} timeout="auto" unmountOnExit>
+                    {challengerMode.filter(content=> content.id>0).map((content) => (
                         <>
                             <Grid item xs={12} marginTop="3vh">
                             </Grid>
                             <Grid item container
                                 direction="row"
                                 justifyContent='center' xs={12} height='19vh'>
-                                <Grid item xs={3} style={{ border: "1px solid grey", textAlign: 'center' }} >
-                                    <img src={puzzle} alt="gameicon" width="65%" style={{ marginTop: '2vh' }} />
+                                <Grid item xs={3} style={{ border: "1px solid grey", textAlign: 'center' }}>
+                                    <img src={puzzle} alt="gameicon" width="50%" />
                                     <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
                                         {content.MaxPrize}
                                     </Typography>
@@ -401,32 +488,41 @@ export default class TournamentLobby extends Component {
                                         GRAND GRADE PRIZE
                                     </Typography>
                                 </Grid>
-
-                                <Grid item xs={8} style={{ border: "1px solid grey", backgroundImage: `url(${backgroundImage[1].src})`, backgroundSize: '100% 100%' }} >
+                                <Grid item xs={8} height='19vh' style={{ border: "1px solid grey" }}>
                                     <Typography style={{
                                         position: 'absolute',
-                                        right: 50,
+                                        right: 60,
                                         fontSize: 20,
-                                        marginTop: 100
+                                        marginTop: 80
                                     }} color='primary'>
                                         Entry fee:{content.entryFee}<img src={puzzle} alt="puzzleicon" />
                                     </Typography>
+
                                     <Button style={{
                                         position: 'absolute',
                                         right: 0,
-                                        marginTop: 110
+                                        marginTop:90
 
                                     }}>
                                         <ImgTournamentLobby />
                                     </Button>
+                                    <Link to={`/`}><img src={pic1} width="100%" height='100%' /></Link>
                                 </Grid>
                             </Grid>
                         </>
                     ))}
-
+                    </Collapse>
 
                     <Grid item xs={12} marginLeft="2vh" style={{ textAlign: 'center' }}>
-                        <KeyboardArrowDown color="success" sx={{ fontSize: 50 }} />
+                    <ExpandMore
+                        expand={this.state.expanded2}
+                        onClick={this.handleExpandClick2}
+                        aria-expanded={this.state.expanded2}
+                        aria-label="show more"
+                        color="success"
+                    >
+                        <ExpandMoreIcon />
+                    </ExpandMore>
                     </Grid>
 
                     <Grid item xs={12} marginLeft="2vh">
@@ -473,9 +569,46 @@ export default class TournamentLobby extends Component {
                             )}
                         </Popup>
                     </Grid>
-                    {BattleMode.map((content) => (
+                    <Grid item xs={12} marginTop="3vh">
+                            </Grid>
+                            <Grid item container
+                                direction="row"
+                                justifyContent='center' xs={12} height='19vh'>
+                                <Grid item xs={3} style={{ border: "1px solid grey", textAlign: 'center' }}>
+                                    <img src={puzzle} alt="gameicon" width="50%" />
+                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
+                                        {BattleMode[0].MaxPrize}
+                                    </Typography>
+                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
+                                        GRAND GRADE PRIZE
+                                    </Typography>
+                                </Grid>
+                                <Grid item xs={8} height='19vh' style={{ border: "1px solid grey" }}>
+                                    <Typography style={{
+                                        position: 'absolute',
+                                        right: 60,
+                                        fontSize: 20,
+                                        marginTop: 80
+                                    }} color='primary'>
+                                        Entry fee:{BattleMode[0].entryFee}<img src={puzzle} alt="puzzleicon" />
+                                    </Typography>
+
+                                    <Button style={{
+                                        position: 'absolute',
+                                        right: 0,
+                                        marginTop: 90
+
+                                    }}>
+                                        <ImgTournamentLobby />
+                                    </Button>
+                                    <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${BattleMode[0].id}/BattleModeJoin`}><img src={pic1} width="100%" height='100%' /></Link>
+                                </Grid>
+
+                            </Grid>
+                    <Collapse in={this.state.expanded3} timeout="auto" unmountOnExit>
+                    {BattleMode.filter(content=> content.id>0).map((content) => (
                         <>
-                            <Grid item xs={12} marginTop="3vh">
+                            <Grid item xs={12} marginTop="5vh">
                             </Grid>
 
                             <Grid item container
@@ -496,14 +629,14 @@ export default class TournamentLobby extends Component {
                                         position: 'absolute',
                                         right: 50,
                                         fontSize: 20,
-                                        marginTop: 100
+                                        marginTop: 80
                                     }} color='primary'>
                                         Entry fee:{content.entryFee}<img src={puzzle} alt="puzzleicon" />
                                     </Typography>
                                     <Button style={{
                                         position: 'absolute',
                                         right: 0,
-                                        marginTop: 110
+                                        marginTop: 90
 
                                     }}>
                                         <ImgTournamentLobby />
@@ -514,7 +647,18 @@ export default class TournamentLobby extends Component {
                             </Grid>
                         </>
                     ))}
-
+                    </Collapse>
+                     <Grid item xs={12} marginLeft="2vh" style={{ textAlign: 'center' }}>
+                    <ExpandMore
+                        expand={this.state.expanded3}
+                        onClick={this.handleExpandClick3}
+                        aria-expanded={this.state.expanded3}
+                        aria-label="show more"
+                        color="success"
+                    >
+                        <ExpandMoreIcon />
+                    </ExpandMore>
+                    </Grid>
                     <Grid item xs={12} marginTop="0vh" >
                         <EndBar />
                     </Grid>
