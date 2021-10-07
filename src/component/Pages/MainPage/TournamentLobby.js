@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import backgroundEnd from "../../../reed_bg.svg"
 import EndBar from '../../framework/endbarWithback';
+
 import 'reactjs-popup/dist/index.css';
 import "./styles.css"
 import { styled } from "@mui/material/styles";
@@ -468,7 +469,7 @@ export default class TournamentLobby extends Component {
                                     }}>
                                         <ImgTournamentLobby />
                                     </Button>
-                                    <Link to={`/`}><img src={pic1} width="100%" height='100%' /></Link>
+                                    <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${challengerMode[0].id}/ChallengerModeGo`}><img src={pic1} width="100%" height='100%' /></Link>
                                 </Grid>
                             </Grid>
                     <Collapse in={this.state.expanded2} timeout="auto" unmountOnExit>
@@ -506,7 +507,7 @@ export default class TournamentLobby extends Component {
                                     }}>
                                         <ImgTournamentLobby />
                                     </Button>
-                                    <Link to={`/`}><img src={pic1} width="100%" height='100%' /></Link>
+                                    <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${content.id}/ChallengerModeGO`}><img src={pic1} width="100%" height='100%' /></Link>
                                 </Grid>
                             </Grid>
                         </>

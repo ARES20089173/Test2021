@@ -7,6 +7,8 @@ import BattleModeJoin from './component/Pages/ThreeGameMode/BattleModeJoin'
 import Notification from "./component/Pages/MainPage/Notification"
 import MultigameChooser from './component/Pages/MainPage/MultigameChooser';
 import TournamentLobby from './component/Pages/MainPage/TournamentLobby';
+import EndBattleMode from './component/Pages/ThreeGameMode/EndBattleMode'
+import ChallengerModeGo from './component/Pages/ThreeGameMode/ChallengerModeGo'
 export const getMatchRouter = (pathname, configs) =>
   configs.find(config => matchPath(pathname, {
     exact: true,
@@ -20,6 +22,13 @@ export const RouterConfig = [
       render: props => <MainPage {...props} />,
       meta: {
         index: 0
+      }
+    },
+    {
+      path: '/EndBattleMode',
+      render: props => <EndBattleMode{...props} />,
+      meta: {
+        index: 1
       }
     },
     {
@@ -51,8 +60,22 @@ export const RouterConfig = [
       }
     },
     {
-      path: '/multigameChooser/tournamentLobby/:id/:entryid/BattleModeJoin',
+      path: '/multigameChooser/tournamentLobby/:id',
       render: props => <TournamentLobby {...props} />,
+      meta: {
+        index: 2
+      }
+    },
+    {
+      path: '/multigameChooser/tournamentLobby/:id/:entryid/BattleModeJoin',
+      render: props => <BattleModeJoin {...props} />,
+      meta: {
+        index: 2
+      }
+    },
+    {
+      path: '/multigameChooser/tournamentLobby/:id/:entryid/ChallengerModeGo',
+      render: props => <ChallengerModeGo {...props} />,
       meta: {
         index: 2
       }

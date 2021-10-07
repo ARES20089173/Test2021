@@ -5,8 +5,10 @@ import MultigameChooser from './component/Pages/MainPage/MultigameChooser';
 import TournamentLobby from './component/Pages/MainPage/TournamentLobby';
 import GameTutorial from './component/Pages/MainPage/GameTutorial';
 import Notification from './component/Pages/MainPage/Notification'
+import EndBattleMode from './component/Pages/ThreeGameMode/EndBattleMode'
 import BattleModeJoin from './component/Pages/ThreeGameMode/BattleModeJoin'
-import { RouterConfig, getMatchRouter }from './routerConfig';  
+import ChallengerModeGo from './component/Pages/ThreeGameMode/ChallengerModeGo'
+import { RouterConfig, getMatchRouter } from './routerConfig';
 import './App.css'
 import {
   BrowserRouter,
@@ -40,44 +42,46 @@ const getClassName = (location, oldLocation) => {
   const oldRoute = getMatchRouter(oldLocation.pathname, RouterConfig) || {};
   const currentIndex = currentRoute.meta && currentRoute.meta.index
   const oldIndex = oldRoute.meta && oldRoute.meta.index
-  if(!needAnimation || oldIndex === currentIndex) return '' // 同级跳转，或者滑动中，不执行动画
+  if (!needAnimation || oldIndex === currentIndex) return '' // 同级跳转，或者滑动中，不执行动画
   return oldIndex > currentIndex ? 'back' : 'forward'
 }
 
 let oldLocation = {}
-  const render = ({location, history, match}) => {
-    const classNames = getClassName(location, oldLocation);
-    delayReset() // 防止某些浏览器不触发touchend
-    // 更新旧location
-    oldLocation = location;
-    return <TransitionGroup
-      className="router-wrapper"
-      childFactory={child => React.cloneElement(
-        child,
-        { classNames }
-      )}
+const render = ({ location, history, match }) => {
+  const classNames = getClassName(location, oldLocation);
+  delayReset() // 防止某些浏览器不触发touchend
+  // 更新旧location
+  oldLocation = location;
+  return <TransitionGroup
+    className="router-wrapper"
+    childFactory={child => React.cloneElement(
+      child,
+      { classNames }
+    )}
+  >
+    <CSSTransition
+      timeout={300}
+      key={location.pathname}
     >
-      <CSSTransition
-        timeout={300}
-        key={location.pathname}
-      >
-        <div>
-          <Switch location={location}>
-            <Route exact path="/" component={MainPage}><MainPage /></Route>
-            <Route exact path="/MessageCenter" component={MessageCenter}><MessageCenter/></Route>
-            <Route exact path="/MessageCenter/Notification" component={Notification}><Notification/></Route>
-            <Route exact path="/MessageCenter/CenterSetting" component={CenterSetting}><CenterSetting/></Route>
-            <Route exact path="/multigameChooser" component={MultigameChooser}><MultigameChooser /></Route>
-            <Route exact path="/multigameChooser/tournamentLobby/:id" component={TournamentLobby} render={(props) => <TournamentLobby {...props} />} />
-            <Route exact path="/multigameChooser/tournamentLobby/:id/:entryid/BattleModeJoin" component={BattleModeJoin} render={(props) => <BattleModeJoin {...props} />} />
-            <Route exact path="/gametutorial" component={GameTutorial} render={(props) => <GameTutorial {...props} />} />
+      <div>
+        <Switch location={location}>
+          <Route exact path="/" component={MainPage}><MainPage /></Route>
+          <Route exact path="/EndBattleMode" component={EndBattleMode}><EndBattleMode /></Route>
+          <Route exact path="/MessageCenter" component={MessageCenter}><MessageCenter /></Route>
+          <Route exact path="/MessageCenter/Notification" component={Notification}><Notification /></Route>
+          <Route exact path="/MessageCenter/CenterSetting" component={CenterSetting}><CenterSetting /></Route>
+          <Route exact path="/multigameChooser" component={MultigameChooser}><MultigameChooser /></Route>
+          <Route exact path="/multigameChooser/tournamentLobby/:id" component={TournamentLobby} render={(props) => <TournamentLobby {...props} />} />
+          <Route exact path="/multigameChooser/tournamentLobby/:id/:entryid/BattleModeJoin" component={BattleModeJoin} render={(props) => <BattleModeJoin {...props} />} />
+          <Route exact path="/multigameChooser/tournamentLobby/:id/:entryid/ChallengerModeGo" component={ChallengerModeGo} render={(props) => <ChallengerModeGo{...props} />} />
+          <Route exact path="/gametutorial" component={GameTutorial} render={(props) => <GameTutorial {...props} />} />
 
-            ...
-          </Switch>
-        </div>
-      </CSSTransition>
-    </TransitionGroup>
-  
+          ...
+        </Switch>
+      </div>
+    </CSSTransition>
+  </TransitionGroup>
+
 }
 export default function App() {
   return (

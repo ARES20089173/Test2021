@@ -109,45 +109,18 @@ export default class TournamentLobby extends Component {
             { id: 17, src: '/img/square2.jpeg', name: "LoL", number: 55, entryFee: 828 },
             { id: 18, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 }
         ]
-        const BattleMode = [
+        const ChallengerMode = [
             { id: 0, MaxPayOut: 88, MaxPrize: 3500, entryFee: 88 },
             { id: 1, MaxPayOut: 81, MaxPrize: 3100, entryFee: 848 },
             { id: 2, MaxPayOut: 848, MaxPrize: 2500, entryFee: 828 },
         ]
-        const TabledData = [
-            { id: 1, MyPuzzle: 88, MyScore: 35, MyRacking: 6 },
-            { id: 2, MyPuzzle: 81, MyScore: 43, MyRacking: 7 },
-            { id: 3, MyPuzzle: 28, MyScore: 32, MyRacking: 8 },
+        const ScoreData = [
+            { id: 0, Puzzle: 100, Score: 1000, ChallengeName: "GRAND" },
+            { id: 1, Puzzle: 80, Score: 800, ChallengeName: "EPIC" },
+            { id: 2, Puzzle: 60, Score: 600, ChallengeName: "HERO" },
+            { id: 3, Puzzle: 40, Score: 400, ChallengeName: "WOW" },
+            { id: 4, Puzzle: 20, Score: 200, ChallengeName: "BOUNS" },
         ]
-        const HeadsvgData = [
-            { id: 0, Headsvg: Headicon },
-            { id: 1, Headsvg: Headicon },
-            { id: 2, Headsvg: Headicon },
-            { id: 3, Headsvg: Headicon },
-            { id: 4, Headsvg: Headicon },
-            { id: 5, Headsvg: Headicon },
-            { id: 6, Headsvg: Headicon },
-            { id: 7, Headsvg: Headicon },
-            { id: 8, Headsvg: Headicon },
-            { id: 9, Headsvg: Headicon },
-            { id: 10, Headsvg: Headicon },
-        ]
-        const CurrentPlayer = 20;
-
-        const TableData = TabledData.map((Tdata) => {
-            return < Grid item xs={12} container height="5vh" textAlign="center" >
-                <Grid item xs={4} height="5vh" >
-                    {Tdata.MyPuzzle}
-                </Grid>
-                <Grid item xs={4} height="5vh">
-                    {Tdata.MyScore}
-                </Grid>
-                <Grid item xs={4} height="5vh">
-                    {Tdata.MyRacking}
-                </Grid>
-            </Grid >
-        });
-
         return (
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container height="100vh" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: 'auto auto', backgroundAttachment: 'fixed' }}>
@@ -158,7 +131,7 @@ export default class TournamentLobby extends Component {
                                 <AppBar position='relative' align='center' sx={{ top: 0, bottom: 'auto' }}>
                                     <Toolbar variant="dense">
                                         <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
-                                            BATTLE MODE
+                                            CHALLENGER MODE
                                         </Typography>
                                         <IconButton
                                             size="large"
@@ -239,7 +212,7 @@ export default class TournamentLobby extends Component {
                                             <Grid item xs={2} >
                                                 <Popup
                                                     trigger={<div className="button"> <div onClick={this.handleClick}>
-                                                    <IconButton
+                                                        <IconButton
                                                             size="small"
                                                             color="inherit"
                                                             aria-label="menu"
@@ -262,13 +235,13 @@ export default class TournamentLobby extends Component {
                                                                     How to play
                                                                 </Typography>
                                                                 <Typography variant="caption" component="div" color='primary' textAlign='center'>
-                                                                    {Mode[2].Modechoose}
+                                                                    {Mode[1].Modechoose}
                                                                 </Typography>
                                                                 <Grid item xs={12} height="30vh">
                                                                     <div className="video-responsive">
 
                                                                         <iframe
-                                                                            src={`https://www.youtube.com/embed/${Mode[2].embedId}`}
+                                                                            src={`https://www.youtube.com/embed/${Mode[1].embedId}`}
                                                                             frameBorder="0"
                                                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                                                             allowFullScreen
@@ -309,86 +282,86 @@ export default class TournamentLobby extends Component {
                     >
                         <Grid item xs={12} container
                             justifyContent='center'
-                            direction="row" padding="1vh"
-                            height="10vh">
-                            <Grid item xs={5.5} style={{ border: "1px solid grey", textAlign: 'center' }} borderRadius="20%" >
-
-                                <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
-                                    Highest Price Out
-                                </Typography>
-                                <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
-                                    {BattleMode[this.props.match.params.entryid].MaxPrize}  <img src={puzzle} alt="gameicon" width="15%" />
-                                </Typography>
-                            </Grid>
-                            <Grid item xs={5.5} style={{ border: "1px solid grey", textAlign: 'center' }} marginLeft="1vh" borderRadius="20%">
-
-                                <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
-                                    Max PayOut
-                                </Typography>
-                                <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
-                                    {BattleMode[this.props.match.params.entryid].MaxPayOut}  <img src={puzzle} alt="gameicon" width="15%" />
-                                </Typography>
-                            </Grid>
-                        </Grid>
-                        <Grid item xs={12} container
-                            justifyContent='center'
-
-                            direction="row">
-                            <Grid item xs={7.5} style={{ textAlign: 'left' }} height="0vh" paddingTop="3vh" borderRadius="20%">
-                                <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center', backgroundColor: 'white' }} color='primary'>
-                                    current PUZZLECHASE Ranking
-                                </Typography>
-                            </Grid>
-                            <Grid item xs={3.5} style={{ textAlign: 'center' }} borderRadius="20%" paddingTop="1.2vh" >
-                                <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
-                                    {CurrentPlayer}/50
-                                </Typography>
-                            </Grid>
-                        </Grid>
-                        <Grid item xs={12} container style={{ border: "1px solid grey", textAlign: 'left', overflow: 'scroll' }} justifyContent="left" alignItems="center" height="28vh">
-
-                            <Grid item xs={2.8} height="15vh" style={{ border: "1px solid grey", textAlign: 'center' }} ><StyledBadge badgeContent={1} color="secondary"><img src={HeadsvgData[1].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
-                            <Grid item xs={2.8} height="15vh" style={{ border: "1px solid grey", textAlign: 'center' }} ><StyledBadge badgeContent={2} color="secondary"><img src={HeadsvgData[2].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
-                            <Grid item xs={2.8} height="15vh" style={{ border: "1px solid grey", textAlign: 'center' }} ><StyledBadge badgeContent={3} color="secondary"><img src={HeadsvgData[3].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
-                            <Grid item xs={2.8} height="15vh" style={{ border: "1px solid grey", textAlign: 'center' }} ><StyledBadge badgeContent={4} color="secondary"><img src={HeadsvgData[4].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
-                            <Grid item xs={8.4} container>
-                                <Grid item xs={4} height="15vh" style={{ border: "1px solid grey", textAlign: 'center' }} ><StyledBadge badgeContent={5} color="secondary"><img src={HeadsvgData[5].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
-                                <Grid item xs={4} height="15vh" style={{ border: "1px solid grey", textAlign: 'center' }} ><StyledBadge badgeContent={6} color="secondary"><img src={HeadsvgData[6].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
-                                <Grid item xs={4} height="15vh" style={{ border: "1px solid grey", textAlign: 'center' }} ><StyledBadge badgeContent={7} color="secondary"><img src={HeadsvgData[7].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
-                                <Grid item xs={4} height="15vh" style={{ border: "1px solid grey", textAlign: 'center' }} ><StyledBadge badgeContent={8} color="secondary"><img src={HeadsvgData[8].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
-                                <Grid item xs={4} height="15vh" style={{ border: "1px solid grey", textAlign: 'center' }} ><StyledBadge badgeContent={9} color="secondary"><img src={HeadsvgData[9].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
-                                <Grid item xs={4} height="15vh" style={{ border: "1px solid grey", textAlign: 'center' }} > <StyledBadge badgeContent={10} color="secondary"><img src={HeadsvgData[10].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
-                            </Grid>
-                            <Grid item xs={3.6} container alignItems='center' justifyContent='center'  >
-                                <Grid item xs={12} height="30vh" style={{ border: "1px solid grey", textAlign: 'center' }} >
-                                    <img src={HeadsvgData[0].Headsvg} alt="Headicon" width="65%" /><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography>
-                                    <Grid item xs={12} height="9vh" style={{ border: "1px solid grey", textAlign: 'center' }} ><img src={pic1} alt="button" width="80%" /> share link</Grid>
-                                </Grid>
-                            </Grid>
-                            <Grid item xs={12} container container height="25vh" alignItems="center" justifyContent="center">
-                                <Grid item xs={12} container height="5vh" style={{ textAlign: 'center' }}>
-                                    <Grid item xs={4} height="5vh">
-                                        <img src={pic1} alt="button" width="80%" />
-                                    </Grid>
-                                    <Grid item xs={4} height="5vh">
-                                        <img src={pic1} alt="button" width="80%" />
-                                    </Grid>
-                                    <Grid item xs={4} height="5vh">
-                                        <img src={pic1} alt="button" width="80%" />
+                            direction="row"
+                            height="45vh">
+                            {/* 1 */}
+                            <Grid item xs={12} container height="8vh" backgroundColor="white" justifyContent='center' alignItems="center" >
+                                <Grid item xs={6} container justifyContent='center' alignItems="center">
+                                    <Grid item xs={8} >
+                                        <div style={{ border: "1px solid grey", textAlign: 'center', height: "8vh" }}>
+                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[0].Score}</Typography><br/>
+                                            <Typography variant="caption" color="black">Puzzle: {ScoreData[0].Puzzle}</Typography>
+                                        </div>
                                     </Grid>
                                 </Grid>
-
-                                {TableData}
+                                <Grid item xs={6} style={{textAlign:'center'}}>
+                                    <Typography>GRAND</Typography>
+                                </Grid>
+                            </Grid>
+                             {/* 2 */}
+                             <Grid item xs={12} container height="8vh" backgroundColor="white" justifyContent='center' alignItems="center" >
+                                <Grid item xs={6} container justifyContent='center' alignItems="center">
+                                    <Grid item xs={8} >
+                                        <div style={{ border: "1px solid grey", textAlign: 'center', height: "8vh" }}>
+                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[1].Score}</Typography><br/>
+                                            <Typography variant="caption" color="black">Puzzle: {ScoreData[1].Puzzle}</Typography>
+                                        </div>
+                                    </Grid>
+                                </Grid>
+                                <Grid item xs={6} style={{textAlign:'center'}}>
+                                    <Typography>GRAND</Typography>
+                                </Grid>
+                            </Grid>
+                             {/* 3 */}
+                             <Grid item xs={12} container height="8vh" backgroundColor="white" justifyContent='center' alignItems="center" >
+                                <Grid item xs={6} container justifyContent='center' alignItems="center">
+                                    <Grid item xs={8} >
+                                        <div style={{ border: "1px solid grey", textAlign: 'center', height: "8vh" }}>
+                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[2].Score}</Typography><br/>
+                                            <Typography variant="caption" color="black">Puzzle: {ScoreData[2].Puzzle}</Typography>
+                                        </div>
+                                    </Grid>
+                                </Grid>
+                                <Grid item xs={6} style={{textAlign:'center'}}>
+                                    <Typography>HERO</Typography>
+                                </Grid>
+                            </Grid>
+                             {/* 4 */}
+                             <Grid item xs={12} container height="8vh" backgroundColor="white" justifyContent='center' alignItems="center" >
+                                <Grid item xs={6} container justifyContent='center' alignItems="center">
+                                    <Grid item xs={8} >
+                                        <div style={{ border: "1px solid grey", textAlign: 'center', height: "8vh" }}>
+                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[3].Score}</Typography><br/>
+                                            <Typography variant="caption" color="black">Puzzle: {ScoreData[3].Puzzle}</Typography>
+                                        </div>
+                                    </Grid>
+                                </Grid>
+                                <Grid item xs={6} style={{textAlign:'center'}}>
+                                    <Typography>WOW</Typography>
+                                </Grid>
+                            </Grid>
+                             {/* 5 */}
+                             <Grid item xs={12} container height="8vh" backgroundColor="white" justifyContent='center' alignItems="center" >
+                                <Grid item xs={6} container justifyContent='center' alignItems="center">
+                                    <Grid item xs={8} >
+                                        <div style={{ border: "1px solid grey", textAlign: 'center', height: "8vh" }}>
+                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[4].Score}</Typography><br/>
+                                            <Typography variant="caption" color="black">Puzzle: {ScoreData[4].Puzzle}</Typography>
+                                        </div>
+                                    </Grid>
+                                </Grid>
+                                <Grid item xs={6} style={{textAlign:'center'}}>
+                                    <Typography>BOUNS</Typography>
+                                </Grid>
                             </Grid>
                         </Grid>
                         <Grid item xs={3} />
-                        <Grid item xs={4.5} height="9vh" style={{ border: "1px solid grey", textAlign: 'center' }} >
-                            <Typography variant="body1"> share to earn </Typography>
-                            <Typography variant="h6">Free!</Typography>
+                        <Grid item xs={4.5} height="9vh" style={{ textAlign: 'center' }} >
+                            
                         </Grid>
                         <Grid item xs={4.5} height="9vh" style={{ border: "1px solid grey", textAlign: 'center' }} >
                             <Typography variant="body1"> entry fee</Typography>
-                            <Typography variant="h6">{BattleMode[this.props.match.params.entryid].entryFee}<img src={puzzle} alt="icon" width="15%"/>
+                            <Typography variant="h6">{ChallengerMode[this.props.match.params.entryid].entryFee} <img src={puzzle} alt="icon" width="15%"/>
 
                                 <Popup
                                     trigger={
