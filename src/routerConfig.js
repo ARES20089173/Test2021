@@ -70,14 +70,14 @@ export const RouterConfig = [
       path: '/multigameChooser/tournamentLobby/:id/:entryid/BattleModeJoin',
       render: props => <BattleModeJoin {...props} />,
       meta: {
-        index: 2
+        index: 3
       }
     },
     {
       path: '/multigameChooser/tournamentLobby/:id/:entryid/ChallengerModeGo',
       render: props => <ChallengerModeGo {...props} />,
       meta: {
-        index: 2
+        index: 3
       }
     },
     {
