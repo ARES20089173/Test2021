@@ -382,6 +382,7 @@ export default class TournamentLobby extends Component {
                                     value={selectedOption}
                                     onChange={this.handleChange}
                                     options={options}
+                                    isSearchable={false} 
                                     defaultValue={{ value: ChallengerMode[this.props.match.params.entryid].entryFee, label: <Typography variant="body1"> entry fee: {ChallengerMode[this.props.match.params.entryid].entryFee}<img src={puzzle} alt="icon" width="15%" /></Typography> }}
                                     menuPlacement="top"
                                     components={{ DropdownIndicator:() => null, IndicatorSeparator:() => null }}
