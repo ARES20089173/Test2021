@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles'
 import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
 import backgroundEnd from "../../../reed_bg.svg"
+import Select from 'react-select';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import EndBar from '../../framework/endbarWithback';
 import 'reactjs-popup/dist/index.css';
@@ -35,8 +36,8 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 const StyledFab2 = styled(Fab)({
     position: 'relative',
     zIndex: 1,
-    left: "32%",
-    bottom: "5vh"
+    left: "45%",
+    bottom: "3vh"
 
 });
 const contentStyle = {
@@ -45,13 +46,11 @@ const contentStyle = {
     height: "95%",
     borderRadius: "5%",
 };
-
 export default class TournamentLobby extends Component {
     constructor(props) {
         super(props);
         this.state = { isToggleOn: true };
         this.Mode = 1;
-
         // This binding is necessary to make `this` work in the callback
         this.handleClick = this.handleClick.bind(this);
         //     this.oneVoneModehandleClick = this.oneVoneModehandleClick.bind(this);
@@ -63,6 +62,13 @@ export default class TournamentLobby extends Component {
             isToggleOn: !prevState.isToggleOn
         }));
     }
+    state = {
+        selectedOption: null,
+    };
+    handleChange = (selectedOption) => {
+        this.setState({ selectedOption });
+        console.log(`Option selected:`, selectedOption);
+    };
     // oneVoneModehandleClick() {
     //     this.Mode = 0;
     //     this.setState(prevState => ({
@@ -83,6 +89,7 @@ export default class TournamentLobby extends Component {
     // }
 
     render() {
+        const { selectedOption } = this.state;
         const Mode = [
             { id: 0, Modechoose: "oneVoneMode", embedId: "rokGy0huYEA", detail: "Chanllenger MODE is ......." },
             { id: 1, Modechoose: "challengerMode", embedId: "7HP8X7dadmM", detail: "1 ON 1 MODE is ......." },
@@ -110,9 +117,9 @@ export default class TournamentLobby extends Component {
             { id: 18, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 }
         ]
         const ChallengerMode = [
-            { id: 0, MaxPayOut: 88, MaxPrize: 3500, entryFee: 88 },
-            { id: 1, MaxPayOut: 81, MaxPrize: 3100, entryFee: 848 },
-            { id: 2, MaxPayOut: 848, MaxPrize: 2500, entryFee: 828 },
+            { id: 0, MaxPayOut: 88, MaxPrize: 3500, entryFee: 188 },
+            { id: 1, MaxPayOut: 81, MaxPrize: 3100, entryFee: 1848 },
+            { id: 2, MaxPayOut: 848, MaxPrize: 2500, entryFee: 1828 },
         ]
         const ScoreData = [
             { id: 0, Puzzle: 100, Score: 1000, ChallengeName: "GRAND" },
@@ -121,6 +128,18 @@ export default class TournamentLobby extends Component {
             { id: 3, Puzzle: 40, Score: 400, ChallengeName: "WOW" },
             { id: 4, Puzzle: 20, Score: 200, ChallengeName: "BOUNS" },
         ]
+       
+        const options = [
+            {
+                value: ChallengerMode[0].entryFee, label: <Typography variant="body1"> entry fee: {ChallengerMode[0].entryFee}<img src={puzzle} alt="icon" width="15%" /></Typography>
+            },
+            {
+                value: ChallengerMode[1].entryFee, label: <Typography variant="body1"> entry fee: {ChallengerMode[1].entryFee}<img src={puzzle} alt="icon" width="15%" /></Typography>
+            },
+            {
+                value: ChallengerMode[2].entryFee, label: <Typography variant="body1"> entry fee: {ChallengerMode[2].entryFee}<img src={puzzle} alt="icon" width="15%" /></Typography>
+            },
+        ];
         return (
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container height="100vh" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: 'auto auto', backgroundAttachment: 'fixed' }}>
@@ -211,7 +230,7 @@ export default class TournamentLobby extends Component {
                                             </Grid>
                                             <Grid item xs={2} >
                                                 <Popup
-                                                    trigger={<div className="button"> <div onClick={this.handleClick}>
+                                                    trigger={<div className="button"> <div >
                                                         <IconButton
                                                             size="small"
                                                             color="inherit"
@@ -226,7 +245,7 @@ export default class TournamentLobby extends Component {
                                                     {close => (
                                                         <div className="modal">
                                                             <button className="close" onClick={close}>
-                                                                <div className="close" onClick={this.handleClick}>
+                                                                <div className="close" >
                                                                     &times;
                                                                 </div>
                                                             </button>
@@ -289,79 +308,84 @@ export default class TournamentLobby extends Component {
                                 <Grid item xs={6} container justifyContent='center' alignItems="center">
                                     <Grid item xs={8} >
                                         <div style={{ border: "1px solid grey", textAlign: 'center', height: "8vh" }}>
-                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[0].Score}</Typography><br/>
+                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[0].Score}</Typography><br />
                                             <Typography variant="caption" color="black">Puzzle: {ScoreData[0].Puzzle}</Typography>
                                         </div>
                                     </Grid>
                                 </Grid>
-                                <Grid item xs={6} style={{textAlign:'center'}}>
+                                <Grid item xs={6} style={{ textAlign: 'center' }}>
                                     <Typography>GRAND</Typography>
                                 </Grid>
                             </Grid>
-                             {/* 2 */}
-                             <Grid item xs={12} container height="8vh" backgroundColor="white" justifyContent='center' alignItems="center" >
+                            {/* 2 */}
+                            <Grid item xs={12} container height="8vh" backgroundColor="white" justifyContent='center' alignItems="center" >
                                 <Grid item xs={6} container justifyContent='center' alignItems="center">
                                     <Grid item xs={8} >
                                         <div style={{ border: "1px solid grey", textAlign: 'center', height: "8vh" }}>
-                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[1].Score}</Typography><br/>
+                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[1].Score}</Typography><br />
                                             <Typography variant="caption" color="black">Puzzle: {ScoreData[1].Puzzle}</Typography>
                                         </div>
                                     </Grid>
                                 </Grid>
-                                <Grid item xs={6} style={{textAlign:'center'}}>
-                                    <Typography>GRAND</Typography>
+                                <Grid item xs={6} style={{ textAlign: 'center' }}>
+                                    <Typography>EPIC</Typography>
                                 </Grid>
                             </Grid>
-                             {/* 3 */}
-                             <Grid item xs={12} container height="8vh" backgroundColor="white" justifyContent='center' alignItems="center" >
+                            {/* 3 */}
+                            <Grid item xs={12} container height="8vh" backgroundColor="white" justifyContent='center' alignItems="center" >
                                 <Grid item xs={6} container justifyContent='center' alignItems="center">
                                     <Grid item xs={8} >
                                         <div style={{ border: "1px solid grey", textAlign: 'center', height: "8vh" }}>
-                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[2].Score}</Typography><br/>
+                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[2].Score}</Typography><br />
                                             <Typography variant="caption" color="black">Puzzle: {ScoreData[2].Puzzle}</Typography>
                                         </div>
                                     </Grid>
                                 </Grid>
-                                <Grid item xs={6} style={{textAlign:'center'}}>
+                                <Grid item xs={6} style={{ textAlign: 'center' }}>
                                     <Typography>HERO</Typography>
                                 </Grid>
                             </Grid>
-                             {/* 4 */}
-                             <Grid item xs={12} container height="8vh" backgroundColor="white" justifyContent='center' alignItems="center" >
+                            {/* 4 */}
+                            <Grid item xs={12} container height="8vh" backgroundColor="white" justifyContent='center' alignItems="center" >
                                 <Grid item xs={6} container justifyContent='center' alignItems="center">
                                     <Grid item xs={8} >
                                         <div style={{ border: "1px solid grey", textAlign: 'center', height: "8vh" }}>
-                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[3].Score}</Typography><br/>
+                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[3].Score}</Typography><br />
                                             <Typography variant="caption" color="black">Puzzle: {ScoreData[3].Puzzle}</Typography>
                                         </div>
                                     </Grid>
                                 </Grid>
-                                <Grid item xs={6} style={{textAlign:'center'}}>
+                                <Grid item xs={6} style={{ textAlign: 'center' }}>
                                     <Typography>WOW</Typography>
                                 </Grid>
                             </Grid>
-                             {/* 5 */}
-                             <Grid item xs={12} container height="8vh" backgroundColor="white" justifyContent='center' alignItems="center" >
+                            {/* 5 */}
+                            <Grid item xs={12} container height="8vh" backgroundColor="white" justifyContent='center' alignItems="center" >
                                 <Grid item xs={6} container justifyContent='center' alignItems="center">
                                     <Grid item xs={8} >
                                         <div style={{ border: "1px solid grey", textAlign: 'center', height: "8vh" }}>
-                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[4].Score}</Typography><br/>
+                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[4].Score}</Typography><br />
                                             <Typography variant="caption" color="black">Puzzle: {ScoreData[4].Puzzle}</Typography>
                                         </div>
                                     </Grid>
                                 </Grid>
-                                <Grid item xs={6} style={{textAlign:'center'}}>
+                                <Grid item xs={6} style={{ textAlign: 'center' }}>
                                     <Typography>BOUNS</Typography>
                                 </Grid>
                             </Grid>
                         </Grid>
-                        <Grid item xs={3} />
-                        <Grid item xs={4.5} height="9vh" style={{ textAlign: 'center' }} >
-                            
-                        </Grid>
-                        <Grid item xs={4.5} height="9vh" style={{ border: "1px solid grey", textAlign: 'center' }} >
-                            <Typography variant="body1"> entry fee</Typography>
-                            <Typography variant="h6">{ChallengerMode[this.props.match.params.entryid].entryFee} <img src={puzzle} alt="icon" width="15%"/>
+                        <Grid item xs={5} />
+                        <Grid item xs={6} height="7vh" style={{ textAlign: 'center' }} >
+
+                            <Typography variant="h6">
+                                <Select
+                                    value={selectedOption}
+                                    onChange={this.handleChange}
+                                    options={options}
+                                    defaultValue={{ value: ChallengerMode[this.props.match.params.entryid].entryFee, label: <Typography variant="body1"> entry fee: {ChallengerMode[this.props.match.params.entryid].entryFee}<img src={puzzle} alt="icon" width="15%" /></Typography> }}
+                                    menuPlacement="top"
+                                    components={{ DropdownIndicator:() => null, IndicatorSeparator:() => null }}
+                                />
 
                                 <Popup
                                     trigger={
@@ -399,7 +423,6 @@ export default class TournamentLobby extends Component {
                             {/* <Link to='/'> */}
                             {/* </Link> */}
                         </Grid>
-
                     </Grid>
                     <Grid item xs={12} marginTop="0vh" display={this.state.isToggleOn ? 'block' : 'none'} >
                         <EndBar />
