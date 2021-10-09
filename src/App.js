@@ -8,7 +8,8 @@ import Notification from './component/Pages/MainPage/Notification'
 import EndBattleMode from './component/Pages/ThreeGameMode/EndBattleMode'
 import EndChallengeMode from './component/Pages/ThreeGameMode/EndChallengeMode';
 import BattleModeJoin from './component/Pages/ThreeGameMode/BattleModeJoin'
-import ChallengerModeGo from './component/Pages/ThreeGameMode/ChallengerModeGo'
+import ChallengerModeGo from './component/Pages/ThreeGameMode/ChallengerModeGo';
+import oneVoneMode from './component/Pages/ThreeGameMode/OneVoneMode';
 import { RouterConfig, getMatchRouter } from './routerConfig';
 import './App.css'
 import {
@@ -76,6 +77,7 @@ const render = ({ location, history, match }) => {
           <Route exact path="/multigameChooser/tournamentLobby/:id" component={TournamentLobby} render={(props) => <TournamentLobby {...props} />} />
           <Route exact path="/multigameChooser/tournamentLobby/:id/:entryid/BattleModeJoin" component={BattleModeJoin} render={(props) => <BattleModeJoin {...props} />} />
           <Route exact path="/multigameChooser/tournamentLobby/:id/:entryid/ChallengerModeGo" component={ChallengerModeGo} render={(props) => <ChallengerModeGo{...props} />} />
+          <Route exact path="/multigameChooser/tournamentLobby/:id/:entryid/OneVoneMode" component={oneVoneMode} render={(props) => <oneVoneMode{...props} />} />
           <Route exact path="/gametutorial" component={GameTutorial} render={(props) => <GameTutorial {...props} />} />
 
           ...

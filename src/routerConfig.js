@@ -9,6 +9,7 @@ import MultigameChooser from './component/Pages/MainPage/MultigameChooser';
 import TournamentLobby from './component/Pages/MainPage/TournamentLobby';
 import EndBattleMode from './component/Pages/ThreeGameMode/EndBattleMode'
 import ChallengerModeGo from './component/Pages/ThreeGameMode/ChallengerModeGo'
+import OneVoneMode from './component/Pages/ThreeGameMode/OneVoneMode'
 export const getMatchRouter = (pathname, configs) =>
   configs.find(config => matchPath(pathname, {
     exact: true,
@@ -76,6 +77,13 @@ export const RouterConfig = [
     {
       path: '/multigameChooser/tournamentLobby/:id/:entryid/ChallengerModeGo',
       render: props => <ChallengerModeGo {...props} />,
+      meta: {
+        index: 3
+      }
+    },
+    {
+      path: '/multigameChooser/tournamentLobby/:id/:entryid/OneVoneMode',
+      render: props => <OneVoneMode {...props} />,
       meta: {
         index: 3
       }
