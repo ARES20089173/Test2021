@@ -336,7 +336,8 @@ export default class TournamentLobby extends Component {
                                     }}>
                                         <ImgTournamentLobby />
                                     </Button>
-                                    <Link to={`/`}><img src={pic1} width="100%" height='100%' /></Link>
+                                    <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${oneVoneMode[0].id}/OneVoneMode`}><img src={pic1} width="100%" height='100%' /></Link>
+
                                 </Grid>
 
                             </Grid>
@@ -375,7 +376,8 @@ export default class TournamentLobby extends Component {
                                     }}>
                                         <ImgTournamentLobby />
                                     </Button>
-                                    <Link to={`/`}><img src={pic1} width="100%" height='100%' /></Link>
+                                    <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${content.id}/OneVoneMode`}><img src={pic1} width="100%" height='100%' /></Link>
+
                                 </Grid>
 
                             </Grid></>

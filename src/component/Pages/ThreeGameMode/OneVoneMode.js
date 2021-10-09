@@ -95,7 +95,7 @@ function MyStopwatch() {
         </div>
     );
 }
-export default class OneVoneMode extends Component {
+export default class OneVoneModeGo extends Component {
 
     constructor(props) {
         super(props);
@@ -167,9 +167,9 @@ export default class OneVoneMode extends Component {
             { id: 18, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 }
         ]
         const OneVoneMode = [
-            { id: 0, MaxPayOut: 88, MaxPrize: 3500, entryFee: 188 },
-            { id: 1, MaxPayOut: 81, MaxPrize: 3100, entryFee: 1848 },
-            { id: 2, MaxPayOut: 848, MaxPrize: 2500, entryFee: 1828 },
+            { id: 0, MaxPayOut: 88, MaxPrize: 3500, entryFee: 88 },
+            { id: 1, MaxPayOut: 81, MaxPrize: 3100, entryFee: 848 },
+            { id: 2, MaxPayOut: 848, MaxPrize: 2500, entryFee: 828 },
         ]
         // const ScoreData = [
         //     { id: 0, Puzzle: 100, Score: 1000, ChallengeName: "GRAND" },
