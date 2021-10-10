@@ -7,6 +7,7 @@ import GameTutorial from './component/Pages/MainPage/GameTutorial';
 import Notification from './component/Pages/MainPage/Notification'
 import EndBattleMode from './component/Pages/ThreeGameMode/EndBattleMode'
 import EndChallengeMode from './component/Pages/ThreeGameMode/EndChallengeMode';
+import EndOneVoneMode from './component/Pages/ThreeGameMode/EndOneVoneMode';
 import BattleModeJoin from './component/Pages/ThreeGameMode/BattleModeJoin'
 import ChallengerModeGo from './component/Pages/ThreeGameMode/ChallengerModeGo';
 import oneVoneMode from './component/Pages/ThreeGameMode/OneVoneMode';
@@ -68,8 +69,9 @@ const render = ({ location, history, match }) => {
       <div>
         <Switch location={location}>
           <Route exact path="/" component={MainPage}><MainPage /></Route>           
-          <Route exact path="/EndBattleMode" component={EndBattleMode}><EndBattleMode /></Route>
+          <Route exact path="/EndBattleMode" component={EndBattleMode}><EndBattleMode /></Route> 
           <Route exact path="/EndChallengeMode" component={EndChallengeMode}><EndChallengeMode /></Route>
+          <Route exact path="/EndOneVoneMode" component={EndOneVoneMode}><EndOneVoneMode /></Route>
           <Route exact path="/MessageCenter" component={MessageCenter}><MessageCenter /></Route>
           <Route exact path="/MessageCenter/Notification" component={Notification}><Notification /></Route>
           <Route exact path="/MessageCenter/CenterSetting" component={CenterSetting}><CenterSetting /></Route>
