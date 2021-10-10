@@ -29,13 +29,21 @@ import Button from '@mui/material/Button';
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Slide from '@mui/material/Slide';
 import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import Fab from '@mui/material/Fab';
 const contentStyle = {
-    marginTop: '37%',
     background: '#cfcece',
-    width: "99%",
-    height: "50%",
+    width: "95%",
+    height: "95%",
     borderRadius: "5%",
 };
+const StyledFab2 = styled(Fab)({
+    position: 'relative',
+    zIndex: 1,
+    left: "0%",
+    bottom: "0"
+
+});
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
     return <IconButton {...other} />;
@@ -49,12 +57,18 @@ const ExpandMore = styled((props) => {
 export default class TournamentLobby extends Component {
     constructor(props) {
         super(props);
-        this.state = { expanded: false};
+        this.state = { expanded: false, isToggleOn: true };
         this.handleExpandClick = this.handleExpandClick.bind(this);
         this.handleExpandClick2 = this.handleExpandClick2.bind(this);
         this.handleExpandClick3 = this.handleExpandClick3.bind(this);
+        this.handleClick = this.handleClick.bind(this);
         //     this.state = { isToggleOn: true };
         //     this.Mode = 1;
+    }
+    handleClick() {
+        this.setState(prevState => ({
+            isToggleOn: !prevState.isToggleOn
+        }));
     }
     handleExpandClick = () => {
         this.setState(prevState => ({
@@ -71,6 +85,7 @@ export default class TournamentLobby extends Component {
             expanded3: !prevState.expanded3
         }))
     };
+
 
     //     // This binding is necessary to make `this` work in the callback
     //     this.handleClick = this.handleClick.bind(this);
@@ -103,6 +118,7 @@ export default class TournamentLobby extends Component {
     // }
 
     render() {
+
         const Mode = [
             { id: 0, Modechoose: "oneVoneMode", embedId: "rokGy0huYEA", detail: "Chanllenger MODE is ......." },
             { id: 1, Modechoose: "challengerMode", embedId: "7HP8X7dadmM", detail: "1 ON 1 MODE is ......." },
@@ -114,14 +130,14 @@ export default class TournamentLobby extends Component {
             { id: 2, entryFee: 828, MaxPrize: 1200 },
         ]
         const challengerMode = [
-            { id: 0, entryFee: 188, MaxPrize: 120 },
-            { id: 1, entryFee: 1848, MaxPrize: 2500 },
+            { id: 0, entryFee: 188, MaxPrize: 120},
+            { id: 1, entryFee: 1848, MaxPrize: 2500},
             { id: 2, entryFee: 1828, MaxPrize: 3500 },
         ]
         const BattleMode = [
-            { id: 0, entryFee: 88, MaxPrize: 3500 },
-            { id: 1, entryFee: 848, MaxPrize: 2500 },
-            { id: 2, entryFee: 828, MaxPrize: 3550 },
+            { id: 0, entryFee: 88, MaxPrize: 3500,player:19  },
+            { id: 1, entryFee: 848, MaxPrize: 2500 ,player:12},
+            { id: 2, entryFee: 828, MaxPrize: 3550,player:45 },
         ]
 
         const BattleModeItem = BattleMode.map((number) => {
@@ -182,7 +198,7 @@ export default class TournamentLobby extends Component {
                     <React.Fragment>
                         <Box sx={{ flexGrow: 1, }}>
                             <CssBaseline />
-                            <AppBar position='fixed' align='center' sx={{ top: 0, bottom: 'auto' }}>
+                            <AppBar position={this.state.isToggleOn ? 'fixed' : 'relative'} align='center' sx={{ top: 0, bottom: 'auto' }}>
                                 <Toolbar>
                                     <Typography variant="h6" component="div" color='primary'>
                                     </Typography>
@@ -264,16 +280,16 @@ export default class TournamentLobby extends Component {
                 >
                     <Grid item xs={12} marginLeft="2vh" marginTop="22vh">
                         <Popup
-                            trigger={<div className="button"> <div onClick={this.oneVoneModehandleClick}><Typography color="primary"> 1 ON 1 Mode(?) </Typography></div></div>}
+                            trigger={<div className="button"> <div ><Typography color="primary"> 1 ON 1 Mode(?) </Typography></div></div>}
                             modal
                             lockScroll
                             nested
-                            {...{ contentStyle }}
+
                         >
                             {close => (
                                 <div className="modal">
                                     <button className="close" onClick={close}>
-                                        <div className="close" onClick={this.handleClick}>
+                                        <div className="close" >
                                             &times;
                                         </div>
                                     </button>
@@ -305,109 +321,168 @@ export default class TournamentLobby extends Component {
                         </Popup>
                     </Grid>
                     <Grid item xs={12} marginTop="3vh">
-                            </Grid>
-                            <Grid item container
-                                direction="row"
-                                justifyContent='center' xs={12} height='15vh'>
-                                <Grid item xs={3} style={{ border: "1px solid grey", textAlign: 'center' }}>
-                                    <img src={puzzle} alt="gameicon" width="30%" />
-                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
-                                        {oneVoneMode[0].MaxPrize}
-                                    </Typography>
-                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
-                                        GRAND GRADE PRIZE
-                                    </Typography>
-                                </Grid>
-                                <Grid item xs={8} height='15vh' style={{ border: "1px solid grey" }}>
-                                    <Typography style={{
-                                        position: 'absolute',
-                                        right: 60,
-                                        fontSize: 20,
-                                        marginTop: 55
-                                    }} color='primary'>
-                                        Entry fee:{oneVoneMode[0].entryFee}<img src={puzzle} alt="puzzleicon" />
-                                    </Typography>
+                    </Grid>
+                    <Grid item container
+                        direction="row"
+                        justifyContent='center' xs={12} height='15vh'>
+                        <Grid item xs={3} style={{ border: "1px solid grey", textAlign: 'center' }}>
+                            <img src={puzzle} alt="gameicon" width="30%" />
+                            <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
+                                {oneVoneMode[0].MaxPrize}
+                            </Typography>
+                            <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
+                                GRAND GRADE PRIZE
+                            </Typography>
+                        </Grid>
+                        <Grid item xs={8} height='15vh' style={{ border: "1px solid grey" }}>
+                            <Typography style={{
+                                position: 'absolute',
+                                right: 60,
+                                fontSize: 20,
+                                marginTop: 55
+                            }} color='primary'>
+                                Entry fee:{oneVoneMode[0].entryFee}<img src={puzzle} alt="puzzleicon" />
+                            </Typography>
 
-                                    <Button style={{
-                                        position: 'absolute',
-                                        right: 0,
-                                        marginTop: 65
+                            <Button style={{
+                                position: 'absolute',
+                                right: 0,
+                                marginTop: 65
 
-                                    }}>
-                                        <ImgTournamentLobby />
-                                    </Button>
-                                    <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${oneVoneMode[0].id}/OneVoneMode`}><img src={pic1} width="100%" height='100%' /></Link>
+                            }}>
+                                <Popup
+                                    trigger={
+                                        <div className="button">
+                                            <div >
 
-                                </Grid>
+                                                <StyledFab2 size="small" color="secondary" aria-label="add" onClick={this.handleClick}>
+                                                    <KeyboardArrowRightIcon />
+                                                </StyledFab2>
+                                            </div>
+                                        </div>
 
-                            </Grid>
+                                    }
+                                    modal
+                                    lockScroll
+                                    closeOnDocumentClick={false}
+                                    nested
+                                    {...{ contentStyle }}
+                                >
+                                    {close => (
+                                        <div className="modal">
+                                            <button className="close" onClick={close}>
+                                                <div className="close" onClick={this.handleClick}>
+                                                    &times;
+                                                </div>
+                                            </button>
+                                            <Grid xs={12} >
+                                                Game Content
+                                            </Grid>
+                                        </div>
+                                    )}
+                                </Popup>
+                            </Button>
+                            <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${oneVoneMode[0].id}/OneVoneMode`}><img src={pic1} width="100%" height='100%' /></Link>
+
+                        </Grid>
+
+                    </Grid>
                     <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
-                    {oneVoneMode.filter(content=> content.id>0).map((content) => (
-                        <>
-                            <Grid item xs={12} marginTop="3vh">
-                            </Grid>
-                            <Grid item container
-                                direction="row"
-                                justifyContent='center' xs={12} height='15vh'>
-                                <Grid item xs={3} style={{ border: "1px solid grey", textAlign: 'center' }}>
-                                    <img src={puzzle} alt="gameicon" width="30%" />
-                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
-                                        {content.MaxPrize}
-                                    </Typography>
-                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
-                                        GRAND GRADE PRIZE
-                                    </Typography>
+                        {oneVoneMode.filter(content => content.id > 0).map((content) => (
+                            <>
+                                <Grid item xs={12} marginTop="3vh">
                                 </Grid>
-                                <Grid item xs={8} height='15vh' style={{ border: "1px solid grey" }}>
-                                    <Typography style={{
-                                        position: 'absolute',
-                                        right: 60,
-                                        fontSize: 20,
-                                        marginTop: 55
-                                    }} color='primary'>
-                                        Entry fee:{content.entryFee}<img src={puzzle} alt="puzzleicon" />
-                                    </Typography>
+                                <Grid item container
+                                    direction="row"
+                                    justifyContent='center' xs={12} height='15vh'>
+                                    <Grid item xs={3} style={{ border: "1px solid grey", textAlign: 'center' }}>
+                                        <img src={puzzle} alt="gameicon" width="30%" />
+                                        <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
+                                            {content.MaxPrize}
+                                        </Typography>
+                                        <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
+                                            GRAND GRADE PRIZE
+                                        </Typography>
+                                    </Grid>
+                                    <Grid item xs={8} height='15vh' style={{ border: "1px solid grey" }}>
+                                        <Typography style={{
+                                            position: 'absolute',
+                                            right: 60,
+                                            fontSize: 20,
+                                            marginTop: 55
+                                        }} color='primary'>
+                                            Entry fee:{content.entryFee}<img src={puzzle} alt="puzzleicon" />
+                                        </Typography>
 
-                                    <Button style={{
-                                        position: 'absolute',
-                                        right: 0,
-                                        marginTop: 65
+                                        <Button style={{
+                                            position: 'absolute',
+                                            right: 0,
+                                            marginTop: 65
 
-                                    }}>
-                                        <ImgTournamentLobby />
-                                    </Button>
-                                    <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${content.id}/OneVoneMode`}><img src={pic1} width="100%" height='100%' /></Link>
+                                        }}>
+                                            <Popup
+                                    trigger={
+                                        <div className="button">
+                                            <div >
 
-                                </Grid>
+                                                <StyledFab2 size="small" color="secondary" aria-label="add" onClick={this.handleClick}>
+                                                    <KeyboardArrowRightIcon />
+                                                </StyledFab2>
+                                            </div>
+                                        </div>
 
-                            </Grid></>
-                    ))}
-                      </Collapse>
+                                    }
+                                    modal
+                                    lockScroll
+                                    closeOnDocumentClick={false}
+                                    nested
+                                    {...{ contentStyle }}
+                                >
+                                    {close => (
+                                        <div className="modal">
+                                            <button className="close" onClick={close}>
+                                                <div className="close" onClick={this.handleClick}>
+                                                    &times;
+                                                </div>
+                                            </button>
+                                            <Grid xs={12} >
+                                                Game Content
+                                            </Grid>
+                                        </div>
+                                    )}
+                                </Popup>
+                                        </Button>
+                                        <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${content.id}/OneVoneMode`}><img src={pic1} width="100%" height='100%' /></Link>
+
+                                    </Grid>
+
+                                </Grid></>
+                        ))}
+                    </Collapse>
 
                     <Grid item xs={12} marginLeft="2vh" style={{ textAlign: 'center' }}>
-                    <ExpandMore
-                        expand={this.state.expanded}
-                        onClick={this.handleExpandClick}
-                        aria-expanded={this.state.expanded}
-                        aria-label="show more"
-                        color="success"
-                    >
-                        <ExpandMoreIcon />
-                    </ExpandMore>
+                        <ExpandMore
+                            expand={this.state.expanded}
+                            onClick={this.handleExpandClick}
+                            aria-expanded={this.state.expanded}
+                            aria-label="show more"
+                            color="success"
+                        >
+                            <ExpandMoreIcon />
+                        </ExpandMore>
                     </Grid>
 
                     <Grid item xs={12} marginLeft="2vh">
                         <Popup
-                            trigger={<div className="button"> <div onClick={this.challengerModehandleClick}> <Typography color="primary"> challengerMode(?)</Typography>  </div></div>}
+                            trigger={<div className="button"> <div > <Typography color="primary"> challengerMode(?)</Typography>  </div></div>}
                             modal
                             lockScroll
                             nested
-                            {...{ contentStyle }}
                         >
                             {close => (
                                 <div className="modal">
                                     <button className="close" onClick={close}>
-                                        <div className="close" onClick={this.handleClick}>
+                                        <div className="close">
                                             &times;
                                         </div>
                                     </button>
@@ -440,106 +515,169 @@ export default class TournamentLobby extends Component {
                     </Grid>
 
                     <Grid item xs={12} marginTop="3vh">
-                            </Grid>
-                            <Grid item container
-                                direction="row"
-                                justifyContent='center' xs={12} height='19vh'>
-                                <Grid item xs={3} style={{ border: "1px solid grey", textAlign: 'center' }}>
-                                    <img src={puzzle} alt="gameicon" width="50%" />
-                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
-                                        {challengerMode[0].MaxPrize}
-                                    </Typography>
-                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
-                                        GRAND GRADE PRIZE
-                                    </Typography>
-                                </Grid>
-                                <Grid item xs={8} height='19vh' style={{ border: "1px solid grey" }}>
-                                    <Typography style={{
-                                        position: 'absolute',
-                                        right: 60,
-                                        fontSize: 20,
-                                        marginTop: 80
-                                    }} color='primary'>
-                                        Entry fee:{challengerMode[0].entryFee}<img src={puzzle} alt="puzzleicon" />
-                                    </Typography>
+                    </Grid>
+                    <Grid item container
+                        direction="row"
+                        justifyContent='center' xs={12} height='19vh'>
+                        <Grid item xs={3} style={{ border: "1px solid grey", textAlign: 'center' }}>
+                            <img src={puzzle} alt="gameicon" width="50%" />
+                            <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
+                                {challengerMode[0].MaxPrize}
+                            </Typography>
+                            <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
+                                GRAND GRADE PRIZE
+                            </Typography>
+                        </Grid>
+                        <Grid item xs={8} height='19vh' style={{ border: "1px solid grey" }}>
 
-                                    <Button style={{
-                                        position: 'absolute',
-                                        right: 0,
-                                        marginTop: 90
+             
+                            <Typography style={{
+                                position: 'absolute',
+                                right: 60,
+                                fontSize: 20,
+                                marginTop: 80
+                            }} color='primary'>
+                                Entry fee:{challengerMode[0].entryFee}<img src={puzzle} alt="puzzleicon" />
+                            </Typography>
 
-                                    }}>
-                                        <ImgTournamentLobby />
-                                    </Button>
-                                    <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${challengerMode[0].id}/ChallengerModeGo`}><img src={pic1} width="100%" height='100%' /></Link>
-                                </Grid>
-                            </Grid>
+                            <Button style={{
+                                position: 'absolute',
+                                right: 0,
+                                marginTop: 90
+
+                            }}>
+                                <Popup
+                                    trigger={
+                                        <div className="button">
+                                            <div >
+
+                                                <StyledFab2 size="small" color="secondary" aria-label="add" onClick={this.handleClick}>
+                                                    <KeyboardArrowRightIcon />
+                                                </StyledFab2>
+                                            </div>
+                                        </div>
+
+                                    }
+                                    modal
+                                    lockScroll
+                                    closeOnDocumentClick={false}
+                                    nested
+                                    {...{ contentStyle }}
+                                >
+                                    {close => (
+                                        <div className="modal">
+                                            <button className="close" onClick={close}>
+                                                <div className="close" onClick={this.handleClick}>
+                                                    &times;
+                                                </div>
+                                            </button>
+                                            <Grid xs={12} >
+                                                Game Content
+                                            </Grid>
+                                        </div>
+                                    )}
+                                </Popup>
+                            </Button>
+                            <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${challengerMode[0].id}/ChallengerModeGo`}><img src={pic1} width="100%" height='100%' /></Link>
+                        </Grid>
+                    </Grid>
                     <Collapse in={this.state.expanded2} timeout="auto" unmountOnExit>
-                    {challengerMode.filter(content=> content.id>0).map((content) => (
-                        <>
-                            <Grid item xs={12} marginTop="3vh">
-                            </Grid>
-                            <Grid item container
-                                direction="row"
-                                justifyContent='center' xs={12} height='19vh'>
-                                <Grid item xs={3} style={{ border: "1px solid grey", textAlign: 'center' }}>
-                                    <img src={puzzle} alt="gameicon" width="50%" />
-                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
-                                        {content.MaxPrize}
-                                    </Typography>
-                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
-                                        GRAND GRADE PRIZE
-                                    </Typography>
+                        {challengerMode.filter(content => content.id > 0).map((content) => (
+                            <>
+                                <Grid item xs={12} marginTop="3vh">
                                 </Grid>
-                                <Grid item xs={8} height='19vh' style={{ border: "1px solid grey" }}>
-                                    <Typography style={{
-                                        position: 'absolute',
-                                        right: 60,
-                                        fontSize: 20,
-                                        marginTop: 80
-                                    }} color='primary'>
-                                        Entry fee:{content.entryFee}<img src={puzzle} alt="puzzleicon" />
-                                    </Typography>
+                                <Grid item container
+                                    direction="row"
+                                    justifyContent='center' xs={12} height='19vh'>
+                                    <Grid item xs={3} style={{ border: "1px solid grey", textAlign: 'center' }}>
+                                        <img src={puzzle} alt="gameicon" width="50%" />
+                                        <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
+                                            {content.MaxPrize}
+                                        </Typography>
+                                        <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
+                                            GRAND GRADE PRIZE
+                                        </Typography>
+                                    </Grid>
+                                    <Grid item xs={8} height='19vh' style={{ border: "1px solid grey" }}>
 
-                                    <Button style={{
-                                        position: 'absolute',
-                                        right: 0,
-                                        marginTop:90
+                                       
+                                        <Typography style={{
+                                            position: 'absolute',
+                                            right: 60,
+                                            fontSize: 20,
+                                            marginTop: 80
+                                        }} color='primary'>
+                                            Entry fee:{content.entryFee}<img src={puzzle} alt="puzzleicon" />
+                                        </Typography>
 
-                                    }}>
-                                        <ImgTournamentLobby />
-                                    </Button>
-                                    <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${content.id}/ChallengerModeGO`}><img src={pic1} width="100%" height='100%' /></Link>
+                                        <Button style={{
+                                            position: 'absolute',
+                                            right: 0,
+                                            marginTop: 90
+
+                                        }}>
+                                         <Popup
+                                    trigger={
+                                        <div className="button">
+                                            <div >
+
+                                                <StyledFab2 size="small" color="secondary" aria-label="add" onClick={this.handleClick}>
+                                                    <KeyboardArrowRightIcon />
+                                                </StyledFab2>
+                                            </div>
+                                        </div>
+
+                                    }
+                                    modal
+                                    lockScroll
+                                    closeOnDocumentClick={false}
+                                    nested
+                                    {...{ contentStyle }}
+                                >
+                                    {close => (
+                                        <div className="modal">
+                                            <button className="close" onClick={close}>
+                                                <div className="close" onClick={this.handleClick}>
+                                                    &times;
+                                                </div>
+                                            </button>
+                                            <Grid xs={12} >
+                                                Game Content
+                                            </Grid>
+                                        </div>
+                                    )}
+                                </Popup>
+                                        </Button>
+                                        <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${content.id}/ChallengerModeGO`}><img src={pic1} width="100%" height='100%' /></Link>
+                                    </Grid>
                                 </Grid>
-                            </Grid>
-                        </>
-                    ))}
+                            </>
+                        ))}
                     </Collapse>
 
                     <Grid item xs={12} marginLeft="2vh" style={{ textAlign: 'center' }}>
-                    <ExpandMore
-                        expand={this.state.expanded2}
-                        onClick={this.handleExpandClick2}
-                        aria-expanded={this.state.expanded2}
-                        aria-label="show more"
-                        color="success"
-                    >
-                        <ExpandMoreIcon />
-                    </ExpandMore>
+                        <ExpandMore
+                            expand={this.state.expanded2}
+                            onClick={this.handleExpandClick2}
+                            aria-expanded={this.state.expanded2}
+                            aria-label="show more"
+                            color="success"
+                        >
+                            <ExpandMoreIcon />
+                        </ExpandMore>
                     </Grid>
 
                     <Grid item xs={12} marginLeft="2vh">
                         <Popup
-                            trigger={<div className="button"> <div onClick={this.BattleModehandleClick}><Typography color="primary"> Battle Mode(?) </Typography></div></div>}
+                            trigger={<div className="button"> <div ><Typography color="primary"> Battle Mode(?) </Typography></div></div>}
                             modal
                             lockScroll
                             nested
-                            {...{ contentStyle }}
                         >
                             {close => (
                                 <div className="modal">
                                     <button className="close" onClick={close}>
-                                        <div className="close" onClick={this.handleClick}>
+                                        <div className="close">
                                             &times;
                                         </div>
                                     </button>
@@ -573,120 +711,188 @@ export default class TournamentLobby extends Component {
                         </Popup>
                     </Grid>
                     <Grid item xs={12} marginTop="3vh">
-                            </Grid>
-                            <Grid item container
-                                direction="row"
-                                justifyContent='center' xs={12} height='19vh'>
-                                <Grid item xs={3} style={{ border: "1px solid grey", textAlign: 'center' }}>
-                                    <img src={puzzle} alt="gameicon" width="50%" />
-                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
-                                        {BattleMode[0].MaxPrize}
-                                    </Typography>
-                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
-                                        GRAND GRADE PRIZE
-                                    </Typography>
-                                </Grid>
-                                <Grid item xs={8} height='19vh' style={{ border: "1px solid grey" }}>
-                                    <Typography style={{
-                                        position: 'absolute',
-                                        right: 60,
-                                        fontSize: 20,
-                                        marginTop: 80
-                                    }} color='primary'>
-                                        Entry fee:{BattleMode[0].entryFee}<img src={puzzle} alt="puzzleicon" />
-                                    </Typography>
-
-                                    <Button style={{
-                                        position: 'absolute',
-                                        right: 0,
-                                        marginTop: 90
-
-                                    }}>
-                                        <ImgTournamentLobby />
-                                    </Button>
-                                    <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${BattleMode[0].id}/BattleModeJoin`}><img src={pic1} width="100%" height='100%' /></Link>
-                                </Grid>
-
-                            </Grid>
-                    <Collapse in={this.state.expanded3} timeout="auto" unmountOnExit>
-                    {BattleMode.filter(content=> content.id>0).map((content) => (
-                        <>
-                            <Grid item xs={12} marginTop="5vh">
-                            </Grid>
-
-                            <Grid item container
-                                direction="row"
-                                justifyContent='center' xs={12} height='19vh'>
-
-                                <Grid item xs={3} style={{ border: "1px solid grey", textAlign: 'center' }} >
-                                    <img src={puzzle} alt="gameicon" width="65%" style={{ marginTop: '2vh' }} />
-                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
-                                        {content.MaxPrize}
-                                    </Typography>
-                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
-                                        GRAND GRADE PRIZE
-                                    </Typography>
-                                </Grid>
-                                <Grid item xs={8} style={{ border: "1px solid grey", backgroundImage: `url(${backgroundImage[2].src})`, backgroundSize: '100% 100%' }} >
-                                    <Typography style={{
-                                        position: 'absolute',
-                                        right: 50,
-                                        fontSize: 20,
-                                        marginTop: 80
-                                    }} color='primary'>
-                                        Entry fee:{content.entryFee}<img src={puzzle} alt="puzzleicon" />
-                                    </Typography>
-                                    <Button style={{
-                                        position: 'absolute',
-                                        right: 0,
-                                        marginTop: 90
-
-                                    }}>
-                                        <ImgTournamentLobby />
-                                    </Button>
-                                    <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${content.id}/BattleModeJoin`}><img src={pic1} width="100%" height='100%' /></Link>
-
-                                </Grid>
-                            </Grid>
-                        </>
-                    ))}
-                    </Collapse>
-                     <Grid item xs={12} marginLeft="2vh" style={{ textAlign: 'center' }}>
-                    <ExpandMore
-                        expand={this.state.expanded3}
-                        onClick={this.handleExpandClick3}
-                        aria-expanded={this.state.expanded3}
-                        aria-label="show more"
-                        color="success"
-                    >
-                        <ExpandMoreIcon />
-                    </ExpandMore>
                     </Grid>
-                    <Grid item xs={12} marginTop="0vh" >
+                    <Grid item container
+                        direction="row"
+                        justifyContent='center' xs={12} height='19vh'>
+                        <Grid item xs={3} style={{ border: "1px solid grey", textAlign: 'center' }}>
+                            <img src={puzzle} alt="gameicon" width="50%" />
+                            <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
+                                {BattleMode[0].MaxPrize}
+                            </Typography>
+                            <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
+                                GRAND GRADE PRIZE
+                            </Typography>
+                        </Grid>
+                        <Grid item xs={8} height='19vh' style={{ border: "1px solid grey" }}>
+                        <Typography variant="h4" component="div" style={{
+                                            position: 'absolute',
+                                            right: 30,
+                                            marginTop: 10
+                                        }}>
+                                            {BattleMode[0].player}/50
+                                        </Typography>
+                                        <Typography variant="h6" component="div" style={{
+                                            position: 'absolute',
+                                            right: 30,
+                                            marginTop: 40
+                                        }}>
+                                            players
+                                        </Typography>
+                            <Typography style={{
+                                position: 'absolute',
+                                right: 60,
+                                fontSize: 20,
+                                marginTop: 80
+                            }} color='primary'>
+                                Entry fee:{BattleMode[0].entryFee}<img src={puzzle} alt="puzzleicon" />
+                            </Typography>
+
+                            <Button style={{
+                                position: 'absolute',
+                                right: 0,
+                                marginTop: 90
+
+                            }}>
+                                <Popup
+                                    trigger={
+                                        <div className="button">
+                                            <div >
+
+                                                <StyledFab2 size="small" color="secondary" aria-label="add" onClick={this.handleClick}>
+                                                    <KeyboardArrowRightIcon />
+                                                </StyledFab2>
+                                            </div>
+                                        </div>
+
+                                    }
+                                    modal
+                                    lockScroll
+                                    closeOnDocumentClick={false}
+                                    nested
+                                    {...{ contentStyle }}
+                                >
+                                    {close => (
+                                        <div className="modal">
+                                            <button className="close" onClick={close}>
+                                                <div className="close" onClick={this.handleClick}>
+                                                    &times;
+                                                </div>
+                                            </button>
+                                            <Grid xs={12} >
+                                                Game Content
+                                            </Grid>
+                                        </div>
+                                    )}
+                                </Popup>
+                            </Button>
+                            <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${BattleMode[0].id}/BattleModeJoin`}><img src={pic1} width="100%" height='100%' /></Link>
+                        </Grid>
+
+                    </Grid>
+                    <Collapse in={this.state.expanded3} timeout="auto" unmountOnExit>
+                        {BattleMode.filter(content => content.id > 0).map((content) => (
+                            <>
+                                <Grid item xs={12} marginTop="5vh">
+                                </Grid>
+
+                                <Grid item container
+                                    direction="row"
+                                    justifyContent='center' xs={12} height='19vh'>
+
+                                    <Grid item xs={3} style={{ border: "1px solid grey", textAlign: 'center' }} >
+                                        <img src={puzzle} alt="gameicon" width="65%" style={{ marginTop: '2vh' }} />
+                                        <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
+                                            {content.MaxPrize}
+                                        </Typography>
+                                        <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
+                                            GRAND GRADE PRIZE
+                                        </Typography>
+                                    </Grid>
+                                    <Grid item xs={8} style={{ border: "1px solid grey", backgroundImage: `url(${backgroundImage[2].src})`, backgroundSize: '100% 100%' }} >
+                                    <Typography variant="h4" component="div" style={{
+                                            position: 'absolute',
+                                            right: 30,
+                                            marginTop: 10
+                                        }}>
+                                            {content.player}/50
+                                        </Typography>
+                                        <Typography variant="h6" component="div" style={{
+                                            position: 'absolute',
+                                            right: 30,
+                                            marginTop: 40
+                                        }}>
+                                            players
+                                        </Typography>
+                                        <Typography style={{
+                                            position: 'absolute',
+                                            right: 50,
+                                            fontSize: 20,
+                                            marginTop: 80
+                                        }} color='primary'>
+                                            Entry fee:{content.entryFee}<img src={puzzle} alt="puzzleicon" />
+                                        </Typography>
+                                        <Button style={{
+                                            position: 'absolute',
+                                            right: 0,
+                                            marginTop: 90
+
+                                        }}>
+                                        <Popup
+                                    trigger={
+                                        <div className="button">
+                                            <div >
+
+                                                <StyledFab2 size="small" color="secondary" aria-label="add" onClick={this.handleClick}>
+                                                    <KeyboardArrowRightIcon />
+                                                </StyledFab2>
+                                            </div>
+                                        </div>
+
+                                    }
+                                    modal
+                                    lockScroll
+                                    closeOnDocumentClick={false}
+                                    nested
+                                    {...{ contentStyle }}
+                                >
+                                    {close => (
+                                        <div className="modal">
+                                            <button className="close" onClick={close}>
+                                                <div className="close" onClick={this.handleClick}>
+                                                    &times;
+                                                </div>
+                                            </button>
+                                            <Grid xs={12} >
+                                                Game Content
+                                            </Grid>
+                                        </div>
+                                    )}
+                                </Popup>
+                                        </Button>
+                                        <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${content.id}/BattleModeJoin`}><img src={pic1} width="100%" height='100%' /></Link>
+
+                                    </Grid>
+                                </Grid>
+                            </>
+                        ))}
+                    </Collapse>
+                    <Grid item xs={12} marginLeft="2vh" style={{ textAlign: 'center' }}>
+                        <ExpandMore
+                            expand={this.state.expanded3}
+                            onClick={this.handleExpandClick3}
+                            aria-expanded={this.state.expanded3}
+                            aria-label="show more"
+                            color="success"
+                        >
+                            <ExpandMoreIcon />
+                        </ExpandMore>
+                    </Grid>
+                    <Grid item xs={12} marginTop="0vh" display={this.state.isToggleOn ? 'block' : 'none'}>
                         <EndBar />
                     </Grid>
 
                 </Grid>
-                <Box
-                    sx={{
-                        color: 'blue',
-                        position: 'fixed',
-                        top: "71%",
-                        left: '80%',
-                    }}
-                >
-                    <Typography variant="h5" component="div" sx={{ textalign: 'center' }}>
-                        18/20
-                    </Typography>
-                    <Typography variant="h6" component="div" sx={{ textalign: 'center' }}>
-                        players
-                    </Typography>
-                </Box>
-                {/* <Link to='/multigamechooser'>
-                    <StyledFab2 size="small" color="secondary" aria-label="add">
-                        <ArrowBackIcon />
-                    </StyledFab2>
-                </Link> */}
                 <div id="popup-root" />
             </Box>
 

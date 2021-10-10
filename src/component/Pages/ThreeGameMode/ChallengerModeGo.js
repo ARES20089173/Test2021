@@ -9,7 +9,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import EndBar from '../../framework/endbarWithback';
 import 'reactjs-popup/dist/index.css';
 import { Link } from 'react-router-dom';
-import "../../framework/css/cssModFLooby.css"
+import "../../framework/css/cssFChallenge.css"
 import Popup from 'reactjs-popup';
 import pic1 from '../../framework/img/300x100.jpeg'
 import IconButton from '@mui/material/IconButton';
@@ -134,7 +134,7 @@ export default class TournamentLobby extends Component {
             { id: 3, Puzzle: 40, Score: 400, ChallengeName: "WOW" },
             { id: 4, Puzzle: 20, Score: 200, ChallengeName: "BOUNS" },
         ]
-       
+
         const options = [
             {
                 value: ChallengerMode[0].entryFee, label: <Typography variant="body1"> entry fee: {ChallengerMode[0].entryFee}<img src={puzzle} alt="icon" width="15%" /></Typography>
@@ -254,14 +254,15 @@ export default class TournamentLobby extends Component {
                                             </Grid>
                                             <Grid item xs={2} >
                                                 <Popup
-                                                    trigger={<div className="button"> <div >
-                                                        <IconButton
-                                                            size="small"
-                                                            color="inherit"
-                                                            aria-label="menu"
-                                                            sx={{}}
-                                                        ><SportsEsportsIcon />
-                                                        </IconButton></div></div>}
+                                                    trigger={
+                                                            <div className="button"> <div >
+                                                            <IconButton
+                                                                size="small"
+                                                                color="inherit"
+                                                                aria-label="menu"
+                                                                sx={{}}
+                                                            ><SportsEsportsIcon />
+                                                            </IconButton></div></div>}
                                                     modal
                                                     lockScroll
                                                     nested
@@ -406,10 +407,10 @@ export default class TournamentLobby extends Component {
                                     value={selectedOption}
                                     onChange={this.handleChange}
                                     options={options}
-                                    isSearchable={false} 
+                                    isSearchable={false}
                                     defaultValue={{ value: ChallengerMode[this.props.match.params.entryid].entryFee, label: <Typography variant="body1"> entry fee: {ChallengerMode[this.props.match.params.entryid].entryFee}<img src={puzzle} alt="icon" width="15%" /></Typography> }}
                                     menuPlacement="top"
-                                    components={{ DropdownIndicator:() => null, IndicatorSeparator:() => null }}
+                                    components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
                                 />
 
                                 <Popup
