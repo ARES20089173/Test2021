@@ -11,6 +11,10 @@ import EndOneVoneMode from './component/Pages/ThreeGameMode/EndOneVoneMode';
 import BattleModeJoin from './component/Pages/ThreeGameMode/BattleModeJoin'
 import ChallengerModeGo from './component/Pages/ThreeGameMode/ChallengerModeGo';
 import oneVoneMode from './component/Pages/ThreeGameMode/OneVoneMode';
+import Profile  from './component/Pages/HamburgerBar/Profile';
+import Setting from'./component/Pages/HamburgerBar/Setting'
+import Events from'./component/Pages/HamburgerBar/Events'
+
 import { RouterConfig, getMatchRouter } from './routerConfig';
 import './App.css'
 import {
@@ -68,7 +72,10 @@ const render = ({ location, history, match }) => {
     >
       <div>
         <Switch location={location}>
-          <Route exact path="/" component={MainPage}><MainPage /></Route>           
+          <Route exact path="/" component={MainPage}><MainPage /></Route>    
+          <Route exact path="/Events" component={Events}><Events/></Route>    
+          <Route exact path="/:id/Profile" component={Profile} render={(props) => <Profile {...props} />}/>
+          <Route exact path="/:id/Setting" component={Setting} render={(props) => <Setting {...props} />}/>
           <Route exact path="/EndBattleMode" component={EndBattleMode}><EndBattleMode /></Route> 
           <Route exact path="/EndChallengeMode" component={EndChallengeMode}><EndChallengeMode /></Route>
           <Route exact path="/EndOneVoneMode" component={EndOneVoneMode}><EndOneVoneMode /></Route>

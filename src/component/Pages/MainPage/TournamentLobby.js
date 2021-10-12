@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import backgroundEnd from "../../../reed_bg.svg"
 import EndBar from '../../framework/endbarWithback';
-
 import 'reactjs-popup/dist/index.css';
 import "./styles.css"
 import { styled } from "@mui/material/styles";
@@ -16,21 +15,24 @@ import pic1 from "../../framework/img/300x100.jpeg"
 import Toolbar from '@mui/material/Toolbar';
 // import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Typography from '@mui/material/Typography';
-import ImgTournamentLobby from '../../framework/imgtournamentlobby';
-import LobbyPopup from '../../framework/lobbypopup';
 import MenuIcon from '@mui/icons-material/Menu';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
 // import { Link } from "react-router-dom"
 import puzzle from "../../../puzzle.svg"
-import SportsEsportsIcon from '@mui/icons-material/SportsEsports'
-import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import Button from '@mui/material/Button';
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import Slide from '@mui/material/Slide';
 import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import Fab from '@mui/material/Fab';
+import Drawer from "@mui/material/Drawer";
+import List from "@mui/material/List";
+import Divider from "@mui/material/Divider";
+import ListItem from "@mui/material/ListItem";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import InboxIcon from "@mui/icons-material/MoveToInbox";
+import MailIcon from "@mui/icons-material/Mail";
 const contentStyle = {
     background: '#cfcece',
     width: "95%",
@@ -57,13 +59,19 @@ const ExpandMore = styled((props) => {
 export default class TournamentLobby extends Component {
     constructor(props) {
         super(props);
-        this.state = { expanded: false, isToggleOn: true };
+        this.state = { expanded: false, isToggleOn: true, isOpen: false };
         this.handleExpandClick = this.handleExpandClick.bind(this);
         this.handleExpandClick2 = this.handleExpandClick2.bind(this);
         this.handleExpandClick3 = this.handleExpandClick3.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.openhandleClick = this.openhandleClick.bind(this);
         //     this.state = { isToggleOn: true };
         //     this.Mode = 1;
+    }
+    openhandleClick() {
+        this.setState(prevState => ({
+            isOpen: !prevState.isOpen
+        }));
     }
     handleClick() {
         this.setState(prevState => ({
@@ -212,9 +220,54 @@ export default class TournamentLobby extends Component {
                                         color="inherit"
                                         aria-label="menu"
                                         sx={{}}
+                                        onClick={this.openhandleClick}
                                     >
                                         <MenuIcon />
                                     </IconButton>
+                                     {/* drawer */}
+                                     <Drawer
+                                            anchor={"right"}
+                                            open={this.state.isOpen}
+                                            onClose={this.openhandleClick}
+                                        >
+                                            <Box
+                                                sx={{ width: 280, height: "100vh", backgroundColor: "white" }}
+                                                role="presentation"
+                                            >
+                                                <List >
+
+                                                    <IconButton
+                                                        size="large"
+                                                        edge="start"
+                                                        color="inherit"
+                                                        aria-label="menu"
+                                                        onClick={this.openhandleClick}
+                                                        sx={{ left: "90%", bottom: 20 }}
+                                                    >
+                                                        <MenuIcon />
+                                                    </IconButton>
+                                                    <ListItem>
+                                                        <ListItemText primary={"close"} sx={{ float: "right" }} />
+                                                    </ListItem>
+                                                    {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+                                                        <ListItem button key={text}>
+                                                            <ListItemText primary={text} sx={{ float: "right" }} />
+                                                        </ListItem>
+                                                    ))}
+                                                </List>
+                                                <Divider />
+                                                <List >
+                                                    {["All mail", "Trash", "Spam"].map((text, index) => (
+                                                        <ListItem button key={text}>
+                                                            <ListItemIcon>
+                                                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                                            </ListItemIcon>
+                                                            <ListItemText primary={text} />
+                                                        </ListItem>
+                                                    ))}
+                                                </List>
+                                            </Box>
+                                        </Drawer>
                                 </Toolbar>
 
                                 <div style={{ backgroundColor: "gray" }}>

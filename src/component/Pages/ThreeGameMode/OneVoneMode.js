@@ -37,6 +37,14 @@ import Badge from '@mui/material/Badge'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import Fab from '@mui/material/Fab';
 import { Swiper, SwiperSlide } from "swiper/react";
+import Drawer from "@mui/material/Drawer";
+import List from "@mui/material/List";
+import Divider from "@mui/material/Divider";
+import ListItem from "@mui/material/ListItem";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import InboxIcon from "@mui/icons-material/MoveToInbox";
+import MailIcon from "@mui/icons-material/Mail";
 // Import Swiper styles
 import 'swiper/swiper-bundle.min.css'
 // swiper core styles
@@ -95,14 +103,16 @@ function MyStopwatch() {
         </div>
     );
 }
+
 export default class OneVoneModeGo extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { isToggleOn: true };
+        this.state = { isToggleOn: true, isOpen: false };
         this.Mode = 1;
         // This binding is necessary to make `this` work in the callback
         this.handleClick = this.handleClick.bind(this);
+        this.openhandleClick = this.openhandleClick.bind(this);
         //     this.oneVoneModehandleClick = this.oneVoneModehandleClick.bind(this);
         //     this.challengerModehandleClick = this.challengerModehandleClick.bind(this);
         //     this.BattleModehandleClick = this.BattleModehandleClick.bind(this);
@@ -112,6 +122,11 @@ export default class OneVoneModeGo extends Component {
             isToggleOn: !prevState.isToggleOn
         }));
     }
+    openhandleClick() {
+        this.setState(prevState => ({
+            isOpen: !prevState.isOpen
+        }));
+    }
     state = {
         selectedOption: null,
     };
@@ -119,6 +134,7 @@ export default class OneVoneModeGo extends Component {
         this.setState({ selectedOption });
         console.log(`Option selected:`, selectedOption);
     };
+
     // oneVoneModehandleClick() {
     //     this.Mode = 0;
     //     this.setState(prevState => ({
@@ -139,7 +155,9 @@ export default class OneVoneModeGo extends Component {
     // }
 
     render() {
-        const { selectedOption } = this.state;
+
+
+
         const Mode = [
             { id: 0, Modechoose: "oneVoneMode", embedId: "rokGy0huYEA", detail: "Chanllenger MODE is ......." },
             { id: 1, Modechoose: "challengerMode", embedId: "7HP8X7dadmM", detail: "1 ON 1 MODE is ......." },
@@ -227,9 +245,55 @@ export default class OneVoneModeGo extends Component {
                                             color="inherit"
                                             aria-label="menu"
                                             sx={{}}
+                                            onClick={this.openhandleClick}
                                         >
                                             <MenuIcon />
                                         </IconButton>
+                                        {/* drawer */}
+                                        <Drawer
+                                            anchor={"right"}
+                                            open={this.state.isOpen}
+                                            onClose={this.openhandleClick}
+                                        >
+                                            <Box
+                                                sx={{ width: 280, height: "100vh", backgroundColor: "white" }}
+                                                role="presentation"
+                                            >
+                                                <List >
+
+                                                    <IconButton
+                                                        size="large"
+                                                        edge="start"
+                                                        color="inherit"
+                                                        aria-label="menu"
+                                                        onClick={this.openhandleClick}
+                                                        sx={{ left: "90%", bottom: 20 }}
+                                                    >
+                                                        <MenuIcon />
+                                                    </IconButton>
+                                                    <ListItem>
+                                                        <ListItemText primary={"close"} sx={{ float: "right" }} />
+                                                    </ListItem>
+                                                    {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+                                                        <ListItem button key={text}>
+                                                            <ListItemText primary={text} sx={{ float: "right" }} />
+                                                        </ListItem>
+                                                    ))}
+                                                </List>
+                                                <Divider />
+                                                <List >
+                                                    {["All mail", "Trash", "Spam"].map((text, index) => (
+                                                        <ListItem button key={text}>
+                                                            <ListItemIcon>
+                                                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                                            </ListItemIcon>
+                                                            <ListItemText primary={text} />
+                                                        </ListItem>
+                                                    ))}
+                                                </List>
+                                            </Box>
+                                        </Drawer>
+                                        
                                     </Toolbar>
 
                                     <div style={{ backgroundColor: "gray" }}>
@@ -403,17 +467,17 @@ export default class OneVoneModeGo extends Component {
                             </Grid>
                             {/* next half page */}
                             <Grid xs={9} container height="50%" justifyContent='center' alignItems="center" style={{ border: "1px solid grey", textAlign: 'center' }}>
-                            
-                                        <Grid xs={12} container height="100%" justifyContent='center' alignItems="center" style={{ border: "1px solid grey", textAlign: 'center' }} >
-                                            <Grid xs={7} container justifyContent="center" alignItems="center" style={{ border: "1px solid grey", textAlign: 'center', height: "100%" }}>
-                                                <img src={user.src} alt="" width="80%" />
-                                            </Grid>
-                                            <Grid xs={5} container justifyContent="center" alignItems="center" style={{ border: "1px solid grey", textAlign: 'center', height: "100%" }}>
-                                                <Typography variant="body1  " component="div" color='primary' textAlign='center' >
-                                                    {user.name}
-                                                </Typography>
-                                            </Grid>
-                                        </Grid>
+
+                                <Grid xs={12} container height="100%" justifyContent='center' alignItems="center" style={{ border: "1px solid grey", textAlign: 'center' }} >
+                                    <Grid xs={7} container justifyContent="center" alignItems="center" style={{ border: "1px solid grey", textAlign: 'center', height: "100%" }}>
+                                        <img src={user.src} alt="" width="80%" />
+                                    </Grid>
+                                    <Grid xs={5} container justifyContent="center" alignItems="center" style={{ border: "1px solid grey", textAlign: 'center', height: "100%" }}>
+                                        <Typography variant="body1  " component="div" color='primary' textAlign='center' >
+                                            {user.name}
+                                        </Typography>
+                                    </Grid>
+                                </Grid>
                             </Grid>
                             <Grid xs={3} item height="50%" style={{ border: "1px solid grey", textAlign: 'center', paddingTop: '15%' }}>
                             </Grid>

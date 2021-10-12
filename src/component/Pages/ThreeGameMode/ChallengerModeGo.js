@@ -25,6 +25,14 @@ import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import Badge from '@mui/material/Badge'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import Fab from '@mui/material/Fab';
+import Drawer from "@mui/material/Drawer";
+import List from "@mui/material/List";
+import Divider from "@mui/material/Divider";
+import ListItem from "@mui/material/ListItem";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import InboxIcon from "@mui/icons-material/MoveToInbox";
+import MailIcon from "@mui/icons-material/Mail";
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
         right: 12,
@@ -49,10 +57,11 @@ const contentStyle = {
 export default class TournamentLobby extends Component {
     constructor(props) {
         super(props);
-        this.state = { isToggleOn: true };
+        this.state = { isToggleOn: true, isOpen: false };
         this.Mode = 1;
         // This binding is necessary to make `this` work in the callback
         this.handleClick = this.handleClick.bind(this);
+        this.openhandleClick = this.openhandleClick.bind(this);
         //     this.oneVoneModehandleClick = this.oneVoneModehandleClick.bind(this);
         //     this.challengerModehandleClick = this.challengerModehandleClick.bind(this);
         //     this.BattleModehandleClick = this.BattleModehandleClick.bind(this);
@@ -69,6 +78,11 @@ export default class TournamentLobby extends Component {
         this.setState({ selectedOption });
         console.log(`Option selected:`, selectedOption);
     };
+    openhandleClick() {
+        this.setState(prevState => ({
+            isOpen: !prevState.isOpen
+        }));
+    }
     // oneVoneModehandleClick() {
     //     this.Mode = 0;
     //     this.setState(prevState => ({
@@ -182,9 +196,54 @@ export default class TournamentLobby extends Component {
                                             color="inherit"
                                             aria-label="menu"
                                             sx={{}}
+                                            onClick={this.openhandleClick}
                                         >
                                             <MenuIcon />
                                         </IconButton>
+                                        {/* drawer */}
+                                        <Drawer
+                                            anchor={"right"}
+                                            open={this.state.isOpen}
+                                            onClose={this.openhandleClick}
+                                        >
+                                            <Box
+                                                sx={{ width: 280, height: "100vh", backgroundColor: "white" }}
+                                                role="presentation"
+                                            >
+                                                <List >
+
+                                                    <IconButton
+                                                        size="large"
+                                                        edge="start"
+                                                        color="inherit"
+                                                        aria-label="menu"
+                                                        onClick={this.openhandleClick}
+                                                        sx={{ left: "90%", bottom: 20 }}
+                                                    >
+                                                        <MenuIcon />
+                                                    </IconButton>
+                                                    <ListItem>
+                                                        <ListItemText primary={"close"} sx={{ float: "right" }} />
+                                                    </ListItem>
+                                                    {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+                                                        <ListItem button key={text}>
+                                                            <ListItemText primary={text} sx={{ float: "right" }} />
+                                                        </ListItem>
+                                                    ))}
+                                                </List>
+                                                <Divider />
+                                                <List >
+                                                    {["All mail", "Trash", "Spam"].map((text, index) => (
+                                                        <ListItem button key={text}>
+                                                            <ListItemIcon>
+                                                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                                            </ListItemIcon>
+                                                            <ListItemText primary={text} />
+                                                        </ListItem>
+                                                    ))}
+                                                </List>
+                                            </Box>
+                                        </Drawer>
                                     </Toolbar>
 
                                     <div style={{ backgroundColor: "gray" }}>
