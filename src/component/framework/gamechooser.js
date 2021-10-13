@@ -8,6 +8,9 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
+import Gicon1 from '../../svgicon/GameIcon/Gicon1.svg'
+import Gicon2 from '../../svgicon/GameIcon/Gicon2.svg'
+import Gicon3 from '../../svgicon/GameIcon/Gicon3.svg'
 import 'swiper/swiper-bundle.min.css'
 // swiper core styles
 import 'swiper/swiper.min.css'
@@ -30,9 +33,9 @@ const StyledFab = styled(Fab)({
   right: "25%",
 });
 const data = [
-  { id: 0, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 },
-  { id: 1, src: '/img/square1.jpeg', name: "原神", number: 56, entryFee: 848 },
-  { id: 2, src: '/img/square2.jpeg', name: "LoL", number: 55, entryFee: 828 },
+  { id: 0, src: Gicon1, name: "2048", number: 52, entryFee: 88 },
+  { id: 1, src: Gicon2, name: "原神", number: 56, entryFee: 848 },
+  { id: 2, src: Gicon3, name: "LoL", number: 55, entryFee: 828 },
 ]
 export default function Gamechooser() {
   const [count, setCount] = useState(0);

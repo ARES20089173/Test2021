@@ -18,6 +18,8 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import Fab from '@mui/material/Fab';
+
+import EndBar from '../../framework/pureEndbar';
 import { styled } from '@mui/material/styles'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom"
@@ -61,8 +63,6 @@ const linkdata = [
     { id: 7, linkName: "", link: "" },
     { id: 8, linkName: "", link: "" },
 
-    { id: 9, linkName: "", link: "" },
-    { id: 10, linkName: "", link: "" },
 
 ]
 export default class Setting extends Component {
@@ -117,6 +117,9 @@ export default class Setting extends Component {
                         </ListItem>
                     ))}
                 </List>
+                <Grid item xs={12} marginTop="0vh" >
+                    <EndBar />
+                </Grid>
             </Box>
         )
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
 import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
-import pic1 from '../../framework/img/testPic1.png'
+import adv1 from '../../../svgicon/Advertise/adv1.svg'
 import Typography from '@mui/material/Typography';
 import 'reactjs-popup/dist/index.css';
 import "../../framework/css/cssModFLooby.css"
@@ -68,7 +68,7 @@ export default function MainPage() {
                 <Grid item xs={11} >
                     <div style={{ textAlign: 'center' }}>
                         <Popup
-                            trigger={<div className="button"> <div ><a href><img src={pic1} width="100%" height="65vh" alt="inviteimage" /></a></div></div>}
+                            trigger={<div className="button"> <div ><a href><img src={adv1} width="100%"  alt="inviteimage" /></a></div></div>}
                             modal
                             nested
                             {...{ contentStyle }}
@@ -102,7 +102,7 @@ export default function MainPage() {
                                         referral code
                                         </Typography>
                                         </div></Grid>
-                                            <img src={pic1} width="100%"  alt="inviteimage" />
+                                            <img src={adv1} width="100%"  alt="inviteimage" />
                                             </div>
                                         </Grid>
                                         <Typography variant="body2" component="div" color='primary' textAlign='center'>
