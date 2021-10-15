@@ -24,6 +24,7 @@ import {
 } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import MessageCenter from './component/Pages/MainPage/MessageCenter';
+import SelectAvatar from './component/Pages/HamburgerBar/SelectAvatar';
 const ANIMATION_MAP = {
   PUSH: 'forward',
   POP: 'back',
@@ -75,6 +76,7 @@ const render = ({ location, history, match }) => {
           <Route exact path="/" component={MainPage}><MainPage /></Route>    
           <Route exact path="/Events" component={Events}><Events/></Route>    
           <Route exact path="/:id/Profile" component={Profile} render={(props) => <Profile {...props} />}/>
+          <Route exact path="/:id/Profile/SelectAvatar" component={SelectAvatar} render={(props) => <SelectAvatar {...props} />}/>
           <Route exact path="/:id/Setting" component={Setting} render={(props) => <Setting {...props} />}/>
           <Route exact path="/EndBattleMode" component={EndBattleMode}><EndBattleMode /></Route> 
           <Route exact path="/EndChallengeMode" component={EndChallengeMode}><EndChallengeMode /></Route>

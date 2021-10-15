@@ -7,6 +7,7 @@ import heart from '../../../heart.svg'
 import money from '../../../money.svg'
 import game from '../../../game.svg'
 import event from '../../../event.svg'
+import { useParams } from "react-router";
 import r from '../../../r.svg'
 import switched from '../../../switched.svg'
 import Box from '@mui/material/Box';
@@ -47,8 +48,9 @@ const StyledFab2 = styled(Fab)({
 
 });
 
-export default class SelectAvatar extends Component {
-    render() {
+export default function SelectAvatar(){
+
+    const { id } = useParams();
         return (
             <Box sx={{ flexGrow: 1 }}>
                 <React.Fragment>
@@ -64,7 +66,7 @@ export default class SelectAvatar extends Component {
                             <CssBaseline />
                             <AppBar position="fixed" align='center' sx={{ top: 0 }}>
                                 <Toolbar>
-                                    <Link to='/Profile'>
+                                    <Link to={`/${id}/Profile`}>
                                         <StyledFab2 size="small" color="secondary" aria-label="add">
                                             <ArrowBackIcon />
                                         </StyledFab2>
@@ -82,4 +84,3 @@ export default class SelectAvatar extends Component {
             </Box>
         )
     }
-}

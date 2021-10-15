@@ -3,9 +3,11 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import EndBar from '../../framework/pureEndbar';
+import { Button } from "@mui/material";
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
+import { useParams } from "react-router";
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import CssBaseline from '@mui/material/CssBaseline';
@@ -43,20 +45,29 @@ const StyledFab2 = styled(Fab)({
 
 
 const userdata = [
-    { id: 0, FirstName: "Cheung", LastName: "kit", NickName: "Jay", Birthday: "2011-10-29", Contact: "+852", Flat: "1502", Street: "King road", Area: "Island", Builidng: "HealthyGarden", level: 'Lv1', ReesID: 1121321231, headicon: face1 },
+    { id: 0, Sex:"Mr",FirstName: "Cheung", LastName: "kit", NickName: "Jay", Birthday: "2011-10-29", Contact: "+852", Flat: "1502", Street: "King road", Area: "Island", Builidng: "HealthyGarden", level: 'Lv1', ReesID: 1121321231, headicon: face1 },
+    { id: 1, Sex:"Mr",FirstName: "Cheung2", LastName: "kit", NickName: "Jay", Birthday: "2011-10-29", Contact: "+852", Flat: "1502", Street: "King road", Area: "Island", Builidng: "HealthyGarden", level: 'Lv1', ReesID: 1121321231, headicon: face1 },
+    { id: 2, Sex:"Mx",FirstName: "Cheung3", LastName: "kit", NickName: "Jay", Birthday: "2011-10-29", Contact: "+852", Flat: "1502", Street: "King road", Area: "Island", Builidng: "HealthyGarden", level: 'Lv1', ReesID: 1121321231, headicon: face1 },
 ]
 
 export default function Profile() {
-    const [FirstName, setFirstName] = React.useState(userdata[0].FirstName);
-    const [LastName, setLastName] = React.useState(userdata[0].LastName);
-    const [NickName, setNickName] = React.useState(userdata[0].NickName);
-    const [Birthday, setBirthday] = React.useState(userdata[0].Birthday);
-    const [Contact, setContact] = React.useState(userdata[0].Contact);
-    const [Flat, setFlat] = React.useState(userdata[0].Flat);
-    const [Street, setStreet] = React.useState(userdata[0].Street);
-    const [Area, setArea] = React.useState(userdata[0].Area);
-    const [Builidng, setBuilindg] = React.useState(userdata[0].Builidng);
 
+    const { id } = useParams();
+    const [Sex, setSex] = React.useState(userdata[id].Sex);
+    const [FirstName, setFirstName] = React.useState(userdata[id].FirstName);
+    const [LastName, setLastName] = React.useState(userdata[id].LastName);
+    const [NickName, setNickName] = React.useState(userdata[id].NickName);
+    const [Birthday, setBirthday] = React.useState(userdata[id].Birthday);
+    const [Contact, setContact] = React.useState(userdata[id].Contact);
+    const [Flat, setFlat] = React.useState(userdata[id].Flat);
+    const [Street, setStreet] = React.useState(userdata[id].Street);
+    const [Area, setArea] = React.useState(userdata[id].Area);
+    const [Builidng, setBuilindg] = React.useState(userdata[id].Builidng);
+   
+    const handleSexChange = (event) => {
+        setSex(event.target.value)
+        
+    };
     const handleFirstNameChange = (event) => {
         setFirstName(event.target.value)
     };
@@ -96,7 +107,7 @@ export default function Profile() {
                         <CssBaseline />
                         <AppBar position="fixed" align='center' sx={{ top: 0 }}>
                             <Toolbar>
-                                <Link to='/'>
+                                <Link to={`/`}>
                                     <StyledFab2 size="small" color="secondary" aria-label="add">
                                         <ArrowBackIcon />
                                     </StyledFab2>
@@ -121,10 +132,13 @@ export default function Profile() {
                     </Grid>
                     <Grid xs={5} height="100%" container alignItems='center' justifyContent='center' >
                         <img src={userdata[0].headicon} alt="headicon" width="50%" />
-                        <Link to={"/"} style={{ textDecoration: 'none', color: 'black', background: "black" }}><div button color='white'><Typography color="primary">Change Avatar</Typography></div></Link>
+                        <Link to={`/${id}/Profile/SelectAvatar`} style={{ textDecoration: 'none', color: 'black', background: "black" }}><div button color='white'><Typography color="primary">Change Avatar</Typography></div></Link>
                     </Grid>
                 </Grid>
-                <Grid xs={12} height="63%" bgcolor="#8e8b91" >
+                <Grid xs={12}  container alignItems='center' justifyContent='center' height="63%" bgcolor="#8e8b91" >
+                <Grid xs={4}  ><Button size='small' variant={Sex =="Mr"? 'contained':'outlined'} value="Mr" onClick={handleSexChange}>Mr</Button></Grid>
+                <Grid xs={4}  > <Button size='small'variant={Sex =="Ms"? 'contained':'outlined'} value="Ms" onClick={handleSexChange}>Ms</Button></Grid>
+                <Grid xs={4}  > <Button size='small'variant={Sex =="Mx"? 'contained':'outlined'} value="Mx" onClick={handleSexChange}>Mx</Button></Grid>
                     <TextField
                         id="filled-multiline-flexible"
                         type="date"
@@ -237,10 +251,10 @@ export default function Profile() {
                     </Grid>
                 </Grid>
                 <Grid xs={12} height="15%" container alignItems='center' justifyContent='center' bgcolor="#707070" >
-                    <Grid xs={8} container alignItems='center' justifyContent='center' color='white'  height="80%" style={{  borderRadius: "25%" }}>
+                    <Grid xs={8} container alignItems='center' justifyContent='center' color='white' height="80%" style={{ borderRadius: "25%" }}>
                         <Popup
                             className="content2"
-                            trigger={<Typography color="primary" style={{  color: 'red',backgroundColor:"white"}} >SAVE Profile</Typography> }
+                            trigger={<Typography color="primary" style={{ color: 'red', backgroundColor: "white" }} >SAVE Profile</Typography>}
                             modal
                             lockScroll
                             nested
@@ -260,8 +274,8 @@ export default function Profile() {
                                     </Grid>
                                 </div>
                             )}
-                        </Popup> 
-                        </Grid>
+                        </Popup>
+                    </Grid>
 
                 </Grid>
             </Grid>

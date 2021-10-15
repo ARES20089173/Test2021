@@ -10,6 +10,8 @@ import TournamentLobby from './component/Pages/MainPage/TournamentLobby';
 import EndBattleMode from './component/Pages/ThreeGameMode/EndBattleMode'
 import ChallengerModeGo from './component/Pages/ThreeGameMode/ChallengerModeGo'
 import OneVoneMode from './component/Pages/ThreeGameMode/OneVoneMode'
+import SelectAvatar from "./component/Pages/HamburgerBar/SelectAvatar";
+import Profile from "./component/Pages/HamburgerBar/Profile";
 export const getMatchRouter = (pathname, configs) =>
   configs.find(config => matchPath(pathname, {
     exact: true,
@@ -37,6 +39,20 @@ export const RouterConfig = [
       render: props => <MessageCenter {...props} />,
       meta: {
         index: 1
+      }
+    },
+    {
+      path: '/:id/profile',
+      render: props => <Profile {...props} />,
+      meta: {
+        index: 1
+      }
+    },
+    {
+      path: '/:id/profile/SelectAvatar',
+      render: props => <SelectAvatar {...props} />,
+      meta: {
+        index: 2
       }
     },
     {
