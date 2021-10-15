@@ -6,11 +6,15 @@ import EndBar from '../../framework/pureEndbar';
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
 import CssBaseline from '@mui/material/CssBaseline';
 import Fab from '@mui/material/Fab';
 import { styled } from '@mui/material/styles'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom"
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 import HomeIcon from '@mui/icons-material/Home'
 import face1 from '../../../face_1.svg'
 const contentStyle = {
@@ -39,14 +43,43 @@ const StyledFab2 = styled(Fab)({
 
 
 const userdata = [
-    { id: 0, name: "Ka Po", level: 'Lv1', ReesID: 1121321231, headicon: face1 },
+    { id: 0, FirstName: "Cheung", LastName: "kit", NickName: "Jay", Birthday: "2011-10-29", Contact: "+852", Flat: "1502", Street: "King road", Area: "Island", Builidng: "HealthyGarden", level: 'Lv1', ReesID: 1121321231, headicon: face1 },
 ]
 
 export default function Profile() {
-    const [value, setValue] = React.useState('Controlled');
+    const [FirstName, setFirstName] = React.useState(userdata[0].FirstName);
+    const [LastName, setLastName] = React.useState(userdata[0].LastName);
+    const [NickName, setNickName] = React.useState(userdata[0].NickName);
+    const [Birthday, setBirthday] = React.useState(userdata[0].Birthday);
+    const [Contact, setContact] = React.useState(userdata[0].Contact);
+    const [Flat, setFlat] = React.useState(userdata[0].Flat);
+    const [Street, setStreet] = React.useState(userdata[0].Street);
+    const [Area, setArea] = React.useState(userdata[0].Area);
+    const [Builidng, setBuilindg] = React.useState(userdata[0].Builidng);
 
-    const handleChange = (event) => {
-        setValue(event.target.value);
+    const handleFirstNameChange = (event) => {
+        setFirstName(event.target.value)
+    };
+    const handleLastNameChange = (event) => {
+        setLastName(event.target.value);
+    };
+    const handleNickNameChange = (event) => {
+        setNickName(event.target.value);
+    };
+    const handleBirthdayChange = (event) => {
+        setBirthday(event.target.value);
+    };
+    const handleFlatChange = (event) => {
+        setFlat(event.target.value);
+    };
+    const handleStreetChange = (event) => {
+        setStreet(event.target.value);
+    };
+    const handleAreaChange = (event) => {
+        setArea(event.target.value);
+    };
+    const handleBuildingChange = (event) => {
+        setBuilindg(event.target.value);
     };
     return (
         <Box sx={{ flexGrow: 1 }}>
@@ -78,12 +111,12 @@ export default function Profile() {
                     <Toolbar />
                 </Box>
             </React.Fragment>
-            <Grid container alignItems='center' justifyContent='center' height="83vh" >
+            <Grid container alignItems='center' justifyContent='center' height="100vh" >
                 <Grid xs={12} height="2%" bgcolor="#8e8b91" >   </Grid>
 
                 <Grid xs={12} container alignItems='center' justifyContent='center' height="20%" bgcolor="#707070" >
                     <Grid xs={7} height="100%" container alignItems='center' justifyContent='center'>
-                        <Typography textAlign='center'>{userdata[0].name}<br />Rees Id:{userdata[0].ReesID}</Typography>
+                        <Typography textAlign='center'>{userdata[0].NickName}<br />Rees Id: {userdata[0].ReesID}</Typography>
 
                     </Grid>
                     <Grid xs={5} height="100%" container alignItems='center' justifyContent='center' >
@@ -94,21 +127,141 @@ export default function Profile() {
                 <Grid xs={12} height="63%" bgcolor="#8e8b91" >
                     <TextField
                         id="filled-multiline-flexible"
+                        type="date"
                         label="First Name"
                         multiline
                         maxRows={4}
-                        value={value}
-                        onChange={handleChange}
+                        value={FirstName}
+                        onChange={handleFirstNameChange}
+                        variant="filled"
+                        size="small"
+                        color="secondary"
+                        fullWidth={true}
+                    />
+                    <TextField
+                        id="filled-multiline-flexible"
+                        type="date"
+                        size="small"
+                        label="Last Name"
+                        multiline
+                        maxRows={4}
+                        value={LastName}
+                        onChange={handleLastNameChange}
                         variant="filled"
                         color="secondary"
                         fullWidth={true}
-
-                        type="date"
-
                     />
+                    <TextField
+                        id="filled-multiline-flexible"
+                        size="small"
+                        label="Nickname"
+                        multiline
+                        maxRows={4}
+                        value={NickName}
+                        onChange={handleNickNameChange}
+                        variant="filled"
+                        color="secondary"
+                        fullWidth={true}
+                    />
+                    <Grid xs={12} container alignItems='center'>
+                        <Grid xs={2.5}>
+                            <lable>Birthday:</lable></Grid>
+                        <Grid xs={9.5}>
+                            <TextField size="small" fullWidth={true} type="date" value={Birthday} onChange={handleBirthdayChange} widht='100%' />
+                        </Grid>
+                    </Grid>
+                    <Grid xs={12} container alignItems='center'>
+                        <Grid xs={3}>
+                            <lable>Contact No:</lable></Grid>
+                        <Grid xs={9}>
+                            <PhoneInput
+                                international
+                                countryCallingCodeEditable={false}
+                                defaultCountry="HK"
+                                value={Contact}
+                                onChange={setContact} /> </Grid>
+                    </Grid>
+                    <Grid xs={12} container alignItems='center'>
+                        <Grid xs={2.5}>
+                            <lable>Deliver Address:</lable></Grid>
+                        <Grid xs={2.5}>
+                            <TextField
+                                label="Flat"
+                                multiline
+                                maxRows={1}
+                                value={Flat}
+                                onChange={handleFlatChange}
+                                variant="filled"
+                                color="secondary" size="small"
+                            />
+                        </Grid>
+                        <Grid xs={7}>
+                            <TextField
+                                label="Street"
+                                multiline
+                                maxRows={1}
+                                value={Street}
+                                onChange={handleStreetChange}
+                                variant="filled"
+                                color="secondary" size="small"
+                            />
+                        </Grid>
+                    </Grid>
+
+                    <Grid xs={12} container alignItems='center'>
+                        <Grid xs={2.5}>
+                            <lable></lable></Grid>
+
+                        <Grid xs={3.5}>
+                            <TextField
+                                label="Area"
+                                multiline
+                                maxRows={1}
+                                value={Area}
+                                onChange={handleAreaChange}
+                                variant="filled"
+                                color="secondary" size="small"
+                            />
+                        </Grid>
+                        <Grid xs={6}>
+                            <TextField
+                                label="Building"
+                                multiline
+                                maxRows={1}
+                                value={Builidng}
+                                onChange={handleBuildingChange}
+                                variant="filled"
+                                color="secondary" size="small"
+                            />
+                        </Grid>
+                    </Grid>
                 </Grid>
                 <Grid xs={12} height="15%" container alignItems='center' justifyContent='center' bgcolor="#707070" >
-                    <Grid xs={8} container alignItems='center' justifyContent='center' color='white' bgcolor='red' height="80%" style={{ border: "1px solid grey", borderRadius: "25%", background: "black" }}>                    <Link to={"/"} style={{ textDecoration: 'none', color: 'black' }} width="80%"><Typography width="100%" color="primary">SAVE Profile</Typography></Link></Grid>
+                    <Grid xs={8} container alignItems='center' justifyContent='center' color='white'  height="80%" style={{  borderRadius: "25%" }}>
+                        <Popup
+                            className="content2"
+                            trigger={<Typography color="primary" style={{  color: 'red',backgroundColor:"white"}} >SAVE Profile</Typography> }
+                            modal
+                            lockScroll
+                            nested
+                            {...{ contentStyle }}
+                        >
+                            {close => (
+                                <div className="modal2">
+                                    <button className="close" onClick={close}>
+                                        <div className="close" >
+                                            &times;
+                                        </div>
+                                    </button>
+                                    <Grid xs={12} marginTop="7vh">
+                                        <Typography variant="h4" component="div" color='primary' textAlign='center' >
+                                            Profile save successfully
+                                        </Typography>
+                                    </Grid>
+                                </div>
+                            )}
+                        </Popup> 
+                        </Grid>
 
                 </Grid>
             </Grid>
