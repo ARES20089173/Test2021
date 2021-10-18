@@ -52,13 +52,13 @@ export default function MainPage() {
                         <Scrollbanner />
                     </div>
                 </Grid>
-                <Grid item xs={11} height="3vh">
+                <Grid item xs={11} height="5vh" style={{ marginTop: '1vh'}}>
                     <Scrolltext />
                     {/* <Grid xs={1}></Grid>
                     <Grid xs={10}><Scrolltext /></Grid>
                     <Grid xs={1}></Grid> */}
                 </Grid>
-                <Grid item xs={12} height="28vh">
+                <Grid item xs={12} height="30vh">
                     <GameChooser />
                     <Link to='/multigameChooser'>
                            <img src={GameLobby} alt="Gamelobby" width="15%" style={{

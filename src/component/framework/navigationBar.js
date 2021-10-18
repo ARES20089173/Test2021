@@ -118,7 +118,7 @@ export default function NavigationBar() {
               {userdata[0].nickname}
             </Typography>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
-              News
+          
             </Typography>
             
           <img src={Hamburgicon} alt='hamburgericon' style={{position: 'absolute',
