@@ -109,7 +109,7 @@ export default function NavigationBar() {
     <React.Fragment>
       <Box sx={{ flexGrow: 1 }} >
         <CssBaseline />
-        <AppBar position="fixed" align='center' style={{backgroundColor:'#242634'}} sx={{ top: 0 }} >
+        <AppBar position="fixed" align='center' style={{backgroundColor:'#242634'}} sx={{ margin: 0 }} >
           <Toolbar variant="dense">
             
             <img src={face} className="App-logo" alt="logo" width="13%" style={{marginLeft:"1vh",marginRight:'1vh'}} />
@@ -121,7 +121,10 @@ export default function NavigationBar() {
               News
             </Typography>
             
-          <img src={Hamburgicon} alt='hamburgericon' width="11%"  onClick={toggleDrawer("right", true)}/>
+          <img src={Hamburgicon} alt='hamburgericon' style={{position: 'absolute',
+                                            top: 5,
+                                            left: 0,
+                                            margin: '0 90%',}} width="10%" height="90%" onClick={toggleDrawer("right", true)}/>
         
             <Drawer
               anchor={"right"}
