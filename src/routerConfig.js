@@ -12,6 +12,7 @@ import ChallengerModeGo from './component/Pages/ThreeGameMode/ChallengerModeGo'
 import OneVoneMode from './component/Pages/ThreeGameMode/OneVoneMode'
 import SelectAvatar from "./component/Pages/HamburgerBar/SelectAvatar";
 import Profile from "./component/Pages/HamburgerBar/Profile";
+import WalletMain from './component/Pages/Wallet/WalletMain' ;
 export const getMatchRouter = (pathname, configs) =>
   configs.find(config => matchPath(pathname, {
     exact: true,
@@ -30,6 +31,13 @@ export const RouterConfig = [
     {
       path: '/EndBattleMode',
       render: props => <EndBattleMode{...props} />,
+      meta: {
+        index: 1
+      }
+    },
+    {
+      path: '/Wallet',
+      render: props => <WalletMain{...props} />,
       meta: {
         index: 1
       }

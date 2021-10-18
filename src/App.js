@@ -14,6 +14,7 @@ import oneVoneMode from './component/Pages/ThreeGameMode/OneVoneMode';
 import Profile  from './component/Pages/HamburgerBar/Profile';
 import Setting from'./component/Pages/HamburgerBar/Setting'
 import Events from'./component/Pages/HamburgerBar/Events'
+import WalletMain from './component/Pages/Wallet/WalletMain'
 
 import { RouterConfig, getMatchRouter } from './routerConfig';
 import './App.css'
@@ -91,6 +92,7 @@ const render = ({ location, history, match }) => {
           <Route exact path="/multigameChooser/tournamentLobby/:id/:entryid/OneVoneMode" component={oneVoneMode} render={(props) => <oneVoneMode{...props} />} />
           <Route exact path="/gametutorial" component={GameTutorial} render={(props) => <GameTutorial {...props} />} />
 
+          <Route exact path="/wallet" component={WalletMain} render={(props) => <WalletMain {...props} />}/>
           ...
         </Switch>
       </div>

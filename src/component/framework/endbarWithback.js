@@ -18,17 +18,26 @@ import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import AddIcon from '@mui/icons-material/Add';
 import { Link } from 'react-router-dom';
 import LinkBarWithback from './linkbarwithback';
+
+import Notification from '../../svgicon/Componenticon/Notification.svg'
+import Ricon from '../../svgicon/Componenticon/Ricon.svg'
+import Rmoneyicon from '../../svgicon/Componenticon/Rmoneyicon.svg'
+import SilverPuzzle from '../../svgicon/Componenticon/SilverPuzzle.svg'
+import Chasepuzzle from '../../svgicon/Componenticon/Chasepuzzle.svg'
+import addicon from '../../svgicon/Componenticon/addicon.svg'
+import Endbarbg from '../../svgicon/Componenticon/Endbarbg.svg'
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
-        right: 0,
-        top: 0,
+        right: 7,
+        top: 10,
         border: `2px solid ${theme.palette.background.paper}`,
         padding: '0 1px',
+        zIndex: 2,
     },
 }));
 const StyledFab = styled(Fab)({
     position: 'absolute',
-    zIndex: 0,
+    zIndex: 2,
     top: -30,
     left: 0,
     right: 0,
@@ -41,6 +50,8 @@ const contentStyle = {
     height: "51%",
     borderRadius: "5%",
 };
+
+const Amout = [{ Chasepuzzle: 18.6, SilverPuzzle: 20.5, money: 1000,notification:30 }]
 export default function BottomAppBar() {
     return (
         <React.Fragment>
@@ -55,21 +66,18 @@ export default function BottomAppBar() {
                         alignItems="center"
 
                     >
-
                         <Grid item xs={12} align='center' >
                             <Toolbar variant="dense">
                                 <LinkBarWithback />
                             </Toolbar>
-                            <div style={{ backgroundColor: "white" }}>
+                            <div style={{ backgroundColor: "#242634", borderTop: "1px solid #8e8b91" }}>
                                 <Toolbar variant="dense">
-                                    <IconButton color="inherit" aria-label="open drawer">
-                                        R
-                                    </IconButton>
+                                <img src={Ricon} alt="ricon" width="10%" />
                                     <Grid xs={12} container>
-                                    <Grid  xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} >
-                                        <div style={{ border: '1px solid black', }}>
-                                        <Popup
-                                                    trigger={<div className="button">  <img src={puzzle} className="App-logo" alt="logo" width="25%" />18.6k<AddIcon style={{ width: 15, height: 15, }} /></div>}
+                                        <Grid xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} >
+                                            <div style={{ backgroundImage: `url(${Endbarbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
+                                                <Popup
+                                                    trigger={<div className="button" style={{ color: "white" }}>  <img src={Chasepuzzle} className="App-logo" alt="logo" width="20%" />{Amout[0].Chasepuzzle}k<img src={addicon} style={{ width: 20 }} /></div>}
                                                     modal
                                                     lockScroll
                                                     nested
@@ -82,7 +90,7 @@ export default function BottomAppBar() {
                                                                     &times;
                                                                 </div>
                                                             </button>
-                                                         <SwieprConent/>
+                                                            <SwieprConent />
                                                         </div>
 
                                                     )}
@@ -90,9 +98,9 @@ export default function BottomAppBar() {
                                             </div>
                                         </Grid>
                                         <Grid xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
-                                            <div style={{ border: '1px solid black', }}>
+                                            <div style={{ backgroundImage: `url(${Endbarbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
                                                 <Popup
-                                                    trigger={<div className="button">  <img src={puzzle} className="App-logo" alt="logo" width="25%" />11.2k<AddIcon style={{ width: 15, height: 15, }} /></div>}
+                                                    trigger={<div className="button" style={{ color: "white" }}>  <img src={SilverPuzzle} className="App-logo" alt="logo" width="20%" />{Amout[0].Chasepuzzle}k<img src={addicon} style={{ width: 20 }} /></div>}
                                                     modal
                                                     lockScroll
                                                     nested
@@ -105,26 +113,37 @@ export default function BottomAppBar() {
                                                                     &times;
                                                                 </div>
                                                             </button>
-                                                         <SwieprConent/>
+                                                            <div>
+                                                                <SwieprConent />
+                                                            </div  >
                                                         </div>
 
                                                     )}
                                                 </Popup>
-                                        </div>
-                                    </Grid>
-                                    <Grid xs={4}  variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center'}}>
-                                        <div style={{ border: '1px solid black',height:'100%' }}>
-                                            <img src={puzzle} className="App-logo" alt="logo" width="25%"  />
-                                            13.9k
-                                        </div>
-                                    </Grid>
+                                            </div>
+                                        </Grid>
+                                        <Grid xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
+                                            <div style={{ height: '100%', backgroundImage: `url(${Endbarbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
+                                                <div className="button" style={{ color: "white",paddingTop:4 }}>
+                                                    <img src={Rmoneyicon} className="App-logo" alt="logo" width="20%" style={{  float: 'left' }} />
+                                                    {Amout[0].money}
+                                                </div>
+                                            </div>
+                                        </Grid>
                                     </Grid>
                                     <Link to="/MessageCenter">
-                                    <StyledFab size="small" color="secondary" aria-label="add">
-                                        <StyledBadge badgeContent={200} color="secondary">
-                                            <NotificationsNoneIcon />
-                                        </StyledBadge>
-                                    </StyledFab>
+                                    <div style={{
+                                            position: 'absolute',
+                                            zIndex: 2,
+                                            top: -30,
+                                            left: 0,
+                                            right: 0,
+                                            margin: '0 82%',
+                                        }}>
+                                            <StyledBadge badgeContent={Amout[0].notification} color="secondary" >
+                                                <img src={Notification} />
+                                            </StyledBadge>
+                                        </div>
                                     </Link>
                                 </Toolbar>
 
