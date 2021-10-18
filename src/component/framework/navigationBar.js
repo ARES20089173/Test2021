@@ -5,29 +5,22 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import logo from '../../graphsix.svg';
+import face from '../../svgicon/Headicon/face_1.svg';
+import Hamburgicon from '../../svgicon/Componenticon/Hamburgicon.svg'
 import CssBaseline from '@mui/material/CssBaseline';
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
 import { Link } from 'react-router-dom';
 import Logout from '../../logout.svg'
-import MailIcon from "@mui/icons-material/Mail";
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import puzzle from "../../puzzle.svg"
 import coderedeem from '../../coderedeem.svg'
-import Input from '@mui/material/Input';
-import InputLabel from '@mui/material/InputLabel';
-import InputAdornment from '@mui/material/InputAdornment';
-import FormControl from '@mui/material/FormControl';
 import TextField from '@mui/material/TextField';
 
 
 const userdata = [
-  { id: 0, level: 'Lv1', ReesID: 1 },
+  { id: 0, level: 'Lv1', ReesID: 1,nickname:'Jay' },
 ]
 const Toplinkdata = [
   { id: 0, linkName: "PROFILE", link: `/${userdata[0].ReesID}/Profile` },
@@ -67,8 +60,9 @@ export default function NavigationBar() {
           aria-label="menu"
           onClick={toggleDrawer("right", false)}
           sx={{ left: "85%", bottom: 5 }}
+          width="10%" 
         >
-          <MenuIcon />
+          <img src={Hamburgicon} alt='hamburgericon' width='70%'/>
         </IconButton>
         <ListItemText style={{ textAlign: "center" }}  >Play to Earn PUZZLES<img src={puzzle} /></ListItemText>
 
@@ -113,35 +107,22 @@ export default function NavigationBar() {
 
   return (
     <React.Fragment>
-      <Box sx={{ flexGrow: 1 }}>
+      <Box sx={{ flexGrow: 1 }} >
         <CssBaseline />
-        <AppBar position="fixed" align='center' sx={{ top: 0 }}>
+        <AppBar position="fixed" align='center' style={{backgroundColor:'#242634'}} sx={{ top: 0 }} >
           <Toolbar variant="dense">
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              sx={{ mb: 0.5 }}
-            >
-              <img src={logo} className="App-logo" alt="logo" />
-            </IconButton>
+            
+            <img src={face} className="App-logo" alt="logo" width="13%" style={{marginLeft:"1vh",marginRight:'1vh'}} />
+           
             <Typography variant="h6" component="div" sx={{}}>
-              {userdata[0].level}
+              {userdata[0].nickname}
             </Typography>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
               News
             </Typography>
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              onClick={toggleDrawer("right", true)}
-              sx={{}}
-            >
-              <MenuIcon />
-            </IconButton>
+            
+          <img src={Hamburgicon} alt='hamburgericon' width="11%"  onClick={toggleDrawer("right", true)}/>
+        
             <Drawer
               anchor={"right"}
               open={state["right"]}

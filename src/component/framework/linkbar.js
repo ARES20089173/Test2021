@@ -3,51 +3,40 @@ import Grid from '@mui/material/Grid'
 import IconButton from '@mui/material/IconButton'
 import { styled } from '@mui/material/styles'
 import Badge from '@mui/material/Badge'
-import linkicon from '../../graphsixBig.svg'
+import Player from '../../svgicon/EndBaricon/PlayerLink.svg'
+import Shop from '../../svgicon/EndBaricon/ShopLink.svg'
+import Wallet from '../../svgicon/EndBaricon/WalletLink.svg'
+import History from '../../svgicon/EndBaricon/HistoryLink.svg'
+import Mission from '../../svgicon/EndBaricon/MissionLink.svg'
+
 import linkiconBig from '../../graphsixBigger.svg'
 import Box from '@mui/material/Box'
 import { Typography } from '@mui/material'
+import { useHistory } from 'react-router'
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
-        right: -3,
-        top: 13,
-        border: `2px solid ${theme.palette.background.paper}`,
-        padding: '0 4px',
+        right: 10,
+        top: '7vh',
+        border: `1px solid ${theme.palette.background.paper}`,
+        padding: '0 1px',
+
     },
 }));
+const MessageNumber = [
+    { id: 0, link: "/", MessageNum: 3 },
+    { id: 1, link: "/", MessageNum: 32 },
+    { id: 2, link: "/", MessageNum: 55 },
+    { id: 3, link: "/", MessageNum: 73 },
+    { id: 4, link: "/", MessageNum: 100 },
+]
+
 export default function Linkbar() {
-    const [linkiconcheck0, setlinkiconcheck0] = React.useState(true);
-    const [linkiconcheck1, setlinkiconcheck1] = React.useState(false);
-    const [linkiconcheck2, setlinkiconcheck2] = React.useState(false);
-    const [linkiconcheck3, setlinkiconcheck3] = React.useState(false);
-    const [linkiconcheck4, setlinkiconcheck4] = React.useState(false);
-    var pic, pic1, pic2, pic3, pic4;
-    if (linkiconcheck0) {
-        pic = linkiconBig
-    } else {
-        pic = linkicon
-    }
-    if (linkiconcheck1) {
-        pic1 = linkiconBig
-    } else {
-        pic1 = linkicon
-    }
-    if (linkiconcheck2) {
-        pic2 = linkiconBig
-    } else {
-        pic2 = linkicon
-    }
-    if (linkiconcheck3) {
-        pic3 = linkiconBig
-    } else {
-        pic3 = linkicon
-    }
-    if (linkiconcheck4) {
-        pic4 = linkiconBig
-    } else {
-        pic4 = linkicon
-    }
+
+    const history = useHistory();
+    const handleLink = (e) => {
+        history.push(MessageNumber[e].link)
+    };
     return (
         <Box sx={{ flexGrow: 1 }}>
             <Grid
@@ -55,65 +44,84 @@ export default function Linkbar() {
                 direction="row"
                 justifyContent="center"
                 alignItems="center"
-              
             >
-
-                <Grid item xs={2} align='center'>
-                    <IconButton aria-label="cart" onClick={() => { setlinkiconcheck0(true); setlinkiconcheck1(false); setlinkiconcheck2(false); setlinkiconcheck3(false); setlinkiconcheck4(false); }}>
-                        <StyledBadge badgeContent={200} color="secondary">
-                            <img src={pic} className="App-logo" alt="logo" width="200%" />
-                        </StyledBadge>
-                    </IconButton>
-
+                <Grid item xs={2} align='left'>
+                    <StyledBadge badgeContent={MessageNumber[0].MessageNum} color="secondary">
+                        <img src={Player} onClick={() => handleLink(MessageNumber[0].id)} className="App-logo" alt="logo" width="170%" style={{
+                            position: 'relative',
+                            zIndex: 1,
+                            bottom: "-5vh",
+                            right: '3vh'
+                        }} />
+                    </StyledBadge>
                 </Grid>
                 <Grid item xs={2} align='center'>
-                    <IconButton aria-label="cart" onClick={() => { setlinkiconcheck0(false); setlinkiconcheck1(true); setlinkiconcheck2(false); setlinkiconcheck3(false); setlinkiconcheck4(false); }}>
-                        <StyledBadge badgeContent={200} color="secondary">
-                            <img src={pic1} className="App-logo" alt="logo" width="200%" />
-                        </StyledBadge>
-                    </IconButton>
+                    <StyledBadge badgeContent={MessageNumber[1].MessageNum} color="secondary">
+                        <img src={Shop} onClick={() => handleLink(MessageNumber[1].id)} className="App-logo" alt="logo" width="120%" style={{
+                            position: 'relative',
+                            zIndex: 1,
+                            bottom: "-5vh",
+                            right: "1vh"
+                        }} />
+                    </StyledBadge>
                 </Grid>
                 <Grid item xs={2} align='center'>
-                    <IconButton aria-label="cart" onClick={() => { setlinkiconcheck0(false); setlinkiconcheck1(false); setlinkiconcheck2(true); setlinkiconcheck3(false); setlinkiconcheck4(false); }}>
-                        <StyledBadge badgeContent={200} color="secondary">
-                            <img src={pic2} className="App-logo" alt="logo" width="200%" />
-                        </StyledBadge>
-                    </IconButton>
+                    <StyledBadge badgeContent={MessageNumber[2].MessageNum} color="secondary">
+                        <img src={Wallet} onClick={() => handleLink(MessageNumber[2].id)} className="App-logo" alt="logo" width="120%" style={{
+                            position: 'relative',
+                            zIndex: 1,
+                            bottom: "-5vh",
+                            right: "1vh"
+                        }} />
+                    </StyledBadge>
                 </Grid>
                 <Grid item xs={2} align='center' >
-                    <IconButton aria-label="cart" onClick={() => { setlinkiconcheck0(false); setlinkiconcheck1(false); setlinkiconcheck2(false); setlinkiconcheck3(true); setlinkiconcheck4(false); }}>
-                        <StyledBadge badgeContent={200} color="secondary">
-                            <img src={pic3} className="App-logo" alt="logo" width="200%" />
-                        </StyledBadge>
-                    </IconButton>
+                    <StyledBadge badgeContent={MessageNumber[3].MessageNum} color="secondary">
+                        <img src={History} onClick={() => handleLink(MessageNumber[3].id)} className="App-logo" alt="logo" width="120%" style={{
+                            position: 'relative',
+                            zIndex: 1,
+                            bottom: "-5vh",
+                            right: "1vh"
+                        }} />
+                    </StyledBadge>
                 </Grid>
                 <Grid item xs={2} align='center' >
-                    <IconButton aria-label="cart" onClick={() => { setlinkiconcheck0(false); setlinkiconcheck1(false); setlinkiconcheck2(false); setlinkiconcheck3(false); setlinkiconcheck4(true); }}>
-                        <StyledBadge badgeContent={200} color="secondary">
-                            <img src={pic4} className="App-logo" alt="logo" width="200%" />
-                        </StyledBadge>
-                    </IconButton>
+                    <StyledBadge badgeContent={MessageNumber[4].MessageNum} color="secondary">
+                        <img src={Mission} onClick={() => handleLink(MessageNumber[4].id)} className="App-logo" alt="logo" width="120%" style={{
+                            position: 'relative',
+                            zIndex: 1,
+                            bottom: "-5vh",
+                            right: "1vh"
+                        }} />
+                    </StyledBadge>
                 </Grid>
                 <Grid item xs={2}>
-             
+
                 </Grid>
 
-                <Grid item xs={2} >
+                <Grid item xs={2} style={{
+                    position: 'relative',
+                    zIndex: 1,
+                    right: '2.5vh'
+                }}>
                     <Typography align='left' variant="caption" color='primary' fontSize="1">
                         Player@Earn
-                        </Typography>
+                    </Typography>
                 </Grid>
-                <Grid item xs={2}>
+                <Grid item xs={2} style={{
+                    position: 'relative',
+                    zIndex: 1,
+                }}>
                     <Typography align='center' variant="caption" color='primary'>Shop</Typography>
                 </Grid>
                 <Grid item xs={2}>
                     <Typography align='center' variant="caption" color='primary'>Wallet</Typography>
                 </Grid>
                 <Grid item xs={2}>
-                    <Typography align='center' variant="caption"color='primary'>History</Typography>
+                    <Typography align='center' variant="caption" color='primary'>History</Typography>
                 </Grid>
                 <Grid item xs={2}>
-                    <Typography align='center' variant="caption"color='primary'>Mission</Typography>
+                    <Typography align='center' variant="caption" color='primary'>Mission</Typography>
                 </Grid>
                 <Grid item xs={2}>
                 </Grid>

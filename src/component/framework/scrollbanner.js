@@ -3,25 +3,21 @@ import { Link } from "react-router-dom"
 import { Carousel } from 'react-responsive-carousel'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import pic1 from '../../svgicon/Carousel/pic1.svg'
-import Fab from '@mui/material/Fab';
-import { styled } from '@mui/material/styles'
-import ExploreIcon from '@mui/icons-material/Explore';
+import GameTutorial from '../../svgicon/Componenticon/GameTutorial.svg';
 class App extends Component {
     render() {
-        const StyledFab2 = styled(Fab)({
-            position: 'relative',
-            zIndex: 3,
-            top: 45,
-            left:"42%"
-        });
+       
         return (
 
-            <div style={{}}>
+            <div  >
                 <div className="carousel-wrapper" >
                 <Link to='/gametutorial'>
-                        <StyledFab2 size="small" color="secondary" aria-label="add">
-                            <ExploreIcon/>
-                        </StyledFab2>
+                            <img src={GameTutorial} alt="gameTutorailicon" width="10%"  style={{
+                                position: 'relative',
+                                zIndex: 1,
+                                top:50,
+                                left:"44%",
+                            }}/>
                     </Link>
                     <Carousel infiniteLoop width={"100%"} emulateTouch showStatus={false} autoPlay swipeable showThumbs={false} >
                         <div>

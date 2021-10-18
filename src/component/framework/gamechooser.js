@@ -11,6 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Gicon1 from '../../svgicon/GameIcon/Gicon1.svg'
 import Gicon2 from '../../svgicon/GameIcon/Gicon2.svg'
 import Gicon3 from '../../svgicon/GameIcon/Gicon3.svg'
+import GoGameLobby from '../../svgicon/Componenticon/GoGameLobby.svg'
 import 'swiper/swiper-bundle.min.css'
 // swiper core styles
 import 'swiper/swiper.min.css'
@@ -25,13 +26,7 @@ import SwiperCore, {
 
 // install Swiper modules
 SwiperCore.use([Pagination, Navigation, EffectCoverflow]);
-const StyledFab = styled(Fab)({
-  position: 'absolute',
-  zIndex: 2,
 
-  bottom: "3.5%",
-  right: "25%",
-});
 const data = [
   { id: 0, src: Gicon1, name: "2048", number: 52, entryFee: 88 },
   { id: 1, src: Gicon2, name: "原神", number: 56, entryFee: 848 },
@@ -73,9 +68,12 @@ export default function Gamechooser() {
           </SwiperSlide>
         ))}
         <Link to={`multigameChooser/tournamentLobby/${count}`}>
-          <StyledFab size="small" color="secondary" aria-label="add">
-            <KeyboardArrowRightIcon />
-          </StyledFab>
+           <img src={GoGameLobby} alt="GoGameLobbyicon" width='20%' style={{
+              position: 'absolute',
+              zIndex: 2,
+              bottom: "-8%",
+              right: "20%",
+           }} />
         </Link>
       </Swiper>
 

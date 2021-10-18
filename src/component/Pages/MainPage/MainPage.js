@@ -13,7 +13,8 @@ import GameChooser from '../../framework/gamechooser';
 import Scrollbanner from '../../framework/scrollbanner';
 import NavigationBar from '../../framework/navigationBar';
 import Scrolltext from '../../framework/scrolltext';
-import InviteImage from '../../framework/inviteimage';
+import GameLobby from '../../../svgicon/Componenticon/GameLobby.svg'
+
 import EndBar from '../../framework/endbar';
 import { styled } from '@mui/material/styles';
 import Fab from '@mui/material/Fab';
@@ -36,7 +37,7 @@ const contentStyle = {
 export default function MainPage() {
 
     return (
-        <Box sx={{ flexGrow: 1 }}  height="100vh" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: '100% 100%', backgroundAttachment: 'fixed' }}>
+        <Box sx={{ flexGrow: 1 }}  height="100%" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: '100% 100%', backgroundAttachment: 'fixed' }}>
             <Grid item xs={12}  >
                 <NavigationBar />
             </Grid>
@@ -60,9 +61,12 @@ export default function MainPage() {
                 <Grid item xs={12} height="28vh">
                     <GameChooser />
                     <Link to='/multigameChooser'>
-                        <StyledFab2 size="small" color="secondary" aria-label="add">
-                            <ReadMoreIcon />
-                        </StyledFab2>
+                           <img src={GameLobby} alt="Gamelobby" width="15%" style={{
+                                  position: 'absolute',
+                                  zIndex: 1,
+                                  bottom: "38vh",
+                                  left: 0,
+                           }} />
                     </Link>
                 </Grid>
                 <Grid item xs={11} >
