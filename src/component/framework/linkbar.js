@@ -18,8 +18,7 @@ import WordWallet from '../../svgicon/EndBaricon/WordWallet.svg'
 import WordMission from '../../svgicon/EndBaricon/WordMission.svg'
 import Box from '@mui/material/Box'
 import { useHistory } from 'react-router'
-import { fontFamily } from '@mui/system'
-const StyledBadge = styled(Badge)(({ theme2 }) => ({
+const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
         right: 10,
         top: '7vh',
