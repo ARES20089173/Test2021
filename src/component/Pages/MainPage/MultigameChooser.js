@@ -12,6 +12,10 @@ import { Typography } from '@mui/material';
 //   bottom: "27%",
 //   left: "0%",
 
+<link
+   rel="preconnect" href="https://fonts.gstatic.com"
+   href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&display=swap" rel="stylesheet"
+/>
 // });
 export default class MultigameChoose extends Component {
   render() {
@@ -61,7 +65,7 @@ export default class MultigameChoose extends Component {
                   <div style={{ textAlign: 'center' }}><img src={pic.src} alt="img" width="80%" />
                   </div>
                 </Link>
-                <Typography variant="body2" style={{ textAlign: 'center' }}color='primary'>{pic.name}</Typography><Typography variant="body2" style={{ textAlign: 'center' }}color='primary'>{pic.number} PLAYING NOW</Typography>
+                <Typography variant="body2" style={{ textAlign: 'center',fontFamily:'Hanalei Fill' }}color='primary' >{pic.name}</Typography><Typography variant="body2" style={{ textAlign: 'center' }}color='primary'>{pic.number} PLAYING NOW</Typography>
               </Grid>
             ))}
             <Grid item xs={12} style={{ marginTop: "9vh" }}>

@@ -109,7 +109,7 @@ export default function NavigationBar() {
     <React.Fragment>
       <Box sx={{ flexGrow: 1 }} >
         <CssBaseline />
-        <AppBar position="fixed" align='center' style={{backgroundColor:'#242634'}} sx={{ margin: 0 }} >
+        <AppBar position="fixed" elevation={0} align='center' style={{backgroundColor:'#242634'}} sx={{ margin: 0 }} >
           <Toolbar variant="dense">
             
             <img src={face} className="App-logo" alt="logo" width="13%" style={{marginLeft:"1vh",marginRight:'1vh'}} />

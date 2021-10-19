@@ -53,7 +53,7 @@ export default function BottomAppBar() {
             <Box sx={{ flexGrow: 1 }}
             >
 
-                <AppBar color="transparent" position="fixed" align='center' sx={{ top: 'auto', bottom: 0 }} style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: "fixed", backgroundRepeat: 'no-repeat', backgroundAttachment: 'cover', heigth: "15vh" }}>
+                <AppBar color="transparent" elevation={0} position="fixed" align='center' sx={{ top: 'auto', bottom: 0 }} style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: "fixed", backgroundRepeat: 'no-repeat', backgroundAttachment: 'cover', heigth: "15vh" }}>
                     <Grid
                         container
                         direction="row"
@@ -73,7 +73,7 @@ export default function BottomAppBar() {
                                         <Grid xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} >
                                             <div style={{ backgroundImage: `url(${Endbarbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
                                                 <Popup
-                                                    trigger={<div className="button" style={{ color: "white" }}>  <img src={SilverPuzzle} className="App-logo" alt="logo" width="20%" />{Amout[0].SilverPuzzle}k<img src={addicon} style={{ width: 20 }} /></div>}
+                                                    trigger={<div className="button" style={{ color: "white" }}>  <img src={SilverPuzzle} className="App-logo" alt="logo" width="20%" style={{  float: 'left' }} />{Amout[0].SilverPuzzle}k<img src={addicon} style={{ width: 20 }} /></div>}
                                                     modal
                                                     lockScroll
                                                     nested
@@ -96,7 +96,7 @@ export default function BottomAppBar() {
                                         <Grid xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
                                             <div style={{ backgroundImage: `url(${Endbarbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
                                                 <Popup
-                                                    trigger={<div className="button" style={{ color: "white" }}>  <img src={Chasepuzzle} className="App-logo" alt="logo" width="20%" />{Amout[0].Chasepuzzle}k<img src={addicon} style={{ width: 20 }} /></div>}
+                                                    trigger={<div className="button" style={{ color: "white" }}>  <img src={Chasepuzzle} className="App-logo" alt="logo" width="20%" style={{  float: 'left' }}/>{Amout[0].Chasepuzzle}k<img src={addicon} style={{ width: 20 }} /></div>}
                                                     modal
                                                     lockScroll
                                                     nested

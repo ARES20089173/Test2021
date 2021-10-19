@@ -8,9 +8,9 @@ export default function FooComponent() {
       style={{
         width: '100%',
         whiteSpace: 'nowrap',
-        border: '1px solid red',
         alignItems: "center",
-        color:"white"
+        color:"white",
+        backgroundColor:'#727172'
       
       }}
     

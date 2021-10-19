@@ -17,13 +17,14 @@ import WordWallet from '../../svgicon/EndBaricon/WordWallet.svg'
 
 import WordMission from '../../svgicon/EndBaricon/WordMission.svg'
 import Box from '@mui/material/Box'
-import { Typography } from '@mui/material'
 import { useHistory } from 'react-router'
 import { createMuiTheme } from "@material-ui/core"
+import { fontFamily } from '@mui/system'
 const theme = createMuiTheme({
     typography: {
         caption:{
-            fontSize:"30px"
+            fontSize:"30px",
+            fontFamily:''
         }
       },
   });
@@ -63,7 +64,7 @@ export default function Linkbar() {
                         <img src={Player} onClick={() => handleLink(MessageNumber[0].id)} className="App-logo" alt="logo" width="170%" style={{
                             position: 'relative',
                             zIndex: 1,
-                            bottom: "-5vh",
+                            bottom: "-4.1vh",
                             right: '3vh'
                         }} />
                     </StyledBadge>
