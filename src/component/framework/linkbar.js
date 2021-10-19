@@ -18,16 +18,7 @@ import WordWallet from '../../svgicon/EndBaricon/WordWallet.svg'
 import WordMission from '../../svgicon/EndBaricon/WordMission.svg'
 import Box from '@mui/material/Box'
 import { useHistory } from 'react-router'
-import { createMuiTheme } from "@material-ui/core"
 import { fontFamily } from '@mui/system'
-const theme = createMuiTheme({
-    typography: {
-        caption:{
-            fontSize:"30px",
-            fontFamily:''
-        }
-      },
-  });
 const StyledBadge = styled(Badge)(({ theme2 }) => ({
     '& .MuiBadge-badge': {
         right: 10,
@@ -40,7 +31,7 @@ const StyledBadge = styled(Badge)(({ theme2 }) => ({
 const MessageNumber = [
     { id: 0, link: "/", MessageNum: 3 },
     { id: 1, link: "/", MessageNum: 32 },
-    { id: 2, link: "/", MessageNum: 55 },
+    { id: 2, link:"/wallet", MessageNum: 55 },
     { id: 3, link: "/", MessageNum: 73 },
     { id: 4, link: "/", MessageNum: 100 },
 ]
