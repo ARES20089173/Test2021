@@ -62,11 +62,11 @@ export default function LinkbarWithback() {
             >
                 <Grid item xs={2} align='left'>
                     <StyledBadge badgeContent={MessageNumber[0].MessageNum} color="secondary">
-                        <img src={Player} onClick={() => handleLink(MessageNumber[0].id)} className="App-logo" alt="logo" width="170%" style={{
+                        <img src={Player} onClick={() => handleLink(MessageNumber[0].id)} className="App-logo" alt="logo" width="120%" style={{
                             position: 'relative',
                             zIndex: 1,
-                            bottom: "-4.1vh",
-                            right: '3vh'
+                            bottom: "-5vh",
+                            right: "1vh"
                         }} />
                     </StyledBadge>
                 </Grid>
@@ -82,11 +82,11 @@ export default function LinkbarWithback() {
                 </Grid>
                 <Grid item xs={2} align='center'>
                     <StyledBadge badgeContent={MessageNumber[2].MessageNum} color="secondary">
-                        <img src={Wallet} onClick={() => handleLink(MessageNumber[2].id)} className="App-logo" alt="logo" width="120%" style={{
+                        <img src={Wallet} onClick={() => handleLink(MessageNumber[2].id)} className="App-logo" alt="logo" width="170%" style={{
                             position: 'relative',
                             zIndex: 1,
-                            bottom: "-5vh",
-                            right: "1vh"
+                            bottom: "-4.1vh",
+                            right: '3vh'
                         }} />
                     </StyledBadge>
                 </Grid>

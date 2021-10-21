@@ -41,7 +41,7 @@ const contentStyle = {
 };
 const StyledFab2 = styled(Fab)({
     position: 'relative',
-    zIndex: 1,
+    zIndex: 0,
     left: "0%",
     bottom: "0"
 
@@ -408,7 +408,7 @@ export default class TournamentLobby extends Component {
                                         <div className="button">
                                             <div >
 
-                                                <StyledFab2 size="small" color="secondary" aria-label="add" onClick={this.handleClick}>
+                                                <StyledFab2 size="small" color="secondary" aria-label="add" onClick={this.handleClick} zIndex='1'>
                                                     <KeyboardArrowRightIcon />
                                                 </StyledFab2>
                                             </div>
@@ -941,7 +941,7 @@ export default class TournamentLobby extends Component {
                             <ExpandMoreIcon />
                         </ExpandMore>
                     </Grid>
-                    <Grid item xs={12} marginTop="0vh" display={this.state.isToggleOn ? 'block' : 'none'}>
+                    <Grid item xs={12} marginTop="10vh" display={this.state.isToggleOn ? 'block' : 'none'}>
                         <EndBar />
                     </Grid>
 

@@ -3,6 +3,10 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import backgroundEnd from "../../../reed_bg.svg"
 import { Link } from "react-router-dom"
+
+import Gicon1 from '../../../svgicon/GameIcon/Gicon1.svg'
+import Gicon2 from '../../../svgicon/GameIcon/Gicon2.svg'
+import Gicon3 from '../../../svgicon/GameIcon/Gicon3.svg'
 import NavigationBar from '../../framework/navigationBar';
 import EndBar from '../../framework/endbarWithback';
 import { Typography } from '@mui/material';
@@ -21,9 +25,9 @@ export default class MultigameChoose extends Component {
   render() {
 
     const data = [
-      { id: 0, src: 'img/square.jpeg', name: "2048", number: 52 },
-      { id: 1, src: 'img/square1.jpeg', name: "原神", number: 56 },
-      { id: 2, src: 'img/square2.jpeg', name: "LoL", number: 55 },
+      { id: 0, src: Gicon1, name: "2048", number: 52 },
+      { id: 1, src: Gicon2, name: "原神", number: 56 },
+      { id: 2, src: Gicon3, name: "LoL", number: 55 },
       { id: 3, src: 'img/square.jpeg', name: "2048", number: 53 },
       { id: 4, src: 'img/square1.jpeg', name: "原神", number: 54 },
       { id: 5, src: 'img/square2.jpeg', name: "LoL", number: 51 },

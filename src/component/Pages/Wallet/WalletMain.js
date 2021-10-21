@@ -1,25 +1,35 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
-import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
-import adv1 from '../../../svgicon/Advertise/adv1.svg'
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import Typography from '@mui/material/Typography';
 import 'reactjs-popup/dist/index.css';
 import "../../framework/css/cssModFLooby.css"
-import Popup from 'reactjs-popup';
+import SilverPuzzle from '../../../svgicon/Componenticon/SilverPuzzle.svg'
+import Chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
 import Box from '@mui/material/Box';
 import backgroundEnd from "../../../reed_bg.svg"
-import puzzle from '../../../puzzle.svg'
-import GameChooser from '../../framework/gamechooser';
-import Scrollbanner from '../../framework/scrollbanner';
 import NavigationBar from '../../framework/navigationBar';
-import Scrolltext from '../../framework/scrolltext';
-import GameLobby from '../../../svgicon/Componenticon/GameLobby.svg'
-
-import EndBar from '../../framework/endbar';
+import face from '../../../svgicon/Headicon/face_1.svg'
+import BigPuzzle from '../../../svgicon/Componenticon/Bigpuzzle.svg'
+import { Link } from 'react-router-dom';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import InputAdornment from '@mui/material/InputAdornment';
+import IconButton from '@mui/material/IconButton';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import EndBar from '../../framework/WalletEndbar';
 import { styled } from '@mui/material/styles';
 import Fab from '@mui/material/Fab';
-import ReadMoreIcon from '@mui/icons-material/ReadMore';
-import { Link } from "react-router-dom"
+import Input from '@mui/material/Input';
+const ariaLabel = { 'aria-label': 'description' };
 
 const StyledFab2 = styled(Fab)({
     position: 'absolute',
@@ -34,10 +44,40 @@ const contentStyle = {
     height: "60%",
     borderRadius: "5%",
 };
-export default function MainPage() {
 
+function createData(name,silverpuzle,chasepuzzle) {
+    return { name,silverpuzle,chasepuzzle };
+  }
+  
+const rows = [
+    createData('purchased ', 212, 2120),
+    createData('earned', 317, 1148),
+    createData('bonus', '-', 649),
+];
+
+const userdata = { reesid: 123456, name: 'Jay', headicon: face }
+const Toplinkdata = [
+    { id: 0, linkName: "Transaction History", link: `/` },
+    { id: 1, linkName: "Saved Cards", link: `/` },
+    { id: 2, linkName: "Puzzle Packages", link: "/Events" },
+    { id: 3, linkName: "Refer Friends to Earn Puzzles", link: "/" }]
+
+export default function MainPage() {
+    const [values, setValues] = React.useState({
+        password: '',
+        showPassword: false,
+    });
+    const handleClickShowPassword = () => {
+        setValues({
+            ...values,
+            showPassword: !values.showPassword,
+        });
+    };
+    const handleMouseDownPassword = (event) => {
+        event.preventDefault();
+    };
     return (
-        <Box sx={{ flexGrow: 1 }}  height="100%" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: '100% 100%', backgroundAttachment: 'fixed' }}>
+        <Box sx={{ flexGrow: 1 }} height="100%" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: '100% 100%', backgroundAttachment: 'fixed' }}>
             <Grid item xs={12}  >
                 <NavigationBar />
             </Grid>
@@ -46,83 +86,102 @@ export default function MainPage() {
                 justifyContent="center"
                 alignItems="center"
             >
-
-                <Grid item xs={11} style={{ marginTop: -38 }} >
-                    <div style={{ textAlign: 'center' }}>
-                        <Scrollbanner />
+                <Grid item xs={12} height="4vh"  >
+                    <div style={{ textAlign: 'center', backgroundColor: '#8e8b91' }}>
+                        Hi,{userdata.name}
                     </div>
                 </Grid>
-                <Grid item xs={11} height="5vh" style={{ marginTop: '1vh'}}>
-                    <Scrolltext />
-                    {/* <Grid xs={1}></Grid>
-                    <Grid xs={10}><Scrolltext /></Grid>
-                    <Grid xs={1}></Grid> */}
-                </Grid>
-                <Grid item xs={12} height="30vh">
-                    <GameChooser />
-                    <Link to='/multigameChooser'>
-                           <img src={GameLobby} alt="Gamelobby" width="15%" style={{
-                                  position: 'absolute',
-                                  zIndex: 1,
-                                  bottom: "38vh",
-                                  left: 0,
-                           }} />
-                    </Link>
-                </Grid>
-                <Grid item xs={11} >
-                    <div style={{ textAlign: 'center' }}>
-                        <Popup
-                            trigger={<div className="button"> <div ><a href><img src={adv1} width="100%"  alt="inviteimage" /></a></div></div>}
-                            modal
-                            nested
-                            {...{ contentStyle }}
-                        >
-                            {close => (
-                                <div className="modal">
-                                    <button className="close" onClick={close}>
-                                        <div className="close" >
-                                            &times;
-                                        </div>
-                                    </button>
-                                    <Grid xs={12}>
-                                        <Typography variant="h4" component="div" color='primary' textAlign='center'>
-                                            Want HK$300<img src={puzzle} alt="puzzle"/>？
-                                        </Typography>
-                                        <Typography variant="caption" component="div" color='primary' textAlign='center'>
-                                            For a limited time, earn HK$300 for every
-                                            10 friends who becomes a paying
-                                            PUZZLECHASE member.
-                                            Offer ends Dec31,2021. T&Cs apply
-                                        </Typography>
+                <Grid xs={12} height="30vh" >
+                    <Grid container justifyContent="center"
+                        alignItems="center" xs={12} height="60%" >
+                        <img src={userdata.headicon} width="30%" />
+                    </Grid>
+                    <Grid item xs={12} container justifyContent="center"
+                        alignItems="center" height="40%" >
+                        <Grid item xs={3} container height="100%"   >
+                            <img src={BigPuzzle} alt="puzzle" width="55%" style={{ left: '40%', position: 'relative' }} />
+                        </Grid>
 
-                                        <Grid item xs={12} height="33vh">
-                                            <div className="video-responsive">
-                                        <Grid xs={12} >
-                                        <div style={{ border: '1px solid black', height: '100%' }}>   
-                                        <Typography variant="body2" component="div" color='primary' textAlign='center'>
-                                        ILOVEREESPUZZLES
-                                        </Typography>
-                                        <Typography variant="caption" component="div" color='primary' textAlign='center'>
-                                        referral code
-                                        </Typography>
-                                        </div></Grid>
-                                            <img src={adv1} width="100%"  alt="inviteimage" />
-                                            </div>
-                                        </Grid>
-                                        <Typography variant="body2" component="div" color='primary' textAlign='center'>
-                                            REES | Puzzle
-                                            Chase              
-                                            <KeyboardArrowDown />
-                                            300<img src={puzzle} />
-                                        </Typography>
-                                    </Grid>
-                                </div>
-                            )}
-                        </Popup>
-                    </div >
+                        <Grid item xs={9} container
+                            alignItems="center" height="100%"  >
+                            <Grid item xs={12} height="25%" ><Typography variant='caption' color="white" >estimated asset value: (HKD equiv.)</Typography></Grid>
+                            <Grid item xs={5} container
+                                alignItems="center" height="50%">
+                                <Input
+                                    endAdornment={
+                                        <InputAdornment position="end">
+                                            <IconButton
+                                                aria-label="toggle password visibility"
+                                                onClick={handleClickShowPassword}
+                                                onMouseDown={handleMouseDownPassword}
+
+                                            >
+                                                {values.showPassword ? <Visibility color='primary' /> : <VisibilityOff color='primary' />}
+                                            </IconButton>
+                                        </InputAdornment>
+                                    } type={values.showPassword ? 'text' : 'password'}
+                                    readOnly={true}
+                                    disableUnderline={true}
+                                    defaultValue="1,207.85"
+                                    style={{ color: "white" }} /></Grid>
+                            <Grid item xs={12} height="25%" ><Typography variant='caption' color="white">REES Account No: {userdata.reesid}</Typography></Grid>
+
+
+                        </Grid>
+                    </Grid>
+
+                </Grid>
+                <Grid item xs={12} height="4vh" container bgcolor='#8e8b91' style={{}}>
+                    <Grid item xs={6} height="4vh" onClick={handleClickShowPassword} style={{ borderBottom: values.showPassword ? "" : "3px solid white" }}></Grid>
+                    <Grid item xs={6} height="4vh" onClick={handleClickShowPassword} style={{ borderBottom: values.showPassword ? "3px solid white" : '' }}></Grid>
                 </Grid>
 
-                <Grid item xs={12} height="30vh">
+                <Grid item xs={12} height="25vh" display={values.showPassword ? "none" : "block"} style={{}}>
+                    <List >
+                        {Toplinkdata.map((text, index) => (
+                            <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
+                                <ListItem button key={text.id}>
+                                    <ListItemText >
+                                        {text.linkName}
+                                    </ListItemText>
+                                    <KeyboardArrowRightIcon />
+                                </ListItem>
+                            </Link>
+                        ))}
+                    </List>
+
+                </Grid>
+                <Grid item xs={12} height="25vh" display={values.showPassword ? "block" : "none"} style={{}}>
+                    <TableContainer >
+                        <Table sx={{ }} size="small" aria-label="a dense table">
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell></TableCell>
+                                    <TableCell align="center"><Typography  color='white'>Sliverpuzzle</Typography><img src={SilverPuzzle} alt='puzzle' width="40%"/></TableCell>
+                                    <TableCell align="center"><Typography  color='white'>Chasepuzzle</Typography><img src={Chasepuzzle} alt='puzzle' width="40%"/></TableCell>
+                        
+                                </TableRow>
+                            </TableHead>
+                            <TableBody>
+                                {rows.map((row) => (
+                                    <TableRow
+                                        key={row.name} 
+                                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                                    >
+                                        <TableCell component="th" scope="row">
+                                        <Typography  color='white'> {row.name} </Typography>
+                                        </TableCell>
+                                        <TableCell align="center"><Typography  color='white'>{row.silverpuzle}</Typography></TableCell>
+                                        <TableCell align="center"><Typography  color='white'>{row.chasepuzzle}</Typography></TableCell>
+                                    </TableRow>
+                                ))}
+                            </TableBody>
+                        </Table>
+                    </TableContainer>
+                </Grid>
+
+
+                <Grid item xs={12} marginTop="15vh" zIndex="1">
                     <EndBar />
                 </Grid>
             </Grid>

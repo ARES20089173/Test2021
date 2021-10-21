@@ -17,7 +17,7 @@ import backgroundEnd from "../../rees_bg2.svg"
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import AddIcon from '@mui/icons-material/Add';
 import { Link } from 'react-router-dom';
-import LinkBarWithback from './linkbarwithback';
+import LinkBarWithback from './Walletlinkbar';
 
 import Notification from '../../svgicon/Componenticon/Notification.svg'
 import Ricon from '../../svgicon/Componenticon/Ricon.svg'
@@ -35,6 +35,14 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
         zIndex: 2,
     },
 }));
+const StyledFab = styled(Fab)({
+    position: 'absolute',
+    zIndex: 2,
+    top: -30,
+    left: 0,
+    right: 0,
+    margin: '0 86%',
+});
 const contentStyle = {
     marginTop: '38%',
     background: '#cfcece',
@@ -50,7 +58,7 @@ export default function BottomAppBar() {
 
             <Box sx={{ flexGrow: 1 }}>
                 <CssBaseline />
-                <AppBar color="transparent" elevation={0} position="fixed" align='center' sx={{ top: 'auto', bottom: 0 ,zIndex:0}} style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: "fixed", backgroundRepeat: 'no-repeat', backgroundAttachment: 'cover', heigth: "15vh" }}>
+                <AppBar color="transparent" elevation={0} position="fixed" align='center' sx={{ top: 'auto', bottom: 0 ,zIndex:1}} style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: "fixed", backgroundRepeat: 'no-repeat', backgroundAttachment: 'cover', heigth: "15vh" }}>
                     <Grid
                         container
                         direction="row"
