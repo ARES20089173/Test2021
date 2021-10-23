@@ -57,7 +57,7 @@ const rows = [
 
 const userdata = { reesid: 123456, name: 'Jay', headicon: face }
 const Toplinkdata = [
-    { id: 0, linkName: "Transaction History", link: `/` },
+    { id: 0, linkName: "Transaction History", link: `/Wallet/TranscationHistory` },
     { id: 1, linkName: "Saved Cards", link: `/` },
     { id: 2, linkName: "Puzzle Packages", link: "/Events" },
     { id: 3, linkName: "Refer Friends to Earn Puzzles", link: "/" }]
@@ -140,7 +140,7 @@ export default function MainPage() {
                     <List >
                         {Toplinkdata.map((text, index) => (
                             <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
-                                <ListItem button key={text.id}>
+                                <ListItem button key={text.id} >
                                     <ListItemText >
                                         {text.linkName}
                                     </ListItemText>
