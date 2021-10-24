@@ -13,6 +13,8 @@ import OneVoneMode from './component/Pages/ThreeGameMode/OneVoneMode'
 import SelectAvatar from "./component/Pages/HamburgerBar/SelectAvatar";
 import Profile from "./component/Pages/HamburgerBar/Profile";
 import WalletMain from './component/Pages/Wallet/WalletMain' ;
+import TranscationHistory from './component/Pages/Wallet/TranscationHistory' ;
+import HistoryDetail from './component/Pages/Wallet/HistoryDetail' ;
 export const getMatchRouter = (pathname, configs) =>
   configs.find(config => matchPath(pathname, {
     exact: true,
@@ -40,6 +42,20 @@ export const RouterConfig = [
       render: props => <WalletMain{...props} />,
       meta: {
         index: 1
+      }
+    },
+    {
+      path: '/Wallet/TranscationHistory',
+      render: props => <TranscationHistory{...props} />,
+      meta: {
+        index: 2
+      }
+    },
+    {
+      path: '/Wallet/TranscationHistory/:id/Detail',
+      render: props => <HistoryDetail{...props} />,
+      meta: {
+        index: 3
       }
     },
     {
