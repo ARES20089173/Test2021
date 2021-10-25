@@ -26,12 +26,29 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import Fab from '@mui/material/Fab';
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
+import coderedeem from '../../../coderedeem.svg'
+import TextField from '@mui/material/TextField';
+import Logout from '../../../logout.svg'
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
+import Hamburgicon from "../../../svgicon/Componenticon/Hamburgicon.svg";
+
+import Gicon1 from '../../../svgicon/GameIcon/Gicon1.svg'
+import Gicon2 from '../../../svgicon/GameIcon/Gicon2.svg'
+import Gicon3 from '../../../svgicon/GameIcon/Gicon3.svg'
+import Gicon4 from '../../../svgicon/GameIcon/Gicon4.svg'
+import Gicon5 from '../../../svgicon/GameIcon/Gicon5.svg'
+import Gicon6 from '../../../svgicon/GameIcon/Gicon6.svg'
+import Gicon7 from '../../../svgicon/GameIcon/Gicon7.svg'
+import Gicon8 from '../../../svgicon/GameIcon/Gicon8.svg'
+import Gicon9 from '../../../svgicon/GameIcon/Gicon9.svg'
+import Gicon10 from '../../../svgicon/GameIcon/Gicon10.svg'
+import Gicon11 from '../../../svgicon/GameIcon/Gicon11.svg'
+import Gicon12 from '../../../svgicon/GameIcon/Gicon12.svg'
+import Gicon13 from '../../../svgicon/GameIcon/Gicon13.svg'
+import Gicon14 from '../../../svgicon/GameIcon/Gicon14.svg'
+import Gicon15 from '../../../svgicon/GameIcon/Gicon15.svg'
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
         right: 18,
@@ -54,12 +71,39 @@ const contentStyle = {
     borderRadius: "5%",
 };
 
+const userdata = [
+    { id: 0, level: 'Lv1', ReesID: 1,nickname:'Jay' },
+  ]
+
+const Toplinkdata = [
+    { id: 0, linkName: "PROFILE", link: `/${userdata[0].ReesID}/Profile` },
+    { id: 1, linkName: "SETTING", link: `/${userdata[0].ReesID}/Setting` },
+    { id: 2, linkName: "EVENTS", link: "/Events" },
+    { id: 3, linkName: "BUY PUZZLES", link: "/" }
+    // { id: 5, linkName:"PROFILE"},
+    // { id: 6, linkName:"PROFILE"},
+    // { id: 7, linkName:"PROFILE"},
+    // { id: 8, linkName:"PROFILE"},
+  ]
+  const Bottomlinkdata = [
+    { id: 0, linkName: "About REES", link: "/" },
+    { id: 1, linkName: "FAQ", link: "/" },
+    { id: 2, linkName: "PRESS", link: "/" },
+    { id: 3, linkName: "LOGOUT", link: "/" },
+  ]
 export default class TournamentLobby extends Component {
     constructor(props) {
         super(props);
-        this.state = { isToggleOn: true };
+        this.state = { isToggleOn: true ,isOpen: false };
         this.Mode = 1;
 
+        this.openhandleClick = this.openhandleClick.bind(this);
+        }
+
+        openhandleClick() {
+            this.setState(prevState => ({
+                isOpen: !prevState.isOpen
+            }));
         // This binding is necessary to make `this` work in the callback
         this.handleClick = this.handleClick.bind(this);
         this.openhandleClick = this.openhandleClick.bind(this);
@@ -103,25 +147,21 @@ export default class TournamentLobby extends Component {
             { id: 2, Modechoose: "BattleMode", embedId: "dWOm9KXJQLo", detail: "Battle MODE is ......." },
         ]
         const data = [
-            { id: 0, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88, GameRules: "2048是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 1, src: '/img/square1.jpeg', name: "原神", number: 56, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 2, src: '/img/square2.jpeg', name: "LoL", number: 55, entryFee: 828, GameRules: "LOL是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 3, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 },
-            { id: 4, src: '/img/square1.jpeg', name: "原神", number: 56, entryFee: 848 },
-            { id: 5, src: '/img/square2.jpeg', name: "LoL", number: 55, entryFee: 828 },
-            { id: 6, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 },
-            { id: 7, src: '/img/square1.jpeg', name: "原神", number: 56, entryFee: 848 },
-            { id: 8, src: '/img/square2.jpeg', name: "LoL", number: 55, entryFee: 828 },
-            { id: 9, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 },
-            { id: 10, src: '/img/square1.jpeg', name: "原神", number: 56, entryFee: 848 },
-            { id: 11, src: '/img/square2.jpeg', name: "LoL", number: 55, entryFee: 828 },
-            { id: 12, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 },
-            { id: 13, src: '/img/square1.jpeg', name: "原神", number: 56, entryFee: 848 },
-            { id: 14, src: '/img/square2.jpeg', name: "LoL", number: 55, entryFee: 828 },
-            { id: 15, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 },
-            { id: 16, src: '/img/square1.jpeg', name: "原神", number: 56, entryFee: 848 },
-            { id: 17, src: '/img/square2.jpeg', name: "LoL", number: 55, entryFee: 828 },
-            { id: 18, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 }
+            { id: 0, src: Gicon1, name: "Onmyoji Arena", number: 52 ,entryFee: 88, GameRules: "2048是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 1, src: Gicon2, name: "TOM & JERRY: CHASE", number: 56 , entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力"},
+            { id: 2, src: Gicon3, name: "Super Mecha Champions", number: 55 , entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力"},
+            { id: 3, src: Gicon4, name: "Side Force Don't Fall", number: 53 , entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力"},
+            { id: 4, src: Gicon5, name: "Seven Squids", number: 54 , entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力"},
+            { id: 5, src: Gicon6, name: "Punch Box", number: 51 , entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力"},
+            { id: 6, src: Gicon7, name: "Iron Space", number: 52 , entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力"},
+            { id: 7, src: Gicon8, name: "Candy Robber", number: 58 , entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力"},
+            { id: 8, src: Gicon9, name: "Fruit Matching", number: 88, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 9, src: Gicon10, name: "Falling Cubes", number: 25, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 10, src: Gicon11, name: "Box Tower ", number: 95, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 11, src: Gicon12, name: "Jumper Frog", number: 85, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 12, src: Gicon13, name: "2048", number: 75, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 13, src: Gicon14, name: "HEXTRIS", number: 65 , entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力"},
+            { id: 14, src: Gicon15, name: "FISHING FRENZY", number: 55 , entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力"},
         ]
         const BattleMode = [
             { id: 0, MaxPayOut: 88, MaxPrize: 3500, entryFee: 88 },
@@ -185,49 +225,67 @@ export default class TournamentLobby extends Component {
                                             <MenuIcon />
                                         </IconButton>
                                          {/* drawer */}
-                                     <Drawer
-                                            anchor={"right"}
-                                            open={this.state.isOpen}
-                                            onClose={this.openhandleClick}
+                                         <Drawer
+                                        anchor={"right"}
+                                        open={this.state.isOpen}
+                                        onClose={this.openhandleClick}
+                                    >
+                                        <Box
+                                            sx={{ width: 280, height: "100%", backgroundColor: "#707070" }}
+                                            role="presentation"
                                         >
-                                            <Box
-                                                sx={{ width: 280, height: "100vh", backgroundColor: "white" }}
-                                                role="presentation"
-                                            >
-                                                <List >
+                                            <List sx={{height: "50%"}}>
 
-                                                    <IconButton
-                                                        size="large"
-                                                        edge="start"
-                                                        color="inherit"
-                                                        aria-label="menu"
-                                                        onClick={this.openhandleClick}
-                                                        sx={{ left: "90%", bottom: 20 }}
-                                                    >
-                                                        <MenuIcon />
-                                                    </IconButton>
-                                                    <ListItem>
-                                                        <ListItemText primary={"close"} sx={{ float: "right" }} />
+                                                <IconButton
+                                                    size="small"
+                                                    edge="start"
+                                                    color="inherit"
+                                                    aria-label="menu"
+                                                    onClick={this.openhandleClick}
+                                                    sx={{ left: "80%", bottom: 0 }}
+                                                >
+                                                    <img src={Hamburgicon} alt="" width="80%" />
+                                                </IconButton>
+                                                <ListItemText style={{ textAlign: "center" }}  >Play to Earn PUZZLES<img src={puzzle} /></ListItemText>
+
+                                                {Toplinkdata.map((text, index) => (
+                                                    <Link to={text.link} style={{ textDecoration: 'none', color: 'black' }}>
+                                                        <ListItem button key={text.id}>
+                                                            <ListItemText >
+                                                                {text.linkName}
+                                                            </ListItemText>
+                                                            <KeyboardArrowRightIcon />
+                                                        </ListItem>
+                                                    </Link>
+                                                ))}
+                                                <ListItem >
+                                                    <ListItemText style={{ fontSize: '0.7em' }}>
+                                                        <Box sx={{ display: 'flex', alignItems: 'flex-end', fontSize: '0.7em' }}>
+
+                                                            CODE REDEEM :
+                                                            <TextField id="input-with-sx" variant="standard" />
+
+                                                            <img src={coderedeem} alt="coderedeem" />
+                                                        </Box>
+                                                    </ListItemText>
+                                                </ListItem>
+                                            </List>
+                                            <List sx={{height: "40%"}} style={{ top: "10%", textDecoration: 'none', color: '#FFF' }} >
+                                                {Bottomlinkdata.slice(0, 3).map((text, index) => (
+                                                    <ListItem button key={text.id}>
+                                                        <ListItemText >
+                                                            <Link to={text.link} style={{ textDecoration: 'none', color: 'black' }}>{text.linkName}  </Link>
+                                                        </ListItemText>
                                                     </ListItem>
-                                                    {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-                                                        <ListItem button key={text}>
-                                                            <ListItemText primary={text} sx={{ float: "right" }} />
-                                                        </ListItem>
-                                                    ))}
-                                                </List>
-                                                <Divider />
-                                                <List >
-                                                    {["All mail", "Trash", "Spam"].map((text, index) => (
-                                                        <ListItem button key={text}>
-                                                            <ListItemIcon>
-                                                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                                            </ListItemIcon>
-                                                            <ListItemText primary={text} />
-                                                        </ListItem>
-                                                    ))}
-                                                </List>
-                                            </Box>
-                                        </Drawer>
+                                                ))}
+                                                <ListItem >
+                                                    <ListItemText >
+                                                        <Link to={Bottomlinkdata[3].link} style={{ textDecoration: 'none', color: 'black' }}>{Bottomlinkdata[3].linkName}   <img src={Logout} alt="logout" /></Link>
+                                                    </ListItemText>
+                                                </ListItem>
+                                            </List>
+                                        </Box>
+                                    </Drawer>
                                     </Toolbar>
 
                                     <div style={{ backgroundColor: "gray" }}>

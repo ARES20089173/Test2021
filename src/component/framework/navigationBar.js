@@ -52,14 +52,14 @@ export default function NavigationBar() {
       sx={{ width: 280, height: "100vh", backgroundColor: "#707070" }}
       role="presentation"
     >
-      <List >
+      <List sx={{height: "50%"}} >
         <IconButton
           size="small"
           edge="start"
           color="inherit"
           aria-label="menu"
           onClick={toggleDrawer("right", false)}
-          sx={{ left: "85%", bottom: 5 }}
+          sx={{ left: "80%", bottom: 5 }}
           width="10%" 
         >
           <img src={Hamburgicon} alt='hamburgericon' width='70%'/>
@@ -88,7 +88,7 @@ export default function NavigationBar() {
           </ListItemText>
         </ListItem>
       </List>
-      <List style={{ top: "10%", textDecoration: 'none', color: '#FFF' }} >
+      <List style={{ top: "10%", textDecoration: 'none', color: '#FFF' }}sx={{height: "40%"}}  >
         {Bottomlinkdata.slice(0, 3).map((text, index) => (
           <ListItem button key={text.id}>
             <ListItemText >

@@ -11,19 +11,40 @@ import { Link } from 'react-router-dom';
 import "../../framework/css/cssModFLooby.css"
 import Popup from 'reactjs-popup';
 import IconButton from '@mui/material/IconButton';
+import Gicon1 from '../../../svgicon/GameIcon/Gicon1.svg'
+import Gicon2 from '../../../svgicon/GameIcon/Gicon2.svg'
+import Gicon3 from '../../../svgicon/GameIcon/Gicon3.svg'
+import Gicon4 from '../../../svgicon/GameIcon/Gicon4.svg'
+import Gicon5 from '../../../svgicon/GameIcon/Gicon5.svg'
+import Gicon6 from '../../../svgicon/GameIcon/Gicon6.svg'
+import Gicon7 from '../../../svgicon/GameIcon/Gicon7.svg'
+import Gicon8 from '../../../svgicon/GameIcon/Gicon8.svg'
+import Gicon9 from '../../../svgicon/GameIcon/Gicon9.svg'
+import Gicon10 from '../../../svgicon/GameIcon/Gicon10.svg'
+import Gicon11 from '../../../svgicon/GameIcon/Gicon11.svg'
+import Gicon12 from '../../../svgicon/GameIcon/Gicon12.svg'
+import Gicon13 from '../../../svgicon/GameIcon/Gicon13.svg'
+import Gicon14 from '../../../svgicon/GameIcon/Gicon14.svg'
+import Gicon15 from '../../../svgicon/GameIcon/Gicon15.svg'
+import Forward from '../../../svgicon/Componenticon/Forward.svg'
+import Down from '../../../svgicon/Componenticon/Down.svg'
+import pic2 from "../../../svgicon/ThreeModePic/BattleMode.svg"
 import pic1 from "../../framework/img/300x100.jpeg"
+import PoweredByR from '../../../svgicon/PowerBy/PowerByR.svg'
 import Toolbar from '@mui/material/Toolbar';
-// import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import coderedeem from '../../../coderedeem.svg'
+import TextField from '@mui/material/TextField';
+import Logout from '../../../logout.svg'
 import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
-// import { Link } from "react-router-dom"
+import Hamburgicon from "../../../svgicon/Componenticon/Hamburgicon.svg";
 import puzzle from "../../../puzzle.svg"
 import Button from '@mui/material/Button';
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import Fab from '@mui/material/Fab';
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
@@ -56,6 +77,27 @@ const ExpandMore = styled((props) => {
         duration: theme.transitions.duration.shortest
     })
 }));
+
+const userdata = [
+    { id: 0, level: 'Lv1', ReesID: 1,nickname:'Jay' },
+  ]
+
+const Toplinkdata = [
+    { id: 0, linkName: "PROFILE", link: `/${userdata[0].ReesID}/Profile` },
+    { id: 1, linkName: "SETTING", link: `/${userdata[0].ReesID}/Setting` },
+    { id: 2, linkName: "EVENTS", link: "/Events" },
+    { id: 3, linkName: "BUY PUZZLES", link: "/" }
+    // { id: 5, linkName:"PROFILE"},
+    // { id: 6, linkName:"PROFILE"},
+    // { id: 7, linkName:"PROFILE"},
+    // { id: 8, linkName:"PROFILE"},
+  ]
+  const Bottomlinkdata = [
+    { id: 0, linkName: "About REES", link: "/" },
+    { id: 1, linkName: "FAQ", link: "/" },
+    { id: 2, linkName: "PRESS", link: "/" },
+    { id: 3, linkName: "LOGOUT", link: "/" },
+  ]
 export default class TournamentLobby extends Component {
     constructor(props) {
         super(props);
@@ -138,14 +180,14 @@ export default class TournamentLobby extends Component {
             { id: 2, entryFee: 828, MaxPrize: 1200 },
         ]
         const challengerMode = [
-            { id: 0, entryFee: 188, MaxPrize: 120},
-            { id: 1, entryFee: 1848, MaxPrize: 2500},
+            { id: 0, entryFee: 188, MaxPrize: 120 },
+            { id: 1, entryFee: 1848, MaxPrize: 2500 },
             { id: 2, entryFee: 1828, MaxPrize: 3500 },
         ]
         const BattleMode = [
-            { id: 0, entryFee: 88, MaxPrize: 3500,player:19  },
-            { id: 1, entryFee: 848, MaxPrize: 2500 ,player:12},
-            { id: 2, entryFee: 828, MaxPrize: 3550,player:45 },
+            { id: 0, entryFee: 88, MaxPrize: 3500, player: 19 },
+            { id: 1, entryFee: 848, MaxPrize: 2500, player: 12 },
+            { id: 2, entryFee: 828, MaxPrize: 3550, player: 45 },
         ]
 
         const BattleModeItem = BattleMode.map((number) => {
@@ -154,25 +196,21 @@ export default class TournamentLobby extends Component {
             }
         });
         const data = [
-            { id: 0, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 },
-            { id: 1, src: '/img/square1.jpeg', name: "原神", number: 56, entryFee: 848 },
-            { id: 2, src: '/img/square2.jpeg', name: "LoL", number: 55, entryFee: 828 },
-            { id: 3, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 },
-            { id: 4, src: '/img/square1.jpeg', name: "原神", number: 56, entryFee: 848 },
-            { id: 5, src: '/img/square2.jpeg', name: "LoL", number: 55, entryFee: 828 },
-            { id: 6, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 },
-            { id: 7, src: '/img/square1.jpeg', name: "原神", number: 56, entryFee: 848 },
-            { id: 8, src: '/img/square2.jpeg', name: "LoL", number: 55, entryFee: 828 },
-            { id: 9, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 },
-            { id: 10, src: '/img/square1.jpeg', name: "原神", number: 56, entryFee: 848 },
-            { id: 11, src: '/img/square2.jpeg', name: "LoL", number: 55, entryFee: 828 },
-            { id: 12, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 },
-            { id: 13, src: '/img/square1.jpeg', name: "原神", number: 56, entryFee: 848 },
-            { id: 14, src: '/img/square2.jpeg', name: "LoL", number: 55, entryFee: 828 },
-            { id: 15, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 },
-            { id: 16, src: '/img/square1.jpeg', name: "原神", number: 56, entryFee: 848 },
-            { id: 17, src: '/img/square2.jpeg', name: "LoL", number: 55, entryFee: 828 },
-            { id: 18, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 }
+            { id: 0, src: Gicon1, name: "Onmyoji Arena", number: 52 },
+            { id: 1, src: Gicon2, name: "TOM & JERRY: CHASE", number: 56 },
+            { id: 2, src: Gicon3, name: "Super Mecha Champions", number: 55 },
+            { id: 3, src: Gicon4, name: "Side Force Don't Fall", number: 53 },
+            { id: 4, src: Gicon5, name: "Seven Squids", number: 54 },
+            { id: 5, src: Gicon6, name: "Punch Box", number: 51 },
+            { id: 6, src: Gicon7, name: "Iron Space", number: 52 },
+            { id: 7, src: Gicon8, name: "Candy Robber", number: 58 },
+            { id: 8, src: Gicon9, name: "Fruit Matching", number: 88 },
+            { id: 9, src: Gicon10, name: "Falling Cubes", number: 25 },
+            { id: 10, src: Gicon11, name: "Box Tower ", number: 95 },
+            { id: 11, src: Gicon12, name: "Jumper Frog", number: 85 },
+            { id: 12, src: Gicon13, name: "2048", number: 75 },
+            { id: 13, src: Gicon14, name: "HEXTRIS", number: 65 },
+            { id: 14, src: Gicon15, name: "FISHING FRENZY", number: 55 },
         ]
         const backgroundImage = [
             { id: 1, src: '/img/testPic.png' },
@@ -206,8 +244,8 @@ export default class TournamentLobby extends Component {
                     <React.Fragment>
                         <Box sx={{ flexGrow: 1, }}>
                             <CssBaseline />
-                            <AppBar position={this.state.isToggleOn ? 'fixed' : 'relative'} align='center' sx={{ top: 0, bottom: 'auto' }}>
-                                <Toolbar>
+                            <AppBar position={this.state.isToggleOn ? 'fixed' : 'relative'} align='center' sx={{ top: 0, bottom: 'auto' }} >
+                                <Toolbar style={{ backgroundColor: '#242634' }} >
                                     <Typography variant="h6" component="div" color='primary'>
                                     </Typography>
                                     <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
@@ -219,55 +257,78 @@ export default class TournamentLobby extends Component {
                                         edge="start"
                                         color="inherit"
                                         aria-label="menu"
-                                        sx={{}}
+
                                         onClick={this.openhandleClick}
                                     >
-                                        <MenuIcon />
-                                    </IconButton>
-                                     {/* drawer */}
-                                     <Drawer
-                                            anchor={"right"}
-                                            open={this.state.isOpen}
-                                            onClose={this.openhandleClick}
-                                        >
-                                            <Box
-                                                sx={{ width: 280, height: "100vh", backgroundColor: "white" }}
-                                                role="presentation"
-                                            >
-                                                <List >
+                                        <img src={Hamburgicon} alt="" width="110%" style={{
+                                            position: 'absolute',
 
-                                                    <IconButton
-                                                        size="large"
-                                                        edge="start"
-                                                        color="inherit"
-                                                        aria-label="menu"
-                                                        onClick={this.openhandleClick}
-                                                        sx={{ left: "90%", bottom: 20 }}
-                                                    >
-                                                        <MenuIcon />
-                                                    </IconButton>
-                                                    <ListItem>
-                                                        <ListItemText primary={"close"} sx={{ float: "right" }} />
+                                            left: 0,
+                                            margin: '0 60%',
+                                        }} />
+                                    </IconButton>
+                                    {/* drawer */}
+                                    <Drawer
+                                        anchor={"right"}
+                                        open={this.state.isOpen}
+                                        onClose={this.openhandleClick}
+                                    >
+                                        <Box
+                                            sx={{ width: 280, height: "100vh", backgroundColor: "#707070" }}
+                                            role="presentation"
+                                        >
+                                            <List >
+
+                                                <IconButton
+                                                    size="large"
+                                                    edge="start"
+                                                    color="inherit"
+                                                    aria-label="menu"
+                                                    onClick={this.openhandleClick}
+                                                    sx={{ left: "80%", bottom: 0 }}
+                                                >
+                                                    <img src={Hamburgicon} alt="" width="80%" />
+                                                </IconButton>
+                                                <ListItemText style={{ textAlign: "center" }}  >Play to Earn PUZZLES<img src={puzzle} /></ListItemText>
+
+                                                {Toplinkdata.map((text, index) => (
+                                                    <Link to={text.link} style={{ textDecoration: 'none', color: 'black' }}>
+                                                        <ListItem button key={text.id}>
+                                                            <ListItemText >
+                                                                {text.linkName}
+                                                            </ListItemText>
+                                                            <KeyboardArrowRightIcon />
+                                                        </ListItem>
+                                                    </Link>
+                                                ))}
+                                                <ListItem >
+                                                    <ListItemText style={{ fontSize: '0.7em' }}>
+                                                        <Box sx={{ display: 'flex', alignItems: 'flex-end', fontSize: '0.7em' }}>
+
+                                                            CODE REDEEM :
+                                                            <TextField id="input-with-sx" variant="standard" />
+
+                                                            <img src={coderedeem} alt="coderedeem" />
+                                                        </Box>
+                                                    </ListItemText>
+                                                </ListItem>
+                                            </List>
+                                            <List style={{ top: "10%", textDecoration: 'none', color: '#FFF' }} >
+                                                {Bottomlinkdata.slice(0, 3).map((text, index) => (
+                                                    <ListItem button key={text.id}>
+                                                        <ListItemText >
+                                                            <Link to={text.link} style={{ textDecoration: 'none', color: 'black' }}>{text.linkName}  </Link>
+                                                        </ListItemText>
                                                     </ListItem>
-                                                    {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-                                                        <ListItem button key={text}>
-                                                            <ListItemText primary={text} sx={{ float: "right" }} />
-                                                        </ListItem>
-                                                    ))}
-                                                </List>
-                                                <Divider />
-                                                <List >
-                                                    {["All mail", "Trash", "Spam"].map((text, index) => (
-                                                        <ListItem button key={text}>
-                                                            <ListItemIcon>
-                                                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                                            </ListItemIcon>
-                                                            <ListItemText primary={text} />
-                                                        </ListItem>
-                                                    ))}
-                                                </List>
-                                            </Box>
-                                        </Drawer>
+                                                ))}
+                                                <ListItem >
+                                                    <ListItemText >
+                                                        <Link to={Bottomlinkdata[3].link} style={{ textDecoration: 'none', color: 'black' }}>{Bottomlinkdata[3].linkName}   <img src={Logout} alt="logout" /></Link>
+                                                    </ListItemText>
+                                                </ListItem>
+                                            </List>
+                                        </Box>
+                                    </Drawer>
                                 </Toolbar>
 
                                 <div style={{ backgroundColor: "gray" }}>
@@ -366,7 +427,7 @@ export default class TournamentLobby extends Component {
                                             </div>
                                         </Grid>
                                         <Typography variant="h4" component="div" color='primary' textAlign='center'>
-                                            POWERED BY R<KeyboardArrowDown />
+                                            <img src={PoweredByR} alt='' />
                                         </Typography>
                                     </Grid>
                                 </div>
@@ -375,9 +436,9 @@ export default class TournamentLobby extends Component {
                     </Grid>
                     <Grid item xs={12} marginTop="3vh">
                     </Grid>
-                    <Grid item container
+                    <Grid container
                         direction="row"
-                        justifyContent='center' xs={12} height='15vh'>
+                        justifyContent='center' xs={12} height='15vh' style={{ backgroundImage: `url(${pic2})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
                         <Grid item xs={3} style={{ border: "1px solid grey", textAlign: 'center' }}>
                             <img src={puzzle} alt="gameicon" width="30%" />
                             <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
@@ -387,7 +448,7 @@ export default class TournamentLobby extends Component {
                                 GRAND GRADE PRIZE
                             </Typography>
                         </Grid>
-                        <Grid item xs={8} height='15vh' style={{ border: "1px solid grey" }}>
+                        <Grid item xs={8} height='15vh' style={{ border: "1px solid grey" }}  >
                             <Typography style={{
                                 position: 'absolute',
                                 right: 60,
@@ -408,9 +469,12 @@ export default class TournamentLobby extends Component {
                                         <div className="button">
                                             <div >
 
-                                                <StyledFab2 size="small" color="secondary" aria-label="add" onClick={this.handleClick} zIndex='1'>
-                                                    <KeyboardArrowRightIcon />
-                                                </StyledFab2>
+                                                <img src={Forward} alt='' onClick={this.handleClick} zIndex='1' width="60%" style={{
+                                                    position: 'relative',
+                                                    zIndex: 0,
+                                                    left: "25%",
+                                                    bottom: 20
+                                                }} />
                                             </div>
                                         </div>
 
@@ -435,7 +499,7 @@ export default class TournamentLobby extends Component {
                                     )}
                                 </Popup>
                             </Button>
-                            <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${oneVoneMode[0].id}/OneVoneMode`}><img src={pic1} width="100%" height='100%' /></Link>
+                            {/* <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${oneVoneMode[0].id}/OneVoneMode`}><img src={pic1} width="100%" height='100%' /></Link> */}
 
                         </Grid>
 
@@ -474,36 +538,38 @@ export default class TournamentLobby extends Component {
 
                                         }}>
                                             <Popup
-                                    trigger={
-                                        <div className="button">
-                                            <div >
+                                                trigger={
+                                                    <div className="button">
+                                                        <div >
+                                                            <img src={Forward} alt='' onClick={this.handleClick} zIndex='1' width="60%" style={{
+                                                                position: 'relative',
+                                                                zIndex: 0,
+                                                                left: "25%",
+                                                                bottom: 20
+                                                            }} />
+                                                        </div>
+                                                    </div>
 
-                                                <StyledFab2 size="small" color="secondary" aria-label="add" onClick={this.handleClick}>
-                                                    <KeyboardArrowRightIcon />
-                                                </StyledFab2>
-                                            </div>
-                                        </div>
-
-                                    }
-                                    modal
-                                    lockScroll
-                                    closeOnDocumentClick={false}
-                                    nested
-                                    {...{ contentStyle }}
-                                >
-                                    {close => (
-                                        <div className="modal">
-                                            <button className="close" onClick={close}>
-                                                <div className="close" onClick={this.handleClick}>
-                                                    &times;
-                                                </div>
-                                            </button>
-                                            <Grid xs={12} >
-                                                Game Content
-                                            </Grid>
-                                        </div>
-                                    )}
-                                </Popup>
+                                                }
+                                                modal
+                                                lockScroll
+                                                closeOnDocumentClick={false}
+                                                nested
+                                                {...{ contentStyle }}
+                                            >
+                                                {close => (
+                                                    <div className="modal">
+                                                        <button className="close" onClick={close}>
+                                                            <div className="close" onClick={this.handleClick}>
+                                                                &times;
+                                                            </div>
+                                                        </button>
+                                                        <Grid xs={12} >
+                                                            Game Content
+                                                        </Grid>
+                                                    </div>
+                                                )}
+                                            </Popup>
                                         </Button>
                                         <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${content.id}/OneVoneMode`}><img src={pic1} width="100%" height='100%' /></Link>
 
@@ -521,7 +587,7 @@ export default class TournamentLobby extends Component {
                             aria-label="show more"
                             color="success"
                         >
-                            <ExpandMoreIcon />
+                            <img src={Down} alt="" width="50%" />
                         </ExpandMore>
                     </Grid>
 
@@ -559,7 +625,7 @@ export default class TournamentLobby extends Component {
                                             </div>
                                         </Grid>
                                         <Typography variant="h4" component="div" color='primary' textAlign='center'>
-                                            POWERED BY R<KeyboardArrowDown />
+                                            <img src={PoweredByR} alt='' />
                                         </Typography>
                                     </Grid>
                                 </div>
@@ -583,7 +649,7 @@ export default class TournamentLobby extends Component {
                         </Grid>
                         <Grid item xs={8} height='19vh' style={{ border: "1px solid grey" }}>
 
-             
+
                             <Typography style={{
                                 position: 'absolute',
                                 right: 60,
@@ -603,10 +669,12 @@ export default class TournamentLobby extends Component {
                                     trigger={
                                         <div className="button">
                                             <div >
-
-                                                <StyledFab2 size="small" color="secondary" aria-label="add" onClick={this.handleClick}>
-                                                    <KeyboardArrowRightIcon />
-                                                </StyledFab2>
+                                                <img src={Forward} alt='' onClick={this.handleClick} zIndex='1' width="60%" style={{
+                                                    position: 'relative',
+                                                    zIndex: 0,
+                                                    left: "25%",
+                                                    bottom: 20
+                                                }} />
                                             </div>
                                         </div>
 
@@ -653,7 +721,7 @@ export default class TournamentLobby extends Component {
                                     </Grid>
                                     <Grid item xs={8} height='19vh' style={{ border: "1px solid grey" }}>
 
-                                       
+
                                         <Typography style={{
                                             position: 'absolute',
                                             right: 60,
@@ -669,37 +737,39 @@ export default class TournamentLobby extends Component {
                                             marginTop: 90
 
                                         }}>
-                                         <Popup
-                                    trigger={
-                                        <div className="button">
-                                            <div >
+                                            <Popup
+                                                trigger={
+                                                    <div className="button">
+                                                        <div >
+                                                            <img src={Forward} alt='' onClick={this.handleClick} zIndex='1' width="60%" style={{
+                                                                position: 'relative',
+                                                                zIndex: 0,
+                                                                left: "25%",
+                                                                bottom: 20
+                                                            }} />
+                                                        </div>
+                                                    </div>
 
-                                                <StyledFab2 size="small" color="secondary" aria-label="add" onClick={this.handleClick}>
-                                                    <KeyboardArrowRightIcon />
-                                                </StyledFab2>
-                                            </div>
-                                        </div>
-
-                                    }
-                                    modal
-                                    lockScroll
-                                    closeOnDocumentClick={false}
-                                    nested
-                                    {...{ contentStyle }}
-                                >
-                                    {close => (
-                                        <div className="modal">
-                                            <button className="close" onClick={close}>
-                                                <div className="close" onClick={this.handleClick}>
-                                                    &times;
-                                                </div>
-                                            </button>
-                                            <Grid xs={12} >
-                                                Game Content
-                                            </Grid>
-                                        </div>
-                                    )}
-                                </Popup>
+                                                }
+                                                modal
+                                                lockScroll
+                                                closeOnDocumentClick={false}
+                                                nested
+                                                {...{ contentStyle }}
+                                            >
+                                                {close => (
+                                                    <div className="modal">
+                                                        <button className="close" onClick={close}>
+                                                            <div className="close" onClick={this.handleClick}>
+                                                                &times;
+                                                            </div>
+                                                        </button>
+                                                        <Grid xs={12} >
+                                                            Game Content
+                                                        </Grid>
+                                                    </div>
+                                                )}
+                                            </Popup>
                                         </Button>
                                         <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${content.id}/ChallengerModeGO`}><img src={pic1} width="100%" height='100%' /></Link>
                                     </Grid>
@@ -716,7 +786,7 @@ export default class TournamentLobby extends Component {
                             aria-label="show more"
                             color="success"
                         >
-                            <ExpandMoreIcon />
+                            <img src={Down} alt="" width="50%" />
                         </ExpandMore>
                     </Grid>
 
@@ -755,7 +825,7 @@ export default class TournamentLobby extends Component {
                                         </Grid>
                                         <Grid xs={12} positon='fixed'>
                                             <Typography variant="h4" component="div" color='primary' textAlign='center'>
-                                                POWERED BY R<KeyboardArrowDown />
+                                                <img src={PoweredByR} alt='' />
                                             </Typography>
                                         </Grid>
                                     </Grid>
@@ -778,20 +848,20 @@ export default class TournamentLobby extends Component {
                             </Typography>
                         </Grid>
                         <Grid item xs={8} height='19vh' style={{ border: "1px solid grey" }}>
-                        <Typography variant="h4" component="div" style={{
-                                            position: 'absolute',
-                                            right: 30,
-                                            marginTop: 10
-                                        }}>
-                                            {BattleMode[0].player}/50
-                                        </Typography>
-                                        <Typography variant="h6" component="div" style={{
-                                            position: 'absolute',
-                                            right: 30,
-                                            marginTop: 40
-                                        }}>
-                                            players
-                                        </Typography>
+                            <Typography variant="h4" component="div" style={{
+                                position: 'absolute',
+                                right: 30,
+                                marginTop: 10
+                            }}>
+                                {BattleMode[0].player}/50
+                            </Typography>
+                            <Typography variant="h6" component="div" style={{
+                                position: 'absolute',
+                                right: 30,
+                                marginTop: 40
+                            }}>
+                                players
+                            </Typography>
                             <Typography style={{
                                 position: 'absolute',
                                 right: 60,
@@ -811,10 +881,12 @@ export default class TournamentLobby extends Component {
                                     trigger={
                                         <div className="button">
                                             <div >
-
-                                                <StyledFab2 size="small" color="secondary" aria-label="add" onClick={this.handleClick}>
-                                                    <KeyboardArrowRightIcon />
-                                                </StyledFab2>
+                                                <img src={Forward} alt='' onClick={this.handleClick} zIndex='1' width="60%" style={{
+                                                    position: 'relative',
+                                                    zIndex: 0,
+                                                    left: "25%",
+                                                    bottom: 20
+                                                }} />
                                             </div>
                                         </div>
 
@@ -863,7 +935,7 @@ export default class TournamentLobby extends Component {
                                         </Typography>
                                     </Grid>
                                     <Grid item xs={8} style={{ border: "1px solid grey", backgroundImage: `url(${backgroundImage[2].src})`, backgroundSize: '100% 100%' }} >
-                                    <Typography variant="h4" component="div" style={{
+                                        <Typography variant="h4" component="div" style={{
                                             position: 'absolute',
                                             right: 30,
                                             marginTop: 10
@@ -891,37 +963,39 @@ export default class TournamentLobby extends Component {
                                             marginTop: 90
 
                                         }}>
-                                        <Popup
-                                    trigger={
-                                        <div className="button">
-                                            <div >
+                                            <Popup
+                                                trigger={
+                                                    <div className="button">
+                                                        <div >
+                                                            <img src={Forward} alt='' onClick={this.handleClick} zIndex='1' width="60%" style={{
+                                                                position: 'relative',
+                                                                zIndex: 0,
+                                                                left: "25%",
+                                                                bottom: 8
+                                                            }} />
+                                                        </div>
+                                                    </div>
 
-                                                <StyledFab2 size="small" color="secondary" aria-label="add" onClick={this.handleClick}>
-                                                    <KeyboardArrowRightIcon />
-                                                </StyledFab2>
-                                            </div>
-                                        </div>
-
-                                    }
-                                    modal
-                                    lockScroll
-                                    closeOnDocumentClick={false}
-                                    nested
-                                    {...{ contentStyle }}
-                                >
-                                    {close => (
-                                        <div className="modal">
-                                            <button className="close" onClick={close}>
-                                                <div className="close" onClick={this.handleClick}>
-                                                    &times;
-                                                </div>
-                                            </button>
-                                            <Grid xs={12} >
-                                                Game Content
-                                            </Grid>
-                                        </div>
-                                    )}
-                                </Popup>
+                                                }
+                                                modal
+                                                lockScroll
+                                                closeOnDocumentClick={false}
+                                                nested
+                                                {...{ contentStyle }}
+                                            >
+                                                {close => (
+                                                    <div className="modal">
+                                                        <button className="close" onClick={close}>
+                                                            <div className="close" onClick={this.handleClick}>
+                                                                &times;
+                                                            </div>
+                                                        </button>
+                                                        <Grid xs={12} >
+                                                            Game Content
+                                                        </Grid>
+                                                    </div>
+                                                )}
+                                            </Popup>
                                         </Button>
                                         <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${content.id}/BattleModeJoin`}><img src={pic1} width="100%" height='100%' /></Link>
 
@@ -938,7 +1012,7 @@ export default class TournamentLobby extends Component {
                             aria-label="show more"
                             color="success"
                         >
-                            <ExpandMoreIcon />
+                            <img src={Down} alt="" width="50%" />
                         </ExpandMore>
                     </Grid>
                     <Grid item xs={12} marginTop="10vh" display={this.state.isToggleOn ? 'block' : 'none'}>

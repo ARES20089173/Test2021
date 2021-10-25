@@ -19,7 +19,7 @@ class App extends Component {
                                 left:"44%",
                             }}/>
                     </Link>
-                    <Carousel infiniteLoop width={"100%"} emulateTouch showStatus={false} autoPlay swipeable showThumbs={false} >
+                    <Carousel infiniteLoop width={"100%"} showArrows={false} emulateTouch showStatus={false} autoPlay swipeable showThumbs={false} >
                         <div>
                             <img src={pic1} alt="pic" />
                         </div>

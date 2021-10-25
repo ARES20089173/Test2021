@@ -134,7 +134,7 @@ export default function Detail() {
                 </Grid>
                 <Grid item xs={11} container height="20%" style={{ borderBottom: "1px solid white" }} >
                     <Grid item xs={12} alignItems='center'>
-                        <Typography color='white ' style={{ wordWrap: 'break-word' }}>Remark<br />xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</Typography>
+                        <Typography color='white ' style={{ wordWrap: 'break-word' }}>Remark<br />{Remark}</Typography>
                     </Grid>
                 </Grid>
                 <Grid item xs={11} container height="10%"   >

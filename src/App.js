@@ -17,7 +17,7 @@ import Events from'./component/Pages/HamburgerBar/Events'
 import WalletMain from './component/Pages/Wallet/WalletMain'
 import TranscationHistory from './component/Pages/Wallet/TranscationHistory';
 import HistoryDetail from './component/Pages/Wallet/HistoryDetail';
-
+import SaveCards from './component/Pages/Wallet/SaveCard'
 import { RouterConfig, getMatchRouter } from './routerConfig';
 import './App.css'
 import {
@@ -96,6 +96,7 @@ const render = ({ location, history, match }) => {
 
           <Route exact path="/wallet" component={WalletMain} render={(props) => <WalletMain {...props} />}/>
           <Route exact path="/Wallet/TranscationHistory" component={TranscationHistory}render={(props) => <TranscationHistory {...props} />}/>  
+          <Route exact path="/Wallet/SaveCards" component={SaveCards}render={(props) => <SaveCards {...props} />}/>  
           <Route exact path="/Wallet/TranscationHistory/:id/Detail" component={HistoryDetail}render={(props) => <HistoryDetail {...props} />}/>  
           ...
         </Switch>
