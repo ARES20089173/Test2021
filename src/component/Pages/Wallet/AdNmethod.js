@@ -10,7 +10,7 @@ import Fab from '@mui/material/Fab';
 import { styled } from '@mui/material/styles'
 import { Link } from "react-router-dom"
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
-import EndBar from '../../framework/WalletEndbar';
+import EndBar from '../../framework/InputWalletEndbar';
 import back from '../../../svgicon/Componenticon/Back.svg'
 import chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
 import silverpuzzle from '../../../svgicon/Componenticon/SilverPuzzle.svg'
