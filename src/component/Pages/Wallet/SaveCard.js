@@ -146,7 +146,7 @@ export default function Savecard() {
                     <Grid container xs={11} height="50%" src>
                         <Grid container xs={12} height="50%" >
                             <img src={Addicon} alt='' /><img src={card} alt='' style={{marginLeft:'2vh'}}/>
-                            <Link to='/' color='white' style={{ textDecoration: 'none', color: 'white' }}>
+                            <Link to={`/Wallet/SaveCards/AddNewCards`} color='white' style={{ textDecoration: 'none', color: 'white' }}>
                                 <Typography variant='body1' style={{
                                     position: 'relative',
                                     top: '35%',
@@ -161,7 +161,7 @@ export default function Savecard() {
                     <Grid container xs={11} height="50%" src>
                         <Grid container xs={12} height="50%" >
                             <img src={Addicon} alt='' /><img src={card} alt='' style={{marginLeft:'2vh'}}/>
-                            <Link to='/' color='white' style={{ textDecoration: 'none', color: 'white' }}>
+                            <Link to={`/Wallet/SaveCards/AddNewMethod`} color='white' style={{ textDecoration: 'none', color: 'white' }}>
                                 <Typography variant='body1' style={{
                                     position: 'relative',
                                     top: '35%',

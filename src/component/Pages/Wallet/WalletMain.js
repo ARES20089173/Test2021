@@ -59,8 +59,8 @@ const userdata = { reesid: 123456, name: 'Jay', headicon: face }
 const Toplinkdata = [
     { id: 0, linkName: "Transaction History", link: `/Wallet/TranscationHistory` },
     { id: 1, linkName: "Saved Cards", link: `/Wallet/SaveCards` },
-    { id: 2, linkName: "Puzzle Packages", link: "/Events" },
-    { id: 3, linkName: "Refer Friends to Earn Puzzles", link: "/" }]
+    { id: 2, linkName: "Puzzle Packages", link: "/Wallet/PuzzlePackage" },
+    { id: 3, linkName: "Refer Friends to Earn Puzzles", link: "/Wallet/PuzzlePackage" }]
 
 export default function MainPage() {
     const [values, setValues] = React.useState({

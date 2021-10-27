@@ -18,6 +18,9 @@ import WalletMain from './component/Pages/Wallet/WalletMain'
 import TranscationHistory from './component/Pages/Wallet/TranscationHistory';
 import HistoryDetail from './component/Pages/Wallet/HistoryDetail';
 import SaveCards from './component/Pages/Wallet/SaveCard'
+import AddNewMethod from './component/Pages/Wallet/AdNmethod'
+import AddNewCards from './component/Pages/Wallet/AddNewCard'
+import PuzzlePackage from './component/Pages/Wallet/PuzzlePackage'
 import { RouterConfig, getMatchRouter } from './routerConfig';
 import './App.css'
 import {
@@ -97,7 +100,10 @@ const render = ({ location, history, match }) => {
           <Route exact path="/wallet" component={WalletMain} render={(props) => <WalletMain {...props} />}/>
           <Route exact path="/Wallet/TranscationHistory" component={TranscationHistory}render={(props) => <TranscationHistory {...props} />}/>  
           <Route exact path="/Wallet/SaveCards" component={SaveCards}render={(props) => <SaveCards {...props} />}/>  
-          <Route exact path="/Wallet/TranscationHistory/:id/Detail" component={HistoryDetail}render={(props) => <HistoryDetail {...props} />}/>  
+          <Route exact path="/Wallet/SaveCards/AddNewCards" component={AddNewCards}render={(props) => <AddNewCards {...props} />}/>
+          <Route exact path="/Wallet/PuzzlePackage" component={PuzzlePackage}render={(props) => <PuzzlePackage {...props} />}/>  
+          <Route exact path="/Wallet/SaveCards/AddNewMethod" component={AddNewMethod}render={(props) => <AddNewMethod {...props} />}/>  
+        
           ...
         </Switch>
       </div>

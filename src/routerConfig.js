@@ -14,7 +14,12 @@ import SelectAvatar from "./component/Pages/HamburgerBar/SelectAvatar";
 import Profile from "./component/Pages/HamburgerBar/Profile";
 import WalletMain from './component/Pages/Wallet/WalletMain' ;
 import TranscationHistory from './component/Pages/Wallet/TranscationHistory' ;
-import HistoryDetail from './component/Pages/Wallet/HistoryDetail' ;
+import HistoryDetail from './component/Pages/Wallet/HistoryDetail' ; 
+import SaveCards from './component/Pages/Wallet/SaveCard'
+import AddNewMethod from './component/Pages/Wallet/AdNmethod'
+import AddNewCards from './component/Pages/Wallet/AddNewCard'
+import PuzzlePackage from './component/Pages/Wallet/PuzzlePackage'
+
 export const getMatchRouter = (pathname, configs) =>
   configs.find(config => matchPath(pathname, {
     exact: true,
@@ -47,6 +52,34 @@ export const RouterConfig = [
     {
       path: '/Wallet/TranscationHistory',
       render: props => <TranscationHistory{...props} />,
+      meta: {
+        index: 2
+      }
+    },   
+    {
+      path: '/Wallet/SaveCards',
+      render: props => <SaveCards{...props} />,
+      meta: {
+        index: 2
+      }
+    },
+    {
+      path: '/Wallet/SaveCards/AddNewCards',
+      render: props => <AddNewCards{...props} />,
+      meta: {
+        index: 3
+      }
+    },
+    {
+      path: '/Wallet/SaveCards/AddNewMethod',
+      render: props => <AddNewMethod{...props} />,
+      meta: {
+        index: 3
+      }
+    },
+    {
+      path: '/Wallet/PuzzlePackage',
+      render: props => <PuzzlePackage{...props} />,
       meta: {
         index: 2
       }
