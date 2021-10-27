@@ -10,7 +10,7 @@ import Fab from '@mui/material/Fab';
 import { styled } from '@mui/material/styles'
 import { Link } from "react-router-dom"
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
-import EndBar from '../../framework/InputWalletEndbar';
+import EndBar from '../../framework/WalletEndbar';
 import back from '../../../svgicon/Componenticon/Back.svg'
 import chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
 import silverpuzzle from '../../../svgicon/Componenticon/SilverPuzzle.svg'
@@ -170,7 +170,7 @@ function AdNmethod(props) {
                 </Grid>
              
             </Grid> 
-            <Grid item xs={12} marginTop="0vh" >
+            <Grid item xs={12} marginTop="30%" >
                 <EndBar />
             </Grid>
         </Box>
