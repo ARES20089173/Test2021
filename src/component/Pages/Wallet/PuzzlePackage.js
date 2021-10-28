@@ -7,6 +7,9 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import Fab from '@mui/material/Fab';
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
 import { styled } from '@mui/material/styles'
 import { Link } from "react-router-dom"
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
@@ -17,14 +20,6 @@ import silverpuzzle from '../../../svgicon/Componenticon/SilverPuzzle.svg'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
-import Gicon1 from '../../../svgicon/Carousel/Bankcard.svg'
-import Addicon from '../../../svgicon/BankCardicons/Addicon.svg'
-import alipay from '../../../svgicon/BankCardicons/alipay.svg'
-import amapay from '../../../svgicon/BankCardicons/amapay.svg'
-import card from '../../../svgicon/BankCardicons/card.svg'
-import mastercard from '../../../svgicon/BankCardicons/mastercard.svg'
-import visa from '../../../svgicon/BankCardicons/visa.svg'
-import paypal from '../../../svgicon/BankCardicons/paypal.svg'
 import 'swiper/swiper-bundle.min.css'
 // swiper core styles
 import 'swiper/swiper.min.css'
@@ -42,17 +37,85 @@ import { Checkbox } from '@mui/material';
 SwiperCore.use([Pagination, Navigation, EffectCoverflow]);
 
 const data = [
-    { id: 0, src: Gicon1, name: "2048", number: 52, entryFee: 88 },
-    { id: 1, src: Gicon1, name: "原神", number: 56, entryFee: 848 },
-    { id: 2, src: Gicon1, name: "LoL", number: 55, entryFee: 828 },
+    { id: 0, src:chasepuzzle, name: "2048", number: 52, entryFee: 88 },
+    { id: 1, src: silverpuzzle, name: "原神", number: 56, entryFee: 848 },
 ]
-export default function Savecard() {
-    const [count, setCount] = useState(0);
 
-    const [Default, setDefault] = useState();
+const Toplinkdata = [
+    { id: 0, linkName: "twice a week xx% OFF ", link: `/Wallet/TranscationHistory`, icon: chasepuzzle, price: 50, quality: "50(+0)" },
+    { id: 1, linkName: "twice a week xx% OFF", link: `/Wallet/SaveCards`, icon: chasepuzzle, price: 150, quality: "50(+0)" },
+    { id: 2, linkName: "Once a week xx% OFF", link: "/Wallet/PuzzlePackage", icon: chasepuzzle, price: 250, quality: "50(+0)" },
+    { id: 1, linkName: "twice a week xx% OFF", link: `/Wallet/SaveCards`, icon: chasepuzzle, price: 350, quality: "50(+0)" },
+    { id: 2, linkName: "Once a week xx% OFF", link: "/Wallet/PuzzlePackage", icon: chasepuzzle, price: 450, quality: "150(+60)" },
+    { id: 1, linkName: "Once a week xx% OFF", link: `/Wallet/SaveCards`, icon: chasepuzzle, price: 550, quality: "550(+400)" },
+    { id: 2, linkName: "Once a week xx% OFF", link: "/Wallet/PuzzlePackage", icon: chasepuzzle, price: 650, quality: "1750(+550)" },
+    { id: 3, linkName: "twice a week xx% OFF", link: "/Wallet/PuzzlePackage", icon: chasepuzzle, price: 750, quality: "3750(+950)" }]
+
+const Bottomlinkdata = [
+    { id: 0, linkName: "twice a week xx% OFF ", link: `/Wallet/TranscationHistory`, icon: silverpuzzle, price: 50, quality: "50(+0)" },
+    { id: 1, linkName: "twice a week xx% OFF", link: `/Wallet/SaveCards`, icon: silverpuzzle, price: 150, quality: "50(+0)" },
+    { id: 2, linkName: "Once a week xx% OFF", link: "/Wallet/PuzzlePackage", icon:silverpuzzle, price: 250, quality: "50(+0)" },
+    { id: 1, linkName: "twice a week xx% OFF", link: `/Wallet/SaveCards`, icon:silverpuzzle, price: 350, quality: "50(+0)" },
+    { id: 2, linkName: "Once a week xx% OFF", link: "/Wallet/PuzzlePackage", icon:silverpuzzle, price: 450, quality: "150(+60)" },
+    { id: 1, linkName: "Once a week xx% OFF", link: `/Wallet/SaveCards`, icon:silverpuzzle, price: 550, quality: "550(+400)" },
+    { id: 2, linkName: "Once a week xx% OFF", link: "/Wallet/PuzzlePackage", icon:silverpuzzle, price: 650, quality: "1750(+550)" },
+    { id: 3, linkName: "twice a week xx% OFF", link: "/Wallet/PuzzlePackage", icon:silverpuzzle, price: 750, quality: "3750(+950)" }]
+
+export default function PuzzlePackage() {
+    const [count, setCount] = useState(0);
+    const Toplinkdataed = Toplinkdata.map((text) => {
+        if (text.id % 2 == 0) {
+            return <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
+                <ListItem button key={text.id} style={{ backgroundColor: '#8e8b91' }}>
+                    <ListItemText  >
+                        <Grid container xs={12} alignItems="center" justifyContent='center' >
+                            <Grid xs={2}><img src={text.icon} alt="" width="100%" /></Grid>  <Grid xs={9}><Typography>{text.quality}</Typography><Typography variant="caption">{text.linkName}</Typography></Grid>
+                        </Grid>
+                    </ListItemText>
+                    <Typography>HKD${text.price}</Typography><KeyboardArrowRightIcon />
+                </ListItem>
+            </Link>
+        }
+        else {
+            return <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
+                <ListItem button key={text.id} style={{ backgroundColor: '#707070' }}>
+                    <ListItemText  >
+                        <Grid container xs={12} alignItems="center" justifyContent='center' >
+                            <Grid xs={2}><img src={text.icon} alt="" width="100%" /></Grid>  <Grid xs={9}><Typography>{text.quality}</Typography><Typography variant="caption">{text.linkName}</Typography></Grid>
+                        </Grid>
+                    </ListItemText>
+                    <Typography>HKD${text.price}</Typography><KeyboardArrowRightIcon />
+                </ListItem>
+            </Link>
+        }
+    })
+    const Bottomlinkdataed = Bottomlinkdata.map((text) => {
+        if (text.id % 2 == 0) {
+            return <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
+                <ListItem button key={text.id} style={{ backgroundColor: '#8e8b91' }}>
+                    <ListItemText  >
+                    <Grid container xs={12} alignItems="center" justifyContent='center' >
+                            <Grid xs={2}><img src={text.icon} alt="" width="100%" /></Grid>  <Grid xs={9}><Typography>{text.quality}</Typography><Typography variant="caption">{text.linkName}</Typography></Grid>
+                        </Grid>  </ListItemText>
+                    <Typography>HKD${text.price}</Typography><KeyboardArrowRightIcon />
+                </ListItem>
+            </Link>
+        }
+        else {
+            return <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
+                <ListItem button key={text.id} style={{ backgroundColor: '#707070' }}>
+                    <ListItemText  >
+                    <Grid container xs={12} alignItems="center" justifyContent='center' >
+                            <Grid xs={2}><img src={text.icon} alt="" width="100%" /></Grid>  <Grid xs={9}><Typography>{text.quality}</Typography><Typography variant="caption">{text.linkName}</Typography></Grid>
+                        </Grid>  </ListItemText>
+                    <Typography>HKD${text.price}</Typography><KeyboardArrowRightIcon />
+                </ListItem>
+            </Link>
+        }
+    })
     return (
 
-        <Box sx={{ flexGrow: 1 }} bgcolor='#242634' height="100vh">
+        <Box sx={{ flexGrow: 1 }} bgcolor='#242634' height="100%">
             <React.Fragment>
                 <Box sx={{ flexGrow: 1 }} >
                     <Link to='/'>
@@ -100,11 +163,43 @@ export default function Savecard() {
                 justifyContent="center"
                 alignItems="center">
                 <Grid item xs={12} height="3vh" style={{ backgroundColor: '#8e8b91', textAlign: 'center' }}>
-                    <Typography variant="body1" color="#ffffff" >
+                    <Typography variant="body2" color="#ffffff" >
                         HOT PACKAGE DEAL
                     </Typography>
                 </Grid>
+                <Grid container xs={12} height="38vh" alignItems="center" style={{ marginBottom: "0vh" }}>
+                    <Swiper
+                        onSlideChange={(index) => {
+                            console.log(index.realIndex)
+                            setCount(index.realIndex);
+                        }}
+                        pagination={true}
+                        className="mySwiper">
 
+                        {data.map((pic) => (
+                            <SwiperSlide >
+                                <Grid container xs={12} height="38vh" alignItems="center" justifyContent='center'>
+                                    <Grid xs={6} container height='30%' alignItems="center" justifyContent='center' ><Typography variant='body1' color='white' paragraph>You have Chase puzzle <br/></Typography><Typography variant='h6' color='white' paragraph> 52PCs</Typography></Grid>
+                                    <Grid xs={6} container height='70%' alignItems="center" justifyContent='center'><img src={pic.src} alt="" /></Grid>
+                                    <Grid xs={12} height='40%'><Typography variant='body2' color='white'>
+                                        To abide by local regulation, we need to
+                                        verify your identity before you can</Typography></Grid>
+                                </Grid>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </Grid>
+                <Grid container xs={12} alignItems="center" justifyContent='center' display={count == 1 ? "none" : "block"} style={{ borderTop: '3px solid white', }}>
+                    <List >
+                        {Toplinkdataed}
+                    </List>
+                </Grid>
+
+                <Grid container xs={12} alignItems="center" display={count == 0 ? "none" : "block"} style={{ borderTop: '3px solid white', }}>
+                    <List >
+                        {Bottomlinkdataed}
+                    </List>
+                </Grid>
             </Grid>
             <Grid item xs={12} marginTop="0vh" >
                 <EndBar />
