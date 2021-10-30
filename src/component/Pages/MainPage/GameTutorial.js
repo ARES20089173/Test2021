@@ -95,7 +95,7 @@ export default class GameTutorial extends Component {
                         <React.Fragment>
                             <Box sx={{ flexGrow: 1 }}>
                                 <CssBaseline />
-                                <AppBar position="fixed" align='center' sx={{ top: 0, backgroundColor: "#242634" }}>
+                                <AppBar position="fixed" align='center' elevation={0} sx={{ top: 0, backgroundColor: "#242634" }}>
                                     <Toolbar>
                                         <Typography variant="h6" component="div" sx={{}}>
                                             <Link to={`/`}>
@@ -110,7 +110,7 @@ export default class GameTutorial extends Component {
                                         <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} style={{
                                             position: 'relative',
                                             zIndex: 3,
-                                            left: "-10%",
+                                            left: "-15%",
                                         }}>
                                             CHOOSE YOUR FAVORITE MODE
                                         </Typography>
@@ -198,13 +198,13 @@ export default class GameTutorial extends Component {
                         <Toolbar />
                     </Grid>
                     <Grid container item xs={12} justifyContent='center' style={{ paddingTop: '2vh' }} >
-                        <Grid item xs={11}><Typography color="primary" variant="h6" >Puzzle chase</Typography></Grid>
+                        <Grid item xs={11}><Typography color="white" variant="h6" >Puzzle chase</Typography></Grid>
                         {data.map((video) => (
 
                             <Grid item xs={11} key={video.id} height="50vh">
                                 <div className="video-responsive">
 
-                                    <Typography color="primary">{video.name}</Typography>
+                                    <Typography color="white">{video.name}</Typography>
                                     <iframe
                                         src={`https://www.youtube.com/embed/${video.embedId}`}
                                         frameBorder="0"
@@ -214,7 +214,7 @@ export default class GameTutorial extends Component {
                                     />
                                 </div>
 
-                                <Typography color="primary"> detail</Typography>
+                                <Typography color="white"> detail</Typography>
                             </Grid>
                         ))}
                     </Grid>
