@@ -17,7 +17,7 @@ import backgroundEnd from "../../rees_bg2.svg"
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import AddIcon from '@mui/icons-material/Add';
 import { Link } from 'react-router-dom';
-import LinkBarWithback from './Walletlinkbar';
+import LinkBarWithback from './Missionlinkbar';
 
 import Notification from '../../svgicon/Componenticon/Notification.svg'
 import Ricon from '../../svgicon/Componenticon/Ricon.svg'
@@ -142,7 +142,7 @@ export default function BottomAppBar() {
                                             right: 0,
                                             margin: '0 82%',
                                         }}>
-                                            <StyledBadge badgeContent={Amout[0].notification} >
+                                            <StyledBadge badgeContent={Amout[0].notification}>
                                                 <img src={Notification} />
                                             </StyledBadge>
                                         </div>

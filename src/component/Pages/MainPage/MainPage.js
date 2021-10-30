@@ -2,6 +2,8 @@ import React from 'react';
 import Grid from '@mui/material/Grid';
 import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
 import adv1 from '../../../svgicon/Advertise/adv1.svg'
+import referimg from '../../../svgicon/Advertise/Referfriend.svg'
+import powerby from '../../../svgicon/PowerBy/PowerByR.svg'
 import Typography from '@mui/material/Typography';
 import 'reactjs-popup/dist/index.css';
 import "../../framework/css/cssModFLooby.css"
@@ -14,7 +16,7 @@ import Scrollbanner from '../../framework/scrollbanner';
 import NavigationBar from '../../framework/navigationBar';
 import Scrolltext from '../../framework/scrolltext';
 import GameLobby from '../../../svgicon/Componenticon/GameLobby.svg'
-
+import { Button } from '@mui/material';
 import EndBar from '../../framework/endbar';
 import { styled } from '@mui/material/styles';
 import Fab from '@mui/material/Fab';
@@ -28,8 +30,8 @@ const StyledFab2 = styled(Fab)({
     left: 0,
 });
 const contentStyle = {
-    marginTop: '17%',
-    background: '#cfcece',
+    marginTop: '20%',
+    background: '#242634',
     width: "90%",
     height: "60%",
     borderRadius: "5%",
@@ -37,7 +39,7 @@ const contentStyle = {
 export default function MainPage() {
 
     return (
-        <Box sx={{ flexGrow: 1 }}  height="100%" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: '100% 100%', backgroundAttachment: 'fixed' }}>
+        <Box sx={{ flexGrow: 1 }} height="100%" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: '100% 100%', backgroundAttachment: 'fixed' }}>
             <Grid item xs={12}  >
                 <NavigationBar />
             </Grid>
@@ -52,7 +54,7 @@ export default function MainPage() {
                         <Scrollbanner />
                     </div>
                 </Grid>
-                <Grid item xs={11} height="5vh" style={{ marginTop: '1vh'}}>
+                <Grid item xs={11} height="5vh" style={{ marginTop: '1vh' }}>
                     <Scrolltext />
                     {/* <Grid xs={1}></Grid>
                     <Grid xs={10}><Scrolltext /></Grid>
@@ -61,18 +63,18 @@ export default function MainPage() {
                 <Grid item xs={12} height="30vh">
                     <GameChooser />
                     <Link to='/multigameChooser'>
-                           <img src={GameLobby} alt="Gamelobby" width="15%" style={{
-                                  position: 'absolute',
-                                  zIndex: 1,
-                                  bottom: "38vh",
-                                  left: 0,
-                           }} />
+                        <img src={GameLobby} alt="Gamelobby" width="15%" style={{
+                            position: 'absolute',
+                            zIndex: 1,
+                            bottom: "38vh",
+                            left: 0,
+                        }} />
                     </Link>
                 </Grid>
                 <Grid item xs={11} >
                     <div style={{ textAlign: 'center' }}>
                         <Popup
-                            trigger={<div className="button"> <div ><a href><img src={adv1} width="100%"  alt="inviteimage" /></a></div></div>}
+                            trigger={<div className="button"> <div ><a href><img src={adv1} width="100%" alt="inviteimage" /></a></div></div>}
                             modal
                             nested
                             {...{ contentStyle }}
@@ -85,36 +87,25 @@ export default function MainPage() {
                                         </div>
                                     </button>
                                     <Grid xs={12}>
-                                        <Typography variant="h4" component="div" color='primary' textAlign='center'>
-                                            Want HK$300<img src={puzzle} alt="puzzle"/>？
+                                        <Typography variant="body2" component="div" color='primary' textAlign='center'>
+                                          refer friends & earn up to $500 puzzles
                                         </Typography>
                                         <Typography variant="caption" component="div" color='primary' textAlign='center'>
-                                            For a limited time, earn HK$300 for every
-                                            10 friends who becomes a paying
-                                            PUZZLECHASE member.
-                                            Offer ends Dec31,2021. T&Cs apply
+                                            Referal Code
                                         </Typography>
 
-                                        <Grid item xs={12} height="33vh">
+                                        <Grid item xs={12} height="38vh">
                                             <div className="video-responsive">
-                                        <Grid xs={12} >
-                                        <div style={{ border: '1px solid black', height: '100%' }}>   
-                                        <Typography variant="body2" component="div" color='primary' textAlign='center'>
-                                        ILOVEREESPUZZLES
-                                        </Typography>
-                                        <Typography variant="caption" component="div" color='primary' textAlign='center'>
-                                        referral code
-                                        </Typography>
-                                        </div></Grid>
-                                            <img src={adv1} width="100%"  alt="inviteimage" />
+                                                <Grid xs={12} textAlign='center'>
+                                                        <Button variant='outlined'>ILOVEREESPUZZLES</Button>
+                                                 </Grid>
+                                                <Typography variant="body2" component="div" color='primary' textAlign='center'>
+
+                                                <img src={referimg} width="70%" alt="referimage" />
+                                            <img src={powerby} width="40%" />
+                                                </Typography>
                                             </div>
                                         </Grid>
-                                        <Typography variant="body2" component="div" color='primary' textAlign='center'>
-                                            REES | Puzzle
-                                            Chase              
-                                            <KeyboardArrowDown />
-                                            300<img src={puzzle} />
-                                        </Typography>
                                     </Grid>
                                 </div>
                             )}

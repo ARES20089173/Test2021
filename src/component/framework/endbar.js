@@ -7,6 +7,7 @@ import "./css/cssFGamechooser.css"
 import Popup from 'reactjs-popup';
 import Box from '@mui/material/Box';
 import { Link } from 'react-router-dom';
+import { Typography } from '@mui/material';
 import Grid from '@mui/material/Grid'
 import Badge from '@mui/material/Badge'
 import backgroundEnd from "../../rees_bg2.svg"
@@ -34,7 +35,8 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
         border: `2px solid ${theme.palette.background.paper}`,
         padding: '0 1px',
         zIndex: 2,
-
+        backgroundColor: "red",
+        color:'white'
     },
 }));
 const StyledFab = styled(Fab)({
@@ -72,9 +74,9 @@ export default function BottomAppBar() {
                                     <Grid xs={12} container>
                                         <Grid xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} >
                                             <div style={{ backgroundImage: `url(${Endbarbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
-                                                <Popup
-                                                    trigger={<div className="button" style={{ color: "white" }}>  <img src={SilverPuzzle} className="App-logo" alt="logo" width="20%" style={{ float: 'left' }} />{Amout[0].SilverPuzzle}k<img src={addicon} style={{ width: 20 }} /></div>}
-                                                    modal
+                                            <Popup
+                                                   trigger={<Grid  container justifyContent='center' alignItems='center' className="button" style={{ color: "white" }}>  <img src={Chasepuzzle} className="App-logo" alt="logo" width="20%"style={{position:'relative',float:'left'}}  /><Typography style={{float:'right'}}>{Amout[0].Chasepuzzle}k<img src={addicon} style={{ width: 20,marginLeft:2,}} /></Typography></Grid>}
+                                                   modal
                                                     lockScroll
                                                     nested
                                                     {...{ contentStyle }}
@@ -96,7 +98,7 @@ export default function BottomAppBar() {
                                         <Grid xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
                                             <div style={{ backgroundImage: `url(${Endbarbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
                                                 <Popup
-                                                    trigger={<div className="button" style={{ color: "white" }}>  <img src={Chasepuzzle} className="App-logo" alt="logo" width="20%" style={{ float: 'left' }} />{Amout[0].Chasepuzzle}k<img src={addicon} style={{ width: 20 }} /></div>}
+                                                    trigger={<Grid  container justifyContent='center' alignItems='center' className="button" style={{ color: "white" }}>  <img src={SilverPuzzle} className="App-logo" alt="logo" width="20%"style={{position:'relative',float:'left'}}  /><Typography style={{float:'right'}}>{Amout[0].Chasepuzzle}k<img src={addicon} style={{ width: 20,marginLeft:2}} /></Typography></Grid>}
                                                     modal
                                                     lockScroll
                                                     nested
@@ -119,9 +121,9 @@ export default function BottomAppBar() {
                                             </div>
                                         </Grid>
                                         <Grid xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
-                                            <div style={{ height: '100%', backgroundImage: `url(${Endbarbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
-                                                <div className="button" style={{ color: "white", paddingTop: 4 }}>
-                                                    <img src={Rmoneyicon} className="App-logo" alt="logo" width="20%" style={{ float: 'left' }} />
+                                        <div style={{ height: '100%', backgroundImage: `url(${Endbarbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
+                                                <div className="button" style={{ color: "white",paddingTop:4 }}>
+                                                    <img src={Rmoneyicon} className="App-logo" alt="logo" width="20%" style={{  float: 'left',position:'relative',top:2 }} />
                                                     {Amout[0].money}
                                                 </div>
                                             </div>
@@ -136,7 +138,7 @@ export default function BottomAppBar() {
                                         margin: '0 82%',
                                     }}>
 
-                                        <StyledBadge badgeContent={Amout[0].notification} color="secondary" >
+                                        <StyledBadge badgeContent={Amout[0].notification} >
 
                                             <Link to="/MessageCenter" > <img src={Notification} />
                                             </Link>

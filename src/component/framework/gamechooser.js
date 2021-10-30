@@ -23,6 +23,7 @@ import 'swiper/components/navigation/navigation.min.css'
 import SwiperCore, {
   Pagination, Navigation, EffectCoverflow
 } from 'swiper';
+import { Typography } from '@mui/material';
 
 // install Swiper modules
 SwiperCore.use([Pagination, Navigation, EffectCoverflow]);
@@ -35,7 +36,7 @@ const data = [
 export default function Gamechooser() {
   const [count, setCount] = useState(0);
   return (
-    <Grid container xs={12} alignItems="center" style={{ marginBottom: "1.5vh" }}>
+    <Grid container xs={12}style={{ marginBottom: "1.5vh" }}>
       <Swiper
         pagination={{
           "type": "custom",
@@ -49,8 +50,7 @@ export default function Gamechooser() {
         navigation={false}
         centeredSlides
         slidesPerView={1.5}
-        spaceBetween={30}
-        style={{ marginTop: 10 }}
+        style={{ marginTop: 0 }}
         effect={"coverflow"}
         grabCursor={true}
         coverflowEffect={{
@@ -64,7 +64,9 @@ export default function Gamechooser() {
 
         {data.map((pic) => (
           <SwiperSlide >
-            <img key={pic.id}src={pic.src} alt="img1" width="50%" />
+           
+          <Typography style={{textAlign:'center'}} color='white'>  <img key={pic.id}src={pic.src} alt="img1" />   {pic.name}</Typography>
+           
           </SwiperSlide>
         ))}
         <Link to={`multigameChooser/tournamentLobby/${count}`}>
@@ -72,7 +74,7 @@ export default function Gamechooser() {
               position: 'absolute',
               zIndex: 2,
               bottom: "-8%",
-              right: "20%",
+              right: "18%",
            }} />
         </Link>
       </Swiper>

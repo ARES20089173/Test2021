@@ -20,6 +20,12 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
+import adv1 from '../../../svgicon/Advertise/adv1.svg'
+import referimg from '../../../svgicon/Advertise/Referfriend.svg'
+import powerby from '../../../svgicon/PowerBy/PowerByR.svg'
+import { Button } from '@mui/material';
+import "../../framework/css/cssModFLooby.css"
+import Popup from 'reactjs-popup';
 import TableRow from '@mui/material/TableRow';
 import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
@@ -38,17 +44,17 @@ const StyledFab2 = styled(Fab)({
     left: 0,
 });
 const contentStyle = {
-    marginTop: '17%',
-    background: '#cfcece',
+    marginTop: '20%',
+    background: '#242634',
     width: "90%",
     height: "60%",
     borderRadius: "5%",
 };
 
-function createData(name,silverpuzle,chasepuzzle) {
-    return { name,silverpuzle,chasepuzzle };
-  }
-  
+function createData(name, silverpuzle, chasepuzzle) {
+    return { name, silverpuzle, chasepuzzle };
+}
+
 const rows = [
     createData('purchased ', 212, 2120),
     createData('earned', 317, 1148),
@@ -60,7 +66,7 @@ const Toplinkdata = [
     { id: 0, linkName: "Transaction History", link: `/Wallet/TranscationHistory` },
     { id: 1, linkName: "Saved Cards", link: `/Wallet/SaveCards` },
     { id: 2, linkName: "Puzzle Packages", link: "/Wallet/PuzzlePackage" },
-    { id: 3, linkName: "Refer Friends to Earn Puzzles", link: "/Wallet/PuzzlePackage" }]
+    { id: 3, linkName: "Refer Friends to Earn Puzzles", link: "/Wallet" }]
 
 export default function MainPage() {
     const [values, setValues] = React.useState({
@@ -138,7 +144,7 @@ export default function MainPage() {
 
                 <Grid item xs={12} height="25vh" display={values.showPassword ? "none" : "block"} style={{}}>
                     <List >
-                        {Toplinkdata.map((text, index) => (
+                        {Toplinkdata.slice(0, 3).map((text, index) => (
                             <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
                                 <ListItem button key={text.id} >
                                     <ListItemText >
@@ -148,31 +154,72 @@ export default function MainPage() {
                                 </ListItem>
                             </Link>
                         ))}
+                                <Popup
+                                    trigger={
+                                        <ListItem button style={{color:'white'}} ><ListItemText >   {Toplinkdata[3].linkName}  </ListItemText>
+                                        <KeyboardArrowRightIcon /> 
+                                    </ListItem>}
+                                    modal
+                                    nested
+                                    {...{ contentStyle }}
+                                >
+                                    {close => (
+                                        <div className="modal">
+                                            <button className="close" onClick={close}>
+                                                <div className="close" >
+                                                    &times;
+                                                </div>
+                                            </button>
+                                            <Grid xs={12}>
+                                                <Typography variant="body2" component="div" color='primary' textAlign='center'>
+                                                    refer friends & earn up to $500 puzzles
+                                                </Typography>
+                                                <Typography variant="caption" component="div" color='primary' textAlign='center'>
+                                                    Referal Code
+                                                </Typography>
+
+                                                <Grid item xs={12} height="38vh">
+                                                    <div className="video-responsive">
+                                                        <Grid xs={12} textAlign='center'>
+                                                            <Button variant='outlined'>ILOVEREESPUZZLES</Button>
+                                                        </Grid>
+                                                        <Typography variant="body2" component="div" color='primary' textAlign='center'>
+
+                                                            <img src={referimg} width="70%" alt="referimage" />
+                                                            <img src={powerby} width="40%" />
+                                                        </Typography>
+                                                    </div>
+                                                </Grid>
+                                            </Grid>
+                                        </div>
+                                    )}
+                                </Popup>
+                        
                     </List>
 
                 </Grid>
                 <Grid item xs={12} height="25vh" display={values.showPassword ? "block" : "none"} style={{}}>
                     <TableContainer >
-                        <Table sx={{ }} size="small" aria-label="a dense table">
+                        <Table sx={{}} size="small" aria-label="a dense table">
                             <TableHead>
                                 <TableRow>
                                     <TableCell></TableCell>
-                                    <TableCell align="center"><Typography  color='white'>Sliverpuzzle</Typography><img src={SilverPuzzle} alt='puzzle' width="40%"/></TableCell>
-                                    <TableCell align="center"><Typography  color='white'>Chasepuzzle</Typography><img src={Chasepuzzle} alt='puzzle' width="40%"/></TableCell>
-                        
+                                    <TableCell align="center"><Typography color='white'>Sliverpuzzle</Typography><img src={SilverPuzzle} alt='puzzle' width="40%" /></TableCell>
+                                    <TableCell align="center"><Typography color='white'>Chasepuzzle</Typography><img src={Chasepuzzle} alt='puzzle' width="40%" /></TableCell>
+
                                 </TableRow>
                             </TableHead>
                             <TableBody>
                                 {rows.map((row) => (
                                     <TableRow
-                                        key={row.name} 
+                                        key={row.name}
                                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                     >
                                         <TableCell component="th" scope="row">
-                                        <Typography  color='white'> {row.name} </Typography>
+                                            <Typography color='white'> {row.name} </Typography>
                                         </TableCell>
-                                        <TableCell align="center"><Typography  color='white'>{row.silverpuzle}</Typography></TableCell>
-                                        <TableCell align="center"><Typography  color='white'>{row.chasepuzzle}</Typography></TableCell>
+                                        <TableCell align="center"><Typography color='white'>{row.silverpuzle}</Typography></TableCell>
+                                        <TableCell align="center"><Typography color='white'>{row.chasepuzzle}</Typography></TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>

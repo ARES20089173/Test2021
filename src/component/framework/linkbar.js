@@ -24,7 +24,9 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
         top: '7vh',
         border: `1px solid ${theme.palette.background.paper}`,
         padding: '0 1px',
-
+        backgroundColor: "red",
+        color:'white'
+      
     },
 }));
 const MessageNumber = [
@@ -32,7 +34,7 @@ const MessageNumber = [
     { id: 1, link: "/", MessageNum: 32 },
     { id: 2, link:"/wallet", MessageNum: 55 },
     { id: 3, link: "/", MessageNum: 73 },
-    { id: 4, link: "/", MessageNum: 100 },
+    { id: 4, link: "/MissionMain", MessageNum: 100 },
 ]
 
 export default function Linkbar() {
@@ -50,7 +52,7 @@ export default function Linkbar() {
                 alignItems="center"
             >
                 <Grid item xs={2} align='left'>
-                    <StyledBadge badgeContent={MessageNumber[0].MessageNum} color="secondary">
+                    <StyledBadge badgeContent={MessageNumber[0].MessageNum}>
                         <img src={Player} onClick={() => handleLink(MessageNumber[0].id)} className="App-logo" alt="logo" width="170%" style={{
                             position: 'relative',
                             zIndex: 1,
@@ -60,7 +62,7 @@ export default function Linkbar() {
                     </StyledBadge>
                 </Grid>
                 <Grid item xs={2} align='center'>
-                    <StyledBadge badgeContent={MessageNumber[1].MessageNum} color="secondary">
+                    <StyledBadge badgeContent={MessageNumber[1].MessageNum} >
                         <img src={Shop} onClick={() => handleLink(MessageNumber[1].id)} className="App-logo" alt="logo" width="120%" style={{
                             position: 'relative',
                             zIndex: 1,
@@ -70,7 +72,7 @@ export default function Linkbar() {
                     </StyledBadge>
                 </Grid>
                 <Grid item xs={2} align='center'>
-                    <StyledBadge badgeContent={MessageNumber[2].MessageNum} color="secondary">
+                    <StyledBadge badgeContent={MessageNumber[2].MessageNum} >
                         <img src={Wallet} onClick={() => handleLink(MessageNumber[2].id)} className="App-logo" alt="logo" width="120%" style={{
                             position: 'relative',
                             zIndex: 1,
@@ -80,7 +82,7 @@ export default function Linkbar() {
                     </StyledBadge>
                 </Grid>
                 <Grid item xs={2} align='center' >
-                    <StyledBadge badgeContent={MessageNumber[3].MessageNum} color="secondary">
+                    <StyledBadge badgeContent={MessageNumber[3].MessageNum}>
                         <img src={History} onClick={() => handleLink(MessageNumber[3].id)} className="App-logo" alt="logo" width="120%" style={{
                             position: 'relative',
                             zIndex: 1,
@@ -90,7 +92,7 @@ export default function Linkbar() {
                     </StyledBadge>
                 </Grid>
                 <Grid item xs={2} align='center' >
-                    <StyledBadge badgeContent={MessageNumber[4].MessageNum} color="secondary">
+                    <StyledBadge badgeContent={MessageNumber[4].MessageNum}>
                         <img src={Mission} onClick={() => handleLink(MessageNumber[4].id)} className="App-logo" alt="logo" width="120%" style={{
                             position: 'relative',
                             zIndex: 1,
