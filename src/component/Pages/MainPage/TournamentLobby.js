@@ -11,6 +11,8 @@ import { Link } from 'react-router-dom';
 import "../../framework/css/cssModFLooby.css"
 import Popup from 'reactjs-popup';
 import IconButton from '@mui/material/IconButton';
+
+import Download from '../../../svgicon/Componenticon/Download.svg'
 import Gicon1 from '../../../svgicon/GameIcon/Gicon1.svg'
 import Gicon2 from '../../../svgicon/GameIcon/Gicon2.svg'
 import Gicon3 from '../../../svgicon/GameIcon/Gicon3.svg'
@@ -196,21 +198,21 @@ export default class TournamentLobby extends Component {
             }
         });
         const data = [
-            { id: 0, src: Gicon1, name: "Onmyoji Arena", number: 52 },
-            { id: 1, src: Gicon2, name: "TOM & JERRY: CHASE", number: 56 },
-            { id: 2, src: Gicon3, name: "Super Mecha Champions", number: 55 },
-            { id: 3, src: Gicon4, name: "Side Force Don't Fall", number: 53 },
-            { id: 4, src: Gicon5, name: "Seven Squids", number: 54 },
-            { id: 5, src: Gicon6, name: "Punch Box", number: 51 },
-            { id: 6, src: Gicon7, name: "Iron Space", number: 52 },
-            { id: 7, src: Gicon8, name: "Candy Robber", number: 58 },
-            { id: 8, src: Gicon9, name: "Fruit Matching", number: 88 },
-            { id: 9, src: Gicon10, name: "Falling Cubes", number: 25 },
-            { id: 10, src: Gicon11, name: "Box Tower ", number: 95 },
-            { id: 11, src: Gicon12, name: "Jumper Frog", number: 85 },
-            { id: 12, src: Gicon13, name: "2048", number: 75 },
-            { id: 13, src: Gicon14, name: "HEXTRIS", number: 65 },
-            { id: 14, src: Gicon15, name: "FISHING FRENZY", number: 55 },
+            { id: 0, src: Gicon1, name: "Onmyoji Arena", number: 52 ,link:'#'},
+            { id: 1, src: Gicon2, name: "TOM & JERRY: CHASE", number: 56 ,link:'#'},
+            { id: 2, src: Gicon3, name: "Super Mecha Champions", number: 55,link:'#' },
+            { id: 3, src: Gicon4, name: "Side Force Don't Fall", number: 53,link:'#'},
+            { id: 4, src: Gicon5, name: "Seven Squids", number: 54 ,link:'#'},
+            { id: 5, src: Gicon6, name: "Punch Box", number: 51 ,link:'#'},
+            { id: 6, src: Gicon7, name: "Iron Space", number: 52,link:'#' },
+            { id: 7, src: Gicon8, name: "Candy Robber", number: 58 ,link:'#'},
+            { id: 8, src: Gicon9, name: "Fruit Matching", number: 88 ,link:'#'},
+            { id: 9, src: Gicon10, name: "Falling Cubes", number: 25 ,link:'#'},
+            { id: 10, src: Gicon11, name: "Box Tower ", number: 95,link:'#' },
+            { id: 11, src: Gicon12, name: "Jumper Frog", number: 85 ,link:'#'},
+            { id: 12, src: Gicon13, name: "2048", number: 75,link:'#' },
+            { id: 13, src: Gicon14, name: "HEXTRIS", number: 65,link:'#' },
+            { id: 14, src: Gicon15, name: "FISHING FRENZY", number: 55 ,link:'#'},
         ]
         const backgroundImage = [
             { id: 1, src: '/img/testPic.png' },
@@ -344,6 +346,13 @@ export default class TournamentLobby extends Component {
                                                     CHOOSE TOURNAMENT AND PAID TO PLAY
                                                 </Typography>
                                             </Typography>
+                                        </Grid>
+                                        <Grid item xs={2} sx={{ marginTop: '1vh' }}>
+                                        <IconButton
+                                                size="large"
+                                                color="inherit"
+                                                aria-label="menu"
+                                                sx={{}}  ><Link to={data[this.props.match.params.id].link}> <img src={Download} alt="gameicon" width="100%" /> </Link>  </IconButton> 
                                         </Grid>
                                         <Grid item xs={0} >
                                             {/* <IconButton
