@@ -66,7 +66,7 @@ export default function NavigationBar() {
         >
           <img src={Close} alt='hamburgericon' width='40%' style={{position:'relative', left:60}}/>
         </IconButton>
-      <ListItemText style={{ textAlign: "center" }}  >  <Grid container justifyContent='center' alignItems="center"><Typography color='white'>Play to Earn PUZZLES<img src={puzzle} /></Typography></Grid></ListItemText>
+      <ListItemText style={{ textAlign: "center" }}  >  <Grid container justifyContent='center' alignItems="center"><Typography color='white'>Play to Earn PUZZLES</Typography><img src={puzzle} /></Grid></ListItemText>
 
         {Toplinkdata.map((text, index) => (
           <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
