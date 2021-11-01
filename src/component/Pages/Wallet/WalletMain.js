@@ -71,13 +71,22 @@ const Toplinkdata = [
 export default function MainPage() {
     const [values, setValues] = React.useState({
         password: '',
-        showPassword: false,
+        showPassworda: false,
+        showPasswordb: false,
         showicon:false,
     });
-    const handleClickShowPassword = () => {
+    const handleClickShowPassworda = () => {
         setValues({
             ...values,
-            showPassword: !values.showPassword,
+            showPassworda: !values.showPassworda,
+            showPasswordb:!values.showPasswordb,
+        });
+    };
+    const handleClickShowPasswordb = () => {
+        setValues({
+            ...values,
+            showPassworda: !values.showPassworda,
+            showPasswordb:!values.showPasswordb,
         });
     };
     const handleClickShowicon = () => {
@@ -145,11 +154,11 @@ export default function MainPage() {
 
                 </Grid>
                 <Grid item xs={12} height="4vh" container bgcolor='#8e8b91' style={{}}>
-                    <Grid item xs={6} height="4vh" onClick={handleClickShowPassword} style={{ borderBottom: values.showPassword ? "" : "3px solid white" }}></Grid>
-                    <Grid item xs={6} height="4vh" onClick={handleClickShowPassword} style={{ borderBottom: values.showPassword ? "3px solid white" : '' }}></Grid>
+                    <Grid item xs={6} height="4vh" onClick={handleClickShowPassworda} style={{ borderBottom: values.showPassworda ? "" : "3px solid white" }}></Grid>
+                    <Grid item xs={6} height="4vh" onClick={handleClickShowPasswordb} style={{ borderBottom: values.showPasswordb ? "3px solid white" : '' }}></Grid>
                 </Grid>
 
-                <Grid item xs={12} height="25vh" display={values.showPassword ? "none" : "block"} style={{}}>
+                <Grid item xs={12} height="25vh" display={values.showPassworda ? "none" : "block"} style={{}}>
                     <List >
                         {Toplinkdata.slice(0, 3).map((text, index) => (
                             <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
@@ -205,7 +214,7 @@ export default function MainPage() {
                     </List>
 
                 </Grid>
-                <Grid item xs={12} height="25vh" display={values.showPassword ? "block" : "none"} style={{}}>
+                <Grid item xs={12} height="25vh" display={values.showPasswordb ? "block" : "none"} style={{}}>
                     <TableContainer >
                         <Table sx={{}} size="small" aria-label="a dense table">
                             <TableHead>
