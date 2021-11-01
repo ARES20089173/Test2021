@@ -127,7 +127,7 @@ export default function BottomAppBar() {
                                         <Grid xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
                                             <div style={{ height: '100%', backgroundImage: `url(${Endbarbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
                                                 <div className="button" style={{ color: "white",paddingTop:4 }}>
-                                                    <img src={Rmoneyicon} className="App-logo" alt="logo" width="20%" style={{  float: 'left' }} />
+                                                    <img src={Rmoneyicon} className="App-logo" alt="logo" width="20%" style={{  float: 'left',position:'relative',top:2 }} />
                                                     {Amout[0].money}
                                                 </div>
                                             </div>
@@ -143,7 +143,7 @@ export default function BottomAppBar() {
                                             margin: '0 82%',
                                         }}>
                                             <StyledBadge badgeContent={Amout[0].notification}>
-                                                <img src={Notification} />
+                                                <img src={Notification} alt='notification'/>
                                             </StyledBadge>
                                         </div>
                                     </Link>

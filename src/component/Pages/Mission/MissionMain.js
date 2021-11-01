@@ -16,8 +16,9 @@ import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
+import Close from '../../../svgicon/Componenticon/Close.svg'
 import Hamburgicon from "../../../svgicon/Componenticon/Hamburgicon.svg";
-import puzzle from "../../../puzzle.svg"
+import puzzle from "../../../svgicon/Componenticon/Chasepuzzle.svg"
 import Button from '@mui/material/Button';
 import Rmoney from '../../../svgicon/Componenticon/Rmoneyicon.svg';
 import Fab from '@mui/material/Fab';
@@ -58,20 +59,11 @@ const userdata = [
 ]
 
 const Toplinkdata = [
-    { id: 0, linkName: "PROFILE", link: `/${userdata[0].ReesID}/Profile` },
-    { id: 1, linkName: "SETTING", link: `/${userdata[0].ReesID}/Setting` },
-    { id: 2, linkName: "EVENTS", link: "/Events" },
-    { id: 3, linkName: "BUY PUZZLES", link: "/" }
-    // { id: 5, linkName:"PROFILE"},
-    // { id: 6, linkName:"PROFILE"},
-    // { id: 7, linkName:"PROFILE"},
-    // { id: 8, linkName:"PROFILE"},
-]
-const Bottomlinkdata = [
-    { id: 0, linkName: "About REES", link: "/" },
-    { id: 1, linkName: "FAQ", link: "/" },
-    { id: 2, linkName: "PRESS", link: "/" },
-    { id: 3, linkName: "LOGOUT", link: "/" },
+    { id: 0, linkName: "Reward Status", link: `/MissionMain/RewardStatus` },
+    { id: 1, linkName: "Player Support Guide", link: `/MissionMain/SupportGuide` },
+    { id: 2, linkName: "General FAQ", link: "/MissionMain/FAQ" },
+    { id: 3, linkName: "Privacy Policy", link: "/MissionMain/Policy" },
+    { id: 4, linkName: "Terms of Service", link: "/MissionMain/Service" }
 ]
 export default class TournamentLobby extends Component {
     constructor(props) {
@@ -144,14 +136,14 @@ export default class TournamentLobby extends Component {
 
     render() {
         const data = [
-            { id: 0, linkName: "Win 5 times in Battlemode", link: `/MissionMain`, icon: chasepuzzle, price: 50, quality: "50(+0)", unit: Rmoney },
-            { id: 1, linkName: "Download New games", link: `/MissionMain`, icon: chasepuzzle, price: 150, quality: "50(+0)", unit: Rmoney },
-            { id: 2, linkName: "Daily Play 10 games", link: "/MissionMain", icon: chasepuzzle, price: 250, quality: "50(+0)", unit: Rmoney },
-            { id: 1, linkName: "Win 5 times in Battlemode", link: `/MissionMain`, icon: chasepuzzle, price: 350, quality: "50(+0)", unit: Rmoney },
-            { id: 2, linkName: "Dialy Sign in", link: `/MissionMain`, icon: chasepuzzle, price: 450, quality: "150(+60)", unit: Rmoney },
-            { id: 1, linkName: "watch NIKE video", link: `/MissionMain`, icon: chasepuzzle, price: 550, quality: "550(+400)", unit: Rmoney },
-            { id: 2, linkName: "Play SMC game", link: `/MissionMain`, icon: chasepuzzle, price: 650, quality: "1750(+550)", unit: Rmoney },
-            { id: 3, linkName: "Play SMC game", link: `/MissionMain`, icon: chasepuzzle, price: 1750, quality: "3750(+950)", unit: Rmoney }]
+            { id: 0, linkName: "Win 5 times in Battlemode", link: `/MissionMain`, icon: chasepuzzle, price: 50, quality: "50(+0)", unit: Rmoney, remain: 1, max: 10 },
+            { id: 1, linkName: "Download New games", link: `/MissionMain`, icon: chasepuzzle, price: 150, quality: "50(+0)", unit: Rmoney, remain: 2, max: 10 },
+            { id: 2, linkName: "Daily Play 10 games", link: "/MissionMain", icon: chasepuzzle, price: 250, quality: "50(+0)", unit: Rmoney, remain: 1, max: 5 },
+            { id: 1, linkName: "Win 5 times in Battlemode", link: `/MissionMain`, icon: chasepuzzle, price: 350, quality: "50(+0)", unit: Rmoney, remain: 1, max: 10 },
+            { id: 2, linkName: "Dialy Sign in", link: `/MissionMain`, icon: chasepuzzle, price: 450, quality: "150(+60)", unit: Rmoney, remain: 1, max: 10 },
+            { id: 1, linkName: "watch NIKE video", link: `/MissionMain`, icon: chasepuzzle, price: 550, quality: "550(+400)", unit: Rmoney, remain: 3, max: 10 },
+            { id: 2, linkName: "Play SMC game", link: `/MissionMain`, icon: chasepuzzle, price: 650, quality: "1750(+550)", unit: Rmoney, remain: 1, max: 10 },
+            { id: 3, linkName: "Play SMC game", link: `/MissionMain`, icon: chasepuzzle, price: 1750, quality: "3750(+950)", unit: Rmoney, remain: 1, max: 10 }]
 
         const data2 = data.map((text) => {
             if (text.id % 2 == 0) {
@@ -166,6 +158,9 @@ export default class TournamentLobby extends Component {
                                     {text.price}<img src={text.unit} alt="" width="40%" style={{ position: 'relative', top: 6, left: 3 }} />
                                 </Typography>
                             </Button>
+                            <Typography variant="body2" color='white' align='center'>
+                                left {text.remain}/{text.max}
+                            </Typography>
                         </Typography>
 
                     </ListItem>
@@ -183,6 +178,10 @@ export default class TournamentLobby extends Component {
                                     {text.price}<img src={text.unit} alt="" width="40%" style={{ position: 'relative', top: 6, left: 3 }} />
                                 </Typography>
                             </Button>
+
+                            <Typography variant="body2" color='white' align='center'>
+                                left {text.remain}/{text.max}
+                            </Typography>
                         </Typography>
                     </ListItem>
                 </Link>
@@ -249,21 +248,20 @@ export default class TournamentLobby extends Component {
                                                 role="presentation"
                                             >
                                                 <List >
-
                                                     <IconButton
                                                         size="large"
                                                         edge="start"
                                                         color="inherit"
                                                         aria-label="menu"
                                                         onClick={this.openhandleClick}
-                                                        sx={{ left: "80%", bottom: 0 }}
+                                                        sx={{ left: "50%", bottom: 5 }}
                                                     >
-                                                        <img src={Hamburgicon} alt="" width="80%" />
+                                                        <img src={Close} alt='hamburgericon' width='40%' style={{ position: 'relative', left: 60 }} />
                                                     </IconButton>
-                                                    <ListItemText style={{ textAlign: "center" }}  >Play to Earn PUZZLES<img src={puzzle} /></ListItemText>
+                                                    <ListItemText style={{ textAlign: "center" }}  >  <Grid container justifyContent='center' alignItems="center"><Typography color='white'>Mission to earn Puzzles</Typography><img src={puzzle} /></Grid></ListItemText>
 
                                                     {Toplinkdata.map((text, index) => (
-                                                        <Link to={text.link} style={{ textDecoration: 'none', color: 'black' }}>
+                                                        <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
                                                             <ListItem button key={text.id}>
                                                                 <ListItemText >
                                                                     {text.linkName}
@@ -272,31 +270,6 @@ export default class TournamentLobby extends Component {
                                                             </ListItem>
                                                         </Link>
                                                     ))}
-                                                    <ListItem >
-                                                        <ListItemText style={{ fontSize: '0.7em' }}>
-                                                            <Box sx={{ display: 'flex', alignItems: 'flex-end', fontSize: '0.7em' }}>
-
-                                                                CODE REDEEM :
-                                                                <TextField id="input-with-sx" variant="standard" />
-
-                                                                <img src={coderedeem} alt="coderedeem" />
-                                                            </Box>
-                                                        </ListItemText>
-                                                    </ListItem>
-                                                </List>
-                                                <List style={{ top: "10%", textDecoration: 'none', color: '#FFF' }} >
-                                                    {Bottomlinkdata.slice(0, 3).map((text, index) => (
-                                                        <ListItem button key={text.id}>
-                                                            <ListItemText >
-                                                                <Link to={text.link} style={{ textDecoration: 'none', color: 'black' }}>{text.linkName}  </Link>
-                                                            </ListItemText>
-                                                        </ListItem>
-                                                    ))}
-                                                    <ListItem >
-                                                        <ListItemText >
-                                                            <Link to={Bottomlinkdata[3].link} style={{ textDecoration: 'none', color: 'black' }}>{Bottomlinkdata[3].linkName}   <img src={Logout} alt="logout" /></Link>
-                                                        </ListItemText>
-                                                    </ListItem>
                                                 </List>
                                             </Box>
                                         </Drawer>

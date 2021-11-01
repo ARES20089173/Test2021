@@ -20,8 +20,8 @@ import Box from '@mui/material/Box'
 import { useHistory } from 'react-router'
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
-        right: 10,
-        top: '7vh',
+        right: 13,
+        top: '5.5vh',
         border: `1px solid ${theme.palette.background.paper}`,
         padding: '0 1px',
         backgroundColor: "red",

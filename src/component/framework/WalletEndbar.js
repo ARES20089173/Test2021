@@ -125,12 +125,13 @@ export default function BottomAppBar() {
                                             </div>
                                         </Grid>
                                         <Grid xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
-                                            <div style={{ height: '100%', backgroundImage: `url(${Endbarbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
-                                                <div className="button" style={{ color: "white",paddingTop:4 }}>
-                                                    <img src={Rmoneyicon} className="App-logo" alt="logo" width="20%" style={{  float: 'left' }} />
+                                              <div style={{ height: '100%', backgroundImage: `url(${Endbarbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
+                                                <div className="button" style={{ color: "white", paddingTop: 4 }}>
+                                                    <img src={Rmoneyicon} className="App-logo" alt="logo" width="20%" style={{ float: 'left', position: 'relative', top: 2 }} />
                                                     {Amout[0].money}
                                                 </div>
                                             </div>
+                                            
                                         </Grid>
                                     </Grid>
                                     <Link to="/MessageCenter">

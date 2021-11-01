@@ -69,15 +69,17 @@ export default class MultigameChoose extends Component {
             <NavigationBar />
           </Grid>
 
-          <Grid container item xs={12}    justifyContent='left'style={{ paddingTop:'2vh' ,backgroundAttachment:'fixed' }} >
+          <Grid container item xs={12}    justifyContent='center'style={{ paddingTop:'2vh' ,backgroundAttachment:'fixed' }} >
             {data.map((pic) => (
-              <Grid item xs={4} style={{ height: "23vh" }} key={pic.id} alignItems="center">
+              <Grid item xs={3.9} style={{ height: "23vh" }} key={pic.id} alignItems="center">
                 <Link to={`multigameChooser/tournamentLobby/${pic.id}`}>
                   <div style={{ textAlign: 'center' }}><img src={pic.src} alt="img" width="80%" />
                   </div>
                 </Link>
-                <Typography variant="body2" noWrap style={{ textAlign: 'center',fontFamily:'Hanalei Fill' } }color='white' >{pic.name}</Typography><Typography noWrap variant="body2" style={{ textAlign: 'center' }}color='white'>{pic.number} PLAYING NOW</Typography>
-              </Grid>
+                <Typography variant="body2" noWrap style={{ textAlign: 'center',fontFamily:'Hanalei Fill' } }color='white' >{pic.name} <br/> <Typography noWrap variant="caption" align='center' style={{ textAlign: 'center' }}color='white'>{pic.number} PLAYING NOW</Typography>
+             </Typography>
+               </Grid>
+               
             ))}
             <Grid item xs={12} style={{ marginTop: "9vh" }}>
               <EndBar />

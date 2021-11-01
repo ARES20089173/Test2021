@@ -22,6 +22,11 @@ import AddNewMethod from './component/Pages/Wallet/AdNmethod'
 import AddNewCards from './component/Pages/Wallet/AddNewCard'
 import PuzzlePackage from './component/Pages/Wallet/PuzzlePackage'
 import MissionMain from './component/Pages/Mission/MissionMain'
+import RewardStatus from './component/Pages/Mission/RewardStatus'
+import SupportGuide from './component/Pages/Mission/SupportGuide'
+import FAQ from './component/Pages/Mission/FAQ'
+import Policy from './component/Pages/Mission/Policy'
+import Service from './component/Pages/Mission/TermOfService'
 import { RouterConfig, getMatchRouter } from './routerConfig';
 import './App.css'
 import {
@@ -108,6 +113,12 @@ const render = ({ location, history, match }) => {
           <Route exact path="/Wallet/SaveCards/AddNewMethod" component={AddNewMethod}render={(props) => <AddNewMethod {...props} />}/>  
         
           <Route exact path="/MissionMain" component={MissionMain} render={(props) => <MissionMain {...props} />}/>
+          <Route exact path="/MissionMain/RewardStatus" component={RewardStatus} render={(props) => <RewardStatus {...props} />}/>
+          <Route exact path="/MissionMain/SupportGuide" component={SupportGuide} render={(props) => <SupportGuide {...props} />}/>
+          <Route exact path="/MissionMain/FAQ" component={FAQ} render={(props) => <FAQ {...props} />}/>
+          <Route exact path="/MissionMain/Policy" component={Policy} render={(props) => <Policy {...props} />}/>
+          <Route exact path="/MissionMain/Service" component={Service} render={(props) => <Service {...props} />}/>
+         
           ...
         </Switch>
       </div>

@@ -19,7 +19,12 @@ import SaveCards from './component/Pages/Wallet/SaveCard'
 import AddNewMethod from './component/Pages/Wallet/AdNmethod'
 import AddNewCards from './component/Pages/Wallet/AddNewCard'
 import PuzzlePackage from './component/Pages/Wallet/PuzzlePackage'
-
+import MissionMain from './component/Pages/Mission/MissionMain'
+import SupportGuide from './component/Pages/Mission/SupportGuide'
+import RewardStatus from './component/Pages/Mission/RewardStatus'
+import FAQ from './component/Pages/Mission/FAQ'
+import Policy from './component/Pages/Mission/Policy'
+import Service from './component/Pages/Mission/TermOfService'
 export const getMatchRouter = (pathname, configs) =>
   configs.find(config => matchPath(pathname, {
     exact: true,
@@ -47,6 +52,48 @@ export const RouterConfig = [
       render: props => <WalletMain{...props} />,
       meta: {
         index: 1
+      }
+    },
+    {
+      path: '/MissionMain',
+      render: props => <MissionMain{...props} />,
+      meta: {
+        index: 1
+      }
+    },
+    {
+      path: '/MissionMain/RewardStatus',
+      render: props => <RewardStatus{...props} />,
+      meta: {
+        index: 2
+      }
+    },
+    {
+      path: '/MissionMain/SupportGuide',
+      render: props => <SupportGuide{...props} />,
+      meta: {
+        index: 2
+      }
+    },
+    {
+      path: '/MissionMain/FAQ',
+      render: props => <FAQ{...props} />,
+      meta: {
+        index: 2
+      }
+    },
+    {
+      path: '/MissionMain/Policy',
+      render: props => <Policy{...props} />,
+      meta: {
+        index: 2
+      }
+    },
+    {
+      path: '/MissionMain/Service',
+      render: props => <Service{...props} />,
+      meta: {
+        index: 2
       }
     },
     {

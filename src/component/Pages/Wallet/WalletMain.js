@@ -72,11 +72,18 @@ export default function MainPage() {
     const [values, setValues] = React.useState({
         password: '',
         showPassword: false,
+        showicon:false,
     });
     const handleClickShowPassword = () => {
         setValues({
             ...values,
             showPassword: !values.showPassword,
+        });
+    };
+    const handleClickShowicon = () => {
+        setValues({
+            ...values,
+            showicon: !values.showicon,
         });
     };
     const handleMouseDownPassword = (event) => {
@@ -118,14 +125,14 @@ export default function MainPage() {
                                         <InputAdornment position="end">
                                             <IconButton
                                                 aria-label="toggle password visibility"
-                                                onClick={handleClickShowPassword}
+                                                onClick={handleClickShowicon}
                                                 onMouseDown={handleMouseDownPassword}
 
                                             >
-                                                {values.showPassword ? <Visibility color='primary' /> : <VisibilityOff color='primary' />}
+                                                {values.showicon ? <Visibility color='primary' /> : <VisibilityOff color='primary' />}
                                             </IconButton>
                                         </InputAdornment>
-                                    } type={values.showPassword ? 'text' : 'password'}
+                                    } type={values.showicon ? 'text' : 'password'}
                                     readOnly={true}
                                     disableUnderline={true}
                                     defaultValue="1,207.85"

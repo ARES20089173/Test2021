@@ -29,9 +29,9 @@ import { Typography } from '@mui/material';
 SwiperCore.use([Pagination, Navigation, EffectCoverflow]);
 
 const data = [
-  { id: 0, src: Gicon1, name: "2048", number: 52, entryFee: 88 },
-  { id: 1, src: Gicon2, name: "原神", number: 56, entryFee: 848 },
-  { id: 2, src: Gicon3, name: "LoL", number: 55, entryFee: 828 },
+  { id: 0, src: Gicon1, name: "2048", number: 52, entryFee: 88 ,playing:22},
+  { id: 1, src: Gicon2, name: "原神", number: 56, entryFee: 848 ,playing:32},
+  { id: 2, src: Gicon3, name: "LoL", number: 55, entryFee: 828,playing:224 },
 ]
 export default function Gamechooser() {
   const [count, setCount] = useState(0);
@@ -65,16 +65,16 @@ export default function Gamechooser() {
         {data.map((pic) => (
           <SwiperSlide >
            
-          <Typography style={{textAlign:'center'}} color='white'>  <img key={pic.id}src={pic.src} alt="img1" />   {pic.name}</Typography>
-           
+          <Typography style={{textAlign:'center'}} color='white' paragraph variant='body2' >  <img key={pic.id}src={pic.src} alt="img1" />   {pic.name}<br/><Typography style={{textAlign:'center'}} color='white' paragraph variant='caption' >{pic.playing} Playing Now</Typography></Typography>
+         
           </SwiperSlide>
         ))}
         <Link to={`multigameChooser/tournamentLobby/${count}`}>
            <img src={GoGameLobby} alt="GoGameLobbyicon" width='20%' style={{
               position: 'absolute',
               zIndex: 2,
-              bottom: "-8%",
-              right: "18%",
+              bottom: "15%",
+              right: "20%",
            }} />
         </Link>
       </Swiper>
