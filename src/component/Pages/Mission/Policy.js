@@ -59,10 +59,10 @@ export default function Policy (){
                                                 }} />
                                             </Link>
                                         </Typography>
-                                        <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} style={{
-                                            position: 'relative',
-                                            zIndex: 3,
-                                            left: "-20%",
+                                        <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} style={{
+                                        position: 'relative',
+                                        zIndex: 3,
+                                        left: "-16%",
                                         }}>
                                     PRIVACY POLICY
                                         </Typography>

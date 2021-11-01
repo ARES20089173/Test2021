@@ -87,10 +87,10 @@ export default function FAQ() {
                                             }} />
                                         </Link>
                                     </Typography>
-                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} style={{
+                                    <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} style={{
                                         position: 'relative',
                                         zIndex: 3,
-                                        left: "-20%",
+                                        left: "-16%",
                                     }}>
                                         FAQ
                                     </Typography>
