@@ -25,6 +25,11 @@ import RewardStatus from './component/Pages/Mission/RewardStatus'
 import FAQ from './component/Pages/Mission/FAQ'
 import Policy from './component/Pages/Mission/Policy'
 import Service from './component/Pages/Mission/TermOfService'
+import MatchHistory from './component/Pages/History/MatchHistory' 
+import BattleModeDetail from './component/Pages/History/BattleModeDetail' 
+import BalttleOtherinfo from './component/Pages/History/BalttleOtherinfo' 
+import OneVOneModeDetail from './component/Pages/History/OneVOneModeDetail' 
+import Prize from './component/Pages/History/ChallengeModeDetail' 
 export const getMatchRouter = (pathname, configs) =>
   configs.find(config => matchPath(pathname, {
     exact: true,

@@ -71,22 +71,22 @@ const Toplinkdata = [
 export default function MainPage() {
     const [values, setValues] = React.useState({
         password: '',
-        showPassworda: false,
-        showPasswordb: false,
+        showPassworda: true,
+        showPasswordb: true,
         showicon:false,
     });
     const handleClickShowPassworda = () => {
         setValues({
             ...values,
-            showPassworda: !values.showPassworda,
-            showPasswordb:!values.showPasswordb,
+            showPassworda: false,
+            showPasswordb:false,
         });
     };
     const handleClickShowPasswordb = () => {
         setValues({
             ...values,
-            showPassworda: !values.showPassworda,
-            showPasswordb:!values.showPasswordb,
+            showPassworda:true,
+            showPasswordb:true,
         });
     };
     const handleClickShowicon = () => {

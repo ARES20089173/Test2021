@@ -168,7 +168,7 @@ export default class TournamentLobby extends Component {
             }
             else {
                 return <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
-                    <ListItem button key={text.id} style={{ backgroundColor: '#707070' }}>
+                    <ListItem button key={text.id} style={{ backgroundColor: '#35394C' }}>
                         <ListItemText  >
                             <Grid xs={12} container alignItems="center" ><img src={text.icon} alt="" width="16%" />  <Typography variant="caption">{text.linkName}</Typography></Grid>
                         </ListItemText>
@@ -244,7 +244,7 @@ export default class TournamentLobby extends Component {
                                             onClose={this.openhandleClick}
                                         >
                                             <Box
-                                                sx={{ width: 280, height: "100vh", backgroundColor: "#707070" }}
+                                                sx={{ width: 280, height: "100vh", backgroundColor: "#35394C" }}
                                                 role="presentation"
                                             >
                                                 <List >

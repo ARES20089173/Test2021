@@ -27,6 +27,11 @@ import SupportGuide from './component/Pages/Mission/SupportGuide'
 import FAQ from './component/Pages/Mission/FAQ'
 import Policy from './component/Pages/Mission/Policy'
 import Service from './component/Pages/Mission/TermOfService'
+import MatchHistory from './component/Pages/History/MatchHistory' 
+import BattleModeDetail from './component/Pages/History/BattleModeDetail' 
+import BalttleOtherinfo from './component/Pages/History/BalttleOtherinfo' 
+import OneVOneModeDetail from './component/Pages/History/OneVOneModeDetail' 
+import ChallengeModeDetail from './component/Pages/History/ChallengeModeDetail' 
 import { RouterConfig, getMatchRouter } from './routerConfig';
 import './App.css'
 import {
@@ -103,15 +108,20 @@ const render = ({ location, history, match }) => {
           <Route exact path="/multigameChooser/tournamentLobby/:id/:entryid/OneVoneMode" component={oneVoneMode} render={(props) => <oneVoneMode{...props} />} />
           <Route exact path="/gametutorial" component={GameTutorial} render={(props) => <GameTutorial {...props} />} />
 
-          <Route exact path="/wallet" component={WalletMain} render={(props) => <WalletMain {...props} />}/>
+          <Route exact path="/Wallet" component={WalletMain}render={(props) => <WalletMain {...props} />}/>  
           <Route exact path="/Wallet/TranscationHistory" component={TranscationHistory}render={(props) => <TranscationHistory {...props} />}/>  
           <Route exact path="/Wallet/TranscationHistory/:id/Detail" component={HistoryDetail}render={(props) => <HistoryDetail {...props} />}/>  
-          
           <Route exact path="/Wallet/SaveCards" component={SaveCards}render={(props) => <SaveCards {...props} />}/>  
           <Route exact path="/Wallet/SaveCards/AddNewCards" component={AddNewCards}render={(props) => <AddNewCards {...props} />}/>
           <Route exact path="/Wallet/PuzzlePackage" component={PuzzlePackage}render={(props) => <PuzzlePackage {...props} />}/>  
           <Route exact path="/Wallet/SaveCards/AddNewMethod" component={AddNewMethod}render={(props) => <AddNewMethod {...props} />}/>  
         
+          <Route exact path="/History" component={MatchHistory} render={(props) => <MatchHistory {...props} />}/>
+          <Route exact path="/History/:id/BattleModeDetail" component={BattleModeDetail} render={(props) => <BattleModeDetail {...props} />}/>
+          <Route exact path="/History/:id/BattleModeDetail/:id/otherinfo" component={BalttleOtherinfo} render={(props) => <BalttleOtherinfo {...props} />}/>
+          <Route exact path="/History/:id/OneVOneModeDetail" component={OneVOneModeDetail} render={(props) => <OneVOneModeDetail {...props} />}/>
+          <Route exact path="/History/:id/ChallengeModeDetail" component={ChallengeModeDetail} render={(props) => <ChallengeModeDetail {...props} />}/>
+
           <Route exact path="/MissionMain" component={MissionMain} render={(props) => <MissionMain {...props} />}/>
           <Route exact path="/MissionMain/RewardStatus" component={RewardStatus} render={(props) => <RewardStatus {...props} />}/>
           <Route exact path="/MissionMain/SupportGuide" component={SupportGuide} render={(props) => <SupportGuide {...props} />}/>
@@ -119,6 +129,7 @@ const render = ({ location, history, match }) => {
           <Route exact path="/MissionMain/Policy" component={Policy} render={(props) => <Policy {...props} />}/>
           <Route exact path="/MissionMain/Service" component={Service} render={(props) => <Service {...props} />}/>
          
+          MatchHistory
           ...
         </Switch>
       </div>

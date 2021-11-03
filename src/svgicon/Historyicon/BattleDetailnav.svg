@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="677.8" height="340.2" viewBox="0 0 677.8 340.2">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="路径_1917" data-name="路径 1917" d="M694.2,86.7h-392a164.276,164.276,0,0,0-82.1-21.9c-91,0-165.1,74-165.1,165.1,0,91,74,165.1,165.1,165.1,91,0,165.1-74,165.1-165.1a157.067,157.067,0,0,0-1.2-19.5H694.2a38.581,38.581,0,0,0,38.5-38.5V125.3A38.6,38.6,0,0,0,694.2,86.7Z"/>
+    </clipPath>
+    <radialGradient id="radial-gradient" cx="1.135" cy="0.078" r="0.939" gradientTransform="translate(-2.636 -5.757) rotate(-90) scale(1 0.517)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffe900"/>
+      <stop offset="1" stop-color="#ff3f97"/>
+    </radialGradient>
+    <radialGradient id="radial-gradient-2" cx="1.276" cy="0.511" r="3.338" gradientTransform="translate(-2.992 -5.806) rotate(-90) scale(1 0.502)" xlink:href="#radial-gradient"/>
+  </defs>
+  <g id="_0003box" data-name="0003box" transform="translate(-54.9 -64.8)">
+    <g id="组_1054" data-name="组 1054">
+      <path id="路径_1913" data-name="路径 1913" d="M220,74.8c-91,0-165.1,74-165.1,165.1,0,91,74,165.1,165.1,165.1,91,0,165.1-74,165.1-165.1C385.1,148.9,311,74.8,220,74.8Z" fill="#c8d1ff"/>
+    </g>
+    <path id="路径_1914" data-name="路径 1914" d="M694.2,216.4h-396a38.581,38.581,0,0,1-38.5-38.5V131.3a38.581,38.581,0,0,1,38.5-38.5h396a38.581,38.581,0,0,1,38.5,38.5v46.6A38.646,38.646,0,0,1,694.2,216.4Z" fill="#c8d1ff"/>
+    <g id="组_1056" data-name="组 1056">
+      <g id="组_1055" data-name="组 1055" clip-path="url(#clip-path)">
+        <path id="路径_1915" data-name="路径 1915" d="M49.4,401.1V47.5H732.8V401.1Z" fill="url(#radial-gradient)"/>
+        <path id="路径_1916" data-name="路径 1916" d="M732.8,401.1V58.3L606.9,348.4,354.1,168.3,49.4,303.2v97.9Z" fill="url(#radial-gradient-2)"/>
+      </g>
+    </g>
+    <g id="组_1057" data-name="组 1057">
+      <circle id="椭圆_249" data-name="椭圆 249" cx="151.3" cy="151.3" r="151.3" transform="translate(68.7 78.6)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
