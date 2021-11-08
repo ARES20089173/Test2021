@@ -82,7 +82,7 @@ export default function Register() {
                             left: 0,
                         }} />
                     </Link>
-                    <Grid container height="5vh"><Grid xs={9}></Grid><Grid xs={3} container justifyContent='center' alignItems='center' textAlign='center' ><Link to='/login'><Typography variant='body2' color='white' style={{ float: 'right' }} >Log in</Typography></Link></Grid></Grid>
+                    <Grid container height="5vh"><Grid xs={9}></Grid><Grid xs={3} container justifyContent='center' alignItems='center' textAlign='center' ><Link to='/login' style={{textDecoration:'none'}}><Typography variant='body2' color='white' style={{ float: 'right' }} >Log in</Typography></Link></Grid></Grid>
                     <Grid container height="95vh" >
                         <Grid xs={8} container height="70vh" justifyContent='center' alignItems="center">
                             <Typography variant="h6" color='white' textAlign='center'>Creat<br />Account!</Typography><br />
@@ -175,7 +175,7 @@ export default function Register() {
                                 />
                                 <InputLabel style={{ color: 'red', display: ConfirmpassWord == passWord ? 'none' : 'block' }} >Password not same!</InputLabel>
                                 <Grid xs={10} container height="10vh" justifyContent='center' alignItems="center" >
-                                    <Link to='/Register/Info' style={{minWidth: '100%',marginLeft:'50%',marginTop:'5%'}}><Button variant='outlined' style={{  backgroundColor: 'purple', color: 'white', borderColor: 'white' }}>Register</Button></Link>
+                                    <Link to='/Register/Info' style={{minWidth: '100%',marginLeft:'50%',marginTop:'5%' ,textDecoration:'none'}}><Button variant='outlined' style={{  backgroundColor: 'purple', color: 'white', borderColor: 'white' }}>Register</Button></Link>
                                     <Typography color='white' ><Checkbox onChange={() => { setDefault(count); }} color='error'
                                         sx={{
                                             color: 'white',

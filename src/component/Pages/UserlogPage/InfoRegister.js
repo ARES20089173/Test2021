@@ -46,9 +46,9 @@ export default function SignIn() {
                     justifyContent='center'
                     alignItems="center"
                 >
-                    <Grid container height="5vh"><Grid xs={9}></Grid><Grid xs={3} container alignItems='center' justifyContent='center' textAlign='center' ><Link to='/'><Typography variant='body2' color='white' style={{ float: 'right' }} >Skip</Typography></Link></Grid></Grid>
-                    <Grid container height="95vh" style={{ border: '2px dashed white' }}>
-                        <Grid xs={12} container height="95vh" justifyContent='center' alignItems="center" style={{ border: '2px dashed red' }}>
+                    <Grid container height="5vh"><Grid xs={9}></Grid><Grid xs={3} container alignItems='center' justifyContent='center' textAlign='center' ><Link to='/Register/Info/Finish' style={{textDecoration:'none'}}><Typography variant='body2' color='white' style={{ float: 'right' }} >Skip</Typography></Link></Grid></Grid>
+                    <Grid container height="95vh" >
+                        <Grid xs={12} container height="95vh" justifyContent='center' alignItems="center" >
                             <Swiper ref={swiperRef} pagination={true} className="mySwiper" allowTouchMove={false}>
                                 <SwiperSlide>
                                     <Grid xs={12} container justifyContent='center' alignItems="center">
@@ -131,7 +131,7 @@ export default function SignIn() {
                                         </Grid>
 
                                         <Grid xs={4} height="30vh">
-                                            <Link to="/Register/Info/Finish"><img src={GoRight} alt="inviteimage" onClick={nextSlide} /></Link>
+                                            <Link to="/Register/Info/Finish" style={{textDecoration:'none'}}><img src={GoRight} alt="inviteimage" onClick={nextSlide} /></Link>
                                         </Grid>
                                         <Grid xs={12} height="22vh">
 

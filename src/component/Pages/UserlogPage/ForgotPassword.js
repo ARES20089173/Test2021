@@ -64,7 +64,7 @@ export default function ForgotPW() {
                             left: 0,
                         }} />
                     </Link>
-                    <Grid container height="5vh"><Grid xs={2} container alignItems='center' justifyContent='center' textAlign='center'><Link to='/login'><Typography variant='body2' color='white' style={{ float: 'right' }} >   &lt; Back  </Typography></Link></Grid><Grid xs={10} ></Grid></Grid>
+                    <Grid container height="5vh"><Grid xs={2} container alignItems='center' justifyContent='center' textAlign='center'><Link to='/login' style={{textDecoration:'none'}}><Typography variant='body2' color='white' style={{ float: 'right' }} >   &lt; Back  </Typography></Link></Grid><Grid xs={10} ></Grid></Grid>
                      <Grid container justifyContent='center' alignItems="center" height="95vh" >
                         <Grid xs={10} container height="18vh" justifyContent='center' alignItems="center">
                             <Typography variant="h4" color='white' textAlign='center'>Forgot your Password?</Typography>
