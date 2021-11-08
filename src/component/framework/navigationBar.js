@@ -38,7 +38,7 @@ const Bottomlinkdata = [
   { id: 0, linkName: "About REES", link: "/" },
   { id: 1, linkName: "FAQ", link: "/" },
   { id: 2, linkName: "PRESS", link: "/" },
-  { id: 3, linkName: "LOGOUT", link: "/" },
+  { id: 3, linkName: "LOGOUT", link: "/login" },
 ]
 export default function NavigationBar() {
   const [state, setState] = React.useState({

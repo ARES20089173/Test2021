@@ -35,9 +35,11 @@ const data = [
 ]
 export default function Gamechooser() {
   const [count, setCount] = useState(0);
+  const [swiper, setSwiper] = useState();
   return (
     <Grid container xs={12}style={{ marginBottom: "1.5vh" }}>
       <Swiper
+       
         pagination={{
           "type": "custom",
           el: '.swiper-pagination'

@@ -93,7 +93,6 @@ export default class TournamentLobby extends Component {
 
                     <ListItem button key={text.id} style={{ backgroundColor: '#242634' }}>
                         <Grid xs={7} container alignItems="center" >
-
                             <ListItemText  >
                                 <Grid xs={12} container alignItems="center" ><img src={text.icon} alt="" width="16%" style={{ marginRight: '1vh' }} />  <Typography variant="caption">{text.addorReduce} {text.quality} {text.linkName}</Typography></Grid>
                             </ListItemText>
@@ -103,8 +102,7 @@ export default class TournamentLobby extends Component {
                                 <Typography variant='caption' style={{ textAlign: 'center' }}> {text.Mode} <Typography variant='body2'>{text.min}{text.slash}{text.max}</Typography></Typography >
                             </Grid>
                             <Grid xs={4.5} container justifyContent='center' alignItems='center' style={{ border: '1px solid white' }}  >
-                                <Typography variant='caption' style={{ textAlign: 'center' }}> {text.date}<Typography variant='body2'>{text.year}</Typography></Typography >
-
+                                <Typography variant='caption' style={{ textAlign: 'center' }}><Typography variant='body2'>{text.date}</Typography></Typography >
                             </Grid>
                         </Grid>
                     </ListItem>
@@ -127,7 +125,7 @@ export default class TournamentLobby extends Component {
                                     <Typography variant='caption' style={{ textAlign: 'center' }}> {text.Mode} <Typography variant='body2'>{text.min}{text.slash}{text.max}</Typography></Typography >
                                 </Grid>
                                 <Grid xs={4.5} container justifyContent='center' alignItems='center' style={{ border: '1px solid white' }}  >
-                                    <Typography variant='caption' style={{ textAlign: 'center' }}> {text.date}<Typography variant='body2'>{text.year}</Typography></Typography >
+                                    <Typography variant='caption' style={{ textAlign: 'center' }}> <Typography variant='body2'>{text.date}</Typography></Typography >
 
                                 </Grid>
                             </Grid>
@@ -152,28 +150,7 @@ export default class TournamentLobby extends Component {
                             </Typography>
                         </Grid>
                         <Grid item xs={12} bgcolor='#8e8b91' >
-                            <Link to={`/History/${0}/BattleModeDetal`} style={{ textDecoration: 'none', color: 'white' }}>
-                                <Grid xs={12} container alignItems="center" >
-
-                                    <ListItem button style={{ backgroundColor: '#242634' }}>
-                                        <Grid xs={8.5} container alignItems="center" >
-
-                                            <ListItemText  >
-                                                <Grid xs={12} container alignItems="center" ><img src={data[0].icon} alt="" width="16%" style={{ marginRight: '1vh' }} />  <Typography variant="caption"> {data[0].addorReduce} {data[0].quality} {data[0].linkName}</Typography></Grid>
-                                            </ListItemText>
-                                        </Grid>
-                                        <Grid xs={3.5} container alignItems="center" >
-                                            <Grid xs={9} container alignItems="center" height="12vh" style={{ backgroundImage: `url(${BattleRank})`, backgroundSize: '100% ', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundAttachment: 'cover' }} >
-                                                <Typography variant='h6' style={{ position: 'relative', top: 5 }}>1 2   /2 3</Typography>
-                                            </Grid>
-                                            <Grid xs={3} container alignItems="center" >
-
-                                            </Grid>
-                                        </Grid>
-                                    </ListItem>
-
-                                </Grid>
-                            </Link >
+                          
                             {data2}
                         </Grid>
                         <Grid item xs={12} marginTop="10vh" display={this.state.isToggleOn ? 'block' : 'none'}>

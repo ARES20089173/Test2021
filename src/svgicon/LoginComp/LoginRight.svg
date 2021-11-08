@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="304.7" height="57.5" viewBox="0 0 304.7 57.5">
+  <g id="next" transform="translate(-81.8 -84.3)">
+    <g id="组_982" data-name="组 982">
+      <g id="组_977" data-name="组 977">
+        <path id="路径_1876" data-name="路径 1876" d="M93.8,139.8a10.029,10.029,0,0,1-10-10V96.3a10.029,10.029,0,0,1,10-10H374.5a10.029,10.029,0,0,1,10,10v33.5a10.029,10.029,0,0,1-10,10Z" fill="#5b2c80"/>
+        <path id="路径_1877" data-name="路径 1877" d="M374.5,88.3a8.024,8.024,0,0,1,8,8v33.5a8.024,8.024,0,0,1-8,8H93.8a8.024,8.024,0,0,1-8-8V96.3a8.024,8.024,0,0,1,8-8H374.5m0-4H93.8a12.035,12.035,0,0,0-12,12v33.5a12.035,12.035,0,0,0,12,12H374.5a12.035,12.035,0,0,0,12-12V96.3a12.035,12.035,0,0,0-12-12Z" fill="#fff"/>
+      </g>
+      <g id="组_981" data-name="组 981">
+        <g id="组_978" data-name="组 978">
+          <circle id="椭圆_225" data-name="椭圆 225" cx="4.1" cy="4.1" r="4.1" transform="translate(223.5 123.6)" fill="#fff"/>
+          <path id="路径_1878" data-name="路径 1878" d="M230.5,130.6l17-17.2-5.9-5.8-17,17.3Z" fill="#fff"/>
+        </g>
+        <g id="组_980" data-name="组 980">
+          <circle id="椭圆_226" data-name="椭圆 226" cx="4.1" cy="4.1" r="4.1" transform="translate(240.5 106.4)" fill="#fff"/>
+          <g id="组_979" data-name="组 979">
+            <circle id="椭圆_227" data-name="椭圆 227" cx="4.1" cy="4.1" r="4.1" transform="translate(219.6 94.2)" fill="#fff"/>
+            <rect id="矩形_487" data-name="矩形 487" width="24.3" height="8.2" transform="translate(242.509 114.036) rotate(-149.84)" fill="#fff"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -32,6 +32,11 @@ import BattleModeDetail from './component/Pages/History/BattleModeDetail'
 import BalttleOtherinfo from './component/Pages/History/BalttleOtherinfo' 
 import OneVOneModeDetail from './component/Pages/History/OneVOneModeDetail' 
 import ChallengeModeDetail from './component/Pages/History/ChallengeModeDetail' 
+import SignIn from './component/Pages/UserlogPage/SignIn'
+import Forgot from './component/Pages/UserlogPage/ForgotPassword'
+import Register from './component/Pages/UserlogPage/Register'
+import RegisterInfo from './component/Pages/UserlogPage/InfoRegister'
+import FiniRegister from './component/Pages/UserlogPage/FiniRegister'
 import { RouterConfig, getMatchRouter } from './routerConfig';
 import './App.css'
 import {
@@ -129,6 +134,14 @@ const render = ({ location, history, match }) => {
           <Route exact path="/MissionMain/Policy" component={Policy} render={(props) => <Policy {...props} />}/>
           <Route exact path="/MissionMain/Service" component={Service} render={(props) => <Service {...props} />}/>
          
+
+          <Route exact path="/login" component={SignIn}render={(props) => <SignIn {...props} />}/>  
+          <Route exact path="/login/ForgotPW" component={Forgot}render={(props) => <Forgot {...props} />}/> 
+          <Route exact path="/Register" component={Register}render={(props) => <Register {...props} />}/>  
+          <Route exact path="/Register/Info" component={RegisterInfo}render={(props) => <RegisterInfo {...props} />}/>  
+          <Route exact path="/Register/Info/Finish" component={FiniRegister}render={(props) => <FiniRegister {...props} />}/>  
+       
+        
           MatchHistory
           ...
         </Switch>
