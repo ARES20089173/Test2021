@@ -40,7 +40,7 @@ export default function SignIn() {
     };
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <Grid container height="100vh" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: 'auto auto', backgroundAttachment: 'fixed' }}>
+            <Grid container height="100%" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: 'auto auto', backgroundAttachment: 'fixed' }}>
                 <Grid container
                     direction="row"
                     justifyContent='center'
