@@ -60,13 +60,7 @@ export default function SignIn() {
     };
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <Grid container height="100vh" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: 'auto auto', backgroundAttachment: 'fixed' }}>
-                <Grid container
-                    direction="row"
-                    justifyContent='center'
-                    alignItems="center"
-                >
-                    <Link to='/'>
+               <Link to='/'>
                         <img src={HomeIcon} alt='' width="15%" style={{
                             position: 'fixed',
                             zIndex: 3,
@@ -74,7 +68,14 @@ export default function SignIn() {
                             left: 0,
                         }} />
                     </Link>
-                    <Grid container height="5vh"><Grid xs={9}></Grid><Grid xs={3} container alignItems='center' justifyContent='center' textAlign='center' ><Link to={linkdata[0].link} style={{textDecoration:'none'}}><Typography variant='body2' color='white' style={{ float: 'right' }} >Sign up</Typography></Link></Grid></Grid>
+            <Grid container height="100%" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: 'auto auto', backgroundAttachment: 'fixed' }}>
+                <Grid container
+                    direction="row"
+                    justifyContent='center'
+                    alignItems="center"
+                >
+                 
+                    <Grid container height="5vh"><Grid xs={9}></Grid><Grid xs={3} container alignItems='center' justifyContent='center' textAlign='center' ><Link to={linkdata[0].link} style={{ textDecoration: 'none' }}><Typography variant='body2' color='white' style={{ float: 'right' }} >Sign up</Typography></Link></Grid></Grid>
                     <Grid container height="85vh" >
                         <Grid xs={6} container height="70vh" justifyContent='center' textAlign='center' >
                             <Grid xs={12} container height="40vh" justifyContent='center' alignItems="center">
@@ -126,7 +127,7 @@ export default function SignIn() {
                                 <Grid item xs={12} height="5vh" alignItems='center' justifyContent='center' textAlign='center' >
                                     <Typography color='white' variant="body2" marginBottom='3vh'>use social media to log in</Typography>
                                     <Grid item xs={12} height="5vh" marginBottom='3vh' ><img src={FaceBook} alt='' />   <img src={Google} alt='' /><br /></Grid>
-                                    <Link to={linkdata[3].link} style={{textDecoration:'none'}}> <img src={LoginRight} alt='' width='100%' /></Link>
+                                    <Link to={linkdata[3].link} style={{ textDecoration: 'none' }}> <img src={LoginRight} alt='' width='100%' /></Link>
                                 </Grid>
                             </Grid>
 
@@ -135,21 +136,21 @@ export default function SignIn() {
 
                         </Grid>
 
-                        <Grid xs={6} container height="70vh">
+                        <Grid xs={6} container height="85vh">
                             <Grid marginTop='5vh'><img src={Loginimg} alt='' width='100%' /></Grid>
                         </Grid>
 
-                   
+
 
                     </Grid>
-                        <Grid xs={12} container height="10vh">
-                    <Grid xs={4.5} container height="10vh" justifyContent='center' alignItems="center" >
-                            <Link to={linkdata[1].link} style={{textDecoration:'none'}}><Typography color='white' variant="caption"> Forgot password</Typography> </Link>
+                    <Grid xs={12} container height="10vh">
+                        <Grid xs={4.5} container height="10vh" justifyContent='center' alignItems="center" >
+                            <Link to={linkdata[1].link} style={{ textDecoration: 'none' }}><Typography color='white' variant="caption"> Forgot password</Typography> </Link>
                         </Grid>
                         <Grid xs={7.5} container height="10vh" justifyContent='center' alignItems="center" >
-                            <Link to={linkdata[2].link} style={{textDecoration:'none'}}><Typography color='white' variant="caption">Don't have account?/ Sign Up Here</Typography> </Link>
+                            <Link to={linkdata[2].link} style={{ textDecoration: 'none' }}><Typography color='white' variant="caption">Don't have account?/ Sign Up Here</Typography> </Link>
                         </Grid>
-                        </Grid>
+                    </Grid>
                 </Grid>
             </Grid>
         </Box>
