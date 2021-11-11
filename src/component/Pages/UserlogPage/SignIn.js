@@ -78,7 +78,8 @@ export default function SignIn() {
                     <Grid container height="5vh"><Grid xs={9}></Grid><Grid xs={3} container alignItems='center' justifyContent='center' textAlign='center' ><Link to={linkdata[0].link} style={{ textDecoration: 'none' }}><Typography variant='body2' color='white' style={{ float: 'right' }} >Sign up</Typography></Link></Grid></Grid>
                     <Grid container height="75vh" >
                         <Grid xs={6} container height="70vh" justifyContent='center' textAlign='center' >
-                            <Grid xs={12} container height="40vh" justifyContent='center' alignItems="center">
+
+                            <Grid xs={12} container height="50vh" justifyContent='center' alignItems="center">
                                 <Typography variant="h6" color='white' textAlign='center'>Welcome<br />Back!</Typography>
                                 <TextField
                                     id="filled-multiline-flexible"

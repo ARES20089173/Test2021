@@ -471,7 +471,6 @@ export default class TournamentLobby extends Component {
                                     menuPlacement="top"
                                     components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
                                 />
-
                                 <Popup
                                     trigger={
                                         <div className="button">
@@ -482,7 +481,6 @@ export default class TournamentLobby extends Component {
                                                 </StyledFab2>
                                             </div>
                                         </div>
-
                                     }
                                     modal
                                     lockScroll

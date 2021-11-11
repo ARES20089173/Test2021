@@ -21,6 +21,7 @@ import SaveCards from './component/Pages/Wallet/SaveCard'
 import AddNewMethod from './component/Pages/Wallet/AdNmethod'
 import AddNewCards from './component/Pages/Wallet/AddNewCard'
 import PuzzlePackage from './component/Pages/Wallet/PuzzlePackage'
+import MyCollection from './component/Pages/Wallet/MyCollection'
 import MissionMain from './component/Pages/Mission/MissionMain'
 import RewardStatus from './component/Pages/Mission/RewardStatus'
 import SupportGuide from './component/Pages/Mission/SupportGuide'
@@ -119,6 +120,7 @@ const render = ({ location, history, match }) => {
           <Route exact path="/Wallet/SaveCards" component={SaveCards}render={(props) => <SaveCards {...props} />}/>  
           <Route exact path="/Wallet/SaveCards/AddNewCards" component={AddNewCards}render={(props) => <AddNewCards {...props} />}/>
           <Route exact path="/Wallet/PuzzlePackage" component={PuzzlePackage}render={(props) => <PuzzlePackage {...props} />}/>  
+          <Route exact path="/Wallet/MyCollection" component={MyCollection}render={(props) => <MyCollection {...props} />}/>  
           <Route exact path="/Wallet/SaveCards/AddNewMethod" component={AddNewMethod}render={(props) => <AddNewMethod {...props} />}/>  
         
           <Route exact path="/History" component={MatchHistory} render={(props) => <MatchHistory {...props} />}/>
