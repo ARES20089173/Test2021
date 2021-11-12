@@ -15,7 +15,7 @@ import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
-import chasepuzzle from '../../../svgicon/Missionicon/Dailymission.svg'
+import chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
 import silverpuzzle from '../../../svgicon/Componenticon/SilverPuzzle.svg'
 import BattleRank from '../../../svgicon/Historyicon/BattleRank.svg';
 import HisNavigationBar from './HisNavigation';
@@ -72,42 +72,43 @@ export default class TournamentLobby extends Component {
     }
     render() {
         const data = [
-            { id: 0, linkName: "Chase Puzzles", icon: Gicon1, linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '/', Mode: 'Rank', quality: "50", min: 15, max: 50, year: 23 ,date:"Sep 18"},
-            { id: 1, linkName: "Chase Puzzles", icon: Gicon2, linkMODE: `ChallengeModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney, min: '', max: 'Grand', background: Grand, year: 23 ,date:"Sep 27" },
-            { id: 2, linkName: "Chase Puzzles", icon: Gicon3, linkMODE: `ChallengeModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney, min: '', max: 'Epic', background: Epic, year: 23  ,date:"Sep 15"},
-            { id: 3, linkName: "Chase Puzzles", icon: Gicon4, linkMODE: `ChallengeModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney, min: '', max: 'WoW', background: KeepUp, year: 23  ,date:"Jan 17"},
-            { id: 4, linkName: "Chase Puzzles", icon: Gicon5, linkMODE: `ChallengeModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney, min: '', max: 'Hero', background: Hero, year: 23  ,date:"Oct 17"},
-            { id: 5, linkName: "Chase Puzzles", icon: Gicon6, linkMODE: `ChallengeModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney, min: '', max: 'Bouns', background: Bouns, year: 23  ,date:"Sep 13"},
-            { id: 6, linkName: "Chase Puzzles", icon: Gicon7, linkMODE: `ChallengeModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney, min: '', max: 'WoW', background: KeepUp, year: 23  ,date:"Sep 32"},
-            { id: 7, linkName: "Silver Puzzles", icon: Gicon8, linkMODE: `BattleModeDetail`, addorReduce: "-", slash: '/', Mode: 'Rank', quality: "50", unit: Rmoney, min: 13, max: 50, year: 23  ,date:"June 27"},
-            { id: 8, linkName: "Silver Puzzles", icon: Gicon9, linkMODE: `OneVOneModeDetail`, addorReduce: "-", slash: '', Mode: '', quality: "50", WinorLoss: "Win", min: '', max: 'U Win', year: 23  ,date:"Sep 2"},
-            { id: 9, linkName: "Chase Puzzles", icon: Gicon10, linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '/', Mode: 'Rank', quality: "150", unit: Rmoney, min: 16, max: 50, year: 23 ,date:"Sep 1" },
-            { id: 10, linkName: "Silver Puzzles", icon: Gicon11, linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '/', Mode: 'Rank', quality: "5500", unit: Rmoney, min: 17, max: 50, year: 23  ,date:"Sep 13"},
-            { id: 11, linkName: "Chase Puzzles", icon: Gicon12, linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '/', Mode: 'Rank', quality: "1750", unit: Rmoney, min: 18, max: 50, year: 23  ,date:"Sep 5"},
-            { id: 12, linkName: "Silver Puzzles", icon: Gicon13, linkMODE: `BattleModeDetail`, addorReduce: "-", slash: '/', Mode: 'Rank', quality: "3750", unit: Rmoney, min: 15, max: 50, year: 23  ,date:"Sep 29"}]
+            { id: 0, linkName:chasepuzzle, icon: Gicon1, linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '/', Mode: 'Rank', quality: "50", min: 15, max: 50, year: 23, date: "Sep 18" },
+            { id: 1, linkName:silverpuzzle, icon: Gicon2, linkMODE: `ChallengeModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney, min: '', max: 'Grand', background: Grand, year: 23, date: "Sep 27" },
+            { id: 2, linkName:Rmoney, icon: Gicon3, linkMODE: `ChallengeModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney, min: '', max: 'Epic', background: Epic, year: 23, date: "Sep 15" },
+            { id: 3, linkName: chasepuzzle, icon: Gicon4, linkMODE: `ChallengeModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney, min: '', max: 'WoW', background: KeepUp, year: 23, date: "Jan 17" },
+            { id: 4, linkName: chasepuzzle, icon: Gicon5, linkMODE: `ChallengeModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney, min: '', max: 'Hero', background: Hero, year: 23, date: "Oct 17" },
+            { id: 5, linkName: chasepuzzle, icon: Gicon6, linkMODE: `ChallengeModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney, min: '', max: 'Bouns', background: Bouns, year: 23, date: "Sep 13" },
+            { id: 6, linkName: chasepuzzle, icon: Gicon7, linkMODE: `ChallengeModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney, min: '', max: 'WoW', background: KeepUp, year: 23, date: "Sep 32" },
+            { id: 7, linkName: chasepuzzle, icon: Gicon8, linkMODE: `BattleModeDetail`, addorReduce: "-", slash: '/', Mode: 'Rank', quality: "50", unit: Rmoney, min: 13, max: 50, year: 23, date: "June 27" },
+            { id: 8, linkName: chasepuzzle, icon: Gicon9, linkMODE: `OneVOneModeDetail`, addorReduce: "-", slash: '', Mode: '', quality: "50", WinorLoss: "Win", min: '', max: 'U Win', year: 23, date: "Sep 2" },
+            { id: 9, linkName: chasepuzzle, icon: Gicon10, linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '/', Mode: 'Rank', quality: "150", unit: Rmoney, min: 16, max: 50, year: 23, date: "Sep 1" },
+            { id: 10, linkName:chasepuzzle, icon: Gicon11, linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '/', Mode: 'Rank', quality: "5500", unit: Rmoney, min: 17, max: 50, year: 23, date: "Sep 13" },
+            { id: 11, linkName:silverpuzzle, icon: Gicon12, linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '/', Mode: 'Rank', quality: "1750", unit: Rmoney, min: 18, max: 50, year: 23, date: "Sep 5" },
+            { id: 12, linkName: Rmoney, icon: Gicon13, linkMODE: `BattleModeDetail`, addorReduce: "-", slash: '/', Mode: 'Rank', quality: "3750", unit: Rmoney, min: 15, max: 50, year: 23, date: "Sep 29" }]
 
         const data2 = data.map((text) => {
             if (text.id % 2 == 0) {
                 return <Link to={`/History/${text.id}/${text.linkMODE}`} style={{ textDecoration: 'none', color: 'white' }}>
-                <Grid xs={12} container1 alignItems="center" >
+                    <Grid xs={12} container1 alignItems="center" >
 
-                    <ListItem button key={text.id} style={{ backgroundColor: '#242634' }}>
-                        <Grid xs={7} container alignItems="center" >
-                            <ListItemText  >
-                                <Grid xs={12} container alignItems="center" ><img src={text.icon} alt="" width="16%" style={{ marginRight: '1vh' }} />  <Typography variant="caption">{text.addorReduce} {text.quality} {text.linkName}</Typography></Grid>
-                            </ListItemText>
-                        </Grid>
-                        <Grid xs={5} container >
-                            <Grid xs={7} container justifyContent='center' alignItems='center' style={{ border: '1px solid white', marginRight: '4px' }} >
-                                <Typography variant='caption' style={{ textAlign: 'center' }}> {text.Mode} <Typography variant='body2'>{text.min}{text.slash}{text.max}</Typography></Typography >
+                        <ListItem button key={text.id} style={{ backgroundColor: '#242634' }}>
+                            <Grid xs={7} container alignItems="center" >
+                                <ListItemText  >
+                                    <Grid xs={12} container alignItems="center" ><img src={text.icon} alt="" width="16%" style={{ marginRight: '1vh' }} />  <Typography variant="caption">{text.addorReduce} {text.quality} </Typography> <img src={text.linkName} alt='' width='8%' /></Grid>
+                                </ListItemText>
                             </Grid>
-                            <Grid xs={4.5} container justifyContent='center' alignItems='center' style={{ border: '1px solid white' }}  >
-                                <Typography variant='caption' style={{ textAlign: 'center' }}><Typography variant='body2'>{text.date}</Typography></Typography >
+                            <Grid xs={5} container >
+                                <Grid xs={4.5} container justifyContent='center' alignItems='center' style={{  marginRight: '4px' }}  >
+                                    <Typography variant='caption' style={{ textAlign: 'center' }}><Typography variant='body2'>{text.date}</Typography></Typography >
+                                </Grid>
+                                <Grid xs={7} container justifyContent='center' alignItems='center'  >
+                                    <Typography variant='caption' style={{ textAlign: 'center' }}> {text.Mode} <Typography variant='body2'>{text.min}{text.slash}{text.max}</Typography></Typography >
+                                </Grid>
+
                             </Grid>
-                        </Grid>
-                    </ListItem>
-                </Grid>
-            </Link>
+                        </ListItem>
+                    </Grid>
+                </Link>
             }
             else {
                 return <Link to={`/History/${text.id}/${text.linkMODE}`} style={{ textDecoration: 'none', color: 'white' }}>
@@ -117,17 +118,17 @@ export default class TournamentLobby extends Component {
                             <Grid xs={7} container alignItems="center" >
 
                                 <ListItemText  >
-                                    <Grid xs={12} container alignItems="center" ><img src={text.icon} alt="" width="16%" style={{ marginRight: '1vh' }} />  <Typography variant="caption">{text.addorReduce} {text.quality} {text.linkName}</Typography></Grid>
+                                    <Grid xs={12} container alignItems="center" ><img src={text.icon} alt="" width="16%" style={{ marginRight: '1vh' }} />  <Typography variant="caption">{text.addorReduce} {text.quality} </Typography><img src={text.linkName} alt='' width='8%' /></Grid>
                                 </ListItemText>
                             </Grid>
                             <Grid xs={5} container >
-                                <Grid xs={7} container justifyContent='center' alignItems='center' style={{ border: '1px solid white', marginRight: '4px' }} >
+                                <Grid xs={4.5} container justifyContent='center' alignItems='center' style={{ marginRight: '4px' }}  >
+                                    <Typography variant='caption' style={{ textAlign: 'center' }}><Typography variant='body2'>{text.date}</Typography></Typography >
+                                </Grid>
+                                <Grid xs={7} container justifyContent='center' alignItems='center'  >
                                     <Typography variant='caption' style={{ textAlign: 'center' }}> {text.Mode} <Typography variant='body2'>{text.min}{text.slash}{text.max}</Typography></Typography >
                                 </Grid>
-                                <Grid xs={4.5} container justifyContent='center' alignItems='center' style={{ border: '1px solid white' }}  >
-                                    <Typography variant='caption' style={{ textAlign: 'center' }}> <Typography variant='body2'>{text.date}</Typography></Typography >
 
-                                </Grid>
                             </Grid>
                         </ListItem>
                     </Grid>
@@ -145,12 +146,12 @@ export default class TournamentLobby extends Component {
                         alignItems="center"
                     >
                         <Grid container xs={12} height="4vh" bgcolor='#8e8b91' justifyContent='center' alignItems='center' >
-                            <Typography variant="body2" textAlign='center'>      &gt;&gt;&gt;&gt;&gt; LEADERBOARD
+                            <Typography variant="body2" textAlign='center'>      &gt;&gt;&gt;&gt;&gt;  Click to Check Results Detail
                                 &gt;&gt;&gt;&gt;&gt;
                             </Typography>
                         </Grid>
                         <Grid item xs={12} bgcolor='#8e8b91' >
-                          
+
                             {data2}
                         </Grid>
                         <Grid item xs={12} marginTop="10vh" display={this.state.isToggleOn ? 'block' : 'none'}>

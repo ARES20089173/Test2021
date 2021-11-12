@@ -15,6 +15,10 @@ import EndBar from '../../framework/pureEndbar';
 import back from '../../../svgicon/Componenticon/Back.svg'
 import chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
 import silverpuzzle from '../../../svgicon/Componenticon/SilverPuzzle.svg'
+import Creditcard from '../../../svgicon/WalletTrans/Creditcard.svg'
+import Money from '../../../svgicon/WalletTrans/Money.svg'
+import Shopcar from '../../../svgicon/WalletTrans/Shopcar.svg'
+
 
 import { useParams } from "react-router";
 import { Button } from "@mui/material";
@@ -218,16 +222,24 @@ export default function Detail() {
                 </Grid>
 
                 <Grid item xs={11} container height="10%"  >
-                    <Grid item xs={6} container alignItems='center'>
+                    <Grid item xs={1} container alignItems='center'>
+                        <img src={Creditcard} alt='' width='80%'/>
+                    </Grid>
+                    <Grid item xs={5} container alignItems='center'>
                         <Typography color='white' variant="body2">Seller<br />{Seller}</Typography>
                     </Grid>
-                    <Grid item xs={6} container alignItems='center' >
+                    <Grid item xs={1} container alignItems='center'>
+                        <img src={Shopcar} alt='' width='80%'/>
+                    </Grid>
+                    <Grid item xs={5} container alignItems='center' >
                         <Typography color='white' variant="body2">Product<br />{Product}
                         </Typography>
                     </Grid>
                 </Grid>
                 <Grid item xs={11} container height="10%"  >
-
+                <Grid item xs={1} container alignItems='center'>
+                        <img src={Money} alt='' width='80%'/>
+                    </Grid>
                     <Grid item xs={6} container alignItems='center' >
                         <Typography color='white' variant="body2">Total Amount<br />{Pay}
                         </Typography>
@@ -236,7 +248,7 @@ export default function Detail() {
                 <Grid item xs={12} height="8%" >
                 </Grid>
             </Grid>
-            <Grid item xs={12} marginTop={ setType == "CHASE PUZZLES RELOADE"?"0vh":'8vh'} >
+            <Grid item xs={12} marginTop={setType == "CHASE PUZZLES RELOADE" ? "0vh" : '8vh'} >
                 <EndBar />
             </Grid>
         </Box>
