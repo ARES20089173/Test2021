@@ -19,11 +19,12 @@ import Ricon from '../../svgicon/Componenticon/Ricon.svg'
 import Rmoneyicon from '../../svgicon/Componenticon/Rmoneyicon.svg'
 import SilverPuzzle from '../../svgicon/Componenticon/SilverPuzzle.svg'
 import Chasepuzzle from '../../svgicon/Componenticon/Chasepuzzle.svg'
+
 import addicon from '../../svgicon/Componenticon/addicon.svg'
 import Endbarbg from '../../svgicon/Componenticon/Endbarbg.svg'
 const contentStyle = {
     marginTop: '20%',
-    background: '#cfcece',
+    background: '#242634',
     width: "90%",
     height: "62%",
     borderRadius: "5%",

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="239.9" height="96" viewBox="0 0 239.9 96">
+  <g id="tickect_2" transform="translate(0.1 -0.2)">
+    <path id="路径_1509" data-name="路径 1509" d="M-.1,90.7l4.9,5.5H230a9.816,9.816,0,0,0,9.8-9.8V11.7A9.816,9.816,0,0,0,230,1.9H4.8L-.1,6.8Z" fill="#c8d1ff"/>
+    <path id="路径_1510" data-name="路径 1510" d="M-.1,88.9l4.9,5.5H230a9.816,9.816,0,0,0,9.8-9.8V10A9.816,9.816,0,0,0,230,.2H4.8L-.1,5.7V88.9Z" fill="#fff"/>
+    <path id="路径_1511" data-name="路径 1511" d="M230.1,1.5a8.493,8.493,0,0,1,8.5,8.5V84.6a8.493,8.493,0,0,1-8.5,8.5H5.3L1.6,88.9V5.6L5.3,1.4H230.1M5.3,1.5H230" fill="#f2b6bf"/>
+    <line id="直线_51" data-name="直线 51" y1="83.3" transform="translate(-0.1 5.6)" fill="#fff"/>
+  </g>
+</svg>

@@ -34,10 +34,10 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
     },
 }));
 const contentStyle = {
-    marginTop: '38%',
-    background: '#cfcece',
-    width: "99%",
-    height: "51%",
+    marginTop: '43%',
+    background: '#242634',
+    width: "90%",
+    height: "62%",
     borderRadius: "5%",
 };
 

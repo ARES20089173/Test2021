@@ -1,19 +1,18 @@
 import React, { Component } from "react";
 import AppBar from '@mui/material/AppBar';
-import puzzle from '../../../puzzle.svg'
-import m from '../../../m.svg'
-import gamepad from '../../../gamepad.svg'
-import heart from '../../../heart.svg'
-import money from '../../../money.svg'
-import game from '../../../game.svg'
-import event from '../../../event.svg'
-import r from '../../../r.svg'
-import switched from '../../../switched.svg'
+import Messagepuzzle from '../../../svgicon/NotificationIcon/Messagepuzzle.svg'
+import m from '../../../svgicon/NotificationIcon/m.svg'
+import gamepad from '../../../svgicon/NotificationIcon/gamepad.svg'
+import heart from '../../../svgicon/NotificationIcon/heart.svg'
+import money from '../../../svgicon/NotificationIcon/money.svg'
+import game from '../../../svgicon/NotificationIcon/game.svg'
+import event from '../../../svgicon/NotificationIcon/event.svg'
+import r from '../../../svgicon/NotificationIcon/r.svg'
+import switched from '../../../svgicon/NotificationIcon/switched.svg'
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import MoodIcon from '@mui/icons-material/Mood';
+import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
+import back from '../../../svgicon/Componenticon/Back.svg'
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -22,7 +21,6 @@ import { styled } from '@mui/material/styles'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom"
 import Switch from '@mui/material/Switch';
-import HomeIcon from '@mui/icons-material/Home'
 const contentStyle = {
     margin: 'auto',
     background: '#cfcece',
@@ -49,7 +47,7 @@ const StyledFab2 = styled(Fab)({
 export default class MessageCenter extends Component {
     render() {
         const data = [
-            { id: 0, icon: puzzle, setname: "Assetchange" },
+            { id: 0, icon: Messagepuzzle, setname: "Assetchange" },
             { id: 1, icon: m, setname: "System Message" },
             { id: 2, icon: gamepad, setname: "Game Results & Rewards" },
             { id: 3, icon: heart, setname: "Engagement Notify" },
@@ -64,19 +62,13 @@ export default class MessageCenter extends Component {
         const handleChange = (event) => {
             // for swith
         };
-        // const handleChange1 = (event) => {
-        //     // for swith
-        // };
-        // const handleChange2 = (event) => {
-        //     // for swith
-        // };
         const data2 = data.map((data) => {
             if (data.id % 2 == 0) {
                 return <Grid container
                     direction="row"
                     alignItems="center"
                     height="11vh"
-                    style={{ backgroundColor: '#707070' }}>
+                    style={{ backgroundColor: "#242634" }}>
 
                     <Grid item xs={9} style={{ textAlign: 'left', paddingLeft: '6vh' }} >
                         <img src={data.icon} width="9%" />
@@ -98,7 +90,7 @@ export default class MessageCenter extends Component {
                     alignItems="center"
                     height="11vh"
 
-                    style={{ backgroundColor: "black" }}>
+                    style={{ backgroundColor: "#35394C"}}>
 
                     <Grid item xs={9} style={{ textAlign: 'left', paddingLeft: '6vh' }} >
                         <img src={data.icon} width="9%" />
@@ -124,22 +116,31 @@ export default class MessageCenter extends Component {
                     <Box sx={{ flexGrow: 1 }} >
                         <Grid xs={3}>
                             <Link to='/'>
-                                <StyledFab size="small" color="secondary" aria-label="add">
-                                    <HomeIcon />
-                                </StyledFab>
+                                <img src={HomeIcon} alt='' width="15%" style={{
+                                    position: 'fixed',
+                                    zIndex: 3,
+                                    top: "72vh",
+                                    left: 0,
+                                }} />
                             </Link>
                         </Grid>
                         <Grid xs={8} >
                             <CssBaseline />
-                            <AppBar position="fixed" align='center' sx={{ top: 0 }}>
+                            <AppBar position="fixed" align='center' elevation={0} sx={{ top: 0, backgroundColor: "#242634", borderBottom: '1px solid black' }}>
                                 <Toolbar>
-                                    <Link to='/MessageCenter'>
-                                        <StyledFab2 size="small" color="secondary" aria-label="add">
-                                            <ArrowBackIcon />
-                                        </StyledFab2>
+                                    <Link to={`/MessageCenter`}>
+                                        <img src={back} alt='' width="40%" style={{
+                                            position: 'relative',
+                                            zIndex: 3,
+                                            top: 5,
+                                            left: "-40%",
+                                        }} />
                                     </Link>
-                                    <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
-                                        Notice Setting
+                                    <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} style={{
+                                            position: 'relative',
+                                            zIndex: 3,
+                                            left: "-13%",
+                                        }}>           Notice Setting
                                     </Typography>
                                     <Grid xs={1}></Grid>
                                 </Toolbar>

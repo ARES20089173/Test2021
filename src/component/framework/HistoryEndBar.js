@@ -46,13 +46,12 @@ const StyledFab = styled(Fab)({
     margin: '0 86%',
 });
 const contentStyle = {
-    marginTop: '38%',
-    background: '#cfcece',
-    width: "99%",
-    height: "51%",
+    marginTop: '20%',
+    background: '#242634',
+    width: "90%",
+    height: "62%",
     borderRadius: "5%",
 };
-
 const Amout = [{ Chasepuzzle: 18.6, SilverPuzzle: 20.5, money: 1000,notification:30 }]
 export default function BottomAppBar() {
     return (

@@ -5,24 +5,24 @@ import 'reactjs-popup/dist/index.css';
 import "../../framework/css/cssModFMessage.css"
 import Popup from 'reactjs-popup';
 import Toolbar from '@mui/material/Toolbar';
-import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import MoodIcon from '@mui/icons-material/Mood';
+import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
+import back from '../../../svgicon/Componenticon/Back.svg'
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-import LayersClearIcon from '@mui/icons-material/LayersClear';
-import SettingsIcon from '@mui/icons-material/Settings';
 import CssBaseline from '@mui/material/CssBaseline';
 import Fab from '@mui/material/Fab';
 import { styled } from '@mui/material/styles'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom"
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import HomeIcon from '@mui/icons-material/Home'
+import Notification from "../../../svgicon/MessageCenter/Notification.svg";
+import Set from "../../../svgicon/MessageCenter/Set.svg"
+import Clear from "../../../svgicon/MessageCenter/Clear.svg"
+import Discord from "../../../svgicon/MessageCenter/Discord.svg"
+import Whatsapp from "../../../svgicon/MessageCenter/Whatsapp.svg"
 const contentStyle = {
     margin: 'auto',
-    background: '#cfcece',
+    background: '#242634',
     width: "100%",
     height: "40%",
     padding: "5px",
@@ -45,21 +45,21 @@ const StyledFab2 = styled(Fab)({
 export default class MessageCenter extends Component {
     render() {
         const data = [
-            { id: 0, icon: NotificationsActiveIcon, title: "Notification", detail: "layers, Assets, Finance, Function, Mission,Game News, Game Mode, Related Notice",link:"/MessageCenter/Notification" },
-            { id: 1, icon: WhatsAppIcon, title: "Live Chat", detail: "Players, Assets, Finance, Function, Mission,Game News, Game Mode, Related Notice",link:"/"},
-            { id: 2, icon: MoodIcon, title: "REES Community Notify", detail: "Players, Assets, Finance, Function, Mission,Game News, Game Mode, Related Notice",link:"/" },
+            { id: 0, icon: Notification, title: "Notification", detail: "layers, Assets, Finance, Function, Mission,Game News, Game Mode, Related Notice", link: "/MessageCenter/Notification" },
+            { id: 1, icon: Whatsapp, title: "Live Chat", detail: "Players, Assets, Finance, Function, Mission,Game News, Game Mode, Related Notice", link: "/" },
+            { id: 2, icon: Discord, title: "REES Community Notify", detail: "Players, Assets, Finance, Function, Mission,Game News, Game Mode, Related Notice", link: "/" },
         ];
         const data2 = data.map((message) => {
             if (message.id % 2 == 0) {
-                return  <Link to={message.link} style={{ textDecoration: 'none', color: '#FFF' }}>
+                return <Link to={message.link} style={{ textDecoration: 'none', color: '#FFF' }}>
                     <Grid container
                         direction="row"
                         justifyContent="center"
                         alignItems="center"
                         height="20vh"
-                        style={{ backgroundColor: '#707070'}}>
+                        style={{ backgroundColor: '#242634' }}>
 
-                        <Grid item xs={2} style={{ textAlign: 'center' }}><message.icon fontSize="large" /></Grid>
+                        <Grid item xs={2} style={{ textAlign: 'center' }}>  <img src={message.icon} alt='' width='50%' /></Grid>
                         <Grid item xs={10}>
                             <Typography variant="h6">{message.title}</Typography>
                             <Typography variant="caption" style={{ overflowWrap: 'break-word' }} display="inline">{message.detail}</Typography>
@@ -68,48 +68,58 @@ export default class MessageCenter extends Component {
                 </Link>
             } else {
                 return <Link to={message.link} style={{ textDecoration: 'none', color: '#FFF' }}>
-                <Grid container
-                    direction="row"
-                    justifyContent="center"
-                    alignItems="center"
-                    height="20vh"
-                    style={{ backgroundColor: "#8e8b91"}}>
+                    <Grid container
+                        direction="row"
+                        justifyContent="center"
+                        alignItems="center"
+                        height="20vh"
+                        style={{ backgroundColor: "#35394C" }}>
 
-                    <Grid item xs={2} style={{ textAlign: 'center' }}><message.icon fontSize="large" /></Grid>
-                    <Grid item xs={10}>
-                        <Typography variant="h6">{message.title}</Typography>
-                        <Typography variant="caption" style={{ overflowWrap: 'break-word' }} display="inline">{message.detail}</Typography>
+                        <Grid item xs={2} style={{ textAlign: 'center' }}><img src={message.icon} alt='' width='50%' /></Grid>
+                        <Grid item xs={10}>
+                            <Typography variant="h6">{message.title}</Typography>
+                            <Typography variant="caption" style={{ overflowWrap: 'break-word' }} display="inline">{message.detail}</Typography>
+                        </Grid>
                     </Grid>
-                </Grid>
-            </Link>
+                </Link>
             }
         }
         );
         return (
 
-            <Box sx={{ flexGrow: 1 }}>
+            <Box sx={{ flexGrow: 1 }} height="100vh" style={{backgroundColor:'#242634'}}> 
                 <React.Fragment>
                     <Box sx={{ flexGrow: 1 }} >
                         <Link to='/'>
-                            <StyledFab size="small" color="secondary" aria-label="add">
-                                <HomeIcon />
-                            </StyledFab>
+                            <img src={HomeIcon} alt='' width="15%" style={{
+                                position: 'fixed',
+                                zIndex: 3,
+                                top: "72vh",
+                                left: 0,
+                            }} />
                         </Link>
                         <CssBaseline />
-                        <AppBar position="fixed" align='center' sx={{ top: 0 }}>
+                        <AppBar position="fixed" align='center' elevation={0} sx={{ top: 0, backgroundColor: "#242634" ,borderBottom:'1px solid black'}}>
                             <Toolbar>
                                 <Typography variant="h6" component="div" sx={{}}>
-                                    <Link to='/'>
-                                        <StyledFab2 size="small" color="secondary" aria-label="add">
-                                            <ArrowBackIcon />
-                                        </StyledFab2>
+                                    <Link to={`/`}>
+                                        <img src={back} alt='' width="40%" style={{
+                                            position: 'relative',
+                                            zIndex: 3,
+                                            top: 5,
+                                            left: "-40%",
+                                        }} />
                                     </Link>
                                 </Typography>
-                                <Typography variant="body1" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
+                                <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} style={{
+                                            position: 'relative',
+                                            zIndex: 3,
+                                            left: "-5%",
+                                        }}>
                                     Message Center
                                 </Typography>
                                 <IconButton
-                                    size="large"
+                                    size="small"
                                     edge="start"
                                     color="inherit"
                                     aria-label="menu"
@@ -117,11 +127,11 @@ export default class MessageCenter extends Component {
                                     <Popup
                                         className="content2"
                                         trigger={<div className="button" style={{ marginTop: '1vh', color: 'blue' }}> <div onClick={this.BattleModehandleClick}>
-                                            <LayersClearIcon /></div></div>}
+                                            <img src={Clear} alt='' width='50%' /></div></div>}
                                         modal
                                         lockScroll
                                         nested
-                                        {...{ contentStyle}}
+                                        {...{ contentStyle }}
                                     >
                                         {close => (
                                             <div className="modal2">
@@ -131,7 +141,7 @@ export default class MessageCenter extends Component {
                                                     </div>
                                                 </button>
                                                 <Grid xs={12} marginTop="7vh">
-                                                    <Typography variant="h4" component="div" color='primary' textAlign='center' >
+                                                    <Typography variant="h4" component="div" color='white' textAlign='center' >
                                                         the message was successfully
                                                         marked as read
                                                     </Typography>
@@ -142,12 +152,12 @@ export default class MessageCenter extends Component {
                                 </IconButton>
                                 <Link to="/MessageCenter/CenterSetting">
                                     <IconButton
-                                        size="large"
+                                        size="small"
                                         edge="start"
                                         color="inherit"
                                         aria-label="menu"
                                     >
-                                        <SettingsIcon />
+                                        <img src={Set} alt='' width='50%' />
                                     </IconButton>
                                 </Link>
                             </Toolbar>

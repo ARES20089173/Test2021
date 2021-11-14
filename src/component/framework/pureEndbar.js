@@ -31,7 +31,7 @@ import Endbarbg from '../../svgicon/Componenticon/Endbarbg.svg'
 const Amout = [{ Chasepuzzle: 18.6, SilverPuzzle: 20.5, money: 1000,notification:30 }]
 const contentStyle = {
     marginTop: '20%',
-    background: '#cfcece',
+    background: '#242634',
     width: "90%",
     height: "62%",
     borderRadius: "5%",

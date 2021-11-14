@@ -3,6 +3,7 @@ import Grid from '@mui/material/Grid';
 import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
 import adv1 from '../../../svgicon/Advertise/adv1.svg'
 import referimg from '../../../svgicon/Advertise/Referfriend.svg'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 import powerby from '../../../svgicon/PowerBy/PowerByR.svg'
 import Typography from '@mui/material/Typography';
 import 'reactjs-popup/dist/index.css';
@@ -22,6 +23,8 @@ import { styled } from '@mui/material/styles';
 import Fab from '@mui/material/Fab';
 import ReadMoreIcon from '@mui/icons-material/ReadMore';
 import { Link } from "react-router-dom"
+
+import { RWebShare } from "react-web-share";
 
 const StyledFab2 = styled(Fab)({
     position: 'absolute',
@@ -88,7 +91,7 @@ export default function MainPage() {
                                     </button>
                                     <Grid xs={12}>
                                         <Typography variant="body2" component="div" color='primary' textAlign='center'>
-                                          refer friends & earn up to $500 puzzles
+                                            refer friends & earn up to $500 puzzles
                                         </Typography>
                                         <Typography variant="caption" component="div" color='primary' textAlign='center'>
                                             Referal Code
@@ -97,12 +100,21 @@ export default function MainPage() {
                                         <Grid item xs={12} height="38vh">
                                             <div className="video-responsive">
                                                 <Grid xs={12} textAlign='center'>
+                                                    <RWebShare
+                                                        data={{
+                                                            text: '复制这段code ILOVEREESPUZZLES 进入我们的官网',
+                                                            url: "https://puzzlegame2021.netlify.app/p",
+                                                            title: "Share With your friends!",
+                                                        }}
+                                                        onClick={() => console.log("shared successfully!")}
+                                                    >
                                                         <Button variant='outlined'>ILOVEREESPUZZLES</Button>
-                                                 </Grid>
+                                                    </RWebShare>
+                                                </Grid>
                                                 <Typography variant="body2" component="div" color='primary' textAlign='center'>
 
-                                                <img src={referimg} width="70%" alt="referimage" />
-                                            <img src={powerby} width="40%" />
+                                                    <img src={referimg} width="70%" alt="referimage" />
+                                                    <img src={powerby} width="40%" />
                                                 </Typography>
                                             </div>
                                         </Grid>
