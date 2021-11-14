@@ -1,21 +1,17 @@
 import React, { Component } from "react";
-import backgroundEnd from "../../../svgicon/Background/Gametutorial.svg"
 import Toolbar from '@mui/material/Toolbar'
 import AppBar from '@mui/material/AppBar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-
 import Hamburgicon from "../../../svgicon/Componenticon/Hamburgicon.svg";
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Fab from '@mui/material/Fab';
 import { styled } from '@mui/material/styles'
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom"
 import back from '../../../svgicon/Componenticon/Back.svg'
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
-
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import coderedeem from '../../../coderedeem.svg'
 import TextField from '@mui/material/TextField';
@@ -23,7 +19,6 @@ import Logout from '../../../logout.svg'
 import puzzle from "../../../puzzle.svg"
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import "./styles.css"
