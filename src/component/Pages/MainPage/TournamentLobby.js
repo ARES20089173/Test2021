@@ -357,9 +357,8 @@ export default class TournamentLobby extends Component {
                         direction="row"
                         justifyContent='center' xs={12} height='15vh'>
                         <Grid item xs={3} height='15vh' style={{ textAlign: 'center', backgroundImage: `url(${SmallLeftbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
-
-                            <Typography variant="caption" sx={{ flexGrow: 1, textAlign: 'center' }} color='black' paragraph marginTop="0.5vh">
-                                <img src={Money} alt="gameicon" width="30%" /><br /> {oneVoneMode[0].MaxPrize}  <br />  GRAND GRADE PRIZE
+                        <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='black' style={{marginTop:'1vh'}}>
+                           <img src={Money} alt="gameicon" width="30%" /><br /> {oneVoneMode[0].MaxPrize}  <br />  GRAND GRADE PRIZE
                             </Typography>
                         </Grid>
                         <Grid item xs={8} height='15vh' style={{ backgroundImage: `url(${SmallRightbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}  >
@@ -428,7 +427,7 @@ export default class TournamentLobby extends Component {
                                     justifyContent='center' xs={12} height='15vh'>
                                     <Grid item xs={3} height='15vh' style={{ textAlign: 'center', backgroundImage: `url(${SmallLeftbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
 
-                                        <Typography variant="caption" sx={{ flexGrow: 1, textAlign: 'center' }} color='black' paragraph marginTop="0.5vh">
+                                        <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='black' style={{ marginTop: '1vh' }}>
                                             <img src={Money} alt="gameicon" width="30%" /><br /> {oneVoneMode[0].MaxPrize}  <br />  GRAND GRADE PRIZE
                                         </Typography>
                                     </Grid>
@@ -550,9 +549,10 @@ export default class TournamentLobby extends Component {
                         direction="row"
                         justifyContent='center' xs={12} height='19vh'>
 
-                        <Grid item xs={3} height='19vh' style={{ textAlign: 'center', backgroundImage: `url(${Leftbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
-                            <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='black'>
-                                <img src={Chasepuzzle} alt="gameicon" width="50%" /><br />{challengerMode[0].MaxPrize}  <br />  GRAND GRADE PRIZE
+                        <Grid container direction="row"
+                            justifyContent='center' xs={3} height='19vh' style={{ textAlign: 'center', backgroundImage: `url(${Leftbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
+                            <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='black' style={{ marginTop: '1vh' }}>
+                                <img src={Chasepuzzle} alt="gameicon" width="40%" /><br />{challengerMode[0].MaxPrize}  <br />  GRAND GRADE PRIZE
                             </Typography>
                         </Grid>
                         <Grid item xs={8} height='19vh' style={{ backgroundImage: `url(${Rightbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}  >
@@ -615,8 +615,8 @@ export default class TournamentLobby extends Component {
                                     direction="row"
                                     justifyContent='center' xs={12} height='19vh'>
                                     <Grid item xs={3} height='19vh' style={{ textAlign: 'center', backgroundImage: `url(${Leftbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
-                                        <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='black'>
-                                            <img src={Chasepuzzle} alt="gameicon" width="50%" /><br />{content.MaxPrize}  <br />  GRAND GRADE PRIZE
+                                        <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='black' style={{ marginTop: '1vh' }}>
+                                            <img src={Chasepuzzle} alt="gameicon" width="40%" /><br />{challengerMode[0].MaxPrize}  <br />  GRAND GRADE PRIZE
                                         </Typography>
                                     </Grid>
                                     <Grid item xs={8} height='19vh' style={{ backgroundImage: `url(${Rightbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}  >
@@ -738,8 +738,8 @@ export default class TournamentLobby extends Component {
                         justifyContent='center' xs={12} height='19vh'>
 
                         <Grid item xs={3} height='19vh' style={{ textAlign: 'center', backgroundImage: `url(${Leftbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
-                            <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='blak'>
-                                <img src={Silverpuzzle} alt="gameicon" width="50%" /><br /> {BattleMode[0].MaxPrize}<br />GRAND GRADE PRIZE
+                            <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='black' style={{ marginTop: '1vh' }}>
+                                <img src={Silverpuzzle} alt="gameicon" width="40%" /><br /> {BattleMode[0].MaxPrize}<br />GRAND GRADE PRIZE
                             </Typography>
                         </Grid>
                         <Grid item xs={8} height='19vh' >
@@ -821,7 +821,7 @@ export default class TournamentLobby extends Component {
                                     justifyContent='center' xs={12} height='19vh'>
 
                                     <Grid item xs={3} height='19vh' style={{ textAlign: 'center', backgroundImage: `url(${Leftbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
-                                        <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='black'>
+                                        <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='black' style={{ marginTop: '1vh' }}>
                                             <img src={Silverpuzzle} alt="gameicon" width="50%" /><br /> {content.MaxPrize}<br />GRAND GRADE PRIZE
                                         </Typography>
                                     </Grid>
