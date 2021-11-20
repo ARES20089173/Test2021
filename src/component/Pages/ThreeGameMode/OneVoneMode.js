@@ -397,14 +397,14 @@ export default class OneVoneModeGo extends Component {
                                                     }
                                                     modal
                                                     lockScroll
-                                                    onClick
                                                     closeOnDocumentClick={false}
+                                                    onClose={this.handleClick}
                                                     nested
                                                     {...{ contentStyle }}
                                                 >
                                                     {close => (
                                                         <div className="modal" >
-                                                            <button className="close" >
+                                                            <button className="close" onClick={close}>
 
                                                             </button>
                                                             <Grid xs={12} >
@@ -422,7 +422,7 @@ export default class OneVoneModeGo extends Component {
                                             </Grid>
                                             <Grid item xs={2} >
                                                 <Popup
-                                                    trigger={<div className="button"> <div >
+                                                    trigger={<div className="button" > <div >
                                                         <IconButton
                                                             size="small"
                                                             color="inherit"
@@ -433,6 +433,7 @@ export default class OneVoneModeGo extends Component {
                                                     modal
                                                     lockScroll
                                                     nested
+                                                  
                                                 >
                                                     {close => (
                                                         <div className="modal" >

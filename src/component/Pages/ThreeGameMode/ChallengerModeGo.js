@@ -327,14 +327,15 @@ export default class TournamentLobby extends Component {
 
                                                 <Popup
                                                     trigger={
-                                                        <div className="button">
+                                                        <div className="button" >
                                                             <div >
                                                                 <IconButton
                                                                     size="small"
                                                                     color="inherit"
                                                                     aria-label="menu"
                                                                     sx={{}}
-                                                                ><img src={Download} alt="" width="80%" />
+                                                                 
+                                                                ><img src={Download} alt="" width="80%"    />
                                                                 </IconButton>
                                                             </div>
                                                         </div>
@@ -342,10 +343,10 @@ export default class TournamentLobby extends Component {
                                                     }
                                                     modal
                                                     lockScroll
-                                                    onClick
+                                                    onClose={this.handleClick}
                                                     closeOnDocumentClick={false}
                                                     nested
-                                                    onClose={this.handleClick}
+                                                    onClick={this.handleClick}
                                                     {...{ contentStyle }}
                                                 >
                                                     {close => (
