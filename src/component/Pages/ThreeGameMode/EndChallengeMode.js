@@ -17,7 +17,7 @@ import { Link } from 'react-router-dom';
 const contentStyle = {
     background: '#242632',
     width: "90%",
-    height: "90%",
+    height: "75%",
     border: 'none'
 };
 const data = [
@@ -66,15 +66,15 @@ export default class ChallengeMode extends Component {
                                 </Grid>
 
                                 {/* next half page */}
-                                <Grid xs={12} item height="30%" >
-                                    <Grid xs={12} container height="35%" style={{ textAlign: 'center' }} alignItems='center' justifyContent="center">
+                                <Grid xs={12} item height="45%" >
+                                    <Grid xs={12} container height="20%" style={{ textAlign: 'center' }} alignItems='center' justifyContent="center">
                                         <Grid xs={8} item height="35%" style={{ textAlign: 'center' }}>
                                             <Typography variant="body2" component="div" color='primary' textAlign='center' style={{ overflowWrap: 'break-word' }} display="inline">
                                                 Don't miss out<br /> Try agian for double bouns!
                                             </Typography>
                                         </Grid>
                                     </Grid>
-                                    <Grid xs={12} container height="65%" style={{ textAlign: 'center' }} alignItems='center' justifyContent="center">
+                                    <Grid xs={12} container height="40%" style={{ textAlign: 'center' }} alignItems='center' justifyContent="center">
                                         <Grid xs={8} item height="22%" style={{ textAlign: 'center' }}>
                                             <Typography variant="body1" component="div" color='white' textAlign='center' style={{ overflowWrap: 'break-word' }} display="inline">
                                                 <img src={PlayAgain} alt='' width="60%" />
@@ -83,7 +83,7 @@ export default class ChallengeMode extends Component {
                                         <Grid xs={12} container>
                                             <Grid xs={5.5} container height="22%" style={{ textAlign: 'center' }}>
                                                 <Typography variant="body2" component="div" color='white' textAlign='center' >
-                                                    <img src={FreeShare} alt='' width="75%" />
+                                                    <img src={FreeShare} alt='' width="95%" />
                                                 </Typography>
 
                                             </Grid>
