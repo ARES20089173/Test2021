@@ -213,7 +213,7 @@ export default class TournamentLobby extends Component {
                                 <CssBaseline />
                                 <AppBar position={this.state.isToggleOn ? 'fixed' : 'relative'} align='center' sx={{ top: 0, bottom: 'auto' }} >
                                     <Toolbar style={{ backgroundColor: '#242634' }} >
-                                    <Typography variant="h6" component="div" sx={{}}>
+                                        <Typography variant="h6" component="div" sx={{}}>
                                             <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}`}>
                                                 <img src={back} alt='' width="40%" style={{
                                                     position: 'relative',
@@ -441,6 +441,7 @@ export default class TournamentLobby extends Component {
                                 <Grid item xs={12} container
                                     justifyContent='center'
                                     direction="row"
+                                    height="5vh"
                                 >
                                     <Grid item xs={5.5} style={{ textAlign: 'center' }} style={{ backgroundImage: `url(${Bluebg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
 
@@ -451,7 +452,7 @@ export default class TournamentLobby extends Component {
                                             {BattleMode[this.props.match.params.entryid].MaxPrize}  <img src={Chasepuzzle} alt="gameicon" width="15%" />
                                         </Typography>
                                     </Grid>
-                                    <Grid item xs={5.5} style={{ textAlign: 'center' }} marginLeft="1vh" borderRadius="20%" style={{ backgroundImage: `url(${Pinkbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
+                                    <Grid item xs={5.5} style={{ textAlign: 'center' }} marginLeft="1vh"  style={{ backgroundImage: `url(${Pinkbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
 
                                         <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='white'>
                                             Max PayOut
@@ -471,14 +472,14 @@ export default class TournamentLobby extends Component {
 
                                     </Grid> */}
                                     </Grid>
-                                    <Grid item xs={5.5} style={{ textAlign: 'center' }} borderRadius="20%" paddingTop="0vh" >
+                                    <Grid item xs={5.5} style={{ textAlign: 'center' }} borderRadius="20%" paddingTop="3vh" >
                                         <Typography variant="h4" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='white'>
                                             {CurrentPlayer}/50
                                         </Typography>
                                     </Grid>
                                 </Grid>
-                                <Grid item xs={11} container style={{ textAlign: 'left', overflow: 'scroll', backgroundImage: `url(${Bigbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'cover' }} justifyContent="center" alignItems="center" height="39vh">
-                                    <Grid item xs={12} container style={{ marginTop: '3vh', textAlign: 'left', overflow: 'scroll',position: 'static',maxHeight:'55%' }} justifyContent="left" alignItems="center" height="39vh">
+                                <Grid item xs={11.5} container style={{ textAlign: 'left', overflow: 'scroll', backgroundImage: `url(${Bigbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'cover' }} justifyContent="center" alignItems="center" height="37vh">
+                                    <Grid item xs={12} container style={{ marginTop: '3vh', textAlign: 'left', overflow: 'scroll', position: 'static', maxHeight: '55%' }} justifyContent="left" alignItems="center" height="39vh">
 
                                         <Grid item xs={2.8} height="19vh" style={{ textAlign: 'center' }} ><Link to="#" style={{ textDecoration: 'none' }}><StyledBadge badgeContent={<img src={Badge1} alt='' width="20-%" />} color="secondary"><img src={HeadsvgData[1].Headsvg} alt="Headicon" width="85%" style={{ position: 'relative', left: 5 }} /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline" color='white' noWrap>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link></Grid>
                                         <Grid item xs={2.8} height="19vh" style={{ textAlign: 'center' }} ><Link to="#" style={{ textDecoration: 'none' }}><StyledBadge badgeContent={<img src={Badge2} alt='' width="20-%" />} color="secondary"><img src={HeadsvgData[2].Headsvg} alt="Headicon" width="85%" style={{ position: 'relative', left: 5 }} /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline" color='white' noWrap>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link></Grid>
@@ -516,14 +517,14 @@ export default class TournamentLobby extends Component {
                                     </Grid>
                                 </Grid>
                                 <Grid item xs={3} />
-                                <Grid item xs={4.5} height="10vh" style={{ position: 'relative', paddingTop: '1vh', left: '3.5vh', textAlign: 'center', backgroundImage: `url(${Greenbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }} >
+                                <Grid item xs={4.5} height="9vh" style={{ position: 'relative', paddingTop: '1vh', left: '3.5vh', textAlign: 'center', backgroundImage: `url(${Greenbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }} >
                                     <Link to="#" style={{ textDecoration: 'none' }}> <Typography variant="body2" color='white'> share to earn <br /> <Typography variant="body1">Free!</Typography></Typography></Link>
 
                                 </Grid>
-                                <Grid item xs={4.5} height="10vh" style={{ paddingTop: '1vh', textAlign: 'center', backgroundImage: `url(${HalfPinkbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }} >
+                                <Grid item xs={4.5} height="9vh" style={{ paddingTop: '0vh', textAlign: 'center', backgroundImage: `url(${HalfPinkbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }} >
 
-                                    <Typography variant="body2" color='white'>                <Link to="#" style={{ textDecoration: 'none', color: 'white' }}> entry fee<br />
-                                        <Typography variant="body1">{BattleMode[this.props.match.params.entryid].entryFee}<img src={puzzle} alt="icon" width="15%" />
+                                    <Typography variant="caption" color='white'>                <Link to="#" style={{ textDecoration: 'none', color: 'white' }}> entry fee<br />
+                                        <Typography variant="caption">{BattleMode[this.props.match.params.entryid].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" />
                                         </Typography>
 
                                     </Link>
@@ -556,9 +557,9 @@ export default class TournamentLobby extends Component {
                                                     <Grid xs={12} >
                                                         Game Content
                                                         <Link to={'/EndBattleMode'}> <button >
-                                                 Go to check end
-                                                </button>
-                                                </Link>
+                                                            Go to check end
+                                                        </button>
+                                                        </Link>
                                                     </Grid>
                                                 </div>
                                             )}
