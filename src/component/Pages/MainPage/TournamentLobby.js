@@ -350,7 +350,7 @@ export default class TournamentLobby extends Component {
                             )}
                         </Popup>
                     </Grid>
-                    <Grid item xs={12} marginTop="3vh">
+                    <Grid item xs={12} marginTop="0vh">
                     </Grid>
                     <Grid container
                         direction="row"
@@ -365,9 +365,9 @@ export default class TournamentLobby extends Component {
                                 position: 'absolute',
                                 right: 60,
                                 fontSize: 20,
-                                marginTop: 55
-                            }} color='white'>
-                                Entry fee:{oneVoneMode[0].entryFee}<img src={Rmoneyicon} alt="icon" />
+                                marginTop: 65
+                            }} variant="caption" color='white'>
+                                <b>Entry fee:{oneVoneMode[0].entryFee}<img src={Rmoneyicon} alt="icon" width="15%" style={{  position:'relative',top:4}}/></b>
                             </Typography>
 
                             <Button style={{
@@ -385,7 +385,7 @@ export default class TournamentLobby extends Component {
                                                     position: 'relative',
                                                     zIndex: 0,
                                                     left: "25%",
-                                                    bottom: 20
+                                                    bottom: 23
                                                 }} />
                                             </div>
                                         </div>
@@ -434,10 +434,10 @@ export default class TournamentLobby extends Component {
                                             position: 'absolute',
                                             right: 60,
                                             fontSize: 20,
-                                            marginTop: 55
+                                            marginTop: 65
                                         }} color='white'>
-                                            Entry fee:{oneVoneMode[0].entryFee}<img src={Rmoneyicon} alt="icon" />
-                                        </Typography>
+                                  <b>Entry fee:{oneVoneMode[0].entryFee}<img src={Rmoneyicon} alt="icon" width="15%" style={{  position:'relative',top:4}}/></b>
+                             </Typography>
 
                                         <Button style={{
                                             position: 'absolute',
@@ -453,7 +453,7 @@ export default class TournamentLobby extends Component {
                                                                 position: 'relative',
                                                                 zIndex: 0,
                                                                 left: "25%",
-                                                                bottom: 20
+                                                                bottom: 23
                                                             }} />
                                                         </div>
                                                     </div>
@@ -538,7 +538,7 @@ export default class TournamentLobby extends Component {
                         </Popup>
                     </Grid>
 
-                    <Grid item xs={12} marginTop="3vh">
+                    <Grid item xs={12} marginTop="0vh">
                     </Grid>
                     <Grid item container
                         direction="row"
@@ -555,9 +555,9 @@ export default class TournamentLobby extends Component {
                                 position: 'absolute',
                                 right: 60,
                                 fontSize: 20,
-                                marginTop: 80
+                                marginTop: 90
                             }} color='white'>
-                                Entry fee:{challengerMode[0].entryFee}<img src={Chasepuzzle} alt="icon" width="20%" />
+                               <b> Entry fee:{challengerMode[0].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" style={{  position:'relative',top:4}} /></b>
                             </Typography>
                             <Button style={{
                                 position: 'absolute',
@@ -572,7 +572,7 @@ export default class TournamentLobby extends Component {
                                                     position: 'relative',
                                                     zIndex: 0,
                                                     left: "25%",
-                                                    bottom: 20
+                                                    bottom: 23
                                                 }} />
                                             </div>
                                         </div>
@@ -618,9 +618,9 @@ export default class TournamentLobby extends Component {
                                             position: 'absolute',
                                             right: 60,
                                             fontSize: 20,
-                                            marginTop: 80
+                                            marginTop: 90
                                         }} color='white'>
-                                            Entry fee:{content.entryFee}<img src={Chasepuzzle} alt="icon" width="20%" />
+                                            <b>Entry fee:{content.entryFee}<img src={Chasepuzzle} alt="icon"  width="15%" style={{  position:'relative',top:4}} /></b>
                                         </Typography>
 
                                         <Button style={{
@@ -637,7 +637,7 @@ export default class TournamentLobby extends Component {
                                                                 position: 'relative',
                                                                 zIndex: 0,
                                                                 left: "25%",
-                                                                bottom: 20
+                                                                bottom: 23
                                                             }} />
                                                         </div>
                                                     </div>
@@ -722,7 +722,7 @@ export default class TournamentLobby extends Component {
                             )}
                         </Popup>
                     </Grid>
-                    <Grid item xs={12} marginTop="3vh">
+                    <Grid item xs={12} marginTop="0vh">
                     </Grid>
                     <Grid item container
                         direction="row"
@@ -752,9 +752,9 @@ export default class TournamentLobby extends Component {
                                 position: 'absolute',
                                 right: 60,
                                 fontSize: 20,
-                                marginTop: 80
+                                marginTop: 90
                             }} color='white'>
-                                Entry fee:{BattleMode[0].entryFee}<img src={Silverpuzzle} alt="icon" width="20%" />
+                              <b>  Entry fee:{BattleMode[0].entryFee}<img src={Silverpuzzle} alt="icon"  width="15%" style={{  position:'relative',top:4}}/></b>
                             </Typography>
 
                             <Button style={{
@@ -771,7 +771,7 @@ export default class TournamentLobby extends Component {
                                                     position: 'relative',
                                                     zIndex: 0,
                                                     left: "25%",
-                                                    bottom: 20
+                                                    bottom: 23
                                                 }} />
                                             </div>
                                         </div>
@@ -834,9 +834,9 @@ export default class TournamentLobby extends Component {
                                             position: 'absolute',
                                             right: 60,
                                             fontSize: 20,
-                                            marginTop: 80
+                                            marginTop: 90
                                         }} color='white'>
-                                            Entry fee:{content.entryFee}<img src={Silverpuzzle} alt="icon" width="20%" />
+                                           <b> Entry fee:{content.entryFee}<img src={Silverpuzzle} alt="icon"  width="15%" style={{  position:'relative',top:4}} /></b>
                                         </Typography>
                                         <Button style={{
                                             position: 'absolute',

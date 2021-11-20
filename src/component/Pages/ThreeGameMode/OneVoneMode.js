@@ -544,7 +544,7 @@ export default class OneVoneModeGo extends Component {
                             </div>
                         </Grid>
                         <Grid item xs={5} height="10vh" style={{ backgroundImage: `url(${Bgpink})`, backgroundSize: '100% 100%', backgroundAttachment: 'cover', textAlign: 'center' }} >
-                            <Typography variant="body1" color='white'> entry fee</Typography>
+                            <Typography variant="body1" color='white' paddingTop='0.5vh'> entry fee</Typography>
                             <Typography variant="h6" color='white'>{OneVoneMode[this.props.match.params.entryid].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" />
                                 <Popup
                                     trigger={

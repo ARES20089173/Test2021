@@ -1,11 +1,106 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="690.727" height="384.635" viewBox="0 0 690.727 384.635">
-  <g id="组_1283" data-name="组 1283" transform="translate(867.804 -376.927)">
-    <g id="组_1281" data-name="组 1281">
-      <path id="路径_2202" data-name="路径 2202" d="M-202.039,379.927H-867.8V736.341a25.25,25.25,0,0,0,25.222,25.221H-202.3a25.249,25.249,0,0,0,25.221-25.221V405.148a25.319,25.319,0,0,0-23.213-25.129l-.079-.078-1.67-.014Z" fill="#c8d1ff"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="690.7" height="424.2" viewBox="0 0 690.7 424.2">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="路径_1368" data-name="路径 1368" d="M684.1,77.1H22.3V429.5a21.211,21.211,0,0,0,21.2,21.2H683.8A21.211,21.211,0,0,0,705,429.5V98.3A21.147,21.147,0,0,0,684.1,77.1Z"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0.001" stop-color="#b9559b"/>
+      <stop offset="0.186" stop-color="#a8549c"/>
+      <stop offset="0.579" stop-color="#77529d"/>
+      <stop offset="1" stop-color="#2b4d9c"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="0" y1="0.5" x2="1" y2="0.5" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="box" transform="translate(-18.3 -33.5)">
+    <g id="组_621" data-name="组 621">
+      <path id="路径_1354" data-name="路径 1354" d="M684.1,76.1H18.3V432.5a25.223,25.223,0,0,0,25.2,25.2H683.8A25.223,25.223,0,0,0,709,432.5V101.3a25.262,25.262,0,0,0-23.2-25.1l-.1-.1Z" fill="#c9ceea"/>
     </g>
-    <path id="路径_2203" data-name="路径 2203" d="M-202.025,380.941l-.014-.014H-863.8V733.341a21.222,21.222,0,0,0,21.222,21.221H-202.3a21.221,21.221,0,0,0,21.221-21.221V402.148A21.212,21.212,0,0,0-202.025,380.941Z" fill="#1a1a1a"/>
-    <g id="组_1282" data-name="组 1282">
-      <path id="路径_2204" data-name="路径 2204" d="M-202.039,380.927l.014.014a21.212,21.212,0,0,1,20.948,21.207V733.341A21.221,21.221,0,0,1-202.3,754.562H-842.582A21.222,21.222,0,0,1-863.8,733.341V380.927h661.765m0-4H-867.8V733.341a25.25,25.25,0,0,0,25.222,25.221H-202.3a25.249,25.249,0,0,0,25.221-25.221V402.148a25.319,25.319,0,0,0-23.213-25.129l-.079-.078-1.67-.014Z" fill="#fff"/>
+    <path id="路径_1355" data-name="路径 1355" d="M368.7,33.5H42.3l-24,39.6H377.6V42.4A8.856,8.856,0,0,0,368.7,33.5Z" fill="#fff"/>
+    <g id="组_636" data-name="组 636">
+      <path id="路径_1356" data-name="路径 1356" d="M684.1,77.1H22.3V429.5a21.211,21.211,0,0,0,21.2,21.2H683.8A21.211,21.211,0,0,0,705,429.5V98.3A21.147,21.147,0,0,0,684.1,77.1Z" fill="#1a1a1a"/>
+      <g id="组_622" data-name="组 622">
+        <path id="路径_1357" data-name="路径 1357" d="M684.1,77.1h0a21.3,21.3,0,0,1,21,21.2V429.5a21.211,21.211,0,0,1-21.2,21.2H43.6a21.211,21.211,0,0,1-21.2-21.2V77.1H684.1m0-4H18.3V429.5a25.223,25.223,0,0,0,25.2,25.2H683.8A25.223,25.223,0,0,0,709,429.5V98.3a25.262,25.262,0,0,0-23.2-25.1l-.1-.1Z" fill="#fff"/>
+      </g>
+      <g id="组_635" data-name="组 635">
+        <g id="组_623" data-name="组 623" clip-path="url(#clip-path)">
+          <path id="路径_1358" data-name="路径 1358" d="M220.9,313.6,15.9,685.4a38.221,38.221,0,0,1-51.7,15h0a38.22,38.22,0,0,1-15-51.7l205-371.8a38.22,38.22,0,0,1,51.7-15h0A38.082,38.082,0,0,1,220.9,313.6Z" fill="#020203" opacity="0.3"/>
+          <path id="路径_1359" data-name="路径 1359" d="M812.2,670.9l-205,371.8a38.22,38.22,0,0,1-51.7,15h0a38.221,38.221,0,0,1-15-51.7l205-371.8a38.221,38.221,0,0,1,51.7-15h0A38.221,38.221,0,0,1,812.2,670.9Z" fill="#020203" opacity="0.3"/>
+          <path id="路径_1360" data-name="路径 1360" d="M107.8,71.5-10.4,285.9a30.63,30.63,0,0,1-41.4,12h0a30.63,30.63,0,0,1-12-41.4L54.5,42.1a30.63,30.63,0,0,1,41.4-12h0A30.6,30.6,0,0,1,107.8,71.5Z" fill="#020203" opacity="0.3"/>
+          <path id="路径_1361" data-name="路径 1361" d="M659.3,644.9,541.1,859.3a30.63,30.63,0,0,1-41.4,12h0a30.63,30.63,0,0,1-12-41.4L606,615.5a30.63,30.63,0,0,1,41.4-12h0A30.509,30.509,0,0,1,659.3,644.9Z" fill="#020203" opacity="0.3"/>
+          <path id="路径_1362" data-name="路径 1362" d="M261.3,646.1l-146.1,265a37.743,37.743,0,0,1-51.1,14.8h0a37.743,37.743,0,0,1-14.8-51.1l146.1-265A37.743,37.743,0,0,1,246.5,595h0A37.656,37.656,0,0,1,261.3,646.1Z" fill="#020203" opacity="0.3"/>
+          <path id="路径_1363" data-name="路径 1363" d="M486.2,332.1,368,546.5a30.63,30.63,0,0,1-41.4,12h0a30.63,30.63,0,0,1-12-41.4L432.8,302.7a30.63,30.63,0,0,1,41.4-12h0A30.455,30.455,0,0,1,486.2,332.1Z" fill="#020203" opacity="0.3"/>
+          <path id="路径_1364" data-name="路径 1364" d="M791.2-.8,672.9,213.6a30.63,30.63,0,0,1-41.4,12h0a30.63,30.63,0,0,1-12-41.4L737.8-30.2a30.63,30.63,0,0,1,41.4-12h0A30.63,30.63,0,0,1,791.2-.8Z" fill="#020203" opacity="0.3"/>
+          <path id="路径_1365" data-name="路径 1365" d="M473.4,53.9,370,241.4a26.847,26.847,0,0,1-36.2,10.5h0a26.847,26.847,0,0,1-10.5-36.2L426.8,28.2A26.847,26.847,0,0,1,463,17.7h0A26.725,26.725,0,0,1,473.4,53.9Z" fill="#020203" opacity="0.3"/>
+          <path id="路径_1366" data-name="路径 1366" d="M418.1,808.7,314.7,996.2a26.847,26.847,0,0,1-36.2,10.5h0A26.847,26.847,0,0,1,268,970.5L371.5,783a26.847,26.847,0,0,1,36.2-10.5h0A26.725,26.725,0,0,1,418.1,808.7Z" fill="#020203" opacity="0.3"/>
+          <path id="路径_1367" data-name="路径 1367" d="M689.6,343.7,586.2,531.2A26.847,26.847,0,0,1,550,541.7h0a26.847,26.847,0,0,1-10.5-36.2L642.9,318a26.847,26.847,0,0,1,36.2-10.5h0A26.759,26.759,0,0,1,689.6,343.7Z" fill="#020203" opacity="0.3"/>
+        </g>
+        <g id="组_624" data-name="组 624" clip-path="url(#clip-path)">
+          <text id="XXXXXXXXXX" transform="translate(332.204 483.908)" fill="#fff" font-size="17.13" font-family="Helvetica"><tspan x="0" y="0">XXXXXXXXXX</tspan></text>
+        </g>
+        <g id="组_634" data-name="组 634" clip-path="url(#clip-path)">
+          <g id="组_626" data-name="组 626">
+            <path id="路径_1370" data-name="路径 1370" d="M227.9,781.3l-9.1-19a3.74,3.74,0,0,0-3.3-1.9H52.2a3.74,3.74,0,0,0-3.3,1.9l-9.1,19a3.7,3.7,0,0,0,0,3.8l9.1,19a3.74,3.74,0,0,0,3.3,1.9H215.4a3.74,3.74,0,0,0,3.3-1.9l9.1-19A3.488,3.488,0,0,0,227.9,781.3Z" fill="#c9ceea"/>
+            <path id="路径_1371" data-name="路径 1371" d="M227.9,779l-9.1-19a3.74,3.74,0,0,0-3.3-1.9H52.2a3.74,3.74,0,0,0-3.3,1.9l-9.1,19a3.7,3.7,0,0,0,0,3.8l9.1,19a3.74,3.74,0,0,0,3.3,1.9H215.4a3.74,3.74,0,0,0,3.3-1.9l9.1-19A3.493,3.493,0,0,0,227.9,779Z" fill="url(#linear-gradient)"/>
+            <g id="组_625" data-name="组 625">
+              <path id="路径_1372" data-name="路径 1372" d="M215.4,761.1a.755.755,0,0,1,.7.4l9.1,18.8v.1l.1.1a1.1,1.1,0,0,1,0,.8l-.1.1v.1l-9.1,18.8a1.012,1.012,0,0,1-.7.4H52.2a.755.755,0,0,1-.7-.4l-9.1-18.8v-.1l-.1-.1a1.1,1.1,0,0,1,0-.8l.1-.1v-.1l9.1-18.8a1.012,1.012,0,0,1,.7-.4H215.4m0-3H52.2a3.74,3.74,0,0,0-3.3,1.9l-9.1,19a3.7,3.7,0,0,0,0,3.8l9.1,19a3.74,3.74,0,0,0,3.3,1.9H215.4a3.74,3.74,0,0,0,3.3-1.9l9.1-19a3.7,3.7,0,0,0,0-3.8l-9.1-19a3.74,3.74,0,0,0-3.3-1.9Z" fill="#fff"/>
+            </g>
+            <text id="MY_PUZZLE" data-name="MY PUZZLE" transform="translate(68.449 790.206)" fill="#fff" font-size="24" font-family="Helvetica"><tspan x="0" y="0">MY PUZZLE</tspan></text>
+            <g id="组">
+              <text id="_31" data-name="31" transform="translate(121.669 833.406)" fill="#fff" font-size="24" font-family="Helvetica"><tspan x="0" y="0">31</tspan></text>
+              <text id="_21" data-name="21" transform="translate(121.669 862.206)" fill="#fff" font-size="24" font-family="Helvetica"><tspan x="0" y="0">21</tspan></text>
+              <text id="_41" data-name="41" transform="translate(121.269 891.005)" fill="#fff" font-size="24" font-family="Helvetica"><tspan x="0" y="0">41</tspan></text>
+              <text id="_39" data-name="39" transform="translate(119.369 919.806)" fill="#fff" font-size="24" font-family="Helvetica"><tspan x="0" y="0">39</tspan></text>
+            </g>
+            <g id="组-2" data-name="组">
+              <text id="_90" data-name="90" transform="translate(328.111 833.406)" fill="#fff" font-size="24" font-family="Helvetica"><tspan x="0" y="0">90</tspan></text>
+              <text id="_60" data-name="60" transform="translate(328.211 862.206)" fill="#fff" font-size="24" font-family="Helvetica"><tspan x="0" y="0">60</tspan></text>
+              <text id="_130" data-name="130" transform="translate(323.311 891.005)" fill="#fff" font-size="24" font-family="Helvetica"><tspan x="0" y="0">130</tspan></text>
+              <text id="_120" data-name="120" transform="translate(323.311 919.806)" fill="#fff" font-size="24" font-family="Helvetica"><tspan x="0" y="0">120</tspan></text>
+            </g>
+          </g>
+          <g id="组_628" data-name="组 628">
+            <path id="路径_1373" data-name="路径 1373" d="M437.2,781.3l-9.1-19a3.74,3.74,0,0,0-3.3-1.9H261.5a3.74,3.74,0,0,0-3.3,1.9l-9.1,19a3.7,3.7,0,0,0,0,3.8l9.1,19a3.74,3.74,0,0,0,3.3,1.9H424.7a3.74,3.74,0,0,0,3.3-1.9l9.1-19A3.488,3.488,0,0,0,437.2,781.3Z" fill="#c9ceea"/>
+            <path id="路径_1374" data-name="路径 1374" d="M437.2,779l-9.1-19a3.74,3.74,0,0,0-3.3-1.9H261.5a3.74,3.74,0,0,0-3.3,1.9l-9.1,19a3.7,3.7,0,0,0,0,3.8l9.1,19a3.74,3.74,0,0,0,3.3,1.9H424.7a3.74,3.74,0,0,0,3.3-1.9l9.1-19A3.493,3.493,0,0,0,437.2,779Z" fill="url(#linear-gradient)"/>
+            <g id="组_627" data-name="组 627">
+              <path id="路径_1375" data-name="路径 1375" d="M424.7,761.1a.755.755,0,0,1,.7.4l9.1,18.8v.1l.1.1a1.1,1.1,0,0,1,0,.8l-.1.1v.1l-9.1,18.8a1.012,1.012,0,0,1-.7.4H261.5a.755.755,0,0,1-.7-.4l-9.1-18.8v-.1l-.1-.1a1.1,1.1,0,0,1,0-.8l.1-.1v-.1l9.1-18.8a1.012,1.012,0,0,1,.7-.4H424.7m0-3H261.5a3.74,3.74,0,0,0-3.3,1.9l-9.1,19a3.7,3.7,0,0,0,0,3.8l9.1,19a3.74,3.74,0,0,0,3.3,1.9H424.7a3.74,3.74,0,0,0,3.3-1.9l9.1-19a3.7,3.7,0,0,0,0-3.8L428,760a3.74,3.74,0,0,0-3.3-1.9Z" fill="#fff"/>
+            </g>
+            <text id="MY_SCOSE" data-name="MY SCOSE" transform="translate(284.732 790.206)" fill="#fff" font-size="24" font-family="Helvetica"><tspan x="0" y="0">MY SCOSE</tspan></text>
+          </g>
+          <g id="组_633" data-name="组 633">
+            <g id="组_630" data-name="组 630">
+              <path id="路径_1376" data-name="路径 1376" d="M227.9,781.3l-9.1-19a3.74,3.74,0,0,0-3.3-1.9H52.2a3.74,3.74,0,0,0-3.3,1.9l-9.1,19a3.7,3.7,0,0,0,0,3.8l9.1,19a3.74,3.74,0,0,0,3.3,1.9H215.4a3.74,3.74,0,0,0,3.3-1.9l9.1-19A3.488,3.488,0,0,0,227.9,781.3Z" fill="#c9ceea"/>
+              <path id="路径_1377" data-name="路径 1377" d="M227.9,779l-9.1-19a3.74,3.74,0,0,0-3.3-1.9H52.2a3.74,3.74,0,0,0-3.3,1.9l-9.1,19a3.7,3.7,0,0,0,0,3.8l9.1,19a3.74,3.74,0,0,0,3.3,1.9H215.4a3.74,3.74,0,0,0,3.3-1.9l9.1-19A3.493,3.493,0,0,0,227.9,779Z" fill="url(#linear-gradient)"/>
+              <g id="组_629" data-name="组 629">
+                <path id="路径_1378" data-name="路径 1378" d="M215.4,761.1a.755.755,0,0,1,.7.4l9.1,18.8v.1l.1.1a1.1,1.1,0,0,1,0,.8l-.1.1v.1l-9.1,18.8a1.012,1.012,0,0,1-.7.4H52.2a.755.755,0,0,1-.7-.4l-9.1-18.8v-.1l-.1-.1a1.1,1.1,0,0,1,0-.8l.1-.1v-.1l9.1-18.8a1.012,1.012,0,0,1,.7-.4H215.4m0-3H52.2a3.74,3.74,0,0,0-3.3,1.9l-9.1,19a3.7,3.7,0,0,0,0,3.8l9.1,19a3.74,3.74,0,0,0,3.3,1.9H215.4a3.74,3.74,0,0,0,3.3-1.9l9.1-19a3.7,3.7,0,0,0,0-3.8l-9.1-19a3.74,3.74,0,0,0-3.3-1.9Z" fill="#fff"/>
+              </g>
+              <text id="MY_PUZZLE-2" data-name="MY PUZZLE" transform="translate(68.449 790.206)" fill="#fff" font-size="24" font-family="Helvetica"><tspan x="0" y="0">MY PUZZLE</tspan></text>
+              <g id="组-3" data-name="组">
+                <text id="_31-2" data-name="31" transform="translate(121.669 833.406)" fill="#fff" font-size="24" font-family="Helvetica"><tspan x="0" y="0">31</tspan></text>
+                <text id="_21-2" data-name="21" transform="translate(121.669 862.206)" fill="#fff" font-size="24" font-family="Helvetica"><tspan x="0" y="0">21</tspan></text>
+                <text id="_41-2" data-name="41" transform="translate(121.269 891.005)" fill="#fff" font-size="24" font-family="Helvetica"><tspan x="0" y="0">41</tspan></text>
+                <text id="_39-2" data-name="39" transform="translate(119.369 919.806)" fill="#fff" font-size="24" font-family="Helvetica"><tspan x="0" y="0">39</tspan></text>
+              </g>
+              <g id="组-4" data-name="组">
+                <text id="_6" data-name="6" transform="translate(545.078 833.406)" fill="#fff" font-size="24" font-family="Helvetica"><tspan x="0" y="0">6</tspan></text>
+                <text id="_10" data-name="10" transform="translate(539.678 862.206)" fill="#fff" font-size="24" font-family="Helvetica"><tspan x="0" y="0">10</tspan></text>
+                <text id="_2" data-name="2" transform="translate(545.378 891.005)" fill="#fff" font-size="24" font-family="Helvetica"><tspan x="0" y="0">2</tspan></text>
+                <text id="_3" data-name="3" transform="translate(545.378 919.806)" fill="#fff" font-size="24" font-family="Helvetica"><tspan x="0" y="0">3</tspan></text>
+              </g>
+            </g>
+            <g id="组_632" data-name="组 632">
+              <path id="路径_1379" data-name="路径 1379" d="M646.5,781.3l-9.1-19a3.74,3.74,0,0,0-3.3-1.9H470.8a3.74,3.74,0,0,0-3.3,1.9l-9.1,19a3.7,3.7,0,0,0,0,3.8l9.1,19a3.74,3.74,0,0,0,3.3,1.9H634a3.74,3.74,0,0,0,3.3-1.9l9.1-19A3.943,3.943,0,0,0,646.5,781.3Z" fill="#c9ceea"/>
+              <path id="路径_1380" data-name="路径 1380" d="M646.5,779l-9.1-19a3.74,3.74,0,0,0-3.3-1.9H470.8a3.74,3.74,0,0,0-3.3,1.9l-9.1,19a3.7,3.7,0,0,0,0,3.8l9.1,19a3.74,3.74,0,0,0,3.3,1.9H634a3.74,3.74,0,0,0,3.3-1.9l9.1-19A3.95,3.95,0,0,0,646.5,779Z" fill="url(#linear-gradient-4)"/>
+              <g id="组_631" data-name="组 631">
+                <path id="路径_1381" data-name="路径 1381" d="M634,761.1a.755.755,0,0,1,.7.4l9.1,18.8v.1l.1.1a1.1,1.1,0,0,1,0,.8l-.1.1v.1l-9.1,18.8a1.012,1.012,0,0,1-.7.4H470.8a.755.755,0,0,1-.7-.4L461,781.5v-.1l-.1-.1a1.1,1.1,0,0,1,0-.8l.1-.1v-.1l9.1-18.8a1.012,1.012,0,0,1,.7-.4H634m0-3H470.8a3.74,3.74,0,0,0-3.3,1.9l-9.1,19a3.7,3.7,0,0,0,0,3.8l9.1,19a3.74,3.74,0,0,0,3.3,1.9H634a3.74,3.74,0,0,0,3.3-1.9l9.1-19a3.7,3.7,0,0,0,0-3.8l-9.1-19a3.74,3.74,0,0,0-3.3-1.9Z" fill="#fff"/>
+              </g>
+              <text id="MY_RACKING" data-name="MY RACKING" transform="translate(480.279 790.206)" fill="#fff" font-size="24" font-family="Helvetica"><tspan x="0" y="0">MY RACKING</tspan></text>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="组_637" data-name="组 637">
+      <text id="Current_Puzzle_Chase_Ranking" data-name="Current Puzzle Chase Ranking" transform="translate(45.326 63.938)" fill="#020203" font-size="23.5" font-family="Helvetica"><tspan x="0" y="0">Current Puzzle Chase Ranking</tspan></text>
     </g>
   </g>
 </svg>
