@@ -49,6 +49,7 @@ const contentStyle = {
     marginTop: '20%',
     background: '#242634',
     width: "90%",
+    border:'none',
     height: "62%",
     borderRadius: "5%",
 };
@@ -87,9 +88,7 @@ export default function BottomAppBar() {
                                                     {close => (
                                                         <div className="modal">
                                                             <button className="close" onClick={close}>
-                                                                <div className="close" >
-                                                                    &times;
-                                                                </div>
+                                                              
                                                             </button>
                                                             <SwieprConent />
                                                         </div>
@@ -110,9 +109,7 @@ export default function BottomAppBar() {
                                                     {close => (
                                                         <div className="modal">
                                                             <button className="close" onClick={close}>
-                                                                <div className="close" >
-                                                                    &times;
-                                                                </div>
+                                                              
                                                             </button>
                                                             <div>
                                                                 <SwieprConent />

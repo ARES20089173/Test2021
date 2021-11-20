@@ -28,8 +28,8 @@ import { Typography } from '@mui/material';
 //   left: "0%",
 
 <link
-   rel="preconnect" href="https://fonts.gstatic.com"
-   href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&display=swap" rel="stylesheet"
+  rel="preconnect" href="https://fonts.gstatic.com"
+  href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&display=swap" rel="stylesheet"
 />
 // });
 export default class MultigameChoose extends Component {
@@ -58,32 +58,30 @@ export default class MultigameChoose extends Component {
         <Grid
           container
           direction="row"
-          style={{ backgroundImage: `url(${backgroundEnd})`,backgroundSize: '100% ',backgroundAttachment:'fixed'}}
+          style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: '100% ', backgroundAttachment: 'fixed' }}
         >
           <Grid item xs={12} >
-            {/* <Link to='/'>
-              <StyledFab2 size="small" color="secondary" aria-label="add">
-                <ArrowBackIcon />
-              </StyledFab2>
-            </Link> */}
             <NavigationBar />
           </Grid>
 
-          <Grid container item xs={12}    justifyContent='center'style={{ paddingTop:'2vh' ,backgroundAttachment:'fixed' }} >
+          <Grid container item xs={12} justifyContent='center' style={{ paddingTop: '2vh', backgroundAttachment: 'fixed' }} >
             {data.map((pic) => (
               <Grid item xs={3.9} style={{ height: "23vh" }} key={pic.id} alignItems="center">
                 <Link to={`multigameChooser/tournamentLobby/${pic.id}`}>
                   <div style={{ textAlign: 'center' }}><img src={pic.src} alt="img" width="80%" />
                   </div>
                 </Link>
-                <Typography variant="body2" noWrap style={{ textAlign: 'center',fontFamily:'Hanalei Fill' } }color='white' >{pic.name} <br/> <Typography noWrap variant="caption" align='center' style={{ textAlign: 'center' }}color='white'>{pic.number} PLAYING NOW</Typography>
-             </Typography>
-               </Grid>
-               
+                <Typography variant="body2" noWrap style={{ textAlign: 'center', fontFamily: 'Hanalei Fill' }} color='white' >{pic.name} <br /> <Typography noWrap variant="caption" align='center' style={{ textAlign: 'center' }} color='white'>{pic.number} PLAYING NOW</Typography>
+                </Typography>
+              </Grid>
+
             ))}
-            <Grid item xs={12} style={{ marginTop: "9vh" }}>
+            <Grid item xs={12} >
               <EndBar />
             </Grid>
+
+            <Grid item xs={12} style={{ height: "14vh" }} />
+
           </Grid>
         </Grid>
       </Box>

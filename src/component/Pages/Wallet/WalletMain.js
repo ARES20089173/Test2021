@@ -134,9 +134,7 @@ export default function MainPage() {
                                         {close => (
                                             <div className="modal2">
                                                 <button className="close" onClick={close}>
-                                                    <div className="close" >
-                                                        &times;
-                                                    </div>
+                                                 
                                                 </button>
                                                 <Grid xs={12} marginTop="0vh" height="100%" container justifyContent="center"     alignItems="center">
                                                     <Typography variant="h6" component="div" color='primary' textAlign='center' >
@@ -170,9 +168,7 @@ export default function MainPage() {
                                         {close => (
                                             <div className="modal2">
                                                 <button className="close" onClick={close}>
-                                                    <div className="close" >
-                                                        &times;
-                                                    </div>
+                                                   
                                                 </button>
                                                 <Grid xs={12} marginTop="7vh">
                                                     <Typography variant="h5" component="div" color='primary' textAlign='center' >
@@ -241,9 +237,7 @@ export default function MainPage() {
                             {close => (
                                 <div className="modal">
                                     <button className="close" onClick={close}>
-                                        <div className="close" >
-                                            &times;
-                                        </div>
+                                      
                                     </button>
                                     <Grid xs={12}>
                                         <Typography variant="body2" component="div" color='primary' textAlign='center'>

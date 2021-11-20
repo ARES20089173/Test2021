@@ -1,9 +1,13 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import Typography from '@mui/material/Typography';
+import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
+import Grid from '@mui/material/Grid'
 import PowerbyR from '../../svgicon/PowerBy/PowerByR.svg'
 
+import Ricon from '../../svgicon/Componenticon/Ricon.svg'
 import Twopuzzle from '../../svgicon/EndBaricon/Twopuzzle.svg'
-import Grid from '@mui/material/Grid'
+import PuzzleChase from '../../svgicon/EndBaricon/PuzzleChase.svg'
+import ContinueButton from '../../svgicon/EndBaricon/ContinueButton.svg'
 import * as React from 'react';
 // Import Swiper styles
 import 'swiper/swiper-bundle.min.css'
@@ -20,19 +24,23 @@ const price = [
     { id: 0, chasepuzzle: 0.15 },
     { id: 1, silverpuzzle: 2.00 }
 ]
-export default function SwieprConentsmall() {
+export default function SwieprConent() {
     return (
         <>
             <Swiper pagination={true} className="mySwiper">
                 <SwiperSlide>
-                <Grid xs={12} container justifyContent='center' alignItems='center'>
-                        <Typography variant="body1" component="div" color='white' textAlign='center'>
-                            REES | Puzzle
-                            Chase
-                            <br />
+                    <Grid xs={12} container justifyContent='center' alignItems='center'>
+
+                        <img src={Ricon} alt="inviteimage" style={{ width: '15%', marginLeft: '-0%', paddingTop: '1.5%' }} />
+                        <Typography variant="h4" color='white'>
+                            |
+                        </Typography>
+                        <img src={PuzzleChase} alt="inviteimage" style={{ width: '15%', marginLeft: '1.5%' }} />
+                        <Typography variant="body1" component="div" color='white' textAlign='center' >
+
                             <img src={Twopuzzle} alt="inviteimage" style={{ width: '30%', marginLeft: '35%' }} />
                         </Typography>
-                        <Grid item xs={12} height="42vh">
+                        <Grid item xs={12} >
 
                             <Typography variant="body1" component="div" color='white' textAlign='center' >
                                 Before you purchase
@@ -57,13 +65,17 @@ export default function SwieprConentsmall() {
                 </SwiperSlide>
                 <SwiperSlide>
                     <Grid xs={12} container justifyContent='center' alignItems='center'>
+                        <img src={Ricon} alt="inviteimage" style={{ width: '15%', marginLeft: '-0%', paddingTop: '2%' }} />
+                        <Typography variant="h4" color='white'>
+                            |
+                        </Typography>
+                        <img src={PuzzleChase} alt="inviteimage" style={{ width: '15%', marginLeft: '1.5%' }} />
+
                         <Typography variant="body1" component="div" color='white' textAlign='center'>
-                            REES | Puzzle
-                            Chase
-                            <br />
+
                             <img src={Twopuzzle} alt="inviteimage" style={{ width: '30%', marginLeft: '35%' }} />
                         </Typography>
-                        <Grid item xs={12} height="42vh">
+                        <Grid item xs={12} >
                             <Typography variant="body1" component="div" color='white' textAlign='center' >
                                 How to get REES Puzzles?
                             </Typography>
@@ -89,13 +101,16 @@ export default function SwieprConentsmall() {
 
                 <SwiperSlide>
                     <Grid xs={12} container justifyContent='center' alignItems='center'>
+                    <img src={Ricon} alt="inviteimage" style={{ width: '15%', marginLeft: '-0%', paddingTop: '2%' }} />
+                        <Typography variant="h4" color='white'>
+                            |
+                        </Typography>
+                        <img src={PuzzleChase} alt="inviteimage" style={{ width: '15%', marginLeft: '1.5%' }} />
                         <Typography variant="body1" component="div" color='white' textAlign='center'>
-                            REES | Puzzle
-                            Chase
-                            <br />
+                            
                             <img src={Twopuzzle} alt="inviteimage" style={{ width: '30%', marginLeft: '35%' }} />
                         </Typography>
-                        <Grid item xs={12} height="42vh">
+                        <Grid item xs={12} >
                             <Typography variant="body1" component="div" color='white' textAlign='center' >
                                 How much do I need?
                             </Typography>
@@ -108,12 +123,14 @@ export default function SwieprConentsmall() {
                                 The best way to estimate puzzles
                                 is to try the transaction first and
                                 see how much your shopping cart cost
-                                <br />    
-                                 <Typography color='white'>Img Link for jump to puzzle purchase:<br /></Typography>
-                       
+                                <br />
+                                <Typography color='white'>    <img src={ContinueButton} alt='' /></Typography>
+
                                 <img src={PowerbyR} alt='' />
                             </Typography>
-                            </Grid>
+
+                        </Grid>
+
                     </Grid>
                 </SwiperSlide>
             </Swiper>

@@ -26,6 +26,7 @@ const contentStyle = {
     marginTop: '20%',
     background: '#242634',
     width: "90%",
+    border:'none',
     height: "62%",
     borderRadius: "5%",
 };
@@ -85,9 +86,7 @@ export default function BottomAppBar() {
                                                     {close => (
                                                         <div className="modal">
                                                             <button className="close" onClick={close}>
-                                                                <div className="close" >
-                                                                    &times;
-                                                                </div>
+                                                              
                                                             </button>
                                                             <SwieprConent />
                                                         </div>
@@ -98,7 +97,8 @@ export default function BottomAppBar() {
                                         </Grid>
                                         <Grid xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
                                             <div style={{ backgroundImage: `url(${Endbarbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
-                                                <Popup
+                                            <Grid  container justifyContent='center' alignItems='center' className="button" style={{ color: "white" }}>  <img src={SilverPuzzle} className="App-logo" alt="logo" width="20%"style={{position:'relative',float:'left'}}  /><Typography style={{float:'right'}}>{Amout[0].Chasepuzzle}k<img src={addicon} style={{ width: 20,marginLeft:2}} /></Typography></Grid>
+                                             {/* <Popup
                                                     trigger={<Grid  container justifyContent='center' alignItems='center' className="button" style={{ color: "white" }}>  <img src={SilverPuzzle} className="App-logo" alt="logo" width="20%"style={{position:'relative',float:'left'}}  /><Typography style={{float:'right'}}>{Amout[0].Chasepuzzle}k<img src={addicon} style={{ width: 20,marginLeft:2}} /></Typography></Grid>}
                                                     modal
                                                     lockScroll
@@ -108,9 +108,7 @@ export default function BottomAppBar() {
                                                     {close => (
                                                         <div className="modal">
                                                             <button className="close" onClick={close}>
-                                                                <div className="close" >
-                                                                    &times;
-                                                                </div>
+                                                              
                                                             </button>
                                                             <div>
                                                                 <SwieprConent />
@@ -118,7 +116,7 @@ export default function BottomAppBar() {
                                                         </div>
 
                                                     )}
-                                                </Popup>
+                                                </Popup> */}
                                             </div>
                                         </Grid>
                                         <Grid xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>

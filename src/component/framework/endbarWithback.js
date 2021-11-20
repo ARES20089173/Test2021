@@ -35,6 +35,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 }));
 const contentStyle = {
     marginTop: '43%',
+    border:'none',
     background: '#242634',
     width: "90%",
     height: "62%",
@@ -76,9 +77,7 @@ export default function BottomAppBar() {
                                                     {close => (
                                                         <div className="modal">
                                                             <button className="close" onClick={close}>
-                                                                <div className="close" >
-                                                                    &times;
-                                                                </div>
+                                                             
                                                             </button>
                                                             <SwieprConent />
                                                         </div>
@@ -99,9 +98,7 @@ export default function BottomAppBar() {
                                                     {close => (
                                                         <div className="modal">
                                                             <button className="close" onClick={close}>
-                                                                <div className="close" >
-                                                                    &times;
-                                                                </div>
+                                                               
                                                             </button>
                                                             <div>
                                                                 <SwieprConent />

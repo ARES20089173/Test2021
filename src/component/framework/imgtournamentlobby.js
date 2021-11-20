@@ -41,9 +41,7 @@ export default function ImgTournamentLobby() {
              {close => (
                  <div className="modal">
                      <button className="close" onClick={close}>
-                         <div className="close" >
-                             &times;
-                         </div>
+                         
                      </button>
                      <Grid xs={12} >
                          Game Content

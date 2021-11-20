@@ -2,38 +2,56 @@ import React, { Component } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles'
-import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
 import backgroundEnd from "../../../reed_bg.svg"
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import Forward from '../../../svgicon/Componenticon/Forward.svg'
 import EndBar from '../../framework/endbarWithback';
 import 'reactjs-popup/dist/index.css';
 import { Link } from 'react-router-dom';
 import "../../framework/css/cssModFLooby.css"
 import Popup from 'reactjs-popup';
-import pic1 from '../../framework/img/300x100.jpeg'
 import IconButton from '@mui/material/IconButton';
+import PoweredByR from '../../../svgicon/PowerBy/PowerByR.svg'
 import Headicon from '../../../face_1.svg'
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import MenuIcon from '@mui/icons-material/Menu';
 import CssBaseline from '@mui/material/CssBaseline';
+import back from '../../../svgicon/Componenticon/Back.svg'
 import AppBar from '@mui/material/AppBar';
 import puzzle from "../../../puzzle.svg"
-import SportsEsportsIcon from '@mui/icons-material/SportsEsports'
-import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import Badge from '@mui/material/Badge'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import Fab from '@mui/material/Fab';
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import coderedeem from '../../../coderedeem.svg'
 import TextField from '@mui/material/TextField';
 import Logout from '../../../logout.svg'
-import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import Hamburgicon from "../../../svgicon/Componenticon/Hamburgicon.svg";
-
+import Chasepuzzle from "../../../svgicon/Componenticon/Chasepuzzle.svg"
+import Bigbg from "../../../svgicon/BattleMode/Bigbg.svg"
+import Bluebg from "../../../svgicon/BattleMode/BlueBg.svg"
+import Greenbg from "../../../svgicon/BattleMode/GreenBg.svg"
+import HalfPinkbg from "../../../svgicon/BattleMode/HalfPinkBg.svg"
+import MyPuzzle from "../../../svgicon/BattleMode/MyPuzzle.svg"
+import MyRank from "../../../svgicon/BattleMode/MyRank.svg"
+import MyScore from "../../../svgicon/BattleMode/MyScore.svg"
+import Pinkbg from "../../../svgicon/BattleMode/PinkBg.svg"
+import share from "../../../svgicon/BattleMode/Share.svg"
+import CPCR from "../../../svgicon/BattleMode/CPCR.svg"
+import GameTutorial from "../../../svgicon/BattleMode/GameTutorial.svg"
+import Download from "../../../svgicon/BattleMode/Download.svg"
+import Badge1 from "../../../svgicon/BattleMode/1Badge.svg"
+import Badge2 from "../../../svgicon/BattleMode/2Badge.svg"
+import Badge3 from "../../../svgicon/BattleMode/3Badge.svg"
+import Badge4 from "../../../svgicon/BattleMode/4Badge.svg"
+import Badge5 from "../../../svgicon/BattleMode/5Badge.svg"
+import Badge6 from "../../../svgicon/BattleMode/6Badge.svg"
+import Badge7 from "../../../svgicon/BattleMode/7Badge.svg"
+import Badge8 from "../../../svgicon/BattleMode/8Badge.svg"
+import Badge9 from "../../../svgicon/BattleMode/9Badge.svg"
+import Badge10 from "../../../svgicon/BattleMode/10Badge.svg"
+import Close from '../../../svgicon/Componenticon/Close.svg'
 import Gicon1 from '../../../svgicon/GameIcon/Gicon1.svg'
 import Gicon2 from '../../../svgicon/GameIcon/Gicon2.svg'
 import Gicon3 from '../../../svgicon/GameIcon/Gicon3.svg'
@@ -51,70 +69,54 @@ import Gicon14 from '../../../svgicon/GameIcon/Gicon14.svg'
 import Gicon15 from '../../../svgicon/GameIcon/Gicon15.svg'
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
-        right: 18,
-        top: 10,
-        border: `2px solid ${theme.palette.background.paper}`,
+        right: 9,
+        top: 15,
+        backgroundImage: `url(${Badge1})`, backgroundSize: '120% 120%', backgroundAttachment: 'initial',
         padding: '0 1px',
+        backgroundColor: 'none'
     },
 }));
-const StyledFab2 = styled(Fab)({
-    position: 'relative',
-    zIndex: 1,
-    left: "32%",
-    bottom: "5vh"
-
-});
 const contentStyle = {
-    background: '#cfcece',
-    width: "100%",
-    height: "95%",
+    background: '#242623',
+    width: "98%",
+    height: "90%",
     borderRadius: "5%",
 };
 
 const userdata = [
-    { id: 0, level: 'Lv1', ReesID: 1,nickname:'Jay' },
-  ]
+    { id: 0, level: 'Lv1', ReesID: 1, nickname: 'Jay' },
+]
 
 const Toplinkdata = [
     { id: 0, linkName: "PROFILE", link: `/${userdata[0].ReesID}/Profile` },
     { id: 1, linkName: "SETTING", link: `/${userdata[0].ReesID}/Setting` },
     { id: 2, linkName: "EVENTS", link: "/Events" },
     { id: 3, linkName: "BUY PUZZLES", link: "/" }
-    // { id: 5, linkName:"PROFILE"},
-    // { id: 6, linkName:"PROFILE"},
-    // { id: 7, linkName:"PROFILE"},
-    // { id: 8, linkName:"PROFILE"},
-  ]
-  const Bottomlinkdata = [
+]
+const Bottomlinkdata = [
     { id: 0, linkName: "About REES", link: "/" },
     { id: 1, linkName: "FAQ", link: "/" },
     { id: 2, linkName: "PRESS", link: "/" },
     { id: 3, linkName: "LOGOUT", link: "/" },
-  ]
+]
 export default class TournamentLobby extends Component {
     constructor(props) {
         super(props);
-        this.state = { isToggleOn: true ,isOpen: false };
+        this.state = { isToggleOn: true, isOpen: false };
         this.Mode = 1;
 
-        this.openhandleClick = this.openhandleClick.bind(this);
-        }
-
-        openhandleClick() {
-            this.setState(prevState => ({
-                isOpen: !prevState.isOpen
-            }));
-        // This binding is necessary to make `this` work in the callback
         this.handleClick = this.handleClick.bind(this);
         this.openhandleClick = this.openhandleClick.bind(this);
-        //     this.oneVoneModehandleClick = this.oneVoneModehandleClick.bind(this);
-        //     this.challengerModehandleClick = this.challengerModehandleClick.bind(this);
-        //     this.BattleModehandleClick = this.BattleModehandleClick.bind(this);
     }
+
     openhandleClick() {
         this.setState(prevState => ({
             isOpen: !prevState.isOpen
         }));
+        // This binding is necessary to make `this` work in the callback
+        //     this.oneVoneModehandleClick = this.oneVoneModehandleClick.bind(this);
+        //     this.challengerModehandleClick = this.challengerModehandleClick.bind(this);
+        //     this.BattleModehandleClick = this.BattleModehandleClick.bind(this);
     }
     handleClick() {
         this.setState(prevState => ({
@@ -147,21 +149,21 @@ export default class TournamentLobby extends Component {
             { id: 2, Modechoose: "BattleMode", embedId: "dWOm9KXJQLo", detail: "Battle MODE is ......." },
         ]
         const data = [
-            { id: 0, src: Gicon1, name: "Onmyoji Arena", number: 52 ,entryFee: 88, GameRules: "2048是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 1, src: Gicon2, name: "TOM & JERRY: CHASE", number: 56 , entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力"},
-            { id: 2, src: Gicon3, name: "Super Mecha Champions", number: 55 , entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力"},
-            { id: 3, src: Gicon4, name: "Side Force Don't Fall", number: 53 , entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力"},
-            { id: 4, src: Gicon5, name: "Seven Squids", number: 54 , entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力"},
-            { id: 5, src: Gicon6, name: "Punch Box", number: 51 , entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力"},
-            { id: 6, src: Gicon7, name: "Iron Space", number: 52 , entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力"},
-            { id: 7, src: Gicon8, name: "Candy Robber", number: 58 , entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力"},
+            { id: 0, src: Gicon1, name: "Onmyoji Arena", number: 52, entryFee: 88, GameRules: "2048是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 1, src: Gicon2, name: "TOM & JERRY: CHASE", number: 56, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 2, src: Gicon3, name: "Super Mecha Champions", number: 55, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 3, src: Gicon4, name: "Side Force Don't Fall", number: 53, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 4, src: Gicon5, name: "Seven Squids", number: 54, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 5, src: Gicon6, name: "Punch Box", number: 51, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 6, src: Gicon7, name: "Iron Space", number: 52, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 7, src: Gicon8, name: "Candy Robber", number: 58, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
             { id: 8, src: Gicon9, name: "Fruit Matching", number: 88, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
             { id: 9, src: Gicon10, name: "Falling Cubes", number: 25, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
             { id: 10, src: Gicon11, name: "Box Tower ", number: 95, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
             { id: 11, src: Gicon12, name: "Jumper Frog", number: 85, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
             { id: 12, src: Gicon13, name: "2048", number: 75, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 13, src: Gicon14, name: "HEXTRIS", number: 65 , entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力"},
-            { id: 14, src: Gicon15, name: "FISHING FRENZY", number: 55 , entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力"},
+            { id: 13, src: Gicon14, name: "HEXTRIS", number: 65, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 14, src: Gicon15, name: "FISHING FRENZY", number: 55, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
         ]
         const BattleMode = [
             { id: 0, MaxPayOut: 88, MaxPrize: 3500, entryFee: 88 },
@@ -190,116 +192,132 @@ export default class TournamentLobby extends Component {
 
         const TableData = TabledData.map((Tdata) => {
             return < Grid item xs={12} container height="5vh" textAlign="center" >
-                <Grid item xs={4} height="5vh" >
+                <Grid item xs={4} height="5vh" color='white'>
                     {Tdata.MyPuzzle}
                 </Grid>
-                <Grid item xs={4} height="5vh">
+                <Grid item xs={4} height="5vh" color='white'>
                     {Tdata.MyScore}
                 </Grid>
-                <Grid item xs={4} height="5vh">
+                <Grid item xs={4} height="5vh" color='white'>
                     {Tdata.MyRacking}
                 </Grid>
             </Grid >
         });
 
         return (
-            <Box sx={{ flexGrow: 1 }}>
-                <Grid container height="100vh" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: 'auto auto', backgroundAttachment: 'fixed' }}>
+            <Box sx={{ flexGrow: 1 }} >
+                <Grid container height="100%" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: 'auto auto', backgroundAttachment: 'fixed' }}>
                     <Grid xs={12}  >
                         <React.Fragment>
-                            <Box sx={{ flexGrow: 1, }}>
+                            <Box sx={{ flexGrow: 1, }} height="0vh">
                                 <CssBaseline />
-                                <AppBar position='relative' align='center' sx={{ top: 0, bottom: 'auto' }}>
-                                    <Toolbar variant="dense">
-                                        <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
-                                            BATTLE MODE
+                                <AppBar position={this.state.isToggleOn ? 'fixed' : 'relative'} align='center' sx={{ top: 0, bottom: 'auto' }} >
+                                    <Toolbar style={{ backgroundColor: '#242634' }} >
+                                    <Typography variant="h6" component="div" sx={{}}>
+                                            <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}`}>
+                                                <img src={back} alt='' width="40%" style={{
+                                                    position: 'relative',
+                                                    zIndex: 3,
+                                                    top: 5,
+                                                    left: "-35%",
+                                                }} />
+                                            </Link>
+                                        </Typography>
+                                        <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} style={{
+                                            position: 'relative',
+                                            zIndex: 3,
+                                            left: "-13%",
+                                        }}>    BATTLE MODE
                                         </Typography>
                                         <IconButton
                                             size="large"
                                             edge="start"
                                             color="inherit"
                                             aria-label="menu"
-                                            sx={{}}
+
                                             onClick={this.openhandleClick}
                                         >
-                                            <MenuIcon />
+                                            <img src={Hamburgicon} alt="" width="110%" style={{
+                                                position: 'absolute',
+
+                                                left: 0,
+                                                margin: '0 60%',
+                                            }} />
                                         </IconButton>
-                                         {/* drawer */}
-                                         <Drawer
-                                        anchor={"right"}
-                                        open={this.state.isOpen}
-                                        onClose={this.openhandleClick}
-                                    >
-                                        <Box
-                                            sx={{ width: 280, height: "100%", backgroundColor: "#707070" }}
-                                            role="presentation"
+                                        {/* drawer */}
+                                        <Drawer
+                                            anchor={"right"}
+                                            open={this.state.isOpen}
+                                            onClose={this.openhandleClick}
                                         >
-                                            <List sx={{height: "50%"}}>
+                                            <Box
+                                                sx={{ width: 280, height: "100%", backgroundColor: "#242634" }}
+                                                role="presentation"
+                                            >
+                                                <List sx={{ height: "50%" }}>
 
-                                                <IconButton
-                                                    size="small"
-                                                    edge="start"
-                                                    color="inherit"
-                                                    aria-label="menu"
-                                                    onClick={this.openhandleClick}
-                                                    sx={{ left: "80%", bottom: 0 }}
-                                                >
-                                                    <img src={Hamburgicon} alt="" width="80%" />
-                                                </IconButton>
-                                                <ListItemText style={{ textAlign: "center" }}  >Play to Earn PUZZLES<img src={puzzle} /></ListItemText>
+                                                    <IconButton
+                                                        size="large"
+                                                        edge="start"
+                                                        color="inherit"
+                                                        aria-label="menu"
+                                                        onClick={this.openhandleClick}
+                                                        sx={{ left: "50%", bottom: 5 }}
+                                                    >
+                                                        <img src={Close} alt='hamburgericon' width='40%' style={{ position: 'relative', left: 60 }} />
+                                                    </IconButton>
+                                                    <ListItemText style={{ textAlign: "center" }}  ><Grid container justifyContent='center' alignItems="center"><Typography color='white'>Play to Earn PUZZLES</Typography><img src={Chasepuzzle} /></Grid></ListItemText>
 
-                                                {Toplinkdata.map((text, index) => (
-                                                    <Link to={text.link} style={{ textDecoration: 'none', color: 'black' }}>
-                                                        <ListItem button key={text.id}>
-                                                            <ListItemText >
-                                                                {text.linkName}
-                                                            </ListItemText>
-                                                            <KeyboardArrowRightIcon />
-                                                        </ListItem>
-                                                    </Link>
-                                                ))}
-                                                <ListItem >
-                                                    <ListItemText style={{ fontSize: '0.7em' }}>
-                                                        <Box sx={{ display: 'flex', alignItems: 'flex-end', fontSize: '0.7em' }}>
+                                                    {Toplinkdata.map((text, index) => (
+                                                        <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
+                                                            <ListItem button key={text.id}>
+                                                                <ListItemText >
+                                                                    {text.linkName}
+                                                                </ListItemText>
+                                                                <KeyboardArrowRightIcon />
+                                                            </ListItem>
+                                                        </Link>
+                                                    ))}
+                                                    <ListItem >
+                                                        <ListItemText style={{ fontSize: '0.7em' }}>
+                                                            <Box sx={{ display: 'flex', alignItems: 'flex-end', fontSize: '0.7em', color: 'white' }}>
 
-                                                            CODE REDEEM :
-                                                            <TextField id="input-with-sx" variant="standard" />
+                                                                CODE REDEEM :
+                                                                <TextField id="input-with-sx" variant="standard" />
 
-                                                            <img src={coderedeem} alt="coderedeem" />
-                                                        </Box>
-                                                    </ListItemText>
-                                                </ListItem>
-                                            </List>
-                                            <List sx={{height: "40%"}} style={{ top: "10%", textDecoration: 'none', color: '#FFF' }} >
-                                                {Bottomlinkdata.slice(0, 3).map((text, index) => (
-                                                    <ListItem button key={text.id}>
-                                                        <ListItemText >
-                                                            <Link to={text.link} style={{ textDecoration: 'none', color: 'black' }}>{text.linkName}  </Link>
+                                                                <img src={coderedeem} alt="coderedeem" />
+                                                            </Box>
                                                         </ListItemText>
                                                     </ListItem>
-                                                ))}
-                                                <ListItem >
-                                                    <ListItemText >
-                                                        <Link to={Bottomlinkdata[3].link} style={{ textDecoration: 'none', color: 'black' }}>{Bottomlinkdata[3].linkName}   <img src={Logout} alt="logout" /></Link>
-                                                    </ListItemText>
-                                                </ListItem>
-                                            </List>
-                                        </Box>
-                                    </Drawer>
+                                                </List>
+                                                <List style={{ top: "10%", textDecoration: 'none', color: 'white' }} sx={{ height: "40%" }} >
+                                                    {Bottomlinkdata.slice(0, 3).map((text, index) => (
+                                                        <ListItem button key={text.id}>
+                                                            <ListItemText >
+                                                                <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>{text.linkName}  </Link>
+                                                            </ListItemText>
+                                                        </ListItem>
+                                                    ))}
+                                                    <ListItem >
+                                                        <ListItemText >
+                                                            <Link to={Bottomlinkdata[3].link} style={{ textDecoration: 'none', color: 'white' }}>{Bottomlinkdata[3].linkName}   <img src={Logout} alt="logout" /></Link>
+                                                        </ListItemText>
+                                                    </ListItem>
+                                                </List>
+                                            </Box>
+                                        </Drawer>
                                     </Toolbar>
 
-                                    <div style={{ backgroundColor: "gray" }}>
+                                    <div style={{ backgroundColor: "#707070" }}>
                                         <Toolbar variant="dense">
                                             <Grid item xs={2} sx={{ marginTop: '1vh' }}>
                                                 <img src={data[this.props.match.params.id].src} alt="gameicon" width="100%" />
 
                                             </Grid>
-                                            <Grid item xs={7} sx={{ marginTop: '1vh' }}>
-                                                <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'left', marginLeft: '2vh' }}>
-                                                    {data[this.props.match.params.id].name}
-                                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'left' }}>
-                                                        CHOOSE TOURNAMENT AND PAID TO PLAY
-                                                    </Typography>
+                                            <Grid item xs={9} sx={{ marginTop: '1vh' }}>
+                                                <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'left', marginLeft: '2vh' }}>
+                                                    {data[this.props.match.params.id].name}<br />
+                                                    CHOOSE TOURNAMENT AND PLAY
                                                 </Typography>
                                             </Grid>
                                             <Grid item xs={3} >
@@ -313,7 +331,7 @@ export default class TournamentLobby extends Component {
                                                                     color="inherit"
                                                                     aria-label="menu"
                                                                     sx={{}}
-                                                                ><FileDownloadIcon />
+                                                                ><img src={Download} alt="" width="80%" />
                                                                 </IconButton>
                                                             </div>
                                                         </div>
@@ -324,21 +342,20 @@ export default class TournamentLobby extends Component {
                                                     onClick
                                                     closeOnDocumentClick={false}
                                                     nested
+                                                    onClose={this.handleClick}
                                                     {...{ contentStyle }}
                                                 >
                                                     {close => (
-                                                        <div className="modal">
+                                                        <div className="modal" >
                                                             <button className="close" onClick={close}>
-                                                                <div className="close" onClick={this.handleClick} >
-                                                                    &times;
-                                                                </div>
+
                                                             </button>
                                                             <Grid xs={12} >
 
-                                                                <Typography variant="h3" inline>
+                                                                <Typography variant="h3" inline color='white'>
                                                                     Game Rule
                                                                 </Typography>
-                                                                <Typography variant="h4" inline>
+                                                                <Typography variant="h4" inline color='white'>
                                                                     {data[this.props.match.params.id].GameRules}
                                                                 </Typography>
                                                             </Grid>
@@ -346,33 +363,25 @@ export default class TournamentLobby extends Component {
                                                     )}
                                                 </Popup>
 
-                                                <Typography variant="caption" component="div" sx={{ textAlign: 'center' }}>
-                                                    Game
-                                                </Typography>
-                                                <Typography variant="caption" component="div" sx={{ textAlign: 'center' }}>
-                                                    Rules
-                                                </Typography>
                                             </Grid>
                                             <Grid item xs={2} >
                                                 <Popup
                                                     trigger={<div className="button"> <div >
-                                                    <IconButton
+                                                        <IconButton
                                                             size="small"
                                                             color="inherit"
                                                             aria-label="menu"
                                                             sx={{}}
-                                                        ><SportsEsportsIcon />
+                                                        ><img src={GameTutorial} alt="" width="120%" />
                                                         </IconButton></div></div>}
                                                     modal
                                                     lockScroll
                                                     nested
                                                 >
                                                     {close => (
-                                                        <div className="modal">
-                                                            <button className="close" onClick={close}>
-                                                                <div className="close" >
-                                                                    &times;
-                                                                </div>
+                                                        <div className="modal" >
+                                                            <button className="close" onClick={close}  >
+
                                                             </button>
                                                             <Grid xs={12} >
                                                                 <Typography variant="h6" component="div" color='primary' textAlign='center'>
@@ -395,159 +404,183 @@ export default class TournamentLobby extends Component {
                                                                 </Grid>
                                                                 <Grid xs={12} positon='fixed'>
                                                                     <Typography variant="h4" component="div" color='primary' textAlign='center'>
-                                                                        POWERED BY R<KeyboardArrowDown />
+                                                                        <img src={PoweredByR} alt='' />
                                                                     </Typography>
                                                                 </Grid>
                                                             </Grid>
                                                         </div>
                                                     )}
                                                 </Popup>
-
-
-                                                <Typography variant="caption" component="div" sx={{ textAlign: 'center' }}>
-                                                    Mode
-                                                </Typography>
-                                                <Typography variant="caption" component="div" sx={{ textAlign: 'center' }}>
-                                                    Tutorial
-                                                </Typography>
                                             </Grid>
 
                                         </Toolbar>
                                     </div>
                                 </AppBar>
+                                <Toolbar />
+                                <Toolbar />
                             </Box>
                         </React.Fragment>
                     </Grid>
+
                     <Grid container
                         direction="row"
                         justifyContent='center'
-                        alignItems="center"
-
+                        marginTop="22vh"
                     >
-                        <Grid item xs={12} container
+                        <Grid container
+                            direction="row"
                             justifyContent='center'
-                            direction="row" padding="1vh"
-                            height="10vh">
-                            <Grid item xs={5.5} style={{ border: "1px solid grey", textAlign: 'center' }} borderRadius="20%" >
+                            height="50vh"
+                        >
 
-                                <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
-                                    Highest Price Out
-                                </Typography>
-                                <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
-                                    {BattleMode[this.props.match.params.entryid].MaxPrize}  <img src={puzzle} alt="gameicon" width="15%" />
-                                </Typography>
-                            </Grid>
-                            <Grid item xs={5.5} style={{ border: "1px solid grey", textAlign: 'center' }} marginLeft="1vh" borderRadius="20%">
-
-                                <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
-                                    Max PayOut
-                                </Typography>
-                                <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
-                                    {BattleMode[this.props.match.params.entryid].MaxPayOut}  <img src={puzzle} alt="gameicon" width="15%" />
-                                </Typography>
-                            </Grid>
-                        </Grid>
-                        <Grid item xs={12} container
-                            justifyContent='center'
-
-                            direction="row">
-                            <Grid item xs={7.5} style={{ textAlign: 'left' }} height="0vh" paddingTop="3vh" borderRadius="20%">
-                                <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center', backgroundColor: 'white' }} color='primary'>
-                                    current PUZZLECHASE Ranking
-                                </Typography>
-                            </Grid>
-                            <Grid item xs={3.5} style={{ textAlign: 'center' }} borderRadius="20%" paddingTop="1.2vh" >
-                                <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='primary'>
-                                    {CurrentPlayer}/50
-                                </Typography>
-                            </Grid>
-                        </Grid>
-                        <Grid item xs={12} container style={{ border: "1px solid grey", textAlign: 'left', overflow: 'scroll' }} justifyContent="left" alignItems="center" height="28vh">
-
-                            <Grid item xs={2.8} height="19vh" style={{ border: "1px solid grey", textAlign: 'center' }} ><StyledBadge badgeContent={1} color="secondary"><img src={HeadsvgData[1].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
-                            <Grid item xs={2.8} height="19vh" style={{ border: "1px solid grey", textAlign: 'center' }} ><StyledBadge badgeContent={2} color="secondary"><img src={HeadsvgData[2].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
-                            <Grid item xs={2.8} height="19vh" style={{ border: "1px solid grey", textAlign: 'center' }} ><StyledBadge badgeContent={3} color="secondary"><img src={HeadsvgData[3].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
-                            <Grid item xs={2.8} height="19vh" style={{ border: "1px solid grey", textAlign: 'center' }} ><StyledBadge badgeContent={4} color="secondary"><img src={HeadsvgData[4].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
-                            <Grid item xs={8.4} container>
-                                <Grid item xs={4} height="19vh" style={{ border: "1px solid grey", textAlign: 'center' }} ><StyledBadge badgeContent={5} color="secondary"><img src={HeadsvgData[5].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
-                                <Grid item xs={4} height="19vh" style={{ border: "1px solid grey", textAlign: 'center' }} ><StyledBadge badgeContent={6} color="secondary"><img src={HeadsvgData[6].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
-                                <Grid item xs={4} height="19vh" style={{ border: "1px solid grey", textAlign: 'center' }} ><StyledBadge badgeContent={7} color="secondary"><img src={HeadsvgData[7].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
-                                <Grid item xs={4} height="19vh" style={{ border: "1px solid grey", textAlign: 'center' }} ><StyledBadge badgeContent={8} color="secondary"><img src={HeadsvgData[8].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
-                                <Grid item xs={4} height="19vh" style={{ border: "1px solid grey", textAlign: 'center' }} ><StyledBadge badgeContent={9} color="secondary"><img src={HeadsvgData[9].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
-                                <Grid item xs={4} height="19vh" style={{ border: "1px solid grey", textAlign: 'center' }} > <StyledBadge badgeContent={10} color="secondary"><img src={HeadsvgData[10].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
-                            </Grid>
-                            <Grid item xs={3.6} container alignItems='center' justifyContent='center'  >
-                                <Grid item xs={12} height="38vh" style={{ border: "1px solid grey", textAlign: 'center' }} >
-                                    <img src={HeadsvgData[0].Headsvg} alt="Headicon" width="85%" /><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography>
-                                    <Grid item xs={12} height="9vh" style={{ border: "1px solid grey", textAlign: 'center' }} ><img src={pic1} alt="button" width="80%" /> share link</Grid>
-                                </Grid>
-                            </Grid>
-                            <Grid item xs={12} container container height="25vh" alignItems="center" justifyContent="center">
-                                <Grid item xs={12} container height="5vh" style={{ textAlign: 'center' }}>
-                                    <Grid item xs={4} height="5vh">
-                                        <img src={pic1} alt="button" width="80%" />
-                                    </Grid>
-                                    <Grid item xs={4} height="5vh">
-                                        <img src={pic1} alt="button" width="80%" />
-                                    </Grid>
-                                    <Grid item xs={4} height="5vh">
-                                        <img src={pic1} alt="button" width="80%" />
-                                    </Grid>
-                                </Grid>
-
-                                {TableData}
-                            </Grid>
-                        </Grid>
-                        <Grid item xs={3} />
-                        <Grid item xs={4.5} height="9vh" style={{ border: "1px solid grey", textAlign: 'center' }} >
-                            <Typography variant="body1"> share to earn </Typography>
-                            <Typography variant="h6">Free!</Typography>
-                        </Grid>
-                        <Grid item xs={4.5} height="9vh" style={{ border: "1px solid grey", textAlign: 'center' }} >
-                            <Typography variant="body1"> entry fee</Typography>
-                            <Typography variant="h6">{BattleMode[this.props.match.params.entryid].entryFee}<img src={puzzle} alt="icon" width="15%"/>
-
-                                <Popup
-                                    trigger={
-                                        <div className="button">
-                                            <div onClick={this.handleClick}>
-
-                                                <StyledFab2 size="small" color="secondary" aria-label="add">
-                                                    <KeyboardArrowRightIcon />
-                                                </StyledFab2>
-                                            </div>
-                                        </div>
-
-                                    }
-                                    modal
-                                    lockScroll
-                                    closeOnDocumentClick={false}
-                                    nested
-                                    {...{ contentStyle }}
+                            <Grid item xs={12} container
+                                justifyContent='center'
+                                direction="row"
+                                height="0vh"
+                            >
+                                <Grid item xs={12} container
+                                    justifyContent='center'
+                                    direction="row"
                                 >
-                                    {close => (
-                                        <div className="modal">
-                                            <button className="close" onClick={close}>
-                                                <div className="close" onClick={this.handleClick}>
-                                                    &times;
-                                                </div>
-                                            </button>
-                                            <Grid xs={12} >
-                                                Game Content
+                                    <Grid item xs={5.5} style={{ textAlign: 'center' }} style={{ backgroundImage: `url(${Bluebg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
+
+                                        <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='white' >
+                                            Highest Price Out
+                                        </Typography>
+                                        <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='white'>
+                                            {BattleMode[this.props.match.params.entryid].MaxPrize}  <img src={Chasepuzzle} alt="gameicon" width="15%" />
+                                        </Typography>
+                                    </Grid>
+                                    <Grid item xs={5.5} style={{ textAlign: 'center' }} marginLeft="1vh" borderRadius="20%" style={{ backgroundImage: `url(${Pinkbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
+
+                                        <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='white'>
+                                            Max PayOut
+                                        </Typography>
+                                        <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='white'>
+                                            {BattleMode[this.props.match.params.entryid].MaxPayOut}  <img src={Chasepuzzle} alt="gameicon" width="15%" />
+                                        </Typography>
+                                    </Grid>
+                                </Grid>
+
+                                <Grid item xs={12} container
+                                    justifyContent="center"
+                                    direction="row"
+                                    height='3vh'>
+                                    <Grid item xs={5.3} height='3vh' >
+                                        {/* <Grid item xs={12} style={{ position:'relative',top:34.5,bottom:'auto', backgroundImage: `url(${CPCR})`, backgroundSize: '100% 100%', backgroundAttachment: 'cover' }} height="5vh">
+
+                                    </Grid> */}
+                                    </Grid>
+                                    <Grid item xs={5.5} style={{ textAlign: 'center' }} borderRadius="20%" paddingTop="0vh" >
+                                        <Typography variant="h4" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='white'>
+                                            {CurrentPlayer}/50
+                                        </Typography>
+                                    </Grid>
+                                </Grid>
+                                <Grid item xs={12} container style={{ textAlign: 'left', overflow: 'scroll', backgroundImage: `url(${Bigbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'cover' }} justifyContent="center" alignItems="center" height="35vh">
+                                    <Grid item xs={12} container style={{ marginTop: '3vh', textAlign: 'left', overflow: 'scroll', }} justifyContent="left" alignItems="center" height="27vh">
+
+                                        <Grid item xs={2.8} height="19vh" style={{ textAlign: 'center' }} ><Link to="#" style={{ textDecoration: 'none' }}><StyledBadge badgeContent={<img src={Badge1} alt='' width="20-%" />} color="secondary"><img src={HeadsvgData[1].Headsvg} alt="Headicon" width="85%" style={{ position: 'relative', left: 5 }} /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline" color='white' noWrap>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link></Grid>
+                                        <Grid item xs={2.8} height="19vh" style={{ textAlign: 'center' }} ><Link to="#" style={{ textDecoration: 'none' }}><StyledBadge badgeContent={<img src={Badge2} alt='' width="20-%" />} color="secondary"><img src={HeadsvgData[2].Headsvg} alt="Headicon" width="85%" style={{ position: 'relative', left: 5 }} /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline" color='white' noWrap>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link></Grid>
+                                        <Grid item xs={2.8} height="19vh" style={{ textAlign: 'center' }} ><Link to="#" style={{ textDecoration: 'none' }}><StyledBadge badgeContent={<img src={Badge3} alt='' width="20-%" />} color="secondary"><img src={HeadsvgData[3].Headsvg} alt="Headicon" width="85%" style={{ position: 'relative', left: 5 }} /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline" color='white' noWrap>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link></Grid>
+                                        <Grid item xs={2.8} height="19vh" style={{ textAlign: 'center' }} ><Link to="#" style={{ textDecoration: 'none' }}><StyledBadge badgeContent={<img src={Badge4} alt='' width="20-%" />} color="secondary"><img src={HeadsvgData[4].Headsvg} alt="Headicon" width="85%" style={{ position: 'relative', left: 5 }} /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline" color='white' noWrap>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link></Grid>
+                                        <Grid item xs={8.4} container alignItems='center' justifyContent='center' >
+                                            <Grid item xs={4} height="19vh" style={{ textAlign: 'center' }} ><Link to="#" style={{ textDecoration: 'none' }}><StyledBadge badgeContent={<img src={Badge5} alt='' width="20-%" />} color="secondary"><img src={HeadsvgData[5].Headsvg} alt="Headicon" width="85%" style={{ position: 'relative', left: 5 }} /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline" color='white' noWrap>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link></Grid>
+                                            <Grid item xs={4} height="19vh" style={{ textAlign: 'center' }} ><Link to="#" style={{ textDecoration: 'none' }}><StyledBadge badgeContent={<img src={Badge6} alt='' width="20-%" />} color="secondary"><img src={HeadsvgData[6].Headsvg} alt="Headicon" width="85%" style={{ position: 'relative', left: 5 }} /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline" color='white' noWrap>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link></Grid>
+                                            <Grid item xs={4} height="19vh" style={{ textAlign: 'center' }} ><Link to="#" style={{ textDecoration: 'none' }}><StyledBadge badgeContent={<img src={Badge7} alt='' width="20-%" />} color="secondary"><img src={HeadsvgData[7].Headsvg} alt="Headicon" width="85%" style={{ position: 'relative', left: 5 }} /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline" color='white' noWrap>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link></Grid>
+                                            <Grid item xs={4} height="19vh" style={{ textAlign: 'center' }} ><Link to="#" style={{ textDecoration: 'none' }}><StyledBadge badgeContent={<img src={Badge8} alt='' width="20-%" />} color="secondary"><img src={HeadsvgData[8].Headsvg} alt="Headicon" width="85%" style={{ position: 'relative', left: 5 }} /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline" color='white' noWrap>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link></Grid>
+                                            <Grid item xs={4} height="19vh" style={{ textAlign: 'center' }} ><Link to="#" style={{ textDecoration: 'none' }}><StyledBadge badgeContent={<img src={Badge9} alt='' width="20-%" />} color="secondary"><img src={HeadsvgData[9].Headsvg} alt="Headicon" width="85%" style={{ position: 'relative', left: 5 }} /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline" color='white' noWrap>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link></Grid>
+                                            <Grid item xs={4} height="19vh" style={{ textAlign: 'center' }} > <Link to="#" style={{ textDecoration: 'none' }}><StyledBadge badgeContent={<img src={Badge10} alt='' width="20-%" />} color="secondary"><img src={HeadsvgData[10].Headsvg} alt="Headicon" width="85%" style={{ position: 'relative', left: 5 }} /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline" color='white' noWrap>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link></Grid>
+                                        </Grid>
+                                        <Grid item xs={3.6} container alignItems='center' justifyContent='center'  >
+                                            <Grid item xs={12} height="38vh" style={{ textAlign: 'center' }} >
+                                                <img src={HeadsvgData[0].Headsvg} alt="Headicon" width="85%" /><Link to="#" style={{ textDecoration: 'none' }}><Typography variant="body1" height="0vh" noWrap style={{ overflowWrap: 'break-word' }} display="inline" color='white'>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link>
+                                                <Grid item xs={12} height="9vh" style={{ textAlign: 'center' }} ><Link to="#" style={{ textDecoration: 'none' }}><img src={share} alt="button" width="100%" /></Link> </Grid>
                                             </Grid>
-                                        </div>
-                                    )}
-                                </Popup>
-                            </Typography>
+                                        </Grid>
+                                        <Grid item xs={12} container container height="25vh" alignItems="center" justifyContent="center">
+                                            <Grid item xs={12} container height="5vh" style={{ textAlign: 'center' }}>
+                                                <Grid item xs={4} height="5vh">
+                                                    <img src={MyPuzzle} alt="button" width="80%" />
+                                                </Grid>
+                                                <Grid item xs={4} height="5vh">
+                                                    <img src={MyScore} alt="button" width="80%" />
+                                                </Grid>
+                                                <Grid item xs={4} height="5vh">
+                                                    <img src={MyRank} alt="button" width="80%" />
+                                                </Grid>
+                                            </Grid>
 
-                            {/* <Link to='/'> */}
-                            {/* </Link> */}
+                                            {TableData}
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                                <Grid item xs={3} />
+                                <Grid item xs={4.5} height="10vh" style={{ position: 'relative', paddingTop: '1vh', left: '3.5vh', textAlign: 'center', backgroundImage: `url(${Greenbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }} >
+                                    <Link to="#" style={{ textDecoration: 'none' }}> <Typography variant="body2" color='white'> share to earn <br /> <Typography variant="body1">Free!</Typography></Typography></Link>
+
+                                </Grid>
+                                <Grid item xs={4.5} height="10vh" style={{ paddingTop: '1vh', textAlign: 'center', backgroundImage: `url(${HalfPinkbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }} >
+
+                                    <Typography variant="body2" color='white'>                <Link to="#" style={{ textDecoration: 'none', color: 'white' }}> entry fee<br />
+                                        <Typography variant="body1">{BattleMode[this.props.match.params.entryid].entryFee}<img src={puzzle} alt="icon" width="15%" />
+                                        </Typography>
+
+                                    </Link>
+                                        <Popup
+                                            trigger={
+                                                <div className="button">
+                                                    <div onClick={this.handleClick}>
+                                                        <img src={Forward} alt='' width="40%" style={{
+                                                            position: 'relative',
+                                                            zIndex: 2,
+                                                            left: "30%",
+                                                            bottom: 30
+                                                        }} />
+                                                    </div>
+                                                </div>
+
+                                            }
+                                            modal
+                                            onClose={this.handleClick}
+                                            lockScroll
+                                            closeOnDocumentClick={false}
+                                            nested
+                                            {...{ contentStyle }}
+                                        >
+                                            {close => (
+                                                <div className="modal" >
+                                                    <button className="close" onClick={close}>
+
+                                                    </button>
+                                                    <Grid xs={12} >
+                                                        Game Content
+                                                        <Link to={'/EndBattleMode'}> <button >
+                                                 Go to check end
+                                                </button>
+                                                </Link>
+                                                    </Grid>
+                                                </div>
+                                            )}
+                                        </Popup>
+                                    </Typography>
+                                    {/* <Link to='/'> */}
+                                    {/* </Link> */}
+                                </Grid>
+                            </Grid>
+                            <Grid xs={12} display={this.state.isToggleOn ? 'block' : 'none'} >
+                                <EndBar />
+                            </Grid>
+
                         </Grid>
+                        <Grid container
+                            direction="row"
+                            justifyContent='center'
+                            height="20vh"
+                        >
+                        </Grid>
+                    </Grid>
 
-                    </Grid>
-                    <Grid item xs={12} marginTop="0vh" display={this.state.isToggleOn ? 'block' : 'none'} >
-                        <EndBar />
-                    </Grid>
                 </Grid>
             </Box >
         )

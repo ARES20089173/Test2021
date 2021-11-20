@@ -19,31 +19,18 @@ import Fab from '@mui/material/Fab';
 import { styled } from '@mui/material/styles'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom"
-import HomeIcon from '@mui/icons-material/Home'
 import { Button } from "@mui/material";
+import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
+import back from '../../../svgicon/Componenticon/Back.svg'
 const contentStyle = {
     margin: 'auto',
-    background: '#cfcece',
-    width: "100%",
+    background: '#242634',
+    width: "95%",
+    border:'none',
     height: "40%",
     padding: "5px",
     borderRadius: "5%",
 };
-const StyledFab = styled(Fab)({
-    position: 'fixed',
-    zIndex: 3,
-    top: "75vh",
-    left: 0,
-
-});
-const StyledFab2 = styled(Fab)({
-    position: 'relative',
-    zIndex: 3,
-    top: 0,
-    left: "0%",
-
-
-});
 
 const Avatardata = [
     { id: 0, headicon: face1 },
@@ -61,7 +48,7 @@ const Avatardata = [
     { id: 12, headicon: face4 },
     { id: 13, headicon: face5 },
     { id: 14, headicon: face6 },
-    
+
 ]
 export default function SelectAvatar() {
 
@@ -70,43 +57,51 @@ export default function SelectAvatar() {
     const handlebgChange = (e) => {
         setbgSelect(e)
     };
-    const AvatarD = Avatardata.filter(Avatared=>Avatared.id <6).map((Adata) => {
-        return <Grid xs={4} container alignItems='center' justifyContent='center'bgcolor={bgSelect == Adata.id ? "red" : ""}>
-          <img Click={handlebgChange}  value={Adata.id}src={Adata.headicon}  onClick={()=>handlebgChange(Adata.id)}defalutvalue={2} alt="headicon" width="85%" ></img>
-          
+    const AvatarD = Avatardata.filter(Avatared => Avatared.id < 6).map((Adata) => {
+        return <Grid xs={4} container alignItems='center' justifyContent='center' bgcolor={bgSelect == Adata.id ? "red" : ""}>
+            <img Click={handlebgChange} value={Adata.id} src={Adata.headicon} onClick={() => handlebgChange(Adata.id)} defalutvalue={2} alt="headicon" width="85%" ></img>
+
         </Grid>
     })
-    const AvatarDLock = Avatardata.filter(Avatared=>Avatared.id >=6).map((Adata) => {
-        return <Grid xs={4} container alignItems='center' justifyContent='center'bgcolor={bgSelect == Adata.id ? "red" : ""}>
-          <img Click={handlebgChange}  value={Adata.id}src={Adata.headicon}  onClick={()=>handlebgChange(Adata.id)}defalutvalue={2} alt="headicon" width="85%" ></img>
-          
+    const AvatarDLock = Avatardata.filter(Avatared => Avatared.id >= 6).map((Adata) => {
+        return <Grid xs={4} container alignItems='center' justifyContent='center' bgcolor={bgSelect == Adata.id ? "red" : ""}>
+            <img Click={handlebgChange} value={Adata.id} src={Adata.headicon} onClick={() => handlebgChange(Adata.id)} defalutvalue={2} alt="headicon" width="85%" ></img>
+
         </Grid>
     })
 
     return (
-        <Box sx={{ flexGrow: 1 }}  >
+        <Box sx={{ flexGrow: 1 }}  style={{backgroundColor:'#242634'}}>
             <React.Fragment>
                 <Box sx={{ flexGrow: 1 }} >
                     <Grid xs={3} >
                         <Link to='/'>
-                            <StyledFab size="small" color="secondary" aria-label="add">
-                                <HomeIcon />
-                            </StyledFab>
+                            <img src={HomeIcon} alt='' width="15%" style={{
+                                position: 'fixed',
+                                zIndex: 3,
+                                top: "72vh",
+                                left: 0,
+                            }} />
                         </Link>
                     </Grid>
                     <Grid xs={8} >
                         <CssBaseline />
-                        <AppBar position="fixed" align='center' sx={{ top: 0 }}>
+                        <AppBar position="fixed" align='center' elevation={0} sx={{ top: 0, backgroundColor: "#242634", borderBottom: '1px solid black' }}>
                             <Toolbar>
-                                <Link to={`/${id}/Profile`}>
-                                    <StyledFab2 size="small" color="secondary" aria-label="add">
-                                        <ArrowBackIcon />
-                                    </StyledFab2>
-                                </Link>
-                                <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
-                                    SELECT AVATAR  
-                                </Typography>
-                                <Grid xs={1}></Grid>
+                                <Grid container xs={12} justifyContent='center' alignItems='center'>
+                                    <Grid xs={2}>
+                                        <Link to={`/`} style={{ position: 'relative', top: 3, right: 10 }}>
+                                            <img src={back} alt='' width="75%" />
+                                        </Link>
+                                    </Grid>
+                                    <Grid xs={8}>
+                                        <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} style={{
+                                            textAlign: 'center'
+                                        }}>     SELECT AVATAR
+                                        </Typography>
+                                    </Grid>
+                                    <Grid xs={2}></Grid>
+                                </Grid>
                             </Toolbar>
                         </AppBar>
                     </Grid>
@@ -114,14 +109,16 @@ export default function SelectAvatar() {
                 </Box>
             </React.Fragment>
             <Grid container height="100%" >
-                <Grid xs={12} height="2%" > </Grid>
-                <Grid xs={12} container alignItems='center' justifyContent='center' height="40%"  >
-                    <Grid xs={12} container alignItems='center' justifyContent='center' height="85%" bgcolor="#707070"  >
+                
+               <Grid xs={12} container alignItems='center' justifyContent='center' height="40%"  >
+       
+                    <Grid xs={12} container alignItems='center' justifyContent='center' height="85%" bgcolor="#242634"  >
+                    
                         {AvatarD}
                     </Grid>
 
-                    <Grid xs={12} height="15%"  container alignItems='center' justifyContent='center'>
-                        <Grid xs={4} container bgcolor="red"  alignItems='center' justifyContent='center' color='white' height="80%" style={{ borderRadius: "25%" }}>
+                    <Grid xs={12} height="15%" container alignItems='center' justifyContent='center'>
+                        <Grid xs={4} container bgcolor="red" alignItems='center' justifyContent='center' color='white' height="80%" style={{ borderRadius: "25%" }}>
                             <Popup
                                 className="content2"
                                 trigger={<Typography color="primary" style={{ color: 'red', backgroundColor: "white" }} >SAVE Avatar</Typography>}
@@ -133,9 +130,7 @@ export default function SelectAvatar() {
                                 {close => (
                                     <div className="modal2">
                                         <button className="close" onClick={close}>
-                                            <div className="close" >
-                                                &times;
-                                            </div>
+
                                         </button>
                                         <Grid xs={12} marginTop="7vh">
                                             <Typography variant="h4" component="div" color='primary' textAlign='center' >

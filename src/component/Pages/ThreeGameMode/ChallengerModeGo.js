@@ -4,35 +4,57 @@ import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles'
 import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
 import backgroundEnd from "../../../reed_bg.svg"
-import Select from 'react-select';
+import Forward from '../../../svgicon/Componenticon/Forward.svg'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import EndBar from '../../framework/endbarWithback';
 import 'reactjs-popup/dist/index.css';
 import { Link } from 'react-router-dom';
-import "../../framework/css/cssFChallenge.css"
+import Select from 'react-select';
+import "../../framework/css/cssModFLooby.css"
 import Popup from 'reactjs-popup';
-import pic1 from '../../framework/img/300x100.jpeg'
 import IconButton from '@mui/material/IconButton';
-import Headicon from '../../../headicon.svg'
+import PoweredByR from '../../../svgicon/PowerBy/PowerByR.svg'
+import Headicon from '../../../face_1.svg'
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import MenuIcon from '@mui/icons-material/Menu';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
-import puzzle from "../../../puzzle.svg"
-import SportsEsportsIcon from '@mui/icons-material/SportsEsports'
-import FileDownloadIcon from '@mui/icons-material/FileDownload';
+
+import back from '../../../svgicon/Componenticon/Back.svg'
 import Badge from '@mui/material/Badge'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import Fab from '@mui/material/Fab';
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
+import coderedeem from '../../../coderedeem.svg'
+import TextField from '@mui/material/TextField';
+import Logout from '../../../logout.svg'
 import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
+import Hamburgicon from "../../../svgicon/Componenticon/Hamburgicon.svg";
+import Chasepuzzle from "../../../svgicon/Componenticon/Chasepuzzle.svg"
+import GameTutorial from "../../../svgicon/BattleMode/GameTutorial.svg"
+import Download from "../../../svgicon/BattleMode/Download.svg"
+import Close from '../../../svgicon/Componenticon/Close.svg'
+import GrandBar from "../../../svgicon/ChallengeMode/GrandBar.svg"
+import EpicBar from "../../../svgicon/ChallengeMode/EpicBar.svg"
+import HeroBar from "../../../svgicon/ChallengeMode/HeroBar.svg"
+import WowBar from "../../../svgicon/ChallengeMode/WowBar.svg"
+import BounsBar from "../../../svgicon/ChallengeMode/BounsBar.svg"
+import Gicon1 from '../../../svgicon/GameIcon/Gicon1.svg'
+import Gicon2 from '../../../svgicon/GameIcon/Gicon2.svg'
+import Gicon3 from '../../../svgicon/GameIcon/Gicon3.svg'
+import Gicon4 from '../../../svgicon/GameIcon/Gicon4.svg'
+import Gicon5 from '../../../svgicon/GameIcon/Gicon5.svg'
+import Gicon6 from '../../../svgicon/GameIcon/Gicon6.svg'
+import Gicon7 from '../../../svgicon/GameIcon/Gicon7.svg'
+import Gicon8 from '../../../svgicon/GameIcon/Gicon8.svg'
+import Gicon9 from '../../../svgicon/GameIcon/Gicon9.svg'
+import Gicon10 from '../../../svgicon/GameIcon/Gicon10.svg'
+import Gicon11 from '../../../svgicon/GameIcon/Gicon11.svg'
+import Gicon12 from '../../../svgicon/GameIcon/Gicon12.svg'
+import Gicon13 from '../../../svgicon/GameIcon/Gicon13.svg'
+import Gicon14 from '../../../svgicon/GameIcon/Gicon14.svg'
+import Gicon15 from '../../../svgicon/GameIcon/Gicon15.svg'
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
         right: 12,
@@ -41,19 +63,29 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
         padding: '0 1px',
     },
 }));
-const StyledFab2 = styled(Fab)({
-    position: 'relative',
-    zIndex: 1,
-    left: "45%",
-    bottom: "3vh"
 
-});
 const contentStyle = {
-    background: '#cfcece',
-    width: "100%",
-    height: "95%",
+    background: '#242623',
+    width: "98%",
+    height: "90%",
     borderRadius: "5%",
 };
+
+const userdata = [
+    { id: 0, level: 'Lv1', ReesID: 1, nickname: 'Jay' },
+]
+const Toplinkdata = [
+    { id: 0, linkName: "PROFILE", link: `/${userdata[0].ReesID}/Profile` },
+    { id: 1, linkName: "SETTING", link: `/${userdata[0].ReesID}/Setting` },
+    { id: 2, linkName: "EVENTS", link: "/Events" },
+    { id: 3, linkName: "BUY PUZZLES", link: "/" }
+]
+const Bottomlinkdata = [
+    { id: 0, linkName: "About REES", link: "/" },
+    { id: 1, linkName: "FAQ", link: "/" },
+    { id: 2, linkName: "PRESS", link: "/" },
+    { id: 3, linkName: "LOGOUT", link: "/" },
+]
 export default class TournamentLobby extends Component {
     constructor(props) {
         super(props);
@@ -110,25 +142,21 @@ export default class TournamentLobby extends Component {
             { id: 2, Modechoose: "BattleMode", embedId: "dWOm9KXJQLo", detail: "Battle MODE is ......." },
         ]
         const data = [
-            { id: 0, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88, GameRules: "2048是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 1, src: '/img/square1.jpeg', name: "原神", number: 56, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 2, src: '/img/square2.jpeg', name: "LoL", number: 55, entryFee: 828, GameRules: "LOL是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 3, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 },
-            { id: 4, src: '/img/square1.jpeg', name: "原神", number: 56, entryFee: 848 },
-            { id: 5, src: '/img/square2.jpeg', name: "LoL", number: 55, entryFee: 828 },
-            { id: 6, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 },
-            { id: 7, src: '/img/square1.jpeg', name: "原神", number: 56, entryFee: 848 },
-            { id: 8, src: '/img/square2.jpeg', name: "LoL", number: 55, entryFee: 828 },
-            { id: 9, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 },
-            { id: 10, src: '/img/square1.jpeg', name: "原神", number: 56, entryFee: 848 },
-            { id: 11, src: '/img/square2.jpeg', name: "LoL", number: 55, entryFee: 828 },
-            { id: 12, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 },
-            { id: 13, src: '/img/square1.jpeg', name: "原神", number: 56, entryFee: 848 },
-            { id: 14, src: '/img/square2.jpeg', name: "LoL", number: 55, entryFee: 828 },
-            { id: 15, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 },
-            { id: 16, src: '/img/square1.jpeg', name: "原神", number: 56, entryFee: 848 },
-            { id: 17, src: '/img/square2.jpeg', name: "LoL", number: 55, entryFee: 828 },
-            { id: 18, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 }
+            { id: 0, src: Gicon1, name: "Onmyoji Arena", number: 52, entryFee: 88, GameRules: "2048是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 1, src: Gicon2, name: "TOM & JERRY: CHASE", number: 56, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 2, src: Gicon3, name: "Super Mecha Champions", number: 55, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 3, src: Gicon4, name: "Side Force Don't Fall", number: 53, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 4, src: Gicon5, name: "Seven Squids", number: 54, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 5, src: Gicon6, name: "Punch Box", number: 51, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 6, src: Gicon7, name: "Iron Space", number: 52, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 7, src: Gicon8, name: "Candy Robber", number: 58, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 8, src: Gicon9, name: "Fruit Matching", number: 88, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 9, src: Gicon10, name: "Falling Cubes", number: 25, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 10, src: Gicon11, name: "Box Tower ", number: 95, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 11, src: Gicon12, name: "Jumper Frog", number: 85, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 12, src: Gicon13, name: "2048", number: 75, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 13, src: Gicon14, name: "HEXTRIS", number: 65, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 14, src: Gicon15, name: "FISHING FRENZY", number: 55, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
         ]
         const ChallengerMode = [
             { id: 0, MaxPayOut: 88, MaxPrize: 3500, entryFee: 188 },
@@ -151,43 +179,57 @@ export default class TournamentLobby extends Component {
 
         const options = [
             {
-                value: ChallengerMode[0].entryFee, label: <Typography variant="body1"> entry fee: {ChallengerMode[0].entryFee}<img src={puzzle} alt="icon" width="15%" /></Typography>
+                value: ChallengerMode[0].entryFee, label: <Typography variant="body1"> entry fee:<br /> {ChallengerMode[0].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
             },
             {
-                value: ChallengerMode[1].entryFee, label: <Typography variant="body1"> entry fee: {ChallengerMode[1].entryFee}<img src={puzzle} alt="icon" width="15%" /></Typography>
+                value: ChallengerMode[1].entryFee, label: <Typography variant="body1"> entry fee:<br /> {ChallengerMode[1].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
             },
             {
-                value: ChallengerMode[2].entryFee, label: <Typography variant="body1"> entry fee: {ChallengerMode[2].entryFee}<img src={puzzle} alt="icon" width="15%" /></Typography>
+                value: ChallengerMode[2].entryFee, label: <Typography variant="body1"> entry fee: <br />{ChallengerMode[2].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
             },
             {
-                value: ChallengerMode[3].entryFee, label: <Typography variant="body1"> entry fee: {ChallengerMode[3].entryFee}<img src={puzzle} alt="icon" width="15%" /></Typography>
+                value: ChallengerMode[3].entryFee, label: <Typography variant="body1"> entry fee: <br />{ChallengerMode[3].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
             },
             {
-                value: ChallengerMode[4].entryFee, label: <Typography variant="body1"> entry fee: {ChallengerMode[4].entryFee}<img src={puzzle} alt="icon" width="15%" /></Typography>
+                value: ChallengerMode[4].entryFee, label: <Typography variant="body1"> entry fee:<br /> {ChallengerMode[4].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
             },
             {
-                value: ChallengerMode[5].entryFee, label: <Typography variant="body1"> entry fee: {ChallengerMode[5].entryFee}<img src={puzzle} alt="icon" width="15%" /></Typography>
+                value: ChallengerMode[5].entryFee, label: <Typography variant="body1"> entry fee:<br /> {ChallengerMode[5].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
             },
             {
-                value: ChallengerMode[6].entryFee, label: <Typography variant="body1"> entry fee: {ChallengerMode[6].entryFee}<img src={puzzle} alt="icon" width="15%" /></Typography>
+                value: ChallengerMode[6].entryFee, label: <Typography variant="body1"> entry fee:<br /> {ChallengerMode[6].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
             },
             {
-                value: ChallengerMode[7].entryFee, label: <Typography variant="body1"> entry fee: {ChallengerMode[7].entryFee}<img src={puzzle} alt="icon" width="15%" /></Typography>
+                value: ChallengerMode[7].entryFee, label: <Typography variant="body1"> entry fee:<br /> {ChallengerMode[7].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
             },
             {
-                value: ChallengerMode[8].entryFee, label: <Typography variant="body1"> entry fee: {ChallengerMode[8].entryFee}<img src={puzzle} alt="icon" width="15%" /></Typography>
+                value: ChallengerMode[8].entryFee, label: <Typography variant="body1"> entry fee: <br />{ChallengerMode[8].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
             },
         ];
         return (
             <Box sx={{ flexGrow: 1 }}>
-                <Grid container height="100vh" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: 'auto auto', backgroundAttachment: 'fixed' }}>
+                <Grid container height="100%" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: 'auto auto', backgroundAttachment: 'fixed' }}>
                     <Grid xs={12}  >
                         <React.Fragment>
                             <Box sx={{ flexGrow: 1, }}>
                                 <CssBaseline />
-                                <AppBar position='relative' align='center' sx={{ top: 0, bottom: 'auto' }}>
-                                    <Toolbar variant="dense">
-                                        <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
+                                <AppBar position={this.state.isToggleOn ? 'fixed' : 'relative'} align='center' sx={{ top: 0, bottom: 'auto' }} >
+                                    <Toolbar style={{ backgroundColor: '#242634' }} >
+                                        <Typography variant="h6" component="div" sx={{}}>
+                                            <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}`}>
+                                                <img src={back} alt='' width="40%" style={{
+                                                    position: 'relative',
+                                                    zIndex: 3,
+                                                    top: 5,
+                                                    left: "-35%",
+                                                }} />
+                                            </Link>
+                                        </Typography>
+                                        <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} style={{
+                                            position: 'relative',
+                                            zIndex: 3,
+                                            left: "-13%",
+                                        }}>
                                             CHALLENGER MODE
                                         </Typography>
                                         <IconButton
@@ -195,10 +237,15 @@ export default class TournamentLobby extends Component {
                                             edge="start"
                                             color="inherit"
                                             aria-label="menu"
-                                            sx={{}}
+
                                             onClick={this.openhandleClick}
                                         >
-                                            <MenuIcon />
+                                            <img src={Hamburgicon} alt="" width="110%" style={{
+                                                position: 'absolute',
+
+                                                left: 0,
+                                                margin: '0 60%',
+                                            }} />
                                         </IconButton>
                                         {/* drawer */}
                                         <Drawer
@@ -207,10 +254,10 @@ export default class TournamentLobby extends Component {
                                             onClose={this.openhandleClick}
                                         >
                                             <Box
-                                                sx={{ width: 280, height: "100vh", backgroundColor: "white" }}
+                                                sx={{ width: 280, height: "100%", backgroundColor: "#242634" }}
                                                 role="presentation"
                                             >
-                                                <List >
+                                                <List sx={{ height: "50%" }}>
 
                                                     <IconButton
                                                         size="large"
@@ -218,46 +265,62 @@ export default class TournamentLobby extends Component {
                                                         color="inherit"
                                                         aria-label="menu"
                                                         onClick={this.openhandleClick}
-                                                        sx={{ left: "90%", bottom: 20 }}
+                                                        sx={{ left: "50%", bottom: 5 }}
                                                     >
-                                                        <MenuIcon />
+                                                        <img src={Close} alt='hamburgericon' width='40%' style={{ position: 'relative', left: 60 }} />
                                                     </IconButton>
-                                                    <ListItem>
-                                                        <ListItemText primary={"close"} sx={{ float: "right" }} />
+                                                    <ListItemText style={{ textAlign: "center" }}  ><Grid container justifyContent='center' alignItems="center"><Typography color='white'>Play to Earn PUZZLES</Typography><img src={Chasepuzzle} /></Grid></ListItemText>
+
+                                                    {Toplinkdata.map((text, index) => (
+                                                        <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
+                                                            <ListItem button key={text.id}>
+                                                                <ListItemText >
+                                                                    {text.linkName}
+                                                                </ListItemText>
+                                                                <KeyboardArrowRightIcon />
+                                                            </ListItem>
+                                                        </Link>
+                                                    ))}
+                                                    <ListItem >
+                                                        <ListItemText style={{ fontSize: '0.7em' }}>
+                                                            <Box sx={{ display: 'flex', alignItems: 'flex-end', fontSize: '0.7em', color: 'white' }}>
+
+                                                                CODE REDEEM :
+                                                                <TextField id="input-with-sx" variant="standard" />
+
+                                                                <img src={coderedeem} alt="coderedeem" />
+                                                            </Box>
+                                                        </ListItemText>
                                                     </ListItem>
-                                                    {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-                                                        <ListItem button key={text}>
-                                                            <ListItemText primary={text} sx={{ float: "right" }} />
-                                                        </ListItem>
-                                                    ))}
                                                 </List>
-                                                <Divider />
-                                                <List >
-                                                    {["All mail", "Trash", "Spam"].map((text, index) => (
-                                                        <ListItem button key={text}>
-                                                            <ListItemIcon>
-                                                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                                            </ListItemIcon>
-                                                            <ListItemText primary={text} />
+                                                <List style={{ top: "10%", textDecoration: 'none', color: 'white' }} sx={{ height: "40%" }} >
+                                                    {Bottomlinkdata.slice(0, 3).map((text, index) => (
+                                                        <ListItem button key={text.id}>
+                                                            <ListItemText >
+                                                                <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>{text.linkName}  </Link>
+                                                            </ListItemText>
                                                         </ListItem>
                                                     ))}
+                                                    <ListItem >
+                                                        <ListItemText >
+                                                            <Link to={Bottomlinkdata[3].link} style={{ textDecoration: 'none', color: 'white' }}>{Bottomlinkdata[3].linkName}   <img src={Logout} alt="logout" /></Link>
+                                                        </ListItemText>
+                                                    </ListItem>
                                                 </List>
                                             </Box>
                                         </Drawer>
                                     </Toolbar>
 
-                                    <div style={{ backgroundColor: "gray" }}>
+                                    <div style={{ backgroundColor: "#707070" }}>
                                         <Toolbar variant="dense">
                                             <Grid item xs={2} sx={{ marginTop: '1vh' }}>
                                                 <img src={data[this.props.match.params.id].src} alt="gameicon" width="100%" />
 
                                             </Grid>
-                                            <Grid item xs={7} sx={{ marginTop: '1vh' }}>
-                                                <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'left', marginLeft: '2vh' }}>
-                                                    {data[this.props.match.params.id].name}
-                                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'left' }}>
-                                                        CHOOSE TOURNAMENT AND PAID TO PLAY
-                                                    </Typography>
+                                            <Grid item xs={9} sx={{ marginTop: '1vh' }}>
+                                                <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'left', marginLeft: '2vh' }}>
+                                                    {data[this.props.match.params.id].name}<br />
+                                                    CHOOSE TOURNAMENT AND PLAY
                                                 </Typography>
                                             </Grid>
                                             <Grid item xs={3} >
@@ -265,13 +328,13 @@ export default class TournamentLobby extends Component {
                                                 <Popup
                                                     trigger={
                                                         <div className="button">
-                                                            <div onClick={this.handleClick}>
+                                                            <div >
                                                                 <IconButton
                                                                     size="small"
                                                                     color="inherit"
                                                                     aria-label="menu"
                                                                     sx={{}}
-                                                                ><FileDownloadIcon />
+                                                                ><img src={Download} alt="" width="80%" />
                                                                 </IconButton>
                                                             </div>
                                                         </div>
@@ -282,21 +345,20 @@ export default class TournamentLobby extends Component {
                                                     onClick
                                                     closeOnDocumentClick={false}
                                                     nested
+                                                    onClose={this.handleClick}
                                                     {...{ contentStyle }}
                                                 >
                                                     {close => (
                                                         <div className="modal">
                                                             <button className="close" onClick={close}>
-                                                                <div className="close" onClick={this.handleClick} >
-                                                                    &times;
-                                                                </div>
+
                                                             </button>
                                                             <Grid xs={12} >
 
-                                                                <Typography variant="h3" inline>
+                                                                <Typography variant="h3" inline color='white'>
                                                                     Game Rule
                                                                 </Typography>
-                                                                <Typography variant="h4" inline>
+                                                                <Typography variant="h4" inline color='white'>
                                                                     {data[this.props.match.params.id].GameRules}
                                                                 </Typography>
                                                             </Grid>
@@ -304,34 +366,25 @@ export default class TournamentLobby extends Component {
                                                     )}
                                                 </Popup>
 
-                                                <Typography variant="caption" component="div" sx={{ textAlign: 'center' }}>
-                                                    Game
-                                                </Typography>
-                                                <Typography variant="caption" component="div" sx={{ textAlign: 'center' }}>
-                                                    Rules
-                                                </Typography>
                                             </Grid>
                                             <Grid item xs={2} >
                                                 <Popup
-                                                    trigger={
-                                                            <div className="button"> <div >
-                                                            <IconButton
-                                                                size="small"
-                                                                color="inherit"
-                                                                aria-label="menu"
-                                                                sx={{}}
-                                                            ><SportsEsportsIcon />
-                                                            </IconButton></div></div>}
+                                                    trigger={<div className="button"> <div >
+                                                        <IconButton
+                                                            size="small"
+                                                            color="inherit"
+                                                            aria-label="menu"
+                                                            sx={{}}
+                                                        ><img src={GameTutorial} alt="" width="120%" />
+                                                        </IconButton></div></div>}
                                                     modal
                                                     lockScroll
                                                     nested
                                                 >
                                                     {close => (
-                                                        <div className="modal">
-                                                            <button className="close" onClick={close}>
-                                                                <div className="close" >
-                                                                    &times;
-                                                                </div>
+                                                        <div className="modal" >
+                                                            <button className="close" onClick={close}  >
+
                                                             </button>
                                                             <Grid xs={12} >
                                                                 <Typography variant="h6" component="div" color='primary' textAlign='center'>
@@ -354,131 +407,129 @@ export default class TournamentLobby extends Component {
                                                                 </Grid>
                                                                 <Grid xs={12} positon='fixed'>
                                                                     <Typography variant="h4" component="div" color='primary' textAlign='center'>
-                                                                        POWERED BY R<KeyboardArrowDown />
+                                                                        <img src={PoweredByR} alt='' />
                                                                     </Typography>
                                                                 </Grid>
                                                             </Grid>
                                                         </div>
                                                     )}
                                                 </Popup>
-
-
-                                                <Typography variant="caption" component="div" sx={{ textAlign: 'center' }}>
-                                                    Mode
-                                                </Typography>
-                                                <Typography variant="caption" component="div" sx={{ textAlign: 'center' }}>
-                                                    Tutorial
-                                                </Typography>
                                             </Grid>
 
                                         </Toolbar>
                                     </div>
                                 </AppBar>
+                                <Toolbar />
+
+                                <Toolbar />
                             </Box>
                         </React.Fragment>
                     </Grid>
                     <Grid container
                         direction="row"
                         justifyContent='center'
-                        alignItems="center"
-
                     >
                         <Grid item xs={12} container
                             justifyContent='center'
                             direction="row"
-                            height="45vh">
+                            height="30vh"
+                            marginTop="3vh"
+                        >
                             {/* 1 */}
-                            <Grid item xs={12} container height="8vh" backgroundColor="white" justifyContent='center' alignItems="center" >
-                                <Grid item xs={6} container justifyContent='center' alignItems="center">
-                                    <Grid item xs={8} >
-                                        <div style={{ border: "1px solid grey", textAlign: 'center', height: "8vh" }}>
+                            <Grid item xs={0.5} height="9.9vh" borderBottom='3px solid black' backgroundColor="white"></Grid>
+                            <Grid item xs={11.5} container borderBottom='3px solid black' height="9.9vh" backgroundColor="white" justifyContent='center' alignItems="center" style={{ backgroundImage: `url(${GrandBar})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}  >
+                                <Grid item xs={4} container justifyContent='center' alignItems="center">
+                                    <Grid item xs={12} >
+                                        <div style={{ textAlign: 'center', height: "8vh" }}>
                                             <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[0].Score}</Typography><br />
                                             <Typography variant="caption" color="black">Puzzle: {ScoreData[0].Puzzle}</Typography>
                                         </div>
                                     </Grid>
                                 </Grid>
-                                <Grid item xs={6} style={{ textAlign: 'center' }}>
-                                    <Typography>GRAND</Typography>
-                                </Grid>
+                                <Grid item xs={8} style={{ textAlign: 'center' }}></Grid>
                             </Grid>
                             {/* 2 */}
-                            <Grid item xs={12} container height="8vh" backgroundColor="white" justifyContent='center' alignItems="center" >
-                                <Grid item xs={6} container justifyContent='center' alignItems="center">
-                                    <Grid item xs={8} >
-                                        <div style={{ border: "1px solid grey", textAlign: 'center', height: "8vh" }}>
-                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[1].Score}</Typography><br />
-                                            <Typography variant="caption" color="black">Puzzle: {ScoreData[1].Puzzle}</Typography>
+                            <Grid item xs={0.5} height="9.9vh" borderBottom='3px solid black' backgroundColor="white"></Grid>
+                            <Grid item xs={11.5} container height="9.9vh" borderBottom='3px solid black' backgroundColor="white" justifyContent='center' alignItems="center" style={{ backgroundImage: `url(${EpicBar})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}  >
+                                <Grid item xs={4} container justifyContent='center' alignItems="center">
+                                    <Grid item xs={12} >
+                                        <div style={{ textAlign: 'center', height: "8vh" }}>
+                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[0].Score}</Typography><br />
+                                            <Typography variant="caption" color="black">Puzzle: {ScoreData[0].Puzzle}</Typography>
                                         </div>
                                     </Grid>
                                 </Grid>
-                                <Grid item xs={6} style={{ textAlign: 'center' }}>
-                                    <Typography>EPIC</Typography>
-                                </Grid>
+                                <Grid item xs={8} style={{ textAlign: 'center' }}></Grid>
                             </Grid>
                             {/* 3 */}
-                            <Grid item xs={12} container height="8vh" backgroundColor="white" justifyContent='center' alignItems="center" >
-                                <Grid item xs={6} container justifyContent='center' alignItems="center">
-                                    <Grid item xs={8} >
-                                        <div style={{ border: "1px solid grey", textAlign: 'center', height: "8vh" }}>
-                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[2].Score}</Typography><br />
-                                            <Typography variant="caption" color="black">Puzzle: {ScoreData[2].Puzzle}</Typography>
+                            <Grid item xs={0.5} height="9.9vh" borderBottom='3px solid black' backgroundColor="white"></Grid>
+                            <Grid item xs={11.5} container height="9.9vh" borderBottom='3px solid black' backgroundColor="white" justifyContent='center' alignItems="center" style={{ backgroundImage: `url(${HeroBar})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}  >
+                                <Grid item xs={4} container justifyContent='center' alignItems="center">
+                                    <Grid item xs={12} >
+                                        <div style={{ textAlign: 'center', height: "8vh" }}>
+                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[0].Score}</Typography><br />
+                                            <Typography variant="caption" color="black">Puzzle: {ScoreData[0].Puzzle}</Typography>
                                         </div>
                                     </Grid>
                                 </Grid>
-                                <Grid item xs={6} style={{ textAlign: 'center' }}>
-                                    <Typography>HERO</Typography>
-                                </Grid>
+                                <Grid item xs={8} style={{ textAlign: 'center' }}></Grid>
                             </Grid>
                             {/* 4 */}
-                            <Grid item xs={12} container height="8vh" backgroundColor="white" justifyContent='center' alignItems="center" >
-                                <Grid item xs={6} container justifyContent='center' alignItems="center">
-                                    <Grid item xs={8} >
-                                        <div style={{ border: "1px solid grey", textAlign: 'center', height: "8vh" }}>
-                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[3].Score}</Typography><br />
-                                            <Typography variant="caption" color="black">Puzzle: {ScoreData[3].Puzzle}</Typography>
+                            <Grid item xs={0.5} height="9.9vh" backgroundColor="white" borderBottom='3px solid black'></Grid>
+                            <Grid item xs={11.5} container height="9.9vh" backgroundColor="white" borderBottom='3px solid black' justifyContent='center' alignItems="center" style={{ backgroundImage: `url(${WowBar})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}  >
+                                <Grid item xs={4} container justifyContent='center' alignItems="center">
+                                    <Grid item xs={12} >
+                                        <div style={{ textAlign: 'center', height: "8vh" }}>
+                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[0].Score}</Typography><br />
+                                            <Typography variant="caption" color="black">Puzzle: {ScoreData[0].Puzzle}</Typography>
                                         </div>
                                     </Grid>
                                 </Grid>
-                                <Grid item xs={6} style={{ textAlign: 'center' }}>
-                                    <Typography>WOW</Typography>
-                                </Grid>
+                                <Grid item xs={8} style={{ textAlign: 'center' }}></Grid>
                             </Grid>
                             {/* 5 */}
-                            <Grid item xs={12} container height="8vh" backgroundColor="white" justifyContent='center' alignItems="center" >
-                                <Grid item xs={6} container justifyContent='center' alignItems="center">
-                                    <Grid item xs={8} >
-                                        <div style={{ border: "1px solid grey", textAlign: 'center', height: "8vh" }}>
-                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[4].Score}</Typography><br />
-                                            <Typography variant="caption" color="black">Puzzle: {ScoreData[4].Puzzle}</Typography>
+                            <Grid item xs={0.5} height="9.9vh" backgroundColor="white" borderBottom='3px solid black'></Grid>
+                            <Grid item xs={11.5} container height="9.9vh" backgroundColor="white" borderBottom='3px solid black' justifyContent='center' alignItems="center" style={{ backgroundImage: `url(${BounsBar})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}  >
+                                <Grid item xs={4} container justifyContent='center' alignItems="center">
+                                    <Grid item xs={12} >
+                                        <div style={{ textAlign: 'center', height: "8vh" }}>
+                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[0].Score}</Typography><br />
+                                            <Typography variant="caption" color="black">Puzzle: {ScoreData[0].Puzzle}</Typography>
                                         </div>
                                     </Grid>
                                 </Grid>
-                                <Grid item xs={6} style={{ textAlign: 'center' }}>
-                                    <Typography>BOUNS</Typography>
-                                </Grid>
+                                <Grid item xs={8} style={{ textAlign: 'center' }}></Grid>
                             </Grid>
-                        </Grid>
-                        <Grid item xs={5} />
-                        <Grid item xs={6} height="7vh" style={{ textAlign: 'center' }} >
+                            <Grid item xs={3} height="5vh" />
+                            <Grid item xs={7} height="5vh" style={{ textAlign: 'center', position: 'relative', zindex: 2 }} >
 
-                            <Typography variant="h6">
-                                <Select
-                                    value={selectedOption}
-                                    onChange={this.handleChange}
-                                    options={options}
-                                    isSearchable={false}
-                                    defaultValue={{ value: ChallengerMode[this.props.match.params.entryid].entryFee, label: <Typography variant="body1"> entry fee: {ChallengerMode[this.props.match.params.entryid].entryFee}<img src={puzzle} alt="icon" width="15%" /></Typography> }}
-                                    menuPlacement="top"
-                                    components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
-                                />
+                                <Typography variant="h6" style={{ textAlign: 'center', position: 'relative', zindex: 2 }} >
+                                    <Select
+                                        value={selectedOption}
+                                        onChange={this.handleChange}
+                                        options={options}
+                                        isSearchable={false}
+                                        defaultValue={{ value: ChallengerMode[this.props.match.params.entryid].entryFee, label: <Typography variant="body1"> entry fee: {ChallengerMode[this.props.match.params.entryid].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography> }}
+                                        menuPlacement="top"
+                                        components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
+                                        styles={{ backgroundColor: 'red' }}
+                                    />
+
+                                </Typography>
+                                {/* <Link to='/'> */}
+                                {/* </Link> */}
+                            </Grid>
+                            <Grid item xs={1} height="5vh" style={{ textAlign: 'center', position: 'relative', zIndex: 2 }} >
                                 <Popup
                                     trigger={
                                         <div className="button">
                                             <div onClick={this.handleClick}>
+                                                <img src={Forward} alt='' zIndex='1' width="150%" style={{
+                                                    position: 'relative',
+                                                    zIndex: 2,
+                                                    left: "0%",
 
-                                                <StyledFab2 size="small" color="secondary" aria-label="add">
-                                                    <KeyboardArrowRightIcon />
-                                                </StyledFab2>
+                                                }} />
                                             </div>
                                         </div>
                                     }
@@ -486,29 +537,42 @@ export default class TournamentLobby extends Component {
                                     lockScroll
                                     closeOnDocumentClick={false}
                                     nested
+                                    onClose={this.handleClick}
                                     {...{ contentStyle }}
                                 >
                                     {close => (
-                                        <div className="modal">
+                                        <div className="modal" >
                                             <button className="close" onClick={close}>
-                                                <div className="close" onClick={this.handleClick}>
-                                                    &times;
-                                                </div>
+
                                             </button>
                                             <Grid xs={12} >
                                                 Game Content
+                                                <Link to={'/EndChallengeMode'}> <button >
+                                                 Go to check end
+                                                </button>
+                                                </Link>
                                             </Grid>
+                                            
                                         </div>
                                     )}
                                 </Popup>
-                            </Typography>
+                            </Grid>
 
-                            {/* <Link to='/'> */}
-                            {/* </Link> */}
+
                         </Grid>
+
+
                     </Grid>
-                    <Grid item xs={12} marginTop="0vh" display={this.state.isToggleOn ? 'block' : 'none'} >
+
+                    <Grid item xs={12} display={this.state.isToggleOn ? 'block' : 'none'} >
                         <EndBar />
+
+                    </Grid>
+                    <Grid container
+                        direction="row"
+                        justifyContent='center'
+                        height="20vh"
+                    >
                     </Grid>
                 </Grid>
             </Box >

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="189.063" height="48" viewBox="0 0 189.063 48">
+  <defs>
+    <linearGradient id="linear-gradient" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0.001" stop-color="#ff2cdf"/>
+      <stop offset="0.122" stop-color="#e72ae2"/>
+      <stop offset="0.38" stop-color="#a924ea"/>
+      <stop offset="0.749" stop-color="#471bf6"/>
+      <stop offset="1" stop-color="#0014ff"/>
+    </linearGradient>
+  </defs>
+  <g id="MY_SCORE" data-name="MY SCORE" transform="translate(-203.475 -278.5)">
+    <path id="路径_1431" data-name="路径 1431" d="M392.1,301.8l-9.1-19a3.74,3.74,0,0,0-3.3-1.9H216.4a3.74,3.74,0,0,0-3.3,1.9l-9.1,19a3.7,3.7,0,0,0,0,3.8l9.1,19a3.74,3.74,0,0,0,3.3,1.9H379.6a3.74,3.74,0,0,0,3.3-1.9l9.1-19A3.95,3.95,0,0,0,392.1,301.8Z" fill="#c8d1ff"/>
+    <path id="路径_1432" data-name="路径 1432" d="M392.1,299.4l-9.1-19a3.74,3.74,0,0,0-3.3-1.9H216.4a3.74,3.74,0,0,0-3.3,1.9l-9.1,19a3.7,3.7,0,0,0,0,3.8l9.1,19a3.74,3.74,0,0,0,3.3,1.9H379.6a3.74,3.74,0,0,0,3.3-1.9l9.1-19A3.95,3.95,0,0,0,392.1,299.4Z" fill="url(#linear-gradient)"/>
+    <g id="组_687" data-name="组 687">
+      <path id="路径_1433" data-name="路径 1433" d="M379.6,281.5a.755.755,0,0,1,.7.4l9.1,18.8v.1l.1.1a1.1,1.1,0,0,1,0,.8l-.1.1v.1l-9.1,18.8a1.012,1.012,0,0,1-.7.4H216.4a.755.755,0,0,1-.7-.4l-9.1-18.8v-.1l-.1-.1a1.1,1.1,0,0,1,0-.8l.1-.1v-.1l9.1-18.8a1.012,1.012,0,0,1,.7-.4H379.6m0-3H216.4a3.74,3.74,0,0,0-3.3,1.9l-9.1,19a3.7,3.7,0,0,0,0,3.8l9.1,19a3.74,3.74,0,0,0,3.3,1.9H379.6a3.74,3.74,0,0,0,3.3-1.9l9.1-19a3.7,3.7,0,0,0,0-3.8l-9.1-19a3.74,3.74,0,0,0-3.3-1.9Z" fill="#fff"/>
+    </g>
+    <text id="MY_SCORE-2" data-name="MY SCORE" transform="translate(239.417 310.644)" fill="#fff" font-size="24" font-family="Helvetica"><tspan x="0" y="0">MY SCORE</tspan></text>
+  </g>
+</svg>

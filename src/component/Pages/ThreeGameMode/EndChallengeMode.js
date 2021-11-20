@@ -4,106 +4,111 @@ import 'reactjs-popup/dist/index.css';
 import "../../framework/css/cssModFLooby.css"
 import Popup from 'reactjs-popup';
 import Typography from '@mui/material/Typography';
-import puzzle from "../../../puzzle.svg"
-import square1 from '../../framework/img/square1.jpeg'
+import Chasepuzzle from "../../../svgicon/Componenticon/Chasepuzzle.svg"
+import PlayAgain from "../../../svgicon/BattleMode/PlayAgain.svg"
+import FreeShare from "../../../svgicon/BattleMode/FreeShare.svg"
+import GoAccept from "../../../svgicon/BattleMode/GoAccept.svg"
+import Grand from '../../../svgicon/OVOmode/Grand.svg';
+import Epic from '../../../svgicon/OVOmode/Epic.svg';
+import Hero from '../../../svgicon/OVOmode/Hero.svg';
+import KeepUp from '../../../svgicon/OVOmode/KeepUp.svg';
+import Bouns from '../../../svgicon/OVOmode/Bouns.svg';
+import { Link } from 'react-router-dom';
 const contentStyle = {
-    background: '#cfcece',
-    width: "100%",
-    height: "70%",
-    borderRadius: "5%",
+    background: '#242632',
+    width: "90%",
+    height: "90%",
+    border: 'none'
 };
-const EndGameData = { CongraduationWords: "You are the hero!",GamePuzzleRewards: 25 }
-export default class EndChallengeMode extends Component {
+const data = [
+    { id: 0, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, quality: "520", text: 'YOU ARE EPIC', min: '', max: 'Epic', background: Epic, year: 23 },
+    { id: 1, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, quality: "510", text: 'WOW, keep it up!', min: '', max: 'WoW', background: KeepUp, year: 23 },
+    { id: 2, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, quality: "540", text: 'YOU ARE THE HERO', min: '', max: 'Hero', background: Hero, year: 23 },
+    { id: 3, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, quality: "30", text: 'BOUNS,Try Again', min: '', max: 'Bouns', background: Bouns, year: 23 },
+    { id: 4, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, quality: "520", text: 'Congraduatiton,grand prize!', min: '', max: 'Grand', background: Grand, year: 23 },]
+
+const EndGameData = { CongraduationWords: "CONGRATULATIONS 1 ON 1 Mode WinnerTakes All", GamePuzzleRewards: 25, BonusLeft: 4 }
+export default class ChallengeMode extends Component {
 
     render() {
         return (
-            <Popup
-                trigger={
-                    <div className="button">
-                        <button onClick={this.handleClick}>
-                            ChallengeModeEnd Page Trigger
-                        </button>
-                    </div>
+            data.map((data, index) => (
+                <Popup
+                    trigger={
+                        <div className="button">
+                            <button onClick={this.handleClick}>
+                                {data.max} Page Trigger
+                            </button>
+                           <Link to={'/multigameChooser/tournamentLobby/0/0/OneVoneMode'}> <button >
+                               back
+                            </button>
+                            </Link>
+                        </div>
 
-                }
-                modal
-                lockScroll
-                onClick
-                closeOnDocumentClick={false}
-                nested
-                {...{ contentStyle }}
-            >
-                {close => (
-                    <div className="modal">
-                        <button className="close" onClick={close}>
-                            <div className="close" onClick={this.handleClick} >
-                                &times;
-                            </div>
-                        </button>
-                        <Grid xs={12} container justifyContent="center" alignItems='center' height="70vh">
-                            <Grid xs={12} item height="50%" style={{ borderBottom: "1px solid grey", textAlign: 'center' }}>
-                                <Grid xs={12} item height="50%" style={{ textAlign: 'center' }}>
-                                    <Typography variant="h2" component="div" color='primary' textAlign='center'>
-                                     <img src={puzzle} alt="puzlle" width="15%"/> x{EndGameData.GamePuzzleRewards}
-                                    </Typography>
-                                    <Typography variant="h4" component="div" color='primary' textAlign='center'>
-                                      {EndGameData.CongraduationWords}
-                                    </Typography>
-                                </Grid>
-                                <Grid xs={12} item height="45%" style={{ textAlign: 'center' }}>
-                                   
-                                </Grid>
-                            </Grid>
+                    }
+                    modal
+                    lockScroll
+                    onClick
+                    closeOnDocumentClick={false}
+                    nested
+                    {...{ contentStyle }}
+                >
+                    {close => (
+                        <div className="modal">
+                            <button className="close" onClick={close}>
 
-                            {/* next half page */}
-                            <Grid xs={12} item height="55%" >
-                                <Grid xs={12} container height="35%" style={{ textAlign: 'center' }} alignItems='center' justifyContent="center">
-                                    <Grid xs={8} item height="35%" style={{ textAlign: 'center' }}>
-                                        <Typography variant="body2" component="div" color='primary' textAlign='center' style={{ overflowWrap: 'break-word' }} display="inline">
-                                            keep it up, someone is
-                                            chasing you and going to
-                                            take your ranking
-                                        </Typography>
+                            </button>
+                            <Grid xs={12} container justifyContent="center" alignItems='center' height="100vh" style={{ backgroundImage: `url(${data.background})`, backgroundRepeat: 'no-repeat', backgroundSize: '100%', backgroundAttachment: 'cover' }}>
+                                <Grid xs={12} item height="30%" >
+                                    <Grid container xs={11} justifyContent='center' alignItems="center" height="25vh" textAlign='center'>
+                                        <Typography textAlign='center' variant='h6'><img src={Chasepuzzle} alt='' width="20%" />x{data.quality}<br />{data.text}</Typography>
                                     </Grid>
                                 </Grid>
-                                <Grid xs={12} container height="65%" style={{ textAlign: 'center' }} alignItems='center' justifyContent="center">
-                                    <Grid xs={8} item height="22%" style={{ textAlign: 'center', backgroundColor: 'black' }}>
-                                        <Typography variant="body1" component="div" color='white' textAlign='center' style={{ overflowWrap: 'break-word' }} display="inline">
-                                            Play Again Earn More
-                                        </Typography>
-                                    </Grid>
-                                    <Grid xs={12} container>
-                                        <Grid xs={5} container height="22%" style={{ textAlign: 'center', backgroundColor: 'black' }}>
-                                        <Grid xs={9} item height="22%" style={{ textAlign: 'center', backgroundColor: 'black' }}>
-                                            <Typography variant="body2" component="div" color='white' textAlign='center' >
-                                                Share to
-                                                earn free
+
+                                {/* next half page */}
+                                <Grid xs={12} item height="30%" >
+                                    <Grid xs={12} container height="35%" style={{ textAlign: 'center' }} alignItems='center' justifyContent="center">
+                                        <Grid xs={8} item height="35%" style={{ textAlign: 'center' }}>
+                                            <Typography variant="body2" component="div" color='primary' textAlign='center' style={{ overflowWrap: 'break-word' }} display="inline">
+                                                Don't miss out<br /> Try agian for double bouns!
                                             </Typography>
                                         </Grid>
-                                        <Grid xs={3} item height="22%" style={{ textAlign: 'center', backgroundColor: 'black' }}>
-                                        <img src={puzzle} alt="puzzleicon" width="100%"/>
-                                        </Grid>
-
-                                        </Grid>
-                                        <Grid xs={2} item height="22%" style={{ textAlign: 'center', backgroundColor: 'black' }}>
-
-                                        </Grid>
-                                        <Grid xs={5} item height="22%" style={{ textAlign: 'center', backgroundColor: 'black' }}>
-                                            <Typography variant="body2" component="div" color='white' textAlign='center' style={{ overflowWrap: 'break-word' }} display="inline">
-                                                GO accept other
-                                                players'challenge
+                                    </Grid>
+                                    <Grid xs={12} container height="65%" style={{ textAlign: 'center' }} alignItems='center' justifyContent="center">
+                                        <Grid xs={8} item height="22%" style={{ textAlign: 'center' }}>
+                                            <Typography variant="body1" component="div" color='white' textAlign='center' style={{ overflowWrap: 'break-word' }} display="inline">
+                                                <img src={PlayAgain} alt='' width="60%" />
                                             </Typography>
                                         </Grid>
+                                        <Grid xs={12} container>
+                                            <Grid xs={5.5} container height="22%" style={{ textAlign: 'center' }}>
+                                                <Typography variant="body2" component="div" color='white' textAlign='center' >
+                                                    <img src={FreeShare} alt='' width="75%" />
+                                                </Typography>
 
+                                            </Grid>
+                                            <Grid xs={1} item height="22%" style={{ textAlign: 'center' }}>
+
+                                            </Grid>
+                                            <Grid xs={5.5} item height="25%" style={{ textAlign: 'center', backgroundImage: `url(${GoAccept})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
+                                                <Typography variant="caption" component="div" color='white' textAlign='center' style={{ overflowWrap: 'break-word' }} display="inline">
+                                                    GO accept other
+                                                    players'challenge
+                                                </Typography>
+                                            </Grid>
+
+
+                                        </Grid>
 
                                     </Grid>
-
                                 </Grid>
                             </Grid>
-                        </Grid>
-                    </div>
-                )}
-            </Popup>
+                        </div>
+                    )}
+                </Popup>
+              
+            ))
         )
+        
     }
 }

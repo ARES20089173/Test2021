@@ -45,6 +45,7 @@ import AppBar from '@mui/material/AppBar';
 import Hamburgicon from "../../../svgicon/Componenticon/Hamburgicon.svg";
 import Chasepuzzle from "../../../svgicon/Componenticon/Chasepuzzle.svg"
 import Silverpuzzle from "../../../svgicon/Componenticon/SilverPuzzle.svg"
+import Close from '../../../svgicon/Componenticon/Close.svg'
 import Button from '@mui/material/Button';
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
@@ -216,10 +217,10 @@ export default class TournamentLobby extends Component {
                                         onClose={this.openhandleClick}
                                     >
                                         <Box
-                                            sx={{ width: 280, height: "100vh", backgroundColor: "#707070" }}
+                                            sx={{ width: 280, height: "100%", backgroundColor: "#242634" }}
                                             role="presentation"
                                         >
-                                            <List >
+                                            <List sx={{ height: "50%" }}>
 
                                                 <IconButton
                                                     size="large"
@@ -227,14 +228,14 @@ export default class TournamentLobby extends Component {
                                                     color="inherit"
                                                     aria-label="menu"
                                                     onClick={this.openhandleClick}
-                                                    sx={{ left: "80%", bottom: 0 }}
+                                                    sx={{ left: "50%", bottom: 5 }}
                                                 >
-                                                    <img src={Hamburgicon} alt="" width="80%" />
+                                                    <img src={Close} alt='hamburgericon' width='40%' style={{ position: 'relative', left: 60 }} />
                                                 </IconButton>
-                                                <ListItemText style={{ textAlign: "center" }}  >Play to Earn PUZZLES<img src={Chasepuzzle} /></ListItemText>
+                                                <ListItemText style={{ textAlign: "center" }}  ><Grid container justifyContent='center' alignItems="center"><Typography color='white'>Play to Earn PUZZLES</Typography><img src={Chasepuzzle} /></Grid></ListItemText>
 
                                                 {Toplinkdata.map((text, index) => (
-                                                    <Link to={text.link} style={{ textDecoration: 'none', color: 'black' }}>
+                                                    <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
                                                         <ListItem button key={text.id}>
                                                             <ListItemText >
                                                                 {text.linkName}
@@ -245,7 +246,7 @@ export default class TournamentLobby extends Component {
                                                 ))}
                                                 <ListItem >
                                                     <ListItemText style={{ fontSize: '0.7em' }}>
-                                                        <Box sx={{ display: 'flex', alignItems: 'flex-end', fontSize: '0.7em' }}>
+                                                        <Box sx={{ display: 'flex', alignItems: 'flex-end', fontSize: '0.7em' ,color:'white'}}>
 
                                                             CODE REDEEM :
                                                             <TextField id="input-with-sx" variant="standard" />
@@ -255,17 +256,17 @@ export default class TournamentLobby extends Component {
                                                     </ListItemText>
                                                 </ListItem>
                                             </List>
-                                            <List style={{ top: "10%", textDecoration: 'none', color: '#FFF' }} >
+                                            <List style={{ top: "10%", textDecoration: 'none', color: 'white' }} sx={{ height: "40%" }} >
                                                 {Bottomlinkdata.slice(0, 3).map((text, index) => (
                                                     <ListItem button key={text.id}>
                                                         <ListItemText >
-                                                            <Link to={text.link} style={{ textDecoration: 'none', color: 'black' }}>{text.linkName}  </Link>
+                                                            <Link to={text.link} style={{ textDecoration: 'none',color: 'white' }}>{text.linkName}  </Link>
                                                         </ListItemText>
                                                     </ListItem>
                                                 ))}
                                                 <ListItem >
                                                     <ListItemText >
-                                                        <Link to={Bottomlinkdata[3].link} style={{ textDecoration: 'none', color: 'black' }}>{Bottomlinkdata[3].linkName}   <img src={Logout} alt="logout" /></Link>
+                                                        <Link to={Bottomlinkdata[3].link} style={{ textDecoration: 'none', color: 'white'}}>{Bottomlinkdata[3].linkName}   <img src={Logout} alt="logout" /></Link>
                                                     </ListItemText>
                                                 </ListItem>
                                             </List>
@@ -320,9 +321,7 @@ export default class TournamentLobby extends Component {
                             {close => (
                                 <div className="modal">
                                     <button className="close" onClick={close}>
-                                        <div className="close" >
-                                            &times;
-                                        </div>
+                                    
                                     </button>
                                     <Grid xs={12} >
                                         <Typography variant="h6" component="div" color='primary' textAlign='center'>
@@ -357,8 +356,8 @@ export default class TournamentLobby extends Component {
                         direction="row"
                         justifyContent='center' xs={12} height='15vh'>
                         <Grid item xs={3} height='15vh' style={{ textAlign: 'center', backgroundImage: `url(${SmallLeftbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
-                        <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='black' style={{marginTop:'1vh'}}>
-                           <img src={Money} alt="gameicon" width="30%" /><br /> {oneVoneMode[0].MaxPrize}  <br />  GRAND GRADE PRIZE
+                            <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='black' style={{ marginTop: '1vh' }}>
+                                <img src={Money} alt="gameicon" width="30%" /><br /> {oneVoneMode[0].MaxPrize}  <br />  GRAND GRADE PRIZE
                             </Typography>
                         </Grid>
                         <Grid item xs={8} height='15vh' style={{ backgroundImage: `url(${SmallRightbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}  >
@@ -396,14 +395,13 @@ export default class TournamentLobby extends Component {
                                     lockScroll
                                     closeOnDocumentClick={false}
                                     nested
+                                    onClose={this.handleClick}
                                     {...{ contentStyle }}
                                 >
                                     {close => (
                                         <div className="modal">
                                             <button className="close" onClick={close}>
-                                                <div className="close" onClick={this.handleClick}>
-                                                    &times;
-                                                </div>
+                                                
                                             </button>
                                             <Grid xs={12} >
                                                 Game Content
@@ -465,14 +463,13 @@ export default class TournamentLobby extends Component {
                                                 lockScroll
                                                 closeOnDocumentClick={false}
                                                 nested
+                                                onClose={this.handleClick}
                                                 {...{ contentStyle }}
                                             >
                                                 {close => (
                                                     <div className="modal">
                                                         <button className="close" onClick={close}>
-                                                            <div className="close" onClick={this.handleClick}>
-                                                                &times;
-                                                            </div>
+                                                          
                                                         </button>
                                                         <Grid xs={12} >
                                                             Game Content
@@ -511,9 +508,7 @@ export default class TournamentLobby extends Component {
                             {close => (
                                 <div className="modal">
                                     <button className="close" onClick={close}>
-                                        <div className="close">
-                                            &times;
-                                        </div>
+                                     
                                     </button>
                                     <Grid xs={12} >
                                         <Typography variant="h6" component="div" color='primary' textAlign='center'>
@@ -587,14 +582,13 @@ export default class TournamentLobby extends Component {
                                     lockScroll
                                     closeOnDocumentClick={false}
                                     nested
+                                    onClose={this.handleClick}
                                     {...{ contentStyle }}
                                 >
                                     {close => (
                                         <div className="modal">
                                             <button className="close" onClick={close}>
-                                                <div className="close" onClick={this.handleClick}>
-                                                    &times;
-                                                </div>
+                                               
                                             </button>
                                             <Grid xs={12} >
                                                 Game Content
@@ -653,14 +647,13 @@ export default class TournamentLobby extends Component {
                                                 lockScroll
                                                 closeOnDocumentClick={false}
                                                 nested
+                                                onClose={this.handleClick}
                                                 {...{ contentStyle }}
                                             >
                                                 {close => (
                                                     <div className="modal">
                                                         <button className="close" onClick={close}>
-                                                            <div className="close" onClick={this.handleClick}>
-                                                                &times;
-                                                            </div>
+                                                         
                                                         </button>
                                                         <Grid xs={12} >
                                                             Game Content
@@ -698,9 +691,7 @@ export default class TournamentLobby extends Component {
                             {close => (
                                 <div className="modal">
                                     <button className="close" onClick={close}>
-                                        <div className="close">
-                                            &times;
-                                        </div>
+                                      
                                     </button>
                                     <Grid xs={12} >
                                         <Typography variant="h6" component="div" color='primary' textAlign='center'>
@@ -790,14 +781,13 @@ export default class TournamentLobby extends Component {
                                     lockScroll
                                     closeOnDocumentClick={false}
                                     nested
+                                    onClose={this.handleClick}
                                     {...{ contentStyle }}
                                 >
                                     {close => (
                                         <div className="modal">
                                             <button className="close" onClick={close}>
-                                                <div className="close" onClick={this.handleClick}>
-                                                    &times;
-                                                </div>
+                                              
                                             </button>
                                             <Grid xs={12} >
                                                 Game Content
@@ -870,6 +860,7 @@ export default class TournamentLobby extends Component {
                                                 }
                                                 modal
                                                 lockScroll
+                                                onClose={this.handleClick}
                                                 closeOnDocumentClick={false}
                                                 nested
                                                 {...{ contentStyle }}
@@ -877,9 +868,7 @@ export default class TournamentLobby extends Component {
                                                 {close => (
                                                     <div className="modal">
                                                         <button className="close" onClick={close}>
-                                                            <div className="close" onClick={this.handleClick}>
-                                                                &times;
-                                                            </div>
+                                                       
                                                         </button>
                                                         <Grid xs={12} >
                                                             Game Content

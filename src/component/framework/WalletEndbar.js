@@ -50,6 +50,7 @@ const contentStyle = {
     background: '#242634',
     width: "90%",
     height: "62%",
+    border:'none',
     borderRadius: "5%",
 };
 const Amout = [{ Chasepuzzle: 18.6, SilverPuzzle: 20.5, money: 1000,notification:30 }]
@@ -87,9 +88,7 @@ export default function BottomAppBar() {
                                                     {close => (
                                                         <div className="modal">
                                                             <button className="close" onClick={close}>
-                                                                <div className="close" >
-                                                                    &times;
-                                                                </div>
+                                                                
                                                             </button>
                                                             <SwieprConent />
                                                         </div>
@@ -110,9 +109,7 @@ export default function BottomAppBar() {
                                                     {close => (
                                                         <div className="modal">
                                                             <button className="close" onClick={close}>
-                                                                <div className="close" >
-                                                                    &times;
-                                                                </div>
+                                                                
                                                             </button>
                                                             <div>
                                                                 <SwieprConent />

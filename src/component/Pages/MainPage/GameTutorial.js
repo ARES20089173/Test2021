@@ -15,6 +15,9 @@ import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import coderedeem from '../../../coderedeem.svg'
 import TextField from '@mui/material/TextField';
+import Chasepuzzle from "../../../svgicon/Componenticon/Chasepuzzle.svg"
+import Silverpuzzle from "../../../svgicon/Componenticon/SilverPuzzle.svg"
+import Close from '../../../svgicon/Componenticon/Close.svg'
 import Logout from '../../../logout.svg'
 import puzzle from "../../../puzzle.svg"
 import Drawer from "@mui/material/Drawer";
@@ -102,39 +105,39 @@ export default class GameTutorial extends Component {
                                                 }} />
                                             </Link>
                                         </Typography>
-                                        <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} style={{
+                                        <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} style={{
                                             position: 'relative',
                                             zIndex: 3,
                                             left: "-15%",
                                         }}>
-                                            CHOOSE YOUR FAVORITE MODE
+                                           TUTORIAL
                                         </Typography>
                                         <IconButton
-                                            size="small"
-                                            edge="start"
-                                            color="inherit"
-                                            aria-label="menu"
+                                        size="large"
+                                        edge="start"
+                                        color="inherit"
+                                        aria-label="menu"
 
-                                            onClick={this.openhandleClick}
-                                            sx={{}}
-                                        >
-                                            <img src={Hamburgicon} alt="" width="300%" style={{
-                                                position: 'absolute',
+                                        onClick={this.openhandleClick}
+                                    >
+                                        <img src={Hamburgicon} alt="" width="110%" style={{
+                                            position: 'absolute',
 
-                                                left: 0,
-                                                margin: '0 0%',
-                                            }} />
-                                        </IconButton>
-                                        <Drawer
+                                            left: 0,
+                                            margin: '0 60%',
+                                        }} />
+                                    </IconButton>
+                                    {/* drawer */}
+                                    <Drawer
                                         anchor={"right"}
                                         open={this.state.isOpen}
                                         onClose={this.openhandleClick}
                                     >
                                         <Box
-                                            sx={{ width: 280, height: "100vh", backgroundColor: "#707070" }}
+                                            sx={{ width: 280, height: "100%", backgroundColor: "#242634" }}
                                             role="presentation"
                                         >
-                                            <List sx={{height: "50%"}} >
+                                            <List sx={{ height: "50%" }}>
 
                                                 <IconButton
                                                     size="large"
@@ -142,14 +145,14 @@ export default class GameTutorial extends Component {
                                                     color="inherit"
                                                     aria-label="menu"
                                                     onClick={this.openhandleClick}
-                                                    sx={{ left: "80%", bottom: 0 }}
+                                                    sx={{ left: "50%", bottom: 5 }}
                                                 >
-                                                    <img src={Hamburgicon} alt="" width="80%" />
+                                                    <img src={Close} alt='hamburgericon' width='40%' style={{ position: 'relative', left: 60 }} />
                                                 </IconButton>
-                                                <ListItemText style={{ textAlign: "center" }}  >Play to Earn PUZZLES<img src={puzzle} /></ListItemText>
+                                                <ListItemText style={{ textAlign: "center" }}  ><Grid container justifyContent='center' alignItems="center"><Typography color='white'>Play to Earn PUZZLES</Typography><img src={Chasepuzzle} /></Grid></ListItemText>
 
                                                 {Toplinkdata.map((text, index) => (
-                                                    <Link to={text.link} style={{ textDecoration: 'none', color: 'black' }}>
+                                                    <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
                                                         <ListItem button key={text.id}>
                                                             <ListItemText >
                                                                 {text.linkName}
@@ -160,7 +163,7 @@ export default class GameTutorial extends Component {
                                                 ))}
                                                 <ListItem >
                                                     <ListItemText style={{ fontSize: '0.7em' }}>
-                                                        <Box sx={{ display: 'flex', alignItems: 'flex-end', fontSize: '0.7em' }}>
+                                                        <Box sx={{ display: 'flex', alignItems: 'flex-end', fontSize: '0.7em' ,color:'white'}}>
 
                                                             CODE REDEEM :
                                                             <TextField id="input-with-sx" variant="standard" />
@@ -170,22 +173,23 @@ export default class GameTutorial extends Component {
                                                     </ListItemText>
                                                 </ListItem>
                                             </List>
-                                            <List style={{ top: "10%", textDecoration: 'none', color: '#FFF' }} sx={{height: "40%"}} >
+                                            <List style={{ top: "10%", textDecoration: 'none', color: 'white' }} sx={{ height: "40%" }} >
                                                 {Bottomlinkdata.slice(0, 3).map((text, index) => (
                                                     <ListItem button key={text.id}>
                                                         <ListItemText >
-                                                            <Link to={text.link} style={{ textDecoration: 'none', color: 'black' }}>{text.linkName}  </Link>
+                                                            <Link to={text.link} style={{ textDecoration: 'none',color: 'white' }}>{text.linkName}  </Link>
                                                         </ListItemText>
                                                     </ListItem>
                                                 ))}
                                                 <ListItem >
                                                     <ListItemText >
-                                                        <Link to={Bottomlinkdata[3].link} style={{ textDecoration: 'none', color: 'black' }}>{Bottomlinkdata[3].linkName}   <img src={Logout} alt="logout" /></Link>
+                                                        <Link to={Bottomlinkdata[3].link} style={{ textDecoration: 'none', color: 'white'}}>{Bottomlinkdata[3].linkName}   <img src={Logout} alt="logout" /></Link>
                                                     </ListItemText>
                                                 </ListItem>
                                             </List>
                                         </Box>
                                     </Drawer>
+
                                     </Toolbar>
                                 </AppBar>
                             </Box>

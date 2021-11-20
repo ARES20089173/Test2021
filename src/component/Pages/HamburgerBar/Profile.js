@@ -1,4 +1,3 @@
-import React from "react";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -8,6 +7,7 @@ import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import { useParams } from "react-router";
+import { withStyles } from "@material-ui/core/styles";
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import CssBaseline from '@mui/material/CssBaseline';
@@ -17,41 +17,44 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom"
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
-import HomeIcon from '@mui/icons-material/Home'
 import face1 from '../../../face_1.svg'
+import React, { Component } from "react";
+import Messagepuzzle from '../../../svgicon/NotificationIcon/Messagepuzzle.svg'
+import IconButton from '@mui/material/IconButton';
+import "../../framework/css/cssModFMessage.css"
+import Clear from "../../../svgicon/MessageCenter/Clear.svg"
+import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
+import back from '../../../svgicon/Componenticon/Back.svg'
 const contentStyle = {
     margin: 'auto',
-    background: '#cfcece',
-    width: "100%",
+    background: '#242634',
+    width: "95%",
     height: "40%",
     padding: "5px",
+    border:'none',
     borderRadius: "5%",
 };
-const StyledFab = styled(Fab)({
-    position: 'fixed',
-    zIndex: 3,
-    top: "75vh",
-    left: 0,
-
-});
-const StyledFab2 = styled(Fab)({
-    position: 'relative',
-    zIndex: 3,
-    top: 0,
-    left: "0%",
-
-
-});
 
 
 const userdata = [
-    { id: 0, Sex:"Mr",FirstName: "Cheung", LastName: "kit", NickName: "Jay", Birthday: "2011-10-29", Contact: "+852", Flat: "1502", Street: "King road", Area: "Island", Builidng: "HealthyGarden", level: 'Lv1', ReesID: 1121321231, headicon: face1 },
-    { id: 1, Sex:"Mr",FirstName: "Cheung2", LastName: "kit", NickName: "Jay", Birthday: "2011-10-29", Contact: "+852", Flat: "1502", Street: "King road", Area: "Island", Builidng: "HealthyGarden", level: 'Lv1', ReesID: 1121321231, headicon: face1 },
-    { id: 2, Sex:"Mx",FirstName: "Cheung3", LastName: "kit", NickName: "Jay", Birthday: "2011-10-29", Contact: "+852", Flat: "1502", Street: "King road", Area: "Island", Builidng: "HealthyGarden", level: 'Lv1', ReesID: 1121321231, headicon: face1 },
+    { id: 0, Sex: "Mr", FirstName: "Cheung", LastName: "kit", NickName: "Jay", Birthday: "2011-10-29", Contact: "+852", Flat: "1502", Street: "King road", Area: "Island", Builidng: "HealthyGarden", level: 'Lv1', ReesID: 1121321231, headicon: face1 },
+    { id: 1, Sex: "Mr", FirstName: "Cheung2", LastName: "kit", NickName: "Jay", Birthday: "2011-10-29", Contact: "+852", Flat: "1502", Street: "King road", Area: "Island", Builidng: "HealthyGarden", level: 'Lv1', ReesID: 1121321231, headicon: face1 },
+    { id: 2, Sex: "Mx", FirstName: "Cheung3", LastName: "kit", NickName: "Jay", Birthday: "2011-10-29", Contact: "+852", Flat: "1502", Street: "King road", Area: "Island", Builidng: "HealthyGarden", level: 'Lv1', ReesID: 1121321231, headicon: face1 },
 ]
+const styles = {
+    root2: {
+        background: "#242634"
+    },
+    root: {
+        background: "#35394C"
+    },
+    input: {
+        color: "white"
+    }
+};
+function Profile(props) {
 
-export default function Profile() {
-
+    const { classes } = props;
     const { id } = useParams();
     const [Sex, setSex] = React.useState(userdata[id].Sex);
     const [FirstName, setFirstName] = React.useState(userdata[id].FirstName);
@@ -63,10 +66,10 @@ export default function Profile() {
     const [Street, setStreet] = React.useState(userdata[id].Street);
     const [Area, setArea] = React.useState(userdata[id].Area);
     const [Builidng, setBuilindg] = React.useState(userdata[id].Builidng);
-   
+
     const handleSexChange = (event) => {
         setSex(event.target.value)
-        
+
     };
     const handleFirstNameChange = (event) => {
         setFirstName(event.target.value)
@@ -98,24 +101,32 @@ export default function Profile() {
                 <Box sx={{ flexGrow: 1 }} >
                     <Grid xs={3}>
                         <Link to='/'>
-                            <StyledFab size="small" color="secondary" aria-label="add">
-                                <HomeIcon />
-                            </StyledFab>
+                            <img src={HomeIcon} alt='' width="15%" style={{
+                                position: 'fixed',
+                                zIndex: 3,
+                                top: "72vh",
+                                left: 0,
+                            }} />
                         </Link>
                     </Grid>
                     <Grid xs={8} >
                         <CssBaseline />
-                        <AppBar position="fixed" align='center' sx={{ top: 0 }}>
-                            <Toolbar>
-                                <Link to={`/`}>
-                                    <StyledFab2 size="small" color="secondary" aria-label="add">
-                                        <ArrowBackIcon />
-                                    </StyledFab2>
-                                </Link>
-                                <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
-                                    Profile
-                                </Typography>
-                                <Grid xs={1}></Grid>
+                        <AppBar position="fixed" align='center' elevation={0} sx={{ top: 0, backgroundColor: "#242634", borderBottom: '1px solid black' }}>
+                        <Toolbar>
+                                <Grid container xs={12} justifyContent='center' alignItems='center'>
+                                    <Grid xs={2}>
+                                        <Link to={`/`} style={{ position: 'relative', top: 3, right: 10 }}>
+                                            <img src={back} alt='' width="75%" />
+                                        </Link>
+                                    </Grid>
+                                    <Grid xs={8}>
+                                        <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} style={{
+                                            textAlign: 'center'
+                                        }}> PROFILE
+                                        </Typography>
+                                    </Grid>
+                                    <Grid xs={2}></Grid >
+                                </Grid>
                             </Toolbar>
                         </AppBar>
                     </Grid>
@@ -125,9 +136,9 @@ export default function Profile() {
             <Grid container alignItems='center' justifyContent='center' height="100vh" >
                 <Grid xs={12} height="2%" bgcolor="#8e8b91" >   </Grid>
 
-                <Grid xs={12} container alignItems='center' justifyContent='center' height="20%" bgcolor="#707070" >
+                <Grid xs={12} container alignItems='center' justifyContent='center' height="20%" bgcolor="#242634" >
                     <Grid xs={7} height="100%" container alignItems='center' justifyContent='center'>
-                        <Typography textAlign='center'>{userdata[0].NickName}<br />Rees Id: {userdata[0].ReesID}</Typography>
+                        <Typography textAlign='center' color='white'>{userdata[0].NickName}<br />Rees Id: {userdata[0].ReesID}</Typography>
 
                     </Grid>
                     <Grid xs={5} height="100%" container alignItems='center' justifyContent='center' >
@@ -135,12 +146,12 @@ export default function Profile() {
                         <Link to={`/${id}/Profile/SelectAvatar`} style={{ textDecoration: 'none', color: 'black', background: "black" }}><div button color='white'><Typography color="primary">Change Avatar</Typography></div></Link>
                     </Grid>
                 </Grid>
-                <Grid xs={12}  container alignItems='center' justifyContent='center' height="63%" bgcolor="#8e8b91" >
-                <Grid xs={4}  ><Button size='small' variant={Sex =="Mr"? 'contained':'outlined'} value="Mr" onClick={handleSexChange}>Mr</Button></Grid>
-                <Grid xs={4}  > <Button size='small'variant={Sex =="Ms"? 'contained':'outlined'} value="Ms" onClick={handleSexChange}>Ms</Button></Grid>
-                <Grid xs={4}  > <Button size='small'variant={Sex =="Mx"? 'contained':'outlined'} value="Mx" onClick={handleSexChange}>Mx</Button></Grid>
+                <Grid xs={12} container alignItems='center' justifyContent='center' height="63%" bgcolor="#242634" >
+                    <Grid xs={4}  ><Button size='small' variant={Sex == "Mr" ? 'contained' : 'outlined'} value="Mr" onClick={handleSexChange} color='primary'>Mr</Button></Grid>
+                    <Grid xs={4}  > <Button size='small' variant={Sex == "Ms" ? 'contained' : 'outlined'} value="Ms" onClick={handleSexChange}>Ms</Button></Grid>
+                    <Grid xs={4}  > <Button size='small' variant={Sex == "Mx" ? 'contained' : 'outlined'} value="Mx" onClick={handleSexChange}>Mx</Button></Grid>
                     <TextField
-                        id="filled-multiline-flexible"
+                        id="outlined-basic"
                         type="date"
                         label="First Name"
                         multiline
@@ -149,8 +160,11 @@ export default function Profile() {
                         onChange={handleFirstNameChange}
                         variant="filled"
                         size="small"
-                        color="secondary"
                         fullWidth={true}
+                        className={classes.root}
+                        InputProps={{
+                            className: classes.input
+                        }}
                     />
                     <TextField
                         id="filled-multiline-flexible"
@@ -162,7 +176,10 @@ export default function Profile() {
                         value={LastName}
                         onChange={handleLastNameChange}
                         variant="filled"
-                        color="secondary"
+                        className={classes.root}
+                        InputProps={{
+                            className: classes.input
+                        }}
                         fullWidth={true}
                     />
                     <TextField
@@ -174,18 +191,24 @@ export default function Profile() {
                         value={NickName}
                         onChange={handleNickNameChange}
                         variant="filled"
-                        color="secondary"
+                        className={classes.root}
+                        InputProps={{
+                            className: classes.input
+                        }}
                         fullWidth={true}
                     />
-                    <Grid xs={12} container alignItems='center'>
-                        <Grid xs={2.5}>
-                            <lable>Birthday:</lable></Grid>
+                    <Grid xs={12} container alignItems='center' bgcolor='#35394C'>
+                        <Grid xs={2.5} color='white'>
+                            <lable >Birthday:</lable></Grid>
                         <Grid xs={9.5}>
-                            <TextField size="small" fullWidth={true} type="date" value={Birthday} onChange={handleBirthdayChange} widht='100%' />
+                            <TextField size="small" fullWidth={true} type="date" value={Birthday} onChange={handleBirthdayChange} widht='100%'     className={classes.root}
+                        InputProps={{
+                            className: classes.input
+                        }}/>
                         </Grid>
                     </Grid>
                     <Grid xs={12} container alignItems='center'>
-                        <Grid xs={3}>
+                        <Grid xs={3} color='white'>
                             <lable>Contact No:</lable></Grid>
                         <Grid xs={9}>
                             <PhoneInput
@@ -193,10 +216,11 @@ export default function Profile() {
                                 countryCallingCodeEditable={false}
                                 defaultCountry="HK"
                                 value={Contact}
-                                onChange={setContact} /> </Grid>
+                                onChange={setContact} 
+                             /> </Grid>
                     </Grid>
                     <Grid xs={12} container alignItems='center'>
-                        <Grid xs={2.5}>
+                        <Grid xs={2.5} color='white'>
                             <lable>Deliver Address:</lable></Grid>
                         <Grid xs={2.5}>
                             <TextField
@@ -206,7 +230,11 @@ export default function Profile() {
                                 value={Flat}
                                 onChange={handleFlatChange}
                                 variant="filled"
-                                color="secondary" size="small"
+                                className={classes.root}
+                                InputProps={{
+                                    className: classes.input
+                                }}
+                                size="small"
                             />
                         </Grid>
                         <Grid xs={7}>
@@ -218,6 +246,10 @@ export default function Profile() {
                                 onChange={handleStreetChange}
                                 variant="filled"
                                 color="secondary" size="small"
+                                className={classes.root}
+                                InputProps={{
+                                    className: classes.input
+                                }}
                             />
                         </Grid>
                     </Grid>
@@ -234,7 +266,11 @@ export default function Profile() {
                                 value={Area}
                                 onChange={handleAreaChange}
                                 variant="filled"
-                                color="secondary" size="small"
+                                className={classes.root}
+                        InputProps={{
+                            className: classes.input
+                        }}
+                         size="small"
                             />
                         </Grid>
                         <Grid xs={6}>
@@ -245,12 +281,16 @@ export default function Profile() {
                                 value={Builidng}
                                 onChange={handleBuildingChange}
                                 variant="filled"
-                                color="secondary" size="small"
+                                className={classes.root}
+                                InputProps={{
+                                    className: classes.input
+                                }}
+                                 size="small"
                             />
                         </Grid>
                     </Grid>
                 </Grid>
-                <Grid xs={12} height="15%" container alignItems='center' justifyContent='center' bgcolor="#707070" >
+                <Grid xs={12} height="17%" container alignItems='center' justifyContent='center' bgcolor="#242634" >
                     <Grid xs={8} container alignItems='center' justifyContent='center' color='white' height="80%" style={{ borderRadius: "25%" }}>
                         <Popup
                             className="content2"
@@ -263,9 +303,7 @@ export default function Profile() {
                             {close => (
                                 <div className="modal2">
                                     <button className="close" onClick={close}>
-                                        <div className="close" >
-                                            &times;
-                                        </div>
+
                                     </button>
                                     <Grid xs={12} marginTop="7vh">
                                         <Typography variant="h4" component="div" color='primary' textAlign='center' >
@@ -287,3 +325,6 @@ export default function Profile() {
     )
 
 }
+
+
+export default withStyles(styles)(Profile);

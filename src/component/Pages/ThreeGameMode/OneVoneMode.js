@@ -5,6 +5,7 @@ import { useStopwatch } from 'react-timer-hook';
 import { styled } from '@mui/material/styles'
 import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
 import backgroundEnd from "../../../reed_bg.svg"
+import Forward from '../../../svgicon/Componenticon/Forward.svg'
 import Select from 'react-select';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import EndBar from '../../framework/endbarWithback';
@@ -19,32 +20,54 @@ import face1 from "../../../face_1.svg"
 import face2 from "../../../face_2.svg"
 import face3 from "../../../face_3.svg"
 import face4 from "../../../face_4.svg"
+import back from '../../../svgicon/Componenticon/Back.svg'
 import face5 from "../../../face_5.svg"
 import face6 from "../../../face_6.svg"
 import face7 from "../../../face_7.svg"
 import face8 from "../../../face_8.svg"
 import face9 from "../../../face_9.svg"
+import Gicon1 from '../../../svgicon/GameIcon/Gicon1.svg'
+import Gicon2 from '../../../svgicon/GameIcon/Gicon2.svg'
+import Gicon3 from '../../../svgicon/GameIcon/Gicon3.svg'
+import Gicon4 from '../../../svgicon/GameIcon/Gicon4.svg'
+import Gicon5 from '../../../svgicon/GameIcon/Gicon5.svg'
+import Gicon6 from '../../../svgicon/GameIcon/Gicon6.svg'
+import Gicon7 from '../../../svgicon/GameIcon/Gicon7.svg'
+import Gicon8 from '../../../svgicon/GameIcon/Gicon8.svg'
+import Gicon9 from '../../../svgicon/GameIcon/Gicon9.svg'
+import Gicon10 from '../../../svgicon/GameIcon/Gicon10.svg'
+import Gicon11 from '../../../svgicon/GameIcon/Gicon11.svg'
+import Gicon12 from '../../../svgicon/GameIcon/Gicon12.svg'
+import Gicon13 from '../../../svgicon/GameIcon/Gicon13.svg'
+import Gicon14 from '../../../svgicon/GameIcon/Gicon14.svg'
+import Gicon15 from '../../../svgicon/GameIcon/Gicon15.svg'
+import BgBlack from "../../../svgicon/OVOmode/BgBlack.svg"
+import Bgpink from "../../../svgicon/OVOmode/BgPink.svg"
+import Circle from "../../../svgicon/OVOmode/Circle.svg"
+import Vs from "../../../svgicon/OVOmode/Vs.svg"
 import Headicon from '../../../headicon.svg'
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
-import puzzle from "../../../puzzle.svg"
-import SportsEsportsIcon from '@mui/icons-material/SportsEsports'
-import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import Badge from '@mui/material/Badge'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import Fab from '@mui/material/Fab';
 import { Swiper, SwiperSlide } from "swiper/react";
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
+import coderedeem from '../../../coderedeem.svg'
+import TextField from '@mui/material/TextField';
+import Logout from '../../../logout.svg'
 import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
+import Hamburgicon from "../../../svgicon/Componenticon/Hamburgicon.svg";
+import Chasepuzzle from "../../../svgicon/Componenticon/Chasepuzzle.svg"
+import Close from '../../../svgicon/Componenticon/Close.svg'
+import GameTutorial from "../../../svgicon/BattleMode/GameTutorial.svg"
+import Download from "../../../svgicon/BattleMode/Download.svg"
+import PoweredByR from '../../../svgicon/PowerBy/PowerByR.svg'
 // Import Swiper styles
 import 'swiper/swiper-bundle.min.css'
 // swiper core styles
@@ -78,27 +101,43 @@ const StyledFab3 = styled(Fab)({
 
 });
 const contentStyle = {
-    background: '#cfcece',
-    width: "100%",
+    background: '#242632',
+    width: "95%",
     height: "95%",
     borderRadius: "5%",
 };
+
+const userdata = [
+    { id: 0, level: 'Lv1', ReesID: 1, nickname: 'Jay' },
+]
+
+const Toplinkdata = [
+    { id: 0, linkName: "PROFILE", link: `/${userdata[0].ReesID}/Profile` },
+    { id: 1, linkName: "SETTING", link: `/${userdata[0].ReesID}/Setting` },
+    { id: 2, linkName: "EVENTS", link: "/Events" },
+    { id: 3, linkName: "BUY PUZZLES", link: "/" }
+]
+const Bottomlinkdata = [
+    { id: 0, linkName: "About REES", link: "/" },
+    { id: 1, linkName: "FAQ", link: "/" },
+    { id: 2, linkName: "PRESS", link: "/" },
+    { id: 3, linkName: "LOGOUT", link: "/" },
+]
 function MyStopwatch() {
     const {
         seconds,
         minutes,
         start
-    } = useStopwatch({ autoStart: false });
+    } = useStopwatch({ autoStart: true });
     function Startplay() {
         start();
 
     }
 
     return (
-        <div style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: '40px' }}>
+        <div style={{ textAlign: 'center' }} onClick={Startplay}>
+            <div style={{ fontSize: '40px' }} >
                 <span>{minutes}</span>:<span>{seconds}</span>
-                <button onClick={Startplay}>Start</button>
             </div>
         </div>
     );
@@ -164,25 +203,21 @@ export default class OneVoneModeGo extends Component {
             { id: 2, Modechoose: "BattleMode", embedId: "dWOm9KXJQLo", detail: "Battle MODE is ......." },
         ]
         const data = [
-            { id: 0, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88, GameRules: "2048是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 1, src: '/img/square1.jpeg', name: "原神", number: 56, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 2, src: '/img/square2.jpeg', name: "LoL", number: 55, entryFee: 828, GameRules: "LOL是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 3, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 },
-            { id: 4, src: '/img/square1.jpeg', name: "原神", number: 56, entryFee: 848 },
-            { id: 5, src: '/img/square2.jpeg', name: "LoL", number: 55, entryFee: 828 },
-            { id: 6, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 },
-            { id: 7, src: '/img/square1.jpeg', name: "原神", number: 56, entryFee: 848 },
-            { id: 8, src: '/img/square2.jpeg', name: "LoL", number: 55, entryFee: 828 },
-            { id: 9, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 },
-            { id: 10, src: '/img/square1.jpeg', name: "原神", number: 56, entryFee: 848 },
-            { id: 11, src: '/img/square2.jpeg', name: "LoL", number: 55, entryFee: 828 },
-            { id: 12, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 },
-            { id: 13, src: '/img/square1.jpeg', name: "原神", number: 56, entryFee: 848 },
-            { id: 14, src: '/img/square2.jpeg', name: "LoL", number: 55, entryFee: 828 },
-            { id: 15, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 },
-            { id: 16, src: '/img/square1.jpeg', name: "原神", number: 56, entryFee: 848 },
-            { id: 17, src: '/img/square2.jpeg', name: "LoL", number: 55, entryFee: 828 },
-            { id: 18, src: '/img/square.jpeg', name: "2048", number: 52, entryFee: 88 }
+            { id: 0, src: Gicon1, name: "Onmyoji Arena", number: 52, entryFee: 88, GameRules: "2048是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 1, src: Gicon2, name: "TOM & JERRY: CHASE", number: 56, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 2, src: Gicon3, name: "Super Mecha Champions", number: 55, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 3, src: Gicon4, name: "Side Force Don't Fall", number: 53, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 4, src: Gicon5, name: "Seven Squids", number: 54, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 5, src: Gicon6, name: "Punch Box", number: 51, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 6, src: Gicon7, name: "Iron Space", number: 52, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 7, src: Gicon8, name: "Candy Robber", number: 58, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 8, src: Gicon9, name: "Fruit Matching", number: 88, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 9, src: Gicon10, name: "Falling Cubes", number: 25, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 10, src: Gicon11, name: "Box Tower ", number: 95, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 11, src: Gicon12, name: "Jumper Frog", number: 85, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 12, src: Gicon13, name: "2048", number: 75, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 13, src: Gicon14, name: "HEXTRIS", number: 65, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
+            { id: 14, src: Gicon15, name: "FISHING FRENZY", number: 55, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
         ]
         const OneVoneMode = [
             { id: 0, MaxPayOut: 88, MaxPrize: 3500, entryFee: 88 },
@@ -208,17 +243,17 @@ export default class OneVoneModeGo extends Component {
             { id: 8, src: face8, name: "HeroMan" },
             { id: 8, src: face9, name: "IconMan" },
         ]
-        const user = { id: 0, src: face0, name: "Ka Po" }
+        const user = { id: 0, src: face1, name: "Ka Po" }
         const RandomAvatar = RandomAvatarData.map((data) => {
             return (
                 <SwiperSlide>
-                    <Grid xs={12} container height="100%" justifyContent='center' alignItems="center" style={{ border: "1px solid grey", textAlign: 'center' }} >
-                        <Grid xs={5} container justifyContent="center" alignItems="center" style={{ border: "1px solid grey", textAlign: 'center', height: "100%" }}>
-                            <Typography variant="body2" component="div" color='primary' textAlign='center' >
+                    <Grid xs={12} container height="100%" justifyContent='center' alignItems="center" style={{ textAlign: 'center' }} >
+                        <Grid xs={5} container justifyContent="center" alignItems="center" style={{ textAlign: 'center', height: "100%" }}>
+                            <Typography variant="body2" component="div" color='white' textAlign='center' >
                                 {data.name}
                             </Typography>
                         </Grid>
-                        <Grid xs={7} container justifyContent="center" alignItems="center" style={{ border: "1px solid grey", textAlign: 'center', height: "100%" }}>
+                        <Grid xs={7} container justifyContent="center" alignItems="center" style={{ textAlign: 'center', height: "100%" }}>
                             <img src={data.src} alt="" width="100%" />
                         </Grid>
                     </Grid>
@@ -229,25 +264,43 @@ export default class OneVoneModeGo extends Component {
 
         return (
             <Box sx={{ flexGrow: 1 }}>
-                <Grid container height="100vh" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: 'auto auto', backgroundAttachment: 'fixed' }}>
+                <Grid container height="100%" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: 'auto auto', backgroundAttachment: 'fixed' }}>
                     <Grid xs={12}  >
-                        <React.Fragment>
-                            <Box sx={{ flexGrow: 1, }}>
+                        <React.Fragment >
+                            <Box sx={{ flexGrow: 1, }} style={{ display: this.state.isToggleOn ? "" : 'none' }} >
                                 <CssBaseline />
-                                <AppBar position='relative' align='center' sx={{ top: 0, bottom: 'auto' }}>
-                                    <Toolbar variant="dense">
-                                        <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
-                                            1 ON 1 MODE
+                                <AppBar position={'fixed'} align='center' sx={{ top: 0, bottom: 'auto' }}  >
+                                    <Toolbar style={{ backgroundColor: '#242634' }} >
+                                        <Typography variant="h6" component="div" sx={{}}>
+                                            <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}`}>
+                                                <img src={back} alt='' width="40%" style={{
+                                                    position: 'relative',
+                                                    zIndex: 3,
+                                                    top: 5,
+                                                    left: "-35%",
+                                                }} />
+                                            </Link>
+                                        </Typography>
+                                        <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} style={{
+                                            position: 'relative',
+                                            zIndex: 3,
+                                            left: "-13%",
+                                        }}>    1 ON 1 MODE
                                         </Typography>
                                         <IconButton
                                             size="large"
                                             edge="start"
                                             color="inherit"
                                             aria-label="menu"
-                                            sx={{}}
+
                                             onClick={this.openhandleClick}
                                         >
-                                            <MenuIcon />
+                                            <img src={Hamburgicon} alt="" width="110%" style={{
+                                                position: 'absolute',
+
+                                                left: 0,
+                                                margin: '0 60%',
+                                            }} />
                                         </IconButton>
                                         {/* drawer */}
                                         <Drawer
@@ -256,10 +309,10 @@ export default class OneVoneModeGo extends Component {
                                             onClose={this.openhandleClick}
                                         >
                                             <Box
-                                                sx={{ width: 280, height: "100vh", backgroundColor: "white" }}
+                                                sx={{ width: 280, height: "100%", backgroundColor: "#242634" }}
                                                 role="presentation"
                                             >
-                                                <List >
+                                                <List sx={{ height: "50%" }}>
 
                                                     <IconButton
                                                         size="large"
@@ -267,47 +320,62 @@ export default class OneVoneModeGo extends Component {
                                                         color="inherit"
                                                         aria-label="menu"
                                                         onClick={this.openhandleClick}
-                                                        sx={{ left: "90%", bottom: 20 }}
+                                                        sx={{ left: "50%", bottom: 5 }}
                                                     >
-                                                        <MenuIcon />
+                                                        <img src={Close} alt='hamburgericon' width='40%' style={{ position: 'relative', left: 60 }} />
                                                     </IconButton>
-                                                    <ListItem>
-                                                        <ListItemText primary={"close"} sx={{ float: "right" }} />
+                                                    <ListItemText style={{ textAlign: "center" }}  ><Grid container justifyContent='center' alignItems="center"><Typography color='white'>Play to Earn PUZZLES</Typography><img src={Chasepuzzle} /></Grid></ListItemText>
+
+                                                    {Toplinkdata.map((text, index) => (
+                                                        <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
+                                                            <ListItem button key={text.id}>
+                                                                <ListItemText >
+                                                                    {text.linkName}
+                                                                </ListItemText>
+                                                                <KeyboardArrowRightIcon />
+                                                            </ListItem>
+                                                        </Link>
+                                                    ))}
+                                                    <ListItem >
+                                                        <ListItemText style={{ fontSize: '0.7em' }}>
+                                                            <Box sx={{ display: 'flex', alignItems: 'flex-end', fontSize: '0.7em', color: 'white' }}>
+
+                                                                CODE REDEEM :
+                                                                <TextField id="input-with-sx" variant="standard" />
+
+                                                                <img src={coderedeem} alt="coderedeem" />
+                                                            </Box>
+                                                        </ListItemText>
                                                     </ListItem>
-                                                    {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-                                                        <ListItem button key={text}>
-                                                            <ListItemText primary={text} sx={{ float: "right" }} />
-                                                        </ListItem>
-                                                    ))}
                                                 </List>
-                                                <Divider />
-                                                <List >
-                                                    {["All mail", "Trash", "Spam"].map((text, index) => (
-                                                        <ListItem button key={text}>
-                                                            <ListItemIcon>
-                                                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                                            </ListItemIcon>
-                                                            <ListItemText primary={text} />
+                                                <List style={{ top: "10%", textDecoration: 'none', color: 'white' }} sx={{ height: "40%" }} >
+                                                    {Bottomlinkdata.slice(0, 3).map((text, index) => (
+                                                        <ListItem button key={text.id}>
+                                                            <ListItemText >
+                                                                <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>{text.linkName}  </Link>
+                                                            </ListItemText>
                                                         </ListItem>
                                                     ))}
+                                                    <ListItem >
+                                                        <ListItemText >
+                                                            <Link to={Bottomlinkdata[3].link} style={{ textDecoration: 'none', color: 'white' }}>{Bottomlinkdata[3].linkName}   <img src={Logout} alt="logout" /></Link>
+                                                        </ListItemText>
+                                                    </ListItem>
                                                 </List>
                                             </Box>
                                         </Drawer>
-                                        
                                     </Toolbar>
 
-                                    <div style={{ backgroundColor: "gray" }}>
+                                    <div style={{ backgroundColor: "#707070" }}>
                                         <Toolbar variant="dense">
                                             <Grid item xs={2} sx={{ marginTop: '1vh' }}>
                                                 <img src={data[this.props.match.params.id].src} alt="gameicon" width="100%" />
 
                                             </Grid>
-                                            <Grid item xs={7} sx={{ marginTop: '1vh' }}>
-                                                <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'left', marginLeft: '2vh' }}>
-                                                    {data[this.props.match.params.id].name}
-                                                    <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'left' }}>
-                                                        CHOOSE TOURNAMENT AND PAID TO PLAY
-                                                    </Typography>
+                                            <Grid item xs={9} sx={{ marginTop: '1vh' }}>
+                                                <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'left', marginLeft: '2vh' }}>
+                                                    {data[this.props.match.params.id].name}<br />
+                                                    CHOOSE TOURNAMENT AND PLAY
                                                 </Typography>
                                             </Grid>
                                             <Grid item xs={3} >
@@ -321,7 +389,7 @@ export default class OneVoneModeGo extends Component {
                                                                     color="inherit"
                                                                     aria-label="menu"
                                                                     sx={{}}
-                                                                ><FileDownloadIcon />
+                                                                ><img src={Download} alt="" width="80%" />
                                                                 </IconButton>
                                                             </div>
                                                         </div>
@@ -335,18 +403,15 @@ export default class OneVoneModeGo extends Component {
                                                     {...{ contentStyle }}
                                                 >
                                                     {close => (
-                                                        <div className="modal">
-                                                            <button className="close" onClick={close}>
-                                                                <div className="close" onClick={this.handleClick} >
-                                                                    &times;
-                                                                </div>
+                                                        <div className="modal" >
+                                                            <button className="close" >
+
                                                             </button>
                                                             <Grid xs={12} >
-
-                                                                <Typography variant="h3" inline>
+                                                                <Typography variant="h3" inline color='white'>
                                                                     Game Rule
                                                                 </Typography>
-                                                                <Typography variant="h4" inline>
+                                                                <Typography variant="h4" inline color='white'>
                                                                     {data[this.props.match.params.id].GameRules}
                                                                 </Typography>
                                                             </Grid>
@@ -354,12 +419,6 @@ export default class OneVoneModeGo extends Component {
                                                     )}
                                                 </Popup>
 
-                                                <Typography variant="caption" component="div" sx={{ textAlign: 'center' }}>
-                                                    Game
-                                                </Typography>
-                                                <Typography variant="caption" component="div" sx={{ textAlign: 'center' }}>
-                                                    Rules
-                                                </Typography>
                                             </Grid>
                                             <Grid item xs={2} >
                                                 <Popup
@@ -369,24 +428,22 @@ export default class OneVoneModeGo extends Component {
                                                             color="inherit"
                                                             aria-label="menu"
                                                             sx={{}}
-                                                        ><SportsEsportsIcon />
+                                                        ><img src={GameTutorial} alt="" width="120%" />
                                                         </IconButton></div></div>}
                                                     modal
                                                     lockScroll
                                                     nested
                                                 >
                                                     {close => (
-                                                        <div className="modal">
-                                                            <button className="close" onClick={close}>
-                                                                <div className="close" >
-                                                                    &times;
-                                                                </div>
+                                                        <div className="modal" >
+                                                            <button className="close" onClick={close}  >
+
                                                             </button>
                                                             <Grid xs={12} >
-                                                                <Typography variant="h6" component="div" color='primary' textAlign='center'>
+                                                                <Typography variant="h6" component="div" color='white' textAlign='center'>
                                                                     How to play
                                                                 </Typography>
-                                                                <Typography variant="caption" component="div" color='primary' textAlign='center'>
+                                                                <Typography variant="caption" component="div" color='white' textAlign='center'>
                                                                     {Mode[0].Modechoose}
                                                                 </Typography>
                                                                 <Grid item xs={12} height="30vh">
@@ -402,49 +459,46 @@ export default class OneVoneModeGo extends Component {
                                                                     </div>
                                                                 </Grid>
                                                                 <Grid xs={12} positon='fixed'>
-                                                                    <Typography variant="h4" component="div" color='primary' textAlign='center'>
-                                                                        POWERED BY R<KeyboardArrowDown />
+                                                                    <Typography variant="h4" component="div" color='white' textAlign='center'>
+                                                                        <img src={PoweredByR} alt='' />
                                                                     </Typography>
                                                                 </Grid>
                                                             </Grid>
                                                         </div>
                                                     )}
                                                 </Popup>
-
-
-                                                <Typography variant="caption" component="div" sx={{ textAlign: 'center' }}>
-                                                    Mode
-                                                </Typography>
-                                                <Typography variant="caption" component="div" sx={{ textAlign: 'center' }}>
-                                                    Tutorial
-                                                </Typography>
                                             </Grid>
 
                                         </Toolbar>
                                     </div>
                                 </AppBar>
+
+                                <Toolbar />
+                                <Toolbar />
                             </Box>
                         </React.Fragment>
                     </Grid>
                     <Grid container
                         direction="row"
-                        justifyContent='center'
-                        alignItems="center"
-
+                        height="40vh"
                     >
                         <Grid item xs={12} container
                             justifyContent='center'
                             direction="row"
                             alignItems="center"
-                            height="45vh"
-                            style={{ border: "1px solid grey" }}>
-                            <StyledFab3 size="large" color="secondary" aria-label="add">
-                                <Typography variant="h4">VS</Typography>
-                            </StyledFab3>
-                            <Grid xs={3} item height="50%" style={{ border: "1px solid grey" }}>
+                            height="43vh"
+                            marginTop="5vh"
+                            style={{ paddingTop: '1vh', textAlign: 'center', backgroundImage: `url(${BgBlack})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
+
+                            <img src={Vs} alt='' width="30%" style={{
+                                position: 'absolute',
+
+                            }} />
+
+                            <Grid xs={3} item height="50%" >
 
                             </Grid>
-                            <Grid xs={9} container item height="50%" justifyContent='center' alignItems="center" style={{ border: "1px solid grey", textAlign: 'center' }}>
+                            <Grid xs={9} container item height="50%" justifyContent='center' alignItems="center" style={{ textAlign: 'center' }}>
                                 <Swiper
                                     spaceBetween={30}
                                     allowTouchMove={false}
@@ -466,40 +520,42 @@ export default class OneVoneModeGo extends Component {
                                 </Swiper>
                             </Grid>
                             {/* next half page */}
-                            <Grid xs={9} container height="50%" justifyContent='center' alignItems="center" style={{ border: "1px solid grey", textAlign: 'center' }}>
+                            <Grid xs={9} container height="50%" justifyContent='center' alignItems="center" style={{ textAlign: 'center' }}>
 
-                                <Grid xs={12} container height="100%" justifyContent='center' alignItems="center" style={{ border: "1px solid grey", textAlign: 'center' }} >
-                                    <Grid xs={7} container justifyContent="center" alignItems="center" style={{ border: "1px solid grey", textAlign: 'center', height: "100%" }}>
-                                        <img src={user.src} alt="" width="80%" />
+                                <Grid xs={12} container height="80%" justifyContent='center' alignItems="center" style={{ textAlign: 'center' }} >
+                                    <Grid xs={7} container justifyContent="center" alignItems="center" style={{ paddingBottom: '5vh', textAlign: 'center', height: "100%" }}>
+                                        <img src={user.src} alt="" width="65%" />
                                     </Grid>
-                                    <Grid xs={5} container justifyContent="center" alignItems="center" style={{ border: "1px solid grey", textAlign: 'center', height: "100%" }}>
-                                        <Typography variant="body1  " component="div" color='primary' textAlign='center' >
+                                    <Grid xs={5} container justifyContent="center" alignItems="center" style={{ textAlign: 'center', height: "100%" }}>
+                                        <Typography variant="body1 " component="div" color='white' textAlign='center' style={{ paddingBottom: '4vh' }} >
                                             {user.name}
                                         </Typography>
                                     </Grid>
                                 </Grid>
                             </Grid>
-                            <Grid xs={3} item height="50%" style={{ border: "1px solid grey", textAlign: 'center', paddingTop: '15%' }}>
+                            <Grid xs={3} item height="50%" style={{ textAlign: 'center', paddingTop: '15%' }}>
                             </Grid>
                         </Grid>
 
-                        <Grid item xs={7} height="9vh" style={{ border: "1px solid grey", textAlign: 'center' }} >
+                        <Grid item xs={7} height="9vh" style={{ textAlign: 'center' }} >
                             <div>
                                 <MyStopwatch />
                             </div>
                         </Grid>
-                        <Grid item xs={5} height="9vh" style={{ border: "1px solid grey", textAlign: 'center' }} >
-                            <Typography variant="body1"> entry fee</Typography>
-                            <Typography variant="h6">{OneVoneMode[this.props.match.params.entryid].entryFee}<img src={puzzle} alt="icon" width="15%" />
-
+                        <Grid item xs={5} height="10vh" style={{ backgroundImage: `url(${Bgpink})`, backgroundSize: '100% 100%', backgroundAttachment: 'cover', textAlign: 'center' }} >
+                            <Typography variant="body1" color='white'> entry fee</Typography>
+                            <Typography variant="h6" color='white'>{OneVoneMode[this.props.match.params.entryid].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" />
                                 <Popup
                                     trigger={
                                         <div className="button">
                                             <div onClick={this.handleClick}>
+                                                <img src={Forward} alt='' zIndex='1' width="30%" style={{
+                                                    position: 'relative',
+                                                    zIndex: 2,
+                                                    left: "33%",
+                                                    top: -30
 
-                                                <StyledFab2 size="small" color="secondary" aria-label="add">
-                                                    <KeyboardArrowRightIcon />
-                                                </StyledFab2>
+                                                }} />
                                             </div>
                                         </div>
 
@@ -508,17 +564,20 @@ export default class OneVoneModeGo extends Component {
                                     lockScroll
                                     closeOnDocumentClick={false}
                                     nested
+                                    onClose={this.handleClick}
                                     {...{ contentStyle }}
                                 >
                                     {close => (
-                                        <div className="modal">
-                                            <button className="close" onClick={close}>
-                                                <div className="close" onClick={this.handleClick}>
-                                                    &times;
-                                                </div>
+                                        <div className="modal" >
+                                            <button className="close" onClick={close} style={{boder:'5px solid white'}}>
+                                                
                                             </button>
                                             <Grid xs={12} >
                                                 Game Content
+                                                <Link to={'/EndOneVoneMOde'}> <button >
+                                                    Go to check end
+                                                </button>
+                                                </Link>
                                             </Grid>
                                         </div>
                                     )}
@@ -530,8 +589,12 @@ export default class OneVoneModeGo extends Component {
                         </Grid>
 
                     </Grid>
-                    <Grid item xs={12} marginTop="0vh" display={this.state.isToggleOn ? 'block' : 'none'} >
+
+                    <Grid item xs={12} display={this.state.isToggleOn ? 'block' : 'none'} >
                         <EndBar />
+                    </Grid>
+                    <Grid item xs={12} height="20vh" display={this.state.isToggleOn ? 'block' : 'none'} >
+
                     </Grid>
                 </Grid>
             </Box >

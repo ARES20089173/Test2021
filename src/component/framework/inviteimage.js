@@ -18,9 +18,7 @@ export default function inviteimages(){
             {close => (
                 <div className="modal">
                     <button className="close" onClick={close}>
-                        <div className="close" onClick={this.handleClick}>
-                            &times;
-                        </div>
+                        
                     </button>
                     <Grid xs={12}>
                         <Typography variant="h4" component="div" color='primary' textAlign='center'>

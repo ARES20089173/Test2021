@@ -90,7 +90,7 @@ export default class MessageCenter extends Component {
                     alignItems="center"
                     height="11vh"
 
-                    style={{ backgroundColor: "#35394C"}}>
+                    style={{ backgroundColor: "#35394C" }}>
 
                     <Grid item xs={9} style={{ textAlign: 'left', paddingLeft: '6vh' }} >
                         <img src={data.icon} width="9%" />
@@ -128,21 +128,19 @@ export default class MessageCenter extends Component {
                             <CssBaseline />
                             <AppBar position="fixed" align='center' elevation={0} sx={{ top: 0, backgroundColor: "#242634", borderBottom: '1px solid black' }}>
                                 <Toolbar>
-                                    <Link to={`/MessageCenter`}>
-                                        <img src={back} alt='' width="40%" style={{
-                                            position: 'relative',
-                                            zIndex: 3,
-                                            top: 5,
-                                            left: "-40%",
-                                        }} />
-                                    </Link>
-                                    <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} style={{
-                                            position: 'relative',
-                                            zIndex: 3,
-                                            left: "-13%",
-                                        }}>           Notice Setting
-                                    </Typography>
-                                    <Grid xs={1}></Grid>
+                                    <Grid container xs={12} justifyContent='center' alignItems='center'>
+                                    <Grid xs={2}>
+                                        <Link to={`/MessageCenter`} style={{ position: 'relative', top: 3,right:10 }}>
+                                            <img src={back} alt='' width="75%" />
+                                        </Link>
+                                    </Grid>
+                                    <Grid xs={8}>
+                                        <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} style={{
+                                    textAlign:'center'  }}>           Notice Setting
+                                        </Typography>
+                                    </Grid>
+                                    <Grid xs={2}></Grid>
+                                </Grid>
                                 </Toolbar>
                             </AppBar>
                         </Grid>

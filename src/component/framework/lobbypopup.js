@@ -11,7 +11,7 @@ export default () => (
     {close => (
       <div className="modal">
         <button className="close" onClick={close}>
-          &times;
+     
         </button>
         <div className="header"> Modal Title </div>
         <div className="content">

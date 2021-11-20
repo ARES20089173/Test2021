@@ -17,6 +17,7 @@ import Scrollbanner from '../../framework/scrollbanner';
 import NavigationBar from '../../framework/navigationBar';
 import Scrolltext from '../../framework/scrolltext';
 import GameLobby from '../../../svgicon/Componenticon/GameLobby.svg'
+import Close from '../../../svgicon/EndBaricon/ClosePopup.svg'
 import { Button } from '@mui/material';
 import EndBar from '../../framework/endbar';
 import { styled } from '@mui/material/styles';
@@ -35,6 +36,7 @@ const StyledFab2 = styled(Fab)({
 const contentStyle = {
     marginTop: '20%',
     background: '#242634',
+    border:'none',
     width: "90%",
     height: "60%",
     borderRadius: "5%",
@@ -84,10 +86,8 @@ export default function MainPage() {
                         >
                             {close => (
                                 <div className="modal">
-                                    <button className="close" onClick={close}>
-                                        <div className="close" >
-                                            &times;
-                                        </div>
+                                    <button className="close" onClick={close} >
+                                       
                                     </button>
                                     <Grid xs={12}>
                                         <Typography variant="body2" component="div" color='primary' textAlign='center'>
