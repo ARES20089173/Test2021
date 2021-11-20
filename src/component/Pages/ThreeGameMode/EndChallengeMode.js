@@ -17,7 +17,7 @@ import { Link } from 'react-router-dom';
 const contentStyle = {
     background: '#242632',
     width: "90%",
-    height: "75%",
+    height: "82%",
     border: 'none'
 };
 const data = [

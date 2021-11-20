@@ -378,10 +378,10 @@ export default class TournamentLobby extends Component {
                             }}>
                                 <Popup
                                     trigger={
-                                        <div className="button">
-                                            <div >
+                                        <div className="button" >
+                                            <div  onClick={this.handleClick}>
 
-                                                <img src={Forward} alt='' onClick={this.handleClick} zIndex='1' width="60%" style={{
+                                                <img src={Forward} alt='' zIndex='2' width="60%" style={{
                                                     position: 'relative',
                                                     zIndex: 0,
                                                     left: "25%",
@@ -448,8 +448,8 @@ export default class TournamentLobby extends Component {
                                             <Popup
                                                 trigger={
                                                     <div className="button">
-                                                        <div >
-                                                            <img src={Forward} alt='' onClick={this.handleClick} zIndex='1' width="60%" style={{
+                                                        <div  onClick={this.handleClick}>
+                                                            <img src={Forward} alt='' zIndex='1' width="60%" style={{
                                                                 position: 'relative',
                                                                 zIndex: 0,
                                                                 left: "25%",
@@ -567,8 +567,8 @@ export default class TournamentLobby extends Component {
                                 <Popup
                                     trigger={
                                         <div className="button">
-                                            <div >
-                                                <img src={Forward} alt='' onClick={this.handleClick} zIndex='1' width="60%" style={{
+                                            <div  onClick={this.handleClick}>
+                                                <img src={Forward} alt=''  zIndex='1' width="60%" style={{
                                                     position: 'relative',
                                                     zIndex: 0,
                                                     left: "25%",
@@ -632,8 +632,8 @@ export default class TournamentLobby extends Component {
                                             <Popup
                                                 trigger={
                                                     <div className="button">
-                                                        <div >
-                                                            <img src={Forward} alt='' onClick={this.handleClick} zIndex='1' width="60%" style={{
+                                                        <div  onClick={this.handleClick}>
+                                                            <img src={Forward} alt=''zIndex='1' width="60%" style={{
                                                                 position: 'relative',
                                                                 zIndex: 0,
                                                                 left: "25%",
@@ -766,8 +766,8 @@ export default class TournamentLobby extends Component {
                                 <Popup
                                     trigger={
                                         <div className="button">
-                                            <div >
-                                                <img src={Forward} alt='' onClick={this.handleClick} zIndex='1' width="60%" style={{
+                                            <div  onClick={this.handleClick}>
+                                                <img src={Forward} alt=''  zIndex='1' width="60%" style={{
                                                     position: 'relative',
                                                     zIndex: 0,
                                                     left: "25%",
@@ -847,8 +847,8 @@ export default class TournamentLobby extends Component {
                                             <Popup
                                                 trigger={
                                                     <div className="button">
-                                                        <div >
-                                                            <img src={Forward} alt='' onClick={this.handleClick} zIndex='1' width="60%" style={{
+                                                        <div  onClick={this.handleClick}>
+                                                            <img src={Forward} alt=''  zIndex='1' width="60%" style={{
                                                                 position: 'relative',
                                                                 zIndex: 0,
                                                                 left: "25%",
