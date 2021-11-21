@@ -436,7 +436,7 @@ export default class TournamentLobby extends Component {
                             <Grid item xs={12} container
                                 justifyContent='center'
                                 direction="row"
-                                height="50vh"
+                                height="40vh"
                             >
                                 <Grid item xs={12} container
                                     justifyContent='center'
