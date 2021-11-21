@@ -36,6 +36,7 @@ export default class EndBattleMode extends Component {
 
     render() {
         return (
+            
             <Popup
                 trigger={
                     <div className="button">
@@ -94,6 +95,7 @@ export default class EndBattleMode extends Component {
                                             chasing you and going to
                                             take your ranking
                                         </Typography>
+                                        
                                     </Grid>
                                 </Grid>
                                 <Grid xs={12} container height="65%" style={{ textAlign: 'center' }} alignItems='center' justifyContent="center">
@@ -128,6 +130,7 @@ export default class EndBattleMode extends Component {
                     </div>
                 )}
             </Popup>
+             
         )
     }
 }

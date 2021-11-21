@@ -436,7 +436,7 @@ export default class TournamentLobby extends Component {
                             <Grid item xs={12} container
                                 justifyContent='center'
                                 direction="row"
-                                height="0vh"
+                                height="50vh"
                             >
                                 <Grid item xs={12} container
                                     justifyContent='center'
@@ -452,7 +452,7 @@ export default class TournamentLobby extends Component {
                                             {BattleMode[this.props.match.params.entryid].MaxPrize}  <img src={Chasepuzzle} alt="gameicon" width="15%" />
                                         </Typography>
                                     </Grid>
-                                    <Grid item xs={5.5} style={{ textAlign: 'center' }} marginLeft="1vh"  style={{ backgroundImage: `url(${Pinkbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
+                                    <Grid item xs={5.5} style={{ textAlign: 'center' }} marginLeft="1vh" style={{ backgroundImage: `url(${Pinkbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
 
                                         <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='white'>
                                             Max PayOut
@@ -478,8 +478,10 @@ export default class TournamentLobby extends Component {
                                         </Typography>
                                     </Grid>
                                 </Grid>
-                                <Grid item xs={11.5} container style={{ textAlign: 'left', overflow: 'scroll', backgroundImage: `url(${Bigbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'cover' }} justifyContent="center" alignItems="center" height="37vh">
-                                    <Grid item xs={12} container style={{ marginTop: '3vh', textAlign: 'left', overflow: 'scroll', position: 'static', maxHeight: '55%' }} justifyContent="left" alignItems="center" height="39vh">
+                              
+
+                                <Grid item xs={11.5} container style={{ textAlign: 'left', backgroundImage: `url(${Bigbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'cover' }} justifyContent="center" alignItems="center" height="37vh">
+                                    <Grid item xs={12} container style={{ position: 'relative', marginTop: '3vh', textAlign: 'left', overflowY: 'scroll', maxHeight: '55%' }} alignItems="center" height="50vh">
 
                                         <Grid item xs={2.8} height="19vh" style={{ textAlign: 'center' }} ><Link to="#" style={{ textDecoration: 'none' }}><StyledBadge badgeContent={<img src={Badge1} alt='' width="20-%" />} color="secondary"><img src={HeadsvgData[1].Headsvg} alt="Headicon" width="85%" style={{ position: 'relative', left: 5 }} /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline" color='white' noWrap>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link></Grid>
                                         <Grid item xs={2.8} height="19vh" style={{ textAlign: 'center' }} ><Link to="#" style={{ textDecoration: 'none' }}><StyledBadge badgeContent={<img src={Badge2} alt='' width="20-%" />} color="secondary"><img src={HeadsvgData[2].Headsvg} alt="Headicon" width="85%" style={{ position: 'relative', left: 5 }} /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline" color='white' noWrap>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link></Grid>
