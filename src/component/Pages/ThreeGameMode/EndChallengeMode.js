@@ -13,6 +13,7 @@ import Epic from '../../../svgicon/OVOmode/Epic.svg';
 import Hero from '../../../svgicon/OVOmode/Hero.svg';
 import KeepUp from '../../../svgicon/OVOmode/KeepUp.svg';
 import Bouns from '../../../svgicon/OVOmode/Bouns.svg';
+import left from '../../../svgicon/EndChallengeMode/4.svg';
 import { Link } from 'react-router-dom';
 const contentStyle = {
     background: '#242632',
@@ -90,10 +91,10 @@ export default class ChallengeMode extends Component {
                                             <Grid xs={1} item height="22%" style={{ textAlign: 'center' }}>
 
                                             </Grid>
-                                            <Grid xs={5.5} item height="25%" style={{ textAlign: 'center', backgroundImage: `url(${GoAccept})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
+                                            <Grid xs={5.5} item height="22%">
                                                 <Typography variant="caption" component="div" color='white' textAlign='center' style={{ overflowWrap: 'break-word' }} display="inline">
-                                                    GO accept other
-                                                    players'challenge
+                                                <img src={left} alt='' width="95%" />
+                                            
                                                 </Typography>
                                             </Grid>
 

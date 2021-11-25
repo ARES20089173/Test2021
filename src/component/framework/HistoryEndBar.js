@@ -18,7 +18,7 @@ import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import AddIcon from '@mui/icons-material/Add';
 import { Link } from 'react-router-dom';
 import LinkBarWithback from './HistoryLinkbar';
-
+import { useHistory } from 'react-router-dom';
 import Notification from '../../svgicon/Componenticon/Notification.svg'
 import Ricon from '../../svgicon/Componenticon/Ricon.svg'
 import Rmoneyicon from '../../svgicon/Componenticon/Rmoneyicon.svg'
@@ -55,6 +55,8 @@ const contentStyle = {
 };
 const Amout = [{ Chasepuzzle: 18.6, SilverPuzzle: 20.5, money: 1000,notification:30 }]
 export default function BottomAppBar() {
+    const history = useHistory();
+    const handleClick = () => history.push('/wallet/PuzzlePackage');
     return (
         <React.Fragment>
 
@@ -76,48 +78,15 @@ export default function BottomAppBar() {
                                 <Toolbar variant="dense">
                                 <img src={Ricon} alt="ricon" width="10%" />
                                     <Grid xs={12} container>
-                                        <Grid xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} >
+                                    <Grid xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} >
                                             <div style={{ backgroundImage: `url(${Endbarbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
-                                                <Popup
-                                                    trigger={<div className="button" style={{ color: "white" }}>  <img src={Chasepuzzle} className="App-logo" alt="logo" width="20%" />{Amout[0].Chasepuzzle}k<img src={addicon} style={{ width: 20 }} /></div>}
-                                                    modal
-                                                    lockScroll
-                                                    nested
-                                                    {...{ contentStyle }}
-                                                >
-                                                    {close => (
-                                                        <div className="modal">
-                                                            <button className="close" onClick={close}>
-                                                              
-                                                            </button>
-                                                            <SwieprConent />
-                                                        </div>
-
-                                                    )}
-                                                </Popup>
+                                                <Grid container justifyContent='center' alignItems='center' className="button" style={{ color: "white" }}> <img src={Chasepuzzle} className="App-logo" alt="logo" width="20%" style={{ position: 'relative', float: 'left' }} /><Typography style={{ float: 'right' }}>{Amout[0].Chasepuzzle}k <img src={addicon} onClick={handleClick} style={{ width: 20, marginLeft: 2, }} /></Typography></Grid>
                                             </div>
                                         </Grid>
                                         <Grid xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
                                             <div style={{ backgroundImage: `url(${Endbarbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
-                                                <Popup
-                                                    trigger={<div className="button" style={{ color: "white" }}>  <img src={SilverPuzzle} className="App-logo" alt="logo" width="20%" />{Amout[0].Chasepuzzle}k<img src={addicon} style={{ width: 20 }} /></div>}
-                                                    modal
-                                                    lockScroll
-                                                    nested
-                                                    {...{ contentStyle }}
-                                                >
-                                                    {close => (
-                                                        <div className="modal">
-                                                            <button className="close" onClick={close}>
-                                                              
-                                                            </button>
-                                                            <div>
-                                                                <SwieprConent />
-                                                            </div  >
-                                                        </div>
-
-                                                    )}
-                                                </Popup>
+                                                <Grid container justifyContent='center' alignItems='center' className="button" style={{ color: "white" }}>  <img src={SilverPuzzle} className="App-logo" alt="logo" width="20%" style={{ position: 'relative', float: 'left' }} /><Typography style={{ float: 'right' }}>{Amout[0].Chasepuzzle}k<img src={addicon}onClick={handleClick}  style={{ width: 20, marginLeft: 2 }} /></Typography></Grid>
+                                               
                                             </div>
                                         </Grid>
                                         <Grid xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>

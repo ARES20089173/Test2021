@@ -18,7 +18,7 @@ import silverpuzzle from '../../../svgicon/Componenticon/SilverPuzzle.svg'
 import Creditcard from '../../../svgicon/WalletTrans/Creditcard.svg'
 import Money from '../../../svgicon/WalletTrans/Money.svg'
 import Shopcar from '../../../svgicon/WalletTrans/Shopcar.svg'
-
+import TandC from '../../../svgicon/Componenticon/T&C.svg';
 
 import { useParams } from "react-router";
 import { Button } from "@mui/material";
@@ -173,7 +173,7 @@ export default function Detail() {
                         <Typography color='white' variant="body2">No payment yet<br />Buy now play with ReesPay</Typography>
                     </Grid>
                     <Grid item xs={2} container alignItems='center' >
-                        <Button variant='outlined'>T&C</Button>
+                        <img src={TandC} alt='' width="130%"/>
                     </Grid>
                 </Grid>
 

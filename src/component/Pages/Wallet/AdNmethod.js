@@ -18,7 +18,7 @@ import silverpuzzle from '../../../svgicon/Componenticon/SilverPuzzle.svg'
 import { withStyles } from "@material-ui/core/styles";
 import TextField from '@mui/material/TextField';
 // Import Swiper React components
-
+import Addnewpayment from '../../../svgicon/Componenticon/Addnewpayment.svg';
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import Gicon1 from '../../../svgicon/Carousel/Bankcard.svg'
@@ -48,7 +48,7 @@ SwiperCore.use([Pagination, Navigation, EffectCoverflow]);
 
 const styles = {
     root: {
-        background: "white"
+        background: "transparent"
     },
     input: {
         color: "white"
@@ -128,7 +128,7 @@ function AdNmethod(props) {
                         </Typography>
                     </Grid>
                     <Grid item xs={11} height="43%" >
-                    <img src={alipay} alt=''  value={1} onClick={()=> handlechooseChange(1)} style={{marginLeft:'0vh',background:choose==1?'red':'' }}></img><img src={mastercard} alt=''onClick={()=> handlechooseChange(2)}  style={{marginLeft:'10vh',background:choose==2?'red':'' }}/><img src={amapay} alt='' onClick={() => handlechooseChange(3)} style={{marginLeft:'10vh',background:choose==3?'red':'' }}/>
+                    <img src={alipay} alt=''  value={1} onClick={()=> handlechooseChange(1)} style={{marginLeft:'0vh',background:choose==1?'red':'' ,width:'15%'}}></img><img src={mastercard} alt='' onClick={()=> handlechooseChange(2)}  style={{marginLeft:'10vh',background:choose==2?'red':'',width:'15%' }}/><img src={amapay} alt='' onClick={() => handlechooseChange(3)} style={{marginLeft:'10vh',background:choose==3?'red':'' ,width:'15%'}}/>
              
                         <TextField
                             id="outlined-basic"
@@ -141,11 +141,11 @@ function AdNmethod(props) {
                             size="small"
                             colorSecondary
                             fullWidth={true}  required
-
-                            className={classes.root}
-                            InputProps={{
-                                className: classes.input
+                            InputLabelProps={{
+                                style: { fontFamily: 'Arial', color: 'white'}
                             }}
+                            className={classes.root}
+                            inputProps={{ style: { fontFamily: 'Arial', color: 'white'}}}
                         />
                          <TextField
                             id="outlined-basic"
@@ -159,18 +159,19 @@ function AdNmethod(props) {
                             colorSecondary
                             fullWidth={true}  required
                             className={classes.root}
-                            InputProps={{
-                                className: classes.input
+                            InputLabelProps={{
+                                style: { fontFamily: 'Arial', color: 'white'}
                             }}
+                            inputProps={{ style: { fontFamily: 'Arial', color: 'white'}}}
                         />
                     </Grid>
-                    <Grid item xs={12} height="10%" >
-                        <Button variant="outlined" color='secondary' >Add New Payment Method</Button>
+                    <Grid item xs={12} container alignItems='center' justifyContent='center'>
+                        <img src={Addnewpayment} alt='' width="50%"/>
                     </Grid>
                 </Grid>
              
             </Grid> 
-            <Grid item xs={12} marginTop="30%" >
+            <Grid item xs={12} marginTop="0%" >
                 <EndBar />
             </Grid>
         </Box>

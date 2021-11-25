@@ -6,6 +6,7 @@ import "./css/cssModFLooby.css"
 import "./css/cssFGamechooser.css"
 import Popup from 'reactjs-popup';
 import Box from '@mui/material/Box';
+import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Typography } from '@mui/material';
 import Grid from '@mui/material/Grid'
@@ -26,7 +27,7 @@ const contentStyle = {
     marginTop: '20%',
     background: '#242634',
     width: "90%",
-    border:'none',
+    border: 'none',
     height: "62%",
     borderRadius: "5%",
 };
@@ -38,7 +39,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
         padding: '0 1px',
         zIndex: 2,
         backgroundColor: "red",
-        color:'white'
+        color: 'white'
     },
 }));
 const StyledFab = styled(Fab)({
@@ -52,6 +53,8 @@ const StyledFab = styled(Fab)({
 
 const Amout = [{ Chasepuzzle: 18.6, SilverPuzzle: 20.5, money: 1000, notification: 30 }]
 export default function BottomAppBar() {
+    const history = useHistory();
+    const handleClick = () => history.push('/wallet/PuzzlePackage');
     return (
         <React.Fragment>
             <Box sx={{ flexGrow: 1 }}
@@ -74,31 +77,15 @@ export default function BottomAppBar() {
                                 <Toolbar variant="dense">
                                     <img src={Ricon} alt="ricon" width="10%" />
                                     <Grid xs={12} container>
-                                        <Grid xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} >
+                                    <Grid xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} >
                                             <div style={{ backgroundImage: `url(${Endbarbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
-                                            <Popup
-                                                   trigger={<Grid  container justifyContent='center' alignItems='center' className="button" style={{ color: "white" }}>  <img src={Chasepuzzle} className="App-logo" alt="logo" width="20%"style={{position:'relative',float:'left'}}  /><Typography style={{float:'right'}}>{Amout[0].Chasepuzzle}k<img src={addicon} style={{ width: 20,marginLeft:2,}} /></Typography></Grid>}
-                                                   modal
-                                                    lockScroll
-                                                    nested
-                                                    {...{ contentStyle }}
-                                                >
-                                                    {close => (
-                                                        <div className="modal">
-                                                            <button className="close" onClick={close}>
-                                                              
-                                                            </button>
-                                                            <SwieprConent />
-                                                        </div>
-
-                                                    )}
-                                                </Popup>
+                                                <Grid container justifyContent='center' alignItems='center' className="button" style={{ color: "white" }}> <img src={Chasepuzzle} className="App-logo" alt="logo" width="20%" style={{ position: 'relative', float: 'left' }} /><Typography style={{ float: 'right' }}>{Amout[0].Chasepuzzle}k <img  onClick={handleClick} src={addicon} style={{ width: 20, marginLeft: 2, }} /></Typography></Grid>
                                             </div>
                                         </Grid>
                                         <Grid xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
                                             <div style={{ backgroundImage: `url(${Endbarbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
-                                            <Grid  container justifyContent='center' alignItems='center' className="button" style={{ color: "white" }}>  <img src={SilverPuzzle} className="App-logo" alt="logo" width="20%"style={{position:'relative',float:'left'}}  /><Typography style={{float:'right'}}>{Amout[0].Chasepuzzle}k<img src={addicon} style={{ width: 20,marginLeft:2}} /></Typography></Grid>
-                                             {/* <Popup
+                                                <Grid container justifyContent='center' alignItems='center' className="button" style={{ color: "white" }}>  <img src={SilverPuzzle} className="App-logo" alt="logo" width="20%" style={{ position: 'relative', float: 'left' }} /><Typography style={{ float: 'right' }}>{Amout[0].Chasepuzzle}k<img  onClick={handleClick}src={addicon} style={{ width: 20, marginLeft: 2 }} /></Typography></Grid>
+                                                {/* <Popup
                                                     trigger={<Grid  container justifyContent='center' alignItems='center' className="button" style={{ color: "white" }}>  <img src={SilverPuzzle} className="App-logo" alt="logo" width="20%"style={{position:'relative',float:'left'}}  /><Typography style={{float:'right'}}>{Amout[0].Chasepuzzle}k<img src={addicon} style={{ width: 20,marginLeft:2}} /></Typography></Grid>}
                                                     modal
                                                     lockScroll
@@ -120,9 +107,9 @@ export default function BottomAppBar() {
                                             </div>
                                         </Grid>
                                         <Grid xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
-                                        <div style={{ height: '100%', backgroundImage: `url(${Endbarbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
-                                                <div className="button" style={{ color: "white",paddingTop:4 }}>
-                                                    <img src={Rmoneyicon} className="App-logo" alt="logo" width="20%" style={{  float: 'left',position:'relative',top:2 }} />
+                                            <div style={{ height: '100%', backgroundImage: `url(${Endbarbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
+                                                <div className="button" style={{ color: "white", paddingTop: 4 }}>
+                                                    <img src={Rmoneyicon} className="App-logo" alt="logo" width="20%" style={{ float: 'left', position: 'relative', top: 2 }} />
                                                     {Amout[0].money}
                                                 </div>
                                             </div>

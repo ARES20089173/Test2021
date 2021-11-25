@@ -12,7 +12,9 @@ import { styled } from '@mui/material/styles'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom"
 import Switch from '@mui/material/Switch';
-import HomeIcon from '@mui/icons-material/Home'
+
+import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
+import back from '../../../svgicon/Componenticon/Back.svg'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -49,47 +51,55 @@ const linkdata = [
     { id: 5, linkName: "", link: "" },
     { id: 6, linkName: "", link: "" },
     { id: 7, linkName: "", link: "" },
-    { id: 8, linkName: "", link: "" },
 
 
 ]
 export default class Setting extends Component {
     render() {
         return (
-            <Box sx={{ flexGrow: 1 }}>
+            <Box sx={{ flexGrow: 1 }} style={{backgroundColor:'#242634'}}>
                 <React.Fragment>
                     <Box sx={{ flexGrow: 1 }} >
                         <Grid xs={3}>
-                            <Link to='/'>
-                                <StyledFab size="small" color="secondary" aria-label="add">
-                                    <HomeIcon />
-                                </StyledFab>
-                            </Link>
+                        <Link to='/'>
+                            <img src={HomeIcon} alt='' width="15%" style={{
+                                position: 'fixed',
+                                zIndex: 3,
+                                top: "72vh",
+                                left: 0,
+                            }} />
+                        </Link>
                         </Grid>
                         <Grid xs={8} >
                             <CssBaseline />
-                            <AppBar position="fixed" align='center' sx={{ top: 0 }}>
-                                <Toolbar>
-                                    <Link to='/'>
-                                        <StyledFab2 size="small" color="secondary" aria-label="add">
-                                            <ArrowBackIcon />
-                                        </StyledFab2>
-                                    </Link>
-                                    <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
-                                        Setting
-                                    </Typography>
-                                    <Grid xs={1}></Grid>
-                                </Toolbar>
-                            </AppBar>
+                            <AppBar position="fixed" align='center' elevation={0} sx={{ top: 0, backgroundColor: "#242634", borderBottom: '1px solid black' }}>
+                            <Toolbar>
+                                <Grid container xs={12} justifyContent='center' alignItems='center'>
+                                    <Grid xs={2}>
+                                        <Link to={`/`} style={{ position: 'relative', top: 3, right: 10 }}>
+                                            <img src={back} alt='' width="75%" />
+                                        </Link>
+                                    </Grid>
+                                    <Grid xs={8}>
+                                        <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} style={{
+                                            textAlign: 'center'
+                                        }}>     SETTING
+                                        </Typography>
+                                    </Grid>
+                                    <Grid xs={2}></Grid>
+                                </Grid>
+                            </Toolbar>
+                        </AppBar>
                         </Grid>
                         <Toolbar />
                     </Box>
                 </React.Fragment>
+                <Grid xs={12} height="2vh" bgcolor="#8e8b91" >   </Grid>
 
                 <List style={{ bottom: 10, textDecoration: 'none', color: '#FFF' }} >
                     {linkdata.slice(0, 3).map((text, index) => (
                         <Link to={text.link} style={{ textDecoration: 'none', color: 'black' }}>
-                            <ListItem button key={text.id} style={{ backgroundColor: index % 2 === 0 ? '#707070' : '#8e8b91', height: "10vh" }}>
+                            <ListItem button key={text.id} style={{ backgroundColor: index % 2 === 0 ? '#242634' : '#35394C', height: "10vh" }}>
                                 <ListItemText >
                                     {text.linkName}
                                 </ListItemText>
@@ -98,7 +108,7 @@ export default class Setting extends Component {
                         </Link>
                     ))}
                     {linkdata.slice(3, 9).map((text, index) => (
-                        <ListItem key={text.id} style={{ backgroundColor: index % 2 === 0 ? '#8e8b91' :'#707070' , height: "10.3vh" }}>
+                        <ListItem key={text.id} style={{ backgroundColor: index % 2 === 0 ? '#35394C' :'#242634' , height: "10.3vh" }}>
                             <ListItemText >
                                 {text.linkName}
                             </ListItemText>

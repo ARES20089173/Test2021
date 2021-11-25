@@ -166,15 +166,12 @@ export default class MessageCenter extends Component {
                                                 }} />
                                             </Link>
                                         </Grid>
-                                        <Grid xs={10} >
-                                            <Typography variant="body1" component="div" sx={{ textAlign: 'center' }} style={{
-                                                position: 'relative',
-                                                zIndex: 3,
-                                                left: "-10%",
-                                            }} >
+                                        <Grid xs={8} >
+                                            <Typography variant="body1" component="div" sx={{ textAlign: 'center' }} >
                                                 TRANSACTION HISTORY
                                             </Typography>
                                         </Grid>
+                                        <Grid xs={2} >     </Grid>
                                     </Grid>
 
                                 </Toolbar>

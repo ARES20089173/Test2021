@@ -51,6 +51,7 @@ import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import SmallLeftbg from '../../../svgicon/Gamelobby/SmallLeftbg.svg'
 import SmallRightbg from '../../../svgicon/Gamelobby/SmallRightbg.svg'
+import Grandprize from '../../../svgicon/Gamelobby/Grandprize.svg'
 import Money from '../../../svgicon/Gamelobby/Money.svg'
 import Rmoneyicon from '../../../svgicon/Componenticon/Rmoneyicon.svg'
 import Leftbg from '../../../svgicon/Gamelobby/Leftbg.svg'
@@ -356,10 +357,12 @@ export default class TournamentLobby extends Component {
                         direction="row"
                         justifyContent='center' xs={12} height='15vh'>
                         <Grid item xs={3} height='15vh' style={{ textAlign: 'center', backgroundImage: `url(${SmallLeftbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
-                            <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='black' style={{ marginTop: '1vh' }}>
-                                <img src={Money} alt="gameicon" width="30%" /><br /> {oneVoneMode[0].MaxPrize}  <br />  GRAND GRADE PRIZE
+                            <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='black' style={{ marginTop: '2vh' }} paragraph>
+                                <img src={Money} alt="gameicon" width="40%" /><br /> <b>{oneVoneMode[0].MaxPrize}</b>  <br /> 
+                            <img src={Grandprize} alt='' />
                             </Typography>
                         </Grid>
+                        
                         <Grid item xs={8} height='15vh' style={{ backgroundImage: `url(${SmallRightbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}  >
                             <Typography style={{
                                 position: 'absolute',
@@ -426,7 +429,8 @@ export default class TournamentLobby extends Component {
                                     <Grid item xs={3} height='15vh' style={{ textAlign: 'center', backgroundImage: `url(${SmallLeftbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
 
                                         <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='black' style={{ marginTop: '1vh' }}>
-                                            <img src={Money} alt="gameicon" width="30%" /><br /> {oneVoneMode[0].MaxPrize}  <br />  GRAND GRADE PRIZE
+                                           <img src={Money} alt="gameicon" width="40%" /><br /> <b>{oneVoneMode[0].MaxPrize}</b>  <br /> 
+                            <img src={Grandprize} alt='' />
                                         </Typography>
                                     </Grid>
                                     <Grid item xs={8} height='15vh' style={{ backgroundImage: `url(${SmallRightbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}  >
@@ -812,7 +816,7 @@ export default class TournamentLobby extends Component {
 
                                     <Grid item xs={3} height='19vh' style={{ textAlign: 'center', backgroundImage: `url(${Leftbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
                                         <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='black' style={{ marginTop: '1vh' }}>
-                                            <img src={Silverpuzzle} alt="gameicon" width="50%" /><br /> {content.MaxPrize}<br />GRAND GRADE PRIZE
+                                            <img src={Silverpuzzle} alt="gameicon" width="50%" /><br /> {content.MaxPrize}<br /><img src={Grandprize} alt=''/>
                                         </Typography>
                                     </Grid>
                                     <Grid item xs={8} height='19vh' >

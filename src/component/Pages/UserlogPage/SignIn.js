@@ -127,7 +127,7 @@ export default function SignIn() {
 
                                 <Grid item xs={12} height="5vh" alignItems='center' justifyContent='center' textAlign='center' >
                                     <Typography color='white' variant="body2" marginBottom='3vh'>use social media to log in</Typography>
-                                    <Grid item xs={12} height="5vh" marginBottom='3vh' ><img src={FaceBook} alt='' />   <img src={Google} alt='' /><br /></Grid>
+                                    <Grid item xs={12} height="5vh" marginBottom='3vh' ><img src={FaceBook} alt='' width='15%' />   <img src={Google} alt=''width='15%' style={{marginLeft:'1vh'}} /><br /></Grid>
                                     <Link to={linkdata[3].link} style={{ textDecoration: 'none' }}> <img src={LoginRight} alt='' width='100%' /></Link>
                                 </Grid>
                             </Grid>

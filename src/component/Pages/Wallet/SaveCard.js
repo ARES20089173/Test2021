@@ -12,6 +12,7 @@ import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
 import EndBar from '../../framework/WalletEndbar';
 import back from '../../../svgicon/Componenticon/Back.svg'
 import chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
+import Creditcard from '../../../svgicon/WalletTrans/Creditcard.svg'
 import silverpuzzle from '../../../svgicon/Componenticon/SilverPuzzle.svg'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -19,6 +20,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Gicon1 from '../../../svgicon/Carousel/Bankcard.svg'
 import Addicon from '../../../svgicon/BankCardicons/Addicon.svg'
 import alipay from '../../../svgicon/BankCardicons/alipay.svg'
+import ArrowPay from '../../../svgicon/BankCardicons/ArrowPay.svg'
 import amapay from '../../../svgicon/BankCardicons/amapay.svg'
 import card from '../../../svgicon/BankCardicons/card.svg'
 import mastercard from '../../../svgicon/BankCardicons/mastercard.svg'
@@ -70,15 +72,12 @@ export default function Savecard() {
                                             }} />
                                         </Link>
                                     </Grid>
-                                    <Grid xs={10} >
-                                        <Typography variant="body1" component="div" sx={{ textAlign: 'center' }} style={{
-                                            position: 'relative',
-                                            zIndex: 3,
-                                            left: "-10%",
-                                        }} >
+                                    <Grid xs={8} >
+                                        <Typography variant="body1" component="div" sx={{ textAlign: 'center' }}>
                                             SAVE CARDS
                                         </Typography>
                                     </Grid>
+                                    <Grid xs={2} ></Grid>
                                 </Grid>
 
                             </Toolbar>
@@ -144,7 +143,7 @@ export default function Savecard() {
                 <Grid container xs={11} alignItems='center' justifyContent='center' height="35vh" style={{ border: '3px solid white', borderRadius: '10%' }}>
                     <Grid container xs={11} height="50%" src>
                         <Grid container xs={12} height="50%" >
-                            <img src={Addicon} alt='' /><img src={card} alt='' style={{marginLeft:'2vh'}}/>
+                            <img src={Addicon} alt='' /><img src={Creditcard} alt='' style={{marginLeft:'2vh'}}/>
                             <Link to={`/Wallet/SaveCards/AddNewCards`} color='white' style={{ textDecoration: 'none', color: 'white' }}>
                                 <Typography variant='body1' style={{
                                     position: 'relative',
@@ -154,12 +153,12 @@ export default function Savecard() {
                             </Link>
                         </Grid>
                         <Grid container xs={12} height="50%" >
-                            <img src={visa} alt='' style={{marginLeft:'7.6vh'}}/><img src={mastercard} alt='' style={{marginLeft:'2vh'}}/>
+                            <img src={visa} alt='' style={{marginLeft:'7.6vh',width:'15%'}} /><img src={mastercard} alt='' style={{marginLeft:'2vh',width:'15%'}}/><img src={amapay} alt='' style={{marginLeft:'2vh',width:'15%'}}/>
                         </Grid>
                     </Grid>
                     <Grid container xs={11} height="50%" src>
                         <Grid container xs={12} height="50%" >
-                            <img src={Addicon} alt='' /><img src={card} alt='' style={{marginLeft:'2vh'}}/>
+                            <img src={Addicon} alt='' /><img src={Creditcard} alt='' style={{marginLeft:'2vh'}}/>
                             <Link to={`/Wallet/SaveCards/AddNewMethod`} color='white' style={{ textDecoration: 'none', color: 'white' }}>
                                 <Typography variant='body1' style={{
                                     position: 'relative',
@@ -169,7 +168,7 @@ export default function Savecard() {
                             </Link>
                         </Grid>
                         <Grid container xs={12} height="50%" >
-                            <img src={alipay} alt='' style={{marginLeft:'7.6vh'}}/><img src={mastercard} alt='' style={{marginLeft:'2vh'}}/><img src={amapay} alt='' style={{marginLeft:'2vh'}}/>
+                            <img src={alipay} alt='' style={{marginLeft:'7.6vh',width:'15%'}}/><img src={paypal} alt='' style={{marginLeft:'2vh',width:'15%'}}/><img src={ArrowPay} alt='' style={{marginLeft:'2vh',width:'15%'}}/>
                         </Grid>
                     </Grid>
                 </Grid>

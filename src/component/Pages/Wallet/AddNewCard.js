@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import Fab from '@mui/material/Fab';
 import { styled } from '@mui/material/styles'
-
+import Addnewcardbutton from '../../../svgicon/Componenticon/Addnewcardbutton.svg';
 import { withStyles } from "@material-ui/core/styles";
 import TextField from '@mui/material/TextField';
 import { Link } from "react-router-dom"
@@ -47,7 +47,8 @@ import { Button } from '@material-ui/core';
 SwiperCore.use([Pagination, Navigation, EffectCoverflow]);
 const styles = {
     root: {
-        background: "white"
+        background: "transparent",
+        color: "white"
     },
     input: {
         color: "white"
@@ -149,8 +150,9 @@ function AddNewCard(props) {
                             colorSecondary
                             fullWidth={true}  required
                             className={classes.root}
-                            InputProps={{
-                                className: classes.input
+                            inputProps={{ style: { fontFamily: 'Arial', color: 'white'}}}
+                            InputLabelProps={{
+                                style: { fontFamily: 'Arial', color: 'white'}
                             }}
                         />
                          <TextField
@@ -165,9 +167,10 @@ function AddNewCard(props) {
                             colorSecondary
                             fullWidth={true}  required
                             className={classes.root}
-                            InputProps={{
-                                className: classes.input
+                            InputLabelProps={{
+                                style: { fontFamily: 'Arial', color: 'white'}
                             }}
+                            inputProps={{ style: { fontFamily: 'Arial', color: 'white'}}}
                         />
                          <TextField
                             id="outlined-basic"
@@ -181,8 +184,10 @@ function AddNewCard(props) {
                             colorSecondary  required
                             fullWidth={true}
                             className={classes.root}
-                            InputProps={{
-                                className: classes.input
+                            inputProps={{ style: { fontFamily: 'Arial', color: 'white'}}}
+                            style={{color:'white'}}
+                            InputLabelProps={{
+                                style: { fontFamily: 'Arial', color: 'white'}
                             }}
                         />
                          <TextField
@@ -197,8 +202,9 @@ function AddNewCard(props) {
                             colorSecondary  required
                             fullWidth={true}
                             className={classes.root}
-                            InputProps={{
-                                className: classes.input
+                            inputProps={{ style: { fontFamily: 'Arial', color: 'white'}}}
+                            InputLabelProps={{
+                                style: { fontFamily: 'Arial', color: 'white'}
                             }}
                         />
                          <TextField
@@ -213,17 +219,18 @@ function AddNewCard(props) {
                             colorSecondary
                             fullWidth={true}
                             className={classes.root}
-                            InputProps={{
-                                className: classes.input
+                            inputProps={{ style: { fontFamily: 'Arial', color: 'white'}}}
+                            InputLabelProps={{
+                                style: { fontFamily: 'Arial', color: 'white'}
                             }}
                         />
                     </Grid>
-                    <Grid item xs={12} height="10%" >
-                        <Button variant="outlined" color='secondary' >Add New Card</Button>
+                    <Grid item xs={12} container alignItems='center' justifyContent='center'>
+                        <img src={Addnewcardbutton} alt='' width="50%"/>
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid item xs={12} marginTop="30%" >
+            <Grid item xs={12} marginTop="0%" >
                 <EndBar />
             </Grid>
         </Box>

@@ -28,7 +28,10 @@ import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import chasepuzzle from '../../../svgicon/Missionicon/Dailymission.svg'
+import Dayilymission from '../../../svgicon/Missionicon/Dailymission.svg'
+import Game from '../../../svgicon/Missionicon/Game.svg'
+import Image from '../../../svgicon/Missionicon/Image.svg'
+import Watch from '../../../svgicon/Missionicon/Watch.svg'
 import silverpuzzle from '../../../svgicon/Componenticon/SilverPuzzle.svg'
 const contentStyle = {
     background: '#cfcece',
@@ -136,21 +139,21 @@ export default class TournamentLobby extends Component {
 
     render() {
         const data = [
-            { id: 0, linkName: "Win 5 times in Battlemode", link: `/MissionMain`, icon: chasepuzzle, price: 50, quality: "50(+0)", unit: Rmoney, remain: 1, max: 10 },
-            { id: 1, linkName: "Download New games", link: `/MissionMain`, icon: chasepuzzle, price: 150, quality: "50(+0)", unit: Rmoney, remain: 2, max: 10 },
-            { id: 2, linkName: "Daily Play 10 games", link: "/MissionMain", icon: chasepuzzle, price: 250, quality: "50(+0)", unit: Rmoney, remain: 1, max: 5 },
-            { id: 1, linkName: "Win 5 times in Battlemode", link: `/MissionMain`, icon: chasepuzzle, price: 350, quality: "50(+0)", unit: Rmoney, remain: 1, max: 10 },
-            { id: 2, linkName: "Dialy Sign in", link: `/MissionMain`, icon: chasepuzzle, price: 450, quality: "150(+60)", unit: Rmoney, remain: 1, max: 10 },
-            { id: 1, linkName: "watch NIKE video", link: `/MissionMain`, icon: chasepuzzle, price: 550, quality: "550(+400)", unit: Rmoney, remain: 3, max: 10 },
-            { id: 2, linkName: "Play SMC game", link: `/MissionMain`, icon: chasepuzzle, price: 650, quality: "1750(+550)", unit: Rmoney, remain: 1, max: 10 },
-            { id: 3, linkName: "Play SMC game", link: `/MissionMain`, icon: chasepuzzle, price: 1750, quality: "3750(+950)", unit: Rmoney, remain: 1, max: 10 }]
+            { id: 0, linkName: "Win 5 times in Battlemode", link: `/MissionMain`, icon: Dayilymission, price: 50, quality: "50(+0)", unit: Rmoney, remain: 1, max: 10 },
+            { id: 1, linkName: "Download New games", link: `/MissionMain`, icon: Dayilymission, price: 150, quality: "50(+0)", unit: Rmoney, remain: 2, max: 10 },
+            { id: 2, linkName: "Daily Play 10 games", link: "/MissionMain", icon: Dayilymission, price: 250, quality: "50(+0)", unit: Rmoney, remain: 1, max: 5 },
+            { id: 1, linkName: "Win 5 times in Battlemode", link: `/MissionMain`, icon:Image, price: 350, quality: "50(+0)", unit: Rmoney, remain: 1, max: 10 },
+            { id: 2, linkName: "Dialy Sign in", link: `/MissionMain`, icon: Dayilymission, price: 450, quality: "150(+60)", unit: Rmoney, remain: 1, max: 10 },
+            { id: 1, linkName: "watch NIKE video", link: `/MissionMain`, icon: Watch, price: 550, quality: "550(+400)", unit: Rmoney, remain: 3, max: 10 },
+            { id: 2, linkName: "Play SMC game", link: `/MissionMain`, icon: Game, price: 650, quality: "1750(+550)", unit: Rmoney, remain: 1, max: 10 },
+            { id: 3, linkName: "Play SMC game", link: `/MissionMain`, icon: Game, price: 1750, quality: "3750(+950)", unit: Rmoney, remain: 1, max: 10 }]
 
         const data2 = data.map((text) => {
             if (text.id % 2 == 0) {
                 return <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
                     <ListItem button key={text.id} style={{ backgroundColor: '#242634' }}>
                         <ListItemText  >
-                            <Grid xs={12} container alignItems="center" ><img src={text.icon} alt="" width="16%" />  <Typography variant="caption">{text.linkName}</Typography></Grid>
+                            <Grid xs={12} container alignItems="center" ><img src={text.icon} alt="" width="16%" />  <Typography variant="caption" style={{marginLeft:'1vh'}}>{text.linkName}</Typography></Grid>
                         </ListItemText>
                         <Typography>
                             <Button variant='outlined' style={{ borderColor: 'white', minWidth: '100px', maxWidth: '100px' }}>
@@ -170,7 +173,7 @@ export default class TournamentLobby extends Component {
                 return <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
                     <ListItem button key={text.id} style={{ backgroundColor: '#35394C' }}>
                         <ListItemText  >
-                            <Grid xs={12} container alignItems="center" ><img src={text.icon} alt="" width="16%" />  <Typography variant="caption">{text.linkName}</Typography></Grid>
+                            <Grid xs={12} container alignItems="center" ><img src={text.icon} alt="" width="16%" />  <Typography variant="caption" style={{marginLeft:'1vh'}}>{text.linkName}</Typography></Grid>
                         </ListItemText>
                         <Typography>
                             <Button variant='outlined' style={{ borderColor: 'white', minWidth: '100px', maxWidth: '100px' }}>
@@ -244,7 +247,7 @@ export default class TournamentLobby extends Component {
                                             onClose={this.openhandleClick}
                                         >
                                             <Box
-                                                sx={{ width: 280, height: "100vh", backgroundColor: "#35394C" }}
+                                                sx={{ width: 280, height: "100vh", backgroundColor: "#242634" }}
                                                 role="presentation"
                                             >
                                                 <List >

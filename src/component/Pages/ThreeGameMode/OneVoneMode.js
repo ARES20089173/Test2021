@@ -481,7 +481,7 @@ export default class OneVoneModeGo extends Component {
                     </Grid>
                     <Grid container
                         direction="row"
-                        height="40vh"
+                        height="30vh"
                     >
                         <Grid item xs={12} container
                             justifyContent='center'
@@ -594,7 +594,7 @@ export default class OneVoneModeGo extends Component {
                     <Grid item xs={12} display={this.state.isToggleOn ? 'block' : 'none'} >
                         <EndBar />
                     </Grid>
-                    <Grid item xs={12} height="20vh" display={this.state.isToggleOn ? 'block' : 'none'} >
+                    <Grid item xs={12} height="30vh" display={this.state.isToggleOn ? 'block' : 'none'} >
 
                     </Grid>
                 </Grid>

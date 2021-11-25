@@ -38,6 +38,8 @@ import EndBar from '../../framework/WalletEndbar';
 import { styled } from '@mui/material/styles';
 import Fab from '@mui/material/Fab';
 import Input from '@mui/material/Input';
+
+import { RWebShare } from "react-web-share";
 const ariaLabel = { 'aria-label': 'description' };
 
 const StyledFab2 = styled(Fab)({
@@ -122,29 +124,29 @@ export default function MainPage() {
                     <Grid container justifyContent="center"
                         alignItems="center" xs={12} height="60%" style={{ backgroundImage: `url(${userdata.headicon})`, backgroundSize: '100% 100%', backgroundAttachment: 'cover', }}>
                         <Popup
-                                        className="content2"
-                                        trigger={     <img src={Codeicon} alt='' width="10%" style={{ position: 'relative', left: 30, top: 40 }} />
-                   
-                                        }
-                                        modal
-                                        lockScroll
-                                        nested
-                                        {...{ contentStyle }}
-                                    >
-                                        {close => (
-                                            <div className="modal2">
-                                                <button className="close" onClick={close}>
-                                                 
-                                                </button>
-                                                <Grid xs={12} marginTop="0vh" height="100%" container justifyContent="center"     alignItems="center">
-                                                    <Typography variant="h6" component="div" color='primary' textAlign='center' >
-                                                      Pay Now!
-                                                    </Typography>
-                                                    <img src={Code} alt='' width="100%"  />
-                                                </Grid>
-                                            </div>
-                                        )}
-                                    </Popup>
+                            className="content2"
+                            trigger={<img src={Codeicon} alt='' width="10%" style={{ position: 'relative', left: 30, top: 40 }} />
+
+                            }
+                            modal
+                            lockScroll
+                            nested
+                            {...{ contentStyle }}
+                        >
+                            {close => (
+                                <div className="modal2">
+                                    <button className="close" onClick={close}>
+
+                                    </button>
+                                    <Grid xs={12} marginTop="0vh" height="100%" container justifyContent="center" alignItems="center">
+                                        <Typography variant="h6" component="div" color='primary' textAlign='center' >
+                                            Pay Now!
+                                        </Typography>
+                                        <img src={Code} alt='' width="100%" />
+                                    </Grid>
+                                </div>
+                            )}
+                        </Popup>
                     </Grid>
                     <Grid item xs={12} container justifyContent="center"
                         alignItems="center" height="40%" >
@@ -168,7 +170,7 @@ export default function MainPage() {
                                         {close => (
                                             <div className="modal2">
                                                 <button className="close" onClick={close}>
-                                                   
+
                                                 </button>
                                                 <Grid xs={12} marginTop="7vh">
                                                     <Typography variant="h5" component="div" color='primary' textAlign='center' >
@@ -215,7 +217,7 @@ export default function MainPage() {
 
                 <Grid item xs={12} height="25vh" display={values.showPassworda ? "none" : "block"} style={{}}>
                     <List >
-                        {Toplinkdata.slice(0,4).map((text, index) => (
+                        {Toplinkdata.slice(0, 4).map((text, index) => (
                             <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
                                 <ListItem button key={text.id} >
                                     <ListItemText >
@@ -237,7 +239,7 @@ export default function MainPage() {
                             {close => (
                                 <div className="modal">
                                     <button className="close" onClick={close}>
-                                      
+
                                     </button>
                                     <Grid xs={12}>
                                         <Typography variant="body2" component="div" color='primary' textAlign='center'>
@@ -249,8 +251,17 @@ export default function MainPage() {
 
                                         <Grid item xs={12} height="38vh">
                                             <div className="video-responsive">
-                                                <Grid xs={12} textAlign='center'>
+                                                <Grid xs={12} textAlign='center' >
+                                                <RWebShare
+                                                    data={{
+                                                        text: '复制这段code ILOVEREESPUZZLES 进入我们的官网',
+                                                        url: "https://puzzlegame2021.netlify.app/p",
+                                                        title: "Share With your friends!",
+                                                    }}
+                                                    onClick={() => console.log("shared successfully!")}
+                                                >
                                                     <Button variant='outlined'>ILOVEREESPUZZLES</Button>
+                                                </RWebShare>
                                                 </Grid>
                                                 <Typography variant="body2" component="div" color='primary' textAlign='center'>
 

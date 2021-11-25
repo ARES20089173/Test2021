@@ -12,7 +12,9 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom"
 import Switch from '@mui/material/Switch';
 import Event1 from '../../../svgicon/Carousel/pic1.svg'
-import HomeIcon from '@mui/icons-material/Home'
+import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
+import back from '../../../svgicon/Componenticon/Back.svg'
+import powerbyR from '../../../svgicon/PowerBy/PowerByR.svg'
 const contentStyle = {
     margin: 'auto',
     background: '#cfcece',
@@ -42,7 +44,7 @@ const userdata = [
     { id: 0, level: 'Lv1', ReesID: 1 },
 ]
 const Event = [
-    { id: 0, img: Event1, name: "PAID TO PLAY&EARN/CHALLENGER MODE", detail: "CHALLENGER MODE is ......." },
+    { id: 0, img: Event1, name: "PAID TO PLAY&EARN/CHALLENGER MODE", detail: "CHALLENGER MODE is .......xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" },
     { id: 1, img: Event1, name: "PAID TO PLAY&EARN/Battle MODE", detail: "Battle MODE is ......." },
     { id: 2, img: Event1, name: "PAID TO PLAY&EARN/1 ON 1 MODE", detail: "1 ON 1 MODE is ......." },
     { id: 3, img: Event1, name: "PAID TO PLAY&EARN/1 ON 1 MODE", detail: "1 ON 1 MODE is ......." },
@@ -55,24 +57,32 @@ export default class Events extends Component {
                     <Box sx={{ flexGrow: 1 }} >
                         <Grid xs={3}>
                             <Link to='/'>
-                                <StyledFab size="small" color="secondary" aria-label="add">
-                                    <HomeIcon />
-                                </StyledFab>
+                                <img src={HomeIcon} alt='' width="15%" style={{
+                                    position: 'fixed',
+                                    zIndex: 3,
+                                    top: "72vh",
+                                    left: 0,
+                                }} />
                             </Link>
                         </Grid>
                         <Grid xs={8} >
                             <CssBaseline />
-                            <AppBar position="fixed" align='center' sx={{ top: 0 }}>
+                            <AppBar position="fixed" align='center' elevation={0} sx={{ top: 0, backgroundColor: "#242634" }}>
                                 <Toolbar>
-                                    <Link to='/'>
-                                        <StyledFab2 size="small" color="secondary" aria-label="add">
-                                            <ArrowBackIcon />
-                                        </StyledFab2>
-                                    </Link>
-                                    <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
-                                        Events
-                                    </Typography>
-                                    <Grid xs={1}></Grid>
+                                    <Grid container xs={12} justifyContent='center' alignItems='center'>
+                                        <Grid xs={2}>
+                                            <Link to={`/`} style={{ position: 'relative', top: 3, right: 10 }}>
+                                                <img src={back} alt='' width="75%" />
+                                            </Link>
+                                        </Grid>
+                                        <Grid xs={8}>
+                                            <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} style={{
+                                                textAlign: 'center'
+                                            }}>     EVENTS
+                                            </Typography>
+                                        </Grid>
+                                        <Grid xs={2}></Grid>
+                                    </Grid>
                                 </Toolbar>
                             </AppBar>
                         </Grid>
@@ -80,24 +90,20 @@ export default class Events extends Component {
                     </Box>
                 </React.Fragment>
                 <Grid container height="100vh" >
-                    <Grid xs={12} height="5%" bgcolor="#8e8b91" >   </Grid>
-                    <Grid container item xs={12} justifyContent='center' style={{ backgroundColor: '#707070' }} >
+                    <Grid xs={12} container justifyContent='center' alignItems='center' bgcolor="#242634" >
                         {Event.map((Event) => (
 
-                            <Grid item xs={11} key={Event.id} height="45vh">
-                                <div >
-                                    <Typography color="black" variant='body2'>{Event.name}</Typography>
-                                    <img src={Event.img} alt="Events" width="90%"/>
-                                </div>
+                            <Grid container justifyContent='center' alignItems='center' xs={11} key={Event.id} height="33vh">
 
-                                <Typography variant="caption" color="black"> {Event.detail}</Typography>
+                                <Typography color="white" variant='body2'>{Event.name}</Typography>
+                                <img src={Event.img} alt="Events" width="90%" />
+
+                                <Typography variant="caption" color="white"  display="inline" style={{display: 'inline-block',wordBreak:'break-all'}} > {Event.detail}</Typography>
                             </Grid>
                         ))}
 
-                        <Grid item xs={11} height="15vh">
-                            <Typography variant="h2 " component="div" color='balck' textAlign='center' marginTop="1vh">
-                                POWERED BY [R]
-                            </Typography>
+                        <Grid container justifyContent='center' alignItems='center' xs={12} height="25vh">
+                            <img src={powerbyR} alt='' width='30%' />
                         </Grid>
                     </Grid>
 

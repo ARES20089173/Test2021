@@ -3,6 +3,7 @@ import AppBar from '@mui/material/AppBar';
 import puzzle from '../../../puzzle.svg'
 import { useParams } from "react-router";
 import Popup from 'reactjs-popup';
+import EndBar from '../../framework/pureEndbar';
 import 'reactjs-popup/dist/index.css';
 import face1 from '../../../face_1.svg'
 import face2 from '../../../face_2.svg'
@@ -19,6 +20,7 @@ import Fab from '@mui/material/Fab';
 import { styled } from '@mui/material/styles'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom"
+
 import { Button } from "@mui/material";
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
 import back from '../../../svgicon/Componenticon/Back.svg'
@@ -108,6 +110,7 @@ export default function SelectAvatar() {
                     <Toolbar />
                 </Box>
             </React.Fragment>
+            <Grid xs={12} height="2vh" bgcolor="#8e8b91" >   </Grid>
             <Grid container height="100%" >
                 
                <Grid xs={12} container alignItems='center' justifyContent='center' height="40%"  >
@@ -145,14 +148,17 @@ export default function SelectAvatar() {
 
                     </Grid>
                 </Grid>
-                <Grid xs={12} container alignItems='center' justifyContent='center' height="58%"  >
+                <Grid xs={12} container alignItems='center' justifyContent='center' height="58%"   >
                     <Grid xs={11} height="15%"  ><Button variant="contained" size='small' style={{ borderRadius: 50 }}>FOR MOER CHOICES, PLEASE COME VISIT OUR DIGITAL ART STORE</Button> </Grid>
-                    <Grid xs={12} container alignItems='center' justifyContent='center' height="85%" bgcolor="#707070" >
+                    <Grid xs={12} container alignItems='center' justifyContent='center' height="85%" bgcolor="#242634" >
                         {AvatarDLock}
                     </Grid>
 
                 </Grid>
-            </Grid>
+            </Grid> 
+             <Grid item xs={12} marginTop="0vh" >
+                    <EndBar />
+                </Grid>
         </Box>
     )
 }

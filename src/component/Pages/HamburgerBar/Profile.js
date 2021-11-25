@@ -16,6 +16,7 @@ import { styled } from '@mui/material/styles'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom"
 import Popup from 'reactjs-popup';
+
 import 'reactjs-popup/dist/index.css';
 import face1 from '../../../face_1.svg'
 import React, { Component } from "react";
@@ -162,9 +163,10 @@ function Profile(props) {
                         size="small"
                         fullWidth={true}
                         className={classes.root}
-                        InputProps={{
-                            className: classes.input
+                        InputLabelProps={{
+                            style: { fontFamily: 'Arial', color: 'white'}
                         }}
+                        inputProps={{ style: { fontFamily: 'Arial', color: 'white'}}}
                     />
                     <TextField
                         id="filled-multiline-flexible"
@@ -177,10 +179,11 @@ function Profile(props) {
                         onChange={handleLastNameChange}
                         variant="filled"
                         className={classes.root}
-                        InputProps={{
-                            className: classes.input
-                        }}
+                        inputProps={{ style: { fontFamily: 'Arial', color: 'white'}}}
                         fullWidth={true}
+                        InputLabelProps={{
+                            style: { fontFamily: 'Arial', color: 'white'}
+                        }}
                     />
                     <TextField
                         id="filled-multiline-flexible"
@@ -192,19 +195,19 @@ function Profile(props) {
                         onChange={handleNickNameChange}
                         variant="filled"
                         className={classes.root}
-                        InputProps={{
-                            className: classes.input
-                        }}
+                        inputProps={{ style: { fontFamily: 'Arial', color: 'white'}}}
                         fullWidth={true}
+                        InputLabelProps={{
+                            style: { fontFamily: 'Arial', color: 'white'}
+                        }}
                     />
                     <Grid xs={12} container alignItems='center' bgcolor='#35394C'>
                         <Grid xs={2.5} color='white'>
                             <lable >Birthday:</lable></Grid>
                         <Grid xs={9.5}>
                             <TextField size="small" fullWidth={true} type="date" value={Birthday} onChange={handleBirthdayChange} widht='100%'     className={classes.root}
-                        InputProps={{
-                            className: classes.input
-                        }}/>
+                         inputProps={{ style: { fontFamily: 'Arial', color: 'white'}}}
+                         />
                         </Grid>
                     </Grid>
                     <Grid xs={12} container alignItems='center'>
@@ -231,10 +234,11 @@ function Profile(props) {
                                 onChange={handleFlatChange}
                                 variant="filled"
                                 className={classes.root}
-                                InputProps={{
-                                    className: classes.input
-                                }}
+                                inputProps={{ style: { fontFamily: 'Arial', color: 'white'}}}
                                 size="small"
+                                InputLabelProps={{
+                                    style: { fontFamily: 'Arial', color: 'white'}
+                                }}
                             />
                         </Grid>
                         <Grid xs={7}>
@@ -247,8 +251,9 @@ function Profile(props) {
                                 variant="filled"
                                 color="secondary" size="small"
                                 className={classes.root}
-                                InputProps={{
-                                    className: classes.input
+                                inputProps={{ style: { fontFamily: 'Arial', color: 'white'}}}
+                                InputLabelProps={{
+                                    style: { fontFamily: 'Arial', color: 'white'}
                                 }}
                             />
                         </Grid>
@@ -267,9 +272,10 @@ function Profile(props) {
                                 onChange={handleAreaChange}
                                 variant="filled"
                                 className={classes.root}
-                        InputProps={{
-                            className: classes.input
-                        }}
+                                inputProps={{ style: { fontFamily: 'Arial', color: 'white'}}}
+                                InputLabelProps={{
+                                    style: { fontFamily: 'Arial', color: 'white'}
+                                }}
                          size="small"
                             />
                         </Grid>
@@ -282,8 +288,12 @@ function Profile(props) {
                                 onChange={handleBuildingChange}
                                 variant="filled"
                                 className={classes.root}
-                                InputProps={{
-                                    className: classes.input
+                                InputLabelProps={{
+                                    className: classes.input,
+                                }}
+                                inputProps={{ style: { fontFamily: 'Arial', color: 'white'}}}
+                                InputLabelProps={{
+                                    style: { fontFamily: 'Arial', color: 'white'}
                                 }}
                                  size="small"
                             />
