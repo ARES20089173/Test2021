@@ -23,7 +23,8 @@ import Gicon14 from '../../../svgicon/GameIcon/Gicon14.svg'
 import Gicon15 from '../../../svgicon/GameIcon/Gicon15.svg'
 import PlayAgain from "../../../svgicon/BattleMode/PlayAgain.svg"
 import FreeShare from "../../../svgicon/BattleMode/FreeShare.svg"
-import GoAccept from "../../../svgicon/BattleMode/GoAccept.svg"
+import GoAccept from "../../../svgicon/EndBattleMode/Goaccept.svg"
+
 import { Link } from 'react-router-dom';
 const contentStyle = {
     background: '#242632',
@@ -114,12 +115,12 @@ export default class EndBattleMode extends Component {
                                         <Grid xs={1} item height="22%" style={{ textAlign: 'center' }}>
 
                                         </Grid>
-                                        <Grid xs={5.5} item height="25%" style={{ textAlign: 'center', backgroundImage: `url(${GoAccept})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
-                                            <Typography variant="caption" component="div" color='white' textAlign='center' style={{ overflowWrap: 'break-word' }} display="inline">
-                                                GO accept other
-                                                players'challenge
-                                            </Typography>
-                                        </Grid>
+                                        <Grid xs={5.5} item height="22%">
+                                                <Typography variant="caption" component="div" color='white' textAlign='center' style={{ overflowWrap: 'break-word' }} display="inline">
+                                                <img src={GoAccept} alt='' width="75%" />
+                                            
+                                                </Typography>
+                                            </Grid>
 
 
                                     </Grid>

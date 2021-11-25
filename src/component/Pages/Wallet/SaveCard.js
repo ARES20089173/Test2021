@@ -12,6 +12,7 @@ import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
 import EndBar from '../../framework/WalletEndbar';
 import back from '../../../svgicon/Componenticon/Back.svg'
 import chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
+import savecardbg from '../../../svgicon/Background/SaveCard.svg'
 import Creditcard from '../../../svgicon/WalletTrans/Creditcard.svg'
 import silverpuzzle from '../../../svgicon/Componenticon/SilverPuzzle.svg'
 // Import Swiper React components
@@ -140,34 +141,34 @@ export default function Savecard() {
                         }} style={{ paddingTop: '0.5vh' }} />Default Payment</Typography>
                 </Grid>
 
-                <Grid container xs={11} alignItems='center' justifyContent='center' height="35vh" style={{ border: '3px solid white', borderRadius: '10%' }}>
-                    <Grid container xs={11} height="50%" src>
+                <Grid container xs={11.5} alignItems='center' justifyContent='center' height="30vh" style={{ backgroundImage: `url(${savecardbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'cover' }}>
+                    <Grid container xs={11} alignItems='center' justifyContent='center' height="10vh">
                         <Grid container xs={12} height="50%" >
-                            <img src={Addicon} alt='' /><img src={Creditcard} alt='' style={{marginLeft:'2vh'}}/>
+                            <img src={Addicon} alt='' width="5%" /><img src={Creditcard} alt='' style={{marginLeft:'2vh'}}width="10%"/>
                             <Link to={`/Wallet/SaveCards/AddNewCards`} color='white' style={{ textDecoration: 'none', color: 'white' }}>
                                 <Typography variant='body1' style={{
                                     position: 'relative',
-                                    top: '35%',
+                                    top: '15%',
                                     left: '10%',
                                 }} >add new card </Typography>
                             </Link>
                         </Grid>
-                        <Grid container xs={12} height="50%" >
+                        <Grid container xs={12} height="50%" marginTop="1vh" >
                             <img src={visa} alt='' style={{marginLeft:'7.6vh',width:'15%'}} /><img src={mastercard} alt='' style={{marginLeft:'2vh',width:'15%'}}/><img src={amapay} alt='' style={{marginLeft:'2vh',width:'15%'}}/>
                         </Grid>
                     </Grid>
-                    <Grid container xs={11} height="50%" src>
+                    <Grid container xs={11} height="10vh" marginBottom="1vh">
                         <Grid container xs={12} height="50%" >
-                            <img src={Addicon} alt='' /><img src={Creditcard} alt='' style={{marginLeft:'2vh'}}/>
-                            <Link to={`/Wallet/SaveCards/AddNewMethod`} color='white' style={{ textDecoration: 'none', color: 'white' }}>
+                        <img src={Addicon} alt='' width="5%" /><img src={Creditcard} alt='' style={{marginLeft:'2vh'}}width="10%"/>
+                            <Link to={`/Wallet/SaveCards/AddNewCards`} color='white' style={{ textDecoration: 'none', color: 'white' }}>
                                 <Typography variant='body1' style={{
                                     position: 'relative',
-                                    top: '35%',
+                                    top: '15%',
                                     left: '10%',
                                 }} >add payment method</Typography>
                             </Link>
                         </Grid>
-                        <Grid container xs={12} height="50%" >
+                        <Grid container xs={12} height="50%" marginTop="1vh">
                             <img src={alipay} alt='' style={{marginLeft:'7.6vh',width:'15%'}}/><img src={paypal} alt='' style={{marginLeft:'2vh',width:'15%'}}/><img src={ArrowPay} alt='' style={{marginLeft:'2vh',width:'15%'}}/>
                         </Grid>
                     </Grid>

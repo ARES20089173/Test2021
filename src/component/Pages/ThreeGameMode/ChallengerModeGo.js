@@ -19,7 +19,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
-
+import ChallengModeButtonbg from '../../../svgicon/Background/ChallengModeButton.svg'
 import back from '../../../svgicon/Componenticon/Back.svg'
 import Badge from '@mui/material/Badge'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
@@ -179,31 +179,31 @@ export default class TournamentLobby extends Component {
 
         const options = [
             {
-                value: ChallengerMode[0].entryFee, label: <Typography variant="body1"> entry fee:<br /> {ChallengerMode[0].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
+                value: ChallengerMode[0].entryFee, label: <Typography variant="body1" style={{backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee:{ChallengerMode[0].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
             },
             {
-                value: ChallengerMode[1].entryFee, label: <Typography variant="body1"> entry fee:<br /> {ChallengerMode[1].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
+                value: ChallengerMode[1].entryFee, label: <Typography variant="body1"style={{backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee:{ChallengerMode[1].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
             },
             {
-                value: ChallengerMode[2].entryFee, label: <Typography variant="body1"> entry fee: <br />{ChallengerMode[2].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
+                value: ChallengerMode[2].entryFee, label: <Typography variant="body1"style={{backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee:{ChallengerMode[2].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
             },
             {
-                value: ChallengerMode[3].entryFee, label: <Typography variant="body1"> entry fee: <br />{ChallengerMode[3].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
+                value: ChallengerMode[3].entryFee, label: <Typography variant="body1"style={{backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee:{ChallengerMode[3].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
             },
             {
-                value: ChallengerMode[4].entryFee, label: <Typography variant="body1"> entry fee:<br /> {ChallengerMode[4].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
+                value: ChallengerMode[4].entryFee, label: <Typography variant="body1"style={{backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee:{ChallengerMode[4].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
             },
             {
-                value: ChallengerMode[5].entryFee, label: <Typography variant="body1"> entry fee:<br /> {ChallengerMode[5].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
+                value: ChallengerMode[5].entryFee, label: <Typography variant="body1"style={{backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee:{ChallengerMode[5].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
             },
             {
-                value: ChallengerMode[6].entryFee, label: <Typography variant="body1"> entry fee:<br /> {ChallengerMode[6].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
+                value: ChallengerMode[6].entryFee, label: <Typography variant="body1"style={{backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee: {ChallengerMode[6].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
             },
             {
-                value: ChallengerMode[7].entryFee, label: <Typography variant="body1"> entry fee:<br /> {ChallengerMode[7].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
+                value: ChallengerMode[7].entryFee, label: <Typography variant="body1"style={{backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee:{ChallengerMode[7].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
             },
             {
-                value: ChallengerMode[8].entryFee, label: <Typography variant="body1"> entry fee: <br />{ChallengerMode[8].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
+                value: ChallengerMode[8].entryFee, label: <Typography variant="body1"style={{backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee:{ChallengerMode[8].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
             },
         ];
         return (
@@ -502,15 +502,15 @@ export default class TournamentLobby extends Component {
                                 <Grid item xs={8} style={{ textAlign: 'center' }}></Grid>
                             </Grid>
                             <Grid item xs={3} height="5vh" />
-                            <Grid item xs={7} height="5vh" style={{ textAlign: 'center', position: 'relative', zindex: 2 }} >
+                            <Grid item xs={7} height="5vh" style={{ textAlign: 'center', position: 'relative', zindex: 2,  }} >
 
-                                <Typography variant="h6" style={{ textAlign: 'center', position: 'relative', zindex: 2 }} >
+                                <Typography variant="h6" style={{ textAlign: 'center', position: 'relative', zindex: 2 ,}} >
                                     <Select
                                         value={selectedOption}
                                         onChange={this.handleChange}
                                         options={options}
                                         isSearchable={false}
-                                        defaultValue={{ value: ChallengerMode[this.props.match.params.entryid].entryFee, label: <Typography variant="body1"> entry fee: {ChallengerMode[this.props.match.params.entryid].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography> }}
+                                        defaultValue={{ value: ChallengerMode[this.props.match.params.entryid].entryFee, label: <Typography variant="body1" style={{backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee: {ChallengerMode[this.props.match.params.entryid].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography> }}
                                         menuPlacement="top"
                                         components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
                                         styles={{ backgroundColor: 'red' }}
