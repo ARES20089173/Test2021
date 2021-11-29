@@ -76,8 +76,8 @@ export default class TournamentLobby extends Component {
 
     let ids = this.props.match.params.id
         const HeadsvgData = [
-            { id: 0, Headsvg: Headicon ,link:`/History/${ids}/BattleModeDetail/${ids}/otherinfo`},
-            { id: 1, Headsvg: Headicon },
+            { id: 0, Headsvg: Headicon },
+            { id: 1, Headsvg: Headicon ,link:`/History/${ids}/BattleModeDetail/${ids}/otherinfo`},
             { id: 2, Headsvg: Headicon },
             { id: 3, Headsvg: Headicon },
             { id: 4, Headsvg: Headicon },
