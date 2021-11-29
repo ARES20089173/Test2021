@@ -572,7 +572,7 @@ export default class TournamentLobby extends Component {
                     <Grid container
                         direction="row"
                         justifyContent='center'
-                        height="20vh"
+                        height="35vh"
                     >
                     </Grid>
                 </Grid>

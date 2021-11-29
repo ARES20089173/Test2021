@@ -182,9 +182,11 @@ export default class TournamentLobby extends Component {
         ]
 
         return (
-            <Box sx={{ flexGrow: 1 }}>
+            <Box sx={{ flexGrow: 1 }}     style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: 'auto auto', backgroundAttachment: 'fixed' }}
+            >
 
-                <Grid xs={12}  >
+                <Grid xs={12} container
+                 >
                     <React.Fragment>
                         <Box sx={{ flexGrow: 1, }}>
                             <CssBaseline />
@@ -247,7 +249,7 @@ export default class TournamentLobby extends Component {
                                                 ))}
                                                 <ListItem >
                                                     <ListItemText style={{ fontSize: '0.7em' }}>
-                                                        <Box sx={{ display: 'flex', alignItems: 'flex-end', fontSize: '0.7em' ,color:'white'}}>
+                                                        <Box sx={{ display: 'flex', alignItems: 'flex-end', fontSize: '0.7em', color: 'white' }}>
 
                                                             CODE REDEEM :
                                                             <TextField id="input-with-sx" variant="standard" />
@@ -261,13 +263,13 @@ export default class TournamentLobby extends Component {
                                                 {Bottomlinkdata.slice(0, 3).map((text, index) => (
                                                     <ListItem button key={text.id}>
                                                         <ListItemText >
-                                                            <Link to={text.link} style={{ textDecoration: 'none',color: 'white' }}>{text.linkName}  </Link>
+                                                            <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>{text.linkName}  </Link>
                                                         </ListItemText>
                                                     </ListItem>
                                                 ))}
                                                 <ListItem >
                                                     <ListItemText >
-                                                        <Link to={Bottomlinkdata[3].link} style={{ textDecoration: 'none', color: 'white'}}>{Bottomlinkdata[3].linkName}   <img src={Logout} alt="logout" /></Link>
+                                                        <Link to={Bottomlinkdata[3].link} style={{ textDecoration: 'none', color: 'white' }}>{Bottomlinkdata[3].linkName}   <img src={Logout} alt="logout" /></Link>
                                                     </ListItemText>
                                                 </ListItem>
                                             </List>
@@ -304,608 +306,607 @@ export default class TournamentLobby extends Component {
                             </AppBar>
                         </Box>
                     </React.Fragment>
-                </Grid>
-                <Grid container
-                    direction="row"
-                    justifyContent='center'
-                    height="100%"
-                    style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: 'auto auto', backgroundAttachment: 'fixed' }}
-                >
-                    <Grid item xs={12} marginLeft="2vh" marginTop="22vh">
-                        <Popup
-                            trigger={<div className="button"> <div ><Typography color="white"> 1 ON 1 Mode(?) </Typography></div></div>}
-                            modal
-                            lockScroll
-                            nested
-
-                        >
-                            {close => (
-                                <div className="modal">
-                                    <button className="close" onClick={close}>
-                                    
-                                    </button>
-                                    <Grid xs={12} >
-                                        <Typography variant="h6" component="div" color='primary' textAlign='center'>
-                                            How to play
-                                        </Typography>
-                                        <Typography variant="caption" component="div" color='primary' textAlign='center'>
-                                            {Mode[0].Modechoose}
-                                        </Typography>
-                                        <Grid item xs={12} height="30vh">
-                                            <div className="video-responsive">
-
-                                                <iframe
-                                                    src={`https://www.youtube.com/embed/${Mode[0].embedId}`}
-                                                    frameBorder="0"
-                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                    allowFullScreen
-                                                    title="Embedded youtube"
-                                                />
-                                            </div>
-                                        </Grid>
-                                        <Typography variant="h4" component="div" color='primary' textAlign='center'>
-                                            <img src={PoweredByR} alt='' />
-                                        </Typography>
-                                    </Grid>
-                                </div>
-                            )}
-                        </Popup>
-                    </Grid>
-                    <Grid item xs={12} marginTop="0vh">
-                    </Grid>
                     <Grid container
                         direction="row"
-                        justifyContent='center' xs={12} height='15vh'>
-                        <Grid item xs={3} height='15vh' style={{ textAlign: 'center', backgroundImage: `url(${SmallLeftbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
-                            <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='black' style={{ marginTop: '2vh' }} paragraph>
-                                <img src={Money} alt="gameicon" width="40%" /><br /> <b>{oneVoneMode[0].MaxPrize}</b>  <br /> 
-                            <img src={Grandprize} alt='' />
-                            </Typography>
-                        </Grid>
-                        
-                        <Grid item xs={8} height='15vh' style={{ backgroundImage: `url(${SmallRightbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}  >
-                            <Typography style={{
-                                position: 'absolute',
-                                right: 60,
-                                fontSize: 20,
-                                marginTop: 65
-                            }} variant="caption" color='white'>
-                                <b>Entry fee:{oneVoneMode[0].entryFee}<img src={Rmoneyicon} alt="icon" width="15%" style={{  position:'relative',top:4}}/></b>
-                            </Typography>
+                        justifyContent='center'
+                    >
 
-                            <Button style={{
-                                position: 'absolute',
-                                right: 0,
-                                marginTop: 65
+                        <Grid item xs={12} marginLeft="2vh" marginTop="22vh" >
+                            <Popup
+                                trigger={<div className="button"> <div ><Typography color="white"> 1 ON 1 Mode(?) </Typography></div></div>}
+                                modal
+                                lockScroll
+                                nested
+                            >
+                                {close => (
+                                    <div className="modal">
+                                        <button className="close" onClick={close}>
 
-                            }}>
-                                <Popup
-                                    trigger={
-                                        <div className="button" >
-                                            <div  onClick={this.handleClick}>
+                                        </button>
+                                        <Grid xs={12} >
+                                            <Typography variant="h6" component="div" color='primary' textAlign='center'>
+                                                How to play
+                                            </Typography>
+                                            <Typography variant="caption" component="div" color='primary' textAlign='center'>
+                                                {Mode[0].Modechoose}
+                                            </Typography>
+                                            <Grid item xs={12} height="30vh">
+                                                <div className="video-responsive">
 
-                                                <img src={Forward} alt='' zIndex='2' width="60%" style={{
-                                                    position: 'relative',
-                                                    zIndex: 0,
-                                                    left: "25%",
-                                                    bottom: 23
-                                                }} />
-                                            </div>
-                                        </div>
-
-                                    }
-                                    modal
-                                    lockScroll
-                                    closeOnDocumentClick={false}
-                                    nested
-                                    onClose={this.handleClick}
-                                    {...{ contentStyle }}
-                                >
-                                    {close => (
-                                        <div className="modal">
-                                            <button className="close" onClick={close}>
-                                                
-                                            </button>
-                                            <Grid xs={12} >
-                                                Game Content
+                                                    <iframe
+                                                        src={`https://www.youtube.com/embed/${Mode[0].embedId}`}
+                                                        frameBorder="0"
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                        allowFullScreen
+                                                        title="Embedded youtube"
+                                                    />
+                                                </div>
                                             </Grid>
-                                        </div>
-                                    )}
-                                </Popup>
-                            </Button>
-                            <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${oneVoneMode[0].id}/OneVoneMode`}><img src={SmallRightbg} width="100%" height='100%' /></Link>
-
-                        </Grid>
-
-                    </Grid>
-                    <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
-                        {oneVoneMode.filter(content => content.id > 0).map((content) => (
-                            <>
-                                <Grid item xs={12} marginTop="3vh">
-                                </Grid>
-                                <Grid item container
-                                    direction="row"
-                                    justifyContent='center' xs={12} height='15vh'>
-                                    <Grid item xs={3} height='15vh' style={{ textAlign: 'center', backgroundImage: `url(${SmallLeftbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
-
-                                        <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='black' style={{ marginTop: '1vh' }}>
-                                           <img src={Money} alt="gameicon" width="40%" /><br /> <b>{oneVoneMode[0].MaxPrize}</b>  <br /> 
-                            <img src={Grandprize} alt='' />
-                                        </Typography>
-                                    </Grid>
-                                    <Grid item xs={8} height='15vh' style={{ backgroundImage: `url(${SmallRightbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}  >
-                                        <Typography style={{
-                                            position: 'absolute',
-                                            right: 60,
-                                            fontSize: 20,
-                                            marginTop: 65
-                                        }} color='white'>
-                                  <b>Entry fee:{oneVoneMode[0].entryFee}<img src={Rmoneyicon} alt="icon" width="15%" style={{  position:'relative',top:4}}/></b>
-                             </Typography>
-
-                                        <Button style={{
-                                            position: 'absolute',
-                                            right: 0,
-                                            marginTop: 65
-
-                                        }}>
-                                            <Popup
-                                                trigger={
-                                                    <div className="button">
-                                                        <div  onClick={this.handleClick}>
-                                                            <img src={Forward} alt='' zIndex='1' width="60%" style={{
-                                                                position: 'relative',
-                                                                zIndex: 0,
-                                                                left: "25%",
-                                                                bottom: 23
-                                                            }} />
-                                                        </div>
-                                                    </div>
-
-                                                }
-                                                modal
-                                                lockScroll
-                                                closeOnDocumentClick={false}
-                                                nested
-                                                onClose={this.handleClick}
-                                                {...{ contentStyle }}
-                                            >
-                                                {close => (
-                                                    <div className="modal">
-                                                        <button className="close" onClick={close}>
-                                                          
-                                                        </button>
-                                                        <Grid xs={12} >
-                                                            Game Content
-                                                        </Grid>
-                                                    </div>
-                                                )}
-                                            </Popup>
-                                        </Button>
-                                        <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${oneVoneMode[0].id}/OneVoneMode`}><img src={SmallRightbg} width="100%" height='100%' /></Link>
-
-                                    </Grid>
-
-                                </Grid></>
-                        ))}
-                    </Collapse>
-
-                    <Grid item xs={12} marginLeft="2vh" style={{ textAlign: 'center' }}>
-                        <ExpandMore
-                            expand={this.state.expanded}
-                            onClick={this.handleExpandClick}
-                            aria-expanded={this.state.expanded}
-                            aria-label="show more"
-                            color="success"
-                        >
-                            <img src={Down} alt="" width="50%" />
-                        </ExpandMore>
-                    </Grid>
-
-                    <Grid item xs={12} marginLeft="2vh">
-                        <Popup
-                            trigger={<div className="button"> <div > <Typography color="white"> ChallengerMode(?)</Typography>  </div></div>}
-                            modal
-                            lockScroll
-                            nested
-                        >
-                            {close => (
-                                <div className="modal">
-                                    <button className="close" onClick={close}>
-                                     
-                                    </button>
-                                    <Grid xs={12} >
-                                        <Typography variant="h6" component="div" color='primary' textAlign='center'>
-                                            How to play
-                                        </Typography>
-                                        <Typography variant="caption" component="div" color='primary' textAlign='center'>
-                                            {Mode[1].Modechoose}
-                                        </Typography>
-                                        <Grid item xs={12} height="30vh">
-                                            <div className="video-responsive">
-
-                                                <iframe
-                                                    src={`https://www.youtube.com/embed/${Mode[1].embedId}`}
-                                                    frameBorder="0"
-                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                    allowFullScreen
-                                                    title="Embedded youtube"
-                                                />
-                                            </div>
-                                        </Grid>
-                                        <Typography variant="h4" component="div" color='primary' textAlign='center'>
-                                            <img src={PoweredByR} alt='' />
-                                        </Typography>
-                                    </Grid>
-                                </div>
-                            )}
-                        </Popup>
-                    </Grid>
-
-                    <Grid item xs={12} marginTop="0vh">
-                    </Grid>
-                    <Grid item container
-                        direction="row"
-                        justifyContent='center' xs={12} height='19vh'>
-
-                        <Grid container direction="row"
-                            justifyContent='center' xs={3} height='19vh' style={{ textAlign: 'center', backgroundImage: `url(${Leftbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
-                            <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='black' style={{ marginTop: '1vh' }}>
-                                <img src={Chasepuzzle} alt="gameicon" width="40%" /><br />{challengerMode[0].MaxPrize}  <br />  GRAND GRADE PRIZE
-                            </Typography>
-                        </Grid>
-                        <Grid item xs={8} height='19vh' style={{ backgroundImage: `url(${Rightbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}  >
-                            <Typography style={{
-                                position: 'absolute',
-                                right: 60,
-                                fontSize: 20,
-                                marginTop: 90
-                            }} color='white'>
-                               <b> Entry fee:{challengerMode[0].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" style={{  position:'relative',top:4}} /></b>
-                            </Typography>
-                            <Button style={{
-                                position: 'absolute',
-                                right: 0,
-                                marginTop: 90
-                            }}>
-                                <Popup
-                                    trigger={
-                                        <div className="button">
-                                            <div  onClick={this.handleClick}>
-                                                <img src={Forward} alt=''  zIndex='1' width="60%" style={{
-                                                    position: 'relative',
-                                                    zIndex: 0,
-                                                    left: "25%",
-                                                    bottom: 23
-                                                }} />
-                                            </div>
-                                        </div>
-
-                                    }
-                                    modal
-                                    lockScroll
-                                    closeOnDocumentClick={false}
-                                    nested
-                                    onClose={this.handleClick}
-                                    {...{ contentStyle }}
-                                >
-                                    {close => (
-                                        <div className="modal">
-                                            <button className="close" onClick={close}>
-                                               
-                                            </button>
-                                            <Grid xs={12} >
-                                                Game Content
-                                            </Grid>
-                                        </div>
-                                    )}
-                                </Popup>
-                            </Button>
-                            <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${challengerMode[0].id}/ChallengerModeGo`}><img src={Rightbg} width="100%" height='100%' /></Link>
-                        </Grid>
-                    </Grid>
-                    <Collapse in={this.state.expanded2} timeout="auto" unmountOnExit>
-                        {challengerMode.filter(content => content.id > 0).map((content) => (
-                            <>
-                                <Grid item xs={12} marginTop="3vh">
-                                </Grid>
-                                <Grid item container
-                                    direction="row"
-                                    justifyContent='center' xs={12} height='19vh'>
-                                    <Grid item xs={3} height='19vh' style={{ textAlign: 'center', backgroundImage: `url(${Leftbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
-                                        <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='black' style={{ marginTop: '1vh' }}>
-                                            <img src={Chasepuzzle} alt="gameicon" width="40%" /><br />{challengerMode[0].MaxPrize}  <br />  GRAND GRADE PRIZE
-                                        </Typography>
-                                    </Grid>
-                                    <Grid item xs={8} height='19vh' style={{ backgroundImage: `url(${Rightbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}  >
-                                        <Typography style={{
-                                            position: 'absolute',
-                                            right: 60,
-                                            fontSize: 20,
-                                            marginTop: 90
-                                        }} color='white'>
-                                            <b>Entry fee:{content.entryFee}<img src={Chasepuzzle} alt="icon"  width="15%" style={{  position:'relative',top:4}} /></b>
-                                        </Typography>
-
-                                        <Button style={{
-                                            position: 'absolute',
-                                            right: 0,
-                                            marginTop: 90
-
-                                        }}>
-                                            <Popup
-                                                trigger={
-                                                    <div className="button">
-                                                        <div  onClick={this.handleClick}>
-                                                            <img src={Forward} alt=''zIndex='1' width="60%" style={{
-                                                                position: 'relative',
-                                                                zIndex: 0,
-                                                                left: "25%",
-                                                                bottom: 23
-                                                            }} />
-                                                        </div>
-                                                    </div>
-
-                                                }
-                                                modal
-                                                lockScroll
-                                                closeOnDocumentClick={false}
-                                                nested
-                                                onClose={this.handleClick}
-                                                {...{ contentStyle }}
-                                            >
-                                                {close => (
-                                                    <div className="modal">
-                                                        <button className="close" onClick={close}>
-                                                         
-                                                        </button>
-                                                        <Grid xs={12} >
-                                                            Game Content
-                                                        </Grid>
-                                                    </div>
-                                                )}
-                                            </Popup>
-                                        </Button>
-                                        <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${content.id}/ChallengerModeGO`}><img src={Rightbg} width="100%" height='100%' /></Link>
-                                    </Grid>
-                                </Grid>
-                            </>
-                        ))}
-                    </Collapse>
-
-                    <Grid item xs={12} marginLeft="2vh" style={{ textAlign: 'center' }}>
-                        <ExpandMore
-                            expand={this.state.expanded2}
-                            onClick={this.handleExpandClick2}
-                            aria-expanded={this.state.expanded2}
-                            aria-label="show more"
-                            color="success"
-                        >
-                            <img src={Down} alt="" width="50%" />
-                        </ExpandMore>
-                    </Grid>
-
-                    <Grid item xs={12} marginLeft="2vh">
-                        <Popup
-                            trigger={<div className="button"> <div ><Typography color="white"> Battle Mode(?) </Typography></div></div>}
-                            modal
-                            lockScroll
-                            nested
-                        >
-                            {close => (
-                                <div className="modal">
-                                    <button className="close" onClick={close}>
-                                      
-                                    </button>
-                                    <Grid xs={12} >
-                                        <Typography variant="h6" component="div" color='primary' textAlign='center'>
-                                            How to play
-                                        </Typography>
-                                        <Typography variant="caption" component="div" color='primary' textAlign='center'>
-                                            {Mode[2].Modechoose}
-                                        </Typography>
-                                        <Grid item xs={12} height="30vh">
-                                            <div className="video-responsive">
-
-                                                <iframe
-                                                    src={`https://www.youtube.com/embed/${Mode[2].embedId}`}
-                                                    frameBorder="0"
-                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                    allowFullScreen
-                                                    title="Embedded youtube"
-                                                />
-                                            </div>
-                                        </Grid>
-                                        <Grid xs={12} positon='fixed'>
                                             <Typography variant="h4" component="div" color='primary' textAlign='center'>
                                                 <img src={PoweredByR} alt='' />
                                             </Typography>
                                         </Grid>
-                                    </Grid>
-                                </div>
-                            )}
-                        </Popup>
-                    </Grid>
-                    <Grid item xs={12} marginTop="0vh">
-                    </Grid>
-                    <Grid item container
-                        direction="row"
-                        justifyContent='center' xs={12} height='19vh'>
-
-                        <Grid item xs={3} height='19vh' style={{ textAlign: 'center', backgroundImage: `url(${Leftbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
-                            <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='black' style={{ marginTop: '1vh' }}>
-                                <img src={Silverpuzzle} alt="gameicon" width="40%" /><br /> {BattleMode[0].MaxPrize}<br />GRAND GRADE PRIZE
-                            </Typography>
+                                    </div>
+                                )}
+                            </Popup>
                         </Grid>
-                        <Grid item xs={8} height='19vh' >
-                            <Typography variant="h4" component="div" style={{
-                                position: 'absolute',
-                                right: 30,
-                                marginTop: 10
-                            }} color='white'>
-                                {BattleMode[0].player}/50
-                            </Typography>
-                            <Typography variant="h6" component="div" style={{
-                                position: 'absolute',
-                                right: 30,
-                                marginTop: 40
-                            }} color='white'>
-                                players
-                            </Typography>
-                            <Typography style={{
-                                position: 'absolute',
-                                right: 60,
-                                fontSize: 20,
-                                marginTop: 90
-                            }} color='white'>
-                              <b>  Entry fee:{BattleMode[0].entryFee}<img src={Silverpuzzle} alt="icon"  width="15%" style={{  position:'relative',top:4}}/></b>
-                            </Typography>
 
-                            <Button style={{
-                                position: 'absolute',
-                                right: 0,
-                                marginTop: 90
+                        <Grid container
+                            direction="row"
+                            justifyContent='center' xs={12} height='15vh'>
+                            <Grid item xs={3} height='15vh' style={{ textAlign: 'center', backgroundImage: `url(${SmallLeftbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
+                                <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='black' style={{ marginTop: '2vh' }} paragraph>
+                                    <img src={Money} alt="gameicon" width="40%" /><br /> <b>{oneVoneMode[0].MaxPrize}</b>  <br />
+                                    <img src={Grandprize} alt='' />
+                                </Typography>
+                            </Grid>
+                            <Grid item xs={8} height='15vh' style={{ backgroundImage: `url(${SmallRightbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}  >
+                                <Typography style={{
+                                    position: 'absolute',
+                                    right: 60,
+                                    fontSize: 20,
+                                    marginTop: 65
+                                }} variant="caption" color='white'>
+                                    <b>Entry fee:{oneVoneMode[0].entryFee}<img src={Rmoneyicon} alt="icon" width="15%" style={{ position: 'relative', top: 4 }} /></b>
+                                </Typography>
 
-                            }}>
-                                <Popup
-                                    trigger={
-                                        <div className="button">
-                                            <div  onClick={this.handleClick}>
-                                                <img src={Forward} alt=''  zIndex='1' width="60%" style={{
-                                                    position: 'relative',
-                                                    zIndex: 0,
-                                                    left: "25%",
-                                                    bottom: 23
-                                                }} />
+                                <Button style={{
+                                    position: 'absolute',
+                                    right: 0,
+                                    marginTop: 65
+
+                                }}>
+                                    <Popup
+                                        trigger={
+                                            <div className="button" >
+                                                <div onClick={this.handleClick}>
+
+                                                    <img src={Forward} alt='' zIndex='2' width="60%" style={{
+                                                        position: 'relative',
+                                                        zIndex: 0,
+                                                        left: "25%",
+                                                        bottom: 23
+                                                    }} />
+                                                </div>
                                             </div>
-                                        </div>
 
-                                    }
-                                    modal
-                                    lockScroll
-                                    closeOnDocumentClick={false}
-                                    nested
-                                    onClose={this.handleClick}
-                                    {...{ contentStyle }}
-                                >
-                                    {close => (
-                                        <div className="modal">
-                                            <button className="close" onClick={close}>
-                                              
-                                            </button>
-                                            <Grid xs={12} >
-                                                Game Content
-                                            </Grid>
-                                        </div>
-                                    )}
-                                </Popup>
-                            </Button>
-                            <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${BattleMode[0].id}/BattleModeJoin`}><img src={Rightbg} width="100%" height='100%' /></Link>
+                                        }
+                                        modal
+                                        lockScroll
+                                        closeOnDocumentClick={false}
+                                        nested
+                                        onClose={this.handleClick}
+                                        {...{ contentStyle }}
+                                    >
+                                        {close => (
+                                            <div className="modal">
+                                                <button className="close" onClick={close}>
+
+                                                </button>
+                                                <Grid xs={12} >
+                                                    Game Content
+                                                </Grid>
+                                            </div>
+                                        )}
+                                    </Popup>
+                                </Button>
+                                <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${oneVoneMode[0].id}/OneVoneMode`}><img src={SmallRightbg} width="100%" height='100%' /></Link>
+
+                            </Grid>
+                        </Grid>
+                        <Collapse in={this.state.expanded} timeout="auto" unmountOnExit style={{ width: "100%" }} >
+                            {oneVoneMode.filter(content => content.id > 0).map((content) => (
+                                <>
+                                    <Grid item xs={12} marginTop="3vh">
+                                    </Grid>
+                                    <Grid container
+                                        direction="row"
+                                        justifyContent='center' xs={12} height='15vh'>
+                                        <Grid item xs={3} height='15vh' style={{ textAlign: 'center', backgroundImage: `url(${SmallLeftbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
+                                            <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='black' style={{ marginTop: '2vh' }} paragraph>
+                                                <img src={Money} alt="gameicon" width="45%" /><br /> <b>{oneVoneMode[0].MaxPrize}</b>  <br />
+                                                <img src={Grandprize} alt='' />
+                                            </Typography>
+                                        </Grid>
+                                        <Grid item xs={8} height='15vh' style={{ backgroundImage: `url(${SmallRightbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}  >
+                                            <Typography style={{
+                                                position: 'absolute',
+                                                right: 60,
+                                                fontSize: 20,
+                                                marginTop: 65
+                                            }} variant="caption" color='white'>
+                                                <b>Entry fee:{oneVoneMode[0].entryFee}<img src={Rmoneyicon} alt="icon" width="15%" style={{ position: 'relative', top: 4 }} /></b>
+                                            </Typography>
+
+                                            <Button style={{
+                                                position: 'absolute',
+                                                right: 0,
+                                                marginTop: 65
+
+                                            }}>
+                                                <Popup
+                                                    trigger={
+                                                        <div className="button" >
+                                                            <div onClick={this.handleClick}>
+
+                                                                <img src={Forward} alt='' zIndex='2' width="60%" style={{
+                                                                    position: 'relative',
+                                                                    zIndex: 0,
+                                                                    left: "25%",
+                                                                    bottom: 23
+                                                                }} />
+                                                            </div>
+                                                        </div>
+
+                                                    }
+                                                    modal
+                                                    lockScroll
+                                                    closeOnDocumentClick={false}
+                                                    nested
+                                                    onClose={this.handleClick}
+                                                    {...{ contentStyle }}
+                                                >
+                                                    {close => (
+                                                        <div className="modal">
+                                                            <button className="close" onClick={close}>
+
+                                                            </button>
+                                                            <Grid xs={12} >
+                                                                Game Content
+                                                            </Grid>
+                                                        </div>
+                                                    )}
+                                                </Popup>
+                                            </Button>
+                                            <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${content.id}/OneVoneMode`}><img src={SmallRightbg} width="100%" height='100%' /></Link>
+
+                                        </Grid>
+                                    </Grid></>
+                            ))}
+                        </Collapse>
+
+                        <Grid item xs={12} marginLeft="2vh" style={{ textAlign: 'center' }}>
+                            <ExpandMore
+                                expand={this.state.expanded}
+                                onClick={this.handleExpandClick}
+                                aria-expanded={this.state.expanded}
+                                aria-label="show more"
+                                color="success"
+                            >
+                                <img src={Down} alt="" width="50%" />
+                            </ExpandMore>
                         </Grid>
 
-                    </Grid>
-                    <Collapse in={this.state.expanded3} timeout="auto" unmountOnExit>
-                        {BattleMode.filter(content => content.id > 0).map((content) => (
-                            <>
-                                <Grid item xs={12} marginTop="5vh">
-                                </Grid>
+                        <Grid item xs={12} marginLeft="2vh">
+                            <Popup
+                                trigger={<div className="button"> <div > <Typography color="white"> ChallengerMode(?)</Typography>  </div></div>}
+                                modal
+                                lockScroll
+                                nested
+                            >
+                                {close => (
+                                    <div className="modal">
+                                        <button className="close" onClick={close}>
 
-                                <Grid item container
-                                    direction="row"
-                                    justifyContent='center' xs={12} height='19vh'>
+                                        </button>
+                                        <Grid xs={12} >
+                                            <Typography variant="h6" component="div" color='primary' textAlign='center'>
+                                                How to play
+                                            </Typography>
+                                            <Typography variant="caption" component="div" color='primary' textAlign='center'>
+                                                {Mode[1].Modechoose}
+                                            </Typography>
+                                            <Grid item xs={12} height="30vh">
+                                                <div className="video-responsive">
 
-                                    <Grid item xs={3} height='19vh' style={{ textAlign: 'center', backgroundImage: `url(${Leftbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
-                                        <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='black' style={{ marginTop: '1vh' }}>
-                                            <img src={Silverpuzzle} alt="gameicon" width="50%" /><br /> {content.MaxPrize}<br /><img src={Grandprize} alt=''/>
-                                        </Typography>
+                                                    <iframe
+                                                        src={`https://www.youtube.com/embed/${Mode[1].embedId}`}
+                                                        frameBorder="0"
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                        allowFullScreen
+                                                        title="Embedded youtube"
+                                                    />
+                                                </div>
+                                            </Grid>
+                                            <Typography variant="h4" component="div" color='primary' textAlign='center'>
+                                                <img src={PoweredByR} alt='' />
+                                            </Typography>
+                                        </Grid>
+                                    </div>
+                                )}
+                            </Popup>
+                        </Grid>
+
+                        <Grid item xs={12} marginTop="0vh">
+                        </Grid>
+                        <Grid item container
+                            direction="row"
+                            justifyContent='center' xs={12} height='19vh'>
+
+                            <Grid container direction="row"
+                                justifyContent='center' xs={3} height='19vh' style={{ textAlign: 'center', backgroundImage: `url(${Leftbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
+                                <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='black' style={{ marginTop: '2.5vh' }}>
+                                    <img src={Chasepuzzle} alt="gameicon" width="50%" /><br /><b>{challengerMode[0].MaxPrize}</b>  <br /> <img src={Grandprize} alt='' />
+                                </Typography>
+                            </Grid>
+                            <Grid item xs={8} height='19vh' style={{ backgroundImage: `url(${Rightbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}  >
+                                <Typography style={{
+                                    position: 'absolute',
+                                    right: 60,
+                                    fontSize: 20,
+                                    marginTop: 90
+                                }} color='white'>
+                                    <b> Entry fee:{challengerMode[0].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" style={{ position: 'relative', top: 4 }} /></b>
+                                </Typography>
+                                <Button style={{
+                                    position: 'absolute',
+                                    right: 0,
+                                    marginTop: 90
+                                }}>
+                                    <Popup
+                                        trigger={
+                                            <div className="button">
+                                                <div onClick={this.handleClick}>
+                                                    <img src={Forward} alt='' zIndex='1' width="60%" style={{
+                                                        position: 'relative',
+                                                        zIndex: 0,
+                                                        left: "25%",
+                                                        bottom: 23
+                                                    }} />
+                                                </div>
+                                            </div>
+
+                                        }
+                                        modal
+                                        lockScroll
+                                        closeOnDocumentClick={false}
+                                        nested
+                                        onClose={this.handleClick}
+                                        {...{ contentStyle }}
+                                    >
+                                        {close => (
+                                            <div className="modal">
+                                                <button className="close" onClick={close}>
+
+                                                </button>
+                                                <Grid xs={12} >
+                                                    Game Content
+                                                </Grid>
+                                            </div>
+                                        )}
+                                    </Popup>
+                                </Button>
+                                <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${challengerMode[0].id}/ChallengerModeGo`}><img src={Rightbg} width="100%" height='100%' /></Link>
+                            </Grid>
+                        </Grid>
+                        <Collapse in={this.state.expanded2} timeout="auto" unmountOnExit style={{ width: "100%" }}>
+                            {challengerMode.filter(content => content.id > 0).map((content) => (
+                                <>
+                                    <Grid item xs={12} marginTop="5vh">
                                     </Grid>
-                                    <Grid item xs={8} height='19vh' >
-                                        <Typography variant="h4" component="div" style={{
-                                            position: 'absolute',
-                                            right: 30,
-                                            marginTop: 10
-                                        }} color='white'>
-                                            {content.player}/50
-                                        </Typography>
-                                        <Typography variant="h6" component="div" style={{
-                                            position: 'absolute',
-                                            right: 30,
-                                            marginTop: 40
-                                        }} color='white'>
-                                            players
-                                        </Typography>
-                                        <Typography style={{
-                                            position: 'absolute',
-                                            right: 60,
-                                            fontSize: 20,
-                                            marginTop: 90
-                                        }} color='white'>
-                                           <b> Entry fee:{content.entryFee}<img src={Silverpuzzle} alt="icon"  width="15%" style={{  position:'relative',top:4}} /></b>
-                                        </Typography>
-                                        <Button style={{
-                                            position: 'absolute',
-                                            right: 0,
-                                            marginTop: 90
+                                    <Grid item container
+                                        direction="row"
+                                        justifyContent='center' xs={12} height='19vh'>
+                                        <Grid item xs={3} height='19vh' style={{ textAlign: 'center', backgroundImage: `url(${Leftbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
+                                            <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='black' style={{ marginTop: '2.5vh' }}>
+                                                <img src={Chasepuzzle} alt="gameicon" width="50%" /><br /><b>{challengerMode[0].MaxPrize} </b> <br />  <img src={Grandprize} alt='' />
+                                            </Typography>
+                                        </Grid>
+                                        <Grid item xs={8} height='19vh' style={{ backgroundImage: `url(${Rightbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}  >
+                                            <Typography style={{
+                                                position: 'absolute',
+                                                right: 60,
+                                                fontSize: 20,
+                                                marginTop: 90
+                                            }} color='white'>
+                                                <b>Entry fee:{content.entryFee}<img src={Chasepuzzle} alt="icon" width="15%" style={{ position: 'relative', top: 4 }} /></b>
+                                            </Typography>
 
-                                        }}>
-                                            <Popup
-                                                trigger={
-                                                    <div className="button">
-                                                        <div  onClick={this.handleClick}>
-                                                            <img src={Forward} alt=''  zIndex='1' width="60%" style={{
-                                                                position: 'relative',
-                                                                zIndex: 0,
-                                                                left: "25%",
-                                                                bottom: 8
-                                                            }} />
+                                            <Button style={{
+                                                position: 'absolute',
+                                                right: 0,
+                                                marginTop: 90
+
+                                            }}>
+                                                <Popup
+                                                    trigger={
+                                                        <div className="button">
+                                                            <div onClick={this.handleClick}>
+                                                                <img src={Forward} alt='' zIndex='1' width="60%" style={{
+                                                                    position: 'relative',
+                                                                    zIndex: 0,
+                                                                    left: "25%",
+                                                                    bottom: 23
+                                                                }} />
+                                                            </div>
                                                         </div>
-                                                    </div>
 
-                                                }
-                                                modal
-                                                lockScroll
-                                                onClose={this.handleClick}
-                                                closeOnDocumentClick={false}
-                                                nested
-                                                {...{ contentStyle }}
-                                            >
-                                                {close => (
-                                                    <div className="modal">
-                                                        <button className="close" onClick={close}>
-                                                       
-                                                        </button>
-                                                        <Grid xs={12} >
-                                                            Game Content
-                                                        </Grid>
-                                                    </div>
-                                                )}
-                                            </Popup>
-                                        </Button>
-                                        <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${content.id}/BattleModeJoin`}><img src={Rightbg} width="100%" height='100%' /></Link>
+                                                    }
+                                                    modal
+                                                    lockScroll
+                                                    closeOnDocumentClick={false}
+                                                    nested
+                                                    onClose={this.handleClick}
+                                                    {...{ contentStyle }}
+                                                >
+                                                    {close => (
+                                                        <div className="modal">
+                                                            <button className="close" onClick={close}>
 
+                                                            </button>
+                                                            <Grid xs={12} >
+                                                                Game Content
+                                                            </Grid>
+                                                        </div>
+                                                    )}
+                                                </Popup>
+                                            </Button>
+                                            <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${content.id}/ChallengerModeGO`}><img src={Rightbg} width="100%" height='100%' /></Link>
+                                        </Grid>
                                     </Grid>
-                                </Grid>
-                            </>
-                        ))}
-                    </Collapse>
-                    <Grid item xs={12} marginLeft="2vh" style={{ textAlign: 'center' }}>
-                        <ExpandMore
-                            expand={this.state.expanded3}
-                            onClick={this.handleExpandClick3}
-                            aria-expanded={this.state.expanded3}
-                            aria-label="show more"
-                            color="success"
-                        >
-                            <img src={Down} alt="" width="50%" />
-                        </ExpandMore>
-                    </Grid>
-                    <Grid item xs={12} marginTop="10vh" display={this.state.isToggleOn ? 'block' : 'none'}>
-                        <EndBar />
+                                </>
+                            ))}
+                        </Collapse>
+
+                        <Grid item xs={12} marginLeft="2vh" style={{ textAlign: 'center' }}>
+                            <ExpandMore
+                                expand={this.state.expanded2}
+                                onClick={this.handleExpandClick2}
+                                aria-expanded={this.state.expanded2}
+                                aria-label="show more"
+                                color="success"
+                            >
+                                <img src={Down} alt="" width="50%" />
+                            </ExpandMore>
+                        </Grid>
+
+                        <Grid item xs={12} marginLeft="2vh">
+                            <Popup
+                                trigger={<div className="button"> <div ><Typography color="white"> Battle Mode(?) </Typography></div></div>}
+                                modal
+                                lockScroll
+                                nested
+                            >
+                                {close => (
+                                    <div className="modal">
+                                        <button className="close" onClick={close}>
+
+                                        </button>
+                                        <Grid xs={12} >
+                                            <Typography variant="h6" component="div" color='primary' textAlign='center'>
+                                                How to play
+                                            </Typography>
+                                            <Typography variant="caption" component="div" color='primary' textAlign='center'>
+                                                {Mode[2].Modechoose}
+                                            </Typography>
+                                            <Grid item xs={12} height="30vh">
+                                                <div className="video-responsive">
+
+                                                    <iframe
+                                                        src={`https://www.youtube.com/embed/${Mode[2].embedId}`}
+                                                        frameBorder="0"
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                        allowFullScreen
+                                                        title="Embedded youtube"
+                                                    />
+                                                </div>
+                                            </Grid>
+                                            <Grid xs={12} positon='fixed'>
+                                                <Typography variant="h4" component="div" color='primary' textAlign='center'>
+                                                    <img src={PoweredByR} alt='' />
+                                                </Typography>
+                                            </Grid>
+                                        </Grid>
+                                    </div>
+                                )}
+                            </Popup>
+                        </Grid>
+                        <Grid item xs={12} marginTop="0vh">
+                        </Grid>
+                        <Grid item container
+                            direction="row"
+                            justifyContent='center' xs={12} height='19vh'>
+
+                            <Grid item xs={3} height='19vh' style={{ textAlign: 'center', backgroundImage: `url(${Leftbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
+                                <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='black' style={{ marginTop: '2.5vh' }}>
+                                    <img src={Silverpuzzle} alt="gameicon" width="50%" /><br /> <b>{BattleMode[0].MaxPrize}</b><br /><img src={Grandprize} alt='' />
+                                </Typography>
+                            </Grid>
+                            <Grid item xs={8} height='19vh' >
+                                <Typography variant="h4" component="div" style={{
+                                    position: 'absolute',
+                                    right: 30,
+                                    marginTop: 10
+                                }} color='white'>
+                                    {BattleMode[0].player}/50
+                                </Typography>
+                                <Typography variant="h6" component="div" style={{
+                                    position: 'absolute',
+                                    right: 30,
+                                    marginTop: 40
+                                }} color='white'>
+                                    players
+                                </Typography>
+                                <Typography style={{
+                                    position: 'absolute',
+                                    right: 60,
+                                    fontSize: 20,
+                                    marginTop: 90
+                                }} color='white'>
+                                    <b> Entry fee:{BattleMode[0].entryFee}<img src={Silverpuzzle} alt="icon" width="15%" style={{ position: 'relative', top: 4 }} /></b>
+                                </Typography>
+                                <Button style={{
+                                    position: 'absolute',
+                                    right: 0,
+                                    marginTop: 90
+
+                                }}>
+                                    <Popup
+                                        trigger={
+                                            <div className="button">
+                                                <div onClick={this.handleClick}>
+                                                    <img src={Forward} alt='' zIndex='1' width="60%" style={{
+                                                        position: 'relative',
+                                                        zIndex: 0,
+                                                        left: "25%",
+                                                        bottom: 8
+                                                    }} />
+                                                </div>
+                                            </div>
+
+                                        }
+                                        modal
+                                        lockScroll
+                                        onClose={this.handleClick}
+                                        closeOnDocumentClick={false}
+                                        nested
+                                        {...{ contentStyle }}
+                                    >
+                                        {close => (
+                                            <div className="modal">
+                                                <button className="close" onClick={close}>
+
+                                                </button>
+                                                <Grid xs={12} >
+                                                    Game Content
+                                                </Grid>
+                                            </div>
+                                        )}
+                                    </Popup>
+                                </Button>
+                                <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${BattleMode[0].id}/BattleModeJoin`}><img src={Rightbg} width="100%" height='100%' /></Link>
+
+                            </Grid>
+
+                        </Grid>
+                        <Collapse in={this.state.expanded3} timeout="auto" unmountOnExit style={{ width: "100%" }}>
+                            {BattleMode.filter(content => content.id > 0).map((content) => (
+                                <>
+                                    <Grid item xs={12} marginTop="5vh">
+                                    </Grid>
+
+                                    <Grid item container
+                                        direction="row"
+                                        justifyContent='center' xs={12} height='19vh'>
+
+                                        <Grid item xs={3} height='19vh' style={{ textAlign: 'center', backgroundImage: `url(${Leftbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
+                                            <Typography variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='black' style={{ marginTop: '2.5vh' }}>
+                                                <img src={Silverpuzzle} alt="gameicon" width="50%" /><br /> <b>{content.MaxPrize}</b><br /><img src={Grandprize} alt='' />
+                                            </Typography>
+                                        </Grid>
+                                        <Grid item xs={8} height='19vh' >
+                                            <Typography variant="h4" component="div" style={{
+                                                position: 'absolute',
+                                                right: 30,
+                                                marginTop: 10
+                                            }} color='white'>
+                                                {content.player}/50
+                                            </Typography>
+                                            <Typography variant="h6" component="div" style={{
+                                                position: 'absolute',
+                                                right: 30,
+                                                marginTop: 40
+                                            }} color='white'>
+                                                players
+                                            </Typography>
+                                            <Typography style={{
+                                                position: 'absolute',
+                                                right: 60,
+                                                fontSize: 20,
+                                                marginTop: 90
+                                            }} color='white'>
+                                                <b> Entry fee:{content.entryFee}<img src={Silverpuzzle} alt="icon" width="15%" style={{ position: 'relative', top: 4 }} /></b>
+                                            </Typography>
+                                            <Button style={{
+                                                position: 'absolute',
+                                                right: 0,
+                                                marginTop: 90
+
+                                            }}>
+                                                <Popup
+                                                    trigger={
+                                                        <div className="button">
+                                                            <div onClick={this.handleClick}>
+                                                                <img src={Forward} alt='' zIndex='1' width="60%" style={{
+                                                                    position: 'relative',
+                                                                    zIndex: 0,
+                                                                    left: "25%",
+                                                                    bottom: 8
+                                                                }} />
+                                                            </div>
+                                                        </div>
+
+                                                    }
+                                                    modal
+                                                    lockScroll
+                                                    onClose={this.handleClick}
+                                                    closeOnDocumentClick={false}
+                                                    nested
+                                                    {...{ contentStyle }}
+                                                >
+                                                    {close => (
+                                                        <div className="modal">
+                                                            <button className="close" onClick={close}>
+
+                                                            </button>
+                                                            <Grid xs={12} >
+                                                                Game Content
+                                                            </Grid>
+                                                        </div>
+                                                    )}
+                                                </Popup>
+                                            </Button>
+                                            <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${content.id}/BattleModeJoin`}><img src={Rightbg} width="100%" height='100%' /></Link>
+
+                                        </Grid>
+                                    </Grid>
+                                </>
+                            ))}
+                        </Collapse>
+                        <Grid item xs={12} marginLeft="2vh" style={{ textAlign: 'center' }}>
+                            <ExpandMore
+                                expand={this.state.expanded3}
+                                onClick={this.handleExpandClick3}
+                                aria-expanded={this.state.expanded3}
+                                aria-label="show more"
+                                color="success"
+                            >
+                                <img src={Down} alt="" width="50%" />
+                            </ExpandMore>
+                        </Grid>
+
                     </Grid>
 
                 </Grid>
-                <div id="popup-root" />
+
+                <Grid container xs={12} style={{ textAlign: 'center' }}>
+                        <EndBar />
+                    </Grid>
+
+
+                    <Grid item xs={12} style={{ height: "27vh" }} />
             </Box>
+
 
         );
     }

@@ -101,16 +101,16 @@ export default class TournamentLobby extends Component {
                         </Grid>
                         <Grid xs={12} container justifyContent='center' alignItems="center" height="30vh" style={{ marginTop: '2vh', backgroundImage: `url(${background})`, backgroundRepeat: 'no-repeat', backgroundSize: '100%', backgroundAttachment: 'cover' }}>
                             <Grid container xs={12} height="30vh" >
-                                <Grid container xs={6} justifyContent='center' alignItems="center" style={{ border: "1px solid grey", }} height="25vh">
+                                <Grid container xs={6} justifyContent='center' alignItems="center"  height="25vh">
                                     <img src={Headicon} alt='' width="70%" />
                                 </Grid>
-                                <Grid container xs={6} justifyContent='center' alignItems="center" style={{ border: "1px solid grey", }} height="25vh">
-                                    <Grid container xs={12} justifyContent='center' alignItems="center" style={{ border: "1px solid grey", }} height="12.5vh">XXXXXXXX<br />Rees ID:xxxx</Grid>
-                                    <Grid container xs={12} justifyContent='center' alignItems="center" style={{ border: "1px solid grey", }} height="12.5vh">
-                                        <Grid container xs={12} justifyContent='center' alignItems="center" style={{ border: "1px solid grey", }} height="50%">
+                                <Grid container xs={6} justifyContent='center' alignItems="center"height="25vh">
+                                    <Grid container xs={12} justifyContent='center' alignItems="center"  height="12.5vh">XXXXXXXX<br />Rees ID:xxxx</Grid>
+                                    <Grid container xs={12} justifyContent='center' alignItems="center"  height="12.5vh">
+                                        <Grid container xs={12} justifyContent='center' alignItems="center"  height="50%">
                                             <img src={Bookmark} alt='' width="85%" />
                                         </Grid>
-                                        <Grid container xs={12} justifyContent='center' alignItems="center" style={{ border: "1px solid grey", }} height="50%">
+                                        <Grid container xs={12} justifyContent='center' alignItems="center"  height="50%">
                                             <img src={AddFriend} alt='' width="85%" />
                                         </Grid>
                                     </Grid>
@@ -119,7 +119,7 @@ export default class TournamentLobby extends Component {
                         </Grid>
                         <Grid xs={12} container justifyContent='center' alignItems="center" height="20vh">
                             <Grid container xs={12} height="30vh" >
-                                <Grid container xs={12} justifyContent='center' alignItems="center" style={{ border: "1px solid grey", }} height="15vh">
+                                <Grid container xs={12} justifyContent='center' alignItems="center"  height="15vh">
                                     <Grid xs={12} height="3vh" style={{ marginBottom: '1vh' }}>   <img src={Collection} alt='' width="40%" /></Grid>
                                     <Grid xs={12} container justifyContent='center' alignItems="center" height="12vh" >
                                         <Grid xs={3} container justifyContent='center' alignItems="center" height="11vh" >  <img src={ItemBlock} alt='' width="75%" /></Grid>
@@ -129,7 +129,7 @@ export default class TournamentLobby extends Component {
                                     </Grid>
                                 </Grid>
 
-                                 <Grid container xs={12} justifyContent='center' alignItems="center" style={{ border: "1px solid grey", }} height="15vh">
+                                 <Grid container xs={12} justifyContent='center' alignItems="center" height="15vh">
                                     <Grid xs={12} height="3vh" style={{ marginBottom: '1vh' }}>   <img src={Wishlist} alt='' width="30%" /></Grid>
                                     <Grid xs={12} container justifyContent='center' alignItems="center" height="12vh" >
                                         <Grid xs={3} container justifyContent='center' alignItems="center" height="11vh" >  <img src={ItemBlock} alt='' width="75%" /></Grid>

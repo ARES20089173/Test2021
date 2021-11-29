@@ -143,8 +143,8 @@ export default function Savecard() {
 
                 <Grid container xs={11.5} alignItems='center' justifyContent='center' height="30vh" style={{ backgroundImage: `url(${savecardbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'cover' }}>
                     <Grid container xs={11} alignItems='center' justifyContent='center' height="10vh">
-                        <Grid container xs={12} height="50%" >
-                            <img src={Addicon} alt='' width="5%" /><img src={Creditcard} alt='' style={{marginLeft:'2vh'}}width="10%"/>
+                        <Grid container xs={12} height="50%" alignItems='center' style={{ marginLeft: 52 }}>
+                            <img src={Addicon} alt='' width="6%" /><img src={Creditcard} alt='' style={{ marginLeft: '2vh' }} width="12%" />
                             <Link to={`/Wallet/SaveCards/AddNewCards`} color='white' style={{ textDecoration: 'none', color: 'white' }}>
                                 <Typography variant='body1' style={{
                                     position: 'relative',
@@ -153,13 +153,13 @@ export default function Savecard() {
                                 }} >add new card </Typography>
                             </Link>
                         </Grid>
-                        <Grid container xs={12} height="50%" marginTop="1vh" >
-                            <img src={visa} alt='' style={{marginLeft:'7.6vh',width:'15%'}} /><img src={mastercard} alt='' style={{marginLeft:'2vh',width:'15%'}}/><img src={amapay} alt='' style={{marginLeft:'2vh',width:'15%'}}/>
+                        <Grid container xs={12} height="50%" marginTop="1vh" alignItems='center' justifyContent='center' >
+                            <img src={visa} alt='' style={{ width: '15%' }} /><img src={mastercard} alt='' style={{ marginLeft: '2vh', width: '15%' }} /><img src={amapay} alt='' style={{ marginLeft: '2vh', width: '15%' }} />
                         </Grid>
                     </Grid>
-                    <Grid container xs={11} height="10vh" marginBottom="1vh">
-                        <Grid container xs={12} height="50%" >
-                        <img src={Addicon} alt='' width="5%" /><img src={Creditcard} alt='' style={{marginLeft:'2vh'}}width="10%"/>
+                    <Grid container xs={11} height="10vh" marginBottom="1vh" alignItems='center' justifyContent='center'>
+                        <Grid container xs={12} height="50%" alignItems='center' justifyContent='center'>
+                            <img src={Addicon} alt='' width="5%" /><img src={Creditcard} alt='' style={{ marginLeft: '2vh' }} width="10%" />
                             <Link to={`/Wallet/SaveCards/AddNewCards`} color='white' style={{ textDecoration: 'none', color: 'white' }}>
                                 <Typography variant='body1' style={{
                                     position: 'relative',
@@ -168,8 +168,8 @@ export default function Savecard() {
                                 }} >add payment method</Typography>
                             </Link>
                         </Grid>
-                        <Grid container xs={12} height="50%" marginTop="1vh">
-                            <img src={alipay} alt='' style={{marginLeft:'7.6vh',width:'15%'}}/><img src={paypal} alt='' style={{marginLeft:'2vh',width:'15%'}}/><img src={ArrowPay} alt='' style={{marginLeft:'2vh',width:'15%'}}/>
+                        <Grid container xs={12} height="50%" marginTop="1vh" alignItems='center' justifyContent='center'>
+                            <img src={alipay} alt='' style={{ width: '15%' }} /><img src={paypal} alt='' style={{ marginLeft: '2vh', width: '15%' }} /><img src={ArrowPay} alt='' style={{ marginLeft: '2vh', width: '15%' }} />
                         </Grid>
                     </Grid>
                 </Grid>

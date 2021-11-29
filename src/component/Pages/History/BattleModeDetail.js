@@ -8,25 +8,20 @@ import "../../framework/css/cssModFLooby.css"
 import IconButton from '@mui/material/IconButton';
 import backgroundEnd from "../../../reed_bg.svg"
 import Typography from '@mui/material/Typography';
-import Rmoney from '../../../svgicon/Componenticon/Rmoneyicon.svg';
-import Fab from '@mui/material/Fab';
-import Drawer from "@mui/material/Drawer";
-import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
-import chasepuzzle from '../../../svgicon/Missionicon/Dailymission.svg'
-import silverpuzzle from '../../../svgicon/Componenticon/SilverPuzzle.svg'
-import BattleRank from '../../../svgicon/Historyicon/BattleRank.svg';
 import HisNavigationBar from './WithBackHisNavbar';
 import Badge from '@mui/material/Badge'
-
+import Chasepuzzle from "../../../svgicon/Componenticon/Chasepuzzle.svg"
+import Badge1 from "../../../svgicon/BattleMode/1Badge.svg"
+import Badge2 from "../../../svgicon/BattleMode/2Badge.svg"
+import Badge3 from "../../../svgicon/BattleMode/3Badge.svg"
+import Badge4 from "../../../svgicon/BattleMode/4Badge.svg"
+import Badge5 from "../../../svgicon/BattleMode/5Badge.svg"
+import Badge6 from "../../../svgicon/BattleMode/6Badge.svg"
+import Badge7 from "../../../svgicon/BattleMode/7Badge.svg"
+import Badge8 from "../../../svgicon/BattleMode/8Badge.svg"
+import Badge9 from "../../../svgicon/BattleMode/9Badge.svg"
+import Badge10 from "../../../svgicon/BattleMode/10Badge.svg"
 import Headicon from '../../../face_1.svg'
-import Grand from '../../../svgicon/Historyicon/Grand.svg';
-import Epic from '../../../svgicon/Historyicon/Epic.svg';
-import Hero from '../../../svgicon/Historyicon/Hero.svg';
-import KeepUp from '../../../svgicon/Historyicon/KeepUp.svg';
-import Bouns from '../../../svgicon/Historyicon/Bouns.svg';
 import Gicon1 from '../../../svgicon/GameIcon/Gicon1.svg'
 import Gicon2 from '../../../svgicon/GameIcon/Gicon2.svg'
 import Gicon3 from '../../../svgicon/GameIcon/Gicon3.svg'
@@ -46,25 +41,14 @@ import pic1 from '../../framework/img/300x100.jpeg'
 import puzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
-        right: 18,
-        top: 10,
-        border: `2px solid ${theme.palette.background.paper}`,
-        padding: '0 1px',
+        right: 13,
+        top: 15,
+        backgroundImage: `url(${Badge1})`, backgroundSize: '100% 100%', backgroundAttachment: 'cover',
+        padding: '0px 0px',
+        backgroundColor: 'transparent'
     },
 }));
-const HeadsvgData = [
-    { id: 0, Headsvg: Headicon },
-    { id: 1, Headsvg: Headicon },
-    { id: 2, Headsvg: Headicon },
-    { id: 3, Headsvg: Headicon },
-    { id: 4, Headsvg: Headicon },
-    { id: 5, Headsvg: Headicon },
-    { id: 6, Headsvg: Headicon },
-    { id: 7, Headsvg: Headicon },
-    { id: 8, Headsvg: Headicon },
-    { id: 9, Headsvg: Headicon },
-    { id: 10, Headsvg: Headicon },
-]
+
 export default class TournamentLobby extends Component {
     constructor(props) {
         super(props);
@@ -72,6 +56,7 @@ export default class TournamentLobby extends Component {
         this.handleClick = this.handleClick.bind(this);
         this.openhandleClick = this.openhandleClick.bind(this);
         this.handleOuser1 = this.handleOuser1.bind(this);
+
     }
     openhandleClick() {
         this.setState(prevState => ({
@@ -83,12 +68,26 @@ export default class TournamentLobby extends Component {
             isToggleOn: !prevState.isToggleOn
         }));
     }
-    handleOuser1(){
-        
-    let path = `/History/${this.props.match.params.id}/BattleModeDetail/${this.props.match.params.id}/otherinfo`;
-    this.props.history.push(path);
+    handleOuser1() {
+        let path = `/History/${this.props.match.params.id}/BattleModeDetail/${this.props.match.params.id}/otherinfo`;
+        this.props.history.push(path);
     }
     render() {
+
+    let ids = this.props.match.params.id
+        const HeadsvgData = [
+            { id: 0, Headsvg: Headicon ,link:`/History/${ids}/BattleModeDetail/${ids}/otherinfo`},
+            { id: 1, Headsvg: Headicon },
+            { id: 2, Headsvg: Headicon },
+            { id: 3, Headsvg: Headicon },
+            { id: 4, Headsvg: Headicon },
+            { id: 5, Headsvg: Headicon },
+            { id: 6, Headsvg: Headicon },
+            { id: 7, Headsvg: Headicon },
+            { id: 8, Headsvg: Headicon },
+            { id: 9, Headsvg: Headicon },
+            { id: 10, Headsvg: Headicon },
+        ]
         const data = [
             { id: 0, icon: Gicon1, Score: 13, Rank: 15, reward: 200 },
             { id: 1, icon: Gicon2, Score: 13, Rank: 15, reward: 200 },
@@ -118,35 +117,34 @@ export default class TournamentLobby extends Component {
                                 BATTLE MODE
                             </Typography>
                         </Grid>
-                        <Grid container xs={12} height="40vh"  justifyContent='center' alignItems='center' >
+                        <Grid container xs={12} height="40vh" justifyContent='center' alignItems='center' >
                             <Typography variant="body1" textAlign='center' color="white" >
-                                2048<br/>
-                                Battle Mode<br/>
-                                <img src={Gicon1} alt='' width="40%" /><br/>
-                                Your score:XX<br/>
-                                Your ranking:xx<br/>
+                                2048<br />
+                                Battle Mode<br />
+                                <img src={Gicon1} alt='' width="40%" /><br />
+                                Your score:XX<br />
+                                Your ranking:xx<br />
                                 puzzles REWARDS:xxx
                             </Typography>
                         </Grid>
-                        <Grid item xs={12} height="70vh"  >
-                            <Grid xs={12} container style={{ border: "1px solid grey", textAlign: 'left' }} justifyContent="left" alignItems="center" >
-
-                                <Grid item xs={2.8} height="19vh" style={{ border: "1px solid grey", textAlign: 'center' }} onClick={this.handleOuser1} ><StyledBadge badgeContent={1} color="secondary"><img src={HeadsvgData[1].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
-                                <Grid item xs={2.8} height="19vh" style={{ border: "1px solid grey", textAlign: 'center' }} ><StyledBadge badgeContent={2} color="secondary"><img src={HeadsvgData[2].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
-                                <Grid item xs={2.8} height="19vh" style={{ border: "1px solid grey", textAlign: 'center' }} ><StyledBadge badgeContent={3} color="secondary"><img src={HeadsvgData[3].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
-                                <Grid item xs={2.8} height="19vh" style={{ border: "1px solid grey", textAlign: 'center' }} ><StyledBadge badgeContent={4} color="secondary"><img src={HeadsvgData[4].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
-                                <Grid item xs={8.4} container>
-                                    <Grid item xs={4} height="19vh" style={{ border: "1px solid grey", textAlign: 'center' }} ><StyledBadge badgeContent={5} color="secondary"><img src={HeadsvgData[5].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
-                                    <Grid item xs={4} height="19vh" style={{ border: "1px solid grey", textAlign: 'center' }} ><StyledBadge badgeContent={6} color="secondary"><img src={HeadsvgData[6].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
-                                    <Grid item xs={4} height="19vh" style={{ border: "1px solid grey", textAlign: 'center' }} ><StyledBadge badgeContent={7} color="secondary"><img src={HeadsvgData[7].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
-                                    <Grid item xs={4} height="19vh" style={{ border: "1px solid grey", textAlign: 'center' }} ><StyledBadge badgeContent={8} color="secondary"><img src={HeadsvgData[8].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
-                                    <Grid item xs={4} height="19vh" style={{ border: "1px solid grey", textAlign: 'center' }} ><StyledBadge badgeContent={9} color="secondary"><img src={HeadsvgData[9].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
-                                    <Grid item xs={4} height="19vh" style={{ border: "1px solid grey", textAlign: 'center' }} > <StyledBadge badgeContent={10} color="secondary"><img src={HeadsvgData[10].Headsvg} alt="Headicon" width="85%" /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography></Grid>
+                        <Grid item xs={11.5} height="50vh"  >
+                            <Grid xs={12} container style={{  textAlign: 'left' }} justifyContent="left" alignItems="center" >
+                                <Grid item xs={2.8} height="19vh" style={{ textAlign: 'center' }} ><Link to={HeadsvgData[1].link} style={{ textDecoration: 'none' }} ><StyledBadge badgeContent={<img src={Badge1} alt='' width="20-%" />} color="secondary"><img src={HeadsvgData[1].Headsvg} alt="Headicon" width="85%" style={{ position: 'relative', left: 5 }} /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline" color='white' noWrap>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link></Grid>
+                                <Grid item xs={2.8} height="19vh" style={{ textAlign: 'center' }} ><Link to={HeadsvgData[2].link}  style={{ textDecoration: 'none' }}><StyledBadge badgeContent={<img src={Badge2} alt='' width="20-%" />} color="secondary"><img src={HeadsvgData[2].Headsvg} alt="Headicon" width="85%" style={{ position: 'relative', left: 5 }} /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline" color='white' noWrap>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link></Grid>
+                                <Grid item xs={2.8} height="19vh" style={{ textAlign: 'center' }} ><Link to={HeadsvgData[3].link} style={{ textDecoration: 'none' }}><StyledBadge badgeContent={<img src={Badge3} alt='' width="20-%" />} color="secondary"><img src={HeadsvgData[3].Headsvg} alt="Headicon" width="85%" style={{ position: 'relative', left: 5 }} /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline" color='white' noWrap>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link></Grid>
+                                <Grid item xs={2.8} height="19vh" style={{ textAlign: 'center' }} ><Link to={HeadsvgData[4].link} style={{ textDecoration: 'none' }}><StyledBadge badgeContent={<img src={Badge4} alt='' width="20-%" />} color="secondary"><img src={HeadsvgData[4].Headsvg} alt="Headicon" width="85%" style={{ position: 'relative', left: 5 }} /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline" color='white' noWrap>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link></Grid>
+                                <Grid item xs={8.4} container alignItems='center' justifyContent='center' >
+                                    <Grid item xs={4} height="19vh" style={{ textAlign: 'center' }} ><Link to={HeadsvgData[5].link} style={{ textDecoration: 'none' }}><StyledBadge badgeContent={<img src={Badge5} alt='' width="20-%" />} color="secondary"><img src={HeadsvgData[5].Headsvg} alt="Headicon" width="85%" style={{ position: 'relative', left: 5 }} /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline" color='white' noWrap>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link></Grid>
+                                    <Grid item xs={4} height="19vh" style={{ textAlign: 'center' }} ><Link to={HeadsvgData[6].link} style={{ textDecoration: 'none' }}><StyledBadge badgeContent={<img src={Badge6} alt='' width="20-%" />} color="secondary"><img src={HeadsvgData[6].Headsvg} alt="Headicon" width="85%" style={{ position: 'relative', left: 5 }} /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline" color='white' noWrap>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link></Grid>
+                                    <Grid item xs={4} height="19vh" style={{ textAlign: 'center' }} ><Link to={HeadsvgData[7].link} style={{ textDecoration: 'none' }}><StyledBadge badgeContent={<img src={Badge7} alt='' width="20-%" />} color="secondary"><img src={HeadsvgData[7].Headsvg} alt="Headicon" width="85%" style={{ position: 'relative', left: 5 }} /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline" color='white' noWrap>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link></Grid>
+                                    <Grid item xs={4} height="19vh" style={{ textAlign: 'center' }} ><Link to={HeadsvgData[8].link} style={{ textDecoration: 'none' }}><StyledBadge badgeContent={<img src={Badge8} alt='' width="20-%" />} color="secondary"><img src={HeadsvgData[8].Headsvg} alt="Headicon" width="85%" style={{ position: 'relative', left: 5 }} /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline" color='white' noWrap>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link></Grid>
+                                    <Grid item xs={4} height="19vh" style={{ textAlign: 'center' }} ><Link to={HeadsvgData[9].link} style={{ textDecoration: 'none' }}><StyledBadge badgeContent={<img src={Badge9} alt='' width="20-%" />} color="secondary"><img src={HeadsvgData[9].Headsvg} alt="Headicon" width="85%" style={{ position: 'relative', left: 5 }} /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline" color='white' noWrap>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link></Grid>
+                                    <Grid item xs={4} height="19vh" style={{ textAlign: 'center' }} ><Link to={HeadsvgData[10].link} style={{ textDecoration: 'none' }}><StyledBadge badgeContent={<img src={Badge10} alt='' width="22-%" />} color="secondary"><img src={HeadsvgData[10].Headsvg} alt="Headicon" width="85%" style={{ position: 'relative', left: 5 }} /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline" color='white' noWrap>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link></Grid>
                                 </Grid>
                                 <Grid item xs={3.6} container alignItems='center' justifyContent='center'  >
-                                    <Grid item xs={12} height="38vh" style={{ border: "1px solid grey", textAlign: 'center' }} >
-                                        <img src={HeadsvgData[0].Headsvg} alt="Headicon" width="85%" /><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline">XXXXXX</Typography><Typography>xxxxxxx<img src={puzzle} width="20%" /></Typography>
-                                    </Grid>
+                                    <Grid item xs={12} height="38vh" style={{ textAlign: 'center' }} >
+                                        <img src={HeadsvgData[0].Headsvg} alt="Headicon" width="85%" /><Link to="#" style={{ textDecoration: 'none' }}><Typography variant="body1" height="0vh" noWrap style={{ overflowWrap: 'break-word' }} display="inline" color='white'>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link>
+                                   </Grid>
                                 </Grid>
                             </Grid>
                         </Grid>

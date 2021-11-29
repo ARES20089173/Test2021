@@ -20,10 +20,11 @@ import Fab from '@mui/material/Fab';
 import { styled } from '@mui/material/styles'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom"
-
 import { Button } from "@mui/material";
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
 import back from '../../../svgicon/Componenticon/Back.svg'
+import saveAvatar from '../../../svgicon/Hamburgarbaricon/SaveAvatar.svg';
+import digitalStore from '../../../svgicon/Hamburgarbaricon/DigitalStore.svg';
 const contentStyle = {
     margin: 'auto',
     background: '#242634',
@@ -60,13 +61,13 @@ export default function SelectAvatar() {
         setbgSelect(e)
     };
     const AvatarD = Avatardata.filter(Avatared => Avatared.id < 6).map((Adata) => {
-        return <Grid xs={4} container alignItems='center' justifyContent='center' bgcolor={bgSelect == Adata.id ? "red" : ""}>
+        return <Grid xs={4} container alignItems='center' justifyContent='center' marginTop="1vh" bgcolor={bgSelect == Adata.id ? "red" : ""}>
             <img Click={handlebgChange} value={Adata.id} src={Adata.headicon} onClick={() => handlebgChange(Adata.id)} defalutvalue={2} alt="headicon" width="85%" ></img>
 
         </Grid>
     })
     const AvatarDLock = Avatardata.filter(Avatared => Avatared.id >= 6).map((Adata) => {
-        return <Grid xs={4} container alignItems='center' justifyContent='center' bgcolor={bgSelect == Adata.id ? "red" : ""}>
+        return <Grid xs={4} container alignItems='center' justifyContent='center'  marginTop="1vh" bgcolor={bgSelect == Adata.id ? "red" : ""}>
             <img Click={handlebgChange} value={Adata.id} src={Adata.headicon} onClick={() => handlebgChange(Adata.id)} defalutvalue={2} alt="headicon" width="85%" ></img>
 
         </Grid>
@@ -92,7 +93,7 @@ export default function SelectAvatar() {
                             <Toolbar>
                                 <Grid container xs={12} justifyContent='center' alignItems='center'>
                                     <Grid xs={2}>
-                                        <Link to={`/`} style={{ position: 'relative', top: 3, right: 10 }}>
+                                        <Link to={`/1/Profile`} style={{ position: 'relative', top: 3, right: 10 }}>
                                             <img src={back} alt='' width="75%" />
                                         </Link>
                                     </Grid>
@@ -120,11 +121,11 @@ export default function SelectAvatar() {
                         {AvatarD}
                     </Grid>
 
-                    <Grid xs={12} height="15%" container alignItems='center' justifyContent='center'>
-                        <Grid xs={4} container bgcolor="red" alignItems='center' justifyContent='center' color='white' height="80%" style={{ borderRadius: "25%" }}>
+                    <Grid xs={12} height="15%" container alignItems='center' justifyContent='center' marginTop='1vh'marginBottom='1vh'>
+                        <Grid xs={12} container alignItems='center' justifyContent='center'  height="80%">
                             <Popup
                                 className="content2"
-                                trigger={<Typography color="primary" style={{ color: 'red', backgroundColor: "white" }} >SAVE Avatar</Typography>}
+                                trigger={<img src={saveAvatar} alt='' width="50%"/>}
                                 modal
                                 lockScroll
                                 nested
@@ -149,7 +150,7 @@ export default function SelectAvatar() {
                     </Grid>
                 </Grid>
                 <Grid xs={12} container alignItems='center' justifyContent='center' height="58%"   >
-                    <Grid xs={11} height="15%"  ><Button variant="contained" size='small' style={{ borderRadius: 50 }}>FOR MOER CHOICES, PLEASE COME VISIT OUR DIGITAL ART STORE</Button> </Grid>
+                    <Grid xs={11}  ><img src={digitalStore} alt='' width="100%"/></Grid>
                     <Grid xs={12} container alignItems='center' justifyContent='center' height="85%" bgcolor="#242634" >
                         {AvatarDLock}
                     </Grid>

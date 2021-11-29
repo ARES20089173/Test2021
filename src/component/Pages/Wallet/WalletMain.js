@@ -308,7 +308,7 @@ export default function MainPage() {
                 </Grid>
 
 
-                <Grid item xs={12} marginTop="20vh" zIndex="1">
+                <Grid item xs={12} marginTop="20vh">
                     <EndBar />
                 </Grid>
             </Grid>

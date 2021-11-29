@@ -16,7 +16,6 @@ import { styled } from '@mui/material/styles'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom"
 import Popup from 'reactjs-popup';
-
 import 'reactjs-popup/dist/index.css';
 import face1 from '../../../face_1.svg'
 import React, { Component } from "react";
@@ -26,6 +25,7 @@ import "../../framework/css/cssModFMessage.css"
 import Clear from "../../../svgicon/MessageCenter/Clear.svg"
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
 import back from '../../../svgicon/Componenticon/Back.svg'
+import changeAvatar from '../../../svgicon/Hamburgarbaricon/ChangeAvatar.svg';
 const contentStyle = {
     margin: 'auto',
     background: '#242634',
@@ -144,7 +144,7 @@ function Profile(props) {
                     </Grid>
                     <Grid xs={5} height="100%" container alignItems='center' justifyContent='center' >
                         <img src={userdata[0].headicon} alt="headicon" width="50%" />
-                        <Link to={`/${id}/Profile/SelectAvatar`} style={{ textDecoration: 'none', color: 'black', background: "black" }}><div button color='white'><Typography color="primary">Change Avatar</Typography></div></Link>
+                        <Link to={`/${id}/Profile/SelectAvatar`} style={{ textDecoration: 'none',textAlign:'center'}}><img src={changeAvatar} alt='' width="60%"/></Link>
                     </Grid>
                 </Grid>
                 <Grid xs={12} container alignItems='center' justifyContent='center' height="63%" bgcolor="#242634" >

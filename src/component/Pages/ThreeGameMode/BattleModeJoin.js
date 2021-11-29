@@ -73,7 +73,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
         top: 15,
         backgroundImage: `url(${Badge1})`, backgroundSize: '100% 100%', backgroundAttachment: 'cover',
         padding: '0px 0px',
-        backgroundColor: 'none'
+        backgroundColor: 'transparent'
     },
 }));
 const contentStyle = {
@@ -493,7 +493,7 @@ export default class TournamentLobby extends Component {
                                             <Grid item xs={4} height="19vh" style={{ textAlign: 'center' }} ><Link to="#" style={{ textDecoration: 'none' }}><StyledBadge badgeContent={<img src={Badge7} alt='' width="20-%" />} color="secondary"><img src={HeadsvgData[7].Headsvg} alt="Headicon" width="85%" style={{ position: 'relative', left: 5 }} /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline" color='white' noWrap>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link></Grid>
                                             <Grid item xs={4} height="19vh" style={{ textAlign: 'center' }} ><Link to="#" style={{ textDecoration: 'none' }}><StyledBadge badgeContent={<img src={Badge8} alt='' width="20-%" />} color="secondary"><img src={HeadsvgData[8].Headsvg} alt="Headicon" width="85%" style={{ position: 'relative', left: 5 }} /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline" color='white' noWrap>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link></Grid>
                                             <Grid item xs={4} height="19vh" style={{ textAlign: 'center' }} ><Link to="#" style={{ textDecoration: 'none' }}><StyledBadge badgeContent={<img src={Badge9} alt='' width="20-%" />} color="secondary"><img src={HeadsvgData[9].Headsvg} alt="Headicon" width="85%" style={{ position: 'relative', left: 5 }} /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline" color='white' noWrap>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link></Grid>
-                                            <Grid item xs={4} height="19vh" style={{ textAlign: 'center' }} ><Link to="#" style={{ textDecoration: 'none' }}><StyledBadge badgeContent={<img src={Badge10} alt='' width="25-%" />} color="secondary"><img src={HeadsvgData[10].Headsvg} alt="Headicon" width="85%" style={{ position: 'relative', left: 5 }} /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline" color='white' noWrap>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link></Grid>
+                                            <Grid item xs={4} height="19vh" style={{ textAlign: 'center' }} ><Link to="#" style={{ textDecoration: 'none' }}><StyledBadge badgeContent={<img src={Badge10} alt='' width="22-%" />} color="secondary"><img src={HeadsvgData[10].Headsvg} alt="Headicon" width="85%" style={{ position: 'relative', left: 5 }} /></StyledBadge><Typography variant="body1" height="0vh" style={{ overflowWrap: 'break-word' }} display="inline" color='white' noWrap>XXXXXX<br />xxxxxxx<img src={Chasepuzzle} width="20%" /></Typography></Link></Grid>
                                         </Grid>
                                         <Grid item xs={3.6} container alignItems='center' justifyContent='center'  >
                                             <Grid item xs={12} height="38vh" style={{ textAlign: 'center' }} >

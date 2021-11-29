@@ -80,7 +80,7 @@ export default class MultigameChoose extends Component {
               <EndBar />
             </Grid>
 
-            <Grid item xs={12} style={{ height: "14vh" }} />
+            <Grid item xs={12} style={{ height: "28vh" }} />
 
           </Grid>
         </Grid>
