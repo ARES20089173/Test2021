@@ -33,12 +33,15 @@ import BattleModeDetail from './component/Pages/History/BattleModeDetail'
 import BalttleOtherinfo from './component/Pages/History/BalttleOtherinfo' 
 import OneVOneModeDetail from './component/Pages/History/OneVOneModeDetail' 
 import ChallengeModeDetail from './component/Pages/History/ChallengeModeDetail' 
+
+import ShopMain from './component/Pages/Shop/ShopMain'
 import SignIn from './component/Pages/UserlogPage/SignIn'
 import Forgot from './component/Pages/UserlogPage/ForgotPassword'
 import Register from './component/Pages/UserlogPage/Register'
 import RegisterInfo from './component/Pages/UserlogPage/InfoRegister'
 import FiniRegister from './component/Pages/UserlogPage/FiniRegister'
 import { RouterConfig, getMatchRouter } from './routerConfig';
+
 import './App.css'
 import {
   BrowserRouter,
@@ -113,6 +116,8 @@ const render = ({ location, history, match }) => {
           <Route exact path="/multigameChooser/tournamentLobby/:id/:entryid/ChallengerModeGo" component={ChallengerModeGo} render={(props) => <ChallengerModeGo{...props} />} />
           <Route exact path="/multigameChooser/tournamentLobby/:id/:entryid/OneVoneMode" component={oneVoneMode} render={(props) => <oneVoneMode{...props} />} />
           <Route exact path="/gametutorial" component={GameTutorial} render={(props) => <GameTutorial {...props} />} />
+
+          <Route exact path="/Shop" component={ShopMain} render={(props) => <ShopMain {...props} />}/>
 
           <Route exact path="/Wallet" component={WalletMain}render={(props) => <WalletMain {...props} />}/>  
           <Route exact path="/Wallet/TranscationHistory" component={TranscationHistory}render={(props) => <TranscationHistory {...props} />}/>  

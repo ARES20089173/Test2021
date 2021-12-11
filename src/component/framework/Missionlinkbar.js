@@ -35,7 +35,7 @@ const StyledFab2 = styled(Fab)({
 });
 const MessageNumber = [
     { id: 0, link: "/", MessageNum: 3 },
-    { id: 1, link: "/", MessageNum: 32 },
+    { id: 1, link: "/Shop", MessageNum: 32 },
     { id: 2, link: "/wallet", MessageNum: 55 },
     { id: 3, link: "/History", MessageNum: 73 },
     { id: 4, link: "/MissionMain", MessageNum: 100 },

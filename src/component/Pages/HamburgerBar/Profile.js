@@ -70,7 +70,6 @@ function Profile(props) {
 
     const handleSexChange = (event) => {
         setSex(event.target.value)
-
     };
     const handleFirstNameChange = (event) => {
         setFirstName(event.target.value)
