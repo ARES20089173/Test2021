@@ -61,9 +61,6 @@ export default function MainPage() {
                 </Grid>
                 <Grid item xs={11} height="5vh" style={{ marginTop: '1vh' }}>
                     <Scrolltext />
-                    {/* <Grid xs={1}></Grid>
-                    <Grid xs={10}><Scrolltext /></Grid>
-                    <Grid xs={1}></Grid> */}
                 </Grid>
                 <Grid item xs={12} height="30vh">
                     <GameChooser />
