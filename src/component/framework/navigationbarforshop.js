@@ -5,7 +5,6 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-import face from '../../svgicon/Headicon/face_1.svg';
 import Hamburgicon from '../../svgicon/Componenticon/Hamburgicon.svg'
 import { Grid } from '@mui/material';
 import Close from '../../svgicon/Componenticon/Close.svg'
@@ -21,6 +20,8 @@ import coderedeem from '../../coderedeem.svg'
 import TextField from '@mui/material/TextField';
 import Shopcar from '../../svgicon/WalletTrans/Shopcar.svg'
 
+import SignIn from '../../svgicon/Shop/word&button/SignIn.svg'
+import SignUp from '../../svgicon/Shop/word&button/SignUp.svg'
 import { styled } from "@mui/material/styles";
 import Collapse from "@mui/material/Collapse";
 import PuzzleChase from '../../svgicon/EndBaricon/PuzzleChase.svg'
@@ -88,14 +89,16 @@ export default function NavigationBar() {
                     <img src={Close} alt='hamburgericon' width='40%' style={{ position: 'relative', left: 60 }} />
                 </IconButton>
                 <ListItemText  >  <Grid container xs={10} alignItems="center" style={{ marginLeft: "6%" }}><Typography color='white'>Shop with PUZZLES    </Typography><img src={puzzle} width="10%" style={{ marginLeft: "2%", position: 'relative', bottom: 2 }} /></Grid></ListItemText>
-                <ListItem style={{ color: 'white' }} > sign in / sign up</ListItem>
+                <ListItem style={{ color: 'white' }} >   <Grid container xs={3} justifyContent='center' marginRight='1vh'> <Link to="#"><img src={SignIn} alt="" width="100%" /></Link>  </Grid>  <Grid container xs={3} justifyContent='center'> <Link to="#"> <img src={SignUp} alt="" width="100%" /></Link></Grid> </ListItem>
                 <ListItem >
-                    <ListItemText style={{ fontSize: '0.7em' }}>
-                        <Grid xs={10} container alignItems="center" sx={{ color: 'white', border: "3px solid white" }}>
-
-                            <TextField id="input-with-sx" variant="standard" style={{ marginRight: '3%' }} />
-
-                            <img src={coderedeem} alt="coderedeem" />
+                    <ListItemText style={{ fontSize: '0.7em' }} sx={{ color: 'white', border: "2px solid white" }}>
+                        <Grid xs={12} container alignItems="center">
+                            <Grid xs={11} container alignItems="center">
+                                <TextField id="input-with-sx" fullWidth variant="standard" style={{ marginRight: '3%' }} />
+                            </Grid>
+                            <Grid xs={1} container alignItems="center">
+                                <img src={coderedeem} alt="coderedeem" />
+                            </Grid>
                         </Grid>
                     </ListItemText>
                 </ListItem>
@@ -117,13 +120,13 @@ export default function NavigationBar() {
                     <Grid container xs={12} alignItems="center" justifyContent='center'>
                         <Grid container alignItems="center" justifyContent='center' xs={6}><Typography color="red">ANIME</Typography></Grid>
                         <Grid container alignItems="center" justifyContent='center' xs={6} ><Typography color="pink">BEAUTY</Typography></Grid>
-                        <Grid container alignItems="center" justifyContent='center' xs={6}><Typography  color="white">COURSE</Typography></Grid>
+                        <Grid container alignItems="center" justifyContent='center' xs={6}><Typography color="white">COURSE</Typography></Grid>
                         <Grid container alignItems="center" justifyContent='center' xs={6} ><Typography color="blue">DIGITAL</Typography></Grid>
                         <Grid container alignItems="center" justifyContent='center' xs={6}><Typography color="green">GOURMENT</Typography></Grid>
                         <Grid container alignItems="center" justifyContent='center' xs={6} ><Typography color="yellow">HEALTH</Typography></Grid>
-                        <Grid container alignItems="center" justifyContent='center' xs={6}><Typography  color="orange">GADGET</Typography></Grid>
+                        <Grid container alignItems="center" justifyContent='center' xs={6}><Typography color="orange">GADGET</Typography></Grid>
                         <Grid container alignItems="center" justifyContent='center' xs={6} ><Typography color="purple">VIRTUAL</Typography></Grid>
-                   </Grid>
+                    </Grid>
                 </Collapse>
                 {Toplinkdata.map((text, index) => (
                     <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>

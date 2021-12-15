@@ -1,5 +1,15 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
+import Explore from './Explore';
+import Slider from './Slider'
+import Explore2 from './Explore2';
+import Hotpic from './Hotpic'
+import Featurecourse from './featurecourse';
+import Highlyrecommend from './Highlyrecommend'
+import Treasurehunt from './TREASUREHUNT'
+import Category from './Category'
+import { useHistory } from "react-router-dom";
+import Scrollbanner from '../../framework/scrollbanner'
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
@@ -19,13 +29,26 @@ import face from '../../../svgicon/Headicon/face_1.svg'
 import Scrolltext from '../../framework/scrolltext';
 import Categorychooser from './categorychooser';
 import Gamenowplaylater from '../../../svgicon/Shop/word&button/Gamenowplaylater.svg'
+import ShopWithPuzzles from '../../../svgicon/Shop/word&button/ShopWithPuzzles.svg'
+import EarnPuzzleToSaveMore from '../../../svgicon/Shop/word&button/EarnPuzzleToSaveMore.svg'
+import PlayandShopToEarn from '../../../svgicon/Shop/word&button/PlayandShopToEarn.svg'
+import HOTPICK from '../../../svgicon/Shop/word&button/HOTPICK.svg'
+import HowToPlayAndEarn from '../../../svgicon/Shop/word&button/HowToPlayAndEarn.svg'
+import Welcome from '../../../svgicon/Shop/word&button/Welcome.svg'
+import ExploreGraybg from '../../../svgicon/Shop/Picturebackground/ExploreGraybg.svg'
+import featurecourse from '../../../svgicon/Shop/word&button/featurecourse.svg'
+import highlyrecommend from '../../../svgicon/Shop/word&button/highlyrecommend.svg'
+import Threeperson from '../../../svgicon/Shop/Picturebackground/Threeperson.svg'
+import TREASUREHUNT from '../../../svgicon/Shop/word&button/TREASUREHUNT.svg'
+import CATEGORY from '../../../svgicon/Shop/word&button/CATEGORY.svg'
+import SlideRangebg from '../../../svgicon/Shop/Picturebackground/SlideRangebg.svg'
 import EndBar from '../../framework/ShopEndBar';
 import { styled } from '@mui/material/styles';
 import Fab from '@mui/material/Fab';
 import Input from '@mui/material/Input';
 import { RWebShare } from "react-web-share";
-const ariaLabel = { 'aria-label': 'description' };
 
+const ariaLabel = { 'aria-label': 'description' };
 const StyledFab2 = styled(Fab)({
     position: 'absolute',
     zIndex: 1,
@@ -58,17 +81,19 @@ const Toplinkdata = [
     { id: 3, linkName: "My Collection", link: "/Wallet/MyCollection" },
     { id: 4, linkName: "Refer Friends to Earn Puzzles", link: "/Wallet" }
 ]
-
 export default function MainPage() {
-    const [values, setValues] = React.useState({
-        password: '',
-        showPassworda: true,
-        showPasswordb: true,
-        showicon: false,
-    });
+
+    const history = useHistory();
+
+    const routeChange = () => {
+        console.log("textmessage")
+        let path = `#`;
+        history.push(path);
+        // history.goBack()
+    }
     return (
         <Box sx={{ flexGrow: 1 }} height="100%" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: '100% 100%', backgroundAttachment: 'fixed' }}>
-            <Grid item xs={12} style={{borderBottom:'1px solid black'}} >
+            <Grid item xs={12} style={{ borderBottom: '1px solid black' }} >
                 <NavigationBar />
             </Grid>
             <Grid container
@@ -80,13 +105,74 @@ export default function MainPage() {
                     <Scrolltext />
                 </Grid>
                 <Grid item xs={12} height="25vh">
-                   <Categorychooser/>
+                    <Categorychooser />
                 </Grid>
-                <Grid container alignItems='center' justifyContent='center' xs={12} height="10vh">
-                   <img src={Gamenowplaylater}  style={{width:'90%'}} alt=""/>
+                <Grid container alignItems='center' justifyContent='center' xs={12} height="12vh">
+                    <img src={Gamenowplaylater} style={{ width: '90%' }} alt="" />
                 </Grid>
-                
-
+                <Grid container alignItems='center' justifyContent='center' xs={11.5} height="28vh" style={{ backgroundImage: `url(${SlideRangebg})`, backgroundSize: '100% 100%', backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
+                    <Slider />
+                </Grid>
+                <Grid container alignItems='center' justifyContent='center' xs={12} height="12vh">
+                    <img src={ShopWithPuzzles} style={{ width: '90%' }} alt="" />
+                </Grid>
+                <Grid container alignItems='center' justifyContent='center' xs={12} height="12vh">
+                    Searchpic
+                </Grid>
+                <Grid container alignItems='center' justifyContent='center' xs={12} height="12vh">
+                    <img src={EarnPuzzleToSaveMore} style={{ width: '90%' }} alt="" />
+                </Grid>
+                <Grid container alignItems='center' justifyContent='center' xs={12} height="32vh">
+                    <img src={Threeperson} style={{ width: '90%' }} alt="" />
+                </Grid>
+                <Grid container alignItems='center' justifyContent='center' xs={12} height="18vh">
+                    <img src={PlayandShopToEarn} style={{ width: '90%' }} alt="" />
+                    <img src={HowToPlayAndEarn} style={{ width: '65%' }} onClick={routeChange} alt="" />
+                </Grid>
+                <Grid container alignItems='center' justifyContent='center' xs={12} height="16vh">
+                    <img src={Welcome} style={{ width: '90%' }} alt="" />
+                </Grid>
+                <Grid container alignItems='center' justifyContent='center' xs={11.5} height="28vh" style={{ backgroundImage: `url(${ExploreGraybg})`, backgroundSize: '100% 100%', backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
+                    <Explore />
+                </Grid>
+                <Grid container alignItems='center' justifyContent='center' xs={11.5} height="28vh" style={{ backgroundImage: `url(${ExploreGraybg})`, backgroundSize: '100% 100%', backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
+                    <Explore2 />
+                </Grid>
+                <Grid container alignItems='center' justifyContent='center' xs={12} height="12vh">
+                    <img src={HOTPICK} style={{ width: '90%' }} alt="" />
+                </Grid>
+                <Grid container alignItems='center' justifyContent='center' xs={12}>
+                    <Hotpic/>
+                </Grid>
+                <Grid container alignItems='center' justifyContent='center' xs={12} height="12vh" marginTop="1vh">
+                    <img src={featurecourse} style={{ width: '90%' }} alt="" />
+                </Grid>
+                <Grid container alignItems='center' justifyContent='center' xs={12}>
+                    <Featurecourse/>
+                </Grid>
+                <Grid container alignItems='center' justifyContent='center' xs={12} height="12vh" marginTop="1vh">
+                    <img src={highlyrecommend} style={{ width: '90%' }} alt="" />
+                </Grid>
+                <Grid container alignItems='center' justifyContent='center' xs={12}>
+                    <Highlyrecommend/>
+                </Grid>   
+                <Grid item xs={11} style={{ marginTop: 0 }} >
+                    <div style={{ textAlign: 'center' }}>
+                        <Scrollbanner />
+                    </div>
+                </Grid>
+                <Grid container alignItems='center' justifyContent='center' xs={12} height="12vh" marginTop="1vh">
+                    <img src={TREASUREHUNT} style={{ width: '90%' }} alt="" />
+                </Grid>
+                <Grid item xs={12}>
+                    <Treasurehunt/>
+                </Grid>
+                <Grid container alignItems='center' justifyContent='center' xs={12} height="12vh" marginTop="1vh">
+                    <img src={CATEGORY} style={{ width: '90%' }} alt="" />
+                </Grid>
+                <Grid item xs={11}>
+                    <Category/>
+                </Grid>
                 <Grid item xs={12} marginTop="20vh">
                     <EndBar />
                 </Grid>
