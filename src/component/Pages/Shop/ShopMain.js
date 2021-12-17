@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{ useState } from 'react';
 import Grid from '@mui/material/Grid';
 import Explore from './Explore';
 import Slider from './Slider'
@@ -10,6 +10,7 @@ import Treasurehunt from './TREASUREHUNT'
 import Category from './Category'
 import Comment from './Comment'
 import EndPage from './EndPage'
+import Search from './Search'
 import { useHistory } from "react-router-dom";
 import Scrollbanner from '../../framework/scrollbanner'
 import List from "@mui/material/List";
@@ -47,44 +48,21 @@ import SlideRangebg from '../../../svgicon/Shop/Picturebackground/SlideRangebg.s
 import EndBar from '../../framework/ShopEndBar';
 import { styled } from '@mui/material/styles';
 import Fab from '@mui/material/Fab';
-import Input from '@mui/material/Input';
-import { RWebShare } from "react-web-share";
+import 'reactjs-popup/dist/index.css';
+import Popup from 'reactjs-popup';
 
-const ariaLabel = { 'aria-label': 'description' };
-const StyledFab2 = styled(Fab)({
-    position: 'absolute',
-    zIndex: 1,
-    bottom: "42vh",
-    left: 0,
-});
-const contentStyle = {
-    marginTop: '20%',
-    background: '#242634',
-    width: "90%",
-    height: "60%",
-    borderRadius: "5%",
-};
 
-function createData(name, silverpuzle, chasepuzzle) {
-    return { name, silverpuzle, chasepuzzle };
-}
-
-const rows = [
-    createData('purchased ', 212, 2120),
-    createData('earned', 317, 1148),
-    createData('bonus', '-', 649),
-];
-
-const userdata = { reesid: 123456, name: 'Jay', headicon: face }
-const Toplinkdata = [
-    { id: 0, linkName: "Transaction History", link: `/Wallet/TranscationHistory` },
-    { id: 1, linkName: "Saved Cards", link: `/Wallet/SaveCards` },
-    { id: 2, linkName: "Puzzle Packages", link: "/Wallet/PuzzlePackage" },
-    { id: 3, linkName: "My Collection", link: "/Wallet/MyCollection" },
-    { id: 4, linkName: "Refer Friends to Earn Puzzles", link: "/Wallet" }
-]
 export default function MainPage() {
-
+    const [open, setOpen] = useState(false);
+    function handleClick(){
+       setOpen(!open)
+    }
+    const contentStyle = {
+        background: 'white',
+        width: "90%",
+        height: "85%",
+        borderRadius: "5%",
+    };
     const history = useHistory();
 
     const routeChange = () => {
@@ -95,7 +73,7 @@ export default function MainPage() {
     }
     return (
         <Box sx={{ flexGrow: 1 }} height="100%" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: '100% 100%', backgroundAttachment: 'fixed' }}>
-            <Grid item xs={12} style={{ borderBottom: '1px solid black' }} >
+            <Grid item xs={12} style={{ borderBottom: '1px solid black',display:open== true? "none":'' }} >
                 <NavigationBar />
             </Grid>
             <Grid container
@@ -119,7 +97,25 @@ export default function MainPage() {
                     <img src={ShopWithPuzzles} style={{ width: '90%' }} alt="" />
                 </Grid>
                 <Grid container alignItems='center' justifyContent='center' xs={12} height="12vh">
-                    Searchpic
+                    <Popup
+                        trigger={<div className="button"> <div ><Typography color="white"  onClick={handleClick}>Searchpic </Typography></div></div>}
+                        modal
+                        lockScroll
+                        nested
+                        closeOnDocumentClick={false}
+                        onClose={handleClick}
+                        {...{ contentStyle }}
+                    >
+                        {close => (
+                            <div className="modal">
+                                <button className="close" onClick={close}>
+                                </button>
+                                <Grid xs={12} >
+                                   <Search/>
+                                </Grid>
+                            </div>
+                        )}
+                    </Popup>
                 </Grid>
                 <Grid container alignItems='center' justifyContent='center' xs={12} height="12vh">
                     <img src={EarnPuzzleToSaveMore} style={{ width: '90%' }} alt="" />
@@ -144,20 +140,20 @@ export default function MainPage() {
                     <img src={HOTPICK} style={{ width: '90%' }} alt="" />
                 </Grid>
                 <Grid container alignItems='center' justifyContent='center' xs={12}>
-                    <Hotpic/>
+                    <Hotpic />
                 </Grid>
                 <Grid container alignItems='center' justifyContent='center' xs={12} height="12vh" marginTop="1vh">
                     <img src={featurecourse} style={{ width: '90%' }} alt="" />
                 </Grid>
                 <Grid container alignItems='center' justifyContent='center' xs={12}>
-                    <Featurecourse/>
+                    <Featurecourse />
                 </Grid>
                 <Grid container alignItems='center' justifyContent='center' xs={12} height="12vh" marginTop="1vh">
                     <img src={highlyrecommend} style={{ width: '90%' }} alt="" />
                 </Grid>
                 <Grid container alignItems='center' justifyContent='center' xs={12}>
-                    <Highlyrecommend/>
-                </Grid>   
+                    <Highlyrecommend />
+                </Grid>
                 <Grid item xs={11} style={{ marginTop: 0 }} >
                     <div style={{ textAlign: 'center' }}>
                         <Scrollbanner />
@@ -167,24 +163,24 @@ export default function MainPage() {
                     <img src={TREASUREHUNT} style={{ width: '90%' }} alt="" />
                 </Grid>
                 <Grid item xs={12}>
-                    <Treasurehunt/>
+                    <Treasurehunt />
                 </Grid>
                 <Grid container alignItems='center' justifyContent='center' xs={12} height="12vh" marginTop="1vh">
                     <img src={CATEGORY} style={{ width: '90%' }} alt="" />
                 </Grid>
                 <Grid item xs={11}>
-                    <Category/>
+                    <Category />
                 </Grid>
-                <Grid container alignItems='center' justifyContent='center' xs={12} marginTop="1vh" style={{backgroundColor:'yellow',margin:0}}>
-                    <Comment/>
+                <Grid container alignItems='center' justifyContent='center' xs={12} marginTop="1vh" style={{ backgroundColor: 'yellow', margin: 0 }}>
+                    <Comment />
                 </Grid>
                 <Grid container alignItems='center' justifyContent='center' xs={12} marginTop="0vh">
-                <Grid  style={{backgroundColor:'black',margin:0,height:'5vh'}} container alignItems='center' justifyContent='center' xs={12} >
-                <Typography color="#FF00FF"> <b>*PUZZLECHASE *REES</b></Typography>
+                    <Grid style={{ backgroundColor: 'black', margin: 0, height: '5vh' }} container alignItems='center' justifyContent='center' xs={12} >
+                        <Typography color="#FF00FF"> <b>*PUZZLECHASE *REES</b></Typography>
+                    </Grid>
+                    <EndPage />
                 </Grid>
-                    <EndPage/>
-                </Grid>
-                <Grid item xs={12} marginTop="10vh">
+                <Grid item xs={12} marginTop="5vh">
                     <EndBar />
                 </Grid>
             </Grid>

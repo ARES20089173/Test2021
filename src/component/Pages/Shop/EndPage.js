@@ -51,6 +51,7 @@ export default class Category extends Component {
 
             <Grid container xs={12} justifyContent='center' alignItems='center' style={{ backgroundColor: 'gray' }}>
                 <Grid container xs={10} justifyContent='left' alignItems='center'>
+                    
                     <Grid container xs={12} justifyContent='left' alignItems='center'>
                         <Typography style={{ textAlign: 'left', color: 'white' }}>Shop with Puzzles</Typography>
                     </Grid>
@@ -64,11 +65,13 @@ export default class Category extends Component {
                             {data.length == index + 1 ? <hr /> : ""}
                         </Grid>
                     ))}
-                    <Grid container xs={12} justifyContent='left' alignItems='center'>
+                    
+                    <Grid item xs={12} justifyContent='left' alignItems='center'>
                         <Typography style={{ textAlign: 'left', wordWrap: 'break-word', color: 'white' }}>Subscribe to receive updates from
                             our emotionally REESers Newsletter your email</Typography>
-                    </Grid>
+
                     <hr />
+                    </Grid>
                     <Grid container xs={12} justifyContent='center' alignItems='center'>
                         <Grid xs={12} alignItems="center">
                             <Typography color='white' textAlign='center'>
@@ -97,7 +100,7 @@ export default class Category extends Component {
                     </Typography>
                 </Grid>
                 <Grid container xs={12} justifyContent='left' alignItems='center' marginTop='3vh'>
-                    <Typography color='white' textAlign='center' variant='h3'>
+                    <Typography color='white' textAlign='center' variant='h3' color='black'>
                       <img src={Ricon} className="App-logo" alt="logo" width="20%" style={{position:'relative',top:18}}/>
                         |<img src={PuzzleChase} className="App-logo" alt="logo" width="25%" style={{position:'relative',top:8  }}/>
                     </Typography>
