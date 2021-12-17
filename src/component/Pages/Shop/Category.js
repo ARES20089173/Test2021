@@ -46,6 +46,7 @@ export default class Category extends Component {
                 <Link to={pic.link}>
                   <div style={{ textAlign: 'center' }}>
                       <img src={pic.src} alt="img" width="95%" />
+                       
                   </div>
                 </Link>
               </Grid>

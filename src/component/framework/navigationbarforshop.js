@@ -19,7 +19,6 @@ import puzzle from "../../svgicon/Componenticon/Chasepuzzle.svg"
 import coderedeem from '../../coderedeem.svg'
 import TextField from '@mui/material/TextField';
 import Shopcar from '../../svgicon/WalletTrans/Shopcar.svg'
-
 import SignIn from '../../svgicon/Shop/word&button/SignIn.svg'
 import SignUp from '../../svgicon/Shop/word&button/SignUp.svg'
 import { styled } from "@mui/material/styles";

@@ -8,6 +8,8 @@ import Featurecourse from './featurecourse';
 import Highlyrecommend from './Highlyrecommend'
 import Treasurehunt from './TREASUREHUNT'
 import Category from './Category'
+import Comment from './Comment'
+import EndPage from './EndPage'
 import { useHistory } from "react-router-dom";
 import Scrollbanner from '../../framework/scrollbanner'
 import List from "@mui/material/List";
@@ -173,7 +175,16 @@ export default function MainPage() {
                 <Grid item xs={11}>
                     <Category/>
                 </Grid>
-                <Grid item xs={12} marginTop="20vh">
+                <Grid container alignItems='center' justifyContent='center' xs={12} marginTop="1vh" style={{backgroundColor:'yellow',margin:0}}>
+                    <Comment/>
+                </Grid>
+                <Grid container alignItems='center' justifyContent='center' xs={12} marginTop="0vh">
+                <Grid  style={{backgroundColor:'black',margin:0,height:'5vh'}} container alignItems='center' justifyContent='center' xs={12} >
+                <Typography color="#FF00FF"> <b>*PUZZLECHASE *REES</b></Typography>
+                </Grid>
+                    <EndPage/>
+                </Grid>
+                <Grid item xs={12} marginTop="10vh">
                     <EndBar />
                 </Grid>
             </Grid>
