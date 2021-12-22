@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React, { useState } from 'react';
 import Grid from '@mui/material/Grid';
 import Explore from './Explore';
 import Slider from './Slider'
@@ -11,6 +11,7 @@ import Category from './Category'
 import Comment from './Comment'
 import EndPage from './EndPage'
 import Search from './Search'
+import Shopcar from './Shopcar'
 import { useHistory } from "react-router-dom";
 import Scrollbanner from '../../framework/scrollbanner'
 import List from "@mui/material/List";
@@ -46,16 +47,64 @@ import TREASUREHUNT from '../../../svgicon/Shop/word&button/TREASUREHUNT.svg'
 import CATEGORY from '../../../svgicon/Shop/word&button/CATEGORY.svg'
 import SlideRangebg from '../../../svgicon/Shop/Picturebackground/SlideRangebg.svg'
 import EndBar from '../../framework/ShopEndBar';
+import data from './data';
 import { styled } from '@mui/material/styles';
 import Fab from '@mui/material/Fab';
 import 'reactjs-popup/dist/index.css';
 import Popup from 'reactjs-popup';
-
+import { useEffect } from 'react';
 
 export default function MainPage() {
+    const { Hotpicdata, Featurecoursedata, Recommenddata } = data;
+    const [cartItems, setCartItems] = useState(() => {
+        const localdata = localStorage.getItem('cartItems');
+        return localdata ? JSON.parse(localdata) : []
+
+    });
+    useEffect(() => {
+        localStorage.setItem('cartItems', JSON.stringify(cartItems))
+    })
+    const onAdd = (product) => {
+        console.log("productid:" + product.id)
+        const exist = cartItems.find((x) => x.id === product.id);
+
+        if (exist !== undefined) {
+            setCartItems(
+                cartItems.map((x) =>
+                (
+                    x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x
+
+                ))
+            );
+            console.log("exist:" + exist.id)
+
+            console.log(cartItems)
+
+        } else {
+
+            console.log("exist:" + exist)
+            setCartItems([...cartItems, { ...product, qty: 1 }]);
+            console.log(cartItems)
+
+        }
+        console.log(cartItems)
+
+    };
+    const onRemove = (product) => {
+        const exist = cartItems.find((x) => x.id === product.id);
+        if (exist.qty === 1) {
+            setCartItems(cartItems.filter((x) => x.id !== product.id));
+        } else {
+            setCartItems(
+                cartItems.map((x) =>
+                    x.id === product.id ? { ...exist, qty: exist.qty - 1 } : x
+                )
+            );
+        }
+    };
     const [open, setOpen] = useState(false);
-    function handleClick(){
-       setOpen(!open)
+    function handleClick() {
+        setOpen(!open)
     }
     const contentStyle = {
         background: 'white',
@@ -73,7 +122,7 @@ export default function MainPage() {
     }
     return (
         <Box sx={{ flexGrow: 1 }} height="100%" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: '100% 100%', backgroundAttachment: 'fixed' }}>
-            <Grid item xs={12} style={{ borderBottom: '1px solid black',display:open== true? "none":'' }} >
+            <Grid item xs={12} style={{ borderBottom: '1px solid black', display: open == true ? "none" : '' }} >
                 <NavigationBar />
             </Grid>
             <Grid container
@@ -98,7 +147,7 @@ export default function MainPage() {
                 </Grid>
                 <Grid container alignItems='center' justifyContent='center' xs={12} height="12vh">
                     <Popup
-                        trigger={<div className="button"> <div ><Typography color="white"  onClick={handleClick}>Searchpic </Typography></div></div>}
+                        trigger={<div className="button"> <div ><Typography color="white" onClick={handleClick}>Searchpic </Typography></div></div>}
                         modal
                         lockScroll
                         nested
@@ -111,7 +160,7 @@ export default function MainPage() {
                                 <button className="close" onClick={close}>
                                 </button>
                                 <Grid xs={12} >
-                                   <Search/>
+                                    <Search />
                                 </Grid>
                             </div>
                         )}
@@ -140,19 +189,19 @@ export default function MainPage() {
                     <img src={HOTPICK} style={{ width: '90%' }} alt="" />
                 </Grid>
                 <Grid container alignItems='center' justifyContent='center' xs={12}>
-                    <Hotpic />
+                    <Hotpic Hotpicproducts={Hotpicdata} onAdd={onAdd} />
                 </Grid>
                 <Grid container alignItems='center' justifyContent='center' xs={12} height="12vh" marginTop="1vh">
                     <img src={featurecourse} style={{ width: '90%' }} alt="" />
                 </Grid>
                 <Grid container alignItems='center' justifyContent='center' xs={12}>
-                    <Featurecourse />
+                    <Featurecourse Featurecourseproducts={Featurecoursedata} onAdd={onAdd} />
                 </Grid>
                 <Grid container alignItems='center' justifyContent='center' xs={12} height="12vh" marginTop="1vh">
                     <img src={highlyrecommend} style={{ width: '90%' }} alt="" />
                 </Grid>
                 <Grid container alignItems='center' justifyContent='center' xs={12}>
-                    <Highlyrecommend />
+                    <Highlyrecommend Recommendproducts={Recommenddata} onAdd={onAdd} />
                 </Grid>
                 <Grid item xs={11} style={{ marginTop: 0 }} >
                     <div style={{ textAlign: 'center' }}>
@@ -180,9 +229,10 @@ export default function MainPage() {
                     </Grid>
                     <EndPage />
                 </Grid>
-                <Grid item xs={12} marginTop="5vh">
-                    <EndBar />
-                </Grid>
+
+            </Grid>
+            <Grid item xs={12} marginTop="5vh">
+                <EndBar />
             </Grid>
         </Box>
     );

@@ -9,20 +9,16 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Button, Typography } from '@mui/material';
 import Chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
 import benefit from '../../../svgicon/Shop/Hotpick/benefit.svg'
-export default function Featurecourse() {
+export default function Featurecourse(props) {
     const history = useHistory();
+    const { Featurecourseproducts, onAdd } = props;
     const routeChange = () => {
         console.log("textmessage")
         let path = `#`;
         history.push(path);
         // history.goBack()
     }
-    const Hotpicdata = [
-        { id: 0, picture: [benefit, benefit, benefit,benefit], description: "DANDELION POWER 1 bottle + MASCARA 1pcs xxxxxxxxxxxxxxxxxxxxxxxx",head:"BENEFIT COSMETICS", puzzleType: Chasepuzzle, puzzleNeed: '624', secondpuzzleNeed: '345' },
-        { id: 1, picture: [benefit, benefit, benefit], description: "DANDELION POWER 1 bottle + MASCARA 1pcs xxxxxxxxxxxxxxxxxxxxxxxx",head:"BENEFIT COSMETICS", puzzleType: Chasepuzzle, puzzleNeed: '624', secondpuzzleNeed: '345' },
-        { id: 2, picture: [benefit, benefit], description: "DANDELION POWER 1 bottle + MASCARA 1pcs xxxxxxxxxxxxxxxxxxxxxxxx", head:"BENEFIT COSMETICS",puzzleType: Chasepuzzle, puzzleNeed: '624', secondpuzzleNeed: '345' },
-    ]
-    const Hotdata = Hotpicdata.map((data, index) => {
+    const Featurecoursedata = Featurecourseproducts.map((data, index) => {
         return (
             <Grid xs={12}>
                 <div className="carousel-wrapper" >
@@ -50,17 +46,17 @@ export default function Featurecourse() {
                     </Typography>
                 </Grid>
                 <Grid xs={12} container alignItems='center' justifyContent='center' marginTop="1vh">
-                    <Button variant='outlined' onClick={routeChange} >Add to cart - {data.puzzleNeed}
+                    <Button variant='outlined'  onClick={() => onAdd(data)} >Add to cart - {data.puzzleNeed}
                         <img src={data.puzzleType} width='10%' alt='' style={{ position: 'relative', left: 2, top: -1 }} />
                         or {data.secondpuzzleNeed} </Button>
                 </Grid>
-                {Hotpicdata.length == index + 1 ? "" : <hr />}
+                {Featurecourseproducts.length == index + 1 ? "" : <hr />}
             </Grid>
         )
     });
     return (
         <Grid xs={11.5}>
-            {Hotdata}
+            {Featurecoursedata}
         </Grid>
     )
 }

@@ -35,6 +35,7 @@ import OneVOneModeDetail from './component/Pages/History/OneVOneModeDetail'
 import ChallengeModeDetail from './component/Pages/History/ChallengeModeDetail' 
 
 import ShopMain from './component/Pages/Shop/ShopMain'
+import Shopcar from './component/Pages/Shop/Shopcar'
 import SignIn from './component/Pages/UserlogPage/SignIn'
 import Forgot from './component/Pages/UserlogPage/ForgotPassword'
 import Register from './component/Pages/UserlogPage/Register'
@@ -118,6 +119,7 @@ const render = ({ location, history, match }) => {
           <Route exact path="/gametutorial" component={GameTutorial} render={(props) => <GameTutorial {...props} />} />
 
           <Route exact path="/Shop" component={ShopMain} render={(props) => <ShopMain {...props} />}/>
+          <Route exact path="/Shop/Shopcar" component={Shopcar} render={(props) => <ShopMain {...props} />}/>
 
           <Route exact path="/Wallet" component={WalletMain}render={(props) => <WalletMain {...props} />}/>  
           <Route exact path="/Wallet/TranscationHistory" component={TranscationHistory}render={(props) => <TranscationHistory {...props} />}/>  

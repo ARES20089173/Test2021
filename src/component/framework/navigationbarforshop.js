@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useHistory } from 'react-router';
 import Drawer from "@mui/material/Drawer";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -27,7 +28,6 @@ import PuzzleChase from '../../svgicon/EndBaricon/PuzzleChase.svg'
 const userdata = [
     { id: 0, level: 'Lv1', ReesID: 1, nickname: 'Jay' },
 ]
-
 const Toplinkdata = [
     { id: 0, linkName: "ACCOUNT  DETAILS", link: "/1/Profile" },
     { id: 1, linkName: "MY COLLECTIONS", link: "/Wallet/MyCollection" },
@@ -51,6 +51,19 @@ const Bottomlinkdata = [
     { id: 8, linkName: "Logout", link: "/login" },
 ]
 export default function NavigationBar() {
+
+const history = useHistory();
+
+const routeChange = () => {
+    console.log("textmessage")
+    let path = `/Shop/Shopcar`;
+    history.push(path);
+}
+const routeChange2 = () => {
+    console.log("textmessage")
+    let path = `/Shop`;
+    history.push(path);
+}
     const ExpandMore = styled((props) => {
         const { expand, ...other } = props;
         return <IconButton {...other} />;
@@ -163,11 +176,11 @@ export default function NavigationBar() {
                     <Toolbar variant="dense">
                         <Grid container xs={12} justifyContent='center' alignItems='center' >
                             <Grid xs={1} container justifyContent='center' alignItems='center' >
-                                <img src={Shopcar} className="App-logo" alt="logo" width="100%" style={{}} />
+                                <img  onClick={routeChange} src={Shopcar} className="App-logo" alt="logo" width="100%" style={{}} />
 
                             </Grid>
                             <Grid xs={10} container justifyContent='center' alignItems='center' >
-                                <img src={PuzzleChase} className="App-logo" alt="logo" width="25%" style={{}} />
+                                <img src={PuzzleChase}  onClick={routeChange2} className="App-logo" alt="logo" width="25%" style={{}} />
                             </Grid>
                             <Grid xs={1} container justifyContent='center' alignItems='center' >
                                 <img src={Hamburgicon} alt='hamburgericon' style={{

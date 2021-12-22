@@ -9,21 +9,17 @@ import Chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
 import JoinNow from '../../../svgicon/Shop/word&button/JoinNow.svg'
 import { useHistory } from "react-router-dom";
 import benefit from '../../../svgicon/Shop/Hotpick/benefit.svg'
-export default function Hotpic() {
+export default function Hotpic(props) {
     const history = useHistory();
 
+    const { Hotpicproducts, onAdd } = props;
     const routeChange = () => {
         console.log("textmessage")
         let path = `#`;
         history.push(path);
         // history.goBack()
     }
-    const Hotpicdata = [
-        { id: 0, picture: benefit, description: "DANDELION POWER 1 bottle + MASCARA 1pcs",head:"BENEFIT COSMETICS", puzzleType: Chasepuzzle, puzzleNeed: '624', secondpuzzleNeed: '345' },
-        { id: 1, picture: benefit, description: "DANDELION POWER 1 bottle + MASCARA 1pcs",head:"BENEFIT COSMETICS", puzzleType: Chasepuzzle, puzzleNeed: '624', secondpuzzleNeed: '345' },
-        { id: 2, picture: benefit, description: "DANDELION POWER 1 bottle + MASCARA 1pcs",head:"BENEFIT COSMETICS", puzzleType: Chasepuzzle, puzzleNeed: '624', secondpuzzleNeed: '345' },
-    ]
-    const Hotdata = Hotpicdata.map((data,index) => {
+    const Hotdata = Hotpicproducts.map((data,index) => {
         return(
         <Grid xs={12}>
             <Grid xs={12} container alignItems='center' justifyContent='center'>
@@ -40,11 +36,11 @@ export default function Hotpic() {
                 </Typography>
             </Grid>
             <Grid xs={12} container alignItems='center' justifyContent='center' marginTop="1vh">
-                <Button variant='outlined' onClick={routeChange} >Add to cart - {data.puzzleNeed}
+                <Button variant='outlined' onClick={() => onAdd(data)} >Add to cart - {data.puzzleNeed}
                     <img src={data.puzzleType} width='10%' alt='' style={{ position: 'relative', left: 2, top: -1 }} />
                     or {data.secondpuzzleNeed} </Button>
             </Grid>
-            {Hotpicdata.length==index+1?"" :  <hr />}
+            {Hotpicproducts.length==index+1?"" :  <hr />}
         </Grid>
         )
     });
