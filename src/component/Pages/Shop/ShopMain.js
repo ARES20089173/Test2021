@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Grid from '@mui/material/Grid';
 import Explore from './Explore';
 import Slider from './Slider'
@@ -51,11 +51,16 @@ import data from './data';
 import { styled } from '@mui/material/styles';
 import Fab from '@mui/material/Fab';
 import 'reactjs-popup/dist/index.css';
+import { Button } from '@mui/material';
 import Popup from 'reactjs-popup';
 import { useEffect } from 'react';
 
 export default function MainPage() {
     const { Hotpicdata, Featurecoursedata, Recommenddata } = data;
+    const [Popopen, setPopopen] = useState(false);
+    const ref = useRef();
+    const openTooltip = () => ref.current.open();
+    const closeTooltip = () => ref.current.close();
     const [cartItems, setCartItems] = useState(() => {
         const localdata = localStorage.getItem('cartItems');
         return localdata ? JSON.parse(localdata) : []
@@ -65,29 +70,18 @@ export default function MainPage() {
         localStorage.setItem('cartItems', JSON.stringify(cartItems))
     })
     const onAdd = (product) => {
-        console.log("productid:" + product.id)
+        setPopopen(true)
         const exist = cartItems.find((x) => x.id === product.id);
-
         if (exist !== undefined) {
             setCartItems(
                 cartItems.map((x) =>
                 (
                     x.id === product.id ? { ...exist, qty: exist.qty + 1 } : x
-
                 ))
             );
-            console.log("exist:" + exist.id)
-
-            console.log(cartItems)
-
         } else {
-
-            console.log("exist:" + exist)
             setCartItems([...cartItems, { ...product, qty: 1 }]);
-            console.log(cartItems)
-
         }
-        console.log(cartItems)
 
     };
     const onRemove = (product) => {
@@ -116,10 +110,36 @@ export default function MainPage() {
 
     const routeChange = () => {
         console.log("textmessage")
-        let path = `#`;
+        setPopopen(false)
+        let path = '/Shop/Shopcar';
         history.push(path);
         // history.goBack()
     }
+
+    const Tooltip = () => (
+        <Popup
+            ref={ref}
+            open={Popopen}
+            modal
+            lockScroll
+            nested
+            closeOnDocumentClick={false}
+        >
+            {close => (
+                <div className="modal">
+                    <button className="close" onClick={close}>
+                    </button>
+                    <Grid xs={12} style={{ overflow: 'scroll' }} height='48vh' >
+                        <Typography variant='h6' textAlign='center' color='white'>{cartItems.length} 件商品已添加至購物車</Typography>
+                        <Grid xs={12} container justifyContent='center' height='5vh' >
+                            <Grid xs={12} container justifyContent='center'  ><Button variant='outlined' style={{ color: "white", width: '80%' }} onClick={routeChange}>查看購物車</Button></Grid>
+                            <Grid xs={12} container justifyContent='center' marginTop='1vh' ><Button variant='outlined' onClick={close} style={{ color: "white", width: '80%' }}>繼續購物</Button></Grid>
+                        </Grid>
+                    </Grid>
+                </div>
+            )}
+        </Popup>
+    );
     return (
         <Box sx={{ flexGrow: 1 }} height="100%" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: '100% 100%', backgroundAttachment: 'fixed' }}>
             <Grid item xs={12} style={{ borderBottom: '1px solid black', display: open == true ? "none" : '' }} >
@@ -132,6 +152,7 @@ export default function MainPage() {
             >
                 <Grid item xs={11} height="5vh" style={{ marginTop: '1vh' }}>
                     <Scrolltext />
+                    
                 </Grid>
                 <Grid item xs={12} height="25vh">
                     <Categorychooser />
@@ -185,6 +206,7 @@ export default function MainPage() {
                 <Grid container alignItems='center' justifyContent='center' xs={11.5} height="28vh" style={{ backgroundImage: `url(${ExploreGraybg})`, backgroundSize: '100% 100%', backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
                     <Explore2 />
                 </Grid>
+                <Tooltip />
                 <Grid container alignItems='center' justifyContent='center' xs={12} height="12vh">
                     <img src={HOTPICK} style={{ width: '90%' }} alt="" />
                 </Grid>
@@ -234,6 +256,7 @@ export default function MainPage() {
             <Grid item xs={12} marginTop="5vh">
                 <EndBar />
             </Grid>
+
         </Box>
     );
 }

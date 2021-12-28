@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useRef  } from 'react';
 import Grid from '@mui/material/Grid';
 import Explore from './Explore';
 import Slider from './ShopCartSlider'
@@ -21,42 +21,27 @@ import Chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
 import Box from '@mui/material/Box';
 import backgroundEnd from "../../../reed_bg.svg"
 import NavigationBar from '../../framework/navigationbarforshop';
-import face from '../../../svgicon/Headicon/face_1.svg'
-import Scrolltext from '../../framework/scrolltext';
-import Categorychooser from './categorychooser';
-import Gamenowplaylater from '../../../svgicon/Shop/word&button/Gamenowplaylater.svg'
-import ShopWithPuzzles from '../../../svgicon/Shop/word&button/ShopWithPuzzles.svg'
-import EarnPuzzleToSaveMore from '../../../svgicon/Shop/word&button/EarnPuzzleToSaveMore.svg'
-import PlayandShopToEarn from '../../../svgicon/Shop/word&button/PlayandShopToEarn.svg'
-import HOTPICK from '../../../svgicon/Shop/word&button/HOTPICK.svg'
-import HowToPlayAndEarn from '../../../svgicon/Shop/word&button/HowToPlayAndEarn.svg'
-import Welcome from '../../../svgicon/Shop/word&button/Welcome.svg'
-import ExploreGraybg from '../../../svgicon/Shop/Picturebackground/ExploreGraybg.svg'
-import featurecourse from '../../../svgicon/Shop/word&button/featurecourse.svg'
-import highlyrecommend from '../../../svgicon/Shop/word&button/highlyrecommend.svg'
-import Threeperson from '../../../svgicon/Shop/Picturebackground/Threeperson.svg'
-import TREASUREHUNT from '../../../svgicon/Shop/word&button/TREASUREHUNT.svg'
-import CATEGORY from '../../../svgicon/Shop/word&button/CATEGORY.svg'
-import SlideRangebg from '../../../svgicon/Shop/Picturebackground/SlideRangebg.svg'
-import EndBar from '../../framework/ShopEndBar';
-import data from './data';
+import Checkout from '../../../svgicon/Shop/word&button/CHECKOUT.svg'
+import Data from './data';
 import { styled } from '@mui/material/styles';
 import Fab from '@mui/material/Fab';
 import 'reactjs-popup/dist/index.css';
 import Popup from 'reactjs-popup';
 import { useEffect } from 'react';
 import { Button } from '@mui/material';
+import EndBar from '../../framework/ShopEndBar';
 
 export default function Shopcar() {
+    const [Popopen, setPopopen] = useState(false);
     const [cartItems, setCartItems] = useState(() => {
         const localdata = localStorage.getItem('cartItems');
         return localdata ? JSON.parse(localdata) : []
 
     });
+
     useEffect(() => {
         localStorage.setItem('cartItems', JSON.stringify(cartItems))
     })
-
     const [open, setOpen] = useState(false);
     function handleClick() {
         setOpen(!open)
@@ -112,6 +97,12 @@ export default function Shopcar() {
             );
         }
     };
+    const ref = useRef();
+    const closeTooltip = () => ref.current.close();
+    const onDelete = (product) => {
+        closeTooltip()
+        setCartItems(cartItems.filter((x) => x.id !== product.id));
+    };
     return (
         <Box sx={{ flexGrow: 1 }} height="100%" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: '100% 100%', backgroundAttachment: 'fixed' }}>
             <Grid item xs={12} style={{ borderBottom: '1px solid black', display: open == true ? "none" : '' }} >
@@ -131,7 +122,6 @@ export default function Shopcar() {
                         nested
                         closeOnDocumentClick={false}
                         onClose={handleClick}
-                        {...{ contentStyle }}
                     >
                         {close => (
                             <div className="modal">
@@ -151,37 +141,66 @@ export default function Shopcar() {
                     <Slider />
                 </Grid>
                 <Grid xs={12} container alignItems='center' justifyContent='center' marginTop='1vh'>
-                    <Button variant='outlined' onClick={routeChange}>Checkout</Button>
+                    <img src={Checkout} onClick={routeChange} alt='' width='50%' />
                 </Grid>
 
             </Grid>
             <Grid item xs={12} marginTop="5vh">
-                {cartItems.map((data, index) => {
-                    return (
-                        <Grid xs={12} container alignItems='center' justifyContent='center' style={{ backgroundColor: index % 2 == 0 ? '#242634' : '#35394C' }}>
-                            <Grid xs={2}><img src={typeof (data.picture) == "object" ? data.picture[1] : data.picture} alt='' width='100%' /></Grid>
-                            <Grid xs={6}>
-                                <Typography color='white' textAlign='center' variant='caption' style={{ wordWrap: 'break-word' }}>   {data.head}</Typography>
-                                <Typography color='white' textAlign='center' variant='caption' style={{ wordWrap: 'break-word' }}>   {data.description}</Typography>
-                            </Grid>
-                            <Grid xs={2} container alignItems='center' justifyContent='center' >
-                                <Grid xs={12}container alignItems='center' justifyContent='center' >
-                                    <DeleteForeverIcon />
+                {cartItems != "" ?
+                    cartItems.map((data, index) => {
+                        return (
+                            <Grid xs={12} container alignItems='center' justifyContent='center' style={{ backgroundColor: index % 2 == 0 ? '#242634' : '#35394C' }}>
+                                <Grid xs={2}><img src={typeof (data.picture) == "object" ? data.picture[1] : data.picture} alt='' width='100%' /></Grid>
+                                <Grid xs={6}>
+                                    <Typography color='white' textAlign='center' variant='caption' style={{ wordWrap: 'break-word' }}>   {data.head}</Typography>
+                                    <Typography color='white' textAlign='center' variant='caption' style={{ wordWrap: 'break-word' }}>   {data.description}</Typography>
                                 </Grid>
-                                <Grid xs={4} container alignItems='center' justifyContent='center' >
-                                    <Button onClick={() => onRemove(data)}>-</Button>
-                                </Grid>
-                                <Grid xs={4} container alignItems='center' justifyContent='center' >
-                                    <Typography>{data.qty}</Typography>
-                                </Grid> 
-                                 <Grid xs={4} container alignItems='center' justifyContent='center' >
+                                <Grid xs={2} container alignItems='center' justifyContent='center' >
+                                    <Grid xs={12} container alignItems='center' justifyContent='center' >
+                                        <Popup ref={ref}
+                                            trigger={<div className="button"> <div >    <DeleteForeverIcon />
+                                            </div></div>}
+                                            modal
+                                            lockScroll
+                                            nested
+                                            closeOnDocumentClick={false}
+                                        >
+                                            {close => (
+                                                <div className="modal">
+                                                    <button className="close" onClick={close}>
+                                                    </button>
+                                                    <Grid xs={12} style={{ overflow: 'scroll' }} height='48vh' container justifyContent='center' >
+                                                        <Typography variant='h6' textAlign='center' color='white' >從購物車中刪除？</Typography>
+                                                        <Typography variant='caption' textAlign='center' color='white'>
+                                                            {data.description}
+                                                        </Typography>
+                                                        <Grid xs={12} container justifyContent='center' height='5vh' >
+                                                            <Grid xs={12} container justifyContent='center'  ><Button variant='outlined' onClick={() => onDelete(data)} style={{ color: "white", width: '80%' }}>刪除</Button></Grid>
+                                                            <Grid xs={12} container justifyContent='center' marginTop='1vh' ><Button variant='outlined' onClick={close} style={{ color: "white", width: '80%' }}>取消</Button></Grid>
+                                                        </Grid>
+                                                    </Grid>
+                                                </div>
+                                            )}
+                                        </Popup>
+                                    </Grid>
+                                    <Grid xs={4} container alignItems='center' justifyContent='center' >
+                                        <Button onClick={() => onRemove(data)}>-</Button>
+                                    </Grid>
+                                    <Grid xs={4} container alignItems='center' justifyContent='center' >
+                                        <Typography>{data.qty}</Typography>
+                                    </Grid>
+                                    <Grid xs={4} container alignItems='center' justifyContent='center' >
 
-                                    <Button onClick={() => onAdd(data)}>+</Button>
+                                        <Button onClick={() => onAdd(data)}>+</Button>
+                                    </Grid>
                                 </Grid>
                             </Grid>
-                        </Grid>
-                    )
-                })}
+                        )
+                    }) : <Grid style={{ height: '30vh', backgroundColor: 'transparent', textAlign: 'center', color: 'white' }}>Your shop car is empty</Grid>
+                }
+            </Grid>
+            <Grid item xs={12} marginTop="10vh">
+                <EndBar />
             </Grid>
         </Box>
     );

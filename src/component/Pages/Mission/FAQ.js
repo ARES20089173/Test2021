@@ -18,6 +18,7 @@ import ListItemText from "@mui/material/ListItemText";
 import EndBar from '../../framework/pureEndbar';
 import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUp from "@mui/icons-material/KeyboardArrowUp";
+import { useHistory } from "react-router";
 const StyledFab = styled(Fab)({
     position: 'fixed',
     zIndex: 3,
@@ -36,7 +37,11 @@ const Toplinkdata = [
 ]
 
 export default function FAQ() {
+    const history = useHistory();
 
+    const routeChange = () => {
+        history.goBack()
+    }
     const [selectedIndex, setSelectedIndex] = React.useState("")
 
     const handleClick = index => {
@@ -78,14 +83,12 @@ export default function FAQ() {
                             <AppBar position="fixed" align='center' elevation={0} sx={{ top: 0, backgroundColor: "#242634" }}>
                                 <Toolbar>
                                     <Typography variant="h6" component="div" sx={{}}>
-                                        <Link to={`/MissionMain`}>
-                                            <img src={back} alt='' width="40%" style={{
+                                            <img src={back} alt='' width="40%" onClick={routeChange} style={{
                                                 position: 'relative',
                                                 zIndex: 3,
                                                 top: 5,
                                                 left: "-40%",
                                             }} />
-                                        </Link>
                                     </Typography>
                                     <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} style={{
                                         position: 'relative',

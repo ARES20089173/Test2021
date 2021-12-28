@@ -7,6 +7,7 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import Fab from '@mui/material/Fab';
+import { useHistory } from "react-router";
 import { styled } from '@mui/material/styles'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom"
@@ -49,8 +50,12 @@ const Event = [
     { id: 2, img: Event1, name: "PAID TO PLAY&EARN/1 ON 1 MODE", detail: "1 ON 1 MODE is ......." },
     { id: 3, img: Event1, name: "PAID TO PLAY&EARN/1 ON 1 MODE", detail: "1 ON 1 MODE is ......." },
 ];
-export default class Events extends Component {
-    render() {
+export default function Events() {
+    const history = useHistory();
+
+    const routeChange = () => {
+        history.goBack()
+    }
         return (
             <Box sx={{ flexGrow: 1 }}>
                 <React.Fragment>
@@ -71,9 +76,8 @@ export default class Events extends Component {
                                 <Toolbar>
                                     <Grid container xs={12} justifyContent='center' alignItems='center'>
                                         <Grid xs={2}>
-                                            <Link to={`/`} style={{ position: 'relative', top: 3, right: 10 }}>
-                                                <img src={back} alt='' width="75%" />
-                                            </Link>
+                                                <img src={back} alt='' width="75%" onClick={routeChange} />
+                                       
                                         </Grid>
                                         <Grid xs={8}>
                                             <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} style={{
@@ -115,4 +119,3 @@ export default class Events extends Component {
             </Box>
         )
     }
-}

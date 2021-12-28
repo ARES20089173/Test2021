@@ -14,6 +14,7 @@ import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg'
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
+import { useHistory } from "react-router";
 const contentStyle = {
     margin: 'auto',
     background: '#cfcece',
@@ -51,6 +52,11 @@ const linkdata = [
 
 ]
 export default function RewardStatus() {
+    const history = useHistory();
+
+    const routeChange = () => {
+        history.goBack()
+    }
     const [select, setSelect] = React.useState('OPENED');
     const handleselectChange = (e) => {
         setSelect(e)
@@ -73,14 +79,12 @@ export default function RewardStatus() {
                             <Toolbar >
                                 <Grid xs={12} container alignItems='center' justifyContent='center'>
                                     <Grid xs={2} >
-                                        <Link to='/MissionMain'>
-                                            <img src={back} alt='' width="80%" style={{
+                                         <img src={back} alt='' width="80%" onClick={routeChange} style={{
                                                 position: 'relative',
                                                 zIndex: 3,
                                                 top: 5,
                                                 left: "-40%",
                                             }} />
-                                        </Link>
                                     </Grid>
                                     <Grid xs={10} >
                                         <Typography variant="body1" component="div" sx={{ textAlign: 'center' }} style={{

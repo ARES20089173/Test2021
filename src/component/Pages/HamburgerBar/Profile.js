@@ -8,6 +8,7 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import { useParams } from "react-router";
 import { withStyles } from "@material-ui/core/styles";
+import { useHistory } from 'react-router';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import CssBaseline from '@mui/material/CssBaseline';
@@ -36,7 +37,6 @@ const contentStyle = {
     borderRadius: "5%",
 };
 
-
 const userdata = [
     { id: 0, Sex: "Mr", FirstName: "Cheung", LastName: "kit", NickName: "Jay", Birthday: "2011-10-29", Contact: "+852", Flat: "1502", Street: "King road", Area: "Island", Builidng: "HealthyGarden", level: 'Lv1', ReesID: 1121321231, headicon: face1 },
     { id: 1, Sex: "Mr", FirstName: "Cheung2", LastName: "kit", NickName: "Jay", Birthday: "2011-10-29", Contact: "+852", Flat: "1502", Street: "King road", Area: "Island", Builidng: "HealthyGarden", level: 'Lv1', ReesID: 1121321231, headicon: face1 },
@@ -55,6 +55,11 @@ const styles = {
 };
 function Profile(props) {
 
+    const history = useHistory();
+
+    const routeChange = () => {
+        history.goBack()
+    }
     const { classes } = props;
     const { id } = useParams();
     const [Sex, setSex] = React.useState(userdata[id].Sex);
@@ -114,10 +119,8 @@ function Profile(props) {
                         <AppBar position="fixed" align='center' elevation={0} sx={{ top: 0, backgroundColor: "#242634", borderBottom: '1px solid black' }}>
                         <Toolbar>
                                 <Grid container xs={12} justifyContent='center' alignItems='center'>
-                                    <Grid xs={2}>
-                                        <Link to={`/`} style={{ position: 'relative', top: 3, right: 10 }}>
-                                            <img src={back} alt='' width="75%" />
-                                        </Link>
+                                    <Grid xs={2} container justifyContent='center' alignItems='center'>
+                                          <img src={back} alt='' width="75%" onClick={routeChange}/>
                                     </Grid>
                                     <Grid xs={8}>
                                         <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} style={{

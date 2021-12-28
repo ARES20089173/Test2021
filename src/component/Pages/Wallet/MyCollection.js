@@ -9,6 +9,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import { useHistory } from "react-router";
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import Fab from '@mui/material/Fab';
@@ -118,6 +119,11 @@ const data = [{
 }
 ]
 export default function MyCollection() {
+    const history = useHistory();
+
+    const routeChange = () => {
+        history.goBack()
+    }
     const [Rare, setRare] = React.useState('');
     const [order, setOrder] = React.useState('');
     const classes = useStyles();
@@ -147,14 +153,12 @@ export default function MyCollection() {
                             <Toolbar >
                                 <Grid xs={12} container alignItems='center' justifyContent='center'>
                                     <Grid xs={2} >
-                                        <Link to='/wallet'>
-                                            <img src={back} alt='' width="80%" style={{
+                                            <img src={back} alt='' width="80%" onClick={routeChange} style={{
                                                 position: 'relative',
                                                 zIndex: 3,
                                                 top: 5,
                                                 left: "-40%",
                                             }} />
-                                        </Link>
                                     </Grid>
                                     <Grid xs={10} >
                                         <Typography variant="body1" component="div" sx={{ textAlign: 'center' }} style={{

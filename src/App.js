@@ -102,9 +102,9 @@ const render = ({ location, history, match }) => {
         <Switch location={location}>
           <Route exact path="/" component={MainPage}><MainPage /></Route>    
           <Route exact path="/Events" component={Events}><Events/></Route>    
-          <Route exact path="/:id/Profile" component={Profile} render={(props) => <Profile {...props} />}/>
-          <Route exact path="/:id/Profile/SelectAvatar" component={SelectAvatar} render={(props) => <SelectAvatar {...props} />}/>
-          <Route exact path="/:id/Setting" component={Setting} render={(props) => <Setting {...props} />}/>
+          <Route exact path="/:id/Profile" render={(props) => <Profile {...props} />}/>
+          <Route exact path="/:id/Profile/SelectAvatar" render={(props) => <SelectAvatar {...props} />}/>
+          <Route exact path="/:id/Setting"render={(props) => <Setting {...props} />}/>
           <Route exact path="/EndBattleMode" component={EndBattleMode}><EndBattleMode /></Route> 
           <Route exact path="/EndChallengeMode" component={EndChallengeMode}><EndChallengeMode /></Route>
           <Route exact path="/EndOneVoneMode" component={EndOneVoneMode}><EndOneVoneMode /></Route>
@@ -112,43 +112,43 @@ const render = ({ location, history, match }) => {
           <Route exact path="/MessageCenter/Notification" component={Notification}><Notification /></Route>
           <Route exact path="/MessageCenter/CenterSetting" component={CenterSetting}><CenterSetting /></Route>
           <Route exact path="/multigameChooser" component={MultigameChooser}><MultigameChooser /></Route>
-          <Route exact path="/multigameChooser/tournamentLobby/:id" component={TournamentLobby} render={(props) => <TournamentLobby {...props} />} />
-          <Route exact path="/multigameChooser/tournamentLobby/:id/:entryid/BattleModeJoin" component={BattleModeJoin} render={(props) => <BattleModeJoin {...props} />} />
-          <Route exact path="/multigameChooser/tournamentLobby/:id/:entryid/ChallengerModeGo" component={ChallengerModeGo} render={(props) => <ChallengerModeGo{...props} />} />
-          <Route exact path="/multigameChooser/tournamentLobby/:id/:entryid/OneVoneMode" component={oneVoneMode} render={(props) => <oneVoneMode{...props} />} />
-          <Route exact path="/gametutorial" component={GameTutorial} render={(props) => <GameTutorial {...props} />} />
+          <Route exact path="/multigameChooser/tournamentLobby/:id"  render={(props) => <TournamentLobby {...props} />} />
+          <Route exact path="/multigameChooser/tournamentLobby/:id/:entryid/BattleModeJoin" render={(props) => <BattleModeJoin {...props} />} />
+          <Route exact path="/multigameChooser/tournamentLobby/:id/:entryid/ChallengerModeGo" render={(props) => <ChallengerModeGo{...props} />} />
+          <Route exact path="/multigameChooser/tournamentLobby/:id/:entryid/OneVoneMode"  render={(props) => <oneVoneMode{...props} />} />
+          <Route exact path="/gametutorial" render={(props) => <GameTutorial {...props} />} />
 
-          <Route exact path="/Shop" component={ShopMain} render={(props) => <ShopMain {...props} />}/>
-          <Route exact path="/Shop/Shopcar" component={Shopcar} render={(props) => <ShopMain {...props} />}/>
+          <Route exact path="/Shop"  render={(props) => <ShopMain {...props} />}/>
+          <Route exact path="/Shop/Shopcar"  render={(props) => <Shopcar {...props} />}/>
 
-          <Route exact path="/Wallet" component={WalletMain}render={(props) => <WalletMain {...props} />}/>  
-          <Route exact path="/Wallet/TranscationHistory" component={TranscationHistory}render={(props) => <TranscationHistory {...props} />}/>  
-          <Route exact path="/Wallet/TranscationHistory/:id/Detail" component={HistoryDetail}render={(props) => <HistoryDetail {...props} />}/>  
-          <Route exact path="/Wallet/SaveCards" component={SaveCards}render={(props) => <SaveCards {...props} />}/>  
-          <Route exact path="/Wallet/SaveCards/AddNewCards" component={AddNewCards}render={(props) => <AddNewCards {...props} />}/>
-          <Route exact path="/Wallet/PuzzlePackage" component={PuzzlePackage}render={(props) => <PuzzlePackage {...props} />}/>  
-          <Route exact path="/Wallet/MyCollection" component={MyCollection}render={(props) => <MyCollection {...props} />}/>  
-          <Route exact path="/Wallet/SaveCards/AddNewMethod" component={AddNewMethod}render={(props) => <AddNewMethod {...props} />}/>  
+          <Route exact path="/Wallet" render={(props) => <WalletMain {...props} />}/>  
+          <Route exact path="/Wallet/TranscationHistory" render={(props) => <TranscationHistory {...props} />}/>  
+          <Route exact path="/Wallet/TranscationHistory/:id/Detail" render={(props) => <HistoryDetail {...props} />}/>  
+          <Route exact path="/Wallet/SaveCards"render={(props) => <SaveCards {...props} />}/>  
+          <Route exact path="/Wallet/SaveCards/AddNewCards" render={(props) => <AddNewCards {...props} />}/>
+          <Route exact path="/Wallet/PuzzlePackage"render={(props) => <PuzzlePackage {...props} />}/>  
+          <Route exact path="/Wallet/MyCollection" render={(props) => <MyCollection {...props} />}/>  
+          <Route exact path="/Wallet/SaveCards/AddNewMethod" render={(props) => <AddNewMethod {...props} />}/>  
         
-          <Route exact path="/History" component={MatchHistory} render={(props) => <MatchHistory {...props} />}/>
-          <Route exact path="/History/:id/BattleModeDetail" component={BattleModeDetail} render={(props) => <BattleModeDetail {...props} />}/>
-          <Route exact path="/History/:id/BattleModeDetail/:id/otherinfo" component={BalttleOtherinfo} render={(props) => <BalttleOtherinfo {...props} />}/>
-          <Route exact path="/History/:id/OneVOneModeDetail" component={OneVOneModeDetail} render={(props) => <OneVOneModeDetail {...props} />}/>
-          <Route exact path="/History/:id/ChallengeModeDetail" component={ChallengeModeDetail} render={(props) => <ChallengeModeDetail {...props} />}/>
+          <Route exact path="/History" render={(props) => <MatchHistory {...props} />}/>
+          <Route exact path="/History/:id/BattleModeDetail"  render={(props) => <BattleModeDetail {...props} />}/>
+          <Route exact path="/History/:id/BattleModeDetail/:id/otherinfo" render={(props) => <BalttleOtherinfo {...props} />}/>
+          <Route exact path="/History/:id/OneVOneModeDetail" render={(props) => <OneVOneModeDetail {...props} />}/>
+          <Route exact path="/History/:id/ChallengeModeDetail"  render={(props) => <ChallengeModeDetail {...props} />}/>
 
-          <Route exact path="/MissionMain" component={MissionMain} render={(props) => <MissionMain {...props} />}/>
-          <Route exact path="/MissionMain/RewardStatus" component={RewardStatus} render={(props) => <RewardStatus {...props} />}/>
-          <Route exact path="/MissionMain/SupportGuide" component={SupportGuide} render={(props) => <SupportGuide {...props} />}/>
-          <Route exact path="/MissionMain/FAQ" component={FAQ} render={(props) => <FAQ {...props} />}/>
-          <Route exact path="/MissionMain/Policy" component={Policy} render={(props) => <Policy {...props} />}/>
-          <Route exact path="/MissionMain/Service" component={Service} render={(props) => <Service {...props} />}/>
+          <Route exact path="/MissionMain" render={(props) => <MissionMain {...props} />}/>
+          <Route exact path="/MissionMain/RewardStatus" render={(props) => <RewardStatus {...props} />}/>
+          <Route exact path="/MissionMain/SupportGuide"render={(props) => <SupportGuide {...props} />}/>
+          <Route exact path="/MissionMain/FAQ"  render={(props) => <FAQ {...props} />}/>
+          <Route exact path="/MissionMain/Policy"  render={(props) => <Policy {...props} />}/>
+          <Route exact path="/MissionMain/Service" render={(props) => <Service {...props} />}/>
          
 
-          <Route exact path="/login" component={SignIn}render={(props) => <SignIn {...props} />}/>  
-          <Route exact path="/login/ForgotPW" component={Forgot}render={(props) => <Forgot {...props} />}/> 
-          <Route exact path="/Register" component={Register}render={(props) => <Register {...props} />}/>  
-          <Route exact path="/Register/Info" component={RegisterInfo}render={(props) => <RegisterInfo {...props} />}/>  
-          <Route exact path="/Register/Info/Finish" component={FiniRegister}render={(props) => <FiniRegister {...props} />}/>  
+          <Route exact path="/login"render={(props) => <SignIn {...props} />}/>  
+          <Route exact path="/login/ForgotPW" render={(props) => <Forgot {...props} />}/> 
+          <Route exact path="/Register" render={(props) => <Register {...props} />}/>  
+          <Route exact path="/Register/Info" render={(props) => <RegisterInfo {...props} />}/>  
+          <Route exact path="/Register/Info/Finish" render={(props) => <FiniRegister {...props} />}/>  
        
         
           MatchHistory

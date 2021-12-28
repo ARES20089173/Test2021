@@ -10,7 +10,7 @@ import { styled } from '@mui/material/styles'
 import { Link } from "react-router-dom"
 import back from '../../../svgicon/Componenticon/Back.svg'
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
-
+import { useHistory } from "react-router";
 import EndBar from '../../framework/pureEndbar';
 const StyledFab = styled(Fab)({
     position: 'fixed',
@@ -21,7 +21,11 @@ const StyledFab = styled(Fab)({
 });
 
 export default function SupportGuide(){
+    const history = useHistory();
 
+    const routeChange = () => {
+        history.goBack()
+    }
         const data = [
             { id: 0, embedId: "rokGy0huYEA", name: "PAID TO PLAY&EARN/CHALLENGER MODE", detail: "The detail is ......." },
         ];
@@ -50,14 +54,12 @@ export default function SupportGuide(){
                                 <AppBar position="fixed" align='center' elevation={0} sx={{ top: 0, backgroundColor: "#242634" }}>
                                     <Toolbar>
                                         <Typography variant="h6" component="div" sx={{}}>
-                                            <Link to={`/MissionMain`}>
-                                                <img src={back} alt='' width="40%" style={{
+                                          <img src={back} alt='' width="40%" onClick={routeChange} style={{
                                                     position: 'relative',
                                                     zIndex: 3,
                                                     top: 5,
                                                     left: "-40%",
                                                 }} />
-                                            </Link>
                                         </Typography>
                                         <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} style={{
                                         position: 'relative',

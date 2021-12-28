@@ -19,6 +19,7 @@ import { Link } from "react-router-dom"
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
 import EndBar from '../../framework/pureEndbar';
 import back from '../../../svgicon/Componenticon/Back.svg'
+import { useHistory } from 'react-router';
 import chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
 import silverpuzzle from '../../../svgicon/Componenticon/SilverPuzzle.svg'
 // Import Swiper React components
@@ -74,6 +75,11 @@ const Bottomlinkdata = [
     { id: 3, linkName: "twice a week xx% OFF", link: "/Wallet/PuzzlePackage", icon: silverpuzzle, price: 750, quality: "3750(+950)" }]
 
 export default function PuzzlePackage() {
+    const history = useHistory();
+
+    const routeChange = () => {
+        history.goBack()
+    }
     const [count, setCount] = useState(0);
     const Toplinkdataed = Toplinkdata.map((text) => {
         if (text.id % 2 == 0) {
@@ -144,14 +150,12 @@ export default function PuzzlePackage() {
                             <Toolbar >
                                 <Grid xs={12} container alignItems='center' justifyContent='center'>
                                     <Grid xs={2} >
-                                        <Link to='/wallet'>
-                                            <img src={back} alt='' width="80%" style={{
+                                          <img src={back} alt='' width="80%" onClick={routeChange} style={{
                                                 position: 'relative',
                                                 zIndex: 3,
                                                 top: 5,
                                                 left: "-40%",
                                             }} />
-                                        </Link>
                                     </Grid>
                                     <Grid xs={8} >
                                         <Typography variant="body1" component="div" sx={{ textAlign: 'center' }} >
