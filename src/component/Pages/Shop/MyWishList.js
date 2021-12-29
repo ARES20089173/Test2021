@@ -67,7 +67,7 @@ export default function Events() {
     const TheWishdata = WishListsdatas.map((data, index) => {
 
         return (
-            <Grid xs={12} onMouseEnter={() => visiable(data)} onMouseLeave={() => visiable(data)}style={{ height: '30vh', marginBottom: '4vh', backgroundImage: `url(${(data.picture[1]) != "s" ? data.picture[1] : data.picture})`, backgroundSize: '100% 100%', backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
+            <Grid xs={12} onClick={() => visiable(data)} style={{ height: '30vh', marginBottom: '4vh', backgroundImage: `url(${(data.picture[1]) != "s" ? data.picture[1] : data.picture})`, backgroundSize: '100% 100%', backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
 
                 <Grid xs={12} container alignItems='center' justifyContent='center' marginTop="1vh" style={{ visibility: data.visiable != false && 'hidden', height: '31vh', backgroundColor: " rgba(0, 0, 0, 0.35)" }}>
                     <Grid xs={12} container alignItems='center' justifyContent='center'  >
