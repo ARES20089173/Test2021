@@ -36,6 +36,7 @@ import ChallengeModeDetail from './component/Pages/History/ChallengeModeDetail'
 
 import ShopMain from './component/Pages/Shop/ShopMain'
 import Shopcar from './component/Pages/Shop/Shopcar'
+import MyWishList from './component/Pages/Shop/MyWishList'
 import SignIn from './component/Pages/UserlogPage/SignIn'
 import Forgot from './component/Pages/UserlogPage/ForgotPassword'
 import Register from './component/Pages/UserlogPage/Register'
@@ -120,6 +121,7 @@ const render = ({ location, history, match }) => {
 
           <Route exact path="/Shop"  render={(props) => <ShopMain {...props} />}/>
           <Route exact path="/Shop/Shopcar"  render={(props) => <Shopcar {...props} />}/>
+          <Route exact path="/Shop/MyWishList"  render={(props) => <MyWishList {...props} />}/>
 
           <Route exact path="/Wallet" render={(props) => <WalletMain {...props} />}/>  
           <Route exact path="/Wallet/TranscationHistory" render={(props) => <TranscationHistory {...props} />}/>  

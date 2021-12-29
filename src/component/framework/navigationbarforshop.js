@@ -31,7 +31,7 @@ const userdata = [
 const Toplinkdata = [
     { id: 0, linkName: "ACCOUNT  DETAILS", link: "/1/Profile" },
     { id: 1, linkName: "MY COLLECTIONS", link: "/Wallet/MyCollection" },
-    { id: 2, linkName: "MY WISHLISTS", link: "/" },
+    { id: 2, linkName: "MY WISHLISTS", link: "/Shop/MyWishList" },
     { id: 3, linkName: "EVENTS", link: "/Events" },
     { id: 4, linkName: "BUY PUZZLES", link: "/Wallet/PuzzlePackage" }
     // { id: 5, linkName:"PROFILE"},

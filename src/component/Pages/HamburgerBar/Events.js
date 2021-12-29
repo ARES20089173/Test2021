@@ -75,8 +75,8 @@ export default function Events() {
                             <AppBar position="fixed" align='center' elevation={0} sx={{ top: 0, backgroundColor: "#242634" }}>
                                 <Toolbar>
                                     <Grid container xs={12} justifyContent='center' alignItems='center'>
-                                        <Grid xs={2}>
-                                                <img src={back} alt='' width="75%" onClick={routeChange} />
+                                    <Grid  container xs={2} justifyContent='center' alignItems='center'>
+                                              <img src={back} alt='' width="75%" onClick={routeChange} />
                                        
                                         </Grid>
                                         <Grid xs={8}>

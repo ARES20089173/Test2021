@@ -1,0 +1,166 @@
+import React, { useState, useEffect } from "react";
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import EndBar from '../../framework/ShopEndBar';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
+import Popup from "reactjs-popup";
+import Search from './Search'
+import CssBaseline from '@mui/material/CssBaseline';
+import Fab from '@mui/material/Fab';
+import { useHistory } from "react-router";
+import { styled } from '@mui/material/styles'
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Link } from "react-router-dom"
+import Switch from '@mui/material/Switch';
+import Event1 from '../../../svgicon/Carousel/pic1.svg'
+import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
+import { Fade, IconButton } from "@mui/material";
+import Visibility from "@mui/icons-material/Visibility";
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import back from '../../../svgicon/Componenticon/Back.svg'
+import datas from './data'
+const contentStyle = {
+    margin: 'auto',
+    background: '#cfcece',
+    width: "100%",
+    height: "40%",
+    padding: "5px",
+    borderRadius: "5%",
+};
+export default function Events() {
+    const { WishListsdata } = datas
+    const [WishListsdatas, setWishListsdata] = useState((WishListsdata))
+    const history = useHistory();
+
+    const routeChange = () => {
+        history.goBack()
+    }
+    const [open, setOpen] = useState(false);
+    function handleClick() {
+        setOpen(!open)
+    }
+    useEffect(() => {
+        setWishListsdata(WishListsdatas)
+    })
+    const visiable = (product) => {
+
+        if (product.visiable == undefined || product.visiable == true) {
+
+            setWishListsdata(
+                WishListsdatas.map((x) =>
+                (
+                    x.id === product.id ? { ...product, visiable: false } : x
+                ))
+            );
+        } else {
+            setWishListsdata(
+                WishListsdatas.map((x) =>
+                (
+                    x.id === product.id ? { ...product, visiable: true } : x
+                ))
+            );
+        }
+
+    };
+    const TheWishdata = WishListsdatas.map((data, index) => {
+
+        return (
+            <Grid xs={12} onMouseEnter={() => visiable(data)} onMouseLeave={() => visiable(data)}style={{ height: '30vh', marginBottom: '4vh', backgroundImage: `url(${(data.picture[1]) != "s" ? data.picture[1] : data.picture})`, backgroundSize: '100% 100%', backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
+
+                <Grid xs={12} container alignItems='center' justifyContent='center' marginTop="1vh" style={{ visibility: data.visiable != false && 'hidden', height: '31vh', backgroundColor: " rgba(0, 0, 0, 0.35)" }}>
+                    <Grid xs={12} container alignItems='center' justifyContent='center'  >
+                        <Typography color='white' variant='h6' textAlign='center' >
+                            {data.description}
+                        </Typography>
+                        <Grid xs={10} textAlign='center' style={{ border: '1px solid black' }}>
+                            <Typography variant='boyd2' >
+                                <b>HKD {data.puzzleNeed} </b><img src={data.puzzleType} width='10%' alt='' style={{ position: 'relative', left: 2, top: 5 }} /> <b>HKD {data.puzzleNeed} </b><br />  or   {data.secondpuzzleNeed}    <img src={data.puzzleType} width='10%' alt='' style={{ position: 'relative', left: 2, top: 5 }} />
+                                {data.secondpuzzleNeed}
+                            </Typography>
+                        </Grid>
+                    </Grid>
+                    <Grid xs={6} container alignItems='center' justifyContent='center' backgroundColor='gray' zIndex='2' >
+                        <IconButton>
+                            <Visibility />
+                        </IconButton>
+                    </Grid>
+                    <Grid xs={6} container alignItems='center' justifyContent='center' backgroundColor='gray' zIndex='2' >
+                 
+                        <IconButton>
+                            <FavoriteIcon />
+                        </IconButton>
+                    </Grid>
+                </Grid>
+                {WishListsdata.length == index + 1 ? "" : <hr />}
+            </Grid>
+        )
+    });
+    return (
+        <Box sx={{ flexGrow: 1 }}>
+            <React.Fragment>
+                <Box sx={{ flexGrow: 1 }} >
+
+                    <Grid xs={8} >
+                        <CssBaseline />
+                        <AppBar position="fixed" align='center' elevation={0} sx={{ top: 0, backgroundColor: "#242634" }}>
+                            <Toolbar>
+                                <Grid container xs={12} justifyContent='center' alignItems='center'>
+                                    <Grid container xs={2} justifyContent='center' alignItems='center'>
+                                        <img src={back} alt='' width="100%" onClick={routeChange} />
+
+                                    </Grid>
+                                    <Grid xs={8}>
+                                        <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} style={{
+                                            textAlign: 'center'
+                                        }}>     My WishLists
+                                        </Typography>
+                                    </Grid>
+                                    <Grid xs={2}></Grid>
+                                </Grid>
+                            </Toolbar>
+                        </AppBar>
+                    </Grid>
+                    <Toolbar />
+                </Box>
+            </React.Fragment>
+            <Grid height="100%" container xs={12} justifyContent='center' alignItems='center'  >
+                <Grid xs={12} container bgcolor="#242634" justifyContent='center' alignItems='center' >
+                    <Grid height="5vh" container xs={12} justifyContent='center' alignItems='center' style={{ backgroundColor: '#8e8b91', textAlign: 'center' }}>
+                        <Typography variant="body1" color="#ffffff" >
+                            Click To Search Your Favourite Product
+                        </Typography>
+                    </Grid>
+                </Grid>
+                <Grid container alignItems='center' justifyContent='center' xs={12} >
+                    <Popup
+                        trigger={<div className="button"> <div ><Typography color="black" onClick={handleClick}>Searchpic </Typography></div></div>}
+                        modal
+                        lockScroll
+                        nested
+                        closeOnDocumentClick={false}
+                        onClose={handleClick}
+                    >
+                        {close => (
+                            <div className="modal">
+                                <button className="close" onClick={close}>
+                                </button>
+                                <Grid xs={12} >
+                                    <Search />
+                                </Grid>
+                            </div>
+                        )}
+                    </Popup>
+                </Grid>
+                <Grid xs={11.5} container alignItems='center' justifyContent='center' >
+                    {TheWishdata}
+                </Grid>
+            </Grid>
+
+            <Grid item xs={12} marginTop="15vh" >
+                <EndBar />
+            </Grid>
+        </Box>
+    )
+}
