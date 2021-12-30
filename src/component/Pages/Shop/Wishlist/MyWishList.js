@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import EndBar from '../../framework/ShopEndBar';
+import EndBar from '../../../framework/ShopEndBar';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Popup from "reactjs-popup";
-import Search from './Search'
+import backgroundEnd from "../../../../reed_bg.svg"
+import Search from '../Search'
 import CssBaseline from '@mui/material/CssBaseline';
 import Fab from '@mui/material/Fab';
 import { useHistory } from "react-router";
@@ -14,13 +15,11 @@ import { styled } from '@mui/material/styles'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom"
 import Switch from '@mui/material/Switch';
-import Event1 from '../../../svgicon/Carousel/pic1.svg'
-import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
 import { Fade, IconButton } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import back from '../../../svgicon/Componenticon/Back.svg'
-import datas from './data'
+import back from '../../../../svgicon/Componenticon/Back.svg'
+import datas from '../data'
 const contentStyle = {
     margin: 'auto',
     background: '#cfcece',
@@ -36,6 +35,10 @@ export default function Events() {
 
     const routeChange = () => {
         history.goBack()
+    }
+    const routeDetail = (id) => {
+        let path = `/Shop/MyWishList/${id}/ProductDetail`;
+        history.push(path);
     }
     const [open, setOpen] = useState(false);
     function handleClick() {
@@ -67,6 +70,7 @@ export default function Events() {
     const TheWishdata = WishListsdatas.map((data, index) => {
 
         return (
+
             <Grid xs={12} onClick={() => visiable(data)} style={{ height: '30vh', marginBottom: '4vh', backgroundImage: `url(${(data.picture[1]) != "s" ? data.picture[1] : data.picture})`, backgroundSize: '100% 100%', backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
 
                 <Grid xs={12} container alignItems='center' justifyContent='center' marginTop="1vh" style={{ visibility: data.visiable != false && 'hidden', height: '31vh', backgroundColor: " rgba(0, 0, 0, 0.35)" }}>
@@ -82,7 +86,7 @@ export default function Events() {
                         </Grid>
                     </Grid>
                     <Grid xs={6} container alignItems='center' justifyContent='center' backgroundColor='gray' zIndex='2' >
-                        <IconButton>
+                        <IconButton onClick={() => routeDetail(data.id)}>
                             <Visibility />
                         </IconButton>
                     </Grid>
@@ -98,7 +102,7 @@ export default function Events() {
         )
     });
     return (
-        <Box sx={{ flexGrow: 1 }}>
+          <Box sx={{ flexGrow: 1 }} height="100%" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: '100% 100%', backgroundAttachment: 'fixed' }}>
             <React.Fragment>
                 <Box sx={{ flexGrow: 1 }} >
 

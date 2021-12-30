@@ -15,23 +15,23 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Fab from '@mui/material/Fab';
 import { styled } from '@mui/material/styles'
 import { Link } from "react-router-dom"
-import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
-import EndBar from '../../framework/pureEndbar';
-import back from '../../../svgicon/Componenticon/Back.svg'
-import ProductDetail from '../../../svgicon/Shop/word&button/ProductDetail.svg'
-import OnlineANDOffline from '../../../svgicon/Shop/word&button/OnlineANDOffline.svg'
-import ShopToAddress from '../../../svgicon/Shop/word&button/ShopToAddress.svg'
+import HomeIcon from '../../../../svgicon/EndBaricon/BackHome.svg';
+import EndBar from '../../../framework/pureEndbar';
+import back from '../../../../svgicon/Componenticon/Back.svg'
+import ProductDetail from '../../../../svgicon/Shop/word&button/ProductDetail.svg'
+import OnlineANDOffline from '../../../../svgicon/Shop/word&button/OnlineANDOffline.svg'
+import ShopToAddress from '../../../../svgicon/Shop/word&button/ShopToAddress.svg'
 import Popup from "reactjs-popup";
 import { useRef } from "react";
-import datas from '../Shop/data'
+import Opened from "./Opened";
+import Expired from "./Expired";
+import datas from '../../Shop/data'
 const contentStyle = {
     background: 'white',
     width: "90%",
     height: "75%",
     borderRadius: "5%",
 };
-
-
 const useStyles = makeStyles(theme => ({
     formControl: {
         color: 'white',
@@ -84,15 +84,13 @@ const useStyles = makeStyles(theme => ({
     }
 
 }));
-export default function MyCollection() {
+export default function RedeemRecords() {
     const ref = useRef();
-    const { Collectiondata, ShoppingAddress } = datas
+    const { Rewardeddata, ShoppingAddress } = datas
     const [select, setSelect] = React.useState(ShoppingAddress[0].Name);
     const [ContactPerson, setContactPerson] = React.useState(ShoppingAddress[0].ContactPerson);
     const [ContactNumber, setContactNumber] = React.useState(ShoppingAddress[0].ContactNumber);
     const [Address, setAddress] = React.useState(ShoppingAddress[0].Address);
-
-
     const handleChange = (event) => {
         setSelect(event.target.value);
         const Thedata = ShoppingAddress.find((x) => x.Name === event.target.value);
@@ -100,9 +98,8 @@ export default function MyCollection() {
         setContactNumber(Thedata.ContactNumber)
         setAddress(Thedata.Address)
     };
-    const closeTooltip = () => ref.current.close();
     const [online, setonline] = useState(false);
-    const TheCollectiondata = Collectiondata.map((data, index) => {
+    const TheCollectiondata = Rewardeddata.map((data, index) => {
         return (
             <Grid container xs={6} justifyContent='center' alignItems='center' style={{ textAlign: 'center' }}>
                 <Grid xs={11} height="50vh" style={{ textAlign: 'center', border: '1px solid gray', marginTop: '1vh' }}>
@@ -236,10 +233,10 @@ export default function MyCollection() {
                                                     </Grid>
                                                 </Grid>
                                                 <Grid xs={8} container justifyContent='center' alignItems='center' marginTop='3vh'>
-                                                    <img src={ShopToAddress} alt='' width='100%'/>
+                                                    <img src={ShopToAddress} alt='' width='100%' />
                                                 </Grid>
                                                 <Grid xs={8} container justifyContent='center' alignItems='center' marginTop='3vh'>
-                                                   <Typography>运费需由玩家自付</Typography>
+                                                    <Typography>运费需由玩家自付</Typography>
                                                 </Grid>
                                             </Grid>
                                         </Grid>
@@ -255,19 +252,11 @@ export default function MyCollection() {
         )
     });
     const history = useHistory();
-
     const routeChange = () => {
         history.goBack()
     }
-    const [Rare, setRare] = React.useState('');
-    const [order, setOrder] = React.useState('');
+    const [Recordselect, setRecordselect] = React.useState('Rewarded');
     const classes = useStyles();
-    const handleRareChange = (event) => {
-        setRare(event.target.value);
-    };
-    const handleOrderChange = (event) => {
-        setOrder(event.target.value);
-    };
     return (
         <Box sx={{ flexGrow: 1 }} bgcolor='#242634'>
             <React.Fragment>
@@ -282,17 +271,17 @@ export default function MyCollection() {
                             }} />
                         </Link>
                     </Grid>
-                    <Grid xs={8} >
+                    <Grid xs={12} >
                         <CssBaseline />
                         <AppBar position="fixed" align='center' sx={{ top: 0, backgroundColor: "#242634" }}>
-                            <Toolbar >
-                                <Grid xs={12} container alignItems='center' justifyContent='center'>
+                            <Toolbar style={{ padding: 0 }}>
+                                <Grid xs={12} container alignItems='center' justifyContent='center' >
                                     <Grid xs={2} >
                                         <img src={back} alt='' width="80%" onClick={routeChange} style={{
                                             position: 'relative',
                                             zIndex: 3,
                                             top: 5,
-                                            left: "-40%",
+                                            left: "-10%",
                                         }} />
                                     </Grid>
                                     <Grid xs={10} >
@@ -301,81 +290,50 @@ export default function MyCollection() {
                                             zIndex: 3,
                                             left: "-10%",
                                         }} >
-                                            MY COLLECTION
+                                            Redeem Records
                                         </Typography>
+                                    </Grid>
+                                    <Grid xs={12} container alignItems='center' justifyContent='center' height="5vh" style={{ padding: 0, margin: 0, backgroundColor: '#8e8b91', textAlign: 'center' }}>
+                                        <Grid xs={4} container alignItems='center' justifyContent='center'height="5vh" style={{ padding: 0, margin: 0, backgroundColor: '#8e8b91', textAlign: 'center', borderBottom: Recordselect == 'Opened' ? '3px solid white' : '' }}>
+                                            <Typography variant="body1" onClick={() => setRecordselect('Opened')} color={Recordselect == 'Opened' ? "#ffffff" : 'black'}>
+                                                Opened
+                                            </Typography>
+                                        </Grid><Grid container alignItems='center' justifyContent='center' xs={4} height="5vh" style={{ padding: 0, margin: 0, backgroundColor: '#8e8b91', textAlign: 'center', borderBottom: Recordselect == 'Rewarded' ? '3px solid white' : '' }} >
+                                            <Typography variant="body1" onClick={() => setRecordselect('Rewarded')} color={Recordselect == 'Rewarded' ? "#ffffff" : 'black'} >
+                                                Rewarded
+                                            </Typography>
+                                        </Grid><Grid container alignItems='center' justifyContent='center' xs={4} height="5vh" style={{ padding: 0, margin: 0, backgroundColor: '#8e8b91', textAlign: 'center', borderBottom: Recordselect == 'Expired' ? '3px solid white' : '' }} >
+                                            <Typography variant="body1" onClick={() => setRecordselect('Expired')} color={Recordselect == 'Expired' ? "#ffffff" : 'black'}>
+                                                Expired
+                                            </Typography>
+                                        </Grid>
                                     </Grid>
                                 </Grid>
                             </Toolbar>
+
                         </AppBar>
                     </Grid>
                     <Toolbar />
+                    <Toolbar />
                 </Box>
             </React.Fragment>
+
             <Grid container
                 direction="row"
                 justifyContent="center"
                 alignItems="center">
-                <Grid item xs={12} height="3vh" style={{ backgroundColor: '#8e8b91', textAlign: 'center' }}>
-                    <Typography variant="body1" color="#ffffff" >
-                    </Typography>
+                <Grid xs={12} container justifyContent="center" alignItems="center" style={{ display: Recordselect == 'Opened' ? "" : 'none' }}>
+                    <Opened />
                 </Grid>
-                <Grid container xs={11.5} height="5vh" style={{ textAlign: 'center' }} justifyContent="center"
-                    alignItems="center">
-                    <Grid xs={3.5} height="5vh" style={{ textAlign: 'center' }}>
-                        <FormControl fullWidth className={classes.formControl} >
-                            <InputLabel id="demo-simple-select-label" className={classes.inputLabel}><Typography color='white'>Rare</Typography></InputLabel>
-                            <Select
-                                className={classes.select}
-                                labelId="demo-simple-select-label"
-                                id="demo-simple-select"
-                                value={Rare}
-                                label="Rare"
-                                onChange={handleRareChange}
-                                inputProps={{
-                                    classes: {
-                                        icon: classes.icon,
-                                        root: classes.root,
-                                        outline: classes.outline,
-                                    },
-                                }}
-                            >
-                                <MenuItem value={'Rare'} style={{ backgroundColor: 'black' }}><Typography color='white'>Rare</Typography></MenuItem>
-                                <MenuItem value={'Unrare'} style={{ backgroundColor: 'black' }}><Typography color='white'>Unrare</Typography></MenuItem>
-                                <MenuItem value={'Newest'} style={{ backgroundColor: 'black' }}><Typography color='white'>Newest</Typography></MenuItem>
-                                <MenuItem value={'Oldest'} style={{ backgroundColor: 'black' }}><Typography color='white'>Oldest</Typography></MenuItem>
-                            </Select>
-                        </FormControl>
-                    </Grid>
-                    <Grid xs={3.5} height="5vh" style={{ textAlign: 'center' }}>
-                        <FormControl fullWidth className={classes.formControl}>
-                            <InputLabel id="demo-simple-select-label" className={classes.inputLabel}><Typography color='white'>Order</Typography></InputLabel>
-                            <Select
-                                className={classes.select}
-                                labelId="demo-simple-select-label"
-                                id="demo-simple-select"
-                                value={order}
-                                label="Order"
-                                onChange={handleOrderChange}
-                                inputProps={{
-                                    classes: {
-                                        icon: classes.icon,
-                                        root: classes.root,
-                                    },
-                                }}
-                            >
-                                <MenuItem value={'High to Low'} style={{ backgroundColor: 'black' }}><Typography color='white'>High to Low</Typography></MenuItem>
-                                <MenuItem value={'Low to High'} style={{ backgroundColor: 'black' }}><Typography color='white'>Low to High</Typography></MenuItem>
-                            </Select>
+                <Grid xs={12} container justifyContent="center" alignItems="center" style={{ display: Recordselect == 'Rewarded' ? "" : 'none' }}>
+                    {TheCollectiondata}
+                </Grid>
+                <Grid xs={12} container justifyContent="center" alignItems="center" style={{ display: Recordselect == 'Expired' ? "" : 'none' }}>
+                    <Expired/>
+                </Grid>
 
-                        </FormControl>
-                    </Grid>
-                    <Grid xs={5} height="5vh" style={{ textAlign: 'center', border: '1px solid gray' }}>
-                        <Link to='/Shop/RedeemRecords' style={{ textDecoration: 'none', color: 'white' }}><Typography variant="caption">Redeem Records </Typography></Link>
-                    </Grid>
-                </Grid>
-                {TheCollectiondata}
             </Grid>
-            <Grid item xs={12} marginTop="0vh" >
+            <Grid item xs={12} marginTop="10vh" >
                 <EndBar />
             </Grid>
         </Box>

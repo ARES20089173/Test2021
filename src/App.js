@@ -36,7 +36,10 @@ import ChallengeModeDetail from './component/Pages/History/ChallengeModeDetail'
 
 import ShopMain from './component/Pages/Shop/ShopMain'
 import Shopcar from './component/Pages/Shop/Shopcar'
-import MyWishList from './component/Pages/Shop/MyWishList'
+import MyWishList from './component/Pages/Shop/Wishlist/MyWishList'
+import ProductDetail from './component/Pages/Shop/Wishlist/ProductDetail'
+import RedeemRecords from './component/Pages/Shop/ReedRecord/RedeemRecords'
+
 import SignIn from './component/Pages/UserlogPage/SignIn'
 import Forgot from './component/Pages/UserlogPage/ForgotPassword'
 import Register from './component/Pages/UserlogPage/Register'
@@ -122,6 +125,8 @@ const render = ({ location, history, match }) => {
           <Route exact path="/Shop"  render={(props) => <ShopMain {...props} />}/>
           <Route exact path="/Shop/Shopcar"  render={(props) => <Shopcar {...props} />}/>
           <Route exact path="/Shop/MyWishList"  render={(props) => <MyWishList {...props} />}/>
+          <Route exact path="/Shop/MyWishList/:id/ProductDetail"  render={(props) => <ProductDetail {...props} />}/>
+          <Route exact path="/Shop/RedeemRecords"  render={(props) => <RedeemRecords {...props} />}/>
 
           <Route exact path="/Wallet" render={(props) => <WalletMain {...props} />}/>  
           <Route exact path="/Wallet/TranscationHistory" render={(props) => <TranscationHistory {...props} />}/>  
