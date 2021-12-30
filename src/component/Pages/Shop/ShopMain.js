@@ -21,11 +21,7 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import Typography from '@mui/material/Typography';
 import 'reactjs-popup/dist/index.css';
 import "../../framework/css/cssModFLooby.css"
-import SilverPuzzle from '../../../svgicon/Componenticon/SilverPuzzle.svg'
-import Code from '../../../svgicon/Componenticon/Code.svg'
-import Codeicon from '../../../svgicon/Componenticon/Codeicon.svg'
-import greenicon from '../../../svgicon/Componenticon/greenicon.svg'
-import Chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
+
 import Box from '@mui/material/Box';
 import backgroundEnd from "../../../reed_bg.svg"
 import NavigationBar from '../../framework/navigationbarforshop';
@@ -59,8 +55,6 @@ export default function MainPage() {
     const { Hotpicdata, Featurecoursedata, Recommenddata } = data;
     const [Popopen, setPopopen] = useState(false);
     const ref = useRef();
-    const openTooltip = () => ref.current.open();
-    const closeTooltip = () => ref.current.close();
     const [cartItems, setCartItems] = useState(() => {
         const localdata = localStorage.getItem('cartItems');
         return localdata ? JSON.parse(localdata) : []
