@@ -8,14 +8,15 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
-import Gicon1 from '../../../svgicon/Shop/Category/Gicon1.svg'
-import Gicon2 from '../../../svgicon/Shop/Category/Gicon2.svg'
-import Gicon3 from '../../../svgicon/Shop/Category/Gicon3.svg'
-import Gicon4 from '../../../svgicon/Shop/Category/Gicon4.svg'
-import Gicon5 from '../../../svgicon/Shop/Category/Gicon5.svg'
-import Gicon6 from '../../../svgicon/Shop/Category/Gicon6.svg'
-import Gicon7 from '../../../svgicon/Shop/Category/Gicon7.svg'
-import Gicon8 from '../../../svgicon/Shop/Category/Gicon8.svg'
+
+import ANIME from '../../../svgicon/Shop/Category/Type/ANIME.svg'
+import BEAUTY from '../../../svgicon/Shop/Category/Type/BEAUTY.svg'
+import COURSE from '../../../svgicon/Shop/Category/Type/COURSE.svg'
+import DIGITAL from '../../../svgicon/Shop/Category/Type/DIGITAL.svg'
+import GADET from '../../../svgicon/Shop/Category/Type/GADET.svg'
+import GOURMENT from '../../../svgicon/Shop/Category/Type/GOURMENT.svg'
+import TOY from '../../../svgicon/Shop/Category/Type/TOY.svg'
+import VIRTUAL from '../../../svgicon/Shop/Category/Type/VIRTUAL.svg'
 import GoGameLobby from '../../../svgicon/Componenticon/GoGameLobby.svg'
 import 'swiper/swiper-bundle.min.css'
 // swiper core styles
@@ -34,14 +35,14 @@ import { Typography } from '@mui/material';
 SwiperCore.use([Pagination, Navigation, EffectCoverflow]);
 
 const data = [
-  { id: 0, src: Gicon1, category: "ANIME"},
-  { id: 1, src: Gicon2, category: "BEAUTY"},
-  { id: 2, src: Gicon3, category: "COURSE" },
-  { id: 3, src: Gicon4, category: "DIGITAL"},
-  { id: 4, src: Gicon5, category: "GOURMENT"},
-  { id: 5, src: Gicon6, category: "HEALTH" },
-  { id: 6, src: Gicon7, category: "GADGET"},
-  { id: 7, src: Gicon8, category: "VIRTUAL"},
+  { id: 0, src: ANIME,link:"/Shop/Category/ANIME",category: "ANIME" },
+  { id: 1, src: BEAUTY,link:"/Shop/Category/BEAUTY", category: "BEAUTY" },
+  { id: 2, src: COURSE ,link:"/Shop/Category/COURSE", category: "COURSE" },
+  { id: 3, src: DIGITAL ,link:"/Shop/Category/DIGITAL" , category: "DIGITAL"},
+  { id: 4, src: GADET,link:"/Shop/Category/GADET", category: "GADET" },
+  { id: 5, src: GOURMENT,link:"/Shop/Category/GOURMENT", category: "GOURMENT"} ,
+  { id: 6, src: TOY,link:"/Shop/Category/TOY" , category: "TOY"},
+  { id: 7, src: VIRTUAL ,link:"/Shop/Category/VIRTUAL" , category: "VIRTUAL"},
 ]
 export default function Gamechooser() {
   const [count, setCount] = useState(0);
@@ -77,7 +78,7 @@ export default function Gamechooser() {
         {data.map((pic) => (
           <SwiperSlide >
            
-          <Typography style={{textAlign:'center'}} color='white' paragraph variant='body2' ><Link to="#">  <img key={pic.id}src={pic.src} alt="img1" />  </Link> </Typography>
+          <Typography style={{textAlign:'center'}} color='white' paragraph variant='body2' ><Link to={pic.link}>  <img key={pic.id}src={pic.src} alt="img1" />  </Link> </Typography>
          
           </SwiperSlide>
         ))}

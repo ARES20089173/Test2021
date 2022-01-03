@@ -26,14 +26,14 @@ export default class Category extends Component {
   render() {
 
     const data = [
-      { id: 0, src: ANIME,link:"#" },
-      { id: 1, src: BEAUTY,link:"#" },
-      { id: 2, src: COURSE ,link:"#" },
-      { id: 3, src: DIGITAL ,link:"#" },
-      { id: 4, src: GADET,link:"#" },
-      { id: 5, src: GOURMENT,link:"#"} ,
-      { id: 6, src: TOY,link:"#" },
-      { id: 7, src: VIRTUAL ,link:"#" },
+      { id: 0, src: ANIME,link:"/Shop/Category/ANIME",category: "ANIME" },
+      { id: 1, src: BEAUTY,link:"/Shop/Category/BEAUTY", category: "BEAUTY" },
+      { id: 2, src: COURSE ,link:"/Shop/Category/COURSE", category: "COURSE" },
+      { id: 3, src: DIGITAL ,link:"/Shop/Category/DIGITAL" , category: "DIGITAL"},
+      { id: 4, src: GADET,link:"/Shop/Category/GADET", category: "GADET" },
+      { id: 5, src: GOURMENT,link:"/Shop/Category/GOURMENT", category: "GOURMENT"} ,
+      { id: 6, src: TOY,link:"/Shop/Category/TOY" , category: "TOY"},
+      { id: 7, src: VIRTUAL ,link:"/Shop/Category/VIRTUAL" , category: "VIRTUAL"},
     ];
     return (
 

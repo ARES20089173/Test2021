@@ -59,9 +59,15 @@ const routeChange = () => {
     let path = `/Shop/Shopcar`;
     history.push(path);
 }
+
 const routeChange2 = () => {
     console.log("textmessage")
     let path = `/Shop`;
+    history.push(path);
+}
+const routeChange3 = (value) => {
+    console.log("textmessage")
+    let path = `/Shop/Category/${value}`;
     history.push(path);
 }
     const ExpandMore = styled((props) => {
@@ -130,14 +136,14 @@ const routeChange2 = () => {
                 </ListItem>
                 <Collapse in={expanded} timeout="auto" unmountOnExit style={{ width: "100%" }} >
                     <Grid container xs={12} alignItems="center" justifyContent='center'>
-                        <Grid container alignItems="center" justifyContent='center' xs={6}><Typography color="red">ANIME</Typography></Grid>
-                        <Grid container alignItems="center" justifyContent='center' xs={6} ><Typography color="pink">BEAUTY</Typography></Grid>
-                        <Grid container alignItems="center" justifyContent='center' xs={6}><Typography color="white">COURSE</Typography></Grid>
-                        <Grid container alignItems="center" justifyContent='center' xs={6} ><Typography color="blue">DIGITAL</Typography></Grid>
-                        <Grid container alignItems="center" justifyContent='center' xs={6}><Typography color="green">GOURMENT</Typography></Grid>
-                        <Grid container alignItems="center" justifyContent='center' xs={6} ><Typography color="yellow">HEALTH</Typography></Grid>
-                        <Grid container alignItems="center" justifyContent='center' xs={6}><Typography color="orange">GADGET</Typography></Grid>
-                        <Grid container alignItems="center" justifyContent='center' xs={6} ><Typography color="purple">VIRTUAL</Typography></Grid>
+                        <Grid container alignItems="center" justifyContent='center' xs={6}><Typography color="red" onClick={()=>routeChange3("ANIME")}>ANIME</Typography></Grid>
+                        <Grid container alignItems="center" justifyContent='center' xs={6} ><Typography color="pink"onClick={()=>routeChange3("BEAUTY")}>BEAUTY</Typography></Grid>
+                        <Grid container alignItems="center" justifyContent='center' xs={6}><Typography color="white"onClick={()=>routeChange3("COURSE")}>COURSE</Typography></Grid>
+                        <Grid container alignItems="center" justifyContent='center' xs={6} ><Typography color="blue"onClick={()=>routeChange3("DIGITAL")}>DIGITAL</Typography></Grid>
+                        <Grid container alignItems="center" justifyContent='center' xs={6}><Typography color="green"onClick={()=>routeChange3("GOURMENT")}>GOURMENT</Typography></Grid>
+                        <Grid container alignItems="center" justifyContent='center' xs={6} ><Typography color="yellow"onClick={()=>routeChange3("TOY")}>TOY</Typography></Grid>
+                        <Grid container alignItems="center" justifyContent='center' xs={6}><Typography color="orange"onClick={()=>routeChange3("GADGET")}>GADGET</Typography></Grid>
+                        <Grid container alignItems="center" justifyContent='center' xs={6} ><Typography color="purple"onClick={()=>routeChange3("VIRTUAL")}>VIRTUAL</Typography></Grid>
                     </Grid>
                 </Collapse>
                 {Toplinkdata.map((text, index) => (

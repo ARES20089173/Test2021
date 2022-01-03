@@ -19,6 +19,8 @@ import { Fade, IconButton } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import back from '../../../../svgicon/Componenticon/Back.svg'
+import Swiper from './Swiper'
+import { useParams } from "react-router";
 import datas from '../data'
 const contentStyle = {
     margin: 'auto',
@@ -28,9 +30,13 @@ const contentStyle = {
     padding: "5px",
     borderRadius: "5%",
 };
-export default function Events() {
-    const { WishListsdata } = datas
-    const [WishListsdatas, setWishListsdata] = useState((WishListsdata))
+export default function MainCategory() {
+
+    const { type } = useParams();
+    const { Maincategorytype } = datas
+    const [typedata, settypedatas] = useState((Maincategorytype[type]))
+
+
     const history = useHistory();
 
     const routeChange = () => {
@@ -45,21 +51,21 @@ export default function Events() {
         setOpen(!open)
     }
     useEffect(() => {
-        setWishListsdata(WishListsdatas)
+        settypedatas(typedata)
     })
     const visiable = (product) => {
 
         if (product.visiable == undefined || product.visiable == true) {
 
-            setWishListsdata(
-                WishListsdatas.map((x) =>
+            settypedatas(
+                typedata.map((x) =>
                 (
                     x.id === product.id ? { ...product, visiable: false } : x
                 ))
             );
         } else {
-            setWishListsdata(
-                WishListsdatas.map((x) =>
+            settypedatas(
+                typedata.map((x) =>
                 (
                     x.id === product.id ? { ...product, visiable: true } : x
                 ))
@@ -67,13 +73,13 @@ export default function Events() {
         }
 
     };
-    const TheWishdata = WishListsdatas.map((data, index) => {
+    const TheWishdata = typedata.map((data, index) => {
 
         return (
 
             <Grid xs={12} onClick={() => visiable(data)} style={{ height: '30vh', marginBottom: '4vh', backgroundImage: `url(${(data.picture[1]) != "s" ? data.picture[1] : data.picture})`, backgroundSize: '100% 100%', backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
 
-                <Grid xs={12} container alignItems='center' justifyContent='center' marginTop="1vh" style={{ visibility: data.visiable != false && 'hidden', height: '28vh', backgroundColor: " rgba(0, 0, 0, 0.35)" }}>
+                <Grid xs={12} container alignItems='center' justifyContent='center' marginTop="1vh" style={{ visibility: data.visiable != false && 'hidden', height: '27vh', backgroundColor: " rgba(0, 0, 0, 0.35)" }}>
                     <Grid xs={12} container alignItems='center' justifyContent='center'  >
                         <Typography color='white' variant='h6' textAlign='center' >
                             {data.description}
@@ -91,7 +97,7 @@ export default function Events() {
                         </IconButton>
                     </Grid>
                     <Grid xs={6} container alignItems='center' justifyContent='center' backgroundColor='gray' zIndex='2' >
-                 
+
                         <IconButton>
                             <FavoriteIcon />
                         </IconButton>
@@ -102,12 +108,12 @@ export default function Events() {
                         {data.head}
                     </Typography>
                 </Grid>
-                {WishListsdata.length == index + 1 ? "" : <hr />}
+                {typedata.length == index + 1 ? "" : <hr />}
             </Grid>
         )
     });
     return (
-          <Box sx={{ flexGrow: 1 }} height="100%" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: '100% 100%', backgroundAttachment: 'fixed' }}>
+        <Box sx={{ flexGrow: 1 }} height="100%" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: '100% 100%', backgroundAttachment: 'fixed' }}>
             <React.Fragment>
                 <Box sx={{ flexGrow: 1 }} >
 
@@ -123,7 +129,7 @@ export default function Events() {
                                     <Grid xs={8}>
                                         <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} style={{
                                             textAlign: 'center'
-                                        }}>     My WishLists
+                                        }}>    {type}
                                         </Typography>
                                     </Grid>
                                     <Grid xs={2}></Grid>
@@ -142,6 +148,7 @@ export default function Events() {
                         </Typography>
                     </Grid>
                 </Grid>
+                <Swiper picture={typedata}/>
                 <Grid container alignItems='center' justifyContent='center' xs={12} >
                     <Popup
                         trigger={<div className="button"> <div ><Typography color="black" onClick={handleClick}>Searchpic </Typography></div></div>}
