@@ -32,7 +32,6 @@ import { Button } from '@mui/material';
 import EndBar from '../../framework/ShopEndBar';
 
 export default function Shopcar() {
-    const [Popopen, setPopopen] = useState(false);
     const [cartItems, setCartItems] = useState(() => {
         const localdata = localStorage.getItem('cartItems');
         return localdata ? JSON.parse(localdata) : []
