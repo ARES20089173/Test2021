@@ -91,13 +91,19 @@ const Toplinkdata = [
     { id: 0, linkName: "PROFILE", link: `/${userdata[0].ReesID}/Profile` },
     { id: 1, linkName: "SETTING", link: `/${userdata[0].ReesID}/Setting` },
     { id: 2, linkName: "EVENTS", link: "/Events" },
-    { id: 3, linkName: "BUY PUZZLES", link: "/" }
+    { id: 3, linkName: "BUY PUZZLES", link: "/Wallet/PuzzlePackage" },
+    { id: 4, linkName: "Reward Status", link: `/MissionMain/RewardStatus` },
+    { id: 5, linkName: "Player Support Guide", link: `/MissionMain/SupportGuide` },
+    { id: 6, linkName: "General FAQ", link: "/MissionMain/FAQ" },
+    { id: 7, linkName: "Privacy Policy", link: "/MissionMain/Policy" },
+    { id: 8, linkName: "Terms of Service", link: "/MissionMain/Service" }
+
 ]
 const Bottomlinkdata = [
     { id: 0, linkName: "About REES", link: "/" },
     { id: 1, linkName: "FAQ", link: "/" },
     { id: 2, linkName: "PRESS", link: "/" },
-    { id: 3, linkName: "LOGOUT", link: "/" },
+    { id: 3, linkName: "LOGOUT", link: "/login" },
 ]
 export default class TournamentLobby extends Component {
     constructor(props) {
@@ -113,35 +119,12 @@ export default class TournamentLobby extends Component {
         this.setState(prevState => ({
             isOpen: !prevState.isOpen
         }));
-        // This binding is necessary to make `this` work in the callback
-        //     this.oneVoneModehandleClick = this.oneVoneModehandleClick.bind(this);
-        //     this.challengerModehandleClick = this.challengerModehandleClick.bind(this);
-        //     this.BattleModehandleClick = this.BattleModehandleClick.bind(this);
-    }
+      }
     handleClick() {
         this.setState(prevState => ({
             isToggleOn: !prevState.isToggleOn
         }));
     }
-    // oneVoneModehandleClick() {
-    //     this.Mode = 0;
-    //     this.setState(prevState => ({
-    //         isToggleOn: !prevState.isToggleOn
-    //     }));
-    // }
-    // challengerModehandleClick() {
-    //     this.Mode = 1;
-    //     this.setState(prevState => ({
-    //         isToggleOn: !prevState.isToggleOn
-    //     }));
-    // }
-    // BattleModehandleClick() {
-    //     this.Mode = 2;
-    //     this.setState(prevState => ({
-    //         isToggleOn: !prevState.isToggleOn
-    //     }));
-    // }
-
     render() {
         const Mode = [
             { id: 0, Modechoose: "oneVoneMode", embedId: "rokGy0huYEA", detail: "Chanllenger MODE is ......." },
@@ -214,14 +197,12 @@ export default class TournamentLobby extends Component {
                                 <AppBar position={this.state.isToggleOn ? 'fixed' : 'relative'} align='center' sx={{ top: 0, bottom: 'auto' }} >
                                     <Toolbar style={{ backgroundColor: '#242634' }} >
                                         <Typography variant="h6" component="div" sx={{}}>
-                                            <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}`}>
-                                                <img src={back} alt='' width="40%" style={{
+                                                <img src={back} alt='' width="40%" onClick={() => this.props.history.goBack()} style={{
                                                     position: 'relative',
                                                     zIndex: 3,
                                                     top: 5,
                                                     left: "-35%",
                                                 }} />
-                                            </Link>
                                         </Typography>
                                         <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} style={{
                                             position: 'relative',
@@ -250,11 +231,11 @@ export default class TournamentLobby extends Component {
                                             open={this.state.isOpen}
                                             onClose={this.openhandleClick}
                                         >
-                                            <Box
-                                                sx={{ width: 280, height: "100%", backgroundColor: "#242634" }}
+                                             <Box
+                                                sx={{ width: 280, height: "100vh", backgroundColor: "#242634", overflow: 'scroll' }}
                                                 role="presentation"
                                             >
-                                                <List sx={{ height: "50%" }}>
+                                                <List >
 
                                                     <IconButton
                                                         size="large"
@@ -290,7 +271,7 @@ export default class TournamentLobby extends Component {
                                                         </ListItemText>
                                                     </ListItem>
                                                 </List>
-                                                <List style={{ top: "10%", textDecoration: 'none', color: 'white' }} sx={{ height: "40%" }} >
+                                                <List style={{ textDecoration: 'none', color: 'white' }}  >
                                                     {Bottomlinkdata.slice(0, 3).map((text, index) => (
                                                         <ListItem button key={text.id}>
                                                             <ListItemText >

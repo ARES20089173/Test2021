@@ -13,6 +13,7 @@ import VIRTUAL from '../../../svgicon/Shop/Category/Type/VIRTUAL.svg'
 import PuzzleChase from '../../../svgicon/EndBaricon/PuzzleChase.svg'
 import Ricon from '../../../svgicon/Componenticon/Ricon.svg'
 import { Typography } from '@mui/material';
+import { useHistory } from 'react-router';
 // const StyledFab2 = styled(Fab)({
 //   position: 'fixed',
 //   zIndex: 3,
@@ -24,9 +25,8 @@ import { Typography } from '@mui/material';
     href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&display=swap" rel="stylesheet"
 />
 // });
-export default class Category extends Component {
-    render() {
-
+export default function EndPage(){
+        const history=useHistory()
         const data = [
             { id: 0, src: ANIME, link: "#", name: "ANIME", color: 'red' },
             { id: 1, src: BEAUTY, link: "#", name: "BEAUTY", color: 'pink' },
@@ -47,6 +47,11 @@ export default class Category extends Component {
             { id: 6, linkName: "Privacy Policy", link: "/MissionMain/Policy" },
             { id: 7, linkName: "Terms of Services", link: "/MissionMain/Service" },
         ]
+        const routeChange3 = (value) => {
+            console.log("textmessage")
+            let path = `/Shop/Category/${value}`;
+            history.push(path);
+        }
         return (
 
             <Grid container xs={12} justifyContent='center' alignItems='center' style={{ backgroundColor: 'gray' }}>
@@ -59,7 +64,7 @@ export default class Category extends Component {
                         <Grid item xs={12} key={pic.id} alignItems="center">
                             <Link to={pic.link} style={{ textDecoration: 'none' }}>
                                 <div style={{ textAlign: 'left' }}>
-                                    <Typography color={pic.color}>{pic.name}<br /></Typography>
+                                    <Typography color={pic.color} onClick={()=>routeChange3(pic.name)}>{pic.name}<br /></Typography>
                                 </div>
                             </Link>
                             {data.length == index + 1 ? <hr /> : ""}
@@ -109,4 +114,3 @@ export default class Category extends Component {
             </Grid>
         );
     }
-}

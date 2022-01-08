@@ -62,11 +62,21 @@ const userdata = [
 ]
 
 const Toplinkdata = [
-    { id: 0, linkName: "Reward Status", link: `/MissionMain/RewardStatus` },
-    { id: 1, linkName: "Player Support Guide", link: `/MissionMain/SupportGuide` },
-    { id: 2, linkName: "General FAQ", link: "/MissionMain/FAQ" },
-    { id: 3, linkName: "Privacy Policy", link: "/MissionMain/Policy" },
-    { id: 4, linkName: "Terms of Service", link: "/MissionMain/Service" }
+    { id: 0, linkName: "PROFILE", link: `/${userdata[0].ReesID}/Profile` },
+    { id: 1, linkName: "SETTING", link: `/${userdata[0].ReesID}/Setting` },
+    { id: 2, linkName: "EVENTS", link: "/Events" },
+    { id: 3, linkName: "BUY PUZZLES", link: "/" },
+    { id: 4, linkName: "Reward Status", link: `/MissionMain/RewardStatus` },
+    { id: 5, linkName: "Player Support Guide", link: `/MissionMain/SupportGuide` },
+    { id: 6, linkName: "General FAQ", link: "/MissionMain/FAQ" },
+    { id: 7, linkName: "Privacy Policy", link: "/MissionMain/Policy" },
+    { id: 8, linkName: "Terms of Service", link: "/MissionMain/Service" }
+]
+const Bottomlinkdata = [
+    { id: 0, linkName: "About REES", link: "/" },
+    { id: 1, linkName: "FAQ", link: "/" },
+    { id: 2, linkName: "PRESS", link: "/" },
+    { id: 3, linkName: "LOGOUT", link: "/login" },
 ]
 export default class TournamentLobby extends Component {
     constructor(props) {
@@ -142,7 +152,7 @@ export default class TournamentLobby extends Component {
             { id: 0, linkName: "Win 5 times in Battlemode", link: `/MissionMain`, icon: Dayilymission, price: 50, quality: "50(+0)", unit: Rmoney, remain: 1, max: 10 },
             { id: 1, linkName: "Download New games", link: `/MissionMain`, icon: Dayilymission, price: 150, quality: "50(+0)", unit: Rmoney, remain: 2, max: 10 },
             { id: 2, linkName: "Daily Play 10 games", link: "/MissionMain", icon: Dayilymission, price: 250, quality: "50(+0)", unit: Rmoney, remain: 1, max: 5 },
-            { id: 1, linkName: "Win 5 times in Battlemode", link: `/MissionMain`, icon:Image, price: 350, quality: "50(+0)", unit: Rmoney, remain: 1, max: 10 },
+            { id: 1, linkName: "Win 5 times in Battlemode", link: `/MissionMain`, icon: Image, price: 350, quality: "50(+0)", unit: Rmoney, remain: 1, max: 10 },
             { id: 2, linkName: "Dialy Sign in", link: `/MissionMain`, icon: Dayilymission, price: 450, quality: "150(+60)", unit: Rmoney, remain: 1, max: 10 },
             { id: 1, linkName: "watch NIKE video", link: `/MissionMain`, icon: Watch, price: 550, quality: "550(+400)", unit: Rmoney, remain: 3, max: 10 },
             { id: 2, linkName: "Play SMC game", link: `/MissionMain`, icon: Game, price: 650, quality: "1750(+550)", unit: Rmoney, remain: 1, max: 10 },
@@ -153,7 +163,7 @@ export default class TournamentLobby extends Component {
                 return <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
                     <ListItem button key={text.id} style={{ backgroundColor: '#242634' }}>
                         <ListItemText  >
-                            <Grid xs={12} container alignItems="center" ><img src={text.icon} alt="" width="16%" />  <Typography variant="caption" style={{marginLeft:'1vh'}}>{text.linkName}</Typography></Grid>
+                            <Grid xs={12} container alignItems="center" ><img src={text.icon} alt="" width="16%" />  <Typography variant="caption" style={{ marginLeft: '1vh' }}>{text.linkName}</Typography></Grid>
                         </ListItemText>
                         <Typography>
                             <Button variant='outlined' style={{ borderColor: 'white', minWidth: '100px', maxWidth: '100px' }}>
@@ -173,7 +183,7 @@ export default class TournamentLobby extends Component {
                 return <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
                     <ListItem button key={text.id} style={{ backgroundColor: '#35394C' }}>
                         <ListItemText  >
-                            <Grid xs={12} container alignItems="center" ><img src={text.icon} alt="" width="16%" />  <Typography variant="caption" style={{marginLeft:'1vh'}}>{text.linkName}</Typography></Grid>
+                            <Grid xs={12} container alignItems="center" ><img src={text.icon} alt="" width="16%" />  <Typography variant="caption" style={{ marginLeft: '1vh' }}>{text.linkName}</Typography></Grid>
                         </ListItemText>
                         <Typography>
                             <Button variant='outlined' style={{ borderColor: 'white', minWidth: '100px', maxWidth: '100px' }}>
@@ -190,29 +200,9 @@ export default class TournamentLobby extends Component {
                 </Link>
             }
         })
-        // if (this.props.match.params.id == 1) {
-        //     oneVoneMode2[] = [
-        //         { id: 1, entryFee: 388, MaxPrize: 300 },
-        //     ]
-        //     challengerMode[1] = [
-        //         { id: 1, entryFee: 188, MaxPrize: 300 },
-        //     ]
-        //     BattleMode[0]=[
-        //         { id: 3, entryFee: 828, MaxPrize: 3550 },
-        //     ]
-        // }
-
-
-
-        // const StyledFab2 = styled(Fab)({
-        //     position: 'fixed',
-        //     bottom: "28%",
-        //     left: "0%",
-
-        // });
         return (
             <Box sx={{ flexGrow: 1 }}>
-                <Grid container height="100%" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: 'auto auto', backgroundAttachment: 'fixed' }}>
+                <Grid container height="100%" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: 'auto auto', backgroundAttachment: 'fixed'   }}>
                     <Grid xs={12}  >
                         <React.Fragment>
                             <Box sx={{ flexGrow: 1, }}>
@@ -247,7 +237,7 @@ export default class TournamentLobby extends Component {
                                             onClose={this.openhandleClick}
                                         >
                                             <Box
-                                                sx={{ width: 280, height: "100vh", backgroundColor: "#242634" }}
+                                                sx={{ width: 280, height: "100vh", backgroundColor: "#242634", overflow: "scroll" }}
                                                 role="presentation"
                                             >
                                                 <List >
@@ -273,6 +263,21 @@ export default class TournamentLobby extends Component {
                                                             </ListItem>
                                                         </Link>
                                                     ))}
+                                                    <List style={{ top: "10%", textDecoration: 'none', color: 'white' }} >
+                                                        {Bottomlinkdata.slice(0, 3).map((text, index) => (
+                                                            <ListItem button key={text.id}>
+                                                                <ListItemText >
+                                                                    <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>{text.linkName}  </Link>
+                                                                </ListItemText>
+                                                            </ListItem>
+                                                        ))}
+                                                        <ListItem >
+                                                            <ListItemText >
+                                                                <Link to={Bottomlinkdata[3].link} style={{ textDecoration: 'none', color: 'white' }}>{Bottomlinkdata[3].linkName}   <img src={Logout} alt="logout" /></Link>
+                                                            </ListItemText>
+                                                        </ListItem>
+                                                    </List>
+                                                    
                                                 </List>
                                             </Box>
                                         </Drawer>

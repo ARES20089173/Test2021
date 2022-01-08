@@ -28,17 +28,19 @@ const Toplinkdata = [
     { id: 0, linkName: "PROFILE", link: `/${userdata[0].ReesID}/Profile` },
     { id: 1, linkName: "SETTING", link: `/${userdata[0].ReesID}/Setting` },
     { id: 2, linkName: "EVENTS", link: "/Events" },
-    { id: 3, linkName: "BUY PUZZLES", link: "/" }
-    // { id: 5, linkName:"PROFILE"},
-    // { id: 6, linkName:"PROFILE"},
-    // { id: 7, linkName:"PROFILE"},
-    // { id: 8, linkName:"PROFILE"},
+    { id: 3, linkName: "BUY PUZZLES", link: "/Wallet/PuzzlePackage" },
+    { id: 4, linkName: "Reward Status", link: `/MissionMain/RewardStatus` },
+    { id: 5, linkName: "Player Support Guide", link: `/MissionMain/SupportGuide` },
+    { id: 6, linkName: "General FAQ", link: "/MissionMain/FAQ" },
+    { id: 7, linkName: "Privacy Policy", link: "/MissionMain/Policy" },
+    { id: 8, linkName: "Terms of Service", link: "/MissionMain/Service" }
+
 ]
 const Bottomlinkdata = [
     { id: 0, linkName: "About REES", link: "/" },
     { id: 1, linkName: "FAQ", link: "/" },
     { id: 2, linkName: "PRESS", link: "/" },
-    { id: 3, linkName: "LOGOUT", link: "/" },
+    { id: 3, linkName: "LOGOUT", link: "/login" }
 ]
 export default function NavigationBar() {
     const [state, setState] = React.useState({
@@ -51,10 +53,10 @@ export default function NavigationBar() {
 
     const list = (anchor) => (
         <Box
-            sx={{ width: 280, height: "100vh", backgroundColor: "#242634" }}
+            sx={{ width: 280, height: '100vh', backgroundColor: "#242634", overflow: "scroll" }}
             role="presentation"
         >
-            <List sx={{ height: "50%" }} >
+            <List  >
                 <IconButton
                     size="small"
                     edge="start"
@@ -90,7 +92,7 @@ export default function NavigationBar() {
                     </ListItemText>
                 </ListItem>
             </List>
-            <List style={{ top: "10%", textDecoration: 'none', color: 'white' }} sx={{ height: "40%" }}  >
+            <List style={{ textDecoration: 'none', color: 'white' }} >
                 {Bottomlinkdata.slice(0, 3).map((text, index) => (
                     <ListItem button key={text.id}>
                         <ListItemText >
@@ -111,26 +113,26 @@ export default function NavigationBar() {
         <React.Fragment>
             <Box sx={{ flexGrow: 1 }} >
                 <AppBar position="fixed" elevation={0} align='center' style={{ backgroundColor: '#242634' }} sx={{ margin: 0 }} >
-                    <Toolbar  style={{textAlign:'center'}}>
+                    <Toolbar style={{ textAlign: 'center' }}>
                         <Grid container justifyContent='center' alignItems="center">
-                        <Typography variant="h6" >
-                            MATCH HISTORY
-                        </Typography>
+                            <Typography variant="h6" >
+                                MATCH HISTORY
+                            </Typography>
 
-                        <img src={Hamburgicon} alt='hamburgericon' style={{
-                            position: 'absolute',
-                            top: 5,
-                            left: 0,
-                            margin: '0 90%',
-                        }} width="10%" height="90%" onClick={toggleDrawer("right", true)} />
+                            <img src={Hamburgicon} alt='hamburgericon' style={{
+                                position: 'absolute',
+                                top: 5,
+                                left: 0,
+                                margin: '0 90%',
+                            }} width="10%" height="90%" onClick={toggleDrawer("right", true)} />
 
-                        <Drawer
-                            anchor={"right"}
-                            open={state["right"]}
-                            onClose={toggleDrawer("right", false)}
-                        >
-                            {list("right")}
-                        </Drawer>
+                            <Drawer
+                                anchor={"right"}
+                                open={state["right"]}
+                                onClose={toggleDrawer("right", false)}
+                            >
+                                {list("right")}
+                            </Drawer>
                         </Grid>
                     </Toolbar>
                 </AppBar>

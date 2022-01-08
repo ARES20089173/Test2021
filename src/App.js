@@ -10,7 +10,7 @@ import EndChallengeMode from './component/Pages/ThreeGameMode/EndChallengeMode';
 import EndOneVoneMode from './component/Pages/ThreeGameMode/EndOneVoneMode';
 import BattleModeJoin from './component/Pages/ThreeGameMode/BattleModeJoin'
 import ChallengerModeGo from './component/Pages/ThreeGameMode/ChallengerModeGo';
-import oneVoneMode from './component/Pages/ThreeGameMode/OneVoneMode';
+import OneVoneMode from './component/Pages/ThreeGameMode/OneVoneMode';
 import Profile  from './component/Pages/HamburgerBar/Profile';
 import Setting from'./component/Pages/HamburgerBar/Setting'
 import Events from'./component/Pages/HamburgerBar/Events'
@@ -46,6 +46,7 @@ import Forgot from './component/Pages/UserlogPage/ForgotPassword'
 import Register from './component/Pages/UserlogPage/Register'
 import RegisterInfo from './component/Pages/UserlogPage/InfoRegister'
 import FiniRegister from './component/Pages/UserlogPage/FiniRegister'
+import LandingPage from './component/Pages/UserlogPage/LandingPage'
 import { RouterConfig, getMatchRouter } from './routerConfig';
 
 import './App.css'
@@ -119,8 +120,8 @@ const render = ({ location, history, match }) => {
           <Route exact path="/multigameChooser" component={MultigameChooser}><MultigameChooser /></Route>
           <Route exact path="/multigameChooser/tournamentLobby/:id"  render={(props) => <TournamentLobby {...props} />} />
           <Route exact path="/multigameChooser/tournamentLobby/:id/:entryid/BattleModeJoin" render={(props) => <BattleModeJoin {...props} />} />
-          <Route exact path="/multigameChooser/tournamentLobby/:id/:entryid/ChallengerModeGo" render={(props) => <ChallengerModeGo{...props} />} />
-          <Route exact path="/multigameChooser/tournamentLobby/:id/:entryid/OneVoneMode"  render={(props) => <oneVoneMode{...props} />} />
+          <Route exact path="/multigameChooser/tournamentLobby/:id/:entryid/ChallengerModeGo" render={(props) => <ChallengerModeGo {...props} />} />
+          <Route exact path="/multigameChooser/tournamentLobby/:id/:entryid/OneVoneMode"  render={(props) => <OneVoneMode {...props} />} />
           <Route exact path="/gametutorial" render={(props) => <GameTutorial {...props} />} />
 
           <Route exact path="/Shop"  render={(props) => <ShopMain {...props} />}/>
@@ -158,6 +159,8 @@ const render = ({ location, history, match }) => {
           <Route exact path="/Register" render={(props) => <Register {...props} />}/>  
           <Route exact path="/Register/Info" render={(props) => <RegisterInfo {...props} />}/>  
           <Route exact path="/Register/Info/Finish" render={(props) => <FiniRegister {...props} />}/>  
+          <Route exact path="/LandingPage" render={(props) => <LandingPage {...props} />}/>  
+       
        
         
           MatchHistory

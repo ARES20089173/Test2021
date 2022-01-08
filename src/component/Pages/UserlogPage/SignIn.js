@@ -22,7 +22,7 @@ const linkdata = [
     { id: 0, link: '/Register' },
     { id: 1, link: '/login/ForgotPW' },
     { id: 2, link: '/Register' },
-    { id: 3, link: '/' },
+    { id: 3, link: '/LandingPage' },
 ]
 
 

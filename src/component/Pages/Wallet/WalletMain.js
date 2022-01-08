@@ -56,14 +56,15 @@ const contentStyle = {
     borderRadius: "5%",
 };
 
-function createData(name, silverpuzle, chasepuzzle) {
-    return { name, silverpuzle, chasepuzzle };
+function createData(name, Type, puzzleBalance) {
+    return { name, Type, puzzleBalance };
 }
 
 const rows = [
-    createData('purchased ', 212, 2120),
-    createData('earned', 317, 1148),
-    createData('bonus', '-', 649),
+    createData('Chase', Chasepuzzle, 212),
+    createData('Silver', SilverPuzzle, 2122),
+    createData('pubg', Chasepuzzle, 3212),
+    createData('3hk', Chasepuzzle, 2512),
 ];
 
 const userdata = { reesid: 123456, name: 'Jay', headicon: face }
@@ -252,16 +253,16 @@ export default function MainPage() {
                                         <Grid item xs={12} height="38vh">
                                             <div className="video-responsive">
                                                 <Grid xs={12} textAlign='center' >
-                                                <RWebShare
-                                                    data={{
-                                                        text: '复制这段code ILOVEREESPUZZLES 进入我们的官网',
-                                                        url: "https://puzzlegame2021.netlify.app/p",
-                                                        title: "Share With your friends!",
-                                                    }}
-                                                    onClick={() => console.log("shared successfully!")}
-                                                >
-                                                    <Button variant='outlined'>ILOVEREESPUZZLES</Button>
-                                                </RWebShare>
+                                                    <RWebShare
+                                                        data={{
+                                                            text: '复制这段code ILOVEREESPUZZLES 进入我们的官网',
+                                                            url: "https://puzzlegame2021.netlify.app/p",
+                                                            title: "Share With your friends!",
+                                                        }}
+                                                        onClick={() => console.log("shared successfully!")}
+                                                    >
+                                                        <Button variant='outlined'>ILOVEREESPUZZLES</Button>
+                                                    </RWebShare>
                                                 </Grid>
                                                 <Typography variant="body2" component="div" color='primary' textAlign='center'>
 
@@ -278,14 +279,13 @@ export default function MainPage() {
                     </List>
 
                 </Grid>
-                <Grid item xs={12} height="25vh" display={values.showPasswordb ? "block" : "none"} style={{}}>
+                <Grid item xs={12} height="25vh" display={values.showPasswordb ? "block" : "none"} style={{}} >
                     <TableContainer >
                         <Table sx={{}} size="small" aria-label="a dense table">
                             <TableHead>
                                 <TableRow>
                                     <TableCell></TableCell>
-                                    <TableCell align="center"><Typography color='white'>Sliverpuzzle</Typography><img src={SilverPuzzle} alt='puzzle' width="40%" /></TableCell>
-                                    <TableCell align="center"><Typography color='white'>Chasepuzzle</Typography><img src={Chasepuzzle} alt='puzzle' width="40%" /></TableCell>
+                                    <TableCell align="center"><Typography color='white'>Balance</Typography></TableCell>
 
                                 </TableRow>
                             </TableHead>
@@ -295,11 +295,15 @@ export default function MainPage() {
                                         key={row.name}
                                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                     >
-                                        <TableCell component="th" scope="row">
-                                            <Typography color='white'> {row.name} </Typography>
+                                        <TableCell component="th" scope="row" >
+
+                                            <img src={row.Type} alt='' width='11%' style={{ float: 'left',marginRight:'5vh' }} />
+                                            <Typography color='white'  >
+                                                {row.name} Puzzle
+                                            </Typography>
+
                                         </TableCell>
-                                        <TableCell align="center"><Typography color='white'>{row.silverpuzle}</Typography></TableCell>
-                                        <TableCell align="center"><Typography color='white'>{row.chasepuzzle}</Typography></TableCell>
+                                        <TableCell align="center"><Typography color='white'>{row.puzzleBalance}</Typography></TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>

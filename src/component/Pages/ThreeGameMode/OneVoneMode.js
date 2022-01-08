@@ -75,9 +75,11 @@ import 'swiper/swiper.min.css'
 import "swiper/components/effect-coverflow/effect-coverflow.less"
 import 'swiper/components/pagination/pagination.min.css'
 import 'swiper/components/navigation/navigation.min.css'
+import { withRouter } from 'react-router-dom';
 
 // import Swiper core and required modules
 import SwiperCore, { Autoplay, EffectFade } from "swiper";
+import OneVoneMode from './EndOneVoneMode';
 SwiperCore.use([Autoplay, EffectFade]);
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
@@ -87,19 +89,6 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
         padding: '0 1px',
     },
 }));
-const StyledFab2 = styled(Fab)({
-    position: 'relative',
-    zIndex: 1,
-    left: "35%",
-    bottom: "3vh"
-
-});
-const StyledFab3 = styled(Fab)({
-    position: 'absolute',
-    zIndex: 1,
-    left: "45%",
-
-});
 const contentStyle = {
     background: '#242632',
     width: "95%",
@@ -115,13 +104,19 @@ const Toplinkdata = [
     { id: 0, linkName: "PROFILE", link: `/${userdata[0].ReesID}/Profile` },
     { id: 1, linkName: "SETTING", link: `/${userdata[0].ReesID}/Setting` },
     { id: 2, linkName: "EVENTS", link: "/Events" },
-    { id: 3, linkName: "BUY PUZZLES", link: "/" }
+    { id: 3, linkName: "BUY PUZZLES", link: "/Wallet/PuzzlePackage" },
+    { id: 4, linkName: "Reward Status", link: `/MissionMain/RewardStatus` },
+    { id: 5, linkName: "Player Support Guide", link: `/MissionMain/SupportGuide` },
+    { id: 6, linkName: "General FAQ", link: "/MissionMain/FAQ" },
+    { id: 7, linkName: "Privacy Policy", link: "/MissionMain/Policy" },
+    { id: 8, linkName: "Terms of Service", link: "/MissionMain/Service" }
+
 ]
 const Bottomlinkdata = [
     { id: 0, linkName: "About REES", link: "/" },
     { id: 1, linkName: "FAQ", link: "/" },
     { id: 2, linkName: "PRESS", link: "/" },
-    { id: 3, linkName: "LOGOUT", link: "/" },
+    { id: 3, linkName: "LOGOUT", link: "/login" },
 ]
 function MyStopwatch() {
     const {
@@ -143,18 +138,14 @@ function MyStopwatch() {
     );
 }
 
-export default class OneVoneModeGo extends Component {
+class OneVoneModeGo extends Component {
 
     constructor(props) {
         super(props);
         this.state = { isToggleOn: true, isOpen: false };
         this.Mode = 1;
-        // This binding is necessary to make `this` work in the callback
         this.handleClick = this.handleClick.bind(this);
         this.openhandleClick = this.openhandleClick.bind(this);
-        //     this.oneVoneModehandleClick = this.oneVoneModehandleClick.bind(this);
-        //     this.challengerModehandleClick = this.challengerModehandleClick.bind(this);
-        //     this.BattleModehandleClick = this.BattleModehandleClick.bind(this);
     }
     handleClick() {
         this.setState(prevState => ({
@@ -173,25 +164,12 @@ export default class OneVoneModeGo extends Component {
         this.setState({ selectedOption });
         console.log(`Option selected:`, selectedOption);
     };
-
-    // oneVoneModehandleClick() {
-    //     this.Mode = 0;
-    //     this.setState(prevState => ({
-    //         isToggleOn: !prevState.isToggleOn
-    //     }));
-    // }
-    // challengerModehandleClick() {
-    //     this.Mode = 1;
-    //     this.setState(prevState => ({
-    //         isToggleOn: !prevState.isToggleOn
-    //     }));
-    // }
-    // BattleModehandleClick() {
-    //     this.Mode = 2;
-    //     this.setState(prevState => ({
-    //         isToggleOn: !prevState.isToggleOn
-    //     }));
-    // }
+    routingFunction = (param) => {
+        this.props.history.push({
+            pathname: `/target-path`,
+            state: param
+        });
+    }
 
     render() {
 
@@ -272,14 +250,12 @@ export default class OneVoneModeGo extends Component {
                                 <AppBar position={'fixed'} align='center' sx={{ top: 0, bottom: 'auto' }}  >
                                     <Toolbar style={{ backgroundColor: '#242634' }} >
                                         <Typography variant="h6" component="div" sx={{}}>
-                                            <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}`}>
-                                                <img src={back} alt='' width="40%" style={{
+                                              <img src={back} alt='' width="40%" onClick={() => this.props.history.goBack()} style={{
                                                     position: 'relative',
                                                     zIndex: 3,
                                                     top: 5,
                                                     left: "-35%",
                                                 }} />
-                                            </Link>
                                         </Typography>
                                         <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} style={{
                                             position: 'relative',
@@ -309,10 +285,10 @@ export default class OneVoneModeGo extends Component {
                                             onClose={this.openhandleClick}
                                         >
                                             <Box
-                                                sx={{ width: 280, height: "100%", backgroundColor: "#242634" }}
+                                                sx={{ width: 280, height: "100vh", backgroundColor: "#242634", overflow: 'scroll' }}
                                                 role="presentation"
                                             >
-                                                <List sx={{ height: "50%" }}>
+                                                <List >
 
                                                     <IconButton
                                                         size="large"
@@ -348,7 +324,7 @@ export default class OneVoneModeGo extends Component {
                                                         </ListItemText>
                                                     </ListItem>
                                                 </List>
-                                                <List style={{ top: "10%", textDecoration: 'none', color: 'white' }} sx={{ height: "40%" }} >
+                                                <List style={{ textDecoration: 'none', color: 'white' }}  >
                                                     {Bottomlinkdata.slice(0, 3).map((text, index) => (
                                                         <ListItem button key={text.id}>
                                                             <ListItemText >
@@ -433,7 +409,7 @@ export default class OneVoneModeGo extends Component {
                                                     modal
                                                     lockScroll
                                                     nested
-                                                  
+
                                                 >
                                                     {close => (
                                                         <div className="modal" >
@@ -570,8 +546,8 @@ export default class OneVoneModeGo extends Component {
                                 >
                                     {close => (
                                         <div className="modal" >
-                                            <button className="close" onClick={close} style={{boder:'5px solid white'}}>
-                                                
+                                            <button className="close" onClick={close} style={{ boder: '5px solid white' }}>
+
                                             </button>
                                             <Grid xs={12} >
                                                 Game Content
@@ -602,3 +578,4 @@ export default class OneVoneModeGo extends Component {
         )
     }
 }
+export default withRouter(OneVoneModeGo)

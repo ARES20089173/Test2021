@@ -6,22 +6,19 @@ import Explore2 from './Explore2';
 import Hotpic from './Hotpic'
 import Featurecourse from './featurecourse';
 import Highlyrecommend from './Highlyrecommend'
+import { useHistory } from "react-router";
 import Treasurehunt from './TREASUREHUNT'
 import Category from './Category'
 import Comment from './Comment'
 import EndPage from './EndPage'
 import Search from './Search'
-import Shopcar from './Shopcar'
-import { useHistory } from "react-router-dom";
+import { makeStyles } from "@material-ui/core/styles";
 import Scrollbanner from '../../framework/scrollbanner'
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import Typography from '@mui/material/Typography';
 import 'reactjs-popup/dist/index.css';
 import "../../framework/css/cssModFLooby.css"
-
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 import Box from '@mui/material/Box';
 import backgroundEnd from "../../../reed_bg.svg"
 import NavigationBar from '../../framework/navigationbarforshop';
@@ -54,14 +51,37 @@ import { useEffect } from 'react';
 export default function MainPage() {
     const { Hotpicdata, Featurecoursedata, Recommenddata } = data;
     const [Popopen, setPopopen] = useState(false);
+    const [Checklanguageopen, setChecklanguageopen] = useState(true);
+
     const ref = useRef();
+
+    const closeTooltip = () => ref.current.close();
     const [cartItems, setCartItems] = useState(() => {
         const localdata = localStorage.getItem('cartItems');
         return localdata ? JSON.parse(localdata) : []
-
     });
+    const [language, setlanguage] = useState(() => {
+        const localdata = localStorage.getItem('language');
+        return localdata ? JSON.parse(localdata) : false
+    });
+    const [checklanguage, setChecklanguage] = useState(() => {
+        const localdata = localStorage.getItem('checklanguage');
+        return localdata ? JSON.parse(localdata) : false
+    });
+    const handleChange = (event) => {
+        setChecklanguage(event.target.value)
+    };
+    const handlelanguageChange = (event) => {
+        setlanguage(checklanguage)
+        closeTooltip()
+    };
     useEffect(() => {
         localStorage.setItem('cartItems', JSON.stringify(cartItems))
+        localStorage.setItem('language', JSON.stringify(language))
+        if (localStorage.getItem('language') != 'false') {
+            setChecklanguageopen(false)
+        }
+
     })
     const onAdd = (product) => {
         setPopopen(true)
@@ -134,6 +154,42 @@ export default function MainPage() {
             )}
         </Popup>
     );
+    const Tooltip2 = () => (
+        <Popup
+            ref={ref}
+            open={Checklanguageopen}
+            modal
+            lockScroll
+            nested
+            closeOnDocumentClick={false}
+        >
+            {close => (
+                <div className="modal">
+                    <button className="close" onClick={close}>
+                    </button>
+                    <Grid xs={12} style={{ overflow: 'scroll' }} height='48vh' container justifyContent='center' alignItems='center'>
+                        <Typography variant='h6' textAlign='center' color='white'>Hi Puzzle Chasers! Ready to shop?</Typography>
+                        <Typography variant='h6' textAlign='center' color='white'>choose your delivery location & payment currency </Typography>
+                        <Select
+                            labelId="demo-simple-select-label"
+                            id="demo-simple-select"
+                            value={checklanguage}
+                            label="checklanguage"
+                            onChange={handleChange}
+                            autoWidth
+                            style={{color:'white'}}
+                        >
+                            <MenuItem value={"HKD"}>Hong Kong SAR (HKD)</MenuItem>
+                            <MenuItem value={"RMB"}>China (RMB)</MenuItem>
+                        </Select>
+                        <Grid xs={12} container justifyContent='center' height='5vh' >
+                            <Grid xs={12} container justifyContent='center' marginTop='1vh' ><Button variant='outlined' onClick={handlelanguageChange} style={{ color: "white", width: '80%' }}>Apply</Button></Grid>
+                        </Grid>
+                    </Grid>
+                </div>
+            )}
+        </Popup>
+    );
     return (
         <Box sx={{ flexGrow: 1 }} height="100%" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: '100% 100%', backgroundAttachment: 'fixed' }}>
             <Grid item xs={12} style={{ borderBottom: '1px solid black', display: open == true ? "none" : '' }} >
@@ -146,7 +202,7 @@ export default function MainPage() {
             >
                 <Grid item xs={11} height="5vh" style={{ marginTop: '1vh' }}>
                     <Scrolltext />
-                    
+
                 </Grid>
                 <Grid item xs={12} height="25vh">
                     <Categorychooser />
@@ -201,6 +257,7 @@ export default function MainPage() {
                     <Explore2 />
                 </Grid>
                 <Tooltip />
+                <Tooltip2 />
                 <Grid container alignItems='center' justifyContent='center' xs={12} height="12vh">
                     <img src={HOTPICK} style={{ width: '90%' }} alt="" />
                 </Grid>

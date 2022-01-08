@@ -294,7 +294,7 @@ export default function RedeemRecords() {
                                         </Typography>
                                     </Grid>
                                     <Grid xs={12} container alignItems='center' justifyContent='center' height="5vh" style={{ padding: 0, margin: 0, backgroundColor: '#8e8b91', textAlign: 'center' }}>
-                                        <Grid xs={4} container alignItems='center' justifyContent='center'height="5vh" style={{ padding: 0, margin: 0, backgroundColor: '#8e8b91', textAlign: 'center', borderBottom: Recordselect == 'Opened' ? '3px solid white' : '' }}>
+                                        <Grid xs={4} container alignItems='center' justifyContent='center' height="5vh" style={{ padding: 0, margin: 0, backgroundColor: '#8e8b91', textAlign: 'center', borderBottom: Recordselect == 'Opened' ? '3px solid white' : '' }}>
                                             <Typography variant="body1" onClick={() => setRecordselect('Opened')} color={Recordselect == 'Opened' ? "#ffffff" : 'black'}>
                                                 Opened
                                             </Typography>
@@ -329,7 +329,7 @@ export default function RedeemRecords() {
                     {TheCollectiondata}
                 </Grid>
                 <Grid xs={12} container justifyContent="center" alignItems="center" style={{ display: Recordselect == 'Expired' ? "" : 'none' }}>
-                    <Expired/>
+                    <Expired />
                 </Grid>
 
             </Grid>

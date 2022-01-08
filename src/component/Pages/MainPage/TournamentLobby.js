@@ -83,14 +83,20 @@ const Toplinkdata = [
     { id: 0, linkName: "PROFILE", link: `/${userdata[0].ReesID}/Profile` },
     { id: 1, linkName: "SETTING", link: `/${userdata[0].ReesID}/Setting` },
     { id: 2, linkName: "EVENTS", link: "/Events" },
-    { id: 3, linkName: "BUY PUZZLES", link: "/" }
-]
-const Bottomlinkdata = [
+    { id: 3, linkName: "BUY PUZZLES", link: "/Wallet/PuzzlePackage" },
+    { id: 4, linkName: "Reward Status", link: `/MissionMain/RewardStatus` },
+    { id: 5, linkName: "Player Support Guide", link: `/MissionMain/SupportGuide` },
+    { id: 6, linkName: "General FAQ", link: "/MissionMain/FAQ" },
+    { id: 7, linkName: "Privacy Policy", link: "/MissionMain/Policy" },
+    { id: 8, linkName: "Terms of Service", link: "/MissionMain/Service" }
+  
+  ]
+  const Bottomlinkdata = [
     { id: 0, linkName: "About REES", link: "/" },
     { id: 1, linkName: "FAQ", link: "/" },
     { id: 2, linkName: "PRESS", link: "/" },
-    { id: 3, linkName: "LOGOUT", link: "/" },
-]
+    { id: 3, linkName: "LOGOUT", link: "/login" },
+  ]
 export default class TournamentLobby extends Component {
     constructor(props) {
         super(props);
@@ -220,10 +226,10 @@ export default class TournamentLobby extends Component {
                                         onClose={this.openhandleClick}
                                     >
                                         <Box
-                                            sx={{ width: 280, height: "100%", backgroundColor: "#242634" }}
+                                            sx={{ width: 280, height: "100vh", backgroundColor: "#242634" ,overflow:'scroll'}}
                                             role="presentation"
                                         >
-                                            <List sx={{ height: "50%" }}>
+                                            <List >
 
                                                 <IconButton
                                                     size="large"
@@ -259,7 +265,7 @@ export default class TournamentLobby extends Component {
                                                     </ListItemText>
                                                 </ListItem>
                                             </List>
-                                            <List style={{ top: "10%", textDecoration: 'none', color: 'white' }} sx={{ height: "40%" }} >
+                                            <List style={{ textDecoration: 'none', color: 'white' }}  >
                                                 {Bottomlinkdata.slice(0, 3).map((text, index) => (
                                                     <ListItem button key={text.id}>
                                                         <ListItemText >

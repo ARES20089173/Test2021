@@ -69,11 +69,11 @@ export default function ForgotPW() {
                         <Grid xs={12} container height="35vh" justifyContent='center' alignItems="center" >
                        
                             <Grid xs={10} container height="10vh" justifyContent='center' alignItems="center" >
-                                <Link to='/login' style={{width:'100%',marginLeft:'20%',textDecoration:'none'}}><Button variant='outlined' style={{ minWidth: '80%', backgroundColor: 'purple', color: 'white', borderColor: 'white' }}>Login</Button></Link>
+                                <Link to='/LandingPage' style={{width:'100%',marginLeft:'20%',textDecoration:'none'}}><Button variant='outlined' style={{ minWidth: '80%', backgroundColor: 'purple', color: 'white', borderColor: 'white' }}>Login</Button></Link>
                             </Grid>
                             <Grid xs={10} container height="10vh" justifyContent='center' alignItems="center" >
                                 
-                            <Link to='/login' style={{textDecoration:'none'}}> <Typography color='white'>Remember Passwrd? Login</Typography></Link>
+                            <Link to='/LandingPage' style={{textDecoration:'none'}}> <Typography color='white'>Remember Passwrd? Login</Typography></Link>
                             </Grid>
                             <Grid xs={10} container height="15vh" justifyContent='center' alignItems="center">
 
