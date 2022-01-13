@@ -9,6 +9,7 @@ import Popup from "reactjs-popup";
 import backgroundEnd from "../../../../reed_bg.svg"
 import Search from '../Search'
 import CssBaseline from '@mui/material/CssBaseline';
+import Searchpic from '../../../../svgicon/Shop/word&button/Search.svg'
 import Fab from '@mui/material/Fab';
 import { useHistory } from "react-router";
 import { styled } from '@mui/material/styles'
@@ -23,12 +24,11 @@ import Swiper from './Swiper'
 import { useParams } from "react-router";
 import datas from '../data'
 const contentStyle = {
-    margin: 'auto',
-    background: '#cfcece',
-    width: "100%",
-    height: "40%",
-    padding: "5px",
+    background: 'white',
+    width: "90%",
+    height: "50%",
     borderRadius: "5%",
+
 };
 export default function MainCategory() {
     const endbartype='Shop'
@@ -151,12 +151,13 @@ export default function MainCategory() {
                 <Swiper picture={typedata}/>
                 <Grid container alignItems='center' justifyContent='center' xs={12} >
                     <Popup
-                        trigger={<div className="button"> <div ><Typography color="black" onClick={handleClick}>Searchpic </Typography></div></div>}
+                        trigger={<img src={Searchpic} alt='' onClick={()=>setOpen(!open)} width="80%" />}
                         modal
                         lockScroll
                         nested
                         closeOnDocumentClick={false}
                         onClose={handleClick}
+                        {...{ contentStyle }}
                     >
                         {close => (
                             <div className="modal">
