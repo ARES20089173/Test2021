@@ -10,7 +10,7 @@ import Fab from '@mui/material/Fab';
 import { styled } from '@mui/material/styles'
 import { Link } from "react-router-dom"
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
-import EndBar from '../../framework/WalletEndbar';
+import EndBar from '../../framework/endbarWithback';
 import back from '../../../svgicon/Componenticon/Back.svg'
 import chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
 import silverpuzzle from '../../../svgicon/Componenticon/SilverPuzzle.svg'
@@ -55,7 +55,7 @@ const styles = {
     }
 };
 function AdNmethod(props) {
-
+    const endbartype='Wallet'
     const [choose, setChoose] = React.useState(1);
     const [Loginname, setLoginname] = React.useState();
     const [Password, setPassword] = React.useState();
@@ -172,7 +172,7 @@ function AdNmethod(props) {
              
             </Grid> 
             <Grid item xs={12} marginTop="0%" >
-                <EndBar />
+            <EndBar endbartype={endbartype}/>
             </Grid>
         </Box>
     );

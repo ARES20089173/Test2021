@@ -16,7 +16,7 @@ import Fab from '@mui/material/Fab';
 import { styled } from '@mui/material/styles'
 import { Link } from "react-router-dom"
 import HomeIcon from '../../../../svgicon/EndBaricon/BackHome.svg';
-import EndBar from '../../../framework/pureEndbar';
+import EndBar from '../../../framework/endbarWithback';
 import back from '../../../../svgicon/Componenticon/Back.svg'
 import ProductDetail from '../../../../svgicon/Shop/word&button/ProductDetail.svg'
 import OnlineANDOffline from '../../../../svgicon/Shop/word&button/OnlineANDOffline.svg'
@@ -85,6 +85,7 @@ const useStyles = makeStyles(theme => ({
 
 }));
 export default function RedeemRecords() {
+    const endbartype='Pure'
     const ref = useRef();
     const { Rewardeddata, ShoppingAddress } = datas
     const [select, setSelect] = React.useState(ShoppingAddress[0].Name);
@@ -334,7 +335,7 @@ export default function RedeemRecords() {
 
             </Grid>
             <Grid item xs={12} marginTop="10vh" >
-                <EndBar />
+                <EndBar endbartype={endbartype}/>
             </Grid>
         </Box>
     )

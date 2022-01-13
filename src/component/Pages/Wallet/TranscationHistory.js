@@ -10,7 +10,7 @@ import Fab from '@mui/material/Fab';
 import { styled } from '@mui/material/styles'
 import { Link } from "react-router-dom"
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
-import EndBar from '../../framework/pureEndbar';
+import EndBar from '../../framework/endbarWithback';
 import back from '../../../svgicon/Componenticon/Back.svg'
 import chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
 import silverpuzzle from '../../../svgicon/Componenticon/SilverPuzzle.svg'
@@ -62,6 +62,7 @@ const data = [{
     ]
 }
 ]
+const endbartype='Pure'
 export default class MessageCenter extends Component {
    
     render() {
@@ -194,7 +195,7 @@ export default class MessageCenter extends Component {
 
                 </Grid>
                 <Grid item xs={12} marginTop="0vh" >
-                    <EndBar />
+                <EndBar endbartype={endbartype}/>
                 </Grid>
             </Box>
         );

@@ -2,7 +2,7 @@ import React, { useState, useEffect ,useRef } from "react";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import EndBar from '../../../framework/ShopEndBar';
+import EndBar from '../../../framework/endbarWithback';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import List from "@mui/material/List";
@@ -40,8 +40,8 @@ const contentStyle = {
     padding: "5px",
     borderRadius: "5%",
 };
-export default function Events() {
-
+export default function ProductDetail() {
+    const endbartype='Shop'
     const { id } = useParams();
     const { WishListsdata,ItemDetail } = datas
     const [WishListsdatas, setWishListsdata] = useState((WishListsdata))
@@ -221,7 +221,8 @@ export default function Events() {
 
 
             <Grid item xs={12} marginTop="15vh" >
-                <EndBar />
+               
+            <EndBar endbartype={endbartype}/>
             </Grid>
         </Box>
     )

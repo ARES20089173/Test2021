@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import EndBar from '../../../framework/ShopEndBar';
+import EndBar from '../../../framework/endbarWithback';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Popup from "reactjs-popup";
@@ -20,14 +20,7 @@ import Visibility from "@mui/icons-material/Visibility";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import back from '../../../../svgicon/Componenticon/Back.svg'
 import datas from '../data'
-const contentStyle = {
-    margin: 'auto',
-    background: '#cfcece',
-    width: "100%",
-    height: "40%",
-    padding: "5px",
-    borderRadius: "5%",
-};
+const endbartype='Shop'
 export default function Events() {
     const { WishListsdata } = datas
     const [WishListsdatas, setWishListsdata] = useState((WishListsdata))
@@ -168,7 +161,8 @@ export default function Events() {
             </Grid>
 
             <Grid item xs={12} marginTop="15vh" >
-                <EndBar />
+   
+            <EndBar endbartype={endbartype}/>
             </Grid>
         </Box>
     )

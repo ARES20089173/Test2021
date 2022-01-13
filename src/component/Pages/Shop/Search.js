@@ -59,6 +59,8 @@ const top100Search = [
   { title: 'ONE PIECE', year: 1994 },
   { title: "IPAD", year: 1993 },
   { title: 'STAYCATION', year: 1994 },
-  { title: "TREATMENT", year: 1993 },
+  { title: "TREATMENT", year: 1993 },,
+  { title: "LEGO", year: 1993 },
+
 
 ];

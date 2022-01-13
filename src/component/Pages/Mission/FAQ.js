@@ -15,7 +15,7 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
-import EndBar from '../../framework/pureEndbar';
+import EndBar from '../../framework/endbarWithback';
 import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUp from "@mui/icons-material/KeyboardArrowUp";
 import { useHistory } from "react-router";
@@ -37,6 +37,7 @@ const Toplinkdata = [
 ]
 
 export default function FAQ() {
+    const endbartype='Pure'
     const history = useHistory();
 
     const routeChange = () => {
@@ -132,8 +133,8 @@ export default function FAQ() {
                 </Grid>
 
                 <Grid item xs={12} marginTop="0vh" >
-                    <EndBar />
-                </Grid>
+                <EndBar endbartype={endbartype}/>
+                  </Grid>
             </Grid>
         </Box >
 

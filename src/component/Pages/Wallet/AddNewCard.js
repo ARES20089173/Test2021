@@ -13,7 +13,7 @@ import { withStyles } from "@material-ui/core/styles";
 import TextField from '@mui/material/TextField';
 import { Link } from "react-router-dom"
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
-import EndBar from '../../framework/WalletEndbar';
+import EndBar from '../../framework/endbarWithback';
 import back from '../../../svgicon/Componenticon/Back.svg'
 import chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
 import silverpuzzle from '../../../svgicon/Componenticon/SilverPuzzle.svg'
@@ -55,7 +55,7 @@ const styles = {
     }
 };
 function AddNewCard(props) {
-
+    const endbartype='Wallet'
     const [CardHolderName, setHolderName] = React.useState();
     const [CardNumber, setCardNumber] = React.useState();
     const [ExpiryDate, setExpiryDate] = React.useState();
@@ -231,7 +231,7 @@ function AddNewCard(props) {
                 </Grid>
             </Grid>
             <Grid item xs={12} marginTop="0%" >
-                <EndBar />
+            <EndBar endbartype={endbartype}/>
             </Grid>
         </Box>
     );

@@ -32,7 +32,10 @@ import { Typography } from '@mui/material';
   href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&display=swap" rel="stylesheet"
 />
 // });
+
+const endbartype='Play'
 export default class MultigameChoose extends Component {
+  
   render() {
 
     const data = [
@@ -77,7 +80,7 @@ export default class MultigameChoose extends Component {
 
             ))}
             <Grid item xs={12} >
-              <EndBar />
+              <EndBar endbartype={endbartype}/>
             </Grid>
 
             <Grid item xs={12} style={{ height: "28vh" }} />

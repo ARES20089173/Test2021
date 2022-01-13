@@ -75,6 +75,7 @@ const userdata = [
     { id: 0, level: 'Lv1', ReesID: 1, nickname: 'Jay' },
 ]
 
+const endbartype='Play'
 const Toplinkdata = [
     { id: 0, linkName: "PROFILE", link: `/${userdata[0].ReesID}/Profile` },
     { id: 1, linkName: "SETTING", link: `/${userdata[0].ReesID}/Setting` },
@@ -545,7 +546,7 @@ export default class TournamentLobby extends Component {
                     </Grid>
 
                     <Grid item xs={12} display={this.state.isToggleOn ? 'block' : 'none'} >
-                        <EndBar />
+                    <EndBar endbartype={endbartype}/>
 
                     </Grid>
                     <Grid container

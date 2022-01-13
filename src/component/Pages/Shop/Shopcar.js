@@ -5,6 +5,7 @@ import Slider from './ShopCartSlider'
 import Search from './Search'
 import { useHistory } from "react-router-dom";
 import Scrollbanner from '../../framework/scrollbanner'
+import Searchpic from '../../../svgicon/Shop/word&button/Search.svg'
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
@@ -31,9 +32,10 @@ import 'reactjs-popup/dist/index.css';
 import Popup from 'reactjs-popup';
 import { useEffect } from 'react';
 import { Button } from '@mui/material';
-import EndBar from '../../framework/ShopEndBar';
+import EndBar from '../../framework/endbarWithback';
 
 export default function Shopcar() {
+    const endbartype='Shop'
     const [cartItems, setCartItems] = useState(() => {
         const localdata = localStorage.getItem('cartItems');
         return localdata ? JSON.parse(localdata) : []
@@ -50,7 +52,7 @@ export default function Shopcar() {
     const contentStyle = {
         background: 'white',
         width: "90%",
-        height: "85%",
+        height: "50%",
         borderRadius: "5%",
     };
     const history = useHistory();
@@ -106,7 +108,7 @@ export default function Shopcar() {
     };
     return (
         <Box sx={{ flexGrow: 1 }} height="100%" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: '100% 100%', backgroundAttachment: 'fixed' }}>
-            <Grid item xs={12} style={{ borderBottom: '1px solid black', display: open == true ? "none" : '' }} >
+            <Grid item xs={12} style={{ borderBottom: '1px solid black'}} >
                 <NavigationBar />
             </Grid>
             <Grid container
@@ -115,14 +117,15 @@ export default function Shopcar() {
                 alignItems="center"
             >
 
-                <Grid container alignItems='center' justifyContent='center' xs={12} height="5vh">
+                <Grid container alignItems='center' justifyContent='center' xs={12} height="8vh" marginTop='2vh'>
                     <Popup
-                        trigger={<div className="button"> <div ><Typography color="white" onClick={handleClick}>Searchpic </Typography></div></div>}
+                        trigger={<img src={Searchpic} alt='' onClick={()=>setOpen(!open)} width="80%" />}
                         modal
                         lockScroll
                         nested
                         closeOnDocumentClick={false}
                         onClose={handleClick}
+                        {...{ contentStyle }}
                     >
                         {close => (
                             <div className="modal">
@@ -201,7 +204,7 @@ export default function Shopcar() {
                 }
             </Grid>
             <Grid item xs={12} marginTop="10vh">
-                <EndBar />
+            <EndBar endbartype={endbartype}/>
             </Grid>
         </Box>
     );

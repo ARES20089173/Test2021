@@ -34,7 +34,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import IconButton from '@mui/material/IconButton';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import EndBar from '../../framework/WalletEndbar';
+import EndBar from '../../framework/endbarWithback';
 import { styled } from '@mui/material/styles';
 import Fab from '@mui/material/Fab';
 import Input from '@mui/material/Input';
@@ -77,6 +77,7 @@ const Toplinkdata = [
 ]
 
 export default function MainPage() {
+    const endbartype='Wallet'
     const [values, setValues] = React.useState({
         password: '',
         showPassworda: true,
@@ -313,7 +314,7 @@ export default function MainPage() {
 
 
                 <Grid item xs={12} marginTop="20vh">
-                    <EndBar />
+                <EndBar endbartype={endbartype}/>
                 </Grid>
             </Grid>
         </Box>

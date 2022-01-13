@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import EndBar from '../../../component/framework/HistoryEndBar';
+import EndBar from '../../../component/framework/endbarWithback';
 import { styled } from "@mui/material/styles";
 import { Link } from 'react-router-dom';
 import "../../framework/css/cssModFLooby.css"
@@ -31,6 +31,7 @@ const data = [
     { id: 11, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '/', Mode: 'Rank', quality: "1750", unit: Rmoney, min: 18, max: 50, year: 23 },
     { id: 12, linkName: "Silver Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "-", slash: '/', Mode: 'Rank', quality: "3750", unit: Rmoney, min: 15, max: 50, year: 23 }]
    
+const endbartype='History'
 export default class TournamentLobby extends Component {
     constructor(props) {
         super(props);
@@ -69,7 +70,7 @@ export default class TournamentLobby extends Component {
                             </Grid>
                         </Grid>
                         <Grid item xs={12} marginTop="10vh" display={this.state.isToggleOn ? 'block' : 'none'}>
-                            <EndBar />
+                        <EndBar endbartype={endbartype}/>
                         </Grid>
                     </Grid>
                 </Grid>

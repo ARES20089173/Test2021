@@ -13,7 +13,6 @@ import { Link } from 'react-router-dom';
 import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
 import Collapse from "@mui/material/Collapse";
 import Popup from 'reactjs-popup';
-import EndBar from '../../framework/ShopEndBar';
 const Tooltip = () => (
     <Popup
         trigger={open => (

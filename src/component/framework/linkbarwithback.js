@@ -19,12 +19,14 @@ import { Link } from "react-router-dom"
 import { useHistory } from 'react-router'
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
-        right: 10,
-        top: '7vh',
+        right: 13,
+        top: '5.5vh',
         border: `1px solid ${theme.palette.background.paper}`,
         padding: '0 1px',
         backgroundColor: "red",
         color:'white'
+      
+        
     },
 }));
 const StyledFab2 = styled(Fab)({
@@ -40,14 +42,15 @@ const MessageNumber = [
     { id: 3, link: "/History", MessageNum: 73 },
     { id: 4, link: "/MissionMain", MessageNum: 100 },
 ]
-export default function LinkbarWithback() {
+export default function LinkbarWithback(props) {
+    const { endbartype } = props;
     const history = useHistory();
     const handleLink = (e) => {
         history.push(MessageNumber[e].link)
     };
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <Link to='/'>
+            <Link to='/' style={{visibility:endbartype=='MainPlay'?'hidden':'visible'}}>
                 <img src={HomeIcon} alt="homeicon" width="15%" style={{
                     position: 'absolute',
                     zIndex: 1,
@@ -63,51 +66,51 @@ export default function LinkbarWithback() {
             >
                 <Grid item xs={2} align='left'>
                     <StyledBadge badgeContent={MessageNumber[0].MessageNum} >
-                        <img src={Player} onClick={() => handleLink(MessageNumber[0].id)} className="App-logo" alt="logo" width="170%" style={{
+                        <img src={Player} onClick={() => handleLink(MessageNumber[0].id)} className="App-logo" alt="logo" width= {endbartype== 'Play'||endbartype=='MainPlay' ? '170%':"120%"} style={{
                             position: 'relative',
                             zIndex: 1,
-                            bottom: "-4.1vh",
-                            right: '3vh'
+                            bottom: endbartype== 'Play'||endbartype=='MainPlay'?"-4.1vh":"-5vh",
+                            right: endbartype== 'Play'||endbartype=='MainPlay'?"3vh":'1vh'
                         }} />
                     </StyledBadge>
                 </Grid>
                 <Grid item xs={2} align='center'>
                     <StyledBadge badgeContent={MessageNumber[1].MessageNum}>
-                        <img src={Shop} onClick={() => handleLink(MessageNumber[1].id)} className="App-logo" alt="logo" width="120%" style={{
+                        <img src={Shop} onClick={() => handleLink(MessageNumber[1].id)} className="App-logo" alt="logo" width= {endbartype== 'Shop'?'170%':"120%"} style={{
                             position: 'relative',
                             zIndex: 1,
-                            bottom: "-5vh",
-                            right: "1vh"
+                            bottom: endbartype== 'Shop'?"-4.1vh":"-5vh",
+                            right: endbartype== 'Shop'?"3vh":'1vh'
                         }} />
                     </StyledBadge>
                 </Grid>
                 <Grid item xs={2} align='center'>
                     <StyledBadge badgeContent={MessageNumber[2].MessageNum} >
-                        <img src={Wallet} onClick={() => handleLink(MessageNumber[2].id)} className="App-logo" alt="logo" width="120%" style={{
+                        <img src={Wallet} onClick={() => handleLink(MessageNumber[2].id)} className="App-logo" alt="logo" width= {endbartype== 'Wallet'?'170%':"120%"} style={{
                             position: 'relative',
                             zIndex: 1,
-                            bottom: "-5vh",
-                            right: "1vh"
+                            bottom: endbartype== 'Wallet'?"-4.1vh":"-5vh",
+                            right: endbartype== 'Wallet'?"3vh":'1vh'
                         }} />
                     </StyledBadge>
                 </Grid>
                 <Grid item xs={2} align='center' >
                     <StyledBadge badgeContent={MessageNumber[3].MessageNum} >
-                        <img src={History} onClick={() => handleLink(MessageNumber[3].id)} className="App-logo" alt="logo" width="120%" style={{
+                        <img src={History} onClick={() => handleLink(MessageNumber[3].id)} className="App-logo" alt="logo" width= {endbartype== 'History'?'170%':"120%"} style={{
                             position: 'relative',
                             zIndex: 1,
-                            bottom: "-5vh",
-                            right: "1vh"
+                            bottom: endbartype== 'History'?"-4.1vh":"-5vh",
+                            right: endbartype== 'History'?"3vh":'1vh'
                         }} />
                     </StyledBadge>
                 </Grid>
                 <Grid item xs={2} align='center' >
                     <StyledBadge badgeContent={MessageNumber[4].MessageNum}>
-                        <img src={Mission} onClick={() => handleLink(MessageNumber[4].id)} className="App-logo" alt="logo" width="120%" style={{
+                        <img src={Mission} onClick={() => handleLink(MessageNumber[4].id)} className="App-logo" alt="logo" width= {endbartype== 'Mission'?'170%':"120%"} style={{
                             position: 'relative',
                             zIndex: 1,
-                            bottom: "-5vh",
-                            right: "1vh"
+                            bottom: endbartype== 'Mission'?"-4.1vh":"-5vh",
+                            right: endbartype== 'Mission'?"3vh":'1vh'
                         }} />
                     </StyledBadge>
                 </Grid>

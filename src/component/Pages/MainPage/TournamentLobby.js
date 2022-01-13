@@ -95,6 +95,7 @@ const Toplinkdata = [
     { id: 0, linkName: "About REES", link: "/" },
     { id: 3, linkName: "LOGOUT", link: "/login" },
   ]
+  const endbartype='Play'
 export default class TournamentLobby extends Component {
     constructor(props) {
         super(props);
@@ -894,7 +895,7 @@ export default class TournamentLobby extends Component {
                 </Grid>
 
                 <Grid container xs={12} style={{ textAlign: 'center' }}>
-                        <EndBar />
+                <EndBar endbartype={endbartype}/>
                     </Grid>
 
 

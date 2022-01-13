@@ -1,7 +1,7 @@
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import EndBar from '../../framework/pureEndbar';
+import EndBar from '../../framework/endbarWithback';
 import { Button } from "@mui/material";
 import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
@@ -54,7 +54,7 @@ const styles = {
     }
 };
 function Profile(props) {
-
+    const endbartype='Pure'
     const history = useHistory();
 
     const routeChange = () => {
@@ -306,7 +306,7 @@ function Profile(props) {
                     <Grid xs={8} container alignItems='center' justifyContent='center' color='white' height="80%" style={{ borderRadius: "25%" }}>
                         <Popup
                             className="content2"
-                            trigger={<Typography color="primary" style={{ color: 'red', backgroundColor: "white" }} >SAVE Profile</Typography>}
+                            trigger={<Button variant='outlined'>SAVE Profile</Button>}
                             modal
                             lockScroll
                             nested
@@ -330,7 +330,7 @@ function Profile(props) {
                 </Grid>
             </Grid>
             <Grid item xs={12} marginTop="0vh" >
-                <EndBar />
+            <EndBar endbartype={endbartype}/>
             </Grid>
         </Box >
 

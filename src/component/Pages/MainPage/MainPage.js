@@ -19,7 +19,7 @@ import Scrolltext from '../../framework/scrolltext';
 import GameLobby from '../../../svgicon/Componenticon/GameLobby.svg'
 import Close from '../../../svgicon/EndBaricon/ClosePopup.svg'
 import { Button } from '@mui/material';
-import EndBar from '../../framework/endbar';
+import EndBar from '../../framework/endbarWithback';
 import { styled } from '@mui/material/styles';
 import Fab from '@mui/material/Fab';
 import ReadMoreIcon from '@mui/icons-material/ReadMore';
@@ -42,9 +42,10 @@ const contentStyle = {
     borderRadius: "5%",
 };
 export default function MainPage() {
+    const endbartype='MainPlay'
 
     return (
-        <Box sx={{ flexGrow: 1 }} height="100%" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: '100% 100%', backgroundAttachment: 'fixed' }}>
+        <Box sx={{ flexGrow: 1 }} height="100%" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: '100% 100%', backgroundAttachment: 'cover' }}>
             <Grid item xs={12}  >
                 <NavigationBar />
             </Grid>
@@ -123,7 +124,7 @@ export default function MainPage() {
                 </Grid>
 
                 <Grid item xs={12} height="30vh">
-                    <EndBar />
+                    <EndBar endbartype={endbartype}/>
                 </Grid>
             </Grid>
         </Box>

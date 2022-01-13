@@ -3,7 +3,7 @@ import AppBar from '@mui/material/AppBar';
 import puzzle from '../../../puzzle.svg'
 import { useParams } from "react-router";
 import Popup from 'reactjs-popup';
-import EndBar from '../../framework/pureEndbar';
+import EndBar from '../../framework/endbarWithback';
 import 'reactjs-popup/dist/index.css';
 import face1 from '../../../face_1.svg'
 import face2 from '../../../face_2.svg'
@@ -54,7 +54,7 @@ const Avatardata = [
 
 ]
 export default function SelectAvatar() {
-
+    const endbartype='Pure'
     const { id } = useParams();
     const [bgSelect, setbgSelect] = React.useState(Avatardata[id].id);
     const handlebgChange = (e) => {
@@ -158,7 +158,7 @@ export default function SelectAvatar() {
                 </Grid>
             </Grid> 
              <Grid item xs={12} marginTop="0vh" >
-                    <EndBar />
+             <EndBar endbartype={endbartype}/>
                 </Grid>
         </Box>
     )

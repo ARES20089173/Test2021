@@ -26,6 +26,7 @@ import face from '../../../svgicon/Headicon/face_1.svg'
 import Scrolltext from '../../framework/scrolltext';
 import Categorychooser from './categorychooser';
 import Gamenowplaylater from '../../../svgicon/Shop/word&button/Gamenowplaylater.svg'
+import Searchpic from '../../../svgicon/Shop/word&button/Search.svg'
 import ShopWithPuzzles from '../../../svgicon/Shop/word&button/ShopWithPuzzles.svg'
 import EarnPuzzleToSaveMore from '../../../svgicon/Shop/word&button/EarnPuzzleToSaveMore.svg'
 import PlayandShopToEarn from '../../../svgicon/Shop/word&button/PlayandShopToEarn.svg'
@@ -42,7 +43,7 @@ import Apply from '../../../svgicon/Shop/word&button/Apply.svg'
 import checkshopcar from '../../../svgicon/Shop/word&button/checkshopcar.svg'
 import continuebuy from '../../../svgicon/Shop/word&button/continuebuy.svg'
 import SlideRangebg from '../../../svgicon/Shop/Picturebackground/SlideRangebg.svg'
-import EndBar from '../../framework/ShopEndBar';
+import EndBar from '../../framework/endbarWithback';
 import data from './data';
 import { styled } from '@mui/material/styles';
 import Fab from '@mui/material/Fab';
@@ -52,6 +53,7 @@ import Popup from 'reactjs-popup';
 import { useEffect } from 'react';
 
 export default function MainPage() {
+    const endbartype = 'Shop'
     const { Hotpicdata, Featurecoursedata, Recommenddata } = data;
     const [Popopen, setPopopen] = useState(false);
     const [Checklanguageopen, setChecklanguageopen] = useState(true);
@@ -120,7 +122,7 @@ export default function MainPage() {
     const contentStyle = {
         background: 'white',
         width: "90%",
-        height: "85%",
+        height: "50%",
         borderRadius: "5%",
     };
     const history = useHistory();
@@ -149,8 +151,8 @@ export default function MainPage() {
                     <Grid xs={12} style={{ overflow: 'scroll' }} height='48vh' >
                         <Typography variant='h6' textAlign='center' color='white'>{cartItems.length} 件商品已添加至購物車</Typography>
                         <Grid xs={12} container justifyContent='center' height='5vh' >
-                            <Grid xs={12} container justifyContent='center'  ><img src={checkshopcar} onClick={routeChange} alt='' width='80%'/></Grid>
-                            <Grid xs={12} container justifyContent='center' marginTop='1vh' ><img src={continuebuy} onClick={close} alt='' width='80%'/></Grid>
+                            <Grid xs={12} container justifyContent='center'  ><img src={checkshopcar} onClick={routeChange} alt='' width='80%' /></Grid>
+                            <Grid xs={12} container justifyContent='center' marginTop='1vh' ><img src={continuebuy} onClick={close} alt='' width='80%' /></Grid>
                         </Grid>
                     </Grid>
                 </div>
@@ -195,7 +197,7 @@ export default function MainPage() {
     );
     return (
         <Box sx={{ flexGrow: 1 }} height="100%" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: '100% 100%', backgroundAttachment: 'fixed' }}>
-            <Grid item xs={12} style={{ borderBottom: '1px solid black', display: open == true ? "none" : '' }} >
+            <Grid item xs={12} style={{ borderBottom: '1px solid black' }} >
                 <NavigationBar />
             </Grid>
             <Grid container
@@ -221,7 +223,7 @@ export default function MainPage() {
                 </Grid>
                 <Grid container alignItems='center' justifyContent='center' xs={12} height="12vh">
                     <Popup
-                        trigger={<div className="button"> <div ><Typography color="white" onClick={handleClick}>Searchpic </Typography></div></div>}
+                        trigger={<img src={Searchpic} alt='' onClick={()=>setOpen(!open)} width="80%" />}
                         modal
                         lockScroll
                         nested
@@ -230,7 +232,7 @@ export default function MainPage() {
                         {...{ contentStyle }}
                     >
                         {close => (
-                            <div className="modal">
+                            <div className="modal" style={{overflow:'scroll', height:"43vh"}}>
                                 <button className="close" onClick={close}>
                                 </button>
                                 <Grid xs={12} >
@@ -307,8 +309,8 @@ export default function MainPage() {
                 </Grid>
 
             </Grid>
-            <Grid item xs={12} marginTop="5vh">
-                <EndBar />
+            <Grid item xs={12} marginTop="5vh" >
+                <EndBar endbartype={endbartype} />
             </Grid>
 
         </Box>

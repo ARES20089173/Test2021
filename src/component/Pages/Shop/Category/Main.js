@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import EndBar from '../../../framework/ShopEndBar';
+import EndBar from '../../../framework/endbarWithback';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Popup from "reactjs-popup";
@@ -31,7 +31,7 @@ const contentStyle = {
     borderRadius: "5%",
 };
 export default function MainCategory() {
-
+    const endbartype='Shop'
     const { type } = useParams();
     const { Maincategorytype } = datas
     const [typedata, settypedatas] = useState((Maincategorytype[type]))
@@ -175,7 +175,8 @@ export default function MainCategory() {
             </Grid>
 
             <Grid item xs={12} marginTop="15vh" >
-                <EndBar />
+                
+            <EndBar endbartype={endbartype}/>
             </Grid>
         </Box>
     )

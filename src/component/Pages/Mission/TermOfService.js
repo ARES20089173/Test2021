@@ -11,7 +11,7 @@ import { Link } from "react-router-dom"
 import back from '../../../svgicon/Componenticon/Back.svg'
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
 import { useHistory } from "react-router";
-import EndBar from '../../framework/pureEndbar';
+import EndBar from '../../framework/endbarWithback';
 const StyledFab = styled(Fab)({
     position: 'fixed',
     zIndex: 3,
@@ -22,7 +22,7 @@ const StyledFab = styled(Fab)({
 
 export default function Service() {
     const history = useHistory();
-
+    const endbartype='Pure'
     const routeChange = () => {
         history.goBack()
     }
@@ -85,7 +85,8 @@ export default function Service() {
                 </Grid>
 
                 <Grid item xs={12} marginTop="0vh" >
-                    <EndBar />
+                <EndBar endbartype={endbartype}/>
+                
                 </Grid>
             </Grid>
         </Box >

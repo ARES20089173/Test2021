@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import EndBar from '../../../component/framework/MissionEndbar';
+import EndBar from '../../../component/framework/endbarWithback';
 import { styled } from "@mui/material/styles";
 import { Link } from 'react-router-dom';
 import "../../framework/css/cssModFLooby.css"
@@ -32,30 +32,7 @@ import Dayilymission from '../../../svgicon/Missionicon/Dailymission.svg'
 import Game from '../../../svgicon/Missionicon/Game.svg'
 import Image from '../../../svgicon/Missionicon/Image.svg'
 import Watch from '../../../svgicon/Missionicon/Watch.svg'
-import silverpuzzle from '../../../svgicon/Componenticon/SilverPuzzle.svg'
-const contentStyle = {
-    background: '#cfcece',
-    width: "95%",
-    height: "95%",
-    borderRadius: "5%",
-};
-const StyledFab2 = styled(Fab)({
-    position: 'relative',
-    zIndex: 0,
-    left: "0%",
-    bottom: "0"
 
-});
-const ExpandMore = styled((props) => {
-    const { expand, ...other } = props;
-    return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-    transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
-    marginLeft: "auto",
-    transition: theme.transitions.create("transform", {
-        duration: theme.transitions.duration.shortest
-    })
-}));
 
 const userdata = [
     { id: 0, level: 'Lv1', ReesID: 1, nickname: 'Jay' },
@@ -76,6 +53,7 @@ const Bottomlinkdata = [
     { id: 0, linkName: "About REES", link: "/" },
     { id: 3, linkName: "LOGOUT", link: "/login" },
 ]
+const endbartype='Mission'
 export default class TournamentLobby extends Component {
     constructor(props) {
         super(props);
@@ -276,7 +254,7 @@ export default class TournamentLobby extends Component {
                             {data2}
                         </Grid>
                         <Grid item xs={12} marginTop="10vh" display={this.state.isToggleOn ? 'block' : 'none'}>
-                            <EndBar />
+                        <EndBar endbartype={endbartype}/>
                         </Grid>
                     </Grid>
                 </Grid>

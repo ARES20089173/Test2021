@@ -1,15 +1,16 @@
 import React from "react";
 import Box from '@mui/material/Box';
-import backgroundEnd from "../../../reed_bg.svg"
+import backgroundEnd from "../../../svgicon/Landingicon/LandingBg.svg"
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import 'react-phone-number-input/style.css'
 import 'reactjs-popup/dist/index.css';
-import Player from '../../../svgicon/EndBaricon/PlayerLink.svg'
-import Shop from '../../../svgicon/EndBaricon/ShopLink.svg'
+import Player from '../../../svgicon/Landingicon/PlayerLink.svg'
+import Shop from '../../../svgicon/Landingicon/ShopLink.svg'
+import PuzzleChase from '../../../svgicon/EndBaricon/PuzzleChase.svg'
 import { useHistory } from "react-router";
 export default function LandingPage() {
-    const history= useHistory();
+    const history = useHistory();
     const routeChange = (value) => {
         console.log("textmessage")
         let path = `/${value}`;
@@ -27,17 +28,24 @@ export default function LandingPage() {
                         direction="row"
                         justifyContent='center'
                         alignItems="center"
-                        height="50vh"
+                        height="45vh"
                         xs={6}
                     >
-                        <img src={Shop} alt=''  onClick={()=>routeChange("Shop")} />
+                        <img src={Shop} alt='' onClick={() => routeChange("Shop")} width='50%' />
                     </Grid>
                 </Grid>
-
                 <Grid container
-                                          justifyContent='center'
-                                          alignItems="right"
-                    height="50vh"
+                    justifyContent='center'
+                    alignItems="right"
+                    height="10vh"
+                    xs={12}
+                >
+                    <img src={PuzzleChase} className="App-logo" alt="logo" width="30%" />
+                </Grid>
+                <Grid container
+                    justifyContent='center'
+                    alignItems="right"
+                    height="45vh"
                     xs={6}
                 >
                     <Grid container
@@ -45,9 +53,9 @@ export default function LandingPage() {
                         justifyContent='center'
                         alignItems="center"
                         xs={6}
-                        
+
                     >
-                        <img src={Player} alt='' onClick={()=>routeChange("")} />
+                        <img src={Player} alt='' onClick={() => routeChange("")} width='100%' />
                     </Grid>
                 </Grid>
                 <Grid container xs={6} />

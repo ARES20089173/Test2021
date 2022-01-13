@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import EndBar from '../../../component/framework/HistoryEndBar';
+import EndBar from '../../../component/framework/endbarWithback';
 import { styled } from "@mui/material/styles";
 import { Link } from 'react-router-dom';
 import "../../framework/css/cssModFLooby.css"
@@ -36,25 +36,7 @@ import Gicon6 from '../../../svgicon/GameIcon/Gicon6.svg'
 import Gicon7 from '../../../svgicon/GameIcon/Gicon7.svg'
 import Gicon8 from '../../../svgicon/GameIcon/Gicon8.svg'
 import Gicon9 from '../../../svgicon/GameIcon/Gicon9.svg'
-import Gicon10 from '../../../svgicon/GameIcon/Gicon10.svg'
-import Gicon11 from '../../../svgicon/GameIcon/Gicon11.svg'
-import Gicon12 from '../../../svgicon/GameIcon/Gicon12.svg'
-import Gicon13 from '../../../svgicon/GameIcon/Gicon13.svg'
-import Gicon14 from '../../../svgicon/GameIcon/Gicon14.svg'
-import Gicon15 from '../../../svgicon/GameIcon/Gicon15.svg'
-const contentStyle = {
-    background: '#cfcece',
-    width: "95%",
-    height: "95%",
-    borderRadius: "5%",
-};
-const StyledFab2 = styled(Fab)({
-    position: 'relative',
-    zIndex: 0,
-    left: "0%",
-    bottom: "0"
-
-});
+const endbartype='History'
 export default class TournamentLobby extends Component {
     constructor(props) {
         super(props);
@@ -141,7 +123,7 @@ export default class TournamentLobby extends Component {
                             </Grid>
                         </Grid>
                         <Grid item xs={12} marginTop="10vh" display={this.state.isToggleOn ? 'block' : 'none'}>
-                            <EndBar />
+                        <EndBar endbartype={endbartype}/>
                         </Grid>
                     </Grid>
                 </Grid>

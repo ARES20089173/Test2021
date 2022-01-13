@@ -43,15 +43,15 @@ const contentStyle = {
 };
 
 const Amout = [{ Chasepuzzle: 18.6, SilverPuzzle: 20.5, money: 1000,notification:30 }]
-export default function BottomAppBar() {
+export default function BottomAppBar(props) {
+    const { endbartype } = props;
     const history = useHistory();
     const handleClick = () => history.push('/wallet/PuzzlePackage');
     return (
         <React.Fragment>
 
             <Box sx={{ flexGrow: 1 }}>
-                <CssBaseline />
-                <AppBar color="transparent" elevation={0} position="fixed" align='center' sx={{ top: 'auto', bottom: 0 ,zIndex:0}} style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: "fixed", backgroundRepeat: 'no-repeat', backgroundAttachment: 'cover', heigth: "15vh" }}>
+                <AppBar color="transparent" elevation={0} position="fixed" align='center' sx={{ top: 'auto', bottom: 0 }} style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: "fixed", backgroundRepeat: 'no-repeat', backgroundAttachment: 'cover', heigth: "15vh" }}>
                     <Grid
                         container
                         direction="row"
@@ -60,8 +60,8 @@ export default function BottomAppBar() {
 
                     >
                         <Grid item xs={12} align='center' >
-                            <Toolbar variant="dense">
-                                <LinkBarWithback />
+                            <Toolbar variant="dense" style={{display:endbartype=='Pure'?'none':'block'}}>
+                                <LinkBarWithback endbartype={endbartype}/>
                             </Toolbar>
                             <div style={{ backgroundColor: "#242634", borderTop: "1px solid #8e8b91" }}>
                                 <Toolbar variant="dense">
@@ -108,7 +108,7 @@ export default function BottomAppBar() {
 
                 </AppBar>
                 <Toolbar sx={{
-                    height: "20vh",
+                    height:endbartype=='Pure'?"10vh": "20vh",
                 }} />
             </Box>
         </React.Fragment>

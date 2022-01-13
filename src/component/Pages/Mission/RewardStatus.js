@@ -7,7 +7,7 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import Fab from '@mui/material/Fab';
-import EndBar from '../../framework/pureEndbar';
+import EndBar from '../../framework/endbarWithback';
 import { styled } from '@mui/material/styles'
 import { Link } from "react-router-dom"
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg'
@@ -53,7 +53,7 @@ const linkdata = [
 ]
 export default function RewardStatus() {
     const history = useHistory();
-
+    const endbartype='Pure'
     const routeChange = () => {
         history.goBack()
     }

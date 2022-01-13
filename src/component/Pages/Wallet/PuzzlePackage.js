@@ -17,7 +17,7 @@ import ListItemText from "@mui/material/ListItemText";
 import { styled } from '@mui/material/styles'
 import { Link } from "react-router-dom"
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
-import EndBar from '../../framework/pureEndbar';
+import EndBar from '../../framework/endbarWithback';
 import back from '../../../svgicon/Componenticon/Back.svg'
 import { useHistory } from 'react-router';
 import chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
@@ -76,7 +76,7 @@ const Bottomlinkdata = [
 
 export default function PuzzlePackage() {
     const history = useHistory();
-
+    const endbartype='Pure'
     const routeChange = () => {
         history.goBack()
     }
@@ -234,7 +234,7 @@ export default function PuzzlePackage() {
                 </Grid>
             </Grid>
             <Grid item xs={12} marginTop="0vh" >
-                <EndBar />
+            <EndBar endbartype={endbartype}/>
             </Grid>
         </Box>
     );

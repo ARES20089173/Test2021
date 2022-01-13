@@ -136,6 +136,7 @@ function MyStopwatch() {
     );
 }
 
+const endbartype='Play'
 class OneVoneModeGo extends Component {
 
     constructor(props) {
@@ -558,7 +559,7 @@ class OneVoneModeGo extends Component {
                     </Grid>
 
                     <Grid item xs={12} display={this.state.isToggleOn ? 'block' : 'none'} >
-                        <EndBar />
+                    <EndBar endbartype={endbartype}/>
                     </Grid>
                     <Grid item xs={12} height="30vh" display={this.state.isToggleOn ? 'block' : 'none'} >
 

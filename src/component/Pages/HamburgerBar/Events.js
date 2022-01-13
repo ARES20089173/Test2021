@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import EndBar from '../../framework/pureEndbar';
+import EndBar from '../../framework/endbarWithback';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -16,34 +16,7 @@ import Event1 from '../../../svgicon/Carousel/pic1.svg'
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
 import back from '../../../svgicon/Componenticon/Back.svg'
 import powerbyR from '../../../svgicon/PowerBy/PowerByR.svg'
-const contentStyle = {
-    margin: 'auto',
-    background: '#cfcece',
-    width: "100%",
-    height: "40%",
-    padding: "5px",
-    borderRadius: "5%",
-};
-const StyledFab = styled(Fab)({
-    position: 'fixed',
-    zIndex: 3,
-    top: "75vh",
-    left: 0,
 
-});
-const StyledFab2 = styled(Fab)({
-    position: 'relative',
-    zIndex: 3,
-    top: 0,
-    left: "0%",
-
-
-});
-
-
-const userdata = [
-    { id: 0, level: 'Lv1', ReesID: 1 },
-]
 const Event = [
     { id: 0, img: Event1, name: "PAID TO PLAY&EARN/CHALLENGER MODE", detail: "CHALLENGER MODE is .......xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" },
     { id: 1, img: Event1, name: "PAID TO PLAY&EARN/Battle MODE", detail: "Battle MODE is ......." },
@@ -51,8 +24,8 @@ const Event = [
     { id: 3, img: Event1, name: "PAID TO PLAY&EARN/1 ON 1 MODE", detail: "1 ON 1 MODE is ......." },
 ];
 export default function Events() {
+    const endbartype='Pure'
     const history = useHistory();
-
     const routeChange = () => {
         history.goBack()
     }
@@ -114,7 +87,7 @@ export default function Events() {
                 </Grid>
 
                 <Grid item xs={12} marginTop="0vh" >
-                    <EndBar />
+                <EndBar endbartype={endbartype}/>
                 </Grid>
             </Box>
         )

@@ -6,42 +6,17 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import Fab from '@mui/material/Fab';
-
-import EndBar from '../../framework/pureEndbar';
+import EndBar from '../../framework/endbarWithback';
 import { styled } from '@mui/material/styles'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom"
 import Switch from '@mui/material/Switch';
-
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
 import back from '../../../svgicon/Componenticon/Back.svg'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
-const contentStyle = {
-    margin: 'auto',
-    background: '#cfcece',
-    width: "100%",
-    height: "40%",
-    padding: "5px",
-    borderRadius: "5%",
-};
-const StyledFab = styled(Fab)({
-    position: 'fixed',
-    zIndex: 3,
-    top: "75vh",
-    left: 0,
-
-});
-const StyledFab2 = styled(Fab)({
-    position: 'relative',
-    zIndex: 3,
-    top: 0,
-    left: "0%",
-
-
-});
 const linkdata = [
     { id: 0, linkName: "Language selection", link: "/" },
     { id: 1, linkName: "Password Setting", link: "/" },
@@ -51,9 +26,8 @@ const linkdata = [
     { id: 5, linkName: "", link: "" },
     { id: 6, linkName: "", link: "" },
     { id: 7, linkName: "", link: "" },
-
-
 ]
+const endbartype='Pure'
 export default class Setting extends Component {
     render() {
         return (
@@ -116,7 +90,7 @@ export default class Setting extends Component {
                     ))}
                 </List>
                 <Grid item xs={12} marginTop="0vh" >
-                    <EndBar />
+                <EndBar endbartype={endbartype}/>
                 </Grid>
             </Box>
         )

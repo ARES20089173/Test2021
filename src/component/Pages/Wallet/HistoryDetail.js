@@ -11,7 +11,7 @@ import Fab from '@mui/material/Fab';
 import { styled } from '@mui/material/styles'
 import { Link } from "react-router-dom"
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
-import EndBar from '../../framework/pureEndbar';
+import EndBar from '../../framework/endbarWithback';
 import back from '../../../svgicon/Componenticon/Back.svg'
 import chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
 import silverpuzzle from '../../../svgicon/Componenticon/SilverPuzzle.svg'
@@ -43,7 +43,7 @@ const data = [{
 }
 ]
 export default function Detail() {
-
+    const endbartype='Pure'
     const { id } = useParams();
     const setType = data[0].Historyed[id].setType
     const ReesID = data[0].Historyed[id].ReesID
@@ -249,7 +249,7 @@ export default function Detail() {
                 </Grid>
             </Grid>
             <Grid item xs={12} marginTop={setType == "CHASE PUZZLES RELOADE" ? "0vh" : '8vh'} >
-                <EndBar />
+            <EndBar endbartype={endbartype}/>
             </Grid>
         </Box>
     );

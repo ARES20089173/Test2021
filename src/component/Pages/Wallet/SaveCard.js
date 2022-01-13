@@ -9,7 +9,7 @@ import Fab from '@mui/material/Fab';
 import { styled } from '@mui/material/styles'
 import { Link } from "react-router-dom"
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
-import EndBar from '../../framework/WalletEndbar';
+import EndBar from '../../framework/endbarWithback';
 import back from '../../../svgicon/Componenticon/Back.svg'
 import chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
 import savecardbg from '../../../svgicon/Background/SaveCard.svg'
@@ -50,7 +50,7 @@ const data = [
 ]
 export default function Savecard() {
     const [count, setCount] = useState(0);
-
+    const endbartype='Wallet'
     const [Default, setDefault] = useState();
     return (
 
@@ -175,7 +175,7 @@ export default function Savecard() {
                 </Grid>
             </Grid>
             <Grid item xs={12} marginTop="0vh" >
-                <EndBar />
+            <EndBar endbartype={endbartype}/>
             </Grid>
         </Box>
     );
