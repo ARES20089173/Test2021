@@ -38,6 +38,9 @@ import highlyrecommend from '../../../svgicon/Shop/word&button/highlyrecommend.s
 import Threeperson from '../../../svgicon/Shop/Picturebackground/Threeperson.svg'
 import TREASUREHUNT from '../../../svgicon/Shop/word&button/TREASUREHUNT.svg'
 import CATEGORY from '../../../svgicon/Shop/word&button/CATEGORY.svg'
+import Apply from '../../../svgicon/Shop/word&button/Apply.svg'
+import checkshopcar from '../../../svgicon/Shop/word&button/checkshopcar.svg'
+import continuebuy from '../../../svgicon/Shop/word&button/continuebuy.svg'
 import SlideRangebg from '../../../svgicon/Shop/Picturebackground/SlideRangebg.svg'
 import EndBar from '../../framework/ShopEndBar';
 import data from './data';
@@ -146,8 +149,8 @@ export default function MainPage() {
                     <Grid xs={12} style={{ overflow: 'scroll' }} height='48vh' >
                         <Typography variant='h6' textAlign='center' color='white'>{cartItems.length} 件商品已添加至購物車</Typography>
                         <Grid xs={12} container justifyContent='center' height='5vh' >
-                            <Grid xs={12} container justifyContent='center'  ><Button variant='outlined' style={{ color: "white", width: '80%' }} onClick={routeChange}>查看購物車</Button></Grid>
-                            <Grid xs={12} container justifyContent='center' marginTop='1vh' ><Button variant='outlined' onClick={close} style={{ color: "white", width: '80%' }}>繼續購物</Button></Grid>
+                            <Grid xs={12} container justifyContent='center'  ><img src={checkshopcar} onClick={routeChange} alt='' width='80%'/></Grid>
+                            <Grid xs={12} container justifyContent='center' marginTop='1vh' ><img src={continuebuy} onClick={close} alt='' width='80%'/></Grid>
                         </Grid>
                     </Grid>
                 </div>
@@ -177,13 +180,13 @@ export default function MainPage() {
                             label="checklanguage"
                             onChange={handleChange}
                             autoWidth
-                            style={{color:'white'}}
+                            style={{ color: 'white' }}
                         >
                             <MenuItem value={"HKD"}>Hong Kong SAR (HKD)</MenuItem>
                             <MenuItem value={"RMB"}>China (RMB)</MenuItem>
                         </Select>
-                        <Grid xs={12} container justifyContent='center' height='5vh' >
-                            <Grid xs={12} container justifyContent='center' marginTop='1vh' ><Button variant='outlined' onClick={handlelanguageChange} style={{ color: "white", width: '80%' }}>Apply</Button></Grid>
+                        <Grid xs={12} container justifyContent='center' height='10vh' >
+                            <img src={Apply} alt='' onClick={handlelanguageChange} width='50%' />
                         </Grid>
                     </Grid>
                 </div>

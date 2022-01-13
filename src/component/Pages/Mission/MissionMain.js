@@ -74,8 +74,6 @@ const Toplinkdata = [
 ]
 const Bottomlinkdata = [
     { id: 0, linkName: "About REES", link: "/" },
-    { id: 1, linkName: "FAQ", link: "/" },
-    { id: 2, linkName: "PRESS", link: "/" },
     { id: 3, linkName: "LOGOUT", link: "/login" },
 ]
 export default class TournamentLobby extends Component {
@@ -115,37 +113,6 @@ export default class TournamentLobby extends Component {
             expanded3: !prevState.expanded3
         }))
     };
-
-
-    //     // This binding is necessary to make `this` work in the callback
-    //     this.handleClick = this.handleClick.bind(this);
-    //     this.oneVoneModehandleClick = this.oneVoneModehandleClick.bind(this);
-    //     this.challengerModehandleClick = this.challengerModehandleClick.bind(this);
-    //     this.BattleModehandleClick = this.BattleModehandleClick.bind(this);
-    // }
-    // handleClick() {
-    //     this.setState(prevState => ({
-    //         isToggleOn: !prevState.isToggleOn
-    //     }));
-    // }
-    // oneVoneModehandleClick() {
-    //     this.Mode = 0;
-    //     this.setState(prevState => ({
-    //         isToggleOn: !prevState.isToggleOn
-    //     }));
-    // }
-    // challengerModehandleClick() {
-    //     this.Mode = 1;
-    //     this.setState(prevState => ({
-    //         isToggleOn: !prevState.isToggleOn
-    //     }));
-    // }
-    // BattleModehandleClick() {
-    //     this.Mode = 2;
-    //     this.setState(prevState => ({
-    //         isToggleOn: !prevState.isToggleOn
-    //     }));
-    // }
 
     render() {
         const data = [
@@ -202,7 +169,7 @@ export default class TournamentLobby extends Component {
         })
         return (
             <Box sx={{ flexGrow: 1 }}>
-                <Grid container height="100%" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: 'auto auto', backgroundAttachment: 'fixed'   }}>
+                <Grid container height="100%" style={{ backgroundImage: `url(${backgroundEnd})`, backgroundSize: 'auto auto', backgroundAttachment: 'fixed' }}>
                     <Grid xs={12}  >
                         <React.Fragment>
                             <Box sx={{ flexGrow: 1, }}>
@@ -223,11 +190,11 @@ export default class TournamentLobby extends Component {
 
                                             onClick={this.openhandleClick}
                                         >
-                                            <img src={Hamburgicon} alt="" width="110%" style={{
+                                            <img src={Hamburgicon} alt="" width="150%" style={{
                                                 position: 'absolute',
 
                                                 left: 0,
-                                                margin: '0 60%',
+                                                margin: '0 10%',
                                             }} />
                                         </IconButton>
                                         {/* drawer */}
@@ -237,7 +204,7 @@ export default class TournamentLobby extends Component {
                                             onClose={this.openhandleClick}
                                         >
                                             <Box
-                                                sx={{ width: 280, height: "100vh", backgroundColor: "#242634", overflow: "scroll" }}
+                                                sx={{ width: 280, height: "100%", backgroundColor: "#242634", overflow: "scroll" }}
                                                 role="presentation"
                                             >
                                                 <List >
@@ -251,7 +218,6 @@ export default class TournamentLobby extends Component {
                                                     >
                                                         <img src={Close} alt='hamburgericon' width='40%' style={{ position: 'relative', left: 60 }} />
                                                     </IconButton>
-                                                    <ListItemText style={{ textAlign: "center" }}  >  <Grid container justifyContent='center' alignItems="center"><Typography color='white'>Mission to earn Puzzles</Typography><img src={puzzle} /></Grid></ListItemText>
 
                                                     {Toplinkdata.map((text, index) => (
                                                         <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
@@ -263,8 +229,19 @@ export default class TournamentLobby extends Component {
                                                             </ListItem>
                                                         </Link>
                                                     ))}
+                                                    <ListItem >
+                                                        <ListItemText style={{ fontSize: '0.7em' }}>
+                                                            <Box sx={{ display: 'flex', alignItems: 'flex-end', fontSize: '0.7em', color: 'white' }}>
+
+                                                                CODE REDEEM :
+                                                                <TextField id="input-with-sx" variant="standard" />
+
+                                                                <img src={coderedeem} alt="coderedeem" />
+                                                            </Box>
+                                                        </ListItemText>
+                                                    </ListItem>
                                                     <List style={{ top: "10%", textDecoration: 'none', color: 'white' }} >
-                                                        {Bottomlinkdata.slice(0, 3).map((text, index) => (
+                                                        {Bottomlinkdata.slice(0, 1).map((text, index) => (
                                                             <ListItem button key={text.id}>
                                                                 <ListItemText >
                                                                     <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>{text.linkName}  </Link>
@@ -273,11 +250,11 @@ export default class TournamentLobby extends Component {
                                                         ))}
                                                         <ListItem >
                                                             <ListItemText >
-                                                                <Link to={Bottomlinkdata[3].link} style={{ textDecoration: 'none', color: 'white' }}>{Bottomlinkdata[3].linkName}   <img src={Logout} alt="logout" /></Link>
+                                                                <Link to={Bottomlinkdata[1].link} style={{ textDecoration: 'none', color: 'white' }}>{Bottomlinkdata[1].linkName}   <img src={Logout} alt="logout" /></Link>
                                                             </ListItemText>
                                                         </ListItem>
                                                     </List>
-                                                    
+
                                                 </List>
                                             </Box>
                                         </Drawer>

@@ -1,4 +1,4 @@
-import React, { useState,useRef  } from 'react';
+import React, { useState, useRef } from 'react';
 import Grid from '@mui/material/Grid';
 import Explore from './Explore';
 import Slider from './ShopCartSlider'
@@ -22,6 +22,8 @@ import Box from '@mui/material/Box';
 import backgroundEnd from "../../../reed_bg.svg"
 import NavigationBar from '../../framework/navigationbarforshop';
 import Checkout from '../../../svgicon/Shop/word&button/CHECKOUT.svg'
+import cancel from '../../../svgicon/Shop/word&button/cancel.svg';
+import Delete from '../../../svgicon/Shop/word&button/delete.svg';
 import Data from './data';
 import { styled } from '@mui/material/styles';
 import Fab from '@mui/material/Fab';
@@ -173,10 +175,10 @@ export default function Shopcar() {
                                                         <Typography variant='caption' textAlign='center' color='white'>
                                                             {data.description}
                                                         </Typography>
-                                                        <Grid xs={12} container justifyContent='center' height='5vh' >
-                                                            <Grid xs={12} container justifyContent='center'  ><Button variant='outlined' onClick={() => onDelete(data)} style={{ color: "white", width: '80%' }}>刪除</Button></Grid>
-                                                            <Grid xs={12} container justifyContent='center' marginTop='1vh' ><Button variant='outlined' onClick={close} style={{ color: "white", width: '80%' }}>取消</Button></Grid>
-                                                        </Grid>
+                                                        <Grid xs={12} container justifyContent='center' height='10vh' >
+                                                            <Grid xs={12} container justifyContent='center'  ><img src={Delete} onClick={() => onDelete(data)}  alt='' width='80%' /></Grid>
+                                                            <Grid xs={12} container justifyContent='center' marginTop='1vh' ><img src={cancel} onClick={close} alt='' width='80%' /></Grid>
+  </Grid>
                                                     </Grid>
                                                 </div>
                                             )}

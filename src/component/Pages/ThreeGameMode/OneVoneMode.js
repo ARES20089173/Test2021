@@ -114,8 +114,6 @@ const Toplinkdata = [
 ]
 const Bottomlinkdata = [
     { id: 0, linkName: "About REES", link: "/" },
-    { id: 1, linkName: "FAQ", link: "/" },
-    { id: 2, linkName: "PRESS", link: "/" },
     { id: 3, linkName: "LOGOUT", link: "/login" },
 ]
 function MyStopwatch() {
@@ -202,13 +200,6 @@ class OneVoneModeGo extends Component {
             { id: 1, MaxPayOut: 81, MaxPrize: 3100, entryFee: 848 },
             { id: 2, MaxPayOut: 848, MaxPrize: 2500, entryFee: 828 },
         ]
-        // const ScoreData = [
-        //     { id: 0, Puzzle: 100, Score: 1000, ChallengeName: "GRAND" },
-        //     { id: 1, Puzzle: 80, Score: 800, ChallengeName: "EPIC" },
-        //     { id: 2, Puzzle: 60, Score: 600, ChallengeName: "HERO" },
-        //     { id: 3, Puzzle: 40, Score: 400, ChallengeName: "WOW" },
-        //     { id: 4, Puzzle: 20, Score: 200, ChallengeName: "BOUNS" },
-        // ]   It is for use
         const RandomAvatarData = [
             { id: 0, src: "", name: "" },
             { id: 1, src: face1, name: "AbigGuy" },
@@ -250,12 +241,12 @@ class OneVoneModeGo extends Component {
                                 <AppBar position={'fixed'} align='center' sx={{ top: 0, bottom: 'auto' }}  >
                                     <Toolbar style={{ backgroundColor: '#242634' }} >
                                         <Typography variant="h6" component="div" sx={{}}>
-                                              <img src={back} alt='' width="40%" onClick={() => this.props.history.goBack()} style={{
-                                                    position: 'relative',
-                                                    zIndex: 3,
-                                                    top: 5,
-                                                    left: "-35%",
-                                                }} />
+                                            <img src={back} alt='' width="40%" onClick={() => this.props.history.goBack()} style={{
+                                                position: 'relative',
+                                                zIndex: 3,
+                                                top: 5,
+                                                left: "-35%",
+                                            }} />
                                         </Typography>
                                         <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} style={{
                                             position: 'relative',
@@ -271,11 +262,11 @@ class OneVoneModeGo extends Component {
 
                                             onClick={this.openhandleClick}
                                         >
-                                            <img src={Hamburgicon} alt="" width="110%" style={{
+                                            <img src={Hamburgicon} alt="" width="150%" style={{
                                                 position: 'absolute',
 
                                                 left: 0,
-                                                margin: '0 60%',
+                                                margin: '0 10%',
                                             }} />
                                         </IconButton>
                                         {/* drawer */}
@@ -300,7 +291,6 @@ class OneVoneModeGo extends Component {
                                                     >
                                                         <img src={Close} alt='hamburgericon' width='40%' style={{ position: 'relative', left: 60 }} />
                                                     </IconButton>
-                                                    <ListItemText style={{ textAlign: "center" }}  ><Grid container justifyContent='center' alignItems="center"><Typography color='white'>Play to Earn PUZZLES</Typography><img src={Chasepuzzle} /></Grid></ListItemText>
 
                                                     {Toplinkdata.map((text, index) => (
                                                         <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
@@ -325,7 +315,7 @@ class OneVoneModeGo extends Component {
                                                     </ListItem>
                                                 </List>
                                                 <List style={{ textDecoration: 'none', color: 'white' }}  >
-                                                    {Bottomlinkdata.slice(0, 3).map((text, index) => (
+                                                    {Bottomlinkdata.slice(0, 1).map((text, index) => (
                                                         <ListItem button key={text.id}>
                                                             <ListItemText >
                                                                 <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>{text.linkName}  </Link>
@@ -334,7 +324,7 @@ class OneVoneModeGo extends Component {
                                                     ))}
                                                     <ListItem >
                                                         <ListItemText >
-                                                            <Link to={Bottomlinkdata[3].link} style={{ textDecoration: 'none', color: 'white' }}>{Bottomlinkdata[3].linkName}   <img src={Logout} alt="logout" /></Link>
+                                                            <Link to={Bottomlinkdata[1].link} style={{ textDecoration: 'none', color: 'white' }}>{Bottomlinkdata[1].linkName}   <img src={Logout} alt="logout" /></Link>
                                                         </ListItemText>
                                                     </ListItem>
                                                 </List>

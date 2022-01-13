@@ -89,8 +89,6 @@ const Toplinkdata = [
 ]
 const Bottomlinkdata = [
     { id: 0, linkName: "About REES", link: "/" },
-    { id: 1, linkName: "FAQ", link: "/" },
-    { id: 2, linkName: "PRESS", link: "/" },
     { id: 3, linkName: "LOGOUT", link: "/login" },
 ]
 export default class TournamentLobby extends Component {
@@ -222,11 +220,11 @@ export default class TournamentLobby extends Component {
 
                                             onClick={this.openhandleClick}
                                         >
-                                            <img src={Hamburgicon} alt="" width="110%" style={{
+                                                              <img src={Hamburgicon} alt="" width="150%" style={{
                                                 position: 'absolute',
 
                                                 left: 0,
-                                                margin: '0 60%',
+                                                margin: '0 10%',
                                             }} />
                                         </IconButton>
                                         {/* drawer */}
@@ -251,8 +249,7 @@ export default class TournamentLobby extends Component {
                                                     >
                                                         <img src={Close} alt='hamburgericon' width='40%' style={{ position: 'relative', left: 60 }} />
                                                     </IconButton>
-                                                    <ListItemText style={{ textAlign: "center" }}  ><Grid container justifyContent='center' alignItems="center"><Typography color='white'>Play to Earn PUZZLES</Typography><img src={Chasepuzzle} /></Grid></ListItemText>
-
+                                                 
                                                     {Toplinkdata.map((text, index) => (
                                                         <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
                                                             <ListItem button key={text.id}>
@@ -276,7 +273,7 @@ export default class TournamentLobby extends Component {
                                                     </ListItem>
                                                 </List>
                                                 <List style={{ textDecoration: 'none', color: 'white' }}  >
-                                                    {Bottomlinkdata.slice(0, 3).map((text, index) => (
+                                                    {Bottomlinkdata.slice(0, 1).map((text, index) => (
                                                         <ListItem button key={text.id}>
                                                             <ListItemText >
                                                                 <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>{text.linkName}  </Link>
@@ -285,7 +282,7 @@ export default class TournamentLobby extends Component {
                                                     ))}
                                                     <ListItem >
                                                         <ListItemText >
-                                                            <Link to={Bottomlinkdata[3].link} style={{ textDecoration: 'none', color: 'white' }}>{Bottomlinkdata[3].linkName}   <img src={Logout} alt="logout" /></Link>
+                                                            <Link to={Bottomlinkdata[1].link} style={{ textDecoration: 'none', color: 'white' }}>{Bottomlinkdata[1].linkName}   <img src={Logout} alt="logout" /></Link>
                                                         </ListItemText>
                                                     </ListItem>
                                                 </List>
