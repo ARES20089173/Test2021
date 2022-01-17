@@ -1,14 +1,8 @@
-import { styled } from '@mui/material/styles';
-import Fab from '@mui/material/Fab';
-import React,{ useState } from 'react';
+import React  from 'react';
 import '../../framework/css/cssFGamechooser.css'
 import Grid from '@mui/material/Grid';
 import { Link } from "react-router-dom"
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
-
 import ANIME from '../../../svgicon/Shop/Category/Type/ANIME.svg'
 import BEAUTY from '../../../svgicon/Shop/Category/Type/BEAUTY.svg'
 import COURSE from '../../../svgicon/Shop/Category/Type/COURSE.svg'
@@ -17,21 +11,14 @@ import GADET from '../../../svgicon/Shop/Category/Type/GADET.svg'
 import GOURMENT from '../../../svgicon/Shop/Category/Type/GOURMENT.svg'
 import TOY from '../../../svgicon/Shop/Category/Type/TOY.svg'
 import VIRTUAL from '../../../svgicon/Shop/Category/Type/VIRTUAL.svg'
-import GoGameLobby from '../../../svgicon/Componenticon/GoGameLobby.svg'
 import 'swiper/swiper-bundle.min.css'
-// swiper core styles
 import 'swiper/swiper.min.css'
 import "swiper/components/effect-coverflow/effect-coverflow.less"
 import 'swiper/components/pagination/pagination.min.css'
-import 'swiper/components/navigation/navigation.min.css'
-
-// import Swiper core and required modules
 import SwiperCore, {
   Pagination, Navigation, EffectCoverflow
 } from 'swiper';
 import { Typography } from '@mui/material';
-
-// install Swiper modules
 SwiperCore.use([Pagination, Navigation, EffectCoverflow]);
 
 const data = [
@@ -45,8 +32,6 @@ const data = [
   { id: 7, src: VIRTUAL ,link:"/Shop/Category/VIRTUAL" , category: "VIRTUAL"},
 ]
 export default function Gamechooser() {
-  const [count, setCount] = useState(0);
-  const [swiper, setSwiper] = useState();
   return (
     <Grid container xs={12}style={{ marginBottom: "1.5vh" }}>
       <Swiper
@@ -57,7 +42,6 @@ export default function Gamechooser() {
         }}
         onSlideChange={(index) => {
           console.log(index.realIndex)
-          setCount(index.realIndex);
         }}
         loop={true}
         navigation={false}

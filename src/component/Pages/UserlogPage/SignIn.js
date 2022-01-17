@@ -5,13 +5,8 @@ import Grid from '@mui/material/Grid';
 import { TextField, makeStyles } from "@material-ui/core";
 import Typography from '@mui/material/Typography';
 import 'react-phone-number-input/style.css'
-import Fab from '@mui/material/Fab';
-import { styled } from '@mui/material/styles'
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom"
 import 'reactjs-popup/dist/index.css';
-import face1 from '../../../face_1.svg'
-import Ricon from '../../../svgicon/Componenticon/Ricon.svg'
 import FaceBook from '../../../svgicon/SocialMedia/Facebook.svg'
 import Google from '../../../svgicon/SocialMedia/Google.svg'
 import LoginRight from '../../../svgicon/LoginComp/LoginRight.svg'
@@ -48,8 +43,7 @@ export default function SignIn() {
 
     const classes = useStyles();
 
-    const [count, setCount] = React.useState(0);
-    const [Default, setDefault] = React.useState();
+    const [Default, setDefault] = React.useState(0);
     const [userName, setuserName] = React.useState();
     const [passWord, setpassWord] = React.useState();
     const handleuserNameChange = (event) => {
@@ -116,7 +110,7 @@ export default function SignIn() {
                                 />
 
                                 <Grid item xs={12} height="5vh" alignItems='center' justifyContent='center' textAlign='center' >
-                                    <Typography color='white' ><Checkbox onChange={() => { setDefault(count); }} color='error'
+                                    <Typography color='white' ><Checkbox onChange={() => { setDefault(Default); }} color='error'
                                         sx={{
                                             color: 'white',
                                             '&.Mui-checked': {

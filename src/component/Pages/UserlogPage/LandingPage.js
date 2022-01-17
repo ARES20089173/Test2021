@@ -2,7 +2,6 @@ import React from "react";
 import Box from '@mui/material/Box';
 import backgroundEnd from "../../../svgicon/Landingicon/LandingBg.svg"
 import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
 import 'react-phone-number-input/style.css'
 import 'reactjs-popup/dist/index.css';
 import Player from '../../../svgicon/Landingicon/PlayerLink.svg'

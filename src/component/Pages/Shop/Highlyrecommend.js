@@ -1,23 +1,13 @@
-import { styled } from '@mui/material/styles';
-import { useHistory } from "react-router-dom";
-import React, { useState } from 'react';
+import React from 'react';
 import '../../framework/css/cssFGamechooser.css'
 import Grid from '@mui/material/Grid';
 import { Carousel } from 'react-responsive-carousel'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import SHOPINDETAILS from '../../../svgicon/Shop/word&button/SHOPINDETAILS.svg'
-import { Button, Typography } from '@mui/material';
-import Chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
-import benefit from '../../../svgicon/Shop/Hotpick/benefit.svg'
+import {  Typography } from '@mui/material';
 export default function Highlyrecommend(props) {
-    const history = useHistory();
     const { Recommendproducts, onAdd } = props;
-    const routeChange = () => {
-        console.log("textmessage")
-        let path = `#`;
-        history.push(path);
-        // history.goBack()
-    }
+   
     const Recommenddata = Recommendproducts.map((data, index) => {
         return (
             <Grid xs={12}>
@@ -43,7 +33,7 @@ export default function Highlyrecommend(props) {
                 <Grid xs={12} container alignItems='center' justifyContent='center' marginTop="1vh">
                         <img  onClick={() => onAdd(data)} src={SHOPINDETAILS} width='50%' alt=''  />              
                 </Grid>
-                {Recommendproducts.length == index + 1 ? "" : <hr />}
+                {Recommendproducts.length === index + 1 ? "" : <hr />}
             </Grid>
         )
     });

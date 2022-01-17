@@ -8,9 +8,6 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import CssBaseline from '@mui/material/CssBaseline';
-import Fab from '@mui/material/Fab';
-import { styled } from '@mui/material/styles'
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom"
 import Notification from "../../../svgicon/MessageCenter/Notification.svg";
 import Set from "../../../svgicon/MessageCenter/Set.svg"
@@ -25,7 +22,7 @@ export default class MessageCenter extends Component {
             { id: 2, icon: Discord, title: "REES Community Notify", detail: "Players, Assets, Finance, Function, Mission,Game News, Game Mode, Related Notice", link: "/" },
         ];
         const data2 = data.map((message) => {
-            if (message.id % 2 == 0) {
+            if (message.id % 2 === 0) {
                 return <Link to={message.link} style={{ textDecoration: 'none', color: '#FFF' }}>
                     <Grid container
                         direction="row"

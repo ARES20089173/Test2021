@@ -16,34 +16,9 @@ import back from '../../../svgicon/Componenticon/Back.svg'
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
-import Fab from '@mui/material/Fab';
-import { styled } from '@mui/material/styles'
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom"
 import Switch from '@mui/material/Switch';
-const contentStyle = {
-    margin: 'auto',
-    background: '#cfcece',
-    width: "100%",
-    height: "40%",
-    padding: "5px",
-    borderRadius: "5%",
-};
-const StyledFab = styled(Fab)({
-    position: 'fixed',
-    zIndex: 3,
-    top: "75vh",
-    left: 0,
 
-});
-const StyledFab2 = styled(Fab)({
-    position: 'relative',
-    zIndex: 3,
-    top: 0,
-    left: "0%",
-
-
-});
 export default class MessageCenter extends Component {
     render() {
         const data = [
@@ -63,7 +38,7 @@ export default class MessageCenter extends Component {
             // for swith
         };
         const data2 = data.map((data) => {
-            if (data.id % 2 == 0) {
+            if (data.id % 2 === 0) {
                 return <Grid container
                     direction="row"
                     alignItems="center"
@@ -71,7 +46,7 @@ export default class MessageCenter extends Component {
                     style={{ backgroundColor: "#242634" }}>
 
                     <Grid item xs={9} style={{ textAlign: 'left', paddingLeft: '6vh' }} >
-                        <img src={data.icon} width="9%" />
+                        <img src={data.icon} width="9%" alt=''/>
                         <Typography variant="caption" color="#ffffff" style={{ overflowWrap: 'break-word' }} display="inline"> {data.setname}
                         </Typography>
                     </Grid>
@@ -93,7 +68,7 @@ export default class MessageCenter extends Component {
                     style={{ backgroundColor: "#35394C" }}>
 
                     <Grid item xs={9} style={{ textAlign: 'left', paddingLeft: '6vh' }} >
-                        <img src={data.icon} width="9%" />
+                        <img src={data.icon} width="9%" alt=''/>
                         <Typography variant="caption" color="#ffffff" style={{ overflowWrap: 'break-word' }} display="inline"> {data.setname}
                         </Typography>
                     </Grid>

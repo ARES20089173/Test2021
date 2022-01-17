@@ -1,11 +1,7 @@
-import { styled } from '@mui/material/styles';
-import React, { useState } from 'react';
+import React from 'react';
 import '../../framework/css/cssFGamechooser.css'
 import Grid from '@mui/material/Grid';
-import PropTypes from 'prop-types';
-import Slider, { SliderThumb } from '@mui/material/Slider';
 import { Typography } from '@mui/material';
-import Chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
 import JoinNow from '../../../svgicon/Shop/word&button/JoinNow.svg'
 import { useHistory } from "react-router-dom";
 export default function Explore() {

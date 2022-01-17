@@ -1,15 +1,13 @@
 import { styled } from '@mui/material/styles';
-import React, { useState } from 'react';
+import React from 'react';
 import '../../framework/css/cssFGamechooser.css'
 import Grid from '@mui/material/Grid';
 import PropTypes from 'prop-types';
 import Slider, { SliderThumb } from '@mui/material/Slider';
 import { Typography } from '@mui/material';
 import Chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
-
 import { useHistory } from "react-router-dom";
 import Showme from '../../../svgicon/Shop/word&button/Showme.svg'
-import { Link } from 'react-router-dom';
 const minDistance = 20000;
 
 const AirbnbSlider = styled(Slider)(({ theme }) => ({

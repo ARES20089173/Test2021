@@ -23,7 +23,6 @@ import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
-import adv1 from '../../../svgicon/Advertise/adv1.svg'
 import referimg from '../../../svgicon/Advertise/Referfriend.svg'
 import powerby from '../../../svgicon/PowerBy/PowerByR.svg'
 import { Button } from '@mui/material';
@@ -35,19 +34,10 @@ import IconButton from '@mui/material/IconButton';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import EndBar from '../../framework/endbarWithback';
-import { styled } from '@mui/material/styles';
-import Fab from '@mui/material/Fab';
 import Input from '@mui/material/Input';
 
 import { RWebShare } from "react-web-share";
-const ariaLabel = { 'aria-label': 'description' };
 
-const StyledFab2 = styled(Fab)({
-    position: 'absolute',
-    zIndex: 1,
-    bottom: "42vh",
-    left: 0,
-});
 const contentStyle = {
     marginTop: '20%',
     background: '#242634',
@@ -268,7 +258,7 @@ export default function MainPage() {
                                                 <Typography variant="body2" component="div" color='primary' textAlign='center'>
 
                                                     <img src={referimg} width="70%" alt="referimage" />
-                                                    <img src={powerby} width="40%" />
+                                                    <img src={powerby} width="40%" alt=''/>
                                                 </Typography>
                                             </div>
                                         </Grid>

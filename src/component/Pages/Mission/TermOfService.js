@@ -5,20 +5,11 @@ import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import Fab from '@mui/material/Fab';
-import { styled } from '@mui/material/styles'
 import { Link } from "react-router-dom"
 import back from '../../../svgicon/Componenticon/Back.svg'
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
 import { useHistory } from "react-router";
 import EndBar from '../../framework/endbarWithback';
-const StyledFab = styled(Fab)({
-    position: 'fixed',
-    zIndex: 3,
-    top: "75vh",
-    left: 0,
-
-});
 
 export default function Service() {
     const history = useHistory();

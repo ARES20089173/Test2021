@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import { styled } from '@mui/material/styles'
-import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
 import backgroundEnd from "../../../reed_bg.svg"
 import Forward from '../../../svgicon/Componenticon/Forward.svg'
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import EndBar from '../../framework/endbarWithback';
 import 'reactjs-popup/dist/index.css';
 import { Link } from 'react-router-dom';
@@ -14,14 +11,12 @@ import "../../framework/css/cssModFLooby.css"
 import Popup from 'reactjs-popup';
 import IconButton from '@mui/material/IconButton';
 import PoweredByR from '../../../svgicon/PowerBy/PowerByR.svg'
-import Headicon from '../../../face_1.svg'
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
 import ChallengModeButtonbg from '../../../svgicon/Background/ChallengModeButton.svg'
 import back from '../../../svgicon/Componenticon/Back.svg'
-import Badge from '@mui/material/Badge'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
@@ -55,14 +50,6 @@ import Gicon12 from '../../../svgicon/GameIcon/Gicon12.svg'
 import Gicon13 from '../../../svgicon/GameIcon/Gicon13.svg'
 import Gicon14 from '../../../svgicon/GameIcon/Gicon14.svg'
 import Gicon15 from '../../../svgicon/GameIcon/Gicon15.svg'
-const StyledBadge = styled(Badge)(({ theme }) => ({
-    '& .MuiBadge-badge': {
-        right: 12,
-        top: 10,
-        border: `2px solid ${theme.palette.background.paper}`,
-        padding: '0 1px',
-    },
-}));
 
 const contentStyle = {
     background: '#242623',

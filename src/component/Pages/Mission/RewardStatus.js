@@ -6,38 +6,14 @@ import Toolbar from '@mui/material/Toolbar';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
-import Fab from '@mui/material/Fab';
 import EndBar from '../../framework/endbarWithback';
-import { styled } from '@mui/material/styles'
 import { Link } from "react-router-dom"
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg'
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import { useHistory } from "react-router";
-const contentStyle = {
-    margin: 'auto',
-    background: '#cfcece',
-    width: "100%",
-    height: "40%",
-    padding: "5px",
-    borderRadius: "5%",
-};
-const StyledFab = styled(Fab)({
-    position: 'fixed',
-    zIndex: 3,
-    top: "75vh",
-    left: 0,
 
-});
-const StyledFab2 = styled(Fab)({
-    position: 'relative',
-    zIndex: 3,
-    top: 0,
-    left: "0%",
-
-
-});
 const linkdata = [
     { id: 0, linkName: "", link: "#" },
     { id: 1, linkName: "", link: "#" },
@@ -105,17 +81,17 @@ export default function RewardStatus() {
             </React.Fragment>
             <Grid container justifyContent='center' alignItems='center' xs={12} height="5vh" style={{ backgroundColor: '#8e8b91', textAlign: 'center' }}>
 
-                <Grid container justifyContent='center' alignItems='center' xs={4}   onClick={()=>handleselectChange('OPENED')} height="5vh" style={{ borderBottom: select == 'OPENED' ? "3px solid white" : '' }}>
+                <Grid container justifyContent='center' alignItems='center' xs={4}   onClick={()=>handleselectChange('OPENED')} height="5vh" style={{ borderBottom: select === 'OPENED' ? "3px solid white" : '' }}>
                     <Typography variant="body1" color="#ffffff" >
                         OPENED
                     </Typography>
                 </Grid>
-                <Grid container justifyContent='center' alignItems='center' xs={4} onClick={()=>handleselectChange('REWARD')} height="5vh"  style={{ borderBottom: select == 'REWARD' ? "3px solid white" : '' }}>
+                <Grid container justifyContent='center' alignItems='center' xs={4} onClick={()=>handleselectChange('REWARD')} height="5vh"  style={{ borderBottom: select === 'REWARD' ? "3px solid white" : '' }}>
                     <Typography variant="body1" color="#ffffff" >
                         REWARD
                     </Typography>
                 </Grid>
-                <Grid container justifyContent='center' alignItems='center' xs={4} onClick={()=>handleselectChange('EXPIRED')} height="5vh"  style={{ borderBottom: select == 'EXPIRED' ? "3px solid white" : '' }}>
+                <Grid container justifyContent='center' alignItems='center' xs={4} onClick={()=>handleselectChange('EXPIRED')} height="5vh"  style={{ borderBottom: select === 'EXPIRED' ? "3px solid white" : '' }}>
                     <Typography variant="body1" color="#ffffff" >
                         EXPIRED
                     </Typography>
@@ -134,7 +110,7 @@ export default function RewardStatus() {
                 ))}
             </List>
             <Grid item xs={12} marginTop="0vh" >
-                <EndBar />
+                <EndBar  endbartype={endbartype}/>
             </Grid>
         </Box>
     )

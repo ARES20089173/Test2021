@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -10,13 +10,8 @@ import backgroundEnd from "../../../../reed_bg.svg"
 import Search from '../Search'
 import CssBaseline from '@mui/material/CssBaseline';
 import Searchpic from '../../../../svgicon/Shop/word&button/Search.svg'
-import Fab from '@mui/material/Fab';
 import { useHistory } from "react-router";
-import { styled } from '@mui/material/styles'
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { Link } from "react-router-dom"
-import Switch from '@mui/material/Switch';
-import { Fade, IconButton } from "@mui/material";
+import { IconButton } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import back from '../../../../svgicon/Componenticon/Back.svg'
@@ -50,12 +45,9 @@ export default function MainCategory() {
     function handleClick() {
         setOpen(!open)
     }
-    useEffect(() => {
-        settypedatas(typedata)
-    })
     const visiable = (product) => {
 
-        if (product.visiable == undefined || product.visiable == true) {
+        if (product.visiable === undefined || product.visiable === true) {
 
             settypedatas(
                 typedata.map((x) =>
@@ -77,9 +69,9 @@ export default function MainCategory() {
 
         return (
 
-            <Grid xs={12} onClick={() => visiable(data)} style={{ height: '30vh', marginBottom: '4vh', backgroundImage: `url(${(data.picture[1]) != "s" ? data.picture[1] : data.picture})`, backgroundSize: '100% 100%', backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
+            <Grid xs={12} onClick={() => visiable(data)} style={{ height: '30vh', marginBottom: '4vh', backgroundImage: `url(${(data.picture[1]) !== "s" ? data.picture[1] : data.picture})`, backgroundSize: '100% 100%', backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
 
-                <Grid xs={12} container alignItems='center' justifyContent='center' marginTop="1vh" style={{ visibility: data.visiable != false && 'hidden', height: '27vh', backgroundColor: " rgba(0, 0, 0, 0.35)" }}>
+                <Grid xs={12} container alignItems='center' justifyContent='center' marginTop="1vh" style={{ visibility: data.visiable !== false && 'hidden', height: '27vh', backgroundColor: " rgba(0, 0, 0, 0.35)" }}>
                     <Grid xs={12} container alignItems='center' justifyContent='center'  >
                         <Typography color='white' variant='h6' textAlign='center' >
                             {data.description}
@@ -108,7 +100,7 @@ export default function MainCategory() {
                         {data.head}
                     </Typography>
                 </Grid>
-                {typedata.length == index + 1 ? "" : <hr />}
+                {typedata.length === index + 1 ? "" : <hr />}
             </Grid>
         )
     });

@@ -1,34 +1,19 @@
 import React, { useState, useRef } from 'react';
 import Grid from '@mui/material/Grid';
-import Explore from './Explore';
 import Slider from './ShopCartSlider'
 import Search from './Search'
 import { useHistory } from "react-router-dom";
-import Scrollbanner from '../../framework/scrollbanner'
 import Searchpic from '../../../svgicon/Shop/word&button/Search.svg'
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import Typography from '@mui/material/Typography';
 import 'reactjs-popup/dist/index.css';
 import "../../framework/css/cssModFLooby.css"
-import SilverPuzzle from '../../../svgicon/Componenticon/SilverPuzzle.svg'
-import Code from '../../../svgicon/Componenticon/Code.svg'
-import Codeicon from '../../../svgicon/Componenticon/Codeicon.svg'
-import greenicon from '../../../svgicon/Componenticon/greenicon.svg'
-import Chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
 import Box from '@mui/material/Box';
 import backgroundEnd from "../../../reed_bg.svg"
 import NavigationBar from '../../framework/navigationbarforshop';
 import Checkout from '../../../svgicon/Shop/word&button/CHECKOUT.svg'
 import cancel from '../../../svgicon/Shop/word&button/cancel.svg';
 import Delete from '../../../svgicon/Shop/word&button/delete.svg';
-import Data from './data';
-import { styled } from '@mui/material/styles';
-import Fab from '@mui/material/Fab';
-import 'reactjs-popup/dist/index.css';
 import Popup from 'reactjs-popup';
 import { useEffect } from 'react';
 import { Button } from '@mui/material';
@@ -150,10 +135,10 @@ export default function Shopcar() {
 
             </Grid>
             <Grid item xs={12} marginTop="5vh">
-                {cartItems != "" ?
+                {cartItems !== "" ?
                     cartItems.map((data, index) => {
                         return (
-                            <Grid xs={12} container alignItems='center' justifyContent='center' style={{ backgroundColor: index % 2 == 0 ? '#242634' : '#35394C' }}>
+                            <Grid xs={12} container alignItems='center' justifyContent='center' style={{ backgroundColor: index % 2 === 0 ? '#242634' : '#35394C' }}>
                                 <Grid xs={2}><img src={typeof (data.picture) == "object" ? data.picture[1] : data.picture} alt='' width='100%' /></Grid>
                                 <Grid xs={6}>
                                     <Typography color='white' textAlign='center' variant='caption' style={{ wordWrap: 'break-word' }}>   {data.head}</Typography>

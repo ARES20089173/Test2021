@@ -25,19 +25,14 @@ import SignUp from '../../svgicon/Shop/word&button/SignUp.svg'
 import { styled } from "@mui/material/styles";
 import Collapse from "@mui/material/Collapse";
 import PuzzleChase from '../../svgicon/EndBaricon/PuzzleChase.svg'
-const userdata = [
-    { id: 0, level: 'Lv1', ReesID: 1, nickname: 'Jay' },
-]
+
 const Toplinkdata = [
     { id: 0, linkName: "ACCOUNT  DETAILS", link: "/1/Profile" },
     { id: 1, linkName: "MY COLLECTIONS", link: "/Wallet/MyCollection" },
     { id: 2, linkName: "MY WISHLISTS", link: "/Shop/MyWishList" },
     { id: 3, linkName: "EVENTS", link: "/Events" },
     { id: 4, linkName: "BUY PUZZLES", link: "/Wallet/PuzzlePackage" }
-    // { id: 5, linkName:"PROFILE"},
-    // { id: 6, linkName:"PROFILE"},
-    // { id: 7, linkName:"PROFILE"},
-    // { id: 8, linkName:"PROFILE"},
+
 ]
 const Bottomlinkdata = [
     { id: 0, linkName: "About PUZZLECHASE Shop", link: "/" },
@@ -106,7 +101,7 @@ const routeChange3 = (value) => {
                 >
                     <img src={Close} alt='hamburgericon' width='40%' style={{ position: 'relative', left: 60 }} />
                 </IconButton>
-                <ListItemText  >  <Grid container xs={10} alignItems="center" style={{ marginLeft: "6%" }}><Typography color='white'>Shop with PUZZLES    </Typography><img src={puzzle} width="10%" style={{ marginLeft: "2%", position: 'relative', bottom: 2 }} /></Grid></ListItemText>
+                <ListItemText  >  <Grid container xs={10} alignItems="center" style={{ marginLeft: "6%" }}><Typography color='white'>Shop with PUZZLES    </Typography><img src={puzzle} width="10%" style={{ marginLeft: "2%", position: 'relative', bottom: 2 }} alt=''/></Grid></ListItemText>
                 <ListItem style={{ color: 'white' }} >   <Grid container xs={3} justifyContent='center' marginRight='1vh'> <Link to="#"><img src={SignIn} alt="" width="100%" /></Link>  </Grid>  <Grid container xs={3} justifyContent='center'> <Link to="#"> <img src={SignUp} alt="" width="100%" /></Link></Grid> </ListItem>
                 <ListItem >
                     <ListItemText style={{ fontSize: '0.7em' }} sx={{ color: 'white', border: "2px solid white" }}>

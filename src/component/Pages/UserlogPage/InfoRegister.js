@@ -2,17 +2,10 @@ import React, { useRef } from "react";
 import Box from '@mui/material/Box';
 import backgroundEnd from "../../../reed_bg.svg"
 import Grid from '@mui/material/Grid';
-import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import 'react-phone-number-input/style.css'
-import Fab from '@mui/material/Fab';
-import { styled } from '@mui/material/styles'
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom"
 import 'reactjs-popup/dist/index.css';
-import face1 from '../../../face_1.svg'
-import Ricon from '../../../svgicon/Componenticon/Ricon.svg'
-import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
 import Gift from '../../../svgicon/RegisterSvg/Gift.svg';
 import Morepuzzle from '../../../svgicon/RegisterSvg/Morepuzzle.svg';
 import Movie from '../../../svgicon/RegisterSvg/Movie.svg';

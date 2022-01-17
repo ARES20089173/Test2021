@@ -6,7 +6,6 @@ import Grid from '@mui/material/Grid';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
-import Fab from '@mui/material/Fab';
 import Popup from 'reactjs-popup';
 import BigsilverPuzzle from '../../../svgicon/Componenticon/Bigchasepuzzle.svg'
 import BigPuzzle from '../../../svgicon/Componenticon/Bigsilverpuzzle.svg'
@@ -14,7 +13,6 @@ import SwieprConent from '../../framework/swiperContent';
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
-import { styled } from '@mui/material/styles'
 import { Link } from "react-router-dom"
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
 import EndBar from '../../framework/endbarWithback';
@@ -22,23 +20,15 @@ import back from '../../../svgicon/Componenticon/Back.svg'
 import { useHistory } from 'react-router';
 import chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
 import silverpuzzle from '../../../svgicon/Componenticon/SilverPuzzle.svg'
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
 import 'swiper/swiper-bundle.min.css'
-// swiper core styles
 import 'swiper/swiper.min.css'
 import "swiper/components/effect-coverflow/effect-coverflow.less"
 import 'swiper/components/pagination/pagination.min.css'
 import 'swiper/components/navigation/navigation.min.css'
-
-// import Swiper core and required modules
 import SwiperCore, {
     Pagination, Navigation, EffectCoverflow
 } from 'swiper';
-import { Checkbox } from '@mui/material';
-
-// install Swiper modules
 SwiperCore.use([Pagination, Navigation, EffectCoverflow]);
 
 const data = [
@@ -82,7 +72,7 @@ export default function PuzzlePackage() {
     }
     const [count, setCount] = useState(0);
     const Toplinkdataed = Toplinkdata.map((text) => {
-        if (text.id % 2 == 0) {
+        if (text.id % 2 === 0) {
             return <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
                 <ListItem button key={text.id} style={{ backgroundColor: '#8e8b91' }}>
                     <ListItemText  >
@@ -108,7 +98,7 @@ export default function PuzzlePackage() {
         }
     })
     const Bottomlinkdataed = Bottomlinkdata.map((text) => {
-        if (text.id % 2 == 0) {
+        if (text.id % 2 === 0) {
             return <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
                 <ListItem button key={text.id} style={{ backgroundColor: '#8e8b91' }}>
                     <ListItemText  >
@@ -221,13 +211,13 @@ export default function PuzzlePackage() {
                         ))}
                     </Swiper>
                 </Grid>
-                <Grid container xs={12} alignItems="center" justifyContent='center' display={count == 1 ? "none" : "block"} style={{ borderTop: '3px solid white', }}>
+                <Grid container xs={12} alignItems="center" justifyContent='center' display={count === 1 ? "none" : "block"} style={{ borderTop: '3px solid white', }}>
                     <List >
                         {Toplinkdataed}
                     </List>
                 </Grid>
 
-                <Grid container xs={12} alignItems="center" display={count == 0 ? "none" : "block"} style={{ borderTop: '3px solid white', }}>
+                <Grid container xs={12} alignItems="center" display={count === 0 ? "none" : "block"} style={{ borderTop: '3px solid white', }}>
                     <List >
                         {Bottomlinkdataed}
                     </List>

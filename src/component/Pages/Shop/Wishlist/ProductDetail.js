@@ -10,18 +10,9 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import Collapse from "@mui/material/Collapse";
 import Popup from "reactjs-popup";
-import Search from '../Search'
 import backgroundEnd from "../../../../reed_bg.svg"
 import CssBaseline from '@mui/material/CssBaseline';
-import Fab from '@mui/material/Fab';
 import { useHistory } from "react-router";
-import { styled } from '@mui/material/styles'
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { Link } from "react-router-dom"
-import Switch from '@mui/material/Switch';
-import { Fade, IconButton } from "@mui/material";
-import Visibility from "@mui/icons-material/Visibility";
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import back from '../../../../svgicon/Componenticon/Back.svg'
 import { Button } from "@mui/material";
 import Slider from '../ShopCartSlider'
@@ -32,14 +23,7 @@ import { useParams } from "react-router";
 
 import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUp from "@mui/icons-material/KeyboardArrowUp";
-const contentStyle = {
-    margin: 'auto',
-    background: '#cfcece',
-    width: "100%",
-    height: "40%",
-    padding: "5px",
-    borderRadius: "5%",
-};
+
 export default function ProductDetail() {
     const endbartype='Shop'
     const { id } = useParams();
@@ -56,13 +40,9 @@ export default function ProductDetail() {
         let path = '/Shop/Shopcar';
         history.push(path);
     }
-    const [open, setOpen] = useState(false);
-    function handleClick() {
-        setOpen(!open)
-    }
     useEffect(() => {
         setWishListsdata(WishListsdatas)
-    })
+    },[WishListsdatas])
     const [cartItems, setCartItems] = useState(() => {
         const localdata = localStorage.getItem('cartItems');
         return localdata ? JSON.parse(localdata) : []
@@ -165,7 +145,7 @@ export default function ProductDetail() {
                 </Grid>
 
                 <Grid xs={11.5} container alignItems='center' justifyContent='center' >
-                    <img src={WishListsdata[id].picture[1] != "s" ? WishListsdata[id].picture[1] : WishListsdata[id].picture} alt='' width="100%" />
+                    <img src={WishListsdata[id].picture[1] !== "s" ? WishListsdata[id].picture[1] : WishListsdata[id].picture} alt='' width="100%" />
                     <Typography>{WishListsdata[id].description}</Typography><br />
 
                 </Grid>
@@ -210,7 +190,7 @@ export default function ProductDetail() {
                                     </ListItem>
                                         <Collapse in={index === selectedIndex} timeout="auto" unmountOnExit>
 
-                                            <Typography variant='caption' style={{ display: 'inline-block' ,marginLeft:'4%'}} >{index!=0?text.answer:WishListsdata[1].description}</Typography>
+                                            <Typography variant='caption' style={{ display: 'inline-block' ,marginLeft:'4%'}} >{index!==0?text.answer:WishListsdata[1].description}</Typography>
 
                                         </Collapse>
                                 </Grid>

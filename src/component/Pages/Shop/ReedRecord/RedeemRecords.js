@@ -4,16 +4,11 @@ import { makeStyles } from "@material-ui/core/styles";
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Grid from '@mui/material/Grid';
-import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { useHistory } from "react-router";
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
-import Fab from '@mui/material/Fab';
-import { styled } from '@mui/material/styles'
 import { Link } from "react-router-dom"
 import HomeIcon from '../../../../svgicon/EndBaricon/BackHome.svg';
 import EndBar from '../../../framework/endbarWithback';
@@ -167,19 +162,19 @@ export default function RedeemRecords() {
                                         <Grid xs={12} container justifyContent='center' alignItems='center'>
                                             <Grid xs={12} container justifyContent='center' alignItems='center' marginBottom='1vh'>
                                                 <Grid container justifyContent='center' alignItems='center' xs={6}>
-                                                    <Typography onClick={() => setonline(true)} style={{ textDecorationLine: online == true && 'underline' }}>online</Typography>
+                                                    <Typography onClick={() => setonline(true)} style={{ textDecorationLine: online === true && 'underline' }}>online</Typography>
                                                 </Grid>
 
                                                 <Grid container justifyContent='center' alignItems='center' xs={6}>
-                                                    <Typography onClick={() => setonline(false)} style={{ textDecorationLine: online == false && 'underline' }}>offline</Typography>
+                                                    <Typography onClick={() => setonline(false)} style={{ textDecorationLine: online === false && 'underline' }}>offline</Typography>
                                                 </Grid>
                                             </Grid>
-                                            <Grid xs={12} container justifyContent='center' alignItems='center' style={{ display: online == true ? '' : 'none' }}>
+                                            <Grid xs={12} container justifyContent='center' alignItems='center' style={{ display: online === true ? '' : 'none' }}>
                                                 <Grid xs={12} container justifyContent='center' alignItems='center'>
                                                     <img src={data.QRCODE} width="50%" alt='' />
                                                 </Grid>
                                             </Grid>
-                                            <Grid xs={12} container justifyContent='center' alignItems='center' style={{ display: online == false ? '' : 'none' }}>
+                                            <Grid xs={12} container justifyContent='center' alignItems='center' style={{ display: online === false ? '' : 'none' }}>
                                                 <Grid xs={4} container justifyContent='center' alignItems='center' marginRight='1vh'>
                                                     <Typography variant="caption">ShoppingAddress</Typography>
                                                 </Grid>
@@ -295,16 +290,16 @@ export default function RedeemRecords() {
                                         </Typography>
                                     </Grid>
                                     <Grid xs={12} container alignItems='center' justifyContent='center' height="5vh" style={{ padding: 0, margin: 0, backgroundColor: '#8e8b91', textAlign: 'center' }}>
-                                        <Grid xs={4} container alignItems='center' justifyContent='center' height="5vh" style={{ padding: 0, margin: 0, backgroundColor: '#8e8b91', textAlign: 'center', borderBottom: Recordselect == 'Opened' ? '3px solid white' : '' }}>
-                                            <Typography variant="body1" onClick={() => setRecordselect('Opened')} color={Recordselect == 'Opened' ? "#ffffff" : 'black'}>
+                                        <Grid xs={4} container alignItems='center' justifyContent='center' height="5vh" style={{ padding: 0, margin: 0, backgroundColor: '#8e8b91', textAlign: 'center', borderBottom: Recordselect === 'Opened' ? '3px solid white' : '' }}>
+                                            <Typography variant="body1" onClick={() => setRecordselect('Opened')} color={Recordselect === 'Opened' ? "#ffffff" : 'black'}>
                                                 Opened
                                             </Typography>
-                                        </Grid><Grid container alignItems='center' justifyContent='center' xs={4} height="5vh" style={{ padding: 0, margin: 0, backgroundColor: '#8e8b91', textAlign: 'center', borderBottom: Recordselect == 'Rewarded' ? '3px solid white' : '' }} >
-                                            <Typography variant="body1" onClick={() => setRecordselect('Rewarded')} color={Recordselect == 'Rewarded' ? "#ffffff" : 'black'} >
+                                        </Grid><Grid container alignItems='center' justifyContent='center' xs={4} height="5vh" style={{ padding: 0, margin: 0, backgroundColor: '#8e8b91', textAlign: 'center', borderBottom: Recordselect === 'Rewarded' ? '3px solid white' : '' }} >
+                                            <Typography variant="body1" onClick={() => setRecordselect('Rewarded')} color={Recordselect === 'Rewarded' ? "#ffffff" : 'black'} >
                                                 Rewarded
                                             </Typography>
-                                        </Grid><Grid container alignItems='center' justifyContent='center' xs={4} height="5vh" style={{ padding: 0, margin: 0, backgroundColor: '#8e8b91', textAlign: 'center', borderBottom: Recordselect == 'Expired' ? '3px solid white' : '' }} >
-                                            <Typography variant="body1" onClick={() => setRecordselect('Expired')} color={Recordselect == 'Expired' ? "#ffffff" : 'black'}>
+                                        </Grid><Grid container alignItems='center' justifyContent='center' xs={4} height="5vh" style={{ padding: 0, margin: 0, backgroundColor: '#8e8b91', textAlign: 'center', borderBottom: Recordselect === 'Expired' ? '3px solid white' : '' }} >
+                                            <Typography variant="body1" onClick={() => setRecordselect('Expired')} color={Recordselect === 'Expired' ? "#ffffff" : 'black'}>
                                                 Expired
                                             </Typography>
                                         </Grid>
@@ -323,13 +318,13 @@ export default function RedeemRecords() {
                 direction="row"
                 justifyContent="center"
                 alignItems="center">
-                <Grid xs={12} container justifyContent="center" alignItems="center" style={{ display: Recordselect == 'Opened' ? "" : 'none' }}>
+                <Grid xs={12} container justifyContent="center" alignItems="center" style={{ display: Recordselect === 'Opened' ? "" : 'none' }}>
                     <Opened />
                 </Grid>
-                <Grid xs={12} container justifyContent="center" alignItems="center" style={{ display: Recordselect == 'Rewarded' ? "" : 'none' }}>
+                <Grid xs={12} container justifyContent="center" alignItems="center" style={{ display: Recordselect === 'Rewarded' ? "" : 'none' }}>
                     {TheCollectiondata}
                 </Grid>
-                <Grid xs={12} container justifyContent="center" alignItems="center" style={{ display: Recordselect == 'Expired' ? "" : 'none' }}>
+                <Grid xs={12} container justifyContent="center" alignItems="center" style={{ display: Recordselect === 'Expired' ? "" : 'none' }}>
                     <Expired />
                 </Grid>
 

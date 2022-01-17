@@ -5,13 +5,10 @@ import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import Fab from '@mui/material/Fab';
-import { styled } from '@mui/material/styles'
 import { Link } from "react-router-dom"
 import back from '../../../svgicon/Componenticon/Back.svg'
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
 import Collapse from "@mui/material/Collapse";
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
@@ -19,22 +16,7 @@ import EndBar from '../../framework/endbarWithback';
 import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUp from "@mui/icons-material/KeyboardArrowUp";
 import { useHistory } from "react-router";
-const StyledFab = styled(Fab)({
-    position: 'fixed',
-    zIndex: 3,
-    top: "75vh",
-    left: 0,
 
-});
-const userdata = [
-    { id: 0, level: 'Lv1', ReesID: 1, nickname: 'Jay' },
-]
-const Toplinkdata = [
-    { id: 0, linkName: "PROFILE", link: `/${userdata[0].ReesID}/Profile` },
-    { id: 1, linkName: "SETTING", link: `/${userdata[0].ReesID}/Setting` },
-    { id: 2, linkName: "EVENTS", link: "/Events" },
-    { id: 3, linkName: "BUY PUZZLES", link: "/" }
-]
 
 export default function FAQ() {
     const endbartype='Pure'

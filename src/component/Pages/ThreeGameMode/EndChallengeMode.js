@@ -7,7 +7,6 @@ import Typography from '@mui/material/Typography';
 import Chasepuzzle from "../../../svgicon/Componenticon/Chasepuzzle.svg"
 import PlayAgain from "../../../svgicon/BattleMode/PlayAgain.svg"
 import FreeShare from "../../../svgicon/BattleMode/FreeShare.svg"
-import GoAccept from "../../../svgicon/BattleMode/GoAccept.svg"
 import Grand from '../../../svgicon/OVOmode/Grand.svg';
 import Epic from '../../../svgicon/OVOmode/Epic.svg';
 import Hero from '../../../svgicon/OVOmode/Hero.svg';
@@ -28,7 +27,6 @@ const data = [
     { id: 3, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, quality: "30", text: 'BOUNS,Try Again', min: '', max: 'Bouns', background: Bouns, year: 23 },
     { id: 4, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, quality: "520", text: 'Congraduatiton,grand prize!', min: '', max: 'Grand', background: Grand, year: 23 },]
 
-const EndGameData = { CongraduationWords: "CONGRATULATIONS 1 ON 1 Mode WinnerTakes All", GamePuzzleRewards: 25, BonusLeft: 4 }
 export default class ChallengeMode extends Component {
 
     render() {

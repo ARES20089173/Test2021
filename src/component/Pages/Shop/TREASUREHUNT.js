@@ -1,32 +1,20 @@
-import { styled } from '@mui/material/styles';
-import Fab from '@mui/material/Fab';
-import React,{ useState } from 'react';
+import React  from 'react';
 import '../../framework/css/cssFGamechooser.css'
 import Grid from '@mui/material/Grid';
 import { Link } from "react-router-dom"
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
-
 import Redmachine from '../../../svgicon/Shop/MachinePic/Redmachine.svg'
 import Yellowmachine from '../../../svgicon/Shop/MachinePic/Yellowmachine.svg'
 import Bluemachine from '../../../svgicon/Shop/MachinePic/Bluemachine.svg'
-import GoGameLobby from '../../../svgicon/Componenticon/GoGameLobby.svg'
 import 'swiper/swiper-bundle.min.css'
-// swiper core styles
 import 'swiper/swiper.min.css'
 import "swiper/components/effect-coverflow/effect-coverflow.less"
 import 'swiper/components/pagination/pagination.min.css'
 import 'swiper/components/navigation/navigation.min.css'
-
-// import Swiper core and required modules
 import SwiperCore, {
   Pagination, Navigation, EffectCoverflow
 } from 'swiper';
 import { Typography } from '@mui/material';
-
-// install Swiper modules
 SwiperCore.use([Pagination, Navigation, EffectCoverflow]);
 
 const data = [
@@ -35,8 +23,6 @@ const data = [
   { id: 2, src: Bluemachine,link:"#" },
 ]
 export default function Gamechooser() {
-  const [count, setCount] = useState(0);
-  const [swiper, setSwiper] = useState();
   return (
     <Grid container xs={12}style={{ marginBottom: "1.5vh" }}>
       <Swiper
@@ -47,7 +33,6 @@ export default function Gamechooser() {
         }}
         onSlideChange={(index) => {
           console.log(index.realIndex)
-          setCount(index.realIndex);
         }}
         loop={true}
         navigation={false}

@@ -2,13 +2,9 @@ import React, { Component } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import EndBar from '../../../component/framework/endbarWithback';
-import { styled } from "@mui/material/styles";
-import { Link } from 'react-router-dom';
 import "../../framework/css/cssModFLooby.css"
-import backgroundEnd from "../../../reed_bg.svg"
 import Typography from '@mui/material/Typography';
 import Rmoney from '../../../svgicon/Componenticon/Rmoneyicon.svg';
-import Fab from '@mui/material/Fab';
 import chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg';
 import HisNavigationBar from './WithBackHisNavbar';
 import Grand from '../../../svgicon/Historyicon/Grand.svg';

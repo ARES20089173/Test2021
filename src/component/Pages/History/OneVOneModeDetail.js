@@ -2,31 +2,12 @@ import React, { Component } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import EndBar from '../../../component/framework/endbarWithback';
-import { styled } from "@mui/material/styles";
-import { Link } from 'react-router-dom';
 import "../../framework/css/cssModFLooby.css"
-import backgroundEnd from "../../../reed_bg.svg"
 import Typography from '@mui/material/Typography';
 import Rmoney from '../../../svgicon/Componenticon/Rmoneyicon.svg';
-import Fab from '@mui/material/Fab';
 import chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg';
-
 import HisNavigationBar from './WithBackHisNavbar';
-
 import Congraduation from '../../../svgicon/Historyicon/Congraduation.svg';
-const contentStyle = {
-    background: '#cfcece',
-    width: "95%",
-    height: "95%",
-    borderRadius: "5%",
-};
-const StyledFab2 = styled(Fab)({
-    position: 'relative',
-    zIndex: 0,
-    left: "0%",
-    bottom: "0"
-
-});
 const endbartype='History'
 export default class TournamentLobby extends Component {
     constructor(props) {
@@ -77,7 +58,7 @@ export default class TournamentLobby extends Component {
                                 1 ON 1 Mode
                             </Typography>
                         </Grid>
-                        <Grid contaier justifyContent='center' alignItems="center" xs={12} height="58vh" style={{ backgroundImage: `url(${data[this.props.match.params.id].WinorLoss == 'Win' ? Congraduation : ''})`, backgroundRepeat: 'no-repeat', backgroundSize: '100%', backgroundAttachment: 'cover' }}>
+                        <Grid contaier justifyContent='center' alignItems="center" xs={12} height="58vh" style={{ backgroundImage: `url(${data[this.props.match.params.id].WinorLoss === 'Win' ? Congraduation : ''})`, backgroundRepeat: 'no-repeat', backgroundSize: '100%', backgroundAttachment: 'cover' }}>
                             <Grid container xs={12} justifyContent='center' alignItems="center" height="38vh">
                             <Typography textAlign='center' variant='h4'><img src={chasepuzzle} alt='' width="20%" />x{data[this.props.match.params.id].quality}<br/>Congraduations</Typography>
                             </Grid>

@@ -5,18 +5,15 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-import face from '../../../svgicon/Headicon/face_1.svg';
 import Hamburgicon from '../../../svgicon/Componenticon/Hamburgicon.svg'
 import { Grid } from '@mui/material';
 import Close from '../../../svgicon/Componenticon/Close.svg'
-import CssBaseline from '@mui/material/CssBaseline';
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import { Link } from 'react-router-dom';
 import Logout from '../../../logout.svg'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import puzzle from "../../../svgicon/Componenticon/Chasepuzzle.svg"
 import coderedeem from '../../../coderedeem.svg'
 import TextField from '@mui/material/TextField';
 

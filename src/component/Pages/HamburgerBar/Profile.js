@@ -12,18 +12,12 @@ import { useHistory } from 'react-router';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import CssBaseline from '@mui/material/CssBaseline';
-import Fab from '@mui/material/Fab';
-import { styled } from '@mui/material/styles'
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom"
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import face1 from '../../../face_1.svg'
-import React, { Component } from "react";
-import Messagepuzzle from '../../../svgicon/NotificationIcon/Messagepuzzle.svg'
-import IconButton from '@mui/material/IconButton';
+import React from "react";
 import "../../framework/css/cssModFMessage.css"
-import Clear from "../../../svgicon/MessageCenter/Clear.svg"
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
 import back from '../../../svgicon/Componenticon/Back.svg'
 import changeAvatar from '../../../svgicon/Hamburgarbaricon/ChangeAvatar.svg';
@@ -150,9 +144,9 @@ function Profile(props) {
                     </Grid>
                 </Grid>
                 <Grid xs={12} container alignItems='center' justifyContent='center' height="63%" bgcolor="#242634" >
-                    <Grid xs={4}  ><Button size='small' variant={Sex == "Mr" ? 'contained' : 'outlined'} value="Mr" onClick={handleSexChange} color='primary'>Mr</Button></Grid>
-                    <Grid xs={4}  > <Button size='small' variant={Sex == "Ms" ? 'contained' : 'outlined'} value="Ms" onClick={handleSexChange}>Ms</Button></Grid>
-                    <Grid xs={4}  > <Button size='small' variant={Sex == "Mx" ? 'contained' : 'outlined'} value="Mx" onClick={handleSexChange}>Mx</Button></Grid>
+                    <Grid xs={4}  ><Button size='small' variant={Sex === "Mr" ? 'contained' : 'outlined'} value="Mr" onClick={handleSexChange} color='primary'>Mr</Button></Grid>
+                    <Grid xs={4}  > <Button size='small' variant={Sex === "Ms" ? 'contained' : 'outlined'} value="Ms" onClick={handleSexChange}>Ms</Button></Grid>
+                    <Grid xs={4}  > <Button size='small' variant={Sex === "Mx" ? 'contained' : 'outlined'} value="Mx" onClick={handleSexChange}>Mx</Button></Grid>
                     <TextField
                         id="outlined-basic"
                         type="date"
@@ -290,11 +284,9 @@ function Profile(props) {
                                 onChange={handleBuildingChange}
                                 variant="filled"
                                 className={classes.root}
-                                InputLabelProps={{
-                                    className: classes.input,
-                                }}
                                 inputProps={{ style: { fontFamily: 'Arial', color: 'white'}}}
                                 InputLabelProps={{
+                                    className: classes.input,
                                     style: { fontFamily: 'Arial', color: 'white'}
                                 }}
                                  size="small"

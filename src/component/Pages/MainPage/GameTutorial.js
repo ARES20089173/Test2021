@@ -7,8 +7,6 @@ import Hamburgicon from "../../../svgicon/Componenticon/Hamburgicon.svg";
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import Fab from '@mui/material/Fab';
-import { styled } from '@mui/material/styles'
 import { Link } from "react-router-dom"
 import back from '../../../svgicon/Componenticon/Back.svg'
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
@@ -16,22 +14,14 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import coderedeem from '../../../coderedeem.svg'
 import TextField from '@mui/material/TextField';
 import Chasepuzzle from "../../../svgicon/Componenticon/Chasepuzzle.svg"
-import Silverpuzzle from "../../../svgicon/Componenticon/SilverPuzzle.svg"
 import Close from '../../../svgicon/Componenticon/Close.svg'
 import Logout from '../../../logout.svg'
-import puzzle from "../../../puzzle.svg"
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import "./styles.css"
-const StyledFab = styled(Fab)({
-    position: 'fixed',
-    zIndex: 3,
-    top: "75vh",
-    left: 0,
 
-});
 
 const userdata = [
     { id: 0, level: 'Lv1', ReesID: 1,nickname:'Jay' },
@@ -149,7 +139,7 @@ export default class GameTutorial extends Component {
                                                 >
                                                     <img src={Close} alt='hamburgericon' width='40%' style={{ position: 'relative', left: 60 }} />
                                                 </IconButton>
-                                                <ListItemText style={{ textAlign: "center" }}  ><Grid container justifyContent='center' alignItems="center"><Typography color='white'>Play to Earn PUZZLES</Typography><img src={Chasepuzzle} /></Grid></ListItemText>
+                                                <ListItemText style={{ textAlign: "center" }}  ><Grid container justifyContent='center' alignItems="center"><Typography color='white'>Play to Earn PUZZLES</Typography><img src={Chasepuzzle} alt=''/></Grid></ListItemText>
 
                                                 {Toplinkdata.map((text, index) => (
                                                     <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>

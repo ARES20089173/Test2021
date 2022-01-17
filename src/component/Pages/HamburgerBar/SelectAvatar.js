@@ -1,6 +1,5 @@
-import React, { Component } from "react";
+import React from "react";
 import AppBar from '@mui/material/AppBar';
-import puzzle from '../../../puzzle.svg'
 import { useParams } from "react-router";
 import Popup from 'reactjs-popup';
 import EndBar from '../../framework/endbarWithback';
@@ -16,11 +15,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
-import Fab from '@mui/material/Fab';
-import { styled } from '@mui/material/styles'
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom"
-import { Button } from "@mui/material";
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
 import back from '../../../svgicon/Componenticon/Back.svg'
 import saveAvatar from '../../../svgicon/Hamburgarbaricon/SaveAvatar.svg';
@@ -61,13 +56,13 @@ export default function SelectAvatar() {
         setbgSelect(e)
     };
     const AvatarD = Avatardata.filter(Avatared => Avatared.id < 6).map((Adata) => {
-        return <Grid xs={4} container alignItems='center' justifyContent='center' marginTop="1vh" bgcolor={bgSelect == Adata.id ? "red" : ""}>
+        return <Grid xs={4} container alignItems='center' justifyContent='center' marginTop="1vh" bgcolor={bgSelect === Adata.id ? "red" : ""}>
             <img Click={handlebgChange} value={Adata.id} src={Adata.headicon} onClick={() => handlebgChange(Adata.id)} defalutvalue={2} alt="headicon" width="85%" ></img>
 
         </Grid>
     })
     const AvatarDLock = Avatardata.filter(Avatared => Avatared.id >= 6).map((Adata) => {
-        return <Grid xs={4} container alignItems='center' justifyContent='center'  marginTop="1vh" bgcolor={bgSelect == Adata.id ? "red" : ""}>
+        return <Grid xs={4} container alignItems='center' justifyContent='center'  marginTop="1vh" bgcolor={bgSelect === Adata.id ? "red" : ""}>
             <img Click={handlebgChange} value={Adata.id} src={Adata.headicon} onClick={() => handlebgChange(Adata.id)} defalutvalue={2} alt="headicon" width="85%" ></img>
 
         </Grid>

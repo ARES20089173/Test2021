@@ -1,9 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import Typography from '@mui/material/Typography';
-import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
 import Grid from '@mui/material/Grid'
 import PowerbyR from '../../svgicon/PowerBy/PowerByR.svg'
-
 import Ricon from '../../svgicon/Componenticon/Ricon.svg'
 import Twopuzzle from '../../svgicon/EndBaricon/Twopuzzle.svg'
 import PuzzleChase from '../../svgicon/EndBaricon/PuzzleChase.svg'

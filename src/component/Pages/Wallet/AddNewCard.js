@@ -1,49 +1,24 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Grid from '@mui/material/Grid';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
-import Fab from '@mui/material/Fab';
-import { styled } from '@mui/material/styles'
 import Addnewcardbutton from '../../../svgicon/Componenticon/Addnewcardbutton.svg';
 import { withStyles } from "@material-ui/core/styles";
 import TextField from '@mui/material/TextField';
 import { Link } from "react-router-dom"
-import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
 import EndBar from '../../framework/endbarWithback';
 import back from '../../../svgicon/Componenticon/Back.svg'
-import chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
-import silverpuzzle from '../../../svgicon/Componenticon/SilverPuzzle.svg'
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
-import Gicon1 from '../../../svgicon/Carousel/Bankcard.svg'
-import Addicon from '../../../svgicon/BankCardicons/Addicon.svg'
-import alipay from '../../../svgicon/BankCardicons/alipay.svg'
-import amapay from '../../../svgicon/BankCardicons/amapay.svg'
-import card from '../../../svgicon/BankCardicons/card.svg'
-import mastercard from '../../../svgicon/BankCardicons/mastercard.svg'
-import visa from '../../../svgicon/BankCardicons/visa.svg'
-import paypal from '../../../svgicon/BankCardicons/paypal.svg'
 import 'swiper/swiper-bundle.min.css'
-// swiper core styles
 import 'swiper/swiper.min.css'
 import "swiper/components/effect-coverflow/effect-coverflow.less"
 import 'swiper/components/pagination/pagination.min.css'
 import 'swiper/components/navigation/navigation.min.css'
-
-// import Swiper core and required modules
 import SwiperCore, {
     Pagination, Navigation, EffectCoverflow
 } from 'swiper';
-import { Checkbox } from '@mui/material';
-import { borderColor } from '@mui/system';
-import { Button } from '@material-ui/core';
-
-// install Swiper modules
 SwiperCore.use([Pagination, Navigation, EffectCoverflow]);
 const styles = {
     root: {

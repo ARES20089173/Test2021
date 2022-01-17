@@ -1,9 +1,7 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
-import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
 import adv1 from '../../../svgicon/Advertise/adv1.svg'
 import referimg from '../../../svgicon/Advertise/Referfriend.svg'
-import { CopyToClipboard } from 'react-copy-to-clipboard'
 import powerby from '../../../svgicon/PowerBy/PowerByR.svg'
 import Typography from '@mui/material/Typography';
 import 'reactjs-popup/dist/index.css';
@@ -11,28 +9,17 @@ import "../../framework/css/cssModFLooby.css"
 import Popup from 'reactjs-popup';
 import Box from '@mui/material/Box';
 import backgroundEnd from "../../../reed_bg.svg"
-import puzzle from '../../../puzzle.svg'
 import GameChooser from '../../framework/gamechooser';
 import Scrollbanner from '../../framework/scrollbanner';
 import NavigationBar from '../../framework/navigationBar';
 import Scrolltext from '../../framework/scrolltext';
 import GameLobby from '../../../svgicon/Componenticon/GameLobby.svg'
-import Close from '../../../svgicon/EndBaricon/ClosePopup.svg'
 import { Button } from '@mui/material';
 import EndBar from '../../framework/endbarWithback';
-import { styled } from '@mui/material/styles';
-import Fab from '@mui/material/Fab';
-import ReadMoreIcon from '@mui/icons-material/ReadMore';
 import { Link } from "react-router-dom"
 
 import { RWebShare } from "react-web-share";
 
-const StyledFab2 = styled(Fab)({
-    position: 'absolute',
-    zIndex: 1,
-    bottom: "42vh",
-    left: 0,
-});
 const contentStyle = {
     marginTop: '20%',
     background: '#242634',
@@ -112,7 +99,7 @@ export default function MainPage() {
                                                 <Typography variant="body2" component="div" color='primary' textAlign='center'>
 
                                                     <img src={referimg} width="70%" alt="referimage" />
-                                                    <img src={powerby} width="40%" />
+                                                    <img src={powerby} width="40%" alt=''/>
                                                 </Typography>
                                             </div>
                                         </Grid>

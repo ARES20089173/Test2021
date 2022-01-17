@@ -21,17 +21,7 @@ import Gicon15 from '../../../svgicon/GameIcon/Gicon15.svg'
 import NavigationBar from '../../framework/navigationBar';
 import EndBar from '../../framework/endbarWithback';
 import { Typography } from '@mui/material';
-// const StyledFab2 = styled(Fab)({
-//   position: 'fixed',
-//   zIndex: 3,
-//   bottom: "27%",
-//   left: "0%",
 
-<link
-  rel="preconnect" href="https://fonts.gstatic.com"
-  href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&display=swap" rel="stylesheet"
-/>
-// });
 
 const endbartype='Play'
 export default class MultigameChoose extends Component {

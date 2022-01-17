@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -6,12 +6,8 @@ import EndBar from '../../framework/endbarWithback';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
-import Fab from '@mui/material/Fab';
 import { useHistory } from "react-router";
-import { styled } from '@mui/material/styles'
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom"
-import Switch from '@mui/material/Switch';
 import Event1 from '../../../svgicon/Carousel/pic1.svg'
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
 import back from '../../../svgicon/Componenticon/Back.svg'

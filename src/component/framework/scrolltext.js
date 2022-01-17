@@ -1,7 +1,6 @@
 import React from 'react';
 import Marquee from 'react-double-marquee';
 import "./css/cssFScrollText.css"
-import Typography from '@mui/material/Typography';
 export default function FooComponent() {
   return (
     <div

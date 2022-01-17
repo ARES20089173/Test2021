@@ -58,11 +58,7 @@ import {
 import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import MessageCenter from './component/Pages/MainPage/MessageCenter';
 import SelectAvatar from './component/Pages/HamburgerBar/SelectAvatar';
-const ANIMATION_MAP = {
-  PUSH: 'forward',
-  POP: 'back',
-  REPLACE: 'forward'
-}
+
 const delayReset = () => { // 延后重置控制参数
   setTimeout(() => {
     needAnimation = true

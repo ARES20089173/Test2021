@@ -10,18 +10,7 @@ import GADET from '../../../svgicon/Shop/Category/Type/GADET.svg'
 import GOURMENT from '../../../svgicon/Shop/Category/Type/GOURMENT.svg'
 import TOY from '../../../svgicon/Shop/Category/Type/TOY.svg'
 import VIRTUAL from '../../../svgicon/Shop/Category/Type/VIRTUAL.svg'
-import { Typography } from '@mui/material';
-// const StyledFab2 = styled(Fab)({
-//   position: 'fixed',
-//   zIndex: 3,
-//   bottom: "27%",
-//   left: "0%",
 
-<link
-  rel="preconnect" href="https://fonts.gstatic.com"
-  href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&display=swap" rel="stylesheet"
-/>
-// });
 export default class Category extends Component {
   render() {
 

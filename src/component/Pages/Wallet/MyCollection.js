@@ -8,12 +8,9 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { useHistory } from "react-router";
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
-import Fab from '@mui/material/Fab';
-import { styled } from '@mui/material/styles'
 import { Link } from "react-router-dom"
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
 import EndBar from '../../framework/endbarWithback';
@@ -101,7 +98,6 @@ export default function MyCollection() {
         setContactNumber(Thedata.ContactNumber)
         setAddress(Thedata.Address)
     };
-    const closeTooltip = () => ref.current.close();
     const [online, setonline] = useState(false);
     const TheCollectiondata = Collectiondata.map((data, index) => {
         return (
@@ -170,19 +166,19 @@ export default function MyCollection() {
                                         <Grid xs={12} container justifyContent='center' alignItems='center'>
                                             <Grid xs={12} container justifyContent='center' alignItems='center' marginBottom='1vh'>
                                                 <Grid container justifyContent='center' alignItems='center' xs={6}>
-                                                    <Typography onClick={() => setonline(true)} style={{ textDecorationLine: online == true && 'underline' }}>online</Typography>
+                                                    <Typography onClick={() => setonline(true)} style={{ textDecorationLine: online === true && 'underline' }}>online</Typography>
                                                 </Grid>
 
                                                 <Grid container justifyContent='center' alignItems='center' xs={6}>
-                                                    <Typography onClick={() => setonline(false)} style={{ textDecorationLine: online == false && 'underline' }}>offline</Typography>
+                                                    <Typography onClick={() => setonline(false)} style={{ textDecorationLine: online === false && 'underline' }}>offline</Typography>
                                                 </Grid>
                                             </Grid>
-                                            <Grid xs={12} container justifyContent='center' alignItems='center' style={{ display: online == true ? '' : 'none' }}>
+                                            <Grid xs={12} container justifyContent='center' alignItems='center' style={{ display: online === true ? '' : 'none' }}>
                                                 <Grid xs={12} container justifyContent='center' alignItems='center'>
                                                     <img src={data.QRCODE} width="50%" alt='' />
                                                 </Grid>
                                             </Grid>
-                                            <Grid xs={12} container justifyContent='center' alignItems='center' style={{ display: online == false ? '' : 'none' }}>
+                                            <Grid xs={12} container justifyContent='center' alignItems='center' style={{ display: online === false ? '' : 'none' }}>
                                                 <Grid xs={4} container justifyContent='center' alignItems='center' marginRight='1vh'>
                                                     <Typography variant="caption">ShoppingAddress</Typography>
                                                 </Grid>

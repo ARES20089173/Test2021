@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import Box from '@mui/material/Box';
+import React from 'react';
 import Grid from '@mui/material/Grid';
 import { Link } from "react-router-dom"
 import ANIME from '../../../svgicon/Shop/Category/Type/ANIME.svg'
@@ -14,17 +13,7 @@ import PuzzleChase from '../../../svgicon/EndBaricon/PuzzleChase.svg'
 import Ricon from '../../../svgicon/Componenticon/Ricon.svg'
 import { Typography } from '@mui/material';
 import { useHistory } from 'react-router';
-// const StyledFab2 = styled(Fab)({
-//   position: 'fixed',
-//   zIndex: 3,
-//   bottom: "27%",
-//   left: "0%",
 
-<link
-    rel="preconnect" href="https://fonts.gstatic.com"
-    href="https://fonts.googleapis.com/css2?family=Hanalei+Fill&display=swap" rel="stylesheet"
-/>
-// });
 export default function EndPage(){
         const history=useHistory()
         const data = [
@@ -67,7 +56,7 @@ export default function EndPage(){
                                     <Typography color={pic.color} onClick={()=>routeChange3(pic.name)}>{pic.name}<br /></Typography>
                                 </div>
                             </Link>
-                            {data.length == index + 1 ? <hr /> : ""}
+                            {data.length === index + 1 ? <hr /> : ""}
                         </Grid>
                     ))}
                     
@@ -105,7 +94,7 @@ export default function EndPage(){
                     </Typography>
                 </Grid>
                 <Grid container xs={12} justifyContent='left' alignItems='center' marginTop='3vh'>
-                    <Typography color='white' textAlign='center' variant='h3' color='black'>
+                    <Typography color='white' textAlign='center' variant='h3' >
                       <img src={Ricon} className="App-logo" alt="logo" width="20%" style={{position:'relative',top:18}}/>
                         |<img src={PuzzleChase} className="App-logo" alt="logo" width="25%" style={{position:'relative',top:8  }}/>
                     </Typography>

@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import React, { useState } from 'react';
+import React from 'react';
 import '../../framework/css/cssFGamechooser.css'
 import Grid from '@mui/material/Grid';
 import PropTypes from 'prop-types';
@@ -7,9 +7,7 @@ import Slider, { SliderThumb } from '@mui/material/Slider';
 import { Typography } from '@mui/material';
 import Chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
 import tip from '../../../svgicon/Shop/word&button/tip.svg'
-import { useHistory } from "react-router-dom";
 import { IconButton } from '@mui/material';
-import { Link } from 'react-router-dom';
 import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
 import Collapse from "@mui/material/Collapse";
 import Popup from 'reactjs-popup';
@@ -93,14 +91,6 @@ AirbnbThumbComponent.propTypes = {
 };
 export default function Shopcartslider() {
 
-    const history = useHistory();
-    const routeChange = () => {
-
-        console.log("textmessage")
-        let path = `#`;
-        history.push(path);
-        // history.goBack()
-    }
     const [value1, setValue1] = React.useState([0]);
 
     const handleChange1 = (event, newValue, activeThumb) => {

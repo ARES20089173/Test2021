@@ -19,9 +19,6 @@ import Toolbar from '@mui/material/Toolbar';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
-import Fab from '@mui/material/Fab';
-import { styled } from '@mui/material/styles'
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom"
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
 import back from '../../../svgicon/Componenticon/Back.svg'
@@ -51,15 +48,6 @@ export default class MessageCenter extends Component {
 
         ];
 
-        const handleChange = (event) => {
-            // for swith
-        };
-        // const handleChange1 = (event) => {
-        //     // for swith
-        // };
-        // const handleChange2 = (event) => {
-        //     // for swith
-        // };
         const Newdata = New.map((data) => {
             if (data.time != null) {
                 return <Grid container
@@ -68,10 +56,10 @@ export default class MessageCenter extends Component {
                     height='15vh'
                     justifyContent='center'
                     alignItem='center'
-                    style={{ backgroundColor: data.id % 2 == 0 ? '#242634' : '#35394C' }}>
+                    style={{ backgroundColor: data.id % 2 === 0 ? '#242634' : '#35394C' }}>
 
                     <Grid item xs={2} style={{ textAlign: 'left', paddingLeft: '4vh' }} >
-                        <img src={data.icon} width="100%" />
+                        <img src={data.icon} width="100%" alt=''/>
                     </Grid>
                     <Grid item xs={10} style={{ textAlign: 'left', paddingLeft: '1vh' }} >
                         <Typography variant="caption" color="#ffffff" style={{ overflowWrap: 'break-word' }} display="inline"> {data.setname}
@@ -79,16 +67,17 @@ export default class MessageCenter extends Component {
                     </Grid>
                 </Grid>
             }
+            return null
         })
         const Olddata = Old.map((data) => {
-            if (data.time == null) {
+            if (data.time === null) {
                 return <Grid container
                     direction="row"
                     alignItems="center"
                     height='15vh'
-                    style={{ backgroundColor: data.id % 2 == 0 ? '#242634' : '#35394C' }}>
+                    style={{ backgroundColor: data.id % 2 === 0 ? '#242634' : '#35394C' }}>
                     <Grid item xs={2} style={{ textAlign: 'left', paddingLeft: '4vh' }} >
-                        <img src={data.icon} width="100%" />
+                        <img src={data.icon} width="100%" alt=''/>
                     </Grid>
                     <Grid item xs={10} style={{ textAlign: 'left', paddingLeft: '1vh' }} >
                         <Typography variant="caption" color="#ffffff" style={{ overflowWrap: 'break-word' }} display="inline"> {data.setname}
@@ -96,6 +85,7 @@ export default class MessageCenter extends Component {
                     </Grid>
                 </Grid>
             }
+            return null
         }
         );
         return (

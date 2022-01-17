@@ -1,10 +1,7 @@
-import { styled } from '@mui/material/styles';
-import Fab from '@mui/material/Fab';
-import React, { useState } from 'react';
+import React from 'react';
 import '../../framework/css/cssFGamechooser.css'
 import Grid from '@mui/material/Grid';
 import { Link } from "react-router-dom"
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -16,7 +13,6 @@ import Gicon5 from '../../../svgicon/Shop/Category/Gicon5.svg'
 import Gicon6 from '../../../svgicon/Shop/Category/Gicon6.svg'
 import Gicon7 from '../../../svgicon/Shop/Category/Gicon7.svg'
 import Gicon8 from '../../../svgicon/Shop/Category/Gicon8.svg'
-import GoGameLobby from '../../../svgicon/Componenticon/GoGameLobby.svg'
 import 'swiper/swiper-bundle.min.css'
 // swiper core styles
 import 'swiper/swiper.min.css'
@@ -59,7 +55,7 @@ export default function Gamechooser() {
                 navigation={false}
                 centeredSlides
                 slidesPerView={1.5}
-                style={{ marginTop: 0 }}
+                style={{ marginTop: 0 , marginBottom: "1vh" }}
                 effect={"coverflow"}
                 grabCursor={true}
                 coverflowEffect={{
@@ -69,8 +65,7 @@ export default function Gamechooser() {
                     modifier: 1,
                     slideShadows: false
                 }}
-                className="mySwiper"
-                style={{ marginBottom: "1vh" }}>
+                className="mySwiper">
 
                 {data.map((pic) => (
                     <SwiperSlide >
@@ -78,7 +73,7 @@ export default function Gamechooser() {
                             <Typography style={{ textAlign: 'center' }} paragraph variant='body2'  ><Link to="#">  <img key={pic.id} src={pic.src} alt="img1" style={{ width: '60%' }} />  </Link> </Typography>
                             <Typography style={{ textAlign: 'center' }} paragraph variant='body2' >
                                 BENEFIT COSMETICS</Typography>
-                            <Typography style={{ textAlign: 'center' }} paragraph variant='caption' style={{ wordWrap: 'break-word' }} >BEASDLFKJASDLFJADSKFJASDLKFJASDLFADSLKFJSADLKFJASKDLFJASDLKFJAKLSDFJASDLKF;ASDF;KLADS;J;FKL</Typography>
+                            <Typography style={{ textAlign: 'center' ,wordWrap: 'break-word'}} paragraph variant='caption'  >BEASDLFKJASDLFJADSKFJASDLKFJASDLFADSLKFJSADLKFJASKDLFJASDLKFJAKLSDFJASDLKF;ASDF;KLADS;J;FKL</Typography>
 
                         </div>
                     </SwiperSlide>

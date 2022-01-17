@@ -1,31 +1,21 @@
-import { styled } from '@mui/material/styles';
-import Fab from '@mui/material/Fab';
 import React,{ useState } from 'react';
 import "./css/cssFGamechooser.css"
 import Grid from '@mui/material/Grid';
 import { Link } from "react-router-dom"
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
 import Gicon1 from '../../svgicon/GameIcon/Gicon1.svg'
 import Gicon2 from '../../svgicon/GameIcon/Gicon2.svg'
 import Gicon3 from '../../svgicon/GameIcon/Gicon3.svg'
 import GoGameLobby from '../../svgicon/Componenticon/GoGameLobby.svg'
 import 'swiper/swiper-bundle.min.css'
-// swiper core styles
 import 'swiper/swiper.min.css'
 import "swiper/components/effect-coverflow/effect-coverflow.less"
 import 'swiper/components/pagination/pagination.min.css'
 import 'swiper/components/navigation/navigation.min.css'
-
-// import Swiper core and required modules
 import SwiperCore, {
   Pagination, Navigation, EffectCoverflow
 } from 'swiper';
 import { Typography } from '@mui/material';
-
-// install Swiper modules
 SwiperCore.use([Pagination, Navigation, EffectCoverflow]);
 
 const data = [
@@ -35,7 +25,6 @@ const data = [
 ]
 export default function Gamechooser() {
   const [count, setCount] = useState(0);
-  const [swiper, setSwiper] = useState();
   return (
     <Grid container xs={12}style={{ marginBottom: "1.5vh" }}>
       <Swiper

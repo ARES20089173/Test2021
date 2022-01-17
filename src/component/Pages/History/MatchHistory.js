@@ -2,22 +2,15 @@ import React, { Component } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import EndBar from '../../../component/framework/endbarWithback';
-import { styled } from "@mui/material/styles";
 import { Link } from 'react-router-dom';
 import "../../framework/css/cssModFLooby.css"
-import IconButton from '@mui/material/IconButton';
 import backgroundEnd from "../../../reed_bg.svg"
 import Typography from '@mui/material/Typography';
 import Rmoney from '../../../svgicon/Componenticon/Rmoneyicon.svg';
-import Fab from '@mui/material/Fab';
-import Drawer from "@mui/material/Drawer";
-import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
 import silverpuzzle from '../../../svgicon/Componenticon/SilverPuzzle.svg'
-import BattleRank from '../../../svgicon/Historyicon/BattleRank.svg';
 import HisNavigationBar from './HisNavigation';
 
 import Grand from '../../../svgicon/Historyicon/Grand.svg';
@@ -38,19 +31,7 @@ import Gicon10 from '../../../svgicon/GameIcon/Gicon10.svg'
 import Gicon11 from '../../../svgicon/GameIcon/Gicon11.svg'
 import Gicon12 from '../../../svgicon/GameIcon/Gicon12.svg'
 import Gicon13 from '../../../svgicon/GameIcon/Gicon13.svg'
-const contentStyle = {
-    background: '#cfcece',
-    width: "95%",
-    height: "95%",
-    borderRadius: "5%",
-};
-const StyledFab2 = styled(Fab)({
-    position: 'relative',
-    zIndex: 0,
-    left: "0%",
-    bottom: "0"
 
-});
 const endbartype='History'
 export default class TournamentLobby extends Component {
     constructor(props) {
@@ -86,7 +67,7 @@ export default class TournamentLobby extends Component {
             { id: 12, linkName: Rmoney, icon: Gicon13, linkMODE: `BattleModeDetail`, addorReduce: "-", slash: '/', Mode: 'Rank', quality: "3750", unit: Rmoney, min: 15, max: 50, year: 23, date: "Sep 29" }]
 
         const data2 = data.map((text) => {
-            if (text.id % 2 == 0) {
+            if (text.id % 2 === 0) {
                 return <Link to={`/History/${text.id}/${text.linkMODE}`} style={{ textDecoration: 'none', color: 'white' }}>
                     <Grid xs={12} container1 alignItems="center" >
 

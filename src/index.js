@@ -3,11 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+const theme = createTheme({
+  typography: {
+    fontFamily:'MyFont',
+    
+  },
+});
 ReactDOM.render(
-  
+
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <App />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

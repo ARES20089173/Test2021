@@ -1,6 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import Typography from '@mui/material/Typography';
-import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
 import Grid from '@mui/material/Grid'
 import PowerbyR from '../../svgicon/PowerBy/PowerByR.svg'
 

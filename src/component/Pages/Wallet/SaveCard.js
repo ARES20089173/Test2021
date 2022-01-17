@@ -1,34 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
-import Fab from '@mui/material/Fab';
-import { styled } from '@mui/material/styles'
 import { Link } from "react-router-dom"
-import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
 import EndBar from '../../framework/endbarWithback';
 import back from '../../../svgicon/Componenticon/Back.svg'
-import chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
 import savecardbg from '../../../svgicon/Background/SaveCard.svg'
 import Creditcard from '../../../svgicon/WalletTrans/Creditcard.svg'
-import silverpuzzle from '../../../svgicon/Componenticon/SilverPuzzle.svg'
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
 import Gicon1 from '../../../svgicon/Carousel/Bankcard.svg'
 import Addicon from '../../../svgicon/BankCardicons/Addicon.svg'
 import alipay from '../../../svgicon/BankCardicons/alipay.svg'
 import ArrowPay from '../../../svgicon/BankCardicons/ArrowPay.svg'
 import amapay from '../../../svgicon/BankCardicons/amapay.svg'
-import card from '../../../svgicon/BankCardicons/card.svg'
 import mastercard from '../../../svgicon/BankCardicons/mastercard.svg'
 import visa from '../../../svgicon/BankCardicons/visa.svg'
 import paypal from '../../../svgicon/BankCardicons/paypal.svg'
 import 'swiper/swiper-bundle.min.css'
-// swiper core styles
 import 'swiper/swiper.min.css'
 import "swiper/components/effect-coverflow/effect-coverflow.less"
 import 'swiper/components/pagination/pagination.min.css'
@@ -49,9 +40,7 @@ const data = [
     { id: 2, src: Gicon1, name: "LoL", number: 55, entryFee: 828 },
 ]
 export default function Savecard() {
-    const [count, setCount] = useState(0);
     const endbartype='Wallet'
-    const [Default, setDefault] = useState();
     return (
 
         <Box sx={{ flexGrow: 1 }} bgcolor='#242634' height="100vh">
@@ -104,7 +93,6 @@ export default function Savecard() {
                         }}
                         onSlideChange={(index) => {
                             console.log(index.realIndex)
-                            setCount(index.realIndex);
                         }}
                         loop={true}
                         navigation={false}
@@ -132,7 +120,7 @@ export default function Savecard() {
                 </Grid>
 
                 <Grid item xs={12} height="5vh" alignItems='center' justifyContent='center' textAlign='center' >
-                    <Typography color='white' ><Checkbox onChange={() => { setDefault(count); }} color='error'
+                    <Typography color='white' ><Checkbox  color='error'
                         sx={{
                             color: 'white',
                             '&.Mui-checked': {

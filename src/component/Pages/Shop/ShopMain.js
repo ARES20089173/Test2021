@@ -12,7 +12,6 @@ import Category from './Category'
 import Comment from './Comment'
 import EndPage from './EndPage'
 import Search from './Search'
-import { makeStyles } from "@material-ui/core/styles";
 import Scrollbanner from '../../framework/scrollbanner'
 import Typography from '@mui/material/Typography';
 import 'reactjs-popup/dist/index.css';
@@ -22,7 +21,6 @@ import MenuItem from '@mui/material/MenuItem';
 import Box from '@mui/material/Box';
 import backgroundEnd from "../../../reed_bg.svg"
 import NavigationBar from '../../framework/navigationbarforshop';
-import face from '../../../svgicon/Headicon/face_1.svg'
 import Scrolltext from '../../framework/scrolltext';
 import Categorychooser from './categorychooser';
 import Gamenowplaylater from '../../../svgicon/Shop/word&button/Gamenowplaylater.svg'
@@ -45,10 +43,6 @@ import continuebuy from '../../../svgicon/Shop/word&button/continuebuy.svg'
 import SlideRangebg from '../../../svgicon/Shop/Picturebackground/SlideRangebg.svg'
 import EndBar from '../../framework/endbarWithback';
 import data from './data';
-import { styled } from '@mui/material/styles';
-import Fab from '@mui/material/Fab';
-import 'reactjs-popup/dist/index.css';
-import { Button } from '@mui/material';
 import Popup from 'reactjs-popup';
 import { useEffect } from 'react';
 
@@ -83,11 +77,12 @@ export default function MainPage() {
     useEffect(() => {
         localStorage.setItem('cartItems', JSON.stringify(cartItems))
         localStorage.setItem('language', JSON.stringify(language))
-        if (localStorage.getItem('language') != 'false') {
+    })
+    useEffect(() => {
+        if (localStorage.getItem('language') !== 'false') {
             setChecklanguageopen(false)
         }
-
-    })
+    },[])
     const onAdd = (product) => {
         setPopopen(true)
         const exist = cartItems.find((x) => x.id === product.id);
@@ -102,18 +97,6 @@ export default function MainPage() {
             setCartItems([...cartItems, { ...product, qty: 1 }]);
         }
 
-    };
-    const onRemove = (product) => {
-        const exist = cartItems.find((x) => x.id === product.id);
-        if (exist.qty === 1) {
-            setCartItems(cartItems.filter((x) => x.id !== product.id));
-        } else {
-            setCartItems(
-                cartItems.map((x) =>
-                    x.id === product.id ? { ...exist, qty: exist.qty - 1 } : x
-                )
-            );
-        }
     };
     const [open, setOpen] = useState(false);
     function handleClick() {

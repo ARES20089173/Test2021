@@ -30,8 +30,6 @@ import Gicon14 from '../../../svgicon/GameIcon/Gicon14.svg'
 import Gicon15 from '../../../svgicon/GameIcon/Gicon15.svg'
 import Forward from '../../../svgicon/Componenticon/Forward.svg'
 import Down from '../../../svgicon/Componenticon/Down.svg'
-import pic2 from "../../../svgicon/ThreeModePic/BattleMode.svg"
-import pic1 from "../../framework/img/300x100.jpeg"
 import PoweredByR from '../../../svgicon/PowerBy/PowerByR.svg'
 import Toolbar from '@mui/material/Toolbar';
 
@@ -405,7 +403,7 @@ export default class TournamentLobby extends Component {
                                         )}
                                     </Popup>
                                 </Button>
-                                <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${oneVoneMode[0].id}/OneVoneMode`}><img src={SmallRightbg} width="100%" height='100%' /></Link>
+                                <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${oneVoneMode[0].id}/OneVoneMode`}><img src={SmallRightbg} width="100%" height='100%' alt=''/></Link>
 
                             </Grid>
                         </Grid>
@@ -473,7 +471,7 @@ export default class TournamentLobby extends Component {
                                                     )}
                                                 </Popup>
                                             </Button>
-                                            <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${content.id}/OneVoneMode`}><img src={SmallRightbg} width="100%" height='100%' /></Link>
+                                            <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${content.id}/OneVoneMode`}><img src={SmallRightbg} width="100%" height='100%' alt=''/></Link>
 
                                         </Grid>
                                     </Grid></>
@@ -591,7 +589,7 @@ export default class TournamentLobby extends Component {
                                         )}
                                     </Popup>
                                 </Button>
-                                <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${challengerMode[0].id}/ChallengerModeGo`}><img src={Rightbg} width="100%" height='100%' /></Link>
+                                <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${challengerMode[0].id}/ChallengerModeGo`}><img src={Rightbg} width="100%" height='100%' alt=''/></Link>
                             </Grid>
                         </Grid>
                         <Collapse in={this.state.expanded2} timeout="auto" unmountOnExit style={{ width: "100%" }}>
@@ -656,7 +654,7 @@ export default class TournamentLobby extends Component {
                                                     )}
                                                 </Popup>
                                             </Button>
-                                            <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${content.id}/ChallengerModeGO`}><img src={Rightbg} width="100%" height='100%' /></Link>
+                                            <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${content.id}/ChallengerModeGO`}><img src={Rightbg} width="100%" height='100%' alt=''/></Link>
                                         </Grid>
                                     </Grid>
                                 </>
@@ -789,7 +787,7 @@ export default class TournamentLobby extends Component {
                                         )}
                                     </Popup>
                                 </Button>
-                                <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${BattleMode[0].id}/BattleModeJoin`}><img src={Rightbg} width="100%" height='100%' /></Link>
+                                <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${BattleMode[0].id}/BattleModeJoin`}><img src={Rightbg} width="100%" height='100%' alt=''/></Link>
 
                             </Grid>
 
@@ -871,7 +869,7 @@ export default class TournamentLobby extends Component {
                                                     )}
                                                 </Popup>
                                             </Button>
-                                            <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${content.id}/BattleModeJoin`}><img src={Rightbg} width="100%" height='100%' /></Link>
+                                            <Link to={`/multigameChooser/tournamentLobby/${this.props.match.params.id}/${content.id}/BattleModeJoin`}><img src={Rightbg} width="100%" height='100%' alt=''/></Link>
 
                                         </Grid>
                                     </Grid>

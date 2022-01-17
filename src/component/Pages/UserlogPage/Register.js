@@ -5,23 +5,13 @@ import Grid from '@mui/material/Grid';
 import { TextField, makeStyles } from "@material-ui/core";
 import Typography from '@mui/material/Typography';
 import 'react-phone-number-input/style.css'
-import Fab from '@mui/material/Fab';
-import { styled } from '@mui/material/styles'
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom"
 import 'reactjs-popup/dist/index.css';
-import Ricon from '../../../svgicon/Componenticon/Ricon.svg'
 import face1 from '../../../svgicon/Headicon/face_1.svg'
 import face2 from '../../../svgicon/Headicon/face_2.svg'
 import face3 from '../../../svgicon/Headicon/face_3.svg'
 import { Button, Checkbox, InputLabel } from "@mui/material";
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
-const sexdata = [
-    { id: 0, link: '/Register' },
-    { id: 1, link: '/login/ForgotPW' },
-    { id: 2, link: '/Register' },
-    { id: 3, link: '/' },
-]
 
 const useStyles = makeStyles((theme) => ({
     input: {
@@ -42,8 +32,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Register() {
     const classes = useStyles();
-    const [count, setCount] = React.useState(0);
-    const [Default, setDefault] = React.useState();
+    const [Default, setDefault] = React.useState(0);
     const [face, setface] = React.useState(face1);
     const [Name, setName] = React.useState();
     const [MobileNumber, setMobileNumber] = React.useState();
@@ -173,10 +162,10 @@ export default function Register() {
                                     }}
                                     inputProps={{ className: classes.input }}
                                 />
-                                <InputLabel style={{ color: 'red', display: ConfirmpassWord == passWord ? 'none' : 'block' }} >Password not same!</InputLabel>
+                                <InputLabel style={{ color: 'red', display: ConfirmpassWord === passWord ? 'none' : 'block' }} >Password not same!</InputLabel>
                                 <Grid xs={10} container height="10vh" justifyContent='center' alignItems="center" >
                                     <Link to='/Register/Info' style={{minWidth: '100%',marginLeft:'50%',marginTop:'5%' ,textDecoration:'none'}}><Button variant='outlined' style={{  backgroundColor: 'purple', color: 'white', borderColor: 'white' }}>Register</Button></Link>
-                                    <Typography color='white' ><Checkbox onChange={() => { setDefault(count); }} color='error'
+                                    <Typography color='white' ><Checkbox onChange={() => { setDefault(Default); }} color='error'
                                         sx={{
                                             color: 'white',
                                             '&.Mui-checked': {

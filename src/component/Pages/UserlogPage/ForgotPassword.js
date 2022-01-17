@@ -5,13 +5,8 @@ import Grid from '@mui/material/Grid';
 import { TextField, makeStyles } from "@material-ui/core";
 import Typography from '@mui/material/Typography';
 import 'react-phone-number-input/style.css'
-import Fab from '@mui/material/Fab';
-import { styled } from '@mui/material/styles'
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom"
 import 'reactjs-popup/dist/index.css';
-import face1 from '../../../face_1.svg'
-import Ricon from '../../../svgicon/Componenticon/Ricon.svg'
 import LoginDesign from '../../../svgicon/LoginComp/LoginDesign.svg'
 import { Button } from "@mui/material";
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
@@ -33,13 +28,6 @@ const useStyles = makeStyles((theme) => ({
         },
     },
 }));
-
-
-const userdata = [
-    { id: 0, Sex: "Mr", FirstName: "Cheung", LastName: "kit", NickName: "Jay", Birthday: "2011-10-29", Contact: "+852", Flat: "1502", Street: "King road", Area: "Island", Builidng: "HealthyGarden", level: 'Lv1', ReesID: 1121321231, headicon: face1 },
-    { id: 1, Sex: "Mr", FirstName: "Cheung2", LastName: "kit", NickName: "Jay", Birthday: "2011-10-29", Contact: "+852", Flat: "1502", Street: "King road", Area: "Island", Builidng: "HealthyGarden", level: 'Lv1', ReesID: 1121321231, headicon: face1 },
-    { id: 2, Sex: "Mx", FirstName: "Cheung3", LastName: "kit", NickName: "Jay", Birthday: "2011-10-29", Contact: "+852", Flat: "1502", Street: "King road", Area: "Island", Builidng: "HealthyGarden", level: 'Lv1', ReesID: 1121321231, headicon: face1 },
-]
 
 export default function ForgotPW() {
 

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import EndBar from '../../../component/framework/endbarWithback';
-import { styled } from "@mui/material/styles";
 import { Link } from 'react-router-dom';
 import "../../framework/css/cssModFLooby.css"
 import IconButton from '@mui/material/IconButton';
@@ -13,20 +12,15 @@ import TextField from '@mui/material/TextField';
 import backgroundEnd from "../../../reed_bg.svg"
 import Logout from '../../../logout.svg'
 import Typography from '@mui/material/Typography';
-import MenuIcon from '@mui/icons-material/Menu';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
 import Close from '../../../svgicon/Componenticon/Close.svg'
 import Hamburgicon from "../../../svgicon/Componenticon/Hamburgicon.svg";
-import puzzle from "../../../svgicon/Componenticon/Chasepuzzle.svg"
 import Button from '@mui/material/Button';
 import Rmoney from '../../../svgicon/Componenticon/Rmoneyicon.svg';
-import Fab from '@mui/material/Fab';
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
-import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Dayilymission from '../../../svgicon/Missionicon/Dailymission.svg'
 import Game from '../../../svgicon/Missionicon/Game.svg'
@@ -63,8 +57,6 @@ export default class TournamentLobby extends Component {
         this.handleExpandClick3 = this.handleExpandClick3.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.openhandleClick = this.openhandleClick.bind(this);
-        //     this.state = { isToggleOn: true };
-        //     this.Mode = 1;
     }
     openhandleClick() {
         this.setState(prevState => ({
@@ -104,7 +96,7 @@ export default class TournamentLobby extends Component {
             { id: 3, linkName: "Play SMC game", link: `/MissionMain`, icon: Game, price: 1750, quality: "3750(+950)", unit: Rmoney, remain: 1, max: 10 }]
 
         const data2 = data.map((text) => {
-            if (text.id % 2 == 0) {
+            if (text.id % 2 === 0) {
                 return <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
                     <ListItem button key={text.id} style={{ backgroundColor: '#242634' }}>
                         <ListItemText  >

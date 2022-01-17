@@ -7,12 +7,7 @@ import Typography from '@mui/material/Typography';
 import Chasepuzzle from "../../../svgicon/Componenticon/Chasepuzzle.svg"
 import PlayAgain from "../../../svgicon/BattleMode/PlayAgain.svg"
 import FreeShare from "../../../svgicon/BattleMode/FreeShare.svg"
-import GoAccept from "../../../svgicon/BattleMode/GoAccept.svg"
 import Grand from '../../../svgicon/OVOmode/Grand.svg';
-import Epic from '../../../svgicon/OVOmode/Epic.svg';
-import Hero from '../../../svgicon/OVOmode/Hero.svg';
-import KeepUp from '../../../svgicon/OVOmode/KeepUp.svg';
-import Bouns from '../../../svgicon/OVOmode/Bouns.svg';
 import left from '../../../svgicon/End1ON1Mode/4.svg';
 import { Link } from 'react-router-dom';
 const contentStyle = {
@@ -24,7 +19,6 @@ const contentStyle = {
 const data = [
 { id: 0, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, quality: "520", text: 'Congraduatitons, 1 ON 1 MODE  Winners takes all!', min: '', max: 'Grand', background: Grand, year: 23 },]
 
-const EndGameData = { CongraduationWords: "CONGRATULATIONS 1 ON 1 Mode WinnerTakes All", GamePuzzleRewards: 25, BonusLeft: 4 }
 export default class OneVoneMode extends Component {
 
     render() {

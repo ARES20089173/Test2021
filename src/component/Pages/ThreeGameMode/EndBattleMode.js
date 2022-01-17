@@ -4,23 +4,7 @@ import 'reactjs-popup/dist/index.css';
 import "../../framework/css/cssModFLooby.css"
 import Popup from 'reactjs-popup';
 import Typography from '@mui/material/Typography';
-import puzzle from "../../../puzzle.svg"
-
 import Gicon1 from '../../../svgicon/GameIcon/Gicon1.svg'
-import Gicon2 from '../../../svgicon/GameIcon/Gicon2.svg'
-import Gicon3 from '../../../svgicon/GameIcon/Gicon3.svg'
-import Gicon4 from '../../../svgicon/GameIcon/Gicon4.svg'
-import Gicon5 from '../../../svgicon/GameIcon/Gicon5.svg'
-import Gicon6 from '../../../svgicon/GameIcon/Gicon6.svg'
-import Gicon7 from '../../../svgicon/GameIcon/Gicon7.svg'
-import Gicon8 from '../../../svgicon/GameIcon/Gicon8.svg'
-import Gicon9 from '../../../svgicon/GameIcon/Gicon9.svg'
-import Gicon10 from '../../../svgicon/GameIcon/Gicon10.svg'
-import Gicon11 from '../../../svgicon/GameIcon/Gicon11.svg'
-import Gicon12 from '../../../svgicon/GameIcon/Gicon12.svg'
-import Gicon13 from '../../../svgicon/GameIcon/Gicon13.svg'
-import Gicon14 from '../../../svgicon/GameIcon/Gicon14.svg'
-import Gicon15 from '../../../svgicon/GameIcon/Gicon15.svg'
 import PlayAgain from "../../../svgicon/BattleMode/PlayAgain.svg"
 import FreeShare from "../../../svgicon/BattleMode/FreeShare.svg"
 import GoAccept from "../../../svgicon/EndBattleMode/Goaccept.svg"

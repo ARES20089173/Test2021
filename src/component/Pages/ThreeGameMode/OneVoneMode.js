@@ -2,20 +2,14 @@ import React, { Component } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import { useStopwatch } from 'react-timer-hook';
-import { styled } from '@mui/material/styles'
-import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
 import backgroundEnd from "../../../reed_bg.svg"
 import Forward from '../../../svgicon/Componenticon/Forward.svg'
-import Select from 'react-select';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import EndBar from '../../framework/endbarWithback';
 import 'reactjs-popup/dist/index.css';
 import { Link } from 'react-router-dom';
 import "../../framework/css/cssModFLooby.css"
 import Popup from 'reactjs-popup';
-import pic1 from '../../framework/img/300x100.jpeg'
 import IconButton from '@mui/material/IconButton';
-import face0 from "../../../face_10.svg"
 import face1 from "../../../face_1.svg"
 import face2 from "../../../face_2.svg"
 import face3 from "../../../face_3.svg"
@@ -43,17 +37,12 @@ import Gicon14 from '../../../svgicon/GameIcon/Gicon14.svg'
 import Gicon15 from '../../../svgicon/GameIcon/Gicon15.svg'
 import BgBlack from "../../../svgicon/OVOmode/BgBlack.svg"
 import Bgpink from "../../../svgicon/OVOmode/BgPink.svg"
-import Circle from "../../../svgicon/OVOmode/Circle.svg"
 import Vs from "../../../svgicon/OVOmode/Vs.svg"
-import Headicon from '../../../headicon.svg'
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import MenuIcon from '@mui/icons-material/Menu';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
-import Badge from '@mui/material/Badge'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import Fab from '@mui/material/Fab';
 import { Swiper, SwiperSlide } from "swiper/react";
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
@@ -68,27 +57,14 @@ import Close from '../../../svgicon/Componenticon/Close.svg'
 import GameTutorial from "../../../svgicon/BattleMode/GameTutorial.svg"
 import Download from "../../../svgicon/BattleMode/Download.svg"
 import PoweredByR from '../../../svgicon/PowerBy/PowerByR.svg'
-// Import Swiper styles
 import 'swiper/swiper-bundle.min.css'
-// swiper core styles
 import 'swiper/swiper.min.css'
 import "swiper/components/effect-coverflow/effect-coverflow.less"
 import 'swiper/components/pagination/pagination.min.css'
 import 'swiper/components/navigation/navigation.min.css'
 import { withRouter } from 'react-router-dom';
-
-// import Swiper core and required modules
 import SwiperCore, { Autoplay, EffectFade } from "swiper";
-import OneVoneMode from './EndOneVoneMode';
 SwiperCore.use([Autoplay, EffectFade]);
-const StyledBadge = styled(Badge)(({ theme }) => ({
-    '& .MuiBadge-badge': {
-        right: 12,
-        top: 10,
-        border: `2px solid ${theme.palette.background.paper}`,
-        padding: '0 1px',
-    },
-}));
 const contentStyle = {
     background: '#242632',
     width: "95%",

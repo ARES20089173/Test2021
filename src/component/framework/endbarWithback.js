@@ -1,16 +1,10 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
-import Popup from 'reactjs-popup';
-import SwieprConent from './swiperContentsmall';
-import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid'
-import CssBaseline from '@mui/material/CssBaseline';
 import Badge from '@mui/material/Badge'
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Fab from '@mui/material/Fab';
 import Typography from '@mui/material/Typography';
 import backgroundEnd from "../../rees_bg2.svg"
 import { Link } from 'react-router-dom';
@@ -33,15 +27,6 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
         color:'white'
     },
 }));
-const contentStyle = {
-    marginTop: '43%',
-    border:'none',
-    background: '#242634',
-    width: "90%",
-    height: "62%",
-    borderRadius: "5%",
-};
-
 const Amout = [{ Chasepuzzle: 18.6, SilverPuzzle: 20.5, money: 1000,notification:30 }]
 export default function BottomAppBar(props) {
     const { endbartype } = props;
@@ -60,7 +45,7 @@ export default function BottomAppBar(props) {
 
                     >
                         <Grid item xs={12} align='center' >
-                            <Toolbar variant="dense" style={{display:endbartype=='Pure'?'none':'block'}}>
+                            <Toolbar variant="dense" style={{display:endbartype==='Pure'?'none':'block'}}>
                                 <LinkBarWithback endbartype={endbartype}/>
                             </Toolbar>
                             <div style={{ backgroundColor: "#242634", borderTop: "1px solid #8e8b91" }}>
@@ -69,12 +54,12 @@ export default function BottomAppBar(props) {
                                     <Grid xs={12} container>
                                     <Grid xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} >
                                             <div style={{ backgroundImage: `url(${Endbarbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
-                                                <Grid container justifyContent='center' alignItems='center' className="button" style={{ color: "white" }}> <img src={Chasepuzzle} className="App-logo" alt="logo" width="20%" style={{ position: 'relative', float: 'left' }} /><Typography style={{ float: 'right' }}>{Amout[0].Chasepuzzle}k<img src={addicon}  onClick={handleClick}  style={{ width: 20, marginLeft: 2, }} /></Typography></Grid>
+                                                <Grid container justifyContent='center' alignItems='center' className="button" style={{ color: "white" }}> <img src={Chasepuzzle} className="App-logo" alt="logo" width="20%" style={{ position: 'relative', float: 'left' }} /><Typography style={{ float: 'right' }}>{Amout[0].Chasepuzzle}k<img src={addicon}  onClick={handleClick}  style={{ width: 20, marginLeft: 2, }} alt=''/></Typography></Grid>
                                             </div>
                                         </Grid>
                                         <Grid xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
                                             <div style={{ backgroundImage: `url(${Endbarbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
-                                                <Grid container justifyContent='center' alignItems='center' className="button" style={{ color: "white" }}>  <img src={SilverPuzzle} className="App-logo" alt="logo" width="20%" style={{ position: 'relative', float: 'left' }} /><Typography style={{ float: 'right' }}>{Amout[0].Chasepuzzle}k<img src={addicon}  onClick={handleClick}  style={{ width: 20, marginLeft: 2 }} /></Typography></Grid>
+                                                <Grid container justifyContent='center' alignItems='center' className="button" style={{ color: "white" }}>  <img src={SilverPuzzle} className="App-logo" alt="logo" width="20%" style={{ position: 'relative', float: 'left' }} /><Typography style={{ float: 'right' }}>{Amout[0].Chasepuzzle}k<img src={addicon}  onClick={handleClick}  style={{ width: 20, marginLeft: 2 }} alt=''/></Typography></Grid>
                                                </div>
                                         </Grid>
                                         <Grid xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
@@ -96,7 +81,7 @@ export default function BottomAppBar(props) {
                                             margin: '0 82%',
                                         }}>
                                             <StyledBadge badgeContent={Amout[0].notification}  >
-                                                <img src={Notification} />
+                                                <img src={Notification} alt=''/>
                                             </StyledBadge>
                                         </div>
                                     </Link>
@@ -108,7 +93,7 @@ export default function BottomAppBar(props) {
 
                 </AppBar>
                 <Toolbar sx={{
-                    height:endbartype=='Pure'?"10vh": "20vh",
+                    height:endbartype==='Pure'?"10vh": "20vh",
                 }} />
             </Box>
         </React.Fragment>

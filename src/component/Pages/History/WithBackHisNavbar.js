@@ -7,11 +7,9 @@ import { useHistory } from 'react-router';
 import back from '../../../svgicon/Componenticon/Back.svg'
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-import face from '../../../svgicon/Headicon/face_1.svg';
 import Hamburgicon from '../../../svgicon/Componenticon/Hamburgicon.svg'
 import { Grid } from '@mui/material';
 import Close from '../../../svgicon/Componenticon/Close.svg'
-import CssBaseline from '@mui/material/CssBaseline';
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
@@ -72,7 +70,7 @@ export default function NavigationBar() {
         >
           <img src={Close} alt='hamburgericon' width='40%' style={{ position: 'relative', left: 60 }} />
         </IconButton>
-        <ListItemText style={{ textAlign: "center" }}  >  <Grid container justifyContent='center' alignItems="center"><Typography color='white'>Play to Earn PUZZLES</Typography><img src={puzzle} /></Grid></ListItemText>
+        <ListItemText style={{ textAlign: "center" }}  >  <Grid container justifyContent='center' alignItems="center"><Typography color='white'>Play to Earn PUZZLES</Typography><img src={puzzle} alt=''/></Grid></ListItemText>
 
         {Toplinkdata.map((text, index) => (
           <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
