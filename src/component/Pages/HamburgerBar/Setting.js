@@ -13,16 +13,8 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
-const linkdata = [
-    { id: 0, linkName: "Language selection", link: "/" },
-    { id: 1, linkName: "Password Setting", link: "/" },
-    { id: 2, linkName: "Account Safety", link: "/" },
-    { id: 3, linkName: "", link: "" },
-    { id: 4, linkName: "", link: "" },
-    { id: 5, linkName: "", link: "" },
-    { id: 6, linkName: "", link: "" },
-    { id: 7, linkName: "", link: "" },
-]
+import database from '../../database'
+const {  Settingdata } = database;
 const endbartype='Pure'
 export default class Setting extends Component {
     render() {
@@ -67,7 +59,7 @@ export default class Setting extends Component {
                 <Grid xs={12} height="2vh" bgcolor="#8e8b91" >   </Grid>
 
                 <List style={{ bottom: 10, textDecoration: 'none', color: '#FFF' }} >
-                    {linkdata.slice(0, 3).map((text, index) => (
+                    {Settingdata.slice(0, 3).map((text, index) => (
                         <Link to={text.link} style={{ textDecoration: 'none', color: 'black' }}>
                             <ListItem button key={text.id} style={{ backgroundColor: index % 2 === 0 ? '#242634' : '#35394C', height: "10vh" }}>
                                 <ListItemText >
@@ -77,7 +69,7 @@ export default class Setting extends Component {
                             </ListItem>
                         </Link>
                     ))}
-                    {linkdata.slice(3, 9).map((text, index) => (
+                    {Settingdata.slice(3, 9).map((text, index) => (
                         <ListItem key={text.id} style={{ backgroundColor: index % 2 === 0 ? '#35394C' :'#242634' , height: "10.3vh" }}>
                             <ListItemText >
                                 {text.linkName}

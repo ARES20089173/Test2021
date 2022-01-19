@@ -35,21 +35,8 @@ import EpicBar from "../../../svgicon/ChallengeMode/EpicBar.svg"
 import HeroBar from "../../../svgicon/ChallengeMode/HeroBar.svg"
 import WowBar from "../../../svgicon/ChallengeMode/WowBar.svg"
 import BounsBar from "../../../svgicon/ChallengeMode/BounsBar.svg"
-import Gicon1 from '../../../svgicon/GameIcon/Gicon1.svg'
-import Gicon2 from '../../../svgicon/GameIcon/Gicon2.svg'
-import Gicon3 from '../../../svgicon/GameIcon/Gicon3.svg'
-import Gicon4 from '../../../svgicon/GameIcon/Gicon4.svg'
-import Gicon5 from '../../../svgicon/GameIcon/Gicon5.svg'
-import Gicon6 from '../../../svgicon/GameIcon/Gicon6.svg'
-import Gicon7 from '../../../svgicon/GameIcon/Gicon7.svg'
-import Gicon8 from '../../../svgicon/GameIcon/Gicon8.svg'
-import Gicon9 from '../../../svgicon/GameIcon/Gicon9.svg'
-import Gicon10 from '../../../svgicon/GameIcon/Gicon10.svg'
-import Gicon11 from '../../../svgicon/GameIcon/Gicon11.svg'
-import Gicon12 from '../../../svgicon/GameIcon/Gicon12.svg'
-import Gicon13 from '../../../svgicon/GameIcon/Gicon13.svg'
-import Gicon14 from '../../../svgicon/GameIcon/Gicon14.svg'
-import Gicon15 from '../../../svgicon/GameIcon/Gicon15.svg'
+import database from '../../database'
+const { Toplinkdata, Bottomlinkdata, MultiGameChoosedata, GameTutorialdata, ChallengerMode, ScoreData } = database;
 
 const contentStyle = {
     background: '#242623',
@@ -58,27 +45,7 @@ const contentStyle = {
     borderRadius: "5%",
 };
 
-const userdata = [
-    { id: 0, level: 'Lv1', ReesID: 1, nickname: 'Jay' },
-]
-
-const endbartype='Play'
-const Toplinkdata = [
-    { id: 0, linkName: "PROFILE", link: `/${userdata[0].ReesID}/Profile` },
-    { id: 1, linkName: "SETTING", link: `/${userdata[0].ReesID}/Setting` },
-    { id: 2, linkName: "EVENTS", link: "/Events" },
-    { id: 3, linkName: "BUY PUZZLES", link: "/Wallet/PuzzlePackage" },
-    { id: 4, linkName: "Reward Status", link: `/MissionMain/RewardStatus` },
-    { id: 5, linkName: "Player Support Guide", link: `/MissionMain/SupportGuide` },
-    { id: 6, linkName: "General FAQ", link: "/MissionMain/FAQ" },
-    { id: 7, linkName: "Privacy Policy", link: "/MissionMain/Policy" },
-    { id: 8, linkName: "Terms of Service", link: "/MissionMain/Service" }
-
-]
-const Bottomlinkdata = [
-    { id: 0, linkName: "About REES", link: "/" },
-    { id: 3, linkName: "LOGOUT", link: "/login" },
-]
+const endbartype = 'Play'
 export default class TournamentLobby extends Component {
     constructor(props) {
         super(props);
@@ -106,74 +73,38 @@ export default class TournamentLobby extends Component {
     }
     render() {
         const { selectedOption } = this.state;
-        const Mode = [
-            { id: 0, Modechoose: "oneVoneMode", embedId: "rokGy0huYEA", detail: "Chanllenger MODE is ......." },
-            { id: 1, Modechoose: "challengerMode", embedId: "7HP8X7dadmM", detail: "1 ON 1 MODE is ......." },
-            { id: 2, Modechoose: "BattleMode", embedId: "dWOm9KXJQLo", detail: "Battle MODE is ......." },
-        ]
-        const data = [
-            { id: 0, src: Gicon1, name: "Onmyoji Arena", number: 52, entryFee: 88, GameRules: "2048是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 1, src: Gicon2, name: "TOM & JERRY: CHASE", number: 56, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 2, src: Gicon3, name: "Super Mecha Champions", number: 55, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 3, src: Gicon4, name: "Side Force Don't Fall", number: 53, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 4, src: Gicon5, name: "Seven Squids", number: 54, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 5, src: Gicon6, name: "Punch Box", number: 51, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 6, src: Gicon7, name: "Iron Space", number: 52, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 7, src: Gicon8, name: "Candy Robber", number: 58, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 8, src: Gicon9, name: "Fruit Matching", number: 88, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 9, src: Gicon10, name: "Falling Cubes", number: 25, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 10, src: Gicon11, name: "Box Tower ", number: 95, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 11, src: Gicon12, name: "Jumper Frog", number: 85, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 12, src: Gicon13, name: "2048", number: 75, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 13, src: Gicon14, name: "HEXTRIS", number: 65, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 14, src: Gicon15, name: "FISHING FRENZY", number: 55, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-        ]
-        const ChallengerMode = [
-            { id: 0, MaxPayOut: 88, MaxPrize: 3500, entryFee: 188 },
-            { id: 1, MaxPayOut: 81, MaxPrize: 3100, entryFee: 1848 },
-            { id: 2, MaxPayOut: 848, MaxPrize: 2500, entryFee: 1828 },
-            { id: 3, MaxPayOut: 882, MaxPrize: 3500, entryFee: 1881 },
-            { id: 4, MaxPayOut: 831, MaxPrize: 3100, entryFee: 118 },
-            { id: 5, MaxPayOut: 8418, MaxPrize: 2500, entryFee: 112 },
-            { id: 6, MaxPayOut: 882, MaxPrize: 3500, entryFee: 451 },
-            { id: 7, MaxPayOut: 813, MaxPrize: 3100, entryFee: 121 },
-            { id: 8, MaxPayOut: 8448, MaxPrize: 2500, entryFee: 131 },
-        ]
-        const ScoreData = [
-            { id: 0, Puzzle: 100, Score: 1000, ChallengeName: "GRAND" },
-            { id: 1, Puzzle: 80, Score: 800, ChallengeName: "EPIC" },
-            { id: 2, Puzzle: 60, Score: 600, ChallengeName: "HERO" },
-            { id: 3, Puzzle: 40, Score: 400, ChallengeName: "WOW" },
-            { id: 4, Puzzle: 20, Score: 200, ChallengeName: "BOUNS" },
-        ]
+
+        const Mode = GameTutorialdata
+        const data = MultiGameChoosedata
+        
 
         const options = [
             {
-                value: ChallengerMode[0].entryFee, label: <Typography variant="body1" style={{backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee:{ChallengerMode[0].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
+                value: ChallengerMode[0].entryFee, label: <Typography variant="body1" style={{ backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee:{ChallengerMode[0].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
             },
             {
-                value: ChallengerMode[1].entryFee, label: <Typography variant="body1"style={{backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee:{ChallengerMode[1].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
+                value: ChallengerMode[1].entryFee, label: <Typography variant="body1" style={{ backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee:{ChallengerMode[1].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
             },
             {
-                value: ChallengerMode[2].entryFee, label: <Typography variant="body1"style={{backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee:{ChallengerMode[2].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
+                value: ChallengerMode[2].entryFee, label: <Typography variant="body1" style={{ backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee:{ChallengerMode[2].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
             },
             {
-                value: ChallengerMode[3].entryFee, label: <Typography variant="body1"style={{backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee:{ChallengerMode[3].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
+                value: ChallengerMode[3].entryFee, label: <Typography variant="body1" style={{ backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee:{ChallengerMode[3].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
             },
             {
-                value: ChallengerMode[4].entryFee, label: <Typography variant="body1"style={{backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee:{ChallengerMode[4].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
+                value: ChallengerMode[4].entryFee, label: <Typography variant="body1" style={{ backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee:{ChallengerMode[4].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
             },
             {
-                value: ChallengerMode[5].entryFee, label: <Typography variant="body1"style={{backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee:{ChallengerMode[5].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
+                value: ChallengerMode[5].entryFee, label: <Typography variant="body1" style={{ backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee:{ChallengerMode[5].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
             },
             {
-                value: ChallengerMode[6].entryFee, label: <Typography variant="body1"style={{backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee: {ChallengerMode[6].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
+                value: ChallengerMode[6].entryFee, label: <Typography variant="body1" style={{ backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee: {ChallengerMode[6].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
             },
             {
-                value: ChallengerMode[7].entryFee, label: <Typography variant="body1"style={{backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee:{ChallengerMode[7].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
+                value: ChallengerMode[7].entryFee, label: <Typography variant="body1" style={{ backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee:{ChallengerMode[7].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
             },
             {
-                value: ChallengerMode[8].entryFee, label: <Typography variant="body1"style={{backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee:{ChallengerMode[8].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
+                value: ChallengerMode[8].entryFee, label: <Typography variant="body1" style={{ backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee:{ChallengerMode[8].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography>
             },
         ];
         return (
@@ -186,12 +117,12 @@ export default class TournamentLobby extends Component {
                                 <AppBar position={this.state.isToggleOn ? 'fixed' : 'relative'} align='center' sx={{ top: 0, bottom: 'auto' }} >
                                     <Toolbar style={{ backgroundColor: '#242634' }} >
                                         <Typography variant="h6" component="div" sx={{}}>
-                                                <img src={back} alt='' width="40%" onClick={() => this.props.history.goBack() } style={{
-                                                    position: 'relative',
-                                                    zIndex: 3,
-                                                    top: 5,
-                                                    left: "-35%",
-                                                }} />
+                                            <img src={back} alt='' width="40%" onClick={() => this.props.history.goBack()} style={{
+                                                position: 'relative',
+                                                zIndex: 3,
+                                                top: 5,
+                                                left: "-35%",
+                                            }} />
                                         </Typography>
                                         <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} style={{
                                             position: 'relative',
@@ -208,7 +139,7 @@ export default class TournamentLobby extends Component {
 
                                             onClick={this.openhandleClick}
                                         >
-                                                              <img src={Hamburgicon} alt="" width="150%" style={{
+                                            <img src={Hamburgicon} alt="" width="150%" style={{
                                                 position: 'absolute',
 
                                                 left: 0,
@@ -221,7 +152,7 @@ export default class TournamentLobby extends Component {
                                             open={this.state.isOpen}
                                             onClose={this.openhandleClick}
                                         >
-                                             <Box
+                                            <Box
                                                 sx={{ width: 280, height: "100vh", backgroundColor: "#242634", overflow: 'scroll' }}
                                                 role="presentation"
                                             >
@@ -237,7 +168,7 @@ export default class TournamentLobby extends Component {
                                                     >
                                                         <img src={Close} alt='hamburgericon' width='40%' style={{ position: 'relative', left: 60 }} />
                                                     </IconButton>
-                                                 
+
                                                     {Toplinkdata.map((text, index) => (
                                                         <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
                                                             <ListItem button key={text.id}>
@@ -301,8 +232,8 @@ export default class TournamentLobby extends Component {
                                                                     color="inherit"
                                                                     aria-label="menu"
                                                                     sx={{}}
-                                                                 
-                                                                ><img src={Download} alt="" width="80%"    />
+
+                                                                ><img src={Download} alt="" width="80%" />
                                                                 </IconButton>
                                                             </div>
                                                         </div>
@@ -469,15 +400,15 @@ export default class TournamentLobby extends Component {
                                 <Grid item xs={8} style={{ textAlign: 'center' }}></Grid>
                             </Grid>
                             <Grid item xs={3} height="5vh" />
-                            <Grid item xs={7} height="5vh" style={{ textAlign: 'center', position: 'relative', zindex: 2,  }} >
+                            <Grid item xs={7} height="5vh" style={{ textAlign: 'center', position: 'relative', zindex: 2, }} >
 
-                                <Typography variant="h6" style={{ textAlign: 'center', position: 'relative', zindex: 2 ,}} >
+                                <Typography variant="h6" style={{ textAlign: 'center', position: 'relative', zindex: 2, }} >
                                     <Select
                                         value={selectedOption}
                                         onChange={this.handleChange}
                                         options={options}
                                         isSearchable={false}
-                                        defaultValue={{ value: ChallengerMode[this.props.match.params.entryid].entryFee, label: <Typography variant="body1" style={{backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee: {ChallengerMode[this.props.match.params.entryid].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography> }}
+                                        defaultValue={{ value: ChallengerMode[this.props.match.params.entryid].entryFee, label: <Typography variant="body1" style={{ backgroundImage: `url(${ChallengModeButtonbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}> entry fee: {ChallengerMode[this.props.match.params.entryid].entryFee}<img src={Chasepuzzle} alt="icon" width="15%" /></Typography> }}
                                         menuPlacement="top"
                                         components={{ DropdownIndicator: () => null, IndicatorSeparator: () => null }}
                                         styles={{ backgroundColor: 'red' }}
@@ -516,11 +447,11 @@ export default class TournamentLobby extends Component {
                                             <Grid xs={12} >
                                                 Game Content
                                                 <Link to={'/EndChallengeMode'}> <button >
-                                                 Go to check end
+                                                    Go to check end
                                                 </button>
                                                 </Link>
                                             </Grid>
-                                            
+
                                         </div>
                                     )}
                                 </Popup>
@@ -533,7 +464,7 @@ export default class TournamentLobby extends Component {
                     </Grid>
 
                     <Grid item xs={12} display={this.state.isToggleOn ? 'block' : 'none'} >
-                    <EndBar endbartype={endbartype}/>
+                        <EndBar endbartype={endbartype} />
 
                     </Grid>
                     <Grid container

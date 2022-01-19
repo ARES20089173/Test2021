@@ -6,32 +6,12 @@ import { Link } from 'react-router-dom';
 import "../../framework/css/cssModFLooby.css"
 import backgroundEnd from "../../../reed_bg.svg"
 import Typography from '@mui/material/Typography';
-import Rmoney from '../../../svgicon/Componenticon/Rmoneyicon.svg';
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
-import chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
-import silverpuzzle from '../../../svgicon/Componenticon/SilverPuzzle.svg'
 import HisNavigationBar from './HisNavigation';
+import database from '../../database'
 
-import Grand from '../../../svgicon/Historyicon/Grand.svg';
-import Epic from '../../../svgicon/Historyicon/Epic.svg';
-import Hero from '../../../svgicon/Historyicon/Hero.svg';
-import KeepUp from '../../../svgicon/Historyicon/KeepUp.svg';
-import Bouns from '../../../svgicon/Historyicon/Bouns.svg';
-import Gicon1 from '../../../svgicon/GameIcon/Gicon1.svg'
-import Gicon2 from '../../../svgicon/GameIcon/Gicon2.svg'
-import Gicon3 from '../../../svgicon/GameIcon/Gicon3.svg'
-import Gicon4 from '../../../svgicon/GameIcon/Gicon4.svg'
-import Gicon5 from '../../../svgicon/GameIcon/Gicon5.svg'
-import Gicon6 from '../../../svgicon/GameIcon/Gicon6.svg'
-import Gicon7 from '../../../svgicon/GameIcon/Gicon7.svg'
-import Gicon8 from '../../../svgicon/GameIcon/Gicon8.svg'
-import Gicon9 from '../../../svgicon/GameIcon/Gicon9.svg'
-import Gicon10 from '../../../svgicon/GameIcon/Gicon10.svg'
-import Gicon11 from '../../../svgicon/GameIcon/Gicon11.svg'
-import Gicon12 from '../../../svgicon/GameIcon/Gicon12.svg'
-import Gicon13 from '../../../svgicon/GameIcon/Gicon13.svg'
-
+const { MatchHistorydata} = database;
 const endbartype='History'
 export default class TournamentLobby extends Component {
     constructor(props) {
@@ -51,22 +31,7 @@ export default class TournamentLobby extends Component {
         }));
     }
     render() {
-        const data = [
-            { id: 0, linkName:chasepuzzle, icon: Gicon1, linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '/', Mode: 'Rank', quality: "50", min: 15, max: 50, year: 23, date: "Sep 18" },
-            { id: 1, linkName:silverpuzzle, icon: Gicon2, linkMODE: `ChallengeModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney, min: '', max: 'Grand', background: Grand, year: 23, date: "Sep 27" },
-            { id: 2, linkName:Rmoney, icon: Gicon3, linkMODE: `ChallengeModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney, min: '', max: 'Epic', background: Epic, year: 23, date: "Sep 15" },
-            { id: 3, linkName: chasepuzzle, icon: Gicon4, linkMODE: `ChallengeModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney, min: '', max: 'WoW', background: KeepUp, year: 23, date: "Jan 17" },
-            { id: 4, linkName: chasepuzzle, icon: Gicon5, linkMODE: `ChallengeModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney, min: '', max: 'Hero', background: Hero, year: 23, date: "Oct 17" },
-            { id: 5, linkName: chasepuzzle, icon: Gicon6, linkMODE: `ChallengeModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney, min: '', max: 'Bouns', background: Bouns, year: 23, date: "Sep 13" },
-            { id: 6, linkName: chasepuzzle, icon: Gicon7, linkMODE: `ChallengeModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney, min: '', max: 'WoW', background: KeepUp, year: 23, date: "Sep 32" },
-            { id: 7, linkName: chasepuzzle, icon: Gicon8, linkMODE: `BattleModeDetail`, addorReduce: "-", slash: '/', Mode: 'Rank', quality: "50", unit: Rmoney, min: 13, max: 50, year: 23, date: "June 27" },
-            { id: 8, linkName: chasepuzzle, icon: Gicon9, linkMODE: `OneVOneModeDetail`, addorReduce: "-", slash: '', Mode: '', quality: "50", WinorLoss: "Win", min: '', max: 'U Win', year: 23, date: "Sep 2" },
-            { id: 9, linkName: chasepuzzle, icon: Gicon10, linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '/', Mode: 'Rank', quality: "150", unit: Rmoney, min: 16, max: 50, year: 23, date: "Sep 1" },
-            { id: 10, linkName:chasepuzzle, icon: Gicon11, linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '/', Mode: 'Rank', quality: "5500", unit: Rmoney, min: 17, max: 50, year: 23, date: "Sep 13" },
-            { id: 11, linkName:silverpuzzle, icon: Gicon12, linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '/', Mode: 'Rank', quality: "1750", unit: Rmoney, min: 18, max: 50, year: 23, date: "Sep 5" },
-            { id: 12, linkName: Rmoney, icon: Gicon13, linkMODE: `BattleModeDetail`, addorReduce: "-", slash: '/', Mode: 'Rank', quality: "3750", unit: Rmoney, min: 15, max: 50, year: 23, date: "Sep 29" }]
-
-        const data2 = data.map((text) => {
+        const data2 = MatchHistorydata.map((text) => {
             if (text.id % 2 === 0) {
                 return <Link to={`/History/${text.id}/${text.linkMODE}`} style={{ textDecoration: 'none', color: 'white' }}>
                     <Grid xs={12} container1 alignItems="center" >

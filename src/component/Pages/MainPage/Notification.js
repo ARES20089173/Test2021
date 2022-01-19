@@ -1,15 +1,6 @@
 import React, { Component } from "react";
 import AppBar from '@mui/material/AppBar';
-import Messagepuzzle from '../../../svgicon/NotificationIcon/Messagepuzzle.svg'
 import IconButton from '@mui/material/IconButton';
-import m from '../../../svgicon/NotificationIcon/m.svg'
-import gamepad from '../../../svgicon/NotificationIcon/gamepad.svg'
-import heart from '../../../svgicon/NotificationIcon/heart.svg'
-import money from '../../../svgicon/NotificationIcon/money.svg'
-import game from '../../../svgicon/NotificationIcon/game.svg'
-import event from '../../../svgicon/NotificationIcon/event.svg'
-import r from '../../../svgicon/NotificationIcon/r.svg'
-import switched from '../../../svgicon/NotificationIcon/switched.svg'
 import 'reactjs-popup/dist/index.css';
 import "../../framework/css/cssModFMessage.css"
 import Popup from 'reactjs-popup';
@@ -22,6 +13,8 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { Link } from "react-router-dom"
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
 import back from '../../../svgicon/Componenticon/Back.svg'
+import database from '../../database'
+const { MessageCenterNewdata,MessageCenterOlddata } = database;
 const contentStyle = {
     margin: 'auto',
     background: '#242634',
@@ -32,23 +25,8 @@ const contentStyle = {
 };
 export default class MessageCenter extends Component {
     render() {
-        const New = [
-            { id: 0, icon: m, setname: "(m icon) mission related notification", time: "sunday" },
-            { id: 1, icon: gamepad, setname: "(gamepad  icon) 1ON1 mode related notification", time: "sunday" },
-            { id: 2, icon: heart, setname: "(heart icon) players related, engagement notification", time: "sunday" }
-
-        ];
-        const Old = [
-            { id: 0, icon: Messagepuzzle, setname: "(puzzle icon)  assets related notification ", time: null },
-            { id: 1, icon: money, setname: "(money icon)finance related notification", time: null },
-            { id: 2, icon: game, setname: "(gamepad  icon) Battle mode NEW challenger related notification", time: null },
-            { id: 3, icon: event, setname: "(event icon)events & discount  related notification", time: null },
-            { id: 4, icon: r, setname: "(R icon) game news, rees team  related notification", time: null },
-            { id: 5, icon: switched, setname: "Swith Off All Tutorials Button", time: null },
-
-        ];
-
-        const Newdata = New.map((data) => {
+    
+        const Newdata = MessageCenterNewdata.map((data) => {
             if (data.time != null) {
                 return <Grid container
                     direction="row"
@@ -69,7 +47,7 @@ export default class MessageCenter extends Component {
             }
             return null
         })
-        const Olddata = Old.map((data) => {
+        const Olddata = MessageCenterOlddata.map((data) => {
             if (data.time === null) {
                 return <Grid container
                     direction="row"

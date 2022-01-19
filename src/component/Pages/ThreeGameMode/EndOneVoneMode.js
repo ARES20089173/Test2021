@@ -7,23 +7,21 @@ import Typography from '@mui/material/Typography';
 import Chasepuzzle from "../../../svgicon/Componenticon/Chasepuzzle.svg"
 import PlayAgain from "../../../svgicon/BattleMode/PlayAgain.svg"
 import FreeShare from "../../../svgicon/BattleMode/FreeShare.svg"
-import Grand from '../../../svgicon/OVOmode/Grand.svg';
 import left from '../../../svgicon/End1ON1Mode/4.svg';
 import { Link } from 'react-router-dom';
+import database from '../../database'
+const { EndOneVoneModedata } = database;
 const contentStyle = {
     background: '#242632',
     width: "90%",
     height: "82%",
     border: 'none'
 };
-const data = [
-{ id: 0, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, quality: "520", text: 'Congraduatitons, 1 ON 1 MODE  Winners takes all!', min: '', max: 'Grand', background: Grand, year: 23 },]
-
 export default class OneVoneMode extends Component {
 
     render() {
         return (
-            data.map((data, index) => (
+            EndOneVoneModedata.map((data, index) => (
                 <Popup
                     trigger={
                         <div className="button">

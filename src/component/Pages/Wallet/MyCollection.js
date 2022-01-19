@@ -20,7 +20,7 @@ import OnlineANDOffline from '../../../svgicon/Shop/word&button/OnlineANDOffline
 import ShopToAddress from '../../../svgicon/Shop/word&button/ShopToAddress.svg'
 import Popup from "reactjs-popup";
 import { useRef } from "react";
-import datas from '../Shop/data'
+import datas from '../../database'
 const contentStyle = {
     background: 'white',
     width: "90%",

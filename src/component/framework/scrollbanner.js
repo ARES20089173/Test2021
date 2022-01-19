@@ -4,11 +4,9 @@ import { Carousel } from 'react-responsive-carousel'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import pic1 from '../../svgicon/Carousel/pic1.svg'
 import GameTutorial from '../../svgicon/Componenticon/GameTutorial.svg';
-class App extends Component {
+class Banner extends Component {
     render() {
-       
         return (
-
             <div  >
                 <div className="carousel-wrapper" >
                 <Link to='/gametutorial'>
@@ -38,4 +36,4 @@ class App extends Component {
     }
 }
 
-export default App
+export default Banner

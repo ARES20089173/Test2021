@@ -10,33 +10,12 @@ import { Link } from "react-router-dom"
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
 import EndBar from '../../framework/endbarWithback';
 import back from '../../../svgicon/Componenticon/Back.svg'
-import chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
-import silverpuzzle from '../../../svgicon/Componenticon/SilverPuzzle.svg'
-import BigRicon from '../../../svgicon/Componenticon/BigRicon.svg'
-import Shopicon from '../../../svgicon/Componenticon/Shopicon.svg'
-import Gifticon from '../../../svgicon/Componenticon/Gift.svg'
-import Gicon1 from '../../../svgicon/GameIcon/Gicon1.svg'
-import Gicon2 from '../../../svgicon/GameIcon/Gicon2.svg'
-import Gicon3 from '../../../svgicon/GameIcon/Gicon3.svg'
-const data = [{
-    Year: [2022, 2021],
-    Month: ["December", "November", "October", "September", "August", "July", "June", "May", "April", "March", "February", "January"],
-    Historyed: [
-        { id: 0,Amount:100, icon: chasepuzzle,icontype:BigRicon,addorminus: "+", setname: "Purchased",haveReceptionPuzzle:chasepuzzle,haveHKD:15,haveReception:'Reload',time: null, month: "May", year: 2021, num: 8, unit: "HKD", dtime: '15', htime: '12:24' },
-        { id: 1,Amount:100, icon: chasepuzzle, icontype:Gifticon,addorminus: "+", setname: "Entry", time: "sunday", haveReceptionPuzzle:'',haveReception:'',month: "May",haveHKD:'', year: 2021, num: 100, unit:"PCS", dtime: '15', htime: '12:24' },
-        { id: 2,Amount:100, icon: chasepuzzle, icontype:Gicon3,addorminus: "-", setname: "Rewards", time: "sunday",haveReceptionPuzzle:'' ,haveReception:'',month: "May",haveHKD:'', year: 2021, num: 100, unit: "PCS", dtime: '25', htime: '12:24' },
-        { id: 3,Amount:100, icon: silverpuzzle,icontype:Shopicon, addorminus: "+", setname: "Assam Chic", haveReceptionPuzzle:'',haveHKD:'',haveReception:'used', time: "sunday", month: "May", year: 2021, num: 100, unit: "PCS", dtime: '25', htime: '12:24' },
-        { id: 4, Amount:100,icon: silverpuzzle,icontype:Gicon1, addorminus: "-", setname: "Rewards",haveReceptionPuzzle:'', haveHKD:'',haveReception:'', time: null, month: "May", year: 2021, num: 100,unit: "PCS", dtime: '25', htime: '12:24' },
-        { id: 5, Amount:100,icon: chasepuzzle, icontype:Gicon2,addorminus: "-", setname: "Rewards", haveReceptionPuzzle:'',haveHKD:'',haveReception:'',time: null, month: "May", year: 2021, num: 100, unit: "PCS", dtime: '3', htime: '12:24' },
-        { id: 6, Amount:100,icon: silverpuzzle, icontype:Gicon3,addorminus: "+", setname: "Rewards",haveReceptionPuzzle:'', haveHKD:'',haveReception:'',time: null, month: "June", year: 2021, num: 100, unit: "PCS", dtime: '2', htime: '12:24' },
-        { id: 7,Amount:100, icon: silverpuzzle,icontype:Shopicon, addorminus: "+", setname: "Rewards",haveReceptionPuzzle:'',haveHKD:'',haveReception:'', time: null, month: "July", year: 2021, num: 100, unit: "PCS", dtime: '1', htime: '12:24' },
-        { id: 8, Amount:100,icon: chasepuzzle, icontype:Gifticon,addorminus: "-", setname: "Bonus", haveReceptionPuzzle:silverpuzzle,haveHKD:'',haveReception:'',time: null, month: "July", year: 2022, num: 100, unit: "PCS", dtime: '25', htime: '12:24' },
-    ]
-}
-]
+import datas from '../../database'
+
 const endbartype='Pure'
-export default class MessageCenter extends Component {
-   
+const {TranscationHistorydata } = datas
+const data=TranscationHistorydata
+export default class TranscationHistory extends Component {
     render() {
 
         const Newdata = data.map((item, index) => {

@@ -11,15 +11,14 @@ import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
 import { useHistory } from "react-router";
 import EndBar from '../../framework/endbarWithback';
 
+import database from '../../database'
+const { SupportGuilddata } = database;
 export default function SupportGuide() {
     const history = useHistory();
     const endbartype = 'Pure'
     const routeChange = () => {
         history.goBack()
     }
-    const data = [
-        { id: 0, embedId: "rokGy0huYEA", name: "PAID TO PLAY&EARN/CHALLENGER MODE", detail: "The detail is ......." },
-    ];
     return (
 
         <Box sx={{ flexGrow: 1 }} bgcolor="#242634" height="100vh">
@@ -68,7 +67,7 @@ export default function SupportGuide() {
                 </Grid>
                 <Grid container item xs={12} justifyContent='center' style={{ paddingTop: '2vh' }} >
                     <Grid item xs={11}><Typography color="white" variant="h6" >How to check your Reward Status?</Typography></Grid>
-                    {data.map((video) => (
+                    {SupportGuilddata.map((video) => (
 
                         <Grid item xs={11} key={video.id} height="50vh">
                             <div className="video-responsive">

@@ -7,39 +7,29 @@ import Typography from '@mui/material/Typography';
 import Chasepuzzle from "../../../svgicon/Componenticon/Chasepuzzle.svg"
 import PlayAgain from "../../../svgicon/BattleMode/PlayAgain.svg"
 import FreeShare from "../../../svgicon/BattleMode/FreeShare.svg"
-import Grand from '../../../svgicon/OVOmode/Grand.svg';
-import Epic from '../../../svgicon/OVOmode/Epic.svg';
-import Hero from '../../../svgicon/OVOmode/Hero.svg';
-import KeepUp from '../../../svgicon/OVOmode/KeepUp.svg';
-import Bouns from '../../../svgicon/OVOmode/Bouns.svg';
 import left from '../../../svgicon/EndChallengeMode/4.svg';
 import { Link } from 'react-router-dom';
+import database from '../../database'
+const { EndChallengeModedata } = database;
 const contentStyle = {
     background: '#242632',
     width: "90%",
     height: "82%",
     border: 'none'
 };
-const data = [
-    { id: 0, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, quality: "520", text: 'YOU ARE EPIC', min: '', max: 'Epic', background: Epic, year: 23 },
-    { id: 1, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, quality: "510", text: 'WOW, keep it up!', min: '', max: 'WoW', background: KeepUp, year: 23 },
-    { id: 2, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, quality: "540", text: 'YOU ARE THE HERO', min: '', max: 'Hero', background: Hero, year: 23 },
-    { id: 3, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, quality: "30", text: 'BOUNS,Try Again', min: '', max: 'Bouns', background: Bouns, year: 23 },
-    { id: 4, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, quality: "520", text: 'Congraduatiton,grand prize!', min: '', max: 'Grand', background: Grand, year: 23 },]
-
 export default class ChallengeMode extends Component {
 
     render() {
         return (
-            data.map((data, index) => (
+            EndChallengeModedata.map((data, index) => (
                 <Popup
                     trigger={
                         <div className="button">
                             <button onClick={this.handleClick}>
                                 {data.max} Page Trigger
                             </button>
-                           <Link to={'/multigameChooser/tournamentLobby/0/0/OneVoneMode'}> <button >
-                               back
+                            <Link to={'/multigameChooser/tournamentLobby/0/0/OneVoneMode'}> <button >
+                                back
                             </button>
                             </Link>
                         </div>
@@ -91,8 +81,8 @@ export default class ChallengeMode extends Component {
                                             </Grid>
                                             <Grid xs={5.5} item height="22%">
                                                 <Typography variant="caption" component="div" color='white' textAlign='center' style={{ overflowWrap: 'break-word' }} display="inline">
-                                                <img src={left} alt='' width="95%" />
-                                            
+                                                    <img src={left} alt='' width="95%" />
+
                                                 </Typography>
                                             </Grid>
 
@@ -105,9 +95,9 @@ export default class ChallengeMode extends Component {
                         </div>
                     )}
                 </Popup>
-              
+
             ))
         )
-        
+
     }
 }

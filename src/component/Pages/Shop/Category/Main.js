@@ -17,7 +17,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import back from '../../../../svgicon/Componenticon/Back.svg'
 import Swiper from './Swiper'
 import { useParams } from "react-router";
-import datas from '../data'
+import datas from '../../../database'
 const contentStyle = {
     background: 'white',
     width: "90%",

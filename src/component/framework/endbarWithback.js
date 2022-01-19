@@ -17,6 +17,7 @@ import SilverPuzzle from '../../svgicon/Componenticon/SilverPuzzle.svg'
 import Chasepuzzle from '../../svgicon/Componenticon/Chasepuzzle.svg'
 import addicon from '../../svgicon/Componenticon/addicon.svg'
 import Endbarbg from '../../svgicon/Componenticon/Endbarbg.svg'
+import database from '../database'
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
         right: 7,
@@ -27,7 +28,9 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
         color:'white'
     },
 }));
-const Amout = [{ Chasepuzzle: 18.6, SilverPuzzle: 20.5, money: 1000,notification:30 }]
+
+const { Amount } = database;
+
 export default function BottomAppBar(props) {
     const { endbartype } = props;
     const history = useHistory();
@@ -54,19 +57,19 @@ export default function BottomAppBar(props) {
                                     <Grid xs={12} container>
                                     <Grid xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} >
                                             <div style={{ backgroundImage: `url(${Endbarbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
-                                                <Grid container justifyContent='center' alignItems='center' className="button" style={{ color: "white" }}> <img src={Chasepuzzle} className="App-logo" alt="logo" width="20%" style={{ position: 'relative', float: 'left' }} /><Typography style={{ float: 'right' }}>{Amout[0].Chasepuzzle}k<img src={addicon}  onClick={handleClick}  style={{ width: 20, marginLeft: 2, }} alt=''/></Typography></Grid>
+                                                <Grid container justifyContent='center' alignItems='center' className="button" style={{ color: "white" }}> <img src={Chasepuzzle} className="App-logo" alt="logo" width="20%" style={{ position: 'relative', float: 'left' }} /><Typography style={{ float: 'right' }}>{Amount[0].Chasepuzzle}k<img src={addicon}  onClick={handleClick}  style={{ width: 20, marginLeft: 2, }} alt=''/></Typography></Grid>
                                             </div>
                                         </Grid>
                                         <Grid xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
                                             <div style={{ backgroundImage: `url(${Endbarbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
-                                                <Grid container justifyContent='center' alignItems='center' className="button" style={{ color: "white" }}>  <img src={SilverPuzzle} className="App-logo" alt="logo" width="20%" style={{ position: 'relative', float: 'left' }} /><Typography style={{ float: 'right' }}>{Amout[0].Chasepuzzle}k<img src={addicon}  onClick={handleClick}  style={{ width: 20, marginLeft: 2 }} alt=''/></Typography></Grid>
+                                                <Grid container justifyContent='center' alignItems='center' className="button" style={{ color: "white" }}>  <img src={SilverPuzzle} className="App-logo" alt="logo" width="20%" style={{ position: 'relative', float: 'left' }} /><Typography style={{ float: 'right' }}>{Amount[0].Chasepuzzle}k<img src={addicon}  onClick={handleClick}  style={{ width: 20, marginLeft: 2 }} alt=''/></Typography></Grid>
                                                </div>
                                         </Grid>
                                         <Grid xs={4} variant="caption" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>
                                             <div style={{ height: '100%', backgroundImage: `url(${Endbarbg})`, backgroundRepeat: 'no-repeat', backgroundAttachment: 'local' }}>
                                                 <div className="button" style={{ color: "white",paddingTop:4 }}>
                                                     <img src={Rmoneyicon} className="App-logo" alt="logo" width="20%" style={{  float: 'left',position:'relative',top:2 }} />
-                                                    {Amout[0].money}
+                                                    {Amount[0].money}
                                                 </div>
                                             </div>
                                         </Grid>
@@ -80,7 +83,7 @@ export default function BottomAppBar(props) {
                                             right: 0,
                                             margin: '0 82%',
                                         }}>
-                                            <StyledBadge badgeContent={Amout[0].notification}  >
+                                            <StyledBadge badgeContent={Amount[0].notification}  >
                                                 <img src={Notification} alt=''/>
                                             </StyledBadge>
                                         </div>

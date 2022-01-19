@@ -9,19 +9,13 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import CssBaseline from '@mui/material/CssBaseline';
 import { Link } from "react-router-dom"
-import Notification from "../../../svgicon/MessageCenter/Notification.svg";
 import Set from "../../../svgicon/MessageCenter/Set.svg"
-import Discord from "../../../svgicon/MessageCenter/Discord.svg"
-import Whatsapp from "../../../svgicon/MessageCenter/Whatsapp.svg"
+import database from '../../database'
+const { MessageCenterdata } = database;
 
 export default class MessageCenter extends Component {
     render() {
-        const data = [
-            { id: 0, icon: Notification, title: "Notification", detail: "layers, Assets, Finance, Function, Mission,Game News, Game Mode, Related Notice", link: "/MessageCenter/Notification" },
-            { id: 1, icon: Whatsapp, title: "Live Chat", detail: "Players, Assets, Finance, Function, Mission,Game News, Game Mode, Related Notice", link: "/" },
-            { id: 2, icon: Discord, title: "REES Community Notify", detail: "Players, Assets, Finance, Function, Mission,Game News, Game Mode, Related Notice", link: "/" },
-        ];
-        const data2 = data.map((message) => {
+        const data2 = MessageCenterdata.map((message) => {
             if (message.id % 2 === 0) {
                 return <Link to={message.link} style={{ textDecoration: 'none', color: '#FFF' }}>
                     <Grid container

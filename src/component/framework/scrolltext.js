@@ -1,7 +1,7 @@
 import React from 'react';
 import Marquee from 'react-double-marquee';
 import "./css/cssFScrollText.css"
-export default function FooComponent() {
+export default function Scrolltext() {
   return (
     <div
       style={{

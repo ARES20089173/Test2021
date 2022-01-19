@@ -1,41 +1,16 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
 import { Link } from "react-router-dom"
-import ANIME from '../../../svgicon/Shop/Category/Type/ANIME.svg'
-import BEAUTY from '../../../svgicon/Shop/Category/Type/BEAUTY.svg'
-import COURSE from '../../../svgicon/Shop/Category/Type/COURSE.svg'
-import DIGITAL from '../../../svgicon/Shop/Category/Type/DIGITAL.svg'
-import GADET from '../../../svgicon/Shop/Category/Type/GADET.svg'
-import GOURMENT from '../../../svgicon/Shop/Category/Type/GOURMENT.svg'
-import TOY from '../../../svgicon/Shop/Category/Type/TOY.svg'
-import VIRTUAL from '../../../svgicon/Shop/Category/Type/VIRTUAL.svg'
 import PuzzleChase from '../../../svgicon/EndBaricon/PuzzleChase.svg'
 import Ricon from '../../../svgicon/Componenticon/Ricon.svg'
 import { Typography } from '@mui/material';
 import { useHistory } from 'react-router';
-
+import database from '../../database'
+const {  Categorydata,ShopBottomlinkdata } = database;
 export default function EndPage(){
         const history=useHistory()
-        const data = [
-            { id: 0, src: ANIME, link: "#", name: "ANIME", color: 'red' },
-            { id: 1, src: BEAUTY, link: "#", name: "BEAUTY", color: 'pink' },
-            { id: 2, src: COURSE, link: "#", name: "COURSE", color: 'white' },
-            { id: 3, src: DIGITAL, link: "#", name: "DIGITAL", color: 'blue' },
-            { id: 4, src: GADET, link: "#", name: "GADET", color: 'green' },
-            { id: 5, src: GOURMENT, link: "#", name: "GOURMENT", color: 'yellow' },
-            { id: 6, src: TOY, link: "#", name: "TOY", color: 'orange' },
-            { id: 7, src: VIRTUAL, link: "#", name: "VIRTUAL", color: 'purple' },
-        ];
-        const linkdata = [
-            { id: 0, linkName: "About us", link: "/" },
-            { id: 1, linkName: "FAQ", link: "/MissionMain/FAQ" },
-            { id: 2, linkName: "Press", link: "/" },
-            { id: 3, linkName: "Terms & Conditions", link: "/" },
-            { id: 4, linkName: "Partnership Opportunities", link: "/" },
-            { id: 5, linkName: "Disclaimer", link: "/" },
-            { id: 6, linkName: "Privacy Policy", link: "/MissionMain/Policy" },
-            { id: 7, linkName: "Terms of Services", link: "/MissionMain/Service" },
-        ]
+      
+        const linkdata = ShopBottomlinkdata 
         const routeChange3 = (value) => {
             console.log("textmessage")
             let path = `/Shop/Category/${value}`;
@@ -49,14 +24,14 @@ export default function EndPage(){
                     <Grid container xs={12} justifyContent='left' alignItems='center'>
                         <Typography style={{ textAlign: 'left', color: 'white' }}>Shop with Puzzles</Typography>
                     </Grid>
-                    {data.map((pic, index) => (
+                    {Categorydata.map((pic, index) => (
                         <Grid item xs={12} key={pic.id} alignItems="center">
                             <Link to={pic.link} style={{ textDecoration: 'none' }}>
                                 <div style={{ textAlign: 'left' }}>
-                                    <Typography color={pic.color} onClick={()=>routeChange3(pic.name)}>{pic.name}<br /></Typography>
+                                    <Typography color={pic.color} onClick={()=>routeChange3(pic.category)}>{pic.category}<br /></Typography>
                                 </div>
                             </Link>
-                            {data.length === index + 1 ? <hr /> : ""}
+                            {Categorydata.length === index + 1 ? <hr /> : ""}
                         </Grid>
                     ))}
                     

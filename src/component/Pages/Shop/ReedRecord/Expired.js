@@ -1,7 +1,8 @@
 import React from "react";
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import datas from '../data'
+
+import datas from '../../../database'
 
 export default function Opened() {
     const { Expireddata } = datas

@@ -11,7 +11,6 @@ import back from '../../../svgicon/Componenticon/Back.svg'
 import savecardbg from '../../../svgicon/Background/SaveCard.svg'
 import Creditcard from '../../../svgicon/WalletTrans/Creditcard.svg'
 import { Swiper, SwiperSlide } from "swiper/react";
-import Gicon1 from '../../../svgicon/Carousel/Bankcard.svg'
 import Addicon from '../../../svgicon/BankCardicons/Addicon.svg'
 import alipay from '../../../svgicon/BankCardicons/alipay.svg'
 import ArrowPay from '../../../svgicon/BankCardicons/ArrowPay.svg'
@@ -19,6 +18,7 @@ import amapay from '../../../svgicon/BankCardicons/amapay.svg'
 import mastercard from '../../../svgicon/BankCardicons/mastercard.svg'
 import visa from '../../../svgicon/BankCardicons/visa.svg'
 import paypal from '../../../svgicon/BankCardicons/paypal.svg'
+import datas from '../../database'
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
 import "swiper/components/effect-coverflow/effect-coverflow.less"
@@ -34,12 +34,8 @@ import { Checkbox } from '@mui/material';
 // install Swiper modules
 SwiperCore.use([Pagination, Navigation, EffectCoverflow]);
 
-const data = [
-    { id: 0, src: Gicon1, name: "2048", number: 52, entryFee: 88 },
-    { id: 1, src: Gicon1, name: "原神", number: 56, entryFee: 848 },
-    { id: 2, src: Gicon1, name: "LoL", number: 55, entryFee: 828 },
-]
 export default function Savecard() {
+    const {Savecarddata } = datas
     const endbartype='Wallet'
     return (
 
@@ -111,7 +107,7 @@ export default function Savecard() {
                         }}
                         className="mySwiper">
 
-                        {data.map((pic) => (
+                        {Savecarddata.map((pic) => (
                             <SwiperSlide >
                                 <img key={pic.id} src={pic.src} alt="img1" width="100%" />
                             </SwiperSlide>

@@ -18,24 +18,23 @@ import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
 import EndBar from '../../framework/endbarWithback';
 import back from '../../../svgicon/Componenticon/Back.svg'
 import { useHistory } from 'react-router';
-import chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
-import silverpuzzle from '../../../svgicon/Componenticon/SilverPuzzle.svg'
 import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
 import "swiper/components/effect-coverflow/effect-coverflow.less"
 import 'swiper/components/pagination/pagination.min.css'
 import 'swiper/components/navigation/navigation.min.css'
+import datas from '../../database'
 import SwiperCore, {
     Pagination, Navigation, EffectCoverflow
 } from 'swiper';
 SwiperCore.use([Pagination, Navigation, EffectCoverflow]);
 
 const data = [
-    { id: 0, src: BigsilverPuzzle, name: "2048", number: 52, entryFee: 88 },
-    { id: 1, src: BigPuzzle, name: "原神", number: 56, entryFee: 848 },
+    { id: 0, src: BigsilverPuzzle },
+    { id: 1, src: BigPuzzle},
 ]
-
+const {PuzzlePackageChasedata, PuzzlePackagesilverdata } = datas
 const contentStyle = {
     marginTop: '20%',
     background: '#242634',
@@ -44,26 +43,6 @@ const contentStyle = {
     height: "62%",
     borderRadius: "5%",
 };
-const Toplinkdata = [
-    { id: 0, linkName: "twice a week xx% OFF ", link: `/Wallet/TranscationHistory`, icon: chasepuzzle, price: 50, quality: "50(+0)" },
-    { id: 1, linkName: "twice a week xx% OFF", link: `/Wallet/SaveCards`, icon: chasepuzzle, price: 150, quality: "50(+0)" },
-    { id: 2, linkName: "Once a week xx% OFF", link: "/Wallet/PuzzlePackage", icon: chasepuzzle, price: 250, quality: "50(+0)" },
-    { id: 1, linkName: "twice a week xx% OFF", link: `/Wallet/SaveCards`, icon: chasepuzzle, price: 350, quality: "50(+0)" },
-    { id: 2, linkName: "Once a week xx% OFF", link: "/Wallet/PuzzlePackage", icon: chasepuzzle, price: 450, quality: "150(+60)" },
-    { id: 1, linkName: "Once a week xx% OFF", link: `/Wallet/SaveCards`, icon: chasepuzzle, price: 550, quality: "550(+400)" },
-    { id: 2, linkName: "Once a week xx% OFF", link: "/Wallet/PuzzlePackage", icon: chasepuzzle, price: 650, quality: "1750(+550)" },
-    { id: 3, linkName: "twice a week xx% OFF", link: "/Wallet/PuzzlePackage", icon: chasepuzzle, price: 750, quality: "3750(+950)" }]
-
-const Bottomlinkdata = [
-    { id: 0, linkName: "twice a week xx% OFF ", link: `/Wallet/TranscationHistory`, icon: silverpuzzle, price: 50, quality: "50(+0)" },
-    { id: 1, linkName: "twice a week xx% OFF", link: `/Wallet/SaveCards`, icon: silverpuzzle, price: 150, quality: "50(+0)" },
-    { id: 2, linkName: "Once a week xx% OFF", link: "/Wallet/PuzzlePackage", icon: silverpuzzle, price: 250, quality: "50(+0)" },
-    { id: 1, linkName: "twice a week xx% OFF", link: `/Wallet/SaveCards`, icon: silverpuzzle, price: 350, quality: "50(+0)" },
-    { id: 2, linkName: "Once a week xx% OFF", link: "/Wallet/PuzzlePackage", icon: silverpuzzle, price: 450, quality: "150(+60)" },
-    { id: 1, linkName: "Once a week xx% OFF", link: `/Wallet/SaveCards`, icon: silverpuzzle, price: 550, quality: "550(+400)" },
-    { id: 2, linkName: "Once a week xx% OFF", link: "/Wallet/PuzzlePackage", icon: silverpuzzle, price: 650, quality: "1750(+550)" },
-    { id: 3, linkName: "twice a week xx% OFF", link: "/Wallet/PuzzlePackage", icon: silverpuzzle, price: 750, quality: "3750(+950)" }]
-
 export default function PuzzlePackage() {
     const history = useHistory();
     const endbartype='Pure'
@@ -71,7 +50,7 @@ export default function PuzzlePackage() {
         history.goBack()
     }
     const [count, setCount] = useState(0);
-    const Toplinkdataed = Toplinkdata.map((text) => {
+    const Toplinkdataed = PuzzlePackageChasedata.map((text) => {
         if (text.id % 2 === 0) {
             return <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
                 <ListItem button key={text.id} style={{ backgroundColor: '#8e8b91' }}>
@@ -97,7 +76,7 @@ export default function PuzzlePackage() {
             </Link>
         }
     })
-    const Bottomlinkdataed = Bottomlinkdata.map((text) => {
+    const Bottomlinkdataed = PuzzlePackagesilverdata.map((text) => {
         if (text.id % 2 === 0) {
             return <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
                 <ListItem button key={text.id} style={{ backgroundColor: '#8e8b91' }}>

@@ -14,7 +14,7 @@ import { IconButton } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import back from '../../../../svgicon/Componenticon/Back.svg'
-import datas from '../data'
+import datas from '../../../database'
 const endbartype='Shop'
 export default function Events() {
     const { WishListsdata } = datas

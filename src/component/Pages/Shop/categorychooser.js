@@ -3,14 +3,7 @@ import '../../framework/css/cssFGamechooser.css'
 import Grid from '@mui/material/Grid';
 import { Link } from "react-router-dom"
 import { Swiper, SwiperSlide } from "swiper/react";
-import ANIME from '../../../svgicon/Shop/Category/Type/ANIME.svg'
-import BEAUTY from '../../../svgicon/Shop/Category/Type/BEAUTY.svg'
-import COURSE from '../../../svgicon/Shop/Category/Type/COURSE.svg'
-import DIGITAL from '../../../svgicon/Shop/Category/Type/DIGITAL.svg'
-import GADET from '../../../svgicon/Shop/Category/Type/GADET.svg'
-import GOURMENT from '../../../svgicon/Shop/Category/Type/GOURMENT.svg'
-import TOY from '../../../svgicon/Shop/Category/Type/TOY.svg'
-import VIRTUAL from '../../../svgicon/Shop/Category/Type/VIRTUAL.svg'
+import database from '../../database'
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
 import "swiper/components/effect-coverflow/effect-coverflow.less"
@@ -21,17 +14,9 @@ import SwiperCore, {
 import { Typography } from '@mui/material';
 SwiperCore.use([Pagination, Navigation, EffectCoverflow]);
 
-const data = [
-  { id: 0, src: ANIME,link:"/Shop/Category/ANIME",category: "ANIME" },
-  { id: 1, src: BEAUTY,link:"/Shop/Category/BEAUTY", category: "BEAUTY" },
-  { id: 2, src: COURSE ,link:"/Shop/Category/COURSE", category: "COURSE" },
-  { id: 3, src: DIGITAL ,link:"/Shop/Category/DIGITAL" , category: "DIGITAL"},
-  { id: 4, src: GADET,link:"/Shop/Category/GADET", category: "GADET" },
-  { id: 5, src: GOURMENT,link:"/Shop/Category/GOURMENT", category: "GOURMENT"} ,
-  { id: 6, src: TOY,link:"/Shop/Category/TOY" , category: "TOY"},
-  { id: 7, src: VIRTUAL ,link:"/Shop/Category/VIRTUAL" , category: "VIRTUAL"},
-]
 export default function Gamechooser() {
+
+const { Categorydata } = database;
   return (
     <Grid container xs={12}style={{ marginBottom: "1.5vh" }}>
       <Swiper
@@ -59,7 +44,7 @@ export default function Gamechooser() {
         }}
         className="mySwiper">
 
-        {data.map((pic) => (
+        {Categorydata.map((pic) => (
           <SwiperSlide >
            
           <Typography style={{textAlign:'center'}} color='white' paragraph variant='body2' ><Link to={pic.link}>  <img key={pic.id}src={pic.src} alt="img1" />  </Link> </Typography>

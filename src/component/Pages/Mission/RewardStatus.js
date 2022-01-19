@@ -13,20 +13,9 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import { useHistory } from "react-router";
-
-const linkdata = [
-    { id: 0, linkName: "", link: "#" },
-    { id: 1, linkName: "", link: "#" },
-    { id: 2, linkName: "", link: "#" },
-    { id: 3, linkName: "", link: "#" },
-    { id: 4, linkName: "", link: "#" },
-    { id: 5, linkName: "", link: "#" },
-    { id: 6, linkName: "", link: "#" },
-    { id: 7, linkName: "", link: "#" },
-    { id: 8, linkName: "", link: "#" },
-
-
-]
+ 
+import database from '../../database'
+const { RewardStatusdata } = database;
 export default function RewardStatus() {
     const history = useHistory();
     const endbartype='Pure'
@@ -99,7 +88,7 @@ export default function RewardStatus() {
 
             </Grid>
             <List style={{ bottom: 10, textDecoration: 'none', color: '#FFF' }} >
-                {linkdata.map((text, index) => (
+                {RewardStatusdata.map((text, index) => (
                     <Link to={text.link} style={{ textDecoration: 'none', color: 'black' }}>
                         <ListItem button key={text.id} style={{ backgroundColor: index % 2 === 0 ? '#707070' : '#8e8b91', height: "10vh" }}>
                             <ListItemText >

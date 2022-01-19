@@ -42,7 +42,7 @@ import checkshopcar from '../../../svgicon/Shop/word&button/checkshopcar.svg'
 import continuebuy from '../../../svgicon/Shop/word&button/continuebuy.svg'
 import SlideRangebg from '../../../svgicon/Shop/Picturebackground/SlideRangebg.svg'
 import EndBar from '../../framework/endbarWithback';
-import data from './data';
+import data from '../../database';
 import Popup from 'reactjs-popup';
 import { useEffect } from 'react';
 

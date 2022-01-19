@@ -10,31 +10,15 @@ import { Link } from "react-router-dom"
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
 import EndBar from '../../framework/endbarWithback';
 import back from '../../../svgicon/Componenticon/Back.svg'
-import chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg'
-import silverpuzzle from '../../../svgicon/Componenticon/SilverPuzzle.svg'
 import Creditcard from '../../../svgicon/WalletTrans/Creditcard.svg'
 import Money from '../../../svgicon/WalletTrans/Money.svg'
 import Shopcar from '../../../svgicon/WalletTrans/Shopcar.svg'
 import TandC from '../../../svgicon/Componenticon/T&C.svg';
-
+import database from '../../database'
 import { useParams } from "react-router";
-const data = [{
-    Year: [2022, 2021],
-    Month: ["December", "November", "October", "September", "August", "July", "June", "May", "April", "March", "February", "January"],
-    Historyed: [
-        { id: 0, Billto: 'Alipay xxxx', DocumentID: 666, OrderID: 999, Pay: 'HK $78', Name: 'Jay', Seller: 'Google Play', Product: '117 crystal pack', ReesID: '123456', email: 'b1234@gmail.com', icon: chasepuzzle, ReesPay: 1, MerchantID: 123, TournamentNo: 1234, Amount: 0, Remark: "Look so good", Operator: "something", ShopAddress: "king's road xxx shop", RefNo: 123, addorminus: "+", setType: "CHASE PUZZLES RELOADED", time: null, month: "May", year: 2021, num: 8, unit: "HKD", dtime: '2021/09/15', htime: '12:24' },
-        { id: 1, Billto: 'Alipay xxxx', DocumentID: 666, OrderID: 999, Pay: 'HK $78', Name: 'Jay', Seller: 'Google Play', Product: '117 crystal pack', ReesID: '123456', email: 'b1234@gmail.com', Pack: '117 crystal pack', icon: chasepuzzle, ReesPay: 123, MerchantID: 123, TournamentNo: 1234, Amount: 4321, Remark: "Look so good", Operator: "something", ShopAddress: "king's road xxx shop", RefNo: 123, addorminus: "+", setType: " ", time: "sunday", month: "May", year: 2021, num: 100, unit: "PCS", dtime: '2021/09/15', htime: '12:24' },
-        { id: 2, Billto: 'Alipay xxxx', DocumentID: 666, OrderID: 999, Pay: 'HK $78', Name: 'Jay', Seller: 'Google Play', Product: '117 crystal pack', ReesID: '123456', email: 'b1234@gmail.com', Pack: '117 crystal pack',  icon: chasepuzzle, ReesPay: 123, MerchantID: 123, TournamentNo: 1234, Amount: 4321, Remark: "Look so good", Operator: "something", ShopAddress: "king's road xxx shop", RefNo: 123, addorminus: "-", setType: "", time: "sunday", month: "May", year: 2021, num: 100, unit: "PCS", dtime: '2021/09/15', htime: '12:24' },
-        { id: 3, Billto: 'Alipay xxxx', DocumentID: 666, OrderID: 999, Pay: 'HK $78', Name: 'Jay', Seller: 'Google Play', Product: '117 crystal pack', ReesID: '123456', email: 'b1234@gmail.com', Pack: '117 crystal pack', icon: silverpuzzle, ReesPay: 2, MerchantID: 123, TournamentNo: 1234, Amount: 4321, Remark: "Look so good", Operator: "something", ShopAddress: "king's road xxx shop", RefNo: 123, addorminus: "+", setType: "CHASE PUZZLES USED", time: "sunday", month: "May", year: 2021, num: 100, unit: "PCS", dtime: '2021/09/15', htime: '12:24' },
-        { id: 4, Billto: 'Alipay xxxx', DocumentID: 666, OrderID: 999, Pay: 'HK $78', Name: 'Jay', Seller: 'Google Play', Product: '117 crystal pack', ReesID: '123456', email: 'b1234@gmail.com', Pack: '117 crystal pack', icon: silverpuzzle, ReesPay: 123, MerchantID: 123, TournamentNo: 1234, Amount: 4321, Remark: "Look so good", Operator: "something", ShopAddress: "king's road xxx shop", RefNo: 123, addorminus: "-", setType: "", time: null, month: "May", year: 2021, num: 100, unit: "PCS", dtime: '2021/09/15', htime: '12:24' },
-        { id: 5, Billto: 'Alipay xxxx', DocumentID: 666, OrderID: 999, Pay: 'HK $78', Name: 'Jay', Seller: 'Google Play', Product: '117 crystal pack', ReesID: '123456', email: 'b1234@gmail.com', Pack: '117 crystal pack',  icon: chasepuzzle, ReesPay: 123, MerchantID: 123, TournamentNo: 1234, Amount: 4321, Remark: "Look so good", Operator: "something", ShopAddress: "king's road xxx shop", RefNo: 123, addorminus: "-", setType: "", time: null, month: "May", year: 2021, num: 100, unit: "PCS", dtime: '2021/09/15', htime: '12:24' },
-        { id: 6, Billto: 'Alipay xxxx', DocumentID: 666, OrderID: 999, Pay: 'HK $78', Name: 'Jay', Seller: 'Google Play', Product: '117 crystal pack', ReesID: '123456', email: 'b1234@gmail.com', Pack: '117 crystal pack', icon: silverpuzzle, ReesPay: 123, MerchantID: 123, TournamentNo: 1234, Amount: 4321, Remark: "Look so good", Operator: "something", ShopAddress: "king's road xxx shop", RefNo: 123, addorminus: "+", setType: "", time: null, month: "June", year: 2021, num: 100, unit: "PCS", dtime: '2021/09/15', htime: '12:24' },
-        { id: 7, Billto: 'Alipay xxxx', DocumentID: 666, OrderID: 999, Pay: 'HK $78', Name: 'Jay', Seller: 'Google Play', Product: '117 crystal pack', ReesID: '123456', email: 'b1234@gmail.com', Pack: '117 crystal pack', icon: silverpuzzle, ReesPay: 123, MerchantID: 123, TournamentNo: 1234, Amount: 4321, Remark: "Look so good", Operator: "something", ShopAddress: "king's road xxx shop", RefNo: 123, addorminus: "+", setType: "", time: null, month: "July", year: 2021, num: 100, unit: "PCS", dtime: '2021/09/15', htime: '12:24' },
-        { id: 8, Billto: 'Alipay xxxx', DocumentID: 666, OrderID: 999, Pay: 'HK $78', Name: 'Jay', Seller: 'Google Play', Product: '117 crystal pack', ReesID: '123456', email: 'b1234@gmail.com', Pack: '117 crystal pack', icon: chasepuzzle, ReesPay: 123, MerchantID: 123, TournamentNo: 1234, Amount: 4321, Remark: "Look so good", Operator: "something", ShopAddress: "king's road xxx shop", RefNo: 123, addorminus: "-", setType: "", time: null, month: "July", year: 2022, num: 100, unit: "PCS", dtime: '2022/09/15', htime: '12:24' },
-    ]
-}
-]
 export default function Detail() {
+    const { HistoryDetaildata } = database;
+    const data =HistoryDetaildata
     const endbartype='Pure'
     const { id } = useParams();
     const setType = data[0].Historyed[id].setType

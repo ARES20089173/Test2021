@@ -12,13 +12,6 @@ const StyledFab2 = styled(Fab)({
     left:0,
     right: 0,
 });
-const contentStyle = {
-    marginTop: '37%',
-    background: '#cfcece',
-    width: "99%",
-    height: "30%",
-    borderRadius: "5%",
-};
 export default function ImgTournamentLobby() {
     return (
              <Popup

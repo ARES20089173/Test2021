@@ -16,33 +16,12 @@ import ListItemText from "@mui/material/ListItemText";
 import { Link } from 'react-router-dom';
 import Logout from '../../../logout.svg'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import puzzle from "../../../svgicon/Componenticon/Chasepuzzle.svg"
 import coderedeem from '../../../coderedeem.svg'
 import TextField from '@mui/material/TextField';
 
 
-const userdata = [
-  { id: 0, level: 'Lv1', ReesID: 1, nickname: 'Jay' },
-]
-
-const Toplinkdata = [
-  { id: 0, linkName: "PROFILE", link: `/${userdata[0].ReesID}/Profile` },
-  { id: 1, linkName: "SETTING", link: `/${userdata[0].ReesID}/Setting` },
-  { id: 2, linkName: "EVENTS", link: "/Events" },
-  { id: 3, linkName: "BUY PUZZLES", link: "/Wallet/PuzzlePackage" },
-  { id: 4, linkName: "Reward Status", link: `/MissionMain/RewardStatus` },
-  { id: 5, linkName: "Player Support Guide", link: `/MissionMain/SupportGuide` },
-  { id: 6, linkName: "General FAQ", link: "/MissionMain/FAQ" },
-  { id: 7, linkName: "Privacy Policy", link: "/MissionMain/Policy" },
-  { id: 8, linkName: "Terms of Service", link: "/MissionMain/Service" }
-
-]
-const Bottomlinkdata = [
-  { id: 0, linkName: "About REES", link: "/" },
-  { id: 1, linkName: "FAQ", link: "/" },
-  { id: 2, linkName: "PRESS", link: "/" },
-  { id: 3, linkName: "LOGOUT", link: "/login" }
-]
+import database from '../../database'
+const { Toplinkdata, Bottomlinkdata} = database;
 export default function NavigationBar() {
   const [state, setState] = React.useState({
     right: false
@@ -53,9 +32,10 @@ export default function NavigationBar() {
     setState({ ...state, [anchor]: open });
   };
 
+  
   const list = (anchor) => (
     <Box
-      sx={{ width: 280, height: '100vh', backgroundColor: "#242634", overflow: "scroll" }}
+      sx={{ width: 280, height: '100vh', backgroundColor: "#242634" , overflow: "scroll" }}
       role="presentation"
     >
       <List  >
@@ -70,8 +50,7 @@ export default function NavigationBar() {
         >
           <img src={Close} alt='hamburgericon' width='40%' style={{ position: 'relative', left: 60 }} />
         </IconButton>
-        <ListItemText style={{ textAlign: "center" }}  >  <Grid container justifyContent='center' alignItems="center"><Typography color='white'>Play to Earn PUZZLES</Typography><img src={puzzle} alt=''/></Grid></ListItemText>
-
+     
         {Toplinkdata.map((text, index) => (
           <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
             <ListItem button key={text.id}>
@@ -95,7 +74,7 @@ export default function NavigationBar() {
         </ListItem>
       </List>
       <List style={{ textDecoration: 'none', color: 'white' }} >
-        {Bottomlinkdata.slice(0, 3).map((text, index) => (
+        {Bottomlinkdata.slice(0, 1).map((text, index) => (
           <ListItem button key={text.id}>
             <ListItemText >
               <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>{text.linkName}  </Link>
@@ -104,12 +83,12 @@ export default function NavigationBar() {
         ))}
         <ListItem >
           <ListItemText >
-            <Link to={Bottomlinkdata[3].link} style={{ textDecoration: 'none', color: 'white' }}>{Bottomlinkdata[3].linkName}   <img src={Logout} alt="logout" /></Link>
+            <Link to={Bottomlinkdata[1].link} style={{ textDecoration: 'none', color: 'white' }}>{Bottomlinkdata[1].linkName}   <img src={Logout} alt="logout" /></Link>
           </ListItemText>
         </ListItem>
       </List>
     </Box>
-  );
+    );
 
   return (
     <React.Fragment>

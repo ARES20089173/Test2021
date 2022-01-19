@@ -56,6 +56,8 @@ import Leftbg from '../../../svgicon/Gamelobby/Leftbg.svg'
 import Rightbg from '../../../svgicon/Gamelobby/Rightbg.svg'
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
+import database from '../../database'
+const { Toplinkdata,Bottomlinkdata } = database;
 const contentStyle = {
     background: '#242634',
     width: "95%",
@@ -73,26 +75,6 @@ const ExpandMore = styled((props) => {
     })
 }));
 
-const userdata = [
-    { id: 0, level: 'Lv1', ReesID: 1, nickname: 'Jay' },
-]
-
-const Toplinkdata = [
-    { id: 0, linkName: "PROFILE", link: `/${userdata[0].ReesID}/Profile` },
-    { id: 1, linkName: "SETTING", link: `/${userdata[0].ReesID}/Setting` },
-    { id: 2, linkName: "EVENTS", link: "/Events" },
-    { id: 3, linkName: "BUY PUZZLES", link: "/Wallet/PuzzlePackage" },
-    { id: 4, linkName: "Reward Status", link: `/MissionMain/RewardStatus` },
-    { id: 5, linkName: "Player Support Guide", link: `/MissionMain/SupportGuide` },
-    { id: 6, linkName: "General FAQ", link: "/MissionMain/FAQ" },
-    { id: 7, linkName: "Privacy Policy", link: "/MissionMain/Policy" },
-    { id: 8, linkName: "Terms of Service", link: "/MissionMain/Service" }
-  
-  ]
-  const Bottomlinkdata = [
-    { id: 0, linkName: "About REES", link: "/" },
-    { id: 3, linkName: "LOGOUT", link: "/login" },
-  ]
   const endbartype='Play'
 export default class TournamentLobby extends Component {
     constructor(props) {
@@ -103,8 +85,7 @@ export default class TournamentLobby extends Component {
         this.handleExpandClick3 = this.handleExpandClick3.bind(this);
         this.handleClick = this.handleClick.bind(this);
         this.openhandleClick = this.openhandleClick.bind(this);
-        //     this.state = { isToggleOn: true };
-        //     this.Mode = 1;
+
     }
     openhandleClick() {
         this.setState(prevState => ({

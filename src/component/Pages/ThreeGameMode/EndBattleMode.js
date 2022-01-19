@@ -4,11 +4,11 @@ import 'reactjs-popup/dist/index.css';
 import "../../framework/css/cssModFLooby.css"
 import Popup from 'reactjs-popup';
 import Typography from '@mui/material/Typography';
-import Gicon1 from '../../../svgicon/GameIcon/Gicon1.svg'
 import PlayAgain from "../../../svgicon/BattleMode/PlayAgain.svg"
 import FreeShare from "../../../svgicon/BattleMode/FreeShare.svg"
 import GoAccept from "../../../svgicon/EndBattleMode/Goaccept.svg"
 
+import database from '../../database'
 import { Link } from 'react-router-dom';
 const contentStyle = {
     background: '#242632',
@@ -16,7 +16,8 @@ const contentStyle = {
     height: "70%",
     borderRadius: "5%",
 };
-const EndGameData = { Gamename: "2048", Gameicon: Gicon1, GameScore: 66, GameRanking: 3, GamePuzzleRewards: 123 }
+const { EndBattleModeGameData } = database;
+const EndGameData=EndBattleModeGameData
 export default class EndBattleMode extends Component {
 
     render() {

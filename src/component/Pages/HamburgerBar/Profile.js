@@ -15,12 +15,14 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { Link } from "react-router-dom"
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
-import face1 from '../../../face_1.svg'
 import React from "react";
 import "../../framework/css/cssModFMessage.css"
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
 import back from '../../../svgicon/Componenticon/Back.svg'
 import changeAvatar from '../../../svgicon/Hamburgarbaricon/ChangeAvatar.svg';
+import database from '../../database'
+const { userdata } = database;
+
 const contentStyle = {
     margin: 'auto',
     background: '#242634',
@@ -30,12 +32,6 @@ const contentStyle = {
     border:'none',
     borderRadius: "5%",
 };
-
-const userdata = [
-    { id: 0, Sex: "Mr", FirstName: "Cheung", LastName: "kit", NickName: "Jay", Birthday: "2011-10-29", Contact: "+852", Flat: "1502", Street: "King road", Area: "Island", Builidng: "HealthyGarden", level: 'Lv1', ReesID: 1121321231, headicon: face1 },
-    { id: 1, Sex: "Mr", FirstName: "Cheung2", LastName: "kit", NickName: "Jay", Birthday: "2011-10-29", Contact: "+852", Flat: "1502", Street: "King road", Area: "Island", Builidng: "HealthyGarden", level: 'Lv1', ReesID: 1121321231, headicon: face1 },
-    { id: 2, Sex: "Mx", FirstName: "Cheung3", LastName: "kit", NickName: "Jay", Birthday: "2011-10-29", Contact: "+852", Flat: "1502", Street: "King road", Area: "Island", Builidng: "HealthyGarden", level: 'Lv1', ReesID: 1121321231, headicon: face1 },
-]
 const styles = {
     root2: {
         background: "#242634"

@@ -4,29 +4,11 @@ import Grid from '@mui/material/Grid';
 import EndBar from '../../../component/framework/endbarWithback';
 import "../../framework/css/cssModFLooby.css"
 import Typography from '@mui/material/Typography';
-import Rmoney from '../../../svgicon/Componenticon/Rmoneyicon.svg';
 import chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg';
 import HisNavigationBar from './WithBackHisNavbar';
-import Grand from '../../../svgicon/Historyicon/Grand.svg';
-import Epic from '../../../svgicon/Historyicon/Epic.svg';
-import Hero from '../../../svgicon/Historyicon/Hero.svg';
-import KeepUp from '../../../svgicon/Historyicon/KeepUp.svg';
-import Bouns from '../../../svgicon/Historyicon/Bouns.svg';
-const data = [
-    { id: 0, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '/', Mode: 'Rank', quality: "50", min: 15, max: 50, year: 23 },
-    { id: 1, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney,text:'CONGRATULATIONSGRAND PRIZES',min: '', max: 'Grand',background:Grand, year: 23 },
-    { id: 2, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney,text:'YOU ARE EPIC', min: '', max: 'Epic',background:Epic, year: 23 },
-    { id: 3, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney,text:'WOW, keep it up!', min: '', max: 'WoW',background:KeepUp, year: 23 },
-    { id: 4, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney,text:'YOU ARE THE HERO', min: '', max: 'Hero',background:Hero, year: 23 },
-    { id: 5, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney, text:'BOUNS,Try Again',min: '', max: 'Bouns',background:Bouns, year: 23 },
-    { id: 6, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney,text:'WOW, keep it up!', min: '', max: 'WoW',background:KeepUp, year: 23 },
-    { id: 7, linkName: "Silver Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "-", slash: '/', Mode: 'Rank', quality: "50", unit: Rmoney, min: 13, max: 50, year: 23 },
-    { id: 8, linkName: "Silver Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "-", slash: '', Mode: '', quality: "50", WinorLoss: "Win", min: '', max: 'U Win', year: 23 },
-    { id: 9, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '/', Mode: 'Rank', quality: "150", unit: Rmoney, min: 16, max: 50, year: 23 },
-    { id: 10, linkName: "Silver Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '/', Mode: 'Rank', quality: "5500", unit: Rmoney, min: 17, max: 50, year: 23 },
-    { id: 11, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '/', Mode: 'Rank', quality: "1750", unit: Rmoney, min: 18, max: 50, year: 23 },
-    { id: 12, linkName: "Silver Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "-", slash: '/', Mode: 'Rank', quality: "3750", unit: Rmoney, min: 15, max: 50, year: 23 }]
-   
+import database from '../../database'
+const { HistoryChallengeModedata} = database;
+const data=HistoryChallengeModedata
 const endbartype='History'
 export default class TournamentLobby extends Component {
     constructor(props) {

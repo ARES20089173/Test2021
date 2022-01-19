@@ -10,31 +10,7 @@ import { Link } from 'react-router-dom';
 import "../../framework/css/cssModFLooby.css"
 import Popup from 'reactjs-popup';
 import IconButton from '@mui/material/IconButton';
-import face1 from "../../../face_1.svg"
-import face2 from "../../../face_2.svg"
-import face3 from "../../../face_3.svg"
-import face4 from "../../../face_4.svg"
 import back from '../../../svgicon/Componenticon/Back.svg'
-import face5 from "../../../face_5.svg"
-import face6 from "../../../face_6.svg"
-import face7 from "../../../face_7.svg"
-import face8 from "../../../face_8.svg"
-import face9 from "../../../face_9.svg"
-import Gicon1 from '../../../svgicon/GameIcon/Gicon1.svg'
-import Gicon2 from '../../../svgicon/GameIcon/Gicon2.svg'
-import Gicon3 from '../../../svgicon/GameIcon/Gicon3.svg'
-import Gicon4 from '../../../svgicon/GameIcon/Gicon4.svg'
-import Gicon5 from '../../../svgicon/GameIcon/Gicon5.svg'
-import Gicon6 from '../../../svgicon/GameIcon/Gicon6.svg'
-import Gicon7 from '../../../svgicon/GameIcon/Gicon7.svg'
-import Gicon8 from '../../../svgicon/GameIcon/Gicon8.svg'
-import Gicon9 from '../../../svgicon/GameIcon/Gicon9.svg'
-import Gicon10 from '../../../svgicon/GameIcon/Gicon10.svg'
-import Gicon11 from '../../../svgicon/GameIcon/Gicon11.svg'
-import Gicon12 from '../../../svgicon/GameIcon/Gicon12.svg'
-import Gicon13 from '../../../svgicon/GameIcon/Gicon13.svg'
-import Gicon14 from '../../../svgicon/GameIcon/Gicon14.svg'
-import Gicon15 from '../../../svgicon/GameIcon/Gicon15.svg'
 import BgBlack from "../../../svgicon/OVOmode/BgBlack.svg"
 import Bgpink from "../../../svgicon/OVOmode/BgPink.svg"
 import Vs from "../../../svgicon/OVOmode/Vs.svg"
@@ -57,6 +33,7 @@ import Close from '../../../svgicon/Componenticon/Close.svg'
 import GameTutorial from "../../../svgicon/BattleMode/GameTutorial.svg"
 import Download from "../../../svgicon/BattleMode/Download.svg"
 import PoweredByR from '../../../svgicon/PowerBy/PowerByR.svg'
+import face2 from "../../../svgicon/Face/face_2.svg"
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/swiper.min.css'
 import "swiper/components/effect-coverflow/effect-coverflow.less"
@@ -64,6 +41,8 @@ import 'swiper/components/pagination/pagination.min.css'
 import 'swiper/components/navigation/navigation.min.css'
 import { withRouter } from 'react-router-dom';
 import SwiperCore, { Autoplay, EffectFade } from "swiper";
+import database from '../../database'
+const { Toplinkdata, Bottomlinkdata, MultiGameChoosedata, GameTutorialdata, OneVoneMode,RandomAvatarData} = database;
 SwiperCore.use([Autoplay, EffectFade]);
 const contentStyle = {
     background: '#242632',
@@ -72,26 +51,6 @@ const contentStyle = {
     borderRadius: "5%",
 };
 
-const userdata = [
-    { id: 0, level: 'Lv1', ReesID: 1, nickname: 'Jay' },
-]
-
-const Toplinkdata = [
-    { id: 0, linkName: "PROFILE", link: `/${userdata[0].ReesID}/Profile` },
-    { id: 1, linkName: "SETTING", link: `/${userdata[0].ReesID}/Setting` },
-    { id: 2, linkName: "EVENTS", link: "/Events" },
-    { id: 3, linkName: "BUY PUZZLES", link: "/Wallet/PuzzlePackage" },
-    { id: 4, linkName: "Reward Status", link: `/MissionMain/RewardStatus` },
-    { id: 5, linkName: "Player Support Guide", link: `/MissionMain/SupportGuide` },
-    { id: 6, linkName: "General FAQ", link: "/MissionMain/FAQ" },
-    { id: 7, linkName: "Privacy Policy", link: "/MissionMain/Policy" },
-    { id: 8, linkName: "Terms of Service", link: "/MissionMain/Service" }
-
-]
-const Bottomlinkdata = [
-    { id: 0, linkName: "About REES", link: "/" },
-    { id: 3, linkName: "LOGOUT", link: "/login" },
-]
 function MyStopwatch() {
     const {
         seconds,
@@ -148,48 +107,10 @@ class OneVoneModeGo extends Component {
 
     render() {
 
-
-
-        const Mode = [
-            { id: 0, Modechoose: "oneVoneMode", embedId: "rokGy0huYEA", detail: "Chanllenger MODE is ......." },
-            { id: 1, Modechoose: "challengerMode", embedId: "7HP8X7dadmM", detail: "1 ON 1 MODE is ......." },
-            { id: 2, Modechoose: "BattleMode", embedId: "dWOm9KXJQLo", detail: "Battle MODE is ......." },
-        ]
-        const data = [
-            { id: 0, src: Gicon1, name: "Onmyoji Arena", number: 52, entryFee: 88, GameRules: "2048是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 1, src: Gicon2, name: "TOM & JERRY: CHASE", number: 56, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 2, src: Gicon3, name: "Super Mecha Champions", number: 55, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 3, src: Gicon4, name: "Side Force Don't Fall", number: 53, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 4, src: Gicon5, name: "Seven Squids", number: 54, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 5, src: Gicon6, name: "Punch Box", number: 51, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 6, src: Gicon7, name: "Iron Space", number: 52, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 7, src: Gicon8, name: "Candy Robber", number: 58, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 8, src: Gicon9, name: "Fruit Matching", number: 88, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 9, src: Gicon10, name: "Falling Cubes", number: 25, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 10, src: Gicon11, name: "Box Tower ", number: 95, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 11, src: Gicon12, name: "Jumper Frog", number: 85, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 12, src: Gicon13, name: "2048", number: 75, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 13, src: Gicon14, name: "HEXTRIS", number: 65, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-            { id: 14, src: Gicon15, name: "FISHING FRENZY", number: 55, entryFee: 848, GameRules: "原神是一款智力向游戏可以锻炼人的逻辑能力" },
-        ]
-        const OneVoneMode = [
-            { id: 0, MaxPayOut: 88, MaxPrize: 3500, entryFee: 88 },
-            { id: 1, MaxPayOut: 81, MaxPrize: 3100, entryFee: 848 },
-            { id: 2, MaxPayOut: 848, MaxPrize: 2500, entryFee: 828 },
-        ]
-        const RandomAvatarData = [
-            { id: 0, src: "", name: "" },
-            { id: 1, src: face1, name: "AbigGuy" },
-            { id: 2, src: face2, name: "BoomMan" },
-            { id: 3, src: face3, name: "CatMan" },
-            { id: 4, src: face4, name: "DogMan" },
-            { id: 5, src: face5, name: "EndMan" },
-            { id: 6, src: face6, name: "FatherMan" },
-            { id: 7, src: face7, name: "GirlMan" },
-            { id: 8, src: face8, name: "HeroMan" },
-            { id: 8, src: face9, name: "IconMan" },
-        ]
-        const user = { id: 0, src: face1, name: "Ka Po" }
+        const Mode = GameTutorialdata
+        const data = MultiGameChoosedata
+     
+        const user = { id: 0, src: face2, name: "Ka Po" }
         const RandomAvatar = RandomAvatarData.map((data) => {
             return (
                 <SwiperSlide>

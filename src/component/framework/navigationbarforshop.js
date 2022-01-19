@@ -25,26 +25,10 @@ import SignUp from '../../svgicon/Shop/word&button/SignUp.svg'
 import { styled } from "@mui/material/styles";
 import Collapse from "@mui/material/Collapse";
 import PuzzleChase from '../../svgicon/EndBaricon/PuzzleChase.svg'
+import database from '../database'
 
-const Toplinkdata = [
-    { id: 0, linkName: "ACCOUNT  DETAILS", link: "/1/Profile" },
-    { id: 1, linkName: "MY COLLECTIONS", link: "/Wallet/MyCollection" },
-    { id: 2, linkName: "MY WISHLISTS", link: "/Shop/MyWishList" },
-    { id: 3, linkName: "EVENTS", link: "/Events" },
-    { id: 4, linkName: "BUY PUZZLES", link: "/Wallet/PuzzlePackage" }
+const { ShopToplinkdata,ShopBottomlinkdata } = database;
 
-]
-const Bottomlinkdata = [
-    { id: 0, linkName: "About PUZZLECHASE Shop", link: "/" },
-    { id: 1, linkName: "Shop FAQ", link: "/MissionMain/FAQ" },
-    { id: 2, linkName: "Privacy Policy", link: "/MissionMain/Policy" },
-    { id: 3, linkName: "Terms of Services", link: "/MissionMain/Service" },
-    { id: 4, linkName: "Press", link: "/" },
-    { id: 5, linkName: "Terms & Conditions", link: "/" },
-    { id: 6, linkName: "Partnership Opportunities", link: "/" },
-    { id: 7, linkName: "Disclaimer", link: "/" },
-    { id: 8, linkName: "Logout", link: "/login" },
-]
 export default function NavigationBar() {
 
 const history = useHistory();
@@ -141,7 +125,7 @@ const routeChange3 = (value) => {
                         <Grid container alignItems="center" justifyContent='center' xs={6} ><Typography color="purple"onClick={()=>routeChange3("VIRTUAL")}>VIRTUAL</Typography></Grid>
                     </Grid>
                 </Collapse>
-                {Toplinkdata.map((text, index) => (
+                {ShopToplinkdata.map((text, index) => (
                     <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>
                         <ListItem button key={text.id}>
                             <ListItemText >
@@ -153,7 +137,7 @@ const routeChange3 = (value) => {
 
             </List>
             <List style={{ top: "10%", textDecoration: 'none', color: 'white' }}  >
-                {Bottomlinkdata.slice(0, 8).map((text, index) => (
+                {ShopBottomlinkdata.slice(0, 8).map((text, index) => (
                     <ListItem button key={text.id}>
                         <ListItemText >
                             <Link to={text.link} style={{ textDecoration: 'none', color: 'white' }}>{text.linkName}  </Link>
@@ -162,7 +146,7 @@ const routeChange3 = (value) => {
                 ))}
                 <ListItem >
                     <ListItemText >
-                        <Link to={Bottomlinkdata[8].link} style={{ textDecoration: 'none', color: 'white' }}>{Bottomlinkdata[8].linkName}   <img src={Logout} alt="logout" /></Link>
+                        <Link to={ShopBottomlinkdata[8].link} style={{ textDecoration: 'none', color: 'white' }}>{ShopBottomlinkdata[8].linkName}   <img src={Logout} alt="logout" /></Link>
                     </ListItemText>
                 </ListItem>
             </List>

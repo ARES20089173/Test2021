@@ -16,6 +16,7 @@ import Box from '@mui/material/Box'
 import HomeIcon from '../../svgicon/EndBaricon/BackHome.svg';
 import { Link } from "react-router-dom"
 import { useHistory } from 'react-router'
+import database from '../database'
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
         right: 13,
@@ -28,13 +29,8 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
         
     },
 }));
-const MessageNumber = [
-    { id: 0, link: "/", MessageNum: 3 },
-    { id: 1, link: "/Shop", MessageNum: 32 },
-    { id: 2, link: "/wallet", MessageNum: 55 },
-    { id: 3, link: "/History", MessageNum: 73 },
-    { id: 4, link: "/MissionMain", MessageNum: 100 },
-]
+const { EndbarInfo } = database;
+const MessageNumber=EndbarInfo
 export default function LinkbarWithback(props) {
     const { endbartype } = props;
     const history = useHistory();

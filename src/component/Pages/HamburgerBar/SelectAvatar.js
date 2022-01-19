@@ -4,12 +4,6 @@ import { useParams } from "react-router";
 import Popup from 'reactjs-popup';
 import EndBar from '../../framework/endbarWithback';
 import 'reactjs-popup/dist/index.css';
-import face1 from '../../../face_1.svg'
-import face2 from '../../../face_2.svg'
-import face3 from '../../../face_3.svg'
-import face4 from '../../../face_4.svg'
-import face5 from '../../../face_5.svg'
-import face6 from '../../../face_6.svg'
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Grid from '@mui/material/Grid';
@@ -20,6 +14,9 @@ import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
 import back from '../../../svgicon/Componenticon/Back.svg'
 import saveAvatar from '../../../svgicon/Hamburgarbaricon/SaveAvatar.svg';
 import digitalStore from '../../../svgicon/Hamburgarbaricon/DigitalStore.svg';
+import database from '../../database'
+const { Avatardata } = database;
+
 const contentStyle = {
     margin: 'auto',
     background: '#242634',
@@ -29,25 +26,6 @@ const contentStyle = {
     padding: "5px",
     borderRadius: "5%",
 };
-
-const Avatardata = [
-    { id: 0, headicon: face1 },
-    { id: 1, headicon: face2 },
-    { id: 2, headicon: face3 },
-    { id: 3, headicon: face4 },
-    { id: 4, headicon: face5 },
-    { id: 5, headicon: face6 },
-    { id: 6, headicon: face4 },
-    { id: 7, headicon: face5 },
-    { id: 8, headicon: face6 },
-    { id: 9, headicon: face4 },
-    { id: 10, headicon: face5 },
-    { id: 11, headicon: face6 },
-    { id: 12, headicon: face4 },
-    { id: 13, headicon: face5 },
-    { id: 14, headicon: face6 },
-
-]
 export default function SelectAvatar() {
     const endbartype='Pure'
     const { id } = useParams();

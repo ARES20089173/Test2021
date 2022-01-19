@@ -18,7 +18,7 @@ import { Button } from "@mui/material";
 import Slider from '../ShopCartSlider'
 import Discount from '../../../../svgicon/Shop/Picturebackground/Discount.svg'
 import addtocart from '../../../../svgicon/Shop/word&button/addtocart.svg'
-import datas from '../data'
+import datas from '../../../database'
 import { useParams } from "react-router";
 
 import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";

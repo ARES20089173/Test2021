@@ -1,14 +1,5 @@
 import React, { Component } from "react";
 import AppBar from '@mui/material/AppBar';
-import Messagepuzzle from '../../../svgicon/NotificationIcon/Messagepuzzle.svg'
-import m from '../../../svgicon/NotificationIcon/m.svg'
-import gamepad from '../../../svgicon/NotificationIcon/gamepad.svg'
-import heart from '../../../svgicon/NotificationIcon/heart.svg'
-import money from '../../../svgicon/NotificationIcon/money.svg'
-import game from '../../../svgicon/NotificationIcon/game.svg'
-import event from '../../../svgicon/NotificationIcon/event.svg'
-import r from '../../../svgicon/NotificationIcon/r.svg'
-import switched from '../../../svgicon/NotificationIcon/switched.svg'
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import HomeIcon from '../../../svgicon/EndBaricon/BackHome.svg';
@@ -18,22 +9,12 @@ import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import { Link } from "react-router-dom"
 import Switch from '@mui/material/Switch';
-
+import database from '../../database'
 export default class MessageCenter extends Component {
     render() {
-        const data = [
-            { id: 0, icon: Messagepuzzle, setname: "Assetchange" },
-            { id: 1, icon: m, setname: "System Message" },
-            { id: 2, icon: gamepad, setname: "Game Results & Rewards" },
-            { id: 3, icon: heart, setname: "Engagement Notify" },
-            { id: 4, icon: money, setname: "Transaction Notify" },
-            { id: 5, icon: game, setname: "New Battle Challengers" },
-            { id: 6, icon: event, setname: "Events & Discounts Reminder" },
-            { id: 7, icon: r, setname: "REES Teams Announcement" },
-            { id: 8, icon: switched, setname: "Swith Off All Tutorials Button" },
 
-        ];
-
+        const {centerSettingdata} = database;
+        const data=centerSettingdata
         const handleChange = (event) => {
             // for swith
         };

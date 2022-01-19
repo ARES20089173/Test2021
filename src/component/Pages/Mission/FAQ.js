@@ -16,7 +16,8 @@ import EndBar from '../../framework/endbarWithback';
 import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUp from "@mui/icons-material/KeyboardArrowUp";
 import { useHistory } from "react-router";
-
+import database from '../../database'
+const { Faqdata } = database;
 
 export default function FAQ() {
     const endbartype='Pure'
@@ -33,14 +34,7 @@ export default function FAQ() {
         } else {
             setSelectedIndex(index)
         }
-    }
-    const Toplinkdata = [
-        { id: 0, question: " Q1: KXSKKSN;N;SCL;NS;KNC;LASL;CL;  SN;LCNSK;NK;SNCK;SNCK", answer: 'hello this is answer1: KXSKKSN;N;SCL;NS;KNC;LASL;CL;  SN;LCNSK;NK;SNCK;SNC', link: `/MissionMain/RewardStatus` },
-        { id: 1, question: "Q2: KXSKKSN;N;SCL;NS;KNC;LASL;CL; ", answer: 'hello this is answer2: KXSKKSN;N;SCL;NS;KNC;LASL;CL;  SN;LCNSK;NK;SNCK;SNC', link: `/MissionMain/SupportGuide` },
-        { id: 2, question: "Q3: KXSKKSN;N;SCL;NS;KNC;LASL;CL; ", answer: 'hello this is answer3: KXSKKSN;N;SCL;NS;KNC;LASL;CL;  SN;LCNSK;NK;SNCK;SNC', link: "/MissionMain/FAQ" },
-        { id: 3, question: "Q4: KXSKKSN;N;SCL;NS;KNC;LASL;CL; ", answer: 'hello this is answer4: KXSKKSN;N;SCL;NS;KNC;LASL;CL;  SN;LCNSK;NK;SNCK;SNC', link: "/MissionMain/Policy" },
-        { id: 4, question: "Q5: KXSKKSN;N;SCL;NS;KNC;LASL;CL; ", answer: 'hello this is answer5: KXSKKSN;N;SCL;NS;KNC;LASL;CL;  SN;LCNSK;NK;SNCK;SNC', link: "/MissionMain/Service" }
-    ]
+    } 
     return (
 
         <Box sx={{ flexGrow: 1 }} bgcolor="#242634" height="100%">
@@ -92,7 +86,7 @@ export default function FAQ() {
                     <Grid xs={12} color='white' height='80vh'>
                         <List sx={{ height: "100%" }} >
 
-                            {Toplinkdata.map((text, index) => (
+                            {Faqdata.map((text, index) => (
                                 <Grid xs={12} onClick={() => {
                                     handleClick(index)
                                 }}>

@@ -17,27 +17,9 @@ import Logout from '../../logout.svg'
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import coderedeem from '../../coderedeem.svg'
 import TextField from '@mui/material/TextField';
+import database from '../database'
+const { userdata,Toplinkdata,Bottomlinkdata } = database;
 
-
-const userdata = [
-  { id: 0, level: 'Lv1', ReesID: 1, nickname: 'Jay' },
-]
-const Toplinkdata = [
-  { id: 0, linkName: "PROFILE", link: `/${userdata[0].ReesID}/Profile` },
-  { id: 1, linkName: "SETTING", link: `/${userdata[0].ReesID}/Setting` },
-  { id: 2, linkName: "EVENTS", link: "/Events" },
-  { id: 3, linkName: "BUY PUZZLES", link: "/Wallet/PuzzlePackage" },
-  { id: 4, linkName: "Reward Status", link: `/MissionMain/RewardStatus` },
-  { id: 5, linkName: "Player Support Guide", link: `/MissionMain/SupportGuide` },
-  { id: 6, linkName: "General FAQ", link: "/MissionMain/FAQ" },
-  { id: 7, linkName: "Privacy Policy", link: "/MissionMain/Policy" },
-  { id: 8, linkName: "Terms of Service", link: "/MissionMain/Service" }
-
-]
-const Bottomlinkdata = [
-  { id: 0, linkName: "About REES", link: "/" },
-  { id: 3, linkName: "LOGOUT", link: "/login" },
-]
 export default function NavigationBar() {
   const [state, setState] = React.useState({
     right: false
@@ -113,7 +95,7 @@ export default function NavigationBar() {
 
             <img src={face} className="App-logo" alt="logo" width="13%" style={{ marginLeft: "3.5vh", marginRight: '1vh' }} />
 
-            <Typography variant="h6" component="div" sx={{}}>
+            <Typography variant="h6" component="div">
               {userdata[0].nickname}
             </Typography>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1, textAlign: 'center' }}>

@@ -2,27 +2,24 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid'
 import PowerbyR from '../../svgicon/PowerBy/PowerByR.svg'
-
 import Ricon from '../../svgicon/Componenticon/Ricon.svg'
 import Twopuzzle from '../../svgicon/EndBaricon/Twopuzzle.svg'
 import PuzzleChase from '../../svgicon/EndBaricon/PuzzleChase.svg'
 import ContinueButton from '../../svgicon/EndBaricon/ContinueButton.svg'
 import * as React from 'react';
-// Import Swiper styles
 import 'swiper/swiper-bundle.min.css'
-// swiper core styles
 import 'swiper/swiper.min.css'
 import "swiper/components/effect-coverflow/effect-coverflow.less"
 import 'swiper/components/pagination/pagination.min.css'
 import 'swiper/components/navigation/navigation.min.css'
+import database from '../database'
 import SwiperCore, {
     Pagination
 } from 'swiper';
 SwiperCore.use([Pagination]);
-const price = [
-    { id: 0, chasepuzzle: 0.15 },
-    { id: 1, silverpuzzle: 2.00 }
-]
+
+const { price} = database;
+
 export default function SwieprConent() {
     return (
         <>
