@@ -10,7 +10,7 @@ import FreeShare from "../../../svgicon/BattleMode/FreeShare.svg"
 import left from '../../../svgicon/End1ON1Mode/4.svg';
 import { Link } from 'react-router-dom';
 import database from '../../database'
-const { EndOneVoneModedata } = database;
+const { EndOneVoneModeData } = database;
 const contentStyle = {
     background: '#242632',
     width: "90%",
@@ -21,7 +21,7 @@ export default class OneVoneMode extends Component {
 
     render() {
         return (
-            EndOneVoneModedata.map((data, index) => (
+            EndOneVoneModeData.map((data, index) => (
                 <Popup
                     trigger={
                         <div className="button">

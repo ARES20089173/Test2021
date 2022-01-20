@@ -398,7 +398,7 @@ export default class TournamentLobby extends Component {
                                         justifyContent='center' xs={12} height='15vh'>
                                         <Grid item xs={3} height='15vh' style={{ textAlign: 'center', backgroundImage: `url(${SmallLeftbg})`, backgroundSize: '100% 100%', backgroundAttachment: 'initial' }}>
                                             <Typography variant="body2" component="div" sx={{ flexGrow: 1, textAlign: 'center' }} color='black' style={{ marginTop: '2vh' }} paragraph>
-                                                <img src={Money} alt="gameicon" width="45%" /><br /> <b>{oneVoneMode[0].MaxPrize}</b>  <br />
+                                                <img src={Money} alt="gameicon" width="45%" /><br /> <b>{content.MaxPrize}</b>  <br />
                                                 <img src={Grandprize} alt='' />
                                             </Typography>
                                         </Grid>
@@ -409,7 +409,7 @@ export default class TournamentLobby extends Component {
                                                 fontSize: 20,
                                                 marginTop: 65
                                             }} variant="caption" color='white'>
-                                                <b>Entry fee:{oneVoneMode[0].entryFee}<img src={Rmoneyicon} alt="icon" width="15%" style={{ position: 'relative', top: 4 }} /></b>
+                                                <b>Entry fee:{content.entryFee}<img src={Rmoneyicon} alt="icon" width="15%" style={{ position: 'relative', top: 4 }} /></b>
                                             </Typography>
 
                                             <Button style={{

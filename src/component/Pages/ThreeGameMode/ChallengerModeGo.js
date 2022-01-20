@@ -353,8 +353,8 @@ export default class TournamentLobby extends Component {
                                 <Grid item xs={4} container justifyContent='center' alignItems="center">
                                     <Grid item xs={12} >
                                         <div style={{ textAlign: 'center', height: "8vh" }}>
-                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[0].Score}</Typography><br />
-                                            <Typography variant="caption" color="black">Puzzle: {ScoreData[0].Puzzle}</Typography>
+                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[1].Score}</Typography><br />
+                                            <Typography variant="caption" color="black">Puzzle: {ScoreData[1].Puzzle}</Typography>
                                         </div>
                                     </Grid>
                                 </Grid>
@@ -366,8 +366,8 @@ export default class TournamentLobby extends Component {
                                 <Grid item xs={4} container justifyContent='center' alignItems="center">
                                     <Grid item xs={12} >
                                         <div style={{ textAlign: 'center', height: "8vh" }}>
-                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[0].Score}</Typography><br />
-                                            <Typography variant="caption" color="black">Puzzle: {ScoreData[0].Puzzle}</Typography>
+                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[2].Score}</Typography><br />
+                                            <Typography variant="caption" color="black">Puzzle: {ScoreData[2].Puzzle}</Typography>
                                         </div>
                                     </Grid>
                                 </Grid>
@@ -379,8 +379,8 @@ export default class TournamentLobby extends Component {
                                 <Grid item xs={4} container justifyContent='center' alignItems="center">
                                     <Grid item xs={12} >
                                         <div style={{ textAlign: 'center', height: "8vh" }}>
-                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[0].Score}</Typography><br />
-                                            <Typography variant="caption" color="black">Puzzle: {ScoreData[0].Puzzle}</Typography>
+                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[3].Score}</Typography><br />
+                                            <Typography variant="caption" color="black">Puzzle: {ScoreData[3].Puzzle}</Typography>
                                         </div>
                                     </Grid>
                                 </Grid>
@@ -392,8 +392,8 @@ export default class TournamentLobby extends Component {
                                 <Grid item xs={4} container justifyContent='center' alignItems="center">
                                     <Grid item xs={12} >
                                         <div style={{ textAlign: 'center', height: "8vh" }}>
-                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[0].Score}</Typography><br />
-                                            <Typography variant="caption" color="black">Puzzle: {ScoreData[0].Puzzle}</Typography>
+                                            <Typography variant="caption" color="black" style={{ overflowWrap: 'break-word' }} display="inline" margin="0" >Score:{ScoreData[4].Score}</Typography><br />
+                                            <Typography variant="caption" color="black">Puzzle: {ScoreData[4].Puzzle}</Typography>
                                         </div>
                                     </Grid>
                                 </Grid>

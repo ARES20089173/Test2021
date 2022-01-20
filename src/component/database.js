@@ -92,7 +92,7 @@ const data = {
         { id: 1, linkName: "SETTING", link: `/${userdata[0].ReesID}/Setting` },
         { id: 2, linkName: "EVENTS", link: "/Events" },
         { id: 3, linkName: "BUY PUZZLES", link: "/Wallet/PuzzlePackage" },
-        { id: 4, linkName: "Reward Status", link: `/MissionMain/RewardStatus` },
+        { id: 4, linkName: "Reward Status", link: `/Shop/RedeemRecords` },
         { id: 5, linkName: "Player Support Guide", link: `/MissionMain/SupportGuide` },
         { id: 6, linkName: "General FAQ", link: "/MissionMain/FAQ" },
         { id: 7, linkName: "Privacy Policy", link: "/MissionMain/Policy" },
@@ -368,7 +368,7 @@ const data = {
     Policydata :{maincontent:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'},
     TermOfServicedata :{maincontent:'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'},
     RewardStatusdata : [
-        { id: 0, linkName: "", link: "#" },
+        { id: 0, linkName: "123", link: "#" },
         { id: 1, linkName: "", link: "#" },
         { id: 2, linkName: "", link: "#" },
         { id: 3, linkName: "", link: "#" },
@@ -381,21 +381,6 @@ const data = {
     SupportGuilddata : [
         { id: 0, embedId: "rokGy0huYEA", name: "PAID TO PLAY&EARN/CHALLENGER MODE", detail: "The detail is ......." },
     ],
-    HistoryChallengeModedata: [
-        { id: 0, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '/', Mode: 'Rank', quality: "50", min: 15, max: 50, year: 23 },
-        { id: 1, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney, text: 'CONGRATULATIONSGRAND PRIZES', min: '', max: 'Grand', background: Grand, year: 23 },
-        { id: 2, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney, text: 'YOU ARE EPIC', min: '', max: 'Epic', background: Epic, year: 23 },
-        { id: 3, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney, text: 'WOW, keep it up!', min: '', max: 'WoW', background: KeepUp, year: 23 },
-        { id: 4, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney, text: 'YOU ARE THE HERO', min: '', max: 'Hero', background: Hero, year: 23 },
-        { id: 5, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney, text: 'BOUNS,Try Again', min: '', max: 'Bouns', background: Bouns, year: 23 },
-        { id: 6, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney, text: 'WOW, keep it up!', min: '', max: 'WoW', background: KeepUp, year: 23 },
-        { id: 7, linkName: "Silver Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "-", slash: '/', Mode: 'Rank', quality: "50", unit: Rmoney, min: 13, max: 50, year: 23 },
-        { id: 8, linkName: "Silver Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "-", slash: '', Mode: '', quality: "50", WinorLoss: "Win", min: '', max: 'U Win', year: 23 },
-        { id: 9, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '/', Mode: 'Rank', quality: "150", unit: Rmoney, min: 16, max: 50, year: 23 },
-        { id: 10, linkName: "Silver Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '/', Mode: 'Rank', quality: "5500", unit: Rmoney, min: 17, max: 50, year: 23 },
-        { id: 11, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '/', Mode: 'Rank', quality: "1750", unit: Rmoney, min: 18, max: 50, year: 23 },
-        { id: 12, linkName: "Silver Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "-", slash: '/', Mode: 'Rank', quality: "3750", unit: Rmoney, min: 15, max: 50, year: 23 }]
-    ,
     MatchHistorydata: [
         { id: 0, linkName: Chasepuzzle, icon: Gicon1, linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '/', Mode: 'Rank', quality: "50", min: 15, max: 50, year: 23, date: "Sep 18" },
         { id: 1, linkName: silverpuzzle, icon: Gicon2, linkMODE: `ChallengeModeDetail`, addorReduce: "+", slash: '', Mode: '', quality: "50", unit: Rmoney, min: '', max: 'Grand', background: Grand, year: 23, date: "Sep 27" },
@@ -410,21 +395,6 @@ const data = {
         { id: 10, linkName: Chasepuzzle, icon: Gicon11, linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '/', Mode: 'Rank', quality: "5500", unit: Rmoney, min: 17, max: 50, year: 23, date: "Sep 13" },
         { id: 11, linkName: silverpuzzle, icon: Gicon12, linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '/', Mode: 'Rank', quality: "1750", unit: Rmoney, min: 18, max: 50, year: 23, date: "Sep 5" },
         { id: 12, linkName: Rmoney, icon: Gicon13, linkMODE: `BattleModeDetail`, addorReduce: "-", slash: '/', Mode: 'Rank', quality: "3750", unit: Rmoney, min: 15, max: 50, year: 23, date: "Sep 29" }]
-    ,
-    HistoryOnevoneModedata: [
-        { id: 0, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail` },
-        { id: 1, linkName: "Chase Puzzles", linkMODE: `ChallengeModeDetail` },
-        { id: 2, linkName: "Chase Puzzles", linkMODE: `ChallengeModeDetail` },
-        { id: 3, linkName: "Chase Puzzles", linkMODE: `ChallengeModeDetail` },
-        { id: 4, linkName: "Chase Puzzles", linkMODE: `ChallengeModeDetail` },
-        { id: 5, linkName: "Chase Puzzles", linkMODE: `ChallengeModeDetail` },
-        { id: 6, linkName: "Chase Puzzles", linkMODE: `ChallengeModeDetail` },
-        { id: 7, linkName: "Silver Puzzles", linkMODE: `BattleModeDetail` },
-        { id: 8, linkName: "Silver Puzzles", linkMODE: `OneVOneModeDetail`, addorReduce: "-", slash: '', Mode: '', quality: "50", WinorLoss: "Win", min: '', max: 'U Win', year: 23, date: "Sep 2" },
-        { id: 9, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '/', Mode: 'Rank', quality: "150", unit: Rmoney, min: 16, max: 50, year: 23, date: "Sep 1" },
-        { id: 10, linkName: "Silver Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '/', Mode: 'Rank', quality: "5500", unit: Rmoney, min: 17, max: 50, year: 23, date: "Sep 13" },
-        { id: 11, linkName: "Chase Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "+", slash: '/', Mode: 'Rank', quality: "1750", unit: Rmoney, min: 18, max: 50, year: 23, date: "Sep 5" },
-        { id: 12, linkName: "Silver Puzzles", linkMODE: `BattleModeDetail`, addorReduce: "-", slash: '/', Mode: 'Rank', quality: "3750", unit: Rmoney, min: 15, max: 50, year: 23, date: "Sep 29" }]
     ,
     Event : [
         { id: 0, img: Event1, name: "PAID TO PLAY&EARN/CHALLENGER MODE", detail: "CHALLENGER MODE is .......xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" },

@@ -8,7 +8,7 @@ import chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg';
 import HisNavigationBar from './WithBackHisNavbar';
 import Congraduation from '../../../svgicon/Historyicon/Congraduation.svg';
 import database from '../../database'
-const { HistoryOnevoneModedata} = database;
+const { MatchHistorydata} = database;
 const endbartype='History'
 export default class TournamentLobby extends Component {
     constructor(props) {
@@ -44,9 +44,9 @@ export default class TournamentLobby extends Component {
                                 1 ON 1 Mode
                             </Typography>
                         </Grid>
-                        <Grid contaier justifyContent='center' alignItems="center" xs={12} height="58vh" style={{ backgroundImage: `url(${HistoryOnevoneModedata[this.props.match.params.id].WinorLoss === 'Win' ? Congraduation : ''})`, backgroundRepeat: 'no-repeat', backgroundSize: '100%', backgroundAttachment: 'cover' }}>
+                        <Grid contaier justifyContent='center' alignItems="center" xs={12} height="58vh" style={{ backgroundImage: `url(${MatchHistorydata[this.props.match.params.id].WinorLoss === 'Win' ? Congraduation : ''})`, backgroundRepeat: 'no-repeat', backgroundSize: '100%', backgroundAttachment: 'cover' }}>
                             <Grid container xs={12} justifyContent='center' alignItems="center" height="38vh">
-                            <Typography textAlign='center' variant='h4'><img src={chasepuzzle} alt='' width="20%" />x{HistoryOnevoneModedata[this.props.match.params.id].quality}<br/>Congraduations</Typography>
+                            <Typography textAlign='center' variant='h4'><img src={chasepuzzle} alt='' width="20%" />x{MatchHistorydata[this.props.match.params.id].quality}<br/>Congraduations</Typography>
                             </Grid>
                         </Grid>
                         <Grid item xs={12} marginTop="10vh" display={this.state.isToggleOn ? 'block' : 'none'}>

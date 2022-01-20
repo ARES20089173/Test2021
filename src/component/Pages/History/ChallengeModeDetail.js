@@ -7,8 +7,8 @@ import Typography from '@mui/material/Typography';
 import chasepuzzle from '../../../svgicon/Componenticon/Chasepuzzle.svg';
 import HisNavigationBar from './WithBackHisNavbar';
 import database from '../../database'
-const { HistoryChallengeModedata} = database;
-const data=HistoryChallengeModedata
+const { MatchHistorydata} = database;
+const data=MatchHistorydata
 const endbartype='History'
 export default class TournamentLobby extends Component {
     constructor(props) {

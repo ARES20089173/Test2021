@@ -70,7 +70,7 @@ export default class GameTutorial extends Component {
                                             position: 'relative',
                                             zIndex: 3,
                                             left: "-13%",
-                                        }}>    BATTLE MODE
+                                        }}>    GAME TUTORIAL
                                         </Typography>
                                         <IconButton
                                             size="large"
